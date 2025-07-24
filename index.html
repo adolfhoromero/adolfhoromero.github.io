@@ -4,20 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Adolfho Romero</title>
-
-  <!-- Font Awesome for Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 40px;
-      background: linear-gradient(135deg, #f4e9e9, #e8e0d7);
-      color: #111;
+      background: linear-gradient(135deg, #0f0f0f, #2c2c2c);
+      color: #f5f5f5;
     }
 
     h1 {
-      font-size: 2.4em;
+      font-size: 2.6em;
       margin-bottom: 0.2em;
     }
 
@@ -26,9 +22,9 @@
     }
 
     nav a {
-      margin-right: 1em;
+      margin-right: 1.5em;
       text-decoration: none;
-      color: #0366d6;
+      color: #89CFF0;
       font-weight: bold;
     }
 
@@ -41,20 +37,20 @@
     }
 
     h2 {
-      font-size: 1.6em;
+      font-size: 1.8em;
       margin-bottom: 0.5em;
     }
 
     p {
       line-height: 1.6;
-      max-width: 700px;
+      max-width: 750px;
     }
 
     .about-container {
       display: flex;
       flex-direction: row;
       align-items: flex-start;
-      gap: 30px;
+      gap: 24px;
       flex-wrap: wrap;
     }
 
@@ -65,36 +61,46 @@
 
     .about-image {
       flex: 1;
-      max-width: 260px;
+      max-width: 280px;
       margin-top: 10px;
     }
 
     .about-image img {
       width: 100%;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
     }
 
     .contact-info {
-      margin-top: 1em;
+      margin-top: 1.5em;
     }
 
-    .contact-info a {
-      text-decoration: none;
-      margin-right: 12px;
+    .contact-info p {
+      margin: 0.5em 0;
     }
 
-    .contact-info i {
-      color: #333;
-      transition: color 0.3s ease;
+    .social-icons {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-top: 10px;
     }
 
-    .contact-info a:hover i.fa-linkedin {
-      color: #0077b5;
+    .social-icons a {
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      transition: transform 0.2s ease;
     }
 
-    .contact-info a:hover i.fa-facebook {
-      color: #3b5998;
+    .social-icons a:hover {
+      transform: scale(1.2);
+    }
+
+    .social-icons img {
+      width: 100%;
+      height: auto;
+      filter: brightness(0) invert(1); /* white version of icon */
     }
   </style>
 </head>
@@ -122,12 +128,15 @@
         </p>
         <div class="contact-info">
           <p>📧 <strong>adolfhoromero@gmail.com</strong></p>
-          <p>🧬 ORCID: <a href="https://orcid.org/0009-0000-2505-0192" target="_blank" rel="noopener noreferrer">https://orcid.org/0009-0000-2505-0192</a></p>
-          <p>
-            🔗 Connect with me:
-            <a href="https://www.linkedin.com/in/adolfho" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin fa-lg"></i></a>
-            <a href="https://www.facebook.com/adolfo.romero.902879" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook fa-lg"></i></a>
-          </p>
+          <p>🧬 ORCID: <a href="https://orcid.org/0009-0000-2505-0192" target="_blank" style="color: #89CFF0;">https://orcid.org/0009-0000-2505-0192</a></p>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/adolfho" target="_blank">
+              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
+            </a>
+            <a href="https://www.facebook.com/adolfo.romero.902879" target="_blank">
+              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook">
+            </a>
+          </div>
         </div>
       </div>
       <div class="about-image">
