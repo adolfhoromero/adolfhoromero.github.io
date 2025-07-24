@@ -7,18 +7,25 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 40px;
+      margin: 0;
       background: linear-gradient(135deg, #0f0f0f, #2c2c2c);
       color: #f5f5f5;
     }
 
+    .banner {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
     h1 {
       font-size: 2.6em;
-      margin-bottom: 0.2em;
+      margin: 20px 40px 10px;
     }
 
     nav {
-      margin-bottom: 1.5em;
+      margin: 0 40px 20px;
     }
 
     nav a {
@@ -32,26 +39,18 @@
       text-decoration: underline;
     }
 
-    .section {
-      margin-top: 2em;
-    }
-
-    h2 {
+    .section h2 {
       font-size: 1.8em;
-      margin-bottom: 0.5em;
-    }
-
-    p {
-      line-height: 1.6;
-      max-width: 750px;
+      margin: 0 40px 20px;
     }
 
     .about-container {
       display: flex;
       flex-direction: row;
       align-items: flex-start;
-      gap: 24px;
+      gap: 40px;
       flex-wrap: wrap;
+      padding: 0 40px 40px;
     }
 
     .about-text {
@@ -61,14 +60,20 @@
 
     .about-image {
       flex: 1;
-      max-width: 280px;
+      max-width: 380px;
       margin-top: 10px;
+      order: -1;
     }
 
     .about-image img {
       width: 100%;
       border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    }
+
+    p {
+      line-height: 1.6;
+      max-width: 750px;
     }
 
     .contact-info {
@@ -100,11 +105,14 @@
     .social-icons img {
       width: 100%;
       height: auto;
-      filter: brightness(0) invert(1); /* white version of icon */
+      filter: brightness(0) invert(1);
     }
   </style>
 </head>
 <body>
+  <!-- Top Cornell Banner -->
+  <img src="cornell.jpg" alt="Cornell University Banner" class="banner" />
+
   <h1>Adolfho Romero</h1>
 
   <nav>
@@ -116,9 +124,12 @@
   <div class="section">
     <h2>About Me</h2>
     <div class="about-container">
+      <div class="about-image">
+        <img src="adolfhoromero.jpeg" alt="Adolfho Romero" />
+      </div>
       <div class="about-text">
         <p>
-          I am a Ph.D. student in the School of Industrial and Labor Relations at Cornell University, where I study how labor organizations, worker centers, and migrant-led movements build power and advance dignity in precarious workplaces. My research examines how unions and non-profits navigate internal inequalities—across class, race, ethnicity, gender, and language—to foster leadership, sustain collective action, and redefine labor rights.
+          I am a Ph.D. student in the School of Industrial and Labor Relations at Cornell University, where I study how labor organizations, worker centers, and migrant-led movements build power and advance dignity in precarious workplaces.
         </p>
         <p>
           I use qualitative methods, including ethnographic observation and interviews in Spanish and English, to understand how workers—especially immigrants and people of color—organize across difference. My work is grounded in community-engaged research and draws from labor studies, migration studies, and critical theory.
@@ -138,9 +149,6 @@
             </a>
           </div>
         </div>
-      </div>
-      <div class="about-image">
-        <img src="adolfhoromero.jpeg" alt="Adolfho Romero" />
       </div>
     </div>
   </div>
