@@ -4,37 +4,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Adolfho Romero</title>
+
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 40px;
-      background: linear-gradient(135deg, #eae0dc, #f7f2f0);
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background: linear-gradient(135deg, #f4e9e9, #e8e0d7);
       color: #111;
     }
 
     h1 {
-      font-size: 2.6em;
+      font-size: 2.4em;
       margin-bottom: 0.2em;
     }
 
     nav {
-      margin-top: 10px;
       margin-bottom: 1.5em;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 10px;
     }
 
     nav a {
-      margin-right: 1.5em;
+      margin-right: 1em;
       text-decoration: none;
-      color: #0056b3;
+      color: #0366d6;
       font-weight: bold;
-      transition: color 0.3s ease;
     }
 
     nav a:hover {
-      color: #d35400;
+      text-decoration: underline;
     }
 
     .section {
@@ -42,56 +41,60 @@
     }
 
     h2 {
-      font-size: 1.8em;
+      font-size: 1.6em;
       margin-bottom: 0.5em;
     }
 
     p {
-      line-height: 1.7;
+      line-height: 1.6;
       max-width: 700px;
-      font-size: 1.05em;
     }
 
     .about-container {
       display: flex;
       flex-direction: row;
       align-items: flex-start;
-      gap: 25px;
+      gap: 30px;
       flex-wrap: wrap;
     }
 
     .about-text {
-      flex: 3;
+      flex: 2;
       min-width: 300px;
     }
 
     .about-image {
-      flex: 2;
-      max-width: 280px;
+      flex: 1;
+      max-width: 260px;
       margin-top: 10px;
     }
 
     .about-image img {
       width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    }
-
-    a {
-      color: #0056b3;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    strong {
-      font-weight: bold;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
 
     .contact-info {
-      margin-top: 1.5em;
+      margin-top: 1em;
+    }
+
+    .contact-info a {
+      text-decoration: none;
+      margin-right: 12px;
+    }
+
+    .contact-info i {
+      color: #333;
+      transition: color 0.3s ease;
+    }
+
+    .contact-info a:hover i.fa-linkedin {
+      color: #0077b5;
+    }
+
+    .contact-info a:hover i.fa-facebook {
+      color: #3b5998;
     }
   </style>
 </head>
@@ -99,8 +102,8 @@
   <h1>Adolfho Romero</h1>
 
   <nav>
-    <a href="adolfhoromerocv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
-    <a href="#">Publications</a>
+    <a href="adolfhoromerocv.pdf" target="_blank" rel="noopener noreferrer">CV</a> |
+    <a href="#">Publications</a> |
     <a href="#">Contact</a>
   </nav>
 
@@ -118,8 +121,13 @@
           Before Cornell, I served as Assistant Director of the Samuel Proctor Oral History Program (SPOHP) at the University of Florida, where I led multilingual oral history projects documenting the experiences of Latinx, African American, and Indigenous communities across the U.S. South. I also worked with farmworker advocacy organizations and hold a background in Latin American Studies.
         </p>
         <div class="contact-info">
-          📧 Contact: <strong>adolfhoromero@gmail.com</strong><br>
-          🧬 ORCID: <a href="https://orcid.org/0009-0000-2505-0192" target="_blank">https://orcid.org/0009-0000-2505-0192</a>
+          <p>📧 <strong>adolfhoromero@gmail.com</strong></p>
+          <p>🧬 ORCID: <a href="https://orcid.org/0009-0000-2505-0192" target="_blank" rel="noopener noreferrer">https://orcid.org/0009-0000-2505-0192</a></p>
+          <p>
+            🔗 Connect with me:
+            <a href="https://www.linkedin.com/in/adolfho" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin fa-lg"></i></a>
+            <a href="https://www.facebook.com/adolfo.romero.902879" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook fa-lg"></i></a>
+          </p>
         </div>
       </div>
       <div class="about-image">
