@@ -6,65 +6,92 @@
   <title>Adolfho Romero</title>
   <style>
     body {
-      font-family: 'Helvetica Neue', sans-serif;
-      margin: 40px;
-      background: linear-gradient(to right, #f3e7e9, #cfcfd1); /* darker tone */
-      color: #1c1c1c;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 40px;
+      background: linear-gradient(135deg, #eae0dc, #f7f2f0);
+      color: #111;
     }
+
     h1 {
-      font-size: 2.8em;
+      font-size: 2.6em;
       margin-bottom: 0.2em;
-      color: #222;
     }
+
     nav {
-      margin-bottom: 1.8em;
+      margin-top: 10px;
+      margin-bottom: 1.5em;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
     }
+
     nav a {
-      margin-right: 1em;
+      margin-right: 1.5em;
       text-decoration: none;
       color: #0056b3;
-      font-weight: 500;
+      font-weight: bold;
+      transition: color 0.3s ease;
     }
+
     nav a:hover {
-      text-decoration: underline;
+      color: #d35400;
     }
+
     .section {
       margin-top: 2em;
     }
+
     h2 {
       font-size: 1.8em;
       margin-bottom: 0.5em;
     }
+
     p {
       line-height: 1.7;
       max-width: 700px;
       font-size: 1.05em;
     }
+
     .about-container {
       display: flex;
       flex-direction: row;
       align-items: flex-start;
-      gap: 20px; /* smaller gap */
+      gap: 25px;
       flex-wrap: wrap;
     }
+
     .about-text {
-      flex: 2;
+      flex: 3;
       min-width: 300px;
     }
+
     .about-image {
-      flex: 1;
-      max-width: 350px; /* larger image */
+      flex: 2;
+      max-width: 280px;
+      margin-top: 10px;
     }
+
     .about-image img {
       width: 100%;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     }
+
     a {
       color: #0056b3;
+      text-decoration: none;
     }
+
     a:hover {
-      color: #004095;
+      text-decoration: underline;
+    }
+
+    strong {
+      font-weight: bold;
+    }
+
+    .contact-info {
+      margin-top: 1.5em;
     }
   </style>
 </head>
@@ -72,8 +99,8 @@
   <h1>Adolfho Romero</h1>
 
   <nav>
-    <a href="adolfhoromerocv.pdf" target="_blank" rel="noopener noreferrer">CV</a> |
-    <a href="#">Publications</a> |
+    <a href="adolfhoromerocv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+    <a href="#">Publications</a>
     <a href="#">Contact</a>
   </nav>
 
@@ -90,10 +117,10 @@
         <p>
           Before Cornell, I served as Assistant Director of the Samuel Proctor Oral History Program (SPOHP) at the University of Florida, where I led multilingual oral history projects documenting the experiences of Latinx, African American, and Indigenous communities across the U.S. South. I also worked with farmworker advocacy organizations and hold a background in Latin American Studies.
         </p>
-        <p>
+        <div class="contact-info">
           📧 Contact: <strong>adolfhoromero@gmail.com</strong><br>
-          🔗 ORCID: <a href="https://orcid.org/0009-0000-2505-0192" target="_blank" rel="noopener noreferrer">https://orcid.org/0009-0000-2505-0192</a>
-        </p>
+          🧬 ORCID: <a href="https://orcid.org/0009-0000-2505-0192" target="_blank">https://orcid.org/0009-0000-2505-0192</a>
+        </div>
       </div>
       <div class="about-image">
         <img src="adolfhoromero.jpeg" alt="Adolfho Romero" />
