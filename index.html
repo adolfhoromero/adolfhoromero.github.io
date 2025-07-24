@@ -37,6 +37,25 @@
       line-height: 1.6;
       max-width: 700px;
     }
+    .about-container {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .about-text {
+      flex: 2;
+      min-width: 300px;
+    }
+    .about-image {
+      flex: 1;
+      max-width: 200px;
+    }
+    .about-image img {
+      width: 100%;
+      border-radius: 10px;
+    }
   </style>
 </head>
 <body>
@@ -50,19 +69,26 @@
 
   <div class="section">
     <h2>About Me</h2>
-    <p>
-      I am a Ph.D. student in the School of Industrial and Labor Relations at Cornell University, where I study how labor organizations, worker centers, and migrant-led movements build power and advance dignity in precarious workplaces. My research examines how unions and non-profits navigate internal inequalities—across class, race, ethnicity, gender, and language—to foster leadership, sustain collective action, and redefine labor rights.
-    </p>
-    <p>
-      I use qualitative methods, including ethnographic observation and interviews in Spanish and English, to understand how workers—especially immigrants and people of color—organize across difference. My work is grounded in community-engaged research and draws from labor studies, migration studies, and critical theory.
-    </p>
-    <p>
-      Before Cornell, I served as Assistant Director of the Samuel Proctor Oral History Program (SPOHP) at the University of Florida, where I led multilingual oral history projects documenting the experiences of Latinx, African American, and Indigenous communities across the U.S. South. I also worked with farmworker advocacy organizations and hold a background in Latin American Studies.
-    </p>
-    <p>
-      📧 Contact: <strong>adolfhoromero@gmail.com</strong><br>
-      🔗 ORCID: <a href="https://orcid.org/0009-0000-2505-0192" target="_blank" rel="noopener noreferrer">https://orcid.org/0009-0000-2505-0192</a>
-    </p>
+    <div class="about-container">
+      <div class="about-text">
+        <p>
+          I am a Ph.D. student in the School of Industrial and Labor Relations at Cornell University, where I study how labor organizations, worker centers, and migrant-led movements build power and advance dignity in precarious workplaces. My research examines how unions and non-profits navigate internal inequalities—across class, race, ethnicity, gender, and language—to foster leadership, sustain collective action, and redefine labor rights.
+        </p>
+        <p>
+          I use qualitative methods, including ethnographic observation and interviews in Spanish and English, to understand how workers—especially immigrants and people of color—organize across difference. My work is grounded in community-engaged research and draws from labor studies, migration studies, and critical theory.
+        </p>
+        <p>
+          Before Cornell, I served as Assistant Director of the Samuel Proctor Oral History Program (SPOHP) at the University of Florida, where I led multilingual oral history projects documenting the experiences of Latinx, African American, and Indigenous communities across the U.S. South. I also worked with farmworker advocacy organizations and hold a background in Latin American Studies.
+        </p>
+        <p>
+          📧 Contact: <strong>adolfhoromero@gmail.com</strong><br>
+          🔗 ORCID: <a href="https://orcid.org/0009-0000-2505-0192" target="_blank" rel="noopener noreferrer">https://orcid.org/0009-0000-2505-0192</a>
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="adolfhoromero.jpeg" alt="Adolfho Romero" />
+      </div>
+    </div>
   </div>
 </body>
 </html>
