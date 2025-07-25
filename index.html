@@ -3,146 +3,141 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Adolfho Romero - Publications</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <title>Adolfho Romero</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --accent: #89CFF0;
-      --bg: #0f0f0f;
-      --text: #f5f5f5;
-      --container-width: 1100px;
+      --accent: #00bfff;
+      --bg: #111;
+      --bg-alt: #1a1a1a;
+      --text: #ffffff;
+      --max-width: 960px;
     }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Inter', sans-serif;
-      margin: 0;
-      background: linear-gradient(135deg, var(--bg), #2c2c2c);
+      background: linear-gradient(180deg, #111, #222);
       color: var(--text);
+      line-height: 1.6;
+      padding: 0;
+      margin: 0;
     }
 
     header {
-      padding: 30px 0 5px;
-      background-color: #0f0f0f;
       text-align: center;
-      border-bottom: 1px solid #333;
-    }
-
-    .site-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8em;
-      margin: 0 0 10px;
-      color: #ffffff;
-    }
-
-    .main-nav {
-      background-color: #1a1a1a;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    }
-
-    .main-nav ul {
-      list-style: none;
+      background: #000;
       padding: 0;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      max-width: var(--container-width);
-      padding: 12px 0;
-      border-top: 1px solid #333;
-      border-bottom: 1px solid #333;
     }
 
-    .main-nav a {
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: 600;
-      font-size: 0.95em;
-      padding: 10px 16px;
-      border-radius: 4px;
-      transition: background-color 0.3s ease, color 0.3s ease;
+    header img {
+      width: 100%;
+      max-height: 280px;
+      object-fit: cover;
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    h1, h2 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    footer {
+      background-color: var(--bg-alt);
+      color: var(--text);
+      padding: 2rem;
+      text-align: center;
+      border-top: 1px solid #333;
+    }
+
+    a {
       color: var(--accent);
       text-decoration: none;
     }
 
-    .main-nav a:hover {
-      background-color: var(--accent);
-      color: #0f0f0f;
+    a:hover {
+      text-decoration: underline;
     }
 
-    .section {
-      padding: 60px 20px;
-      max-width: var(--container-width);
-      margin: 0 auto;
+    .social-icons {
+      margin-top: 1rem;
     }
 
-    .section h2 {
-      font-size: 1.8em;
-      margin-bottom: 30px;
-      text-align: center;
-      font-family: 'Playfair Display', serif;
-      position: relative;
+    .social-icons a {
+      margin: 0 0.5rem;
+      display: inline-block;
     }
 
-    .section h2::after {
-      content: "";
-      display: block;
-      width: 60px;
-      height: 3px;
-      background-color: var(--accent);
-      margin: 10px auto 0;
-      border-radius: 3px;
+    .social-icons img {
+      width: 32px;
+      height: 32px;
+      filter: grayscale(100%) brightness(150%);
+      transition: filter 0.3s;
     }
 
-    .publication-entry {
-      margin-bottom: 2em;
-      font-size: 1.05em;
-      line-height: 1.6;
-    }
-
-    .publication-entry i {
-      font-style: italic;
-    }
-
-    footer {
-      background-color: #111;
-      color: #888;
-      text-align: center;
-      padding: 20px 0;
-      font-size: 0.9em;
-      margin-top: 40px;
+    .social-icons img:hover {
+      filter: none;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1 class="site-title">Adolfho Romero</h1>
+    <img src="cornellcampus.jpg" alt="Cornell Campus Banner" />
   </header>
 
-  <nav class="main-nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="adolfhoromerocv.pdf" target="_blank">CV</a></li>
-      <li><a href="#" class="active">Publications</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
+  <main>
+    <section>
+      <h1>My Work, My Roots</h1>
+      <p>
+        I am a Ph.D. student at Cornell University's School of Industrial and Labor Relations. My research and activism center on worker dignity, collective power, and migrant justice. From delivering pizzas to delivering lectures, my journey reflects resilience and commitment to social transformation.
+      </p>
+    </section>
 
-  <div class="section">
-    <h2>Publications & Work in Progress</h2>
-
-    <div class="publication-entry">
-      Romero, A. & Gleeson, S. (2026). <i>Latinx labor rights and workplace enforcement</i>. Forthcoming in the 50th Anniversary Special Issue of <i>Aztlán: A Journal of Chicano Studies</i>.
-    </div>
-
-    <div class="publication-entry">
-      Romero, A. & Gleeson, S. (2025). <i>Cities, Migrants, and Labor Conditions</i>. Chapter in preparation for the <i>Handbook on Cities and Migration</i> (Edward Elgar Publishing), Forthcoming Fall 2026.
-    </div>
-  </div>
+    <section>
+      <h2>Worker Dignity. Collective Power. Migrant Justice.</h2>
+      <p>
+        I research how unions and worker centers empower marginalized workers. My work explores how dignity is cultivated in workplaces marked by linguistic, ethnic, and legal precarity.
+      </p>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Adolfho Romero · adolfhoromero@gmail.com</p>
+    <p><strong>Email:</strong> <a href="mailto:adolfhoromero@gmail.com">adolfhoromero@gmail.com</a></p>
+    <p><strong>ORCID:</strong> <a href="https://orcid.org/0009-0000-2505-0192" target="_blank">https://orcid.org/0009-0000-2505-0192</a></p>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/adolfho" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
+      </a>
+      <a href="https://www.facebook.com/adolfo.romero.902879" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/ithacalyf/" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
+      </a>
+    </div>
   </footer>
-
 </body>
 </html>
