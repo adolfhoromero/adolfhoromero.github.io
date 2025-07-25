@@ -4,176 +4,115 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Adolfho Romero</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --accent: #00bfff;
+      --bg: #111;
+      --text: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
-      margin: 0;
-      background: linear-gradient(135deg, #0f0f0f, #2c2c2c);
-      color: #f5f5f5;
+      background-color: var(--bg);
+      color: var(--text);
     }
 
     header {
-      padding: 30px 0 20px;
-      background-color: #111;
       text-align: center;
+      padding: 20px 10px 10px;
     }
 
-    .site-title {
-      font-family: 'Playfair Display', serif;
+    header h1 {
       font-size: 2.8em;
-      margin: 0;
-      color: #ffffff;
-    }
-
-    nav {
-      margin-top: 15px;
+      font-weight: 700;
+      margin-bottom: 15px;
     }
 
     nav a {
       text-decoration: none;
-      color: #89CFF0;
+      color: var(--accent);
       margin: 0 10px;
-      padding: 8px 14px;
-      border: 1px solid #89CFF0;
+      padding: 6px 14px;
+      border: 1px solid var(--accent);
       border-radius: 6px;
-      transition: all 0.3s ease;
-      font-weight: bold;
-      display: inline-block;
+      font-weight: 600;
+      transition: 0.3s;
     }
 
     nav a:hover {
-      background-color: #89CFF0;
-      color: #0f0f0f;
+      background: var(--accent);
+      color: #000;
     }
 
     .banner {
       width: 100%;
-      height: 300px;
-      background-image: url('cornellcampus.jpg');
-      background-size: cover;
-      background-position: center 44%;
-      background-repeat: no-repeat;
-      background-attachment: scroll;
-      image-rendering: auto;
+      max-height: 360px;
+      overflow: hidden;
     }
 
-    .section h2 {
-      font-size: 1.8em;
-      margin: 60px 0 20px;
-      text-align: center;
+    .banner img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: center 40%;
+      display: block;
     }
 
-    .about-container {
+    .content {
       display: flex;
-      flex-direction: row;
-      align-items: flex-start;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .about {
+      display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 40px;
-      flex-wrap: wrap;
-      padding: 0 40px 60px;
       max-width: 1100px;
-      margin: 0 auto;
+      width: 100%;
     }
 
     .about-text {
-      flex: 2;
-      min-width: 280px;
-      max-width: 600px;
-      text-align: left;
-      margin-right: 20px;
-    }
-
-    .about-image {
-      flex: 1;
-      max-width: 360px;
-      min-width: 200px;
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .about-image img {
-      width: 100%;
-      max-width: 320px;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-    }
-
-    .about-text p {
+      flex: 1 1 500px;
       line-height: 1.6;
-      margin-bottom: 1.5em;
-      font-size: 1.05em;
     }
 
-    .contact-info {
-      margin-top: 1.5em;
+    .about img {
+      max-width: 280px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
     }
 
-    .contact-info p {
-      margin: 0.5em 0;
+    .content h2 {
+      margin-bottom: 30px;
+      font-size: 1.8em;
     }
 
-    .social-icons {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 10px;
-    }
-
-    .social-icons a {
-      display: inline-block;
-      width: 28px;
-      height: 28px;
-      transition: transform 0.2s ease;
-    }
-
-    .social-icons a:hover {
-      transform: scale(1.2);
-    }
-
-    .social-icons img {
-      width: 100%;
-      height: auto;
-      filter: brightness(0) invert(1);
-    }
-
-    /* 📱 Responsive Design */
     @media (max-width: 768px) {
-      .about-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+      header h1 {
+        font-size: 2em;
       }
 
-      .about-text {
-        max-width: 90%;
-        text-align: center;
-        margin-right: 0;
-      }
-
-      .about-image {
-        order: -1;
-        margin-bottom: 20px;
-      }
-
-      .about-image img {
-        max-width: 240px;
-      }
-
-      .social-icons {
-        justify-content: center;
+      .about img {
+        max-width: 220px;
       }
     }
   </style>
 </head>
 <body>
-
-  <!-- Header -->
   <header>
-    <h1 class="site-title">Adolfho Romero</h1>
+    <h1>Adolfho Romero</h1>
     <nav>
       <a href="adolfhoromerocv.pdf" target="_blank">CV</a>
       <a href="#">Publications</a>
@@ -181,41 +120,21 @@
     </nav>
   </header>
 
-  <!-- Banner -->
-  <div class="banner"></div>
-
-  <!-- About Section -->
-  <div class="section">
-    <h2>About Me</h2>
-    <div class="about-container">
-      <div class="about-text">
-        <p>
-          I am a Ph.D. student in the School of Industrial and Labor Relations at Cornell University, where I study how labor organizations, worker centers, and migrant-led movements build power and advance dignity in precarious workplaces.
-        </p>
-        <p>
-          I use qualitative methods, including ethnographic observation and interviews in Spanish and English, to understand how workers—especially immigrants and people of color—organize across difference. My work is grounded in community-engaged research and draws from labor studies, migration studies, and critical theory.
-        </p>
-        <p>
-          Before Cornell, I served as Assistant Director of the Samuel Proctor Oral History Program (SPOHP) at the University of Florida, where I led multilingual oral history projects documenting the experiences of Latinx, African American, and Indigenous communities across the U.S. South. I also worked with farmworker advocacy organizations and hold a background in Latin American Studies.
-        </p>
-        <div class="contact-info">
-          <p>📧 <strong>adolfhoromero@gmail.com</strong></p>
-          <p>🧬 ORCID: <a href="https://orcid.org/0009-0000-2505-0192" target="_blank" style="color: #89CFF0;">https://orcid.org/0009-0000-2505-0192</a></p>
-          <div class="social-icons">
-            <a href="https://www.linkedin.com/in/adolfho" target="_blank">
-              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
-            </a>
-            <a href="https://www.facebook.com/adolfo.romero.902879" target="_blank">
-              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook">
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="about-image">
-        <img src="adolfhoromero.jpeg" alt="Adolfho Romero" />
-      </div>
-    </div>
+  <div class="banner">
+    <img src="cornellcampus.jpg" alt="Cornell Campus Banner">
   </div>
 
+  <section class="content">
+    <h2>About Me</h2>
+    <div class="about">
+      <div class="about-text">
+        <p>I am a Ph.D. student in the School of Industrial and Labor Relations at Cornell University, where I study how labor organizations, worker centers, and migrant-led movements build power and advance dignity in precarious workplaces.</p>
+        <p>I use qualitative methods, including ethnographic observation and interviews in Spanish and English, to understand how workers—especially immigrants and people of color—organize across difference. My work is grounded in community-engaged research and draws from labor studies, migration studies, and critical theory.</p>
+        <p>Before Cornell, I served as Assistant Director of the Samuel Proctor Oral History Program (SPOHP) at the University of Florida, where I led multilingual oral history projects documenting the experiences of Latinx, African American, and Indigenous communities across the U.S. South. I also worked with farmworker advocacy organizations and hold a background in Latin American Studies.</p>
+        <p>📧 adolfhoromero@gmail.com</p>
+      </div>
+      <img src="adolfhoromero.jpeg" alt="Adolfho Romero Portrait">
+    </div>
+  </section>
 </body>
 </html>
