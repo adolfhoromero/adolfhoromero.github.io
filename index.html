@@ -16,6 +16,8 @@
     header {
       padding: 20px 40px 10px;
       background-color: #111;
+      z-index: 10;
+      position: relative;
     }
 
     .site-title {
@@ -45,23 +47,17 @@
       color: #0f0f0f;
     }
 
-    /* Banner as background */
     .banner {
       width: 100%;
-      height: 240px;
+      height: 260px;
       background-image: url('cornellcampus.jpg');
-      background-size: cover;
-      background-position: center 55%;
+      background-size: 115%;
+      background-position: center 42%;
       background-repeat: no-repeat;
-      position: relative;
+      background-attachment: scroll;
     }
 
-    .banner::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
+    .fade {
       height: 40px;
       background: linear-gradient(to bottom, rgba(15,15,15,0), #0f0f0f);
     }
@@ -148,8 +144,11 @@
     </nav>
   </header>
 
-  <!-- Cornell Banner Background -->
+  <!-- Banner with Cornell Image -->
   <div class="banner"></div>
+
+  <!-- Soft Fade -->
+  <div class="fade"></div>
 
   <!-- About Section -->
   <div class="section">
