@@ -22,7 +22,7 @@
     }
 
     header {
-      padding: 30px 0 20px;
+      padding: 30px 0 10px;
       background-color: #111;
       text-align: center;
     }
@@ -34,23 +34,38 @@
       color: #ffffff;
     }
 
-    nav {
+    /* Navigation Styles */
+    .main-nav {
+      background-color: #111;
       margin-top: 15px;
     }
 
-    nav a {
-      text-decoration: none;
-      color: var(--accent);
-      margin: 0 10px;
-      padding: 8px 14px;
-      border: 1px solid var(--accent);
-      border-radius: 6px;
-      transition: all 0.3s ease;
-      font-weight: bold;
-      display: inline-block;
+    .main-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      max-width: var(--container-width);
+      padding: 10px 0;
+      border-top: 1px solid #333;
+      border-bottom: 1px solid #333;
     }
 
-    nav a:hover {
+    .main-nav a {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+      font-size: 0.95em;
+      padding: 8px 14px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .main-nav a:hover {
       background-color: var(--accent);
       color: #0f0f0f;
     }
@@ -249,6 +264,12 @@
       .social-icons {
         justify-content: center;
       }
+
+      .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
     }
   </style>
 </head>
@@ -257,12 +278,16 @@
   <!-- Header -->
   <header>
     <h1 class="site-title">Adolfho Romero</h1>
-    <nav>
-      <a href="adolfhoromerocv.pdf" target="_blank">CV</a>
-      <a href="#">Publications</a>
-      <a href="#">Contact</a>
-    </nav>
   </header>
+
+  <!-- Navigation Bar -->
+  <nav class="main-nav">
+    <ul>
+      <li><a href="adolfhoromerocv.pdf" target="_blank">CV</a></li>
+      <li><a href="#">Publications</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
 
   <!-- Banner -->
   <div class="banner"></div>
