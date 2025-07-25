@@ -3,188 +3,170 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Publications | Adolfho Romero</title>
+  <title>Adolfho Romero</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     :root {
-      --accent: #89CFF0;
+      --accent: #00bfff;
       --bg: #0f0f0f;
+      --bg-alt: #1b1b1b;
       --text: #f5f5f5;
-      --container-width: 1000px;
+      --card: #1e1e1e;
+      --max-width: 960px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
       font-family: 'Inter', sans-serif;
-      margin: 0;
-      background: linear-gradient(135deg, var(--bg), #2c2c2c);
+      background: linear-gradient(180deg, var(--bg), var(--bg-alt));
       color: var(--text);
+      line-height: 1.6;
       scroll-behavior: smooth;
     }
 
     header {
-      padding: 30px 0 10px;
-      background-color: #0f0f0f;
       text-align: center;
-      border-bottom: 1px solid #333;
-    }
-
-    .site-title {
+      padding: 2rem 1rem 0;
       font-family: 'Playfair Display', serif;
-      font-size: 2.4em;
-      margin: 0 0 10px;
-      color: #ffffff;
+      font-size: 2.5rem;
+      color: var(--text);
     }
 
-    nav.main-nav {
-      background-color: #1a1a1a;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    }
-
-    nav.main-nav ul {
-      list-style: none;
+    nav {
       display: flex;
       justify-content: center;
-      padding: 12px 0;
-      margin: 0;
-      gap: 30px;
-      border-top: 1px solid #333;
-      border-bottom: 1px solid #333;
+      gap: 2rem;
+      padding: 1rem;
+      background-color: #121212;
+      border-bottom: 1px solid #2a2a2a;
     }
 
-    nav.main-nav a {
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: 600;
-      font-size: 0.95em;
-      color: var(--accent);
+    nav a {
+      color: var(--text);
       text-decoration: none;
-      padding: 10px 16px;
-      border-radius: 4px;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.3s ease;
     }
 
-    nav.main-nav a:hover {
-      background-color: var(--accent);
-      color: #0f0f0f;
+    nav a:hover {
+      color: var(--accent);
     }
 
-    .section {
-      max-width: var(--container-width);
-      margin: 60px auto;
-      padding: 0 20px;
+    section {
+      max-width: var(--max-width);
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
 
-    .section h2 {
-      font-size: 1.8em;
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
       font-family: 'Playfair Display', serif;
       text-align: center;
       position: relative;
-      margin-bottom: 30px;
     }
 
-    .section h2::after {
-      content: "";
+    h2::after {
+      content: '';
       display: block;
-      width: 60px;
       height: 3px;
-      background-color: var(--accent);
-      margin: 10px auto 0;
-      border-radius: 3px;
+      width: 50px;
+      margin: 0.5rem auto 0;
+      background: var(--accent);
     }
 
-    .section ul {
-      list-style-type: none;
-      padding: 0;
+    .year-section {
+      margin-bottom: 3rem;
+      padding-left: 10px;
+      border-left: 3px solid var(--accent);
     }
 
-    .section li {
-      margin-bottom: 1.5em;
-      line-height: 1.6;
-    }
-
-    .section a {
+    .year-heading {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
       color: var(--accent);
-      text-decoration: none;
+      font-weight: 600;
+      font-family: 'Playfair Display', serif;
     }
 
-    .section a:hover {
-      text-decoration: underline;
+    .card {
+      background-color: var(--card);
+      padding: 1rem 1.25rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+    }
+
+    .card b {
+      color: var(--accent);
     }
 
     footer {
-      background-color: #111;
-      color: #888;
       text-align: center;
-      padding: 20px 0;
-      font-size: 0.9em;
-      margin-top: 60px;
-    }
-
-    @media (max-width: 768px) {
-      nav.main-nav ul {
-        flex-direction: column;
-        gap: 10px;
-      }
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #aaa;
+      border-top: 1px solid #2a2a2a;
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <h1 class="site-title">Adolfho Romero</h1>
-  </header>
+  <header>Adolfho Romero</header>
 
-  <!-- Navigation -->
-  <nav class="main-nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="adolfhoromerocv.pdf" target="_blank">CV</a></li>
-      <li><a href="publications.html">Publications</a></li>
-    </ul>
+  <nav>
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="cv.html"><i class="fas fa-file-alt"></i> CV</a>
+    <a href="publications.html"><i class="fas fa-book"></i> Publications</a>
   </nav>
 
-  <!-- Publications Section -->
-  <div class="section">
-    <h2>Forthcoming Publications</h2>
-    <ul>
-      <li>
-        <strong>Romero, A.</strong> (Forthcoming). <em>“A Meeting of Two Worlds—Oral History and Linguistics: Partnerships, Perplexities, and Potentialities in Researching African American Language.”</em> To appear in <em>[Journal Name]</em>. (In proofing stage, 2025).
-      </li>
-      <li>
-        <strong>Romero, A. & Gleeson, S.</strong> (2026). <em>Latinx labor rights and workplace enforcement.</em> In <em>Aztlán: A Journal of Chicano Studies</em>, 50th Anniversary Issue. (Forthcoming, Fall 2026).
-      </li>
-      <li>
-        <strong>Romero, A. & Gleeson, S.</strong> (2025). <em>Cities, Migrants, and Labor Conditions.</em> Chapter in preparation for <em>Handbook on Cities and Migration</em> (Edward Elgar Publishing). (Forthcoming, Fall 2026).
-      </li>
-    </ul>
-  </div>
+  <section id="manuscripts">
+    <h2>Manuscripts in Preparation</h2>
 
-  <div class="section">
-    <h2>Acknowledged Contributions in Published Works</h2>
-    <ul>
-      <li>
-        Ortiz, P. (2025). <em>Latino workers, the 2024 presidential election, and the future of the labor movement.</em>
-        <a href="https://doi.org/10.1177/0160449X251342375" target="_blank">Labor Studies Journal, 50(2), 153–165</a>.
-      </li>
-      <li>
-        Mattson, I., Mahar, G., & Durant, F. (2023). <em>Revitalizing Native American Oral Histories at the University of Florida.</em>
-        <a href="https://doi.org/10.32473/sourceuf.5.1.132681" target="_blank">SOURCE: The Magazine of the University of Florida George A. Smathers Libraries</a>.
-      </li>
-      <li>
-        Concha-Holmes, A. D., et al. (2025). <em>Decolonizing representations to evoke the complexity of Black lives in Florida.</em>
-        <a href="https://doi.org/10.48807/2025.0.0134" target="_blank">Ground Works Journal</a>.
-      </li>
-      <li>
-        Anastario, M., Rodriguez, A. M., Xiuhtecutli, N., & Wagner, E. (2022). <em>Characterization of lifetime agrichemical exposure sequences relative to international migration in foreign born Latinx agricultural workers living in South Florida.</em>
-        <a href="https://doi.org/10.1007/s10903-021-01278-5" target="_blank">Journal of Immigrant and Minority Health, 24(5), 1145–1153</a>.
-      </li>
-    </ul>
-  </div>
+    <div class="year-section">
+      <div class="year-heading">2026</div>
 
-  <!-- Footer -->
+      <div class="card">
+        <b>Romero, A.</b> & Gleeson, S. <b>“Latinx Labor Rights and Workplace Enforcement.”</b> Contribution to the 50th Anniversary Special Issue on Latinx Labor Studies, <i>Aztlán: A Journal of Chicano Studies</i>. (Forthcoming, Fall 2026)
+      </div>
+
+      <div class="card">
+        <b>Romero, A.</b> & Gleeson, S. <b>“Cities, Migrants, and Labor Conditions.”</b> Chapter in preparation for the <i>Handbook on Cities and Migration</i> (Edward Elgar Publishing). (Forthcoming, Fall 2026)
+      </div>
+    </div>
+  </section>
+
+  <section id="articles">
+    <h2>Forthcoming Articles</h2>
+
+    <div class="year-section">
+      <div class="year-heading">2025</div>
+
+      <div class="card">
+        Simmons, M., Hamilton, A., Davis, A., Dyer, W., Philippe, C.J., Heady, J., Houck, P., <b>Romero, A.</b>, Cordova, R.A., Hendrix, D., Ortiz, P., Moeller, S., & Tang, K. <b>“A Meeting of Two Worlds—Oral History and Linguistics: Partnerships, Perplexities, and Potentialities in Researching African American Language.”</b> <i>The Oral History Review</i>. (Forthcoming)
+      </div>
+    </div>
+  </section>
+
   <footer>
-    <p>&copy; 2025 Adolfho Romero · All rights reserved</p>
+    © 2025 Adolfho Romero · adolfhoromero@gmail.com
   </footer>
 
 </body>
