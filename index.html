@@ -61,6 +61,33 @@
       background-size: cover;
       background-position: center 44%;
       background-repeat: no-repeat;
+      position: relative;
+    }
+
+    .tagline {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px 20px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2em;
+      color: #fff;
+      animation: fadeInUp 1.8s ease forwards;
+      opacity: 0;
+      border-radius: 8px;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        transform: translateX(-50%) translateY(20px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+      }
     }
 
     .section {
@@ -70,9 +97,18 @@
     }
 
     .section h2 {
-      font-size: 1.8em;
-      margin-bottom: 30px;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2em;
+      margin-bottom: 10px;
       text-align: center;
+    }
+
+    .section hr {
+      width: 80px;
+      height: 3px;
+      background-color: var(--accent);
+      border: none;
+      margin: 10px auto 40px;
     }
 
     .about-container {
@@ -175,6 +211,11 @@
       .social-icons {
         justify-content: center;
       }
+
+      .tagline {
+        font-size: 1em;
+        padding: 8px 16px;
+      }
     }
   </style>
 </head>
@@ -190,12 +231,15 @@
     </nav>
   </header>
 
-  <!-- Banner -->
-  <div class="banner"></div>
+  <!-- Banner with Tagline -->
+  <div class="banner">
+    <div class="tagline">Worker dignity. Collective power. Migrant justice.</div>
+  </div>
 
   <!-- About Section -->
   <div class="section">
-    <h2>About Me</h2>
+    <h2>My Work, My Roots</h2>
+    <hr>
     <div class="about-container">
       <div class="about-text">
         <p>
