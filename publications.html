@@ -1,10 +1,3 @@
-Here is your **fully updated HTML code** with the working CV link pointing to `adolfhoromerocv.pdf` — verified from your GitHub repo structure:
-
----
-
-### ✅ Full Code (with functional CV link):
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,11 +6,11 @@ Here is your **fully updated HTML code** with the working CV link pointing to `a
   <title>Adolfho Romero</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     :root {
-      --accent: #00bfff;
+      --accent: #89CFF0;
       --bg: #0f0f0f;
       --bg-alt: #1b1b1b;
       --text: #f5f5f5;
@@ -41,33 +34,52 @@ Here is your **fully updated HTML code** with the working CV link pointing to `a
 
     header {
       text-align: center;
-      padding: 2rem 1rem 0;
+      padding: 2rem 1rem 0.5rem;
       font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
+      font-size: 2.7rem;
+      font-weight: 600;
       color: var(--text);
+      letter-spacing: -0.5px;
     }
 
     nav {
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      padding: 1rem;
-      background-color: #121212;
-      border-bottom: 1px solid #2a2a2a;
+      background-color: #141414;
+      padding: 1rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
     }
 
     nav a {
+      position: relative;
+      margin: 0 1.5rem;
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
       color: var(--text);
       text-decoration: none;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
       transition: color 0.3s ease;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: var(--accent);
+      transition: width 0.3s ease-in-out;
     }
 
     nav a:hover {
       color: var(--accent);
+    }
+
+    nav a:hover::after {
+      width: 100%;
     }
 
     section {
@@ -142,6 +154,18 @@ Here is your **fully updated HTML code** with the working CV link pointing to `a
       font-size: 0.9rem;
       color: #aaa;
       border-top: 1px solid #2a2a2a;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 0.5rem;
+      }
+
+      nav a {
+        margin: 0.25rem 0;
+      }
     }
   </style>
 </head>
@@ -225,14 +249,3 @@ Here is your **fully updated HTML code** with the working CV link pointing to `a
 
 </body>
 </html>
-```
-
----
-
-Let me know if you'd like:
-
-* A download icon next to CV
-* A preview/embed of the CV on a separate page
-* A dark mode toggle or fade-in animation for nav links
-
-I'm happy to refine it further.
