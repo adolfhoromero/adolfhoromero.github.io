@@ -4,183 +4,153 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Adolfho Romero</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: linear-gradient(135deg, #0f0f0f, #2c2c2c);
-      color: #f5f5f5;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: white;
     }
 
     header {
-      padding: 20px 40px 10px;
-      background-color: #111;
-      z-index: 10;
-      position: relative;
+      text-align: center;
+      background-color: #000;
+      padding: 20px 0;
     }
 
-    .site-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8em;
+    header h1 {
       margin: 0;
-      color: #ffffff;
+      font-size: 2.8rem;
     }
 
     nav {
-      margin-top: 12px;
+      margin-top: 10px;
     }
 
     nav a {
       text-decoration: none;
-      color: #89CFF0;
-      margin-right: 15px;
-      padding: 8px 14px;
-      border: 1px solid #89CFF0;
-      border-radius: 6px;
-      transition: all 0.3s ease;
+      color: #00bfff;
+      border: 2px solid #00bfff;
+      padding: 8px 16px;
+      border-radius: 8px;
+      margin: 0 5px;
       font-weight: bold;
+      display: inline-block;
     }
 
     nav a:hover {
-      background-color: #89CFF0;
-      color: #0f0f0f;
+      background-color: #00bfff;
+      color: #000;
     }
 
     .banner {
       width: 100%;
-      height: 260px;
-      background-image: url('cornellcampus.jpg');
-      background-size: 115%;
-      background-position: center 42%;
-      background-repeat: no-repeat;
-      background-attachment: scroll;
+      height: 300px;
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url("cornellcampus.jpg");
+      background-size: cover;
+      background-position: center;
     }
 
-    .fade {
-      height: 40px;
-      background: linear-gradient(to bottom, rgba(15,15,15,0), #0f0f0f);
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 20px;
     }
 
-    .section h2 {
-      font-size: 1.8em;
-      margin: 40px 40px 20px;
+    .about-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
     }
 
-    .about-container {
+    .about-grid {
       display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      gap: 40px;
       flex-wrap: wrap;
-      padding: 0 40px 60px;
+      gap: 30px;
+      align-items: flex-start;
     }
 
-    .about-text {
-      flex: 2;
-      min-width: 300px;
-    }
-
-    .about-image {
-      flex: 1;
-      max-width: 380px;
-      margin-top: 10px;
-      order: -1;
-    }
-
-    .about-image img {
-      width: 100%;
+    .about-grid img {
       border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+      width: 250px;
+      max-width: 100%;
     }
 
-    p {
-      line-height: 1.6;
-      max-width: 750px;
+    .bio {
+      flex: 1;
+      font-size: 1.12rem;
+      line-height: 1.8;
     }
 
     .contact-info {
-      margin-top: 1.5em;
+      margin-top: 15px;
+      font-size: 1rem;
     }
 
-    .contact-info p {
-      margin: 0.5em 0;
+    .contact-info a {
+      color: #00bfff;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
     }
 
     .social-icons {
-      display: flex;
-      align-items: center;
-      gap: 18px;
       margin-top: 10px;
     }
 
     .social-icons a {
-      display: inline-block;
-      width: 28px;
-      height: 28px;
-      transition: transform 0.2s ease;
+      margin-right: 15px;
+      color: white;
+      font-size: 1.5rem;
     }
 
     .social-icons a:hover {
-      transform: scale(1.2);
+      color: #00bfff;
     }
 
-    .social-icons img {
-      width: 100%;
-      height: auto;
-      filter: brightness(0) invert(1);
+    @media (max-width: 768px) {
+      .about-grid {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header with Name + Nav -->
   <header>
-    <h1 class="site-title">Adolfho Romero</h1>
+    <h1>Adolfho Romero</h1>
     <nav>
-      <a href="adolfhoromerocv.pdf" target="_blank">CV</a>
+      <a href="#">CV</a>
       <a href="#">Publications</a>
       <a href="#">Contact</a>
     </nav>
   </header>
 
-  <!-- Banner with Cornell Image -->
   <div class="banner"></div>
 
-  <!-- Soft Fade -->
-  <div class="fade"></div>
-
-  <!-- About Section -->
-  <div class="section">
-    <h2>About Me</h2>
-    <div class="about-container">
-      <div class="about-image">
-        <img src="adolfhoromero.jpeg" alt="Adolfho Romero" />
-      </div>
-      <div class="about-text">
-        <p>
-          I am a Ph.D. student in the School of Industrial and Labor Relations at Cornell University, where I study how labor organizations, worker centers, and migrant-led movements build power and advance dignity in precarious workplaces.
-        </p>
-        <p>
-          I use qualitative methods, including ethnographic observation and interviews in Spanish and English, to understand how workers—especially immigrants and people of color—organize across difference. My work is grounded in community-engaged research and draws from labor studies, migration studies, and critical theory.
-        </p>
-        <p>
-          Before Cornell, I served as Assistant Director of the Samuel Proctor Oral History Program (SPOHP) at the University of Florida, where I led multilingual oral history projects documenting the experiences of Latinx, African American, and Indigenous communities across the U.S. South. I also worked with farmworker advocacy organizations and hold a background in Latin American Studies.
-        </p>
-        <div class="contact-info">
-          <p>📧 <strong>adolfhoromero@gmail.com</strong></p>
-          <p>🧬 ORCID: <a href="https://orcid.org/0009-0000-2505-0192" target="_blank" style="color: #89CFF0;">https://orcid.org/0009-0000-2505-0192</a></p>
+  <div class="container">
+    <section class="about-section">
+      <h2>About Me</h2>
+      <div class="about-grid">
+        <img src="adolfho.jpg" alt="Adolfho Romero">
+        <div class="bio">
+          <p>I am a Ph.D. student in the School of Industrial and Labor Relations at Cornell University, where I study how labor organizations, worker centers, and migrant-led movements build power and advance dignity in precarious workplaces.</p>
+          <p>I use qualitative methods, including ethnographic observation and interviews in Spanish and English, to understand how workers—especially immigrants and people of color—organize across difference. My work is grounded in community-engaged research and draws from labor studies, migration studies, and critical theory.</p>
+          <p>Before Cornell, I served as Assistant Director of the Samuel Proctor Oral History Program (SPOHP) at the University of Florida, where I led multilingual oral history projects documenting the experiences of Latinx, African American, and Indigenous communities across the U.S. South. I also worked with farmworker advocacy organizations and hold a background in Latin American Studies.</p>
+          <div class="contact-info">
+            <p>📧 adolfhoromero@gmail.com</p>
+            <p>🔗 ORCID: <a href="https://orcid.org/0009-0000-2505-0192" target="_blank">https://orcid.org/0009-0000-2505-0192</a></p>
+          </div>
           <div class="social-icons">
-            <a href="https://www.linkedin.com/in/adolfho" target="_blank">
-              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
-            </a>
-            <a href="https://www.facebook.com/adolfo.romero.902879" target="_blank">
-              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook">
-            </a>
+            <a href="https://www.linkedin.com/in/adolfho" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/adolfo.romero.902879" target="_blank"><i class="fab fa-facebook-square"></i></a>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 
 </body>
