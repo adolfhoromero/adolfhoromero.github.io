@@ -6,7 +6,7 @@
   <title>Adolfho Romero</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     :root {
@@ -25,17 +25,22 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       background: linear-gradient(180deg, var(--bg), var(--bg-alt));
       color: var(--text);
       line-height: 1.6;
       scroll-behavior: smooth;
-      animation: fadeIn 0.8s ease-in;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
     }
 
     header {
@@ -44,8 +49,9 @@
       font-family: 'Playfair Display', serif;
       font-size: 2.7rem;
       font-weight: 600;
-      color: var(--text);
-      letter-spacing: -0.5px;
+      background: linear-gradient(90deg, #89CFF0, #ffffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     nav {
@@ -83,7 +89,7 @@
       left: 0;
       width: 0%;
       height: 2px;
-      background-color: var(--accent);
+      background: linear-gradient(90deg, var(--accent), white);
       transition: width 0.3s ease-in-out;
     }
 
@@ -139,11 +145,23 @@
       border-left: 4px solid var(--accent);
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.4);
-      transition: transform 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
     }
 
     .card:hover {
       transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(137, 207, 240, 0.25);
+    }
+
+    .card img {
+      width: 100px;
+      height: auto;
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      flex-shrink: 0;
     }
 
     .card b {
@@ -184,101 +202,31 @@
 </head>
 <body>
 
-  <header>Adolfho Romero</header>
+  <header class="fade-in">Adolfho Romero</header>
 
-  <nav>
+  <nav class="fade-in">
     <a href="index.html"><i class="fas fa-house-user"></i> Home</a>
     <a href="adolfhoromerocv.pdf" target="_blank"><i class="fas fa-id-badge"></i> CV</a>
     <a href="publications.html"><i class="fas fa-feather-alt"></i> Publications</a>
   </nav>
 
-  <section id="manuscripts">
-    <h2>Manuscripts in Preparation</h2>
+  <!-- Continue your section content here (e.g., manuscripts, articles, acknowledgments) -->
 
-    <div class="year-section">
-      <div class="year-heading">2026</div>
-
-      <div class="card">
-        <b>Romero, A.</b> & Gleeson, S. <b>“Latinx Labor Rights and Workplace Enforcement.”</b> Contribution to the 50th Anniversary Special Issue on Latinx Labor Studies, <i>Aztlán: A Journal of Chicano Studies</i>. (Forthcoming, Fall 2026)
-      </div>
-
-      <div class="card">
-        <b>Romero, A.</b> & Gleeson, S. <b>“Cities, Migrants, and Labor Conditions.”</b> Chapter in preparation for the <i>Handbook on Cities and Migration</i> (Edward Elgar Publishing). (Forthcoming, Fall 2026)
-      </div>
-    </div>
-  </section>
-
-  <section id="articles">
-    <h2>Forthcoming Articles</h2>
-
-    <div class="year-section">
-      <div class="year-heading">2025</div>
-
-      <div class="card">
-        Simmons, M., Hamilton, A., Davis, A., Dyer, W., Philippe, C.J., Heady, J., Houck, P., <b>Romero, A.</b>, Cordova, R.A., Hendrix, D., Ortiz, P., Moeller, S., & Tang, K. <b>“A Meeting of Two Worlds—Oral History and Linguistics: Partnerships, Perplexities, and Potentialities in Researching African American Language.”</b> <i>The Oral History Review</i>. (Forthcoming)
-      </div>
-    </div>
-  </section>
-
-  <section id="acknowledged">
-    <h2>Acknowledged Contributions in Published Works</h2>
-
-    <div class="year-section">
-      <div class="year-heading">2025</div>
-
-      <div class="card" style="display: flex; align-items: flex-start; gap: 1rem;">
-        <a href="https://doi.org/10.1177/0160449X251342375" target="_blank">
-          <img src="labor.jpeg" alt="Labor Studies Journal Cover" style="width: 100px; height: auto; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.3); flex-shrink: 0;">
-        </a>
-        <div>
-          Ortiz, P. (2025). <i>Latino workers, the 2024 presidential election, and the future of the labor movement.</i> <i>Labor Studies Journal, 50(2)</i>, 153–165.
-          <a href="https://doi.org/10.1177/0160449X251342375" target="_blank">https://doi.org/10.1177/0160449X251342375</a>
-        </div>
-      </div>
-
-      <div class="card" style="display: flex; align-items: flex-start; gap: 1rem;">
-        <a href="https://doi.org/10.48807/2025.0.0134" target="_blank">
-          <img src="decolonizing.jpeg" alt="Ground Works Journal Cover" style="width: 100px; height: auto; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.3); flex-shrink: 0;">
-        </a>
-        <div>
-          Concha-Holmes, A. D., et al. (2025). <i>Decolonizing representations to evoke the complexity of Black lives in Florida.</i> <i>Ground Works Journal</i>.
-          <a href="https://doi.org/10.48807/2025.0.0134" target="_blank">https://doi.org/10.48807/2025.0.0134</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="year-section">
-      <div class="year-heading">2023</div>
-
-      <div class="card" style="display: flex; align-items: flex-start; gap: 1rem;">
-        <a href="https://doi.org/10.32473/sourceuf.5.1.132681" target="_blank">
-          <img src="nativeamerican.jpeg" alt="SOURCE Journal Cover" style="width: 100px; height: auto; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.3); flex-shrink: 0;">
-        </a>
-        <div>
-          Mattson, I., Mahar, G., & Durant, F. (2023). <i>Revitalizing Native American Oral Histories at the University of Florida.</i> <i>SOURCE: The Magazine of the University of Florida George A. Smathers Libraries</i>.
-          <a href="https://doi.org/10.32473/sourceuf.5.1.132681" target="_blank">https://doi.org/10.32473/sourceuf.5.1.132681</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="year-section">
-      <div class="year-heading">2022</div>
-
-      <div class="card" style="display: flex; align-items: flex-start; gap: 1rem;">
-        <a href="https://doi.org/10.1007/s10903-021-01278-5" target="_blank">
-          <img src="journalofimmigrant.jpeg" alt="Journal of Immigrant and Minority Health Cover" style="width: 100px; height: auto; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.3); flex-shrink: 0;">
-        </a>
-        <div>
-          Anastario, M., Rodriguez, A. M., Xiuhtecutli, N., & Wagner, E. (2022). <i>Characterization of lifetime agrichemical exposure sequences relative to international migration in foreign born Latinx agricultural workers living in South Florida.</i> <i>Journal of Immigrant and Minority Health, 24(5)</i>, 1145–1153.
-          <a href="https://doi.org/10.1007/s10903-021-01278-5" target="_blank">https://doi.org/10.1007/s10903-021-01278-5</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
+  <footer class="fade-in">
     © 2025 Adolfho Romero · adolfhoromero@gmail.com
   </footer>
 
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    faders.forEach(fader => observer.observe(fader));
+  </script>
 </body>
 </html>
