@@ -36,7 +36,6 @@
     }
     a { color: var(--accent); text-decoration: none; transition: color 0.18s; }
     a:hover, a:focus { color: var(--accent-gold); outline: none; }
-
     header {
       background-color: var(--nav-bg);
       color: var(--nav-text);
@@ -59,7 +58,6 @@
       font-weight: 600;
       letter-spacing: 0.06em;
     }
-
     nav.main-nav {
       background: var(--nav-bg);
       box-shadow: inset 0 -1px 0 #3a496f;
@@ -111,8 +109,6 @@
       width: calc(100% - 36px);
       opacity: 0.82;
     }
-
-    /* HERO section */
     .hero {
       width: 100%;
       background:
@@ -128,9 +124,9 @@
       width: 200px;
       height: 200px;
       object-fit: cover;
-      border-radius: 55% 47% 60% 50%/50% 54% 46% 50%; /* more natural */
+      border-radius: 50%;
       box-shadow: 0 0 0 4px #fff, 0 17px 44px #22304a12;
-      margin: 0 auto 1.2rem;
+      margin: 0 auto 1.1rem;
       background: #f5f8fc;
       display: block;
     }
@@ -174,8 +170,6 @@
       font-style: italic;
       box-shadow: 0 1.5px 8px #f5e9dd18;
     }
-
-    /* Section Titles */
     .section {
       max-width: var(--max-width);
       margin: 2.3rem auto 4rem;
@@ -199,7 +193,6 @@
       border-radius: 4px;
       opacity: 0.9;
     }
-
     .about-container {
       display: flex;
       flex-wrap: wrap;
@@ -235,14 +228,17 @@
       align-items: flex-start;
     }
     .about-image img {
-      width: 100%;
-      max-width: 320px;
-      border-radius: 12px;
-      box-shadow: 0 7px 32px #29539b22;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
       object-fit: cover;
+      box-shadow: 0 7px 32px #29539b22;
+      display: block;
+      background: #fff;
     }
-
-    /* Social media updated style */
+    @media (max-width: 500px) {
+      .about-image img { width: 130px; height: 130px;}
+    }
     .social-icons {
       display: flex;
       gap: 16px;
@@ -273,8 +269,6 @@
       z-index: 2;
     }
     .social-link svg { width: 22px; height: 22px; display: block;}
-
-    /* Footer */
     footer {
       text-align: center;
       background: var(--nav-bg);
@@ -286,8 +280,6 @@
       font-weight: 500;
     }
     footer a { color: var(--accent); font-weight: 600; }
-
-    /* Scroll to top */
     .scroll-top-btn {
       position: fixed;
       bottom: 34px;
@@ -372,7 +364,7 @@
         </section>
       </article>
       <aside class="about-image">
-        <img src="me.jpg" alt="Adolfho Romero, field portrait" />
+        <img src="me.jpeg" alt="Adolfho Romero, field portrait" />
       </aside>
     </div>
     <div style="max-width:650px;margin:36px auto 0;padding:1rem;background:#f8f8ea;border-radius:7px;border-left:4px solid #bc9f5b2c;color:#775f29;font-size:1.04rem;box-shadow:0 2px 12px #d6c29b10;">
@@ -380,7 +372,6 @@
       Every project is guided by a commitment to participant dignity, privacy, and shared agency. My work follows IRB-approved protocols, oral consent, and collaborative benefit for all involved.
     </div>
   </section>
-
   <button
     class="scroll-top-btn"
     title="Scroll back to top"
@@ -389,7 +380,6 @@
   >
     &#8593;
   </button>
-
   <footer>
     &copy; 2025 Adolfho Romero &middot; <a href="mailto:adolfhoromero@gmail.com">adolfhoromero@gmail.com</a>
   </footer>
