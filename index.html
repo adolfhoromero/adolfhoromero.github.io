@@ -6,7 +6,7 @@
   <title>Adolfho Romero</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     :root {
       --background-top: #f7f8fa;
@@ -17,12 +17,13 @@
       --accent-gold: #bc9f5b;
       --card-bg: #fff;
       --card-shadow: 0 4px 36px #2e3a5022;
-      --text-main: #313b53;
-      --heading: #25314a;
+      --text-main: #232d41;
+      --heading: #212c3e;
       --max-width: 1100px;
       --border-accent: #29539b;
       --scroll-btn-bg: var(--accent);
       --scroll-btn-hover-bg: #406eb5;
+      --nav-font: 'Playfair Display', serif;
     }
     * { box-sizing: border-box; }
     body {
@@ -65,6 +66,7 @@
       position: sticky;
       top: 0;
       z-index: 50;
+      font-family: var(--nav-font);
     }
     nav.main-nav ul {
       list-style: none;
@@ -72,105 +74,108 @@
       padding: 13px 0;
       display: flex;
       justify-content: center;
-      gap: 34px;
+      gap: 48px;
       max-width: var(--max-width);
     }
     nav.main-nav a {
-      font-weight: 600;
-      font-size: 1rem;
+      font-family: var(--nav-font);
+      font-weight: 700;
+      font-size: 1.16rem;
       text-transform: uppercase;
+      letter-spacing: 0.10em;
       color: var(--nav-text);
-      letter-spacing: 0.065em;
-      padding: 10px 18px;
-      border-radius: 6px;
+      padding: 10px 22px;
+      border-radius: 7px;
       position: relative;
+      background: none;
+      transition: color 0.22s, background 0.18s;
     }
     nav.main-nav a::after {
       content: "";
       position: absolute;
-      left: 0; bottom: -5px;
-      width: 0%; height: 4px;
+      left: 18px;
+      right: 18px;
+      bottom: 6px;
+      height: 3.5px;
       background: linear-gradient(90deg, var(--accent), var(--accent-gold) 85%);
-      border-radius: 3px;
-      transition: width 0.3s cubic-bezier(.55,.05,.67,.92);
+      border-radius: 2px;
+      opacity: 0;
+      transition: opacity 0.22s, width 0.26s;
+      width: 0%;
     }
-    nav.main-nav a:hover, nav.main-nav a:focus { color: var(--accent-gold); }
-    nav.main-nav a:hover::after, nav.main-nav a:focus::after { width: 100%; }
+    nav.main-nav a:hover, nav.main-nav a:focus {
+      color: var(--accent-gold);
+      background: #25314aa8;
+    }
+    nav.main-nav a:hover::after, nav.main-nav a:focus::after {
+      width: calc(100% - 36px);
+      opacity: 0.82;
+    }
 
-    /* HERO - community-centric */
+    /* HERO section */
     .hero {
       width: 100%;
       background:
-        linear-gradient(120deg, #f7f8fabd 65%, #e5e8efdc 100%),
+        linear-gradient(120deg, #f7f8fac9 65%, #e5e8efd6 100%),
         url('cornellcampus.jpg') center 44%/cover no-repeat;
       text-align: center;
-      box-shadow: 0 2px 40px #23406512;
-      padding: 32px 10px 22px;
+      box-shadow: 0 2px 40px #23406518;
+      padding: 38px 10px 22px;
       border-bottom: 5px solid var(--accent);
       position: relative;
     }
     .hero-photo {
-      width: 170px;
-      height: 170px;
+      width: 200px;
+      height: 200px;
       object-fit: cover;
-      border-radius: 50%;
-      box-shadow: 0 0 0 7px #fff, 0 10px 32px #22407715;
-      margin: 0 auto 1.3rem;
+      border-radius: 55% 47% 60% 50%/50% 54% 46% 50%; /* more natural */
+      box-shadow: 0 0 0 4px #fff, 0 17px 44px #22304a12;
+      margin: 0 auto 1.2rem;
       background: #f5f8fc;
       display: block;
     }
+    @media (max-width: 500px) {
+      .hero-photo { width: 130px; height: 130px;}
+    }
     .hero h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.45rem;
+      font-size: 2.5rem;
       color: var(--heading);
-      margin: 0.1em 0 0.32em;
+      margin: 0.15em 0 0.32em;
       font-weight: 700;
       letter-spacing: -1px;
-      line-height: 1.1;
+      line-height: 1.07;
     }
     .hero h2 {
-      font-size: 1.21rem;
+      font-size: 1.18rem;
       color: var(--accent);
-      font-weight: 600;
-      margin: 0;
       font-family: 'Inter', sans-serif;
-      letter-spacing: .04em;
+      font-weight: 600;
+      letter-spacing: .045em;
+      margin-top: 7px;
+      margin-bottom: 6px;
     }
     .hero-mission {
+      margin: 16px auto 8px;
+      color: #232d41;
+      font-size: 1.16rem;
+      font-weight: 600;
       font-style: italic;
-      font-size: 1.09rem;
-      margin: 25px 0 7px;
-      color: #29539ba1;
-      font-weight: 500;
     }
     .hero-quote {
-      margin: 17px auto 0;
-      font-size: 1.05rem;
-      color: #787a8b;
+      margin: 20px auto 0;
+      font-size: 1.09rem;
+      color: #495168;
       max-width: 410px;
-      background: #fff8e55c;
+      background: #fffdec;
       border-left: 4px solid var(--accent-gold);
-      padding: 9px 20px 9px;
-      border-radius: 5px;
+      padding: 11px 21px 11px;
+      border-radius: 6px;
       font-style: italic;
+      box-shadow: 0 1.5px 8px #f5e9dd18;
     }
 
-    /* MISSION VALUES PANEL */
-    .mission-block {
-      background: var(--card-bg);
-      border-radius: 14px;
-      max-width: 610px;
-      margin: 38px auto 22px;
-      box-shadow: var(--card-shadow);
-      padding: 2rem 1.5rem 1.3rem;
-      border-left: 5px solid var(--accent);
-      font-size: 1.13rem;
-      color: var(--text-main);
-      font-weight: 500;
-      text-align: center;
-    }
-
-    /* About */
+    /* Section Titles */
     .section {
       max-width: var(--max-width);
       margin: 2.3rem auto 4rem;
@@ -179,24 +184,26 @@
     .section h2 {
       font-family: 'Playfair Display', serif;
       font-weight: 700;
-      font-size: 2.14rem;
+      font-size: 2.18rem;
       color: var(--heading);
       text-align: center;
+      letter-spacing: -0.5px;
       margin-bottom: 1.75rem;
       position: relative;
     }
     .section h2::after {
       content: "";
-      display: block; width: 80px; height: 5px;
+      display: block; width: 84px; height: 5px;
       background: linear-gradient(90deg, var(--accent), var(--accent-gold) 85%);
-      margin: 13px auto 0;
+      margin: 14px auto 0;
       border-radius: 4px;
       opacity: 0.9;
     }
+
     .about-container {
       display: flex;
       flex-wrap: wrap;
-      gap: 42px;
+      gap: 46px;
       justify-content: center;
       align-items: flex-start;
       user-select: text;
@@ -205,20 +212,37 @@
       flex: 2;
       max-width: 670px;
       min-width: 300px;
-      font-size: 1.08rem;
-      line-height: 1.7;
+      font-size: 1.16rem;
+      line-height: 1.73;
       color: var(--text-main);
       text-align: left;
+      font-weight: 450;
     }
-    .about-text p { margin-bottom: 1.5rem; }
+    .about-text p { margin-bottom: 1.45rem; }
     .about-text hr {
       border: none;
       border-top: 1px solid #d1d6df;
       margin: 35px 0 25px;
       opacity: 0.33;
     }
+    .about-image {
+      flex: 1;
+      max-width: 360px;
+      min-width: 220px;
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .about-image img {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 12px;
+      box-shadow: 0 7px 32px #29539b22;
+      object-fit: cover;
+    }
 
-    /* Custom Social Media Buttons/SVGs */
+    /* Social media updated style */
     .social-icons {
       display: flex;
       gap: 16px;
@@ -232,9 +256,9 @@
       width: 40px; height: 40px;
       border-radius: 50%;
       background: #ffffff;
-      box-shadow: 0 2px 9px rgba(41,83,155,.06), 0 1.5px 8px #18325208;
+      box-shadow: 0 2px 9px #3c406b0f, 0 1.5px 8px #18325208;
       transition: transform 0.16s, box-shadow 0.17s;
-      border: 1.8px solid #e1e6f1;
+      border: 1.5px solid #e4e6ec;
       outline: none;
       position: relative;
     }
@@ -243,30 +267,12 @@
       outline-offset: 2px;
     }
     .social-link:hover {
-      transform: scale(1.17);
-      box-shadow: 0 6px 24px #29539b2a, 0 2.5px 10px #18426312;
+      transform: scale(1.18);
+      box-shadow: 0 7px 27px #29539b2a, 0 2.5px 11px #18426317;
       border-color: var(--accent-gold);
       z-index: 2;
     }
-    .social-link svg {
-      width: 22px; height: 22px; display: block;
-    }
-
-    .about-image {
-      flex: 1;
-      max-width: 360px;
-      min-width: 220px;
-      margin-top: 10px;
-      display: flex;
-      justify-content: center;
-    }
-    .about-image img {
-      width: 100%;
-      max-width: 320px;
-      border-radius: 14px;
-      box-shadow: 0 7px 28px rgba(41, 83, 155, 0.18);
-      object-fit: cover;
-    }
+    .social-link svg { width: 22px; height: 22px; display: block;}
 
     /* Footer */
     footer {
@@ -301,9 +307,10 @@
     .scroll-top-btn:hover, .scroll-top-btn:focus { background: var(--scroll-btn-hover-bg);}
     @media (max-width: 820px) {
       .about-container { flex-direction: column; align-items: center; text-align: center; }
-      .about-text { max-width: 90%; }
+      .about-text { max-width: 95%; }
       .about-image { order: -1; margin-bottom: 18px; }
-      nav.main-nav ul { flex-direction: column; gap: 12px; padding: 11px 0 13px; }
+      nav.main-nav ul { flex-direction: column; gap: 16px; padding: 11px 0 13px; }
+      nav.main-nav a { font-size: 1.08rem; }
     }
   </style>
 </head>
@@ -322,7 +329,7 @@
   </nav>
 
   <section class="hero" aria-label="Academic Hero">
-    <img src="adolfhoromero.jpeg" alt="Adolfho Romero, smiling in the field" class="hero-photo" />
+    <img src="adolfhoromero.jpeg" alt="Adolfho Romero professional portrait" class="hero-photo" />
     <h1>Adolfho Romero</h1>
     <h2>PhD Student • Industrial & Labor Relations • Cornell University</h2>
     <div class="hero-mission" aria-live="polite">
@@ -330,13 +337,9 @@
       through research, listening, and collective action.
     </div>
     <blockquote class="hero-quote">
-      “I am grateful to work alongside community organizations, mentors, and workers in the ongoing struggle for dignity and justice. My role is grounded in partnership, respect, and ethical research.”<br />
+      “I am grateful to work alongside community organizations, mentors, and workers in the ongoing struggle for dignity and justice. My role is grounded in partnership, respect, and ethical research.”
     </blockquote>
   </section>
-
-  <div class="mission-block" style="margin-bottom:28px;">
-    Guided by my mother’s resilience and the lessons of my community, I aim to foster inclusive, community-engaged scholarship that supports dignity, leadership, and collective voice for workers and migrants.
-  </div>
 
   <section class="section" aria-labelledby="about-title">
     <h2 id="about-title">About My Journey</h2>
@@ -356,26 +359,20 @@
           <p><strong>Email:</strong> <a href="mailto:adolfhoromero@gmail.com">adolfhoromero@gmail.com</a></p>
           <p><strong>ORCID:</strong> <a href="https://orcid.org/0009-0000-2505-0192" target="_blank" rel="noopener">https://orcid.org/0009-0000-2505-0192</a></p>
           <div class="social-icons" aria-label="Social media profiles">
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/adolfho" 
-               class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/adolfho" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#29539B"/><path d="M7.75 8.5a1.25 1.25 0 1 1 0-2.496 1.25 1.25 0 0 1 0 2.496zm.13 2.17h-2.03V18h2.03V10.67zm3.12 0H9.86V18h2.04v-3.58c0-.93.68-1.48 1.45-1.48.75 0 1.11.55 1.11 1.36V18h2.03v-3.84c0-1.93-1.03-2.83-2.41-2.83-1.12 0-1.61.61-1.89 1.04V10.67z" fill="#fff"/></svg>
             </a>
-            <!-- Facebook -->
-            <a href="https://www.facebook.com/adolfo.romero.902879/"
-               class="social-link" target="_blank" rel="noopener" aria-label="Facebook">
+            <a href="https://www.facebook.com/adolfo.romero.902879/" class="social-link" target="_blank" rel="noopener" aria-label="Facebook">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#29539B"/><path d="M15.77 8.444h-1.676V7.498c0-.363.243-.448.414-.448h1.258V5.344L14.093 5.2c-1.566 0-1.922 1.176-1.922 1.922v1.322h-1.12v2.08h1.12V18.2h2.08v-5.479h1.448l.224-2.082z" fill="#fff"/></svg>
             </a>
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/ithacalyf/"
-               class="social-link" target="_blank" rel="noopener" aria-label="Instagram">
+            <a href="https://www.instagram.com/ithacalyf/" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#bc9f5b"/><path d="M12 8.6a3.4 3.4 0 1 0 0 6.8 3.4 3.4 0 0 0 0-6.8zm0 5.6a2.2 2.2 0 1 1 0-4.4 2.2 2.2 0 0 1 0 4.4zm4.2-3.8a.8.8 0 1 1-1.6 0 .8.8 0 0 1 1.6 0zm2.16.8c-.03-.66-.17-1.25-.5-1.8a3.5 3.5 0 0 0-.8-1.1 3.5 3.5 0 0 0-1.1-.8c-.55-.33-1.14-.48-1.8-.5C13.2 6 12.8 6 12 6s-1.2 0-1.8.02c-.66.03-1.25.17-1.8.5a3.5 3.5 0 0 0-1.1.8c-.33.55-.48 1.14-.5 1.8C6 10.8 6 11.2 6 12c0 .8 0 1.2.02 1.8.03.66.17 1.25.5 1.8a3.5 3.5 0 0 0 .8 1.1c.55.33 1.14.48 1.8.5.6.02 1 .02 1.8.02.8 0 1.2 0 1.8-.02.66-.03 1.25-.17 1.8-.5a3.5 3.5 0 0 0 1.1-.8c.33-.55.48-1.14.5-1.8.02-.6.02-1 .02-1.8s0-1.2-.02-1.8zm-1.56 5.06c-.41.61-1.01 1.21-1.62 1.62-.48.32-1.02.5-1.62.52C12.8 18 12.4 18 12 18s-.8 0-1.19-.02c-.6-.02-1.14-.2-1.62-.52a5.75 5.75 0 0 1-1.62-1.62c-.32-.48-.5-1.02-.52-1.62C6 13.2 6 12.8 6 12s0-.8.02-1.19c.02-.6.2-1.14.52-1.62a5.75 5.75 0 0 1 1.62-1.62c.48-.32 1.02-.5 1.62-.52C11.2 6 11.6 6 12 6s.8 0 1.19.02c.6.02 1.14.2 1.62.52.61.41 1.21 1.01 1.62 1.62.32.48.5 1.02.52 1.62C18 10.8 18 11.2 18 12s0 .8-.02 1.19c-.02.6-.2 1.14-.52 1.62z" fill="#fff"/></svg>
             </a>
           </div>
         </section>
       </article>
       <aside class="about-image">
-        <img src="adolfhoromero.jpeg" alt="Portrait of Adolfho Romero" />
+        <img src="me.jpg" alt="Adolfho Romero, field portrait" />
       </aside>
     </div>
     <div style="max-width:650px;margin:36px auto 0;padding:1rem;background:#f8f8ea;border-radius:7px;border-left:4px solid #bc9f5b2c;color:#775f29;font-size:1.04rem;box-shadow:0 2px 12px #d6c29b10;">
