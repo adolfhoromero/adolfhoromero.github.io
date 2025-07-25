@@ -1,38 +1,43 @@
+Here is the full updated `publications.html` code with a clean, elegant academic design — no emojis, no unnecessary effects, but more refined and professional than before:
+
+---
+
+### ✅ `publications.html` (Full Page)
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Publications | Adolfho Romero</title>
+  <title>Adolfho Romero | Publications</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --accent: #89CFF0;
       --bg: #0f0f0f;
       --text: #f5f5f5;
-      --container-width: 1100px;
+      --container-width: 960px;
     }
 
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
-      background: linear-gradient(135deg, var(--bg), #2c2c2c);
+      background: linear-gradient(135deg, var(--bg), #1c1c1c);
       color: var(--text);
-      scroll-behavior: smooth;
     }
 
     header {
-      padding: 30px 0 5px;
       background-color: #0f0f0f;
+      padding: 30px 0 10px;
       text-align: center;
       border-bottom: 1px solid #333;
     }
 
     .site-title {
       font-family: 'Playfair Display', serif;
-      font-size: 2.8em;
-      margin: 0 0 10px;
-      color: #ffffff;
+      font-size: 2.6em;
+      margin: 0;
     }
 
     .main-nav {
@@ -54,15 +59,15 @@
     }
 
     .main-nav a {
+      color: var(--accent);
       text-transform: uppercase;
       letter-spacing: 1px;
       font-weight: 600;
       font-size: 0.95em;
       padding: 10px 16px;
+      text-decoration: none;
       border-radius: 4px;
       transition: background-color 0.3s ease, color 0.3s ease;
-      color: var(--accent);
-      text-decoration: none;
     }
 
     .main-nav a:hover {
@@ -71,44 +76,58 @@
     }
 
     .section {
-      padding: 40px 20px;
       max-width: var(--container-width);
-      margin: 0 auto;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
-    .section h2 {
-      font-size: 1.8em;
-      margin-bottom: 30px;
-      text-align: center;
+    h2 {
       font-family: 'Playfair Display', serif;
+      font-size: 1.9em;
+      text-align: center;
+      margin-bottom: 40px;
       position: relative;
+      color: var(--text);
     }
 
-    .section h2::after {
+    h2::after {
       content: "";
       display: block;
-      width: 60px;
-      height: 3px;
-      background-color: var(--accent);
-      margin: 10px auto 0;
-      border-radius: 3px;
+      width: 90px;
+      height: 2px;
+      background: linear-gradient(to right, transparent, var(--accent), transparent);
+      margin: 14px auto 0;
     }
 
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    li {
+    .pub-card {
+      background-color: #1b1b1b;
+      border: 1px solid #333;
+      border-left: 4px solid var(--accent);
+      padding: 20px;
       margin-bottom: 20px;
-      line-height: 1.6;
+      border-radius: 8px;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
     }
 
-    strong {
+    .pub-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+
+    .pub-date {
       font-weight: 600;
+      font-size: 1.1em;
+      margin-bottom: 10px;
+      color: var(--accent);
     }
 
-    em {
+    .pub-title {
+      font-style: italic;
+      color: #fff;
+    }
+
+    .forthcoming {
+      color: #ccc;
       font-style: italic;
     }
 
@@ -124,12 +143,10 @@
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <h1 class="site-title">Adolfho Romero</h1>
   </header>
 
-  <!-- Navigation -->
   <nav class="main-nav">
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -138,23 +155,32 @@
     </ul>
   </nav>
 
-  <!-- Work in Progress Section -->
   <div class="section">
     <h2>Work in Progress / Manuscripts in Preparation</h2>
-    <ul>
-      <li>
-        <strong>2026</strong> &nbsp; Romero, A. & Gleeson, S. <strong>“Latinx Labor Rights and Workplace Enforcement.”</strong> Contribution to the 50th Anniversary Special Issue on Latinx Labor Studies, <em>Aztlán: A Journal of Chicano Studies</em>. (Forthcoming, Fall 2026)
-      </li>
-      <li>
-        <strong>2026</strong> &nbsp; Romero, A. & Gleeson, S. <strong>“Cities, Migrants, and Labor Conditions.”</strong> Chapter in preparation for the <em>Handbook on Cities and Migration</em> (Edward Elgar Publishing). (Forthcoming, Fall 2026)
-      </li>
-    </ul>
+
+    <div class="pub-card">
+      <div class="pub-date">2026</div>
+      <div class="pub-info">
+        <p><strong>Romero, A. & Gleeson, S.</strong> <span class="pub-title">“Latinx Labor Rights and Workplace Enforcement.”</span> Contribution to the 50th Anniversary Special Issue on Latinx Labor Studies, <em>Aztlán: A Journal of Chicano Studies</em>. <span class="forthcoming">(Forthcoming, Fall 2026)</span></p>
+      </div>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-date">2026</div>
+      <div class="pub-info">
+        <p><strong>Romero, A. & Gleeson, S.</strong> <span class="pub-title">“Cities, Migrants, and Labor Conditions.”</span> Chapter in preparation for the <em>Handbook on Cities and Migration</em> (Edward Elgar Publishing). <span class="forthcoming">(Forthcoming, Fall 2026)</span></p>
+      </div>
+    </div>
   </div>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Adolfho Romero · adolfhoromero@gmail.com</p>
   </footer>
 
 </body>
 </html>
+```
+
+---
+
+Let me know if you'd like to split the publications into tabs (e.g., *Peer-Reviewed*, *Public-Facing*, *In Progress*), or add a sidebar, background texture, or filter options.
