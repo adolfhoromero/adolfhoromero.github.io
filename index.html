@@ -18,6 +18,7 @@
       margin: 0;
       background: linear-gradient(135deg, var(--bg), #2c2c2c);
       color: var(--text);
+      scroll-behavior: smooth;
     }
 
     header {
@@ -61,21 +62,20 @@
       background-size: cover;
       background-position: center 44%;
       background-repeat: no-repeat;
+      position: relative;
     }
 
-    .tagline {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3em;
-      text-align: center;
+    .banner-text {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
       color: #fff;
-      padding: 20px 15px;
-      background-color: transparent;
-      animation: fadeIn 2s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+      font-weight: 600;
+      font-size: 1.1em;
+      border-radius: 5px;
     }
 
     .section {
@@ -85,7 +85,7 @@
     }
 
     .section h2 {
-      font-size: 1.9em;
+      font-size: 1.8em;
       margin-bottom: 30px;
       text-align: center;
       font-family: 'Playfair Display', serif;
@@ -93,12 +93,12 @@
     }
 
     .section h2::after {
-      content: '';
+      content: "";
       display: block;
-      margin: 10px auto 0;
-      width: 80px;
+      width: 60px;
       height: 3px;
       background-color: var(--accent);
+      margin: 10px auto 0;
       border-radius: 3px;
     }
 
@@ -141,11 +141,11 @@
     }
 
     .contact-info {
-      margin-top: 1.5em;
+      margin-top: 2em;
     }
 
     .contact-info p {
-      margin: 0.5em 0;
+      margin: 0.4em 0;
     }
 
     .contact-info a {
@@ -176,6 +176,35 @@
       width: 100%;
       height: auto;
       filter: brightness(0) invert(1);
+    }
+
+    footer {
+      background-color: #111;
+      color: #888;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.9em;
+      margin-top: 40px;
+    }
+
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: var(--accent);
+      color: #0f0f0f;
+      border: none;
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      font-size: 1.2em;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .scroll-top:hover {
+      background-color: #5db9e3;
     }
 
     @media (max-width: 768px) {
@@ -218,10 +247,9 @@
   </header>
 
   <!-- Banner -->
-  <div class="banner"></div>
-
-  <!-- Tagline -->
-  <div class="tagline">Worker dignity. Collective power. Migrant justice.</div>
+  <div class="banner">
+    <div class="banner-text">Worker dignity. Collective power. Migrant justice.</div>
+  </div>
 
   <!-- About Section -->
   <div class="section">
@@ -237,9 +265,10 @@
         <p>
           Before Cornell, I served as Assistant Director of the Samuel Proctor Oral History Program (SPOHP) at the University of Florida, where I led multilingual oral history projects documenting the experiences of Latinx, African American, and Indigenous communities across the U.S. South. I also worked with farmworker advocacy organizations and hold a background in Latin American Studies.
         </p>
+        <hr style="border: none; border-top: 1px solid #555; margin: 30px 0 20px;" />
         <div class="contact-info">
-          <p>📧 <strong>adolfhoromero@gmail.com</strong></p>
-          <p>🧬 ORCID: <a href="https://orcid.org/0009-0000-2505-0192" target="_blank">https://orcid.org/0009-0000-2505-0192</a></p>
+          <p>📧 adolfhoromero@gmail.com</p>
+          <p>ORCID: <a href="https://orcid.org/0009-0000-2505-0192" target="_blank">https://orcid.org/0009-0000-2505-0192</a></p>
           <div class="social-icons">
             <a href="https://www.linkedin.com/in/adolfho" target="_blank">
               <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
@@ -255,6 +284,21 @@
       </div>
     </div>
   </div>
+
+  <!-- Scroll to Top -->
+  <button class="scroll-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑</button>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Adolfho Romero · adolfhoromero@gmail.com</p>
+  </footer>
+
+  <script>
+    const scrollBtn = document.querySelector('.scroll-top');
+    window.addEventListener('scroll', () => {
+      scrollBtn.style.display = window.scrollY > 200 ? 'block' : 'none';
+    });
+  </script>
 
 </body>
 </html>
