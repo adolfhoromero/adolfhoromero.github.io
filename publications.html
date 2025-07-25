@@ -2,302 +2,404 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Adolfho Romero</title>
-  <!-- Fonts and Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     :root {
       --background-top: #f7f8fa;
       --background-bottom: #e4e8ef;
       --nav-bg: #22304a;
       --nav-text: #fff;
-      --card-bg: #fff;
-      --card-shadow: 0 4px 36px #2e3a5022;
-      --card-border: #29539b;
-      --text-main: #313b53;
-      --heading: #263045;
       --accent: #29539b;
       --accent-gold: #bc9f5b;
-      --max-width: 980px;
+      --card-bg: #fff;
+      --card-shadow: 0 4px 36px #2e3a5022;
+      --text-main: #313b53;
+      --heading: #25314a;
+      --max-width: 1100px;
+      --border-accent: #29539b;
+      --scroll-btn-bg: var(--accent);
+      --scroll-btn-hover-bg: #406eb5;
     }
-    html, body { height: 100%; }
+    * { box-sizing: border-box; }
     body {
-      min-height: 100vh;
+      margin: 0;
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(120deg, var(--background-top), var(--background-bottom) 87%);
+      background: linear-gradient(135deg, var(--background-top), var(--background-bottom));
       color: var(--text-main);
       line-height: 1.6;
       scroll-behavior: smooth;
-      position: relative;
     }
+    a { color: var(--accent); text-decoration: none; transition: color 0.18s; }
+    a:hover, a:focus { color: var(--accent-gold); outline: none; }
+
     header {
+      background-color: var(--nav-bg);
+      color: var(--nav-text);
       text-align: center;
-      padding: 2.1rem 1rem 1rem;
+      padding: 2.6rem 1rem 1.1rem;
+      box-shadow: 0 4px 22px #22304a77;
+    }
+    .site-title {
       font-family: 'Playfair Display', serif;
-      font-size: 2.7rem;
+      font-size: 2.95rem;
       font-weight: 700;
-      letter-spacing: -1.2px;
-      color: var(--heading);
+      margin: 0;
+      letter-spacing: -1.5px;
     }
     .subtitle {
-      font-size: 1.13rem;
-      letter-spacing: 0.03em;
-      color: var(--accent);
       font-family: 'Inter', sans-serif;
-      margin-top: .42rem;
-      font-weight: 500;
-      text-align: center;
+      font-size: 1.12rem;
+      margin-top: 0.45rem;
+      color: var(--accent-gold);
+      font-weight: 600;
+      letter-spacing: 0.06em;
     }
-    nav {
-      position: sticky; top: 0; z-index:40;
-      display: flex; justify-content: center;
+
+    nav.main-nav {
       background: var(--nav-bg);
-      padding: 14px 0;
-      box-shadow: 0 2.5px 40px #22304a12;
-      border-bottom: 1px solid #23314a28;
+      box-shadow: inset 0 -1px 0 #3a496f;
+      position: sticky;
+      top: 0;
+      z-index: 50;
     }
-    nav a {
-      position: relative; margin: 0 1.8rem;
+    nav.main-nav ul {
+      list-style: none;
+      margin: 0 auto;
+      padding: 13px 0;
+      display: flex;
+      justify-content: center;
+      gap: 34px;
+      max-width: var(--max-width);
+    }
+    nav.main-nav a {
       font-weight: 600;
       font-size: 1rem;
-      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--nav-text);
-      text-decoration: none;
-      display: flex; align-items: center; gap: 0.5rem;
-      transition: color 0.2s;
-    }
-    nav a:hover, nav a:focus {
-      color: var(--accent-gold);
-    }
-    nav a::after {
-      content: "";
-      position: absolute; left: 0; bottom: -7px;
-      width: 0%; height: 3px;
-      border-radius:2px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-gold) 80%);
-      transition:width 0.3s cubic-bezier(.55,.05,.67,.92);
-    }
-    nav a:hover::after, nav a:focus::after { width: 100%; }
-    main { max-width: var(--max-width); margin: 3rem auto 0 auto; padding: 0 1.25rem; }
-    section { margin-bottom: 3.5rem; }
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      font-family: 'Playfair Display', serif;
-      text-align: center;
+      letter-spacing: 0.065em;
+      padding: 10px 18px;
+      border-radius: 6px;
       position: relative;
-      color: var(--heading);
-      font-weight: 700;
     }
-    h2::after {
-      content: '';
-      display: block; height: 4px; width: 72px; margin: 0.5rem auto 0;
-      background: linear-gradient(90deg, var(--accent), var(--accent-gold) 76%);
-      border-radius: 2px; opacity: 0.89;
+    nav.main-nav a::after {
+      content: "";
+      position: absolute;
+      left: 0; bottom: -5px;
+      width: 0%; height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-gold) 85%);
+      border-radius: 3px;
+      transition: width 0.3s cubic-bezier(.55,.05,.67,.92);
     }
-    .year-section {
-      margin-bottom: 2.7rem;
-      padding-left: 10px;
-      border-left: 3.5px solid var(--card-border);
+    nav.main-nav a:hover, nav.main-nav a:focus { color: var(--accent-gold); }
+    nav.main-nav a:hover::after, nav.main-nav a:focus::after { width: 100%; }
+
+    /* HERO - community-centric */
+    .hero {
+      width: 100%;
+      background:
+        linear-gradient(120deg, #f7f8fabd 65%, #e5e8efdc 100%),
+        url('cornellcampus.jpg') center 44%/cover no-repeat;
+      text-align: center;
+      box-shadow: 0 2px 40px #23406512;
+      padding: 32px 10px 22px;
+      border-bottom: 5px solid var(--accent);
+      position: relative;
     }
-    .year-heading {
-      font-size: 1.12rem;
-      color: var(--accent);
-      margin-bottom: 1.1rem;
+    .hero-photo {
+      width: 170px;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 0 7px #fff, 0 10px 32px #22407715;
+      margin: 0 auto 1.3rem;
+      background: #f5f8fc;
+      display: block;
+    }
+    .hero h1 {
       font-family: 'Playfair Display', serif;
-      font-weight: bold;
-      letter-spacing: .08em;
+      font-size: 2.45rem;
+      color: var(--heading);
+      margin: 0.1em 0 0.32em;
+      font-weight: 700;
+      letter-spacing: -1px;
+      line-height: 1.1;
     }
-    .card-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem;
-    }
-    @media (max-width: 800px){
-      .card-grid { grid-template-columns: 1fr; gap: 1.25rem; }
-    }
-    .card {
-      background: var(--card-bg);
-      border-left: 5px solid var(--card-border);
-      border-radius: 16px;
-      color: var(--text-main);
-      box-shadow: var(--card-shadow);
-      padding: 1.25rem 1.1rem;
-      display: flex; align-items: flex-start; gap: 1.35rem;
-      font-size: 1.07rem;
-      transition: transform .19s, box-shadow .12s;
-      opacity: 0; transform: translateY(26px);
-    }
-    .card.visible {
-      opacity: 1; transform: translateY(0);
-      transition-delay: 0.045s;
-    }
-    .card:hover {
-      transform: translateY(-2px) scale(1.012);
-      box-shadow: 0 14px 36px #2a4e8b19, var(--card-shadow);
-    }
-    .card img {
-      width: 86px; max-width: 100%; height: auto;
-      border-radius: 8px;
-      box-shadow: 0 2px 12px #b6b6c833;
-      object-fit: cover; background: #eef4fa;
-      flex-shrink: 0; border: .6px solid #29539b31;
-    }
-    .card b {
+    .hero h2 {
+      font-size: 1.21rem;
       color: var(--accent);
-      font-weight: bold;
+      font-weight: 600;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: .04em;
     }
-    .card a, .card a:visited {
-      color: var(--accent);
-      margin-top: .27rem;
-      text-decoration: none;
-      display: inline-block;
+    .hero-mission {
+      font-style: italic;
+      font-size: 1.09rem;
+      margin: 25px 0 7px;
+      color: #29539ba1;
       font-weight: 500;
-      font-size: 0.97em;
-      transition: text-decoration .17s, color .19s;
-      word-break: break-all;
     }
-    .card a:hover, .card a:focus {
-      color: var(--accent-gold);
-      text-decoration: underline;
+    .hero-quote {
+      margin: 17px auto 0;
+      font-size: 1.05rem;
+      color: #787a8b;
+      max-width: 410px;
+      background: #fff8e55c;
+      border-left: 4px solid var(--accent-gold);
+      padding: 9px 20px 9px;
+      border-radius: 5px;
+      font-style: italic;
     }
-    @media (prefers-reduced-motion: no-preference) {
-      .animate-on-scroll { transition: opacity .5s, transform .5s; }
+
+    /* MISSION VALUES PANEL */
+    .mission-block {
+      background: var(--card-bg);
+      border-radius: 14px;
+      max-width: 610px;
+      margin: 38px auto 22px;
+      box-shadow: var(--card-shadow);
+      padding: 2rem 1.5rem 1.3rem;
+      border-left: 5px solid var(--accent);
+      font-size: 1.13rem;
+      color: var(--text-main);
+      font-weight: 500;
+      text-align: center;
     }
+
+    /* About */
+    .section {
+      max-width: var(--max-width);
+      margin: 2.3rem auto 4rem;
+      padding: 0 1.1rem;
+    }
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 2.14rem;
+      color: var(--heading);
+      text-align: center;
+      margin-bottom: 1.75rem;
+      position: relative;
+    }
+    .section h2::after {
+      content: "";
+      display: block; width: 80px; height: 5px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-gold) 85%);
+      margin: 13px auto 0;
+      border-radius: 4px;
+      opacity: 0.9;
+    }
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 42px;
+      justify-content: center;
+      align-items: flex-start;
+      user-select: text;
+    }
+    .about-text {
+      flex: 2;
+      max-width: 670px;
+      min-width: 300px;
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: var(--text-main);
+      text-align: left;
+    }
+    .about-text p { margin-bottom: 1.5rem; }
+    .about-text hr {
+      border: none;
+      border-top: 1px solid #d1d6df;
+      margin: 35px 0 25px;
+      opacity: 0.33;
+    }
+
+    /* Custom Social Media Buttons/SVGs */
+    .social-icons {
+      display: flex;
+      gap: 16px;
+      margin-top: 13px;
+      user-select: none;
+    }
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 2px 9px rgba(41,83,155,.06), 0 1.5px 8px #18325208;
+      transition: transform 0.16s, box-shadow 0.17s;
+      border: 1.8px solid #e1e6f1;
+      outline: none;
+      position: relative;
+    }
+    .social-link:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .social-link:hover {
+      transform: scale(1.17);
+      box-shadow: 0 6px 24px #29539b2a, 0 2.5px 10px #18426312;
+      border-color: var(--accent-gold);
+      z-index: 2;
+    }
+    .social-link svg {
+      width: 22px; height: 22px; display: block;
+    }
+
+    .about-image {
+      flex: 1;
+      max-width: 360px;
+      min-width: 220px;
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+    }
+    .about-image img {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 14px;
+      box-shadow: 0 7px 28px rgba(41, 83, 155, 0.18);
+      object-fit: cover;
+    }
+
+    /* Footer */
     footer {
       text-align: center;
-      padding: 2.2rem 1rem 2rem;
-      font-size: 1.04rem;
-      color: #7b8fac;
-      border-top: 1px solid #c5c8d1;
-      margin-top: 4rem;
-      letter-spacing: 0.04em;
-      background: #f7f8fa;
+      background: var(--nav-bg);
+      color: #adadad;
+      padding: 23px 1rem;
+      font-size: 0.98rem;
+      border-top: 1px solid #2d395533;
+      margin-top: 4.8rem;
+      font-weight: 500;
     }
-    @media (max-width: 650px) {
-      header { font-size: 2.07rem; padding: 1.8rem .6rem 0.45rem; }
-      .card { flex-direction: column; gap: .7rem; }
-      main, section { padding-left: 0; padding-right: 0; }
+    footer a { color: var(--accent); font-weight: 600; }
+
+    /* Scroll to top */
+    .scroll-top-btn {
+      position: fixed;
+      bottom: 34px;
+      right: 34px;
+      background-color: var(--scroll-btn-bg);
+      color: #f7f9fa;
+      border: none;
+      border-radius: 50%;
+      width: 44px; height: 44px;
+      font-size: 1.31em;
+      cursor: pointer;
+      z-index: 80;
+      display: none;
+      box-shadow: 0 3px 12px #24406433;
+      transition: background 0.22s;
+    }
+    .scroll-top-btn:hover, .scroll-top-btn:focus { background: var(--scroll-btn-hover-bg);}
+    @media (max-width: 820px) {
+      .about-container { flex-direction: column; align-items: center; text-align: center; }
+      .about-text { max-width: 90%; }
+      .about-image { order: -1; margin-bottom: 18px; }
+      nav.main-nav ul { flex-direction: column; gap: 12px; padding: 11px 0 13px; }
     }
   </style>
 </head>
 <body>
   <header>
-    Adolfho Romero
-    <div class="subtitle">Scholar of Labor, Migration, and Social History</div>
+    <h1 class="site-title">Adolfho Romero</h1>
+    <div class="subtitle">Rising PhD • Labor, Migration & Social History • Cornell ILR</div>
   </header>
-  <nav aria-label="Main navigation">
-    <a href="index.html" aria-label="Home"><i class="fas fa-house-user" aria-hidden="true"></i> Home</a>
-    <a href="adolfhoromerocv.pdf" target="_blank" aria-label="Curriculum Vitae"><i class="fas fa-id-badge" aria-hidden="true"></i> CV</a>
-    <a href="publications.html" aria-label="Publications"><i class="fas fa-feather-alt" aria-hidden="true"></i> Publications</a>
+
+  <nav class="main-nav" role="navigation" aria-label="Primary navigation">
+    <ul>
+      <li><a href="adolfhoromerocv.pdf" target="_blank" rel="noopener">CV</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </nav>
-  <main>
-    <section id="manuscripts">
-      <h2>Manuscripts in Preparation</h2>
-      <div class="year-section">
-        <div class="year-heading">2026</div>
-        <div class="card-grid">
-          <div class="card animate-on-scroll">
-            <div>
-              <b>Romero, A.</b> & Gleeson, S. <b>“Latinx Labor Rights and Workplace Enforcement.”</b>
-              <br>Contribution to the 50th Anniversary Special Issue on Latinx Labor Studies, <i>Aztlán: A Journal of Chicano Studies</i>. <span style="color:#8e99af;opacity:.70;">(Forthcoming, Fall 2026)</span>
-            </div>
+
+  <section class="hero" aria-label="Academic Hero">
+    <img src="adolfhoromero.jpeg" alt="Adolfho Romero, smiling in the field" class="hero-photo" />
+    <h1>Adolfho Romero</h1>
+    <h2>PhD Student • Industrial & Labor Relations • Cornell University</h2>
+    <div class="hero-mission">
+      Empowering workers and communities<br>
+      through research, listening, and collective action.
+    </div>
+    <blockquote class="hero-quote">
+      “I am grateful to work alongside community organizations, mentors, and workers in the ongoing struggle for dignity and justice. My role is grounded in partnership, respect, and ethical research.”<br>
+    </blockquote>
+  </section>
+
+  <div class="mission-block" style="margin-bottom:28px;">
+    Guided by my mother’s resilience and the lessons of my community, I aim to foster inclusive, community-engaged scholarship that supports dignity, leadership, and collective voice for workers and migrants.[2][1][4]
+  </div>
+
+  <section class="section" aria-labelledby="about-title">
+    <h2 id="about-title">About My Journey</h2>
+    <div class="about-container">
+      <article class="about-text">
+        <p>
+          As a first-generation Mexican and Salvadorean from Humboldt Park, Chicago, I witnessed the challenges of working-class life and the strength found in solidarity. My experiences, rooted in family and community, drive my commitment to advancing social and economic justice for workers and migrants. 
+        </p>
+        <p>
+          Today, as a rising PhD student in Cornell's School of Industrial and Labor Relations, my research builds on a decade of community-engaged projects from Florida to New York. Partnering with organizations, worker centers, and researchers, I strive to amplify marginalized voices—not as an outside expert, but as a collaborator and advocate working alongside those most affected[2][4].
+        </p>
+        <p>
+          My research is ethnographic, bilingual, and humble—focused on learning from those I serve and prioritizing participant dignity, confidentiality, and agency. I observe, listen, and support the collective power that emerges from shared leadership, organizing, and advocacy.
+        </p>
+        <hr />
+        <section class="contact-info" id="contact" aria-label="Contact information">
+          <p><strong>Email:</strong> <a href="mailto:adolfhoromero@gmail.com">adolfhoromero@gmail.com</a></p>
+          <p><strong>ORCID:</strong> <a href="https://orcid.org/0009-0000-2505-0192" target="_blank" rel="noopener">https://orcid.org/0009-0000-2505-0192</a></p>
+          <div class="social-icons" aria-label="Social media profiles">
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/adolfho" 
+               class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#29539B"/><path d="M7.75 8.5a1.25 1.25 0 1 1 0-2.496 1.25 1.25 0 0 1 0 2.496zm.13 2.17h-2.03V18h2.03V10.67zm3.12 0H9.86V18h2.04v-3.58c0-.93.68-1.48 1.45-1.48.75 0 1.11.55 1.11 1.36V18h2.03v-3.84c0-1.93-1.03-2.83-2.41-2.83-1.12 0-1.61.61-1.89 1.04V10.67z" fill="#fff"/></svg>
+            </a>
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/adolfo.romero.902879/"
+               class="social-link" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#29539B"/><path d="M15.77 8.444h-1.676V7.498c0-.363.243-.448.414-.448h1.258V5.344L14.093 5.2c-1.566 0-1.922 1.176-1.922 1.922v1.322h-1.12v2.08h1.12V18.2h2.08v-5.479h1.448l.224-2.082z" fill="#fff"/></svg>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/ithacalyf/"
+               class="social-link" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#bc9f5b"/><path d="M12 8.6a3.4 3.4 0 1 0 0 6.8 3.4 3.4 0 0 0 0-6.8zm0 5.6a2.2 2.2 0 1 1 0-4.4 2.2 2.2 0 0 1 0 4.4zm4.2-3.8a.8.8 0 1 1-1.6 0 .8.8 0 0 1 1.6 0zm2.16.8c-.03-.66-.17-1.25-.5-1.8a3.5 3.5 0 0 0-.8-1.1 3.5 3.5 0 0 0-1.1-.8c-.55-.33-1.14-.48-1.8-.5C13.2 6 12.8 6 12 6s-1.2 0-1.8.02c-.66.03-1.25.17-1.8.5a3.5 3.5 0 0 0-1.1.8c-.33.55-.48 1.14-.5 1.8C6 10.8 6 11.2 6 12c0 .8 0 1.2.02 1.8.03.66.17 1.25.5 1.8a3.5 3.5 0 0 0 .8 1.1c.55.33 1.14.48 1.8.5.6.02 1 .02 1.8.02.8 0 1.2 0 1.8-.02.66-.03 1.25-.17 1.8-.5a3.5 3.5 0 0 0 1.1-.8c.33-.55.48-1.14.5-1.8.02-.6.02-1 .02-1.8s0-1.2-.02-1.8zm-1.56 5.06c-.41.61-1.01 1.21-1.62 1.62-.48.32-1.02.5-1.62.52C12.8 18 12.4 18 12 18s-.8 0-1.19-.02c-.6-.02-1.14-.2-1.62-.52a5.75 5.75 0 0 1-1.62-1.62c-.32-.48-.5-1.02-.52-1.62C6 13.2 6 12.8 6 12s0-.8.02-1.19c.02-.6.2-1.14.52-1.62a5.75 5.75 0 0 1 1.62-1.62c.48-.32 1.02-.5 1.62-.52C11.2 6 11.6 6 12 6s.8 0 1.19.02c.6.02 1.14.2 1.62.52.61.41 1.21 1.01 1.62 1.62.32.48.5 1.02.52 1.62C18 10.8 18 11.2 18 12s0 .8-.02 1.19c-.02.6-.2 1.14-.52 1.62z" fill="#fff"/></svg>
+            </a>
           </div>
-          <div class="card animate-on-scroll">
-            <div>
-              <b>Romero, A.</b> & Gleeson, S. <b>“Cities, Migrants, and Labor Conditions.”</b>
-              <br>Chapter in preparation for the <i>Handbook on Cities and Migration</i> (Edward Elgar Publishing). <span style="color:#8e99af;opacity:.70;">(Forthcoming, Fall 2026)</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="articles">
-      <h2>Forthcoming Articles</h2>
-      <div class="year-section">
-        <div class="year-heading">2025</div>
-        <div class="card-grid">
-          <div class="card animate-on-scroll">
-            <div>
-              Simmons, M., Hamilton, A., Davis, A., Dyer, W., Philippe, C.J., Heady, J., Houck, P., <b>Romero, A.</b>, Cordova, R.A., Hendrix, D., Ortiz, P., Moeller, S., & Tang, K. <b>“A Meeting of Two Worlds—Oral History and Linguistics: Partnerships, Perplexities, and Potentialities in Researching African American Language.”</b>
-              <br><i>The Oral History Review</i>. <span style="color:#8e99af;opacity:.70;">(Forthcoming)</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="acknowledged">
-      <h2>Acknowledged Contributions in Published Works</h2>
-      <div class="year-section">
-        <div class="year-heading">2025</div>
-        <div class="card-grid">
-          <div class="card animate-on-scroll">
-            <img src="labor.jpeg" alt="Labor Studies Journal Cover">
-            <div>
-              Ortiz, P. (2025). <i>Latino workers, the 2024 presidential election, and the future of the labor movement.</i>
-              <br><i>Labor Studies Journal, 50(2)</i>, 153–165.
-              <a href="https://doi.org/10.1177/0160449X251342375" target="_blank">https://doi.org/10.1177/0160449X251342375</a>
-            </div>
-          </div>
-          <div class="card animate-on-scroll">
-            <img src="decolonizing.jpeg" alt="Ground Works Journal Cover">
-            <div>
-              Concha-Holmes, A. D., et al. (2025). <i>Decolonizing representations to evoke the complexity of Black lives in Florida.</i>
-              <br><i>Ground Works Journal</i>.
-              <a href="https://doi.org/10.48807/2025.0.0134" target="_blank">https://doi.org/10.48807/2025.0.0134</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="year-section">
-        <div class="year-heading">2023</div>
-        <div class="card-grid">
-          <div class="card animate-on-scroll">
-            <img src="nativeamerican.jpeg" alt="SOURCE Journal Cover">
-            <div>
-              Mattson, I., Mahar, G., & Durant, F. (2023). <i>Revitalizing Native American Oral Histories at the University of Florida.</i>
-              <br><i>SOURCE: The Magazine of the University of Florida George A. Smathers Libraries</i>.
-              <a href="https://doi.org/10.32473/sourceuf.5.1.132681" target="_blank">https://doi.org/10.32473/sourceuf.5.1.132681</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="year-section">
-        <div class="year-heading">2022</div>
-        <div class="card-grid">
-          <div class="card animate-on-scroll">
-            <img src="journalofimmigrant.jpeg" alt="Journal of Immigrant and Minority Health Cover">
-            <div>
-              Anastario, M., Rodriguez, A. M., Xiuhtecutli, N., & Wagner, E. (2022). <i>Characterization of lifetime agrichemical exposure sequences relative to international migration in foreign born Latinx agricultural workers living in South Florida.</i>
-              <br><i>Journal of Immigrant and Minority Health, 24(5)</i>, 1145–1153.
-              <a href="https://doi.org/10.1007/s10903-021-01278-5" target="_blank">https://doi.org/10.1007/s10903-021-01278-5</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+        </section>
+      </article>
+      <aside class="about-image">
+        <img src="adolfhoromero.jpeg" alt="Portrait of Adolfho Romero" />
+      </aside>
+    </div>
+    <div style="max-width:650px;margin:36px auto 0;padding:1rem;background:#f8f8ea;border-radius:7px;border-left:4px solid #bc9f5b2c;color:#775f29;font-size:1.04rem;box-shadow:0 2px 12px #d6c29b10;">
+      <strong>Ethical Commitment:</strong>
+      Every project is guided by a commitment to participant dignity, privacy, and shared agency. My work follows IRB-approved protocols, oral consent, and collaborative benefit for all involved.[4]
+    </div>
+  </section>
+
+  <button
+    class="scroll-top-btn"
+    title="Scroll back to top"
+    aria-label="Scroll to top"
+    onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+  >
+    &#8593;
+  </button>
+
   <footer>
-    © 2025 Adolfho Romero · <a href="mailto:adolfhoromero@gmail.com" style="color:var(--accent);text-decoration:none;">adolfhoromero@gmail.com</a>
+    &copy; 2025 Adolfho Romero &middot; <a href="mailto:adolfhoromero@gmail.com">adolfhoromero@gmail.com</a>
   </footer>
   <script>
-    // Smooth fade-in for cards
-    document.addEventListener("DOMContentLoaded", function() {
-      function revealOnScroll() {
-        const cards = document.querySelectorAll('.card.animate-on-scroll');
-        const windowHeight = window.innerHeight;
-        cards.forEach(el => {
-          const top = el.getBoundingClientRect().top;
-          if(top < windowHeight - 60) {
-            el.classList.add('visible');
-          }
-        });
-      }
-      window.addEventListener('scroll', revealOnScroll);
-      revealOnScroll();
+    const scrollBtn = document.querySelector('.scroll-top-btn');
+    window.addEventListener('scroll', () => {
+      scrollBtn.style.display = window.scrollY > 200 ? 'block' : 'none';
     });
   </script>
 </body>
