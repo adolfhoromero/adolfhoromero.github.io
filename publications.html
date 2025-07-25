@@ -14,7 +14,7 @@
       --bg: #0f0f0f;
       --bg-alt: #1b1b1b;
       --text: #f5f5f5;
-      --card: rgba(30,30,30,0.8);
+      --card: #1e1e1e;
       --max-width: 960px;
     }
 
@@ -42,9 +42,10 @@
       text-align: center;
       padding: 2rem 1rem 0.5rem;
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-size: 2.7rem;
       font-weight: 600;
       color: var(--text);
+      letter-spacing: -0.5px;
     }
 
     nav {
@@ -101,7 +102,7 @@
     }
 
     h2 {
-      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-size: 1.8rem;
       margin-bottom: 1.5rem;
       font-family: 'Playfair Display', serif;
       text-align: center;
@@ -132,20 +133,17 @@
     }
 
     .card {
-      background: var(--card);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      background-color: var(--card);
       padding: 1rem 1.25rem;
-      margin-bottom: 1.5rem;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+      transition: transform 0.2s ease;
     }
 
     .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      transform: translateY(-2px);
     }
 
     .card b {
@@ -169,30 +167,6 @@
       font-size: 0.9rem;
       color: #aaa;
       border-top: 1px solid #2a2a2a;
-      position: relative;
-    }
-
-    #scrollTopBtn {
-      position: fixed;
-      bottom: 40px;
-      right: 40px;
-      z-index: 999;
-      background: var(--accent);
-      color: #000;
-      padding: 0.6rem 0.8rem;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 1.2rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease-in-out;
-    }
-
-    #scrollTopBtn.show {
-      opacity: 1;
-      pointer-events: auto;
     }
 
     @media (max-width: 768px) {
@@ -218,30 +192,85 @@
     <a href="publications.html"><i class="fas fa-feather-alt"></i> Publications</a>
   </nav>
 
-  <!-- START SECTIONS -->
-  [PASTE YOUR PUBLICATION <section> BLOCKS HERE FROM ORIGINAL WORKING CODE]
-  <!-- END SECTIONS -->
+  <section id="manuscripts">
+    <h2>Manuscripts in Preparation</h2>
+
+    <div class="year-section">
+      <div class="year-heading">2026</div>
+
+      <div class="card">
+        <b>Romero, A.</b> & Gleeson, S. <b>“Latinx Labor Rights and Workplace Enforcement.”</b> Contribution to the 50th Anniversary Special Issue on Latinx Labor Studies, <i>Aztlán: A Journal of Chicano Studies</i>. (Forthcoming, Fall 2026)
+      </div>
+
+      <div class="card">
+        <b>Romero, A.</b> & Gleeson, S. <b>“Cities, Migrants, and Labor Conditions.”</b> Chapter in preparation for the <i>Handbook on Cities and Migration</i> (Edward Elgar Publishing). (Forthcoming, Fall 2026)
+      </div>
+    </div>
+  </section>
+
+  <section id="articles">
+    <h2>Forthcoming Articles</h2>
+
+    <div class="year-section">
+      <div class="year-heading">2025</div>
+
+      <div class="card">
+        Simmons, M., Hamilton, A., Davis, A., Dyer, W., Philippe, C.J., Heady, J., Houck, P., <b>Romero, A.</b>, Cordova, R.A., Hendrix, D., Ortiz, P., Moeller, S., & Tang, K. <b>“A Meeting of Two Worlds—Oral History and Linguistics: Partnerships, Perplexities, and Potentialities in Researching African American Language.”</b> <i>The Oral History Review</i>. (Forthcoming)
+      </div>
+    </div>
+  </section>
+
+  <section id="acknowledged">
+    <h2>Acknowledged Contributions in Published Works</h2>
+
+    <div class="year-section">
+      <div class="year-heading">2025</div>
+
+      <div class="card" style="display: flex; align-items: flex-start; gap: 1rem;">
+        <img src="labor.jpeg" alt="Labor Studies Journal Cover" style="width: 100px; height: auto; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.3); flex-shrink: 0;">
+        <div>
+          Ortiz, P. (2025). <i>Latino workers, the 2024 presidential election, and the future of the labor movement.</i> <i>Labor Studies Journal, 50(2)</i>, 153–165.
+          <a href="https://doi.org/10.1177/0160449X251342375" target="_blank">https://doi.org/10.1177/0160449X251342375</a>
+        </div>
+      </div>
+
+      <div class="card" style="display: flex; align-items: flex-start; gap: 1rem;">
+        <img src="decolonizing.jpeg" alt="Ground Works Journal Cover" style="width: 100px; height: auto; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.3); flex-shrink: 0;">
+        <div>
+          Concha-Holmes, A. D., et al. (2025). <i>Decolonizing representations to evoke the complexity of Black lives in Florida.</i> <i>Ground Works Journal</i>.
+          <a href="https://doi.org/10.48807/2025.0.0134" target="_blank">https://doi.org/10.48807/2025.0.0134</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="year-section">
+      <div class="year-heading">2023</div>
+
+      <div class="card" style="display: flex; align-items: flex-start; gap: 1rem;">
+        <img src="nativeamerican.jpeg" alt="SOURCE Journal Cover" style="width: 100px; height: auto; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.3); flex-shrink: 0;">
+        <div>
+          Mattson, I., Mahar, G., & Durant, F. (2023). <i>Revitalizing Native American Oral Histories at the University of Florida.</i> <i>SOURCE: The Magazine of the University of Florida George A. Smathers Libraries</i>.
+          <a href="https://doi.org/10.32473/sourceuf.5.1.132681" target="_blank">https://doi.org/10.32473/sourceuf.5.1.132681</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="year-section">
+      <div class="year-heading">2022</div>
+
+      <div class="card" style="display: flex; align-items: flex-start; gap: 1rem;">
+        <img src="journalofimmigrant.jpeg" alt="Journal of Immigrant and Minority Health Cover" style="width: 100px; height: auto; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.3); flex-shrink: 0;">
+        <div>
+          Anastario, M., Rodriguez, A. M., Xiuhtecutli, N., & Wagner, E. (2022). <i>Characterization of lifetime agrichemical exposure sequences relative to international migration in foreign born Latinx agricultural workers living in South Florida.</i> <i>Journal of Immigrant and Minority Health, 24(5)</i>, 1145–1153.
+          <a href="https://doi.org/10.1007/s10903-021-01278-5" target="_blank">https://doi.org/10.1007/s10903-021-01278-5</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <footer>
     © 2025 Adolfho Romero · adolfhoromero@gmail.com
   </footer>
 
-  <button id="scrollTopBtn" title="Back to top">↑</button>
-
-  <script>
-    const scrollBtn = document.getElementById("scrollTopBtn");
-
-    window.onscroll = function () {
-      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        scrollBtn.classList.add("show");
-      } else {
-        scrollBtn.classList.remove("show");
-      }
-    };
-
-    scrollBtn.onclick = function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
-  </script>
 </body>
 </html>
