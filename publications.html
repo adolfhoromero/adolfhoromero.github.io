@@ -1,1 +1,173 @@
-<li><a href="publications.html">Publications</a></li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Publications | Adolfho Romero</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #89CFF0;
+      --bg: #0f0f0f;
+      --text: #f5f5f5;
+      --container-width: 1100px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, var(--bg), #2c2c2c);
+      color: var(--text);
+      scroll-behavior: smooth;
+    }
+
+    header {
+      padding: 30px 0 5px;
+      background-color: #0f0f0f;
+      text-align: center;
+      border-bottom: 1px solid #333;
+    }
+
+    .site-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8em;
+      margin: 0 0 10px;
+      color: #ffffff;
+    }
+
+    .main-nav {
+      background-color: #1a1a1a;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .main-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      max-width: var(--container-width);
+      padding: 12px 0;
+      border-top: 1px solid #333;
+      border-bottom: 1px solid #333;
+    }
+
+    .main-nav a {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+      font-size: 0.95em;
+      padding: 10px 16px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .main-nav a:hover {
+      background-color: var(--accent);
+      color: #0f0f0f;
+    }
+
+    .section {
+      padding: 50px 20px;
+      max-width: var(--container-width);
+      margin: 0 auto;
+    }
+
+    .section h2 {
+      font-size: 1.8em;
+      margin-bottom: 30px;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      position: relative;
+    }
+
+    .section h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background-color: var(--accent);
+      margin: 10px auto 0;
+      border-radius: 3px;
+    }
+
+    .pub-item {
+      margin-bottom: 1.8em;
+      font-size: 1.05em;
+      line-height: 1.6;
+    }
+
+    .pub-item em {
+      color: #ccc;
+    }
+
+    footer {
+      background-color: #111;
+      color: #888;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.9em;
+      margin-top: 40px;
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .back-link a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .back-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 class="site-title">Adolfho Romero</h1>
+  </header>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="adolfhoromerocv.pdf" target="_blank">CV</a></li>
+      <li><a href="publications.html">Publications</a></li>
+    </ul>
+  </nav>
+
+  <div class="section">
+    <h2>Selected Publications</h2>
+
+    <div class="pub-item">
+      Romero, A. (Forthcoming). <strong>“Title of Your Article.”</strong> <em>Aztlán: A Journal of Chicano Studies</em>.
+    </div>
+
+    <div class="pub-item">
+      Romero, A. (2023). <strong>“Oral Histories and Labor Memory in the U.S. South.”</strong> <em>Latino Studies</em>, 21(1).
+    </div>
+
+    <div class="pub-item">
+      Romero, A. (2021). <strong>“Worker Centers and Co-enforcement: Building Power Through Local Collaboration.”</strong> <em>Labor Studies Journal</em>, 46(4).
+    </div>
+
+    <!-- Add more here -->
+
+    <div class="back-link">
+      <a href="index.html">&larr; Back to Home</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Adolfho Romero · adolfhoromero@gmail.com</p>
+  </footer>
+
+</body>
+</html>
