@@ -11,21 +11,24 @@
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     :root {
-      --background-1: #f4f8fb;
-      --background-2: #e5ecf4;
-      --nav-bg: rgba(255,255,255,0.94);
-      --card-bg: rgba(255,255,255,0.96);
-      --text-main: #263045;
-      --text-accent: #2b7abd;
-      --border-accent: #57aadf;
-      --shadow: 0 6px 36px rgba(64,110,180,0.08);
+      --background-top: #f7f8fa;
+      --background-bottom: #e4e8ef;
+      --nav-bg: #22304a;
+      --nav-text: #fff;
+      --card-bg: #fff;
+      --card-shadow: 0 4px 36px #2e3a5022;
+      --card-border: #29539b;
+      --text-main: #313b53;
+      --heading: #263045;
+      --accent: #29539b;
+      --accent-gold: #bc9f5b;
       --max-width: 980px;
     }
     html, body { height: 100%; }
     body {
       min-height: 100vh;
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(120deg,var(--background-1),var(--background-2));
+      background: linear-gradient(120deg, var(--background-top), var(--background-bottom) 87%);
       color: var(--text-main);
       line-height: 1.6;
       scroll-behavior: smooth;
@@ -33,19 +36,19 @@
     }
     header {
       text-align: center;
-      padding: 2.5rem 1rem 1rem;
+      padding: 2.1rem 1rem 1rem;
       font-family: 'Playfair Display', serif;
-      font-size: 2.9rem;
+      font-size: 2.7rem;
       font-weight: 700;
-      letter-spacing: -1.5px;
-      color: #20325b;
+      letter-spacing: -1.2px;
+      color: var(--heading);
     }
     .subtitle {
       font-size: 1.13rem;
       letter-spacing: 0.03em;
-      color: var(--text-accent);
+      color: var(--accent);
       font-family: 'Inter', sans-serif;
-      margin-top: .45rem;
+      margin-top: .42rem;
       font-weight: 500;
       text-align: center;
     }
@@ -53,9 +56,9 @@
       position: sticky; top: 0; z-index:40;
       display: flex; justify-content: center;
       background: var(--nav-bg);
-      padding: 12px 0;
-      box-shadow: 0 2px 30px #dae4f7cc;
-      border-bottom: 1px solid #e1e8f2;
+      padding: 14px 0;
+      box-shadow: 0 2.5px 40px #22304a12;
+      border-bottom: 1px solid #23314a28;
     }
     nav a {
       position: relative; margin: 0 1.8rem;
@@ -63,20 +66,20 @@
       font-size: 1rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--text-main);
+      color: var(--nav-text);
       text-decoration: none;
       display: flex; align-items: center; gap: 0.5rem;
       transition: color 0.2s;
     }
     nav a:hover, nav a:focus {
-      color: var(--text-accent);
+      color: var(--accent-gold);
     }
     nav a::after {
       content: "";
       position: absolute; left: 0; bottom: -7px;
       width: 0%; height: 3px;
       border-radius:2px;
-      background: var(--text-accent);
+      background: linear-gradient(90deg, var(--accent), var(--accent-gold) 80%);
       transition:width 0.3s cubic-bezier(.55,.05,.67,.92);
     }
     nav a:hover::after, nav a:focus::after { width: 100%; }
@@ -88,75 +91,77 @@
       font-family: 'Playfair Display', serif;
       text-align: center;
       position: relative;
-      color: #20325b;
-      font-weight: 600;
+      color: var(--heading);
+      font-weight: 700;
     }
     h2::after {
       content: '';
-      display: block; height: 4px; width: 56px; margin: 0.5rem auto 0;
-      background: var(--border-accent);
-      border-radius: 2px; opacity: 0.85;
+      display: block; height: 4px; width: 72px; margin: 0.5rem auto 0;
+      background: linear-gradient(90deg, var(--accent), var(--accent-gold) 76%);
+      border-radius: 2px; opacity: 0.89;
     }
     .year-section {
       margin-bottom: 2.7rem;
       padding-left: 10px;
-      border-left: 3px solid var(--border-accent);
+      border-left: 3.5px solid var(--card-border);
     }
     .year-heading {
-      font-size: 1.15rem;
-      color: var(--text-accent);
+      font-size: 1.12rem;
+      color: var(--accent);
       margin-bottom: 1.1rem;
       font-family: 'Playfair Display', serif;
-      font-weight: 700;
+      font-weight: bold;
       letter-spacing: .08em;
     }
     .card-grid {
       display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem;
     }
     @media (max-width: 800px){
-      .card-grid { grid-template-columns: 1fr; gap: 1.1rem; }
+      .card-grid { grid-template-columns: 1fr; gap: 1.25rem; }
     }
     .card {
       background: var(--card-bg);
+      border-left: 5px solid var(--card-border);
       border-radius: 16px;
-      box-shadow: var(--shadow);
-      padding: 1.3rem 1.2rem;
       color: var(--text-main);
-      border-left: 4px solid var(--border-accent);
-      display: flex; align-items: flex-start; gap: 1.4rem;
-      font-size: 1.06rem;
-      transition: transform .22s, box-shadow .17s;
-      opacity: 0; transform: translateY(30px);
+      box-shadow: var(--card-shadow);
+      padding: 1.25rem 1.1rem;
+      display: flex; align-items: flex-start; gap: 1.35rem;
+      font-size: 1.07rem;
+      transition: transform .19s, box-shadow .12s;
+      opacity: 0; transform: translateY(26px);
     }
     .card.visible {
       opacity: 1; transform: translateY(0);
-      transition-delay: 0.05s;
+      transition-delay: 0.045s;
     }
     .card:hover {
-      transform: translateY(-3px) scale(1.012);
-      box-shadow: 0 12px 24px #9cc8fc22, var(--shadow);
+      transform: translateY(-2px) scale(1.012);
+      box-shadow: 0 14px 36px #2a4e8b19, var(--card-shadow);
     }
     .card img {
-      width: 88px; max-width: 100%; height: auto;
+      width: 86px; max-width: 100%; height: auto;
       border-radius: 8px;
-      box-shadow: 0 2px 12px #c5daf844;
+      box-shadow: 0 2px 12px #b6b6c833;
       object-fit: cover; background: #eef4fa;
-      flex-shrink: 0;
-      border: .5px solid #aec6de33;
+      flex-shrink: 0; border: .6px solid #29539b31;
     }
-    .card b,
-    .year-heading { color: var(--text-accent); font-weight: 700; }
+    .card b {
+      color: var(--accent);
+      font-weight: bold;
+    }
     .card a, .card a:visited {
-      color: var(--text-accent);
-      margin-top: .36rem;
+      color: var(--accent);
+      margin-top: .27rem;
       text-decoration: none;
       display: inline-block;
       font-weight: 500;
       font-size: 0.97em;
-      transition: text-decoration .18s;
+      transition: text-decoration .17s, color .19s;
       word-break: break-all;
     }
     .card a:hover, .card a:focus {
+      color: var(--accent-gold);
       text-decoration: underline;
     }
     @media (prefers-reduced-motion: no-preference) {
@@ -164,17 +169,17 @@
     }
     footer {
       text-align: center;
-      padding: 2.7rem 1rem 2rem;
-      font-size: 1.06rem;
-      color: #7291ad;
-      border-top: 1px solid #e1e8f2;
+      padding: 2.2rem 1rem 2rem;
+      font-size: 1.04rem;
+      color: #7b8fac;
+      border-top: 1px solid #c5c8d1;
       margin-top: 4rem;
       letter-spacing: 0.04em;
-      background: #f7fafd;
+      background: #f7f8fa;
     }
     @media (max-width: 650px) {
-      header { font-size: 2.1rem; padding: 2.1rem .6rem 0.5rem; }
-      .card { flex-direction: column; gap: .6rem; }
+      header { font-size: 2.07rem; padding: 1.8rem .6rem 0.45rem; }
+      .card { flex-direction: column; gap: .7rem; }
       main, section { padding-left: 0; padding-right: 0; }
     }
   </style>
@@ -198,13 +203,13 @@
           <div class="card animate-on-scroll">
             <div>
               <b>Romero, A.</b> & Gleeson, S. <b>“Latinx Labor Rights and Workplace Enforcement.”</b>
-              <br>Contribution to the 50th Anniversary Special Issue on Latinx Labor Studies, <i>Aztlán: A Journal of Chicano Studies</i>. <span style="color:#7a8799;opacity:.60;">(Forthcoming, Fall 2026)</span>
+              <br>Contribution to the 50th Anniversary Special Issue on Latinx Labor Studies, <i>Aztlán: A Journal of Chicano Studies</i>. <span style="color:#8e99af;opacity:.70;">(Forthcoming, Fall 2026)</span>
             </div>
           </div>
           <div class="card animate-on-scroll">
             <div>
               <b>Romero, A.</b> & Gleeson, S. <b>“Cities, Migrants, and Labor Conditions.”</b>
-              <br>Chapter in preparation for the <i>Handbook on Cities and Migration</i> (Edward Elgar Publishing). <span style="color:#7a8799;opacity:.60;">(Forthcoming, Fall 2026)</span>
+              <br>Chapter in preparation for the <i>Handbook on Cities and Migration</i> (Edward Elgar Publishing). <span style="color:#8e99af;opacity:.70;">(Forthcoming, Fall 2026)</span>
             </div>
           </div>
         </div>
@@ -218,7 +223,7 @@
           <div class="card animate-on-scroll">
             <div>
               Simmons, M., Hamilton, A., Davis, A., Dyer, W., Philippe, C.J., Heady, J., Houck, P., <b>Romero, A.</b>, Cordova, R.A., Hendrix, D., Ortiz, P., Moeller, S., & Tang, K. <b>“A Meeting of Two Worlds—Oral History and Linguistics: Partnerships, Perplexities, and Potentialities in Researching African American Language.”</b>
-              <br><i>The Oral History Review</i>. <span style="color:#7a8799;opacity:.60;">(Forthcoming)</span>
+              <br><i>The Oral History Review</i>. <span style="color:#8e99af;opacity:.70;">(Forthcoming)</span>
             </div>
           </div>
         </div>
@@ -276,7 +281,7 @@
     </section>
   </main>
   <footer>
-    © 2025 Adolfho Romero · <a href="mailto:adolfhoromero@gmail.com" style="color:var(--text-accent);text-decoration:none;">adolfhoromero@gmail.com</a>
+    © 2025 Adolfho Romero · <a href="mailto:adolfhoromero@gmail.com" style="color:var(--accent);text-decoration:none;">adolfhoromero@gmail.com</a>
   </footer>
   <script>
     // Smooth fade-in for cards
