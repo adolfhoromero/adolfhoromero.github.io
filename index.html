@@ -62,20 +62,36 @@
       background-size: cover;
       background-position: center 44%;
       background-repeat: no-repeat;
-      position: relative;
     }
 
-    .banner-text {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(0, 0, 0, 0.5);
-      padding: 10px 20px;
-      color: #fff;
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .motto-wrapper {
+      text-align: center;
+      margin-top: 25px;
+      animation: fadeInUp 1.2s ease-out;
+    }
+
+    .motto-line {
+      width: 60px;
+      border: none;
+      border-top: 2px solid var(--accent);
+      margin: 0 auto 12px;
+    }
+
+    .motto-text {
+      font-size: 1.2em;
       font-weight: 600;
-      font-size: 1.1em;
-      border-radius: 5px;
+      color: var(--text);
     }
 
     .section {
@@ -247,8 +263,12 @@
   </header>
 
   <!-- Banner -->
-  <div class="banner">
-    <div class="banner-text">Worker dignity. Collective power. Migrant justice.</div>
+  <div class="banner"></div>
+
+  <!-- Motto -->
+  <div class="motto-wrapper">
+    <hr class="motto-line" />
+    <p class="motto-text">Worker dignity. Collective power. Migrant justice.</p>
   </div>
 
   <!-- About Section -->
@@ -267,13 +287,13 @@
         </p>
         <hr style="border: none; border-top: 1px solid #555; margin: 30px 0 20px;" />
         <div class="contact-info">
-          <p>📧 adolfhoromero@gmail.com</p>
+          <p><strong>Email:</strong> <a href="mailto:adolfhoromero@gmail.com">adolfhoromero@gmail.com</a></p>
           <p>ORCID: <a href="https://orcid.org/0009-0000-2505-0192" target="_blank">https://orcid.org/0009-0000-2505-0192</a></p>
           <div class="social-icons">
-            <a href="https://www.linkedin.com/in/adolfho" target="_blank">
+            <a href="https://www.linkedin.com/in/adolfho" target="_blank" aria-label="LinkedIn">
               <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
             </a>
-            <a href="https://www.facebook.com/adolfo.romero.902879" target="_blank">
+            <a href="https://www.facebook.com/adolfo.romero.902879" target="_blank" aria-label="Facebook">
               <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook">
             </a>
           </div>
