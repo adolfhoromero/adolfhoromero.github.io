@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1  <title>Adolfho Romero</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Adolfho Romero</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -11,7 +12,6 @@
 
   <style>
     :root {
-      /* Colors */
       --background-top: #f7f8fa;
       --background-bottom: #e4e8ef;
       --nav-bg: #22304a;
@@ -21,36 +21,23 @@
       --text-main: #232d41;
       --heading-color: #212c3e;
       --max-width: 1100px;
-      /* Fonts */
-      --font-body: 'Poppins', sans-serif;
-      --font-heading: 'Spectral', serif;
-      /* Misc */
-      --scroll-btn-bg: var(--accent);
-      --scroll-btn-hover-bg: #406eb5;
     }
 
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: var(--font-body);
-      color: var(--text-main);
+      font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, var(--background-top), var(--background-bottom));
+      color: var(--text-main);
       line-height: 1.6;
     }
     a {
-      color: var(--accent);
-      text-decoration: none;
-      transition: color .2s;
+      color: var(--accent); text-decoration: none; transition: color .2s;
     }
     a:hover, a:focus {
       color: var(--accent-gold);
     }
 
-    /* Header */
     header {
       background: var(--nav-bg);
       color: var(--nav-text);
@@ -59,11 +46,10 @@
       box-shadow: 0 4px 22px rgba(34,48,74,0.47);
     }
     .site-title {
-      font-family: var(--font-heading);
+      font-family: 'Spectral', serif;
       font-size: 2.95rem;
       font-weight: 700;
-      letter-spacing: -1.5px;
-      margin-bottom: 0.25rem;
+      color: var(--nav-text);
     }
     .subtitle {
       font-size: 1.12rem;
@@ -72,19 +58,14 @@
       letter-spacing: .06em;
     }
 
-    /* Navigation */
     nav.main-nav {
-      position: sticky;
-      top: 0;
-      z-index: 50;
+      position: sticky; top: 0; z-index: 50;
       background: var(--nav-bg);
       box-shadow: inset 0 -1px 0 #3a496f;
-      font-family: var(--font-heading);
+      font-family: 'Spectral', serif;
     }
     nav.main-nav ul {
-      display: flex;
-      justify-content: center;
-      gap: 48px;
+      display: flex; justify-content: center; gap: 48px;
       list-style: none;
       max-width: var(--max-width);
       margin: 0 auto;
@@ -97,7 +78,6 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: .1em;
-      transition: color .22s, background .18s;
     }
     nav.main-nav a::after {
       content: '';
@@ -108,72 +88,47 @@
       width: 0; opacity: 0;
       transition: width .26s, opacity .22s;
     }
-    nav.main-nav a:hover, nav.main-nav a:focus {
-      background: rgba(37,49,74,0.66);
-      color: var(--accent-gold);
-    }
-    nav.main-nav a:hover::after,
-    nav.main-nav a:focus::after {
-      width: calc(100% - 36px);
-      opacity: .82;
+    nav.main-nav a:hover::after {
+      width: calc(100% - 36px); opacity: .82;
     }
 
-    /* Hero */
     .hero {
       text-align: center;
-      padding: 20px 10px; /* shrunk vertically */
-      background:
-        linear-gradient(120deg, rgba(247,248,250,0.79) 65%, rgba(229,232,239,0.84) 100%),
-        url('cornellcampus.jpg') center 44%/cover no-repeat;
+      padding: 38px 10px 22px;
+      background: linear-gradient(120deg, rgba(247,248,250,0.79), rgba(229,232,239,0.84)),
+                  url('cornellcampus.jpg') center 44%/cover no-repeat;
       border-bottom: 5px solid var(--accent);
       box-shadow: 0 2px 40px rgba(35,64,101,0.09);
     }
     .hero-photo {
-      width: 200px;
-      height: 200px;
-      border-radius: 0; /* square */
+      width: 200px; height: 200px;
+      border-radius: 50%;
       object-fit: cover;
-      background: #fff;
-      box-shadow:
-        0 0 0 4px #fff,
-        0 0 0 1px #22304a,
-        0 17px 44px rgba(34,48,74,0.07);
+      background: #f5f8fc;
+      box-shadow: 0 0 0 4px #fff, 0 17px 44px rgba(34,48,74,0.07);
       margin: 0 auto 1.1rem;
     }
-    @media (max-width: 500px) {
-      .hero-photo {
-        width: 130px;
-        height: 130px;
-      }
-    }
     .hero h1 {
-      font-family: var(--font-heading);
+      font-family: 'Spectral', serif;
       font-size: 2.5rem;
       color: var(--heading-color);
-      letter-spacing: -1px;
-      margin: .15em 0 .32em;
     }
     .hero h2 {
       font-size: 1.18rem;
       font-weight: 600;
       color: var(--accent);
-      letter-spacing: .045em;
-      margin: 7px 0 6px;
     }
     .hero-mission {
       font-style: italic;
       font-weight: 600;
       margin: 16px auto 8px;
       max-width: 600px;
-      color: var(--text-main);
     }
-
-    /* Moved quote */
     .hero-quote {
-      display: block;
-      max-width: 410px;
-      margin: 16px auto;
+      display: inline-block;
+      margin: 20px auto 0;
       padding: 11px 21px;
+      max-width: 410px;
       background: #fffdec;
       border-left: 4px solid var(--accent-gold);
       border-radius: 6px;
@@ -182,81 +137,39 @@
       color: #495168;
     }
 
-    /* Sections */
     .section {
       max-width: var(--max-width);
       margin: 2.3rem auto 4rem;
       padding: 0 1.1rem;
     }
     .section h2 {
-      font-family: var(--font-heading);
+      font-family: 'Spectral', serif;
       font-size: 2.18rem;
-      font-weight: 700;
       text-align: center;
-      letter-spacing: -0.5px;
       margin-bottom: 1.75rem;
-      position: relative;
-    }
-    .section h2::after {
-      content: '';
-      display: block;
-      width: 84px; height: 5px;
-      margin: 14px auto 0;
-      background: linear-gradient(90deg, var(--accent), var(--accent-gold));
-      border-radius: 4px; opacity: .9;
     }
 
-    /* About */
     .about-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 46px;
-      justify-content: center;
-      align-items: flex-start;
+      display: flex; flex-wrap: wrap;
+      gap: 46px; justify-content: center; align-items: flex-start;
     }
     .about-text {
-      flex: 2;
-      min-width: 300px;
-      max-width: 670px;
-      font-size: 1.16rem;
-      line-height: 1.73;
-      font-weight: 400;
+      flex: 2; min-width: 300px; max-width: 670px;
+      font-size: 1.16rem; line-height: 1.73;
     }
     .about-text p { margin-bottom: 1.45rem; }
-    .about-text hr {
-      border: none;
-      border-top: 1px solid #d1d6df;
-      margin: 35px 0 25px;
-      opacity: .33;
-    }
-    #contact p { margin-bottom: 0.75rem; }
-
     .about-image {
-      flex: 1;
-      min-width: 220px;
-      max-width: 360px;
-      display: flex;
-      justify-content: center;
+      flex: 1; min-width: 220px; max-width: 360px;
+      display: flex; justify-content: center;
     }
     .about-image img {
-      width: 200px;
-      height: 200px;
-      border-radius: 0; /* square */
+      width: 240px;
+      height: auto;
+      border-radius: 12px;
       object-fit: cover;
-      background: #fff;
-      box-shadow:
-        0 0 0 4px #fff,
-        0 0 0 1px #22304a,
-        0 7px 32px rgba(41,83,155,0.13);
-    }
-    @media (max-width: 500px) {
-      .about-image img {
-        width: 130px;
-        height: 130px;
-      }
+      box-shadow: 0 7px 32px rgba(41,83,155,0.13);
     }
 
-    /* Ethical note */
     .ethical {
       max-width: 650px;
       margin: 36px auto 0;
@@ -264,28 +177,9 @@
       background: #f8f8ea;
       border-left: 4px solid rgba(188,159,91,0.18);
       border-radius: 7px;
-      box-shadow: 0 2px 12px rgba(214,194,155,0.06);
       color: #775f29;
-      font-size: 1.04rem;
     }
 
-    /* Scroll-to-top */
-    .scroll-top-btn {
-      position: fixed; bottom: 34px; right: 34px;
-      width: 44px; height: 44px;
-      background: var(--scroll-btn-bg);
-      color: #f7f9fa;
-      border: none; border-radius: 50%;
-      font-size: 1.31em; cursor: pointer;
-      display: none; z-index: 80;
-      box-shadow: 0 3px 12px rgba(36,64,100,0.2);
-      transition: background .22s;
-    }
-    .scroll-top-btn:hover, .scroll-top-btn:focus {
-      background: var(--scroll-btn-hover-bg);
-    }
-
-    /* Footer */
     footer {
       text-align: center;
       background: var(--nav-bg);
@@ -294,17 +188,13 @@
       font-size: .98rem;
       border-top: 1px solid rgba(45,57,85,0.2);
       margin-top: 4.8rem;
-      font-weight: 500;
     }
-    footer a { color: var(--accent); font-weight: 600; }
 
-    /* Responsive */
     @media (max-width: 820px) {
       .about-container { flex-direction: column; text-align: center; }
       .about-text { max-width: 95%; }
       .about-image { order: -1; margin-bottom: 18px; }
-      nav.main-nav ul { flex-direction: column; gap: 16px; padding: 11px 0 13px; }
-      nav.main-nav a { font-size: 1.08rem; }
+      .hero-photo { width: 150px; height: 150px; }
     }
   </style>
 </head>
@@ -325,33 +215,30 @@
   </nav>
 
   <section class="hero" aria-label="Hero">
-    <img src="me.jpeg" alt="Adolfho Romero portrait" class="hero-photo"/>
+    <img src="adolfhoromero.jpeg" alt="Adolfho Romero portrait" class="hero-photo"/>
     <h1>Adolfho Romero</h1>
     <h2>PhD Student • Cornell ILR</h2>
-    <div class="hero-mission" aria-live="polite">
+    <div class="hero-mission">
       Empowering workers and communities<br/>through research, listening, and collective action.
     </div>
+    <blockquote class="hero-quote">
+      “I am grateful to work alongside community organizations, mentors, and workers in the ongoing struggle for dignity and justice.”
+    </blockquote>
   </section>
-
-  <!-- Moved quote below the hero section -->
-  <blockquote class="hero-quote">
-    “I am grateful to work alongside community organizations, mentors, and workers in the ongoing struggle for dignity and justice.”
-  </blockquote>
 
   <section class="section" id="about" aria-labelledby="about-title">
     <h2 id="about-title">About My Journey</h2>
     <div class="about-container">
       <article class="about-text">
-        <p>As a first-generation Mexican and Salvadorean from Humboldt Park, Chicago, I witnessed the challenges of working-class life and the strength found in solidarity.</p>
-        <p>Today, as a rising PhD student in Cornell’s ILR School, my ethnographic, bilingual research amplifies marginalized voices through community-engaged partnerships.</p>
-        <hr/>
+        <p>As a first-generation student from a working-class family in Chicago, I learned early on about struggle and solidarity. Growing up, I saw my parents working long hours in factories under difficult conditions, which instilled in me a personal commitment to fighting for social and economic justice. Those experiences not only shaped my identity but also inspired me to uplift marginalized voices and foster unity in my community.</p>
+        <p>Now, as a Ph.D. student in Industrial and Labor Relations at Cornell University, I carry those values into my research and activism. My work focuses on the intersections of labor, race, and community. As the first in my family to pursue a doctorate, I strive to honor my community through my scholarship and to bridge academic research with grassroots organizing. I believe in the power of education and collective action to create meaningful change, and I remain grounded in the principles of solidarity and the working-class experiences that have guided me from the start.</p>
         <section id="contact" aria-label="Contact">
           <p><strong>Email:</strong> <a href="mailto:adolfhoromero@gmail.com">adolfhoromero@gmail.com</a></p>
           <p><strong>ORCID:</strong> <a href="https://orcid.org/0009-0000-2505-0192" target="_blank">0009-0000-2505-0192</a></p>
         </section>
       </article>
       <aside class="about-image">
-        <img src="me.jpeg" alt="Adolfho Romero field portrait"/>
+        <img src="adolfhoromero.jpeg" alt="Adolfho Romero field portrait"/>
       </aside>
     </div>
     <div class="ethical">
@@ -359,20 +246,9 @@
     </div>
   </section>
 
-  <button class="scroll-top-btn" aria-label="Scroll to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-    &#8593;
-  </button>
-
   <footer>
     &copy; 2025 Adolfho Romero · <a href="mailto:adolfhoromero@gmail.com">adolfhoromero@gmail.com</a>
   </footer>
-
-  <script>
-    const btn = document.querySelector('.scroll-top-btn');
-    window.addEventListener('scroll', () => {
-      btn.style.display = window.scrollY > 200 ? 'block' : 'none';
-    });
-  </script>
 
 </body>
 </html>
