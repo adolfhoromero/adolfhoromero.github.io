@@ -4,244 +4,137 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1  <title>Adolfho Romero</title>
 
-  <!-- Fonts -->
+  <!-- Fonts: Modern variable + neo-humanist pairing -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?
+    family=Inter:opsz,wght@8..48,300..800&
+    family=Maison+Neue:ital,wght@0,400;0,600;1,400;1,600&
+    family=GT+Eesti:ital,wght@0,400;0,700;1,400;1,700&
+    display=swap" rel="stylesheet"/>
 
   <style>
     :root {
-      --background-top: #f7f8fa;
-      --background-bottom: #e4e8ef;
       --nav-bg: #22304a;
-      --nav-text: #fff;
-      --accent: #29539b;
-      --accent-gold: #ffcc00;
+      --nav-text: #ffffff;
+      --accent-start: #2f3b6a;
+      --accent-end: #5060a7;
       --text-main: #232d41;
       --heading-color: #212c3e;
       --max-width: 1100px;
     }
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, var(--background-top), var(--background-bottom));
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f7f8fa, #e4e8ef);
       color: var(--text-main);
       line-height: 1.6;
     }
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      transition: color .2s;
-    }
-    a:hover,
-    a:focus {
-      color: var(--accent-gold);
-    }
+    a { text-decoration: none; color: var(--accent-start); transition: color .2s; }
+    a:hover, a:focus { color: var(--accent-end); }
 
+    /* HEADER & NAV */
     header {
       background: var(--nav-bg);
       color: var(--nav-text);
+      padding: 2rem 1rem 1rem;
       text-align: center;
-      padding: 2.6rem 1rem 1.1rem;
-      box-shadow: 0 4px 22px rgba(34,48,74,0.47);
+      position: relative;
     }
     .site-title {
-      font-family: 'Spectral', serif;
-      font-size: 2.95rem;
+      font-family: 'GT Eesti', sans-serif;
+      font-size: 3.2rem;
       font-weight: 700;
-      color: var(--nav-text);
     }
-    /* Deleted the .subtitle element entirely */
-
-    nav.main-nav {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: var(--nav-bg);
-      box-shadow: inset 0 -1px 0 #3a496f;
-      font-family: 'Spectral', serif;
-    }
-    nav.main-nav ul {
-      display: flex;
-      justify-content: center;
-      gap: 48px;
-      list-style: none;
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 13px 0;
-    }
-    nav.main-nav a {
-      position: relative;
-      padding: 10px 22px;
-      font-size: 1.16rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .1em;
-      color: #ffffff;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.4);
-    }
-    nav.main-nav a::after {
-      content: '';
+    /* Dark-mode toggle placeholder */
+    .dark-toggle {
       position: absolute;
-      left: 18px;
-      right: 18px;
-      bottom: 6px;
-      height: 3.5px;
-      border-radius: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-gold));
-      width: 0;
-      opacity: 0;
-      transition: width .26s, opacity .22s;
+      top: 1rem; right: 1rem;
+      width: 2rem; height: 2rem;
+      background: url('sun-moon.svg') center/contain no-repeat;
+      cursor: pointer;
     }
-    nav.main-nav a:hover,
-    nav.main-nav a:focus {
-      color: var(--accent-gold);
+    nav.main-nav {
+      position: sticky; top: 0; background: var(--nav-bg);
+      box-shadow: inset 0 -1px 0 #3a496f; z-index: 10;
     }
-    nav.main-nav a:hover::after {
-      width: calc(100% - 36px);
-      opacity: .82;
+    nav ul {
+      display: flex; justify-content: center; gap: 2.5rem;
+      list-style: none; padding: .75rem 0;
+      font-family: 'Maison Neue', sans-serif;
     }
+    nav a {
+      position: relative; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--nav-text); font-size: 1rem;
+    }
+    nav a::after {
+      content: ''; position: absolute; left: 0; right: 0; bottom: -4px;
+      height: 2px; background: linear-gradient(90deg, var(--accent-start), var(--accent-end));
+      transform: scaleX(0); transform-origin: center;
+      transition: transform .3s ease;
+    }
+    nav a:hover::after { transform: scaleX(1); }
 
+    /* HERO */
     .hero {
-      text-align: center;
-      padding: 38px 10px 22px;
-      background: linear-gradient(120deg, rgba(247,248,250,0.79), rgba(229,232,239,0.84)),
-                  url('cornellcampus.jpg') center 44%/cover no-repeat;
-      border-bottom: 5px solid var(--accent);
-      box-shadow: 0 2px 40px rgba(35,64,101,0.09);
+      position: relative; height: 100vh;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      background: url('cornellcampus.jpg') center/cover fixed no-repeat;
+      text-align: center; padding: 0 1rem;
+      color: #fff; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(120deg, rgba(34,48,74,0.6), rgba(80,96,167,0.6));
+    }
+    .hero-content {
+      position: relative; z-index: 1;
+      opacity: 0; transform: translateY(20px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+    .hero-content.visible {
+      opacity: 1; transform: translateY(0);
     }
     .hero-photo {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      object-fit: cover;
-      background: #f5f8fc;
-      box-shadow: 0 0 0 4px #fff, 0 17px 44px rgba(34,48,74,0.07);
-      margin: 0 auto 1.1rem;
+      width: 180px; height: 180px; border-radius: 50%;
+      object-fit: cover; box-shadow: 0 0 0 4px #fff, 0 15px 30px rgba(0,0,0,0.2);
+      transition: transform .4s ease;
     }
+    .hero-photo:hover { transform: scale(1.05); }
     .hero h1 {
-      font-family: 'Spectral', serif;
-      font-size: 2.5rem;
-      color: var(--heading-color);
+      margin-top: 1rem;
+      font-family: 'GT Eesti', sans-serif;
+      font-size: 3rem; font-weight: 700;
     }
     .hero h2 {
-      font-size: 1.18rem;
-      font-weight: 600;
-      color: var(--accent);
+      margin-top: .5rem;
+      font-family: 'Maison Neue', sans-serif;
+      font-size: 1.25rem; font-weight: 600;
+      background: linear-gradient(90deg, var(--accent-start), var(--accent-end));
+      -webkit-background-clip: text; color: transparent;
     }
     .hero-quote {
-      display: inline-block;
-      margin: 20px auto 0;
-      padding: 11px 21px;
-      max-width: 410px;
-      background: #fffdec;
-      border-left: 4px solid var(--accent-gold);
-      border-radius: 6px;
-      box-shadow: 0 1.5px 8px rgba(245,233,221,0.09);
-      font-style: italic;
-      color: #495168;
+      margin-top: 1.5rem; max-width: 500px;
+      font-style: italic; font-family: 'Inter', sans-serif;
+      background: rgba(255,255,255,0.9); color: #22304a;
+      padding: .75rem 1rem; border-left: 4px solid var(--accent-end);
+      border-radius: 4px; box-shadow: 0 2px 12px rgba(0,0,0,0.1);
     }
 
-    .section {
-      max-width: var(--max-width);
-      margin: 2.3rem auto 4rem;
-      padding: 0 1.1rem;
-    }
-    .section h2 {
-      font-family: 'Spectral', serif;
-      font-size: 2.18rem;
-      text-align: center;
-      margin-bottom: 1.75rem;
-    }
-
-    .about-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 46px;
-      justify-content: center;
-      align-items: flex-start;
-    }
-    .about-text {
-      flex: 2;
-      min-width: 300px;
-      max-width: 670px;
-      font-size: 1.16rem;
-      line-height: 1.73;
-    }
-    .about-text p {
-      margin-bottom: 1.45rem;
-    }
-    .about-image {
-      flex: 1;
-      min-width: 220px;
-      max-width: 360px;
-      display: flex;
-      justify-content: center;
-    }
-    .about-image img {
-      width: 320px;
-      height: auto;
-      border-radius: 12px;
-      object-fit: cover;
-      box-shadow: 0 7px 32px rgba(41,83,155,0.13);
-    }
-
-    .ethical {
-      max-width: 650px;
-      margin: 36px auto 0;
-      padding: 1rem;
-      background: #f8f8ea;
-      border-left: 4px solid rgba(188,159,91,0.18);
-      border-radius: 7px;
-      color: #775f29;
-    }
-
-    footer {
-      text-align: center;
-      background: var(--nav-bg);
-      color: #adadad;
-      padding: 23px 1rem;
-      font-size: .98rem;
-      border-top: 1px solid rgba(45,57,85,0.2);
-      margin-top: 4.8rem;
-    }
-
+    /* SCRIPTS & UTILITIES */
     @media (max-width: 820px) {
-      .about-container {
-        flex-direction: column;
-        text-align: center;
-      }
-      .about-text {
-        max-width: 95%;
-      }
-      .about-image {
-        order: -1;
-        margin-bottom: 18px;
-      }
-      .about-image img {
-        width: 260px;
-      }
-      .hero-photo {
-        width: 150px;
-        height: 150px;
-      }
+      .hero-photo { width: 140px; height: 140px; }
+      .site-title { font-size: 2.5rem; }
     }
   </style>
 </head>
-
 <body>
-
   <header>
+    <div class="dark-toggle" onclick="toggleDarkMode()"></div>
     <h1 class="site-title">Adolfho Romero</h1>
-    <!-- Removed the subtitle entirely to avoid repetition -->
   </header>
 
   <nav class="main-nav" aria-label="Primary">
@@ -253,37 +146,30 @@
   </nav>
 
   <section class="hero" aria-label="Hero">
-    <img src="adolfhoromero.jpeg" alt="Adolfho Romero portrait" class="hero-photo"/>
-    <h1>Adolfho Romero</h1>
-    <h2>PhD Student • Cornell ILR</h2>
-    <blockquote class="hero-quote">
-      “I am grateful to work alongside community organizations, mentors, and workers in the ongoing struggle for dignity and justice.”
-    </blockquote>
-  </section>
-
-  <section class="section" id="about" aria-labelledby="about-title">
-    <h2 id="about-title">About My Journey</h2>
-    <div class="about-container">
-      <article class="about-text">
-        <p>As a first-generation student from a working-class family in Chicago, I learned early on about struggle and solidarity. Growing up, I saw my parents working long hours in factories under difficult conditions, which instilled in me a personal commitment to fighting for social and economic justice. Those experiences not only shaped my identity but also inspired me to uplift marginalized voices and foster unity in my community.</p>
-        <p>Now, as a Ph.D. student in Industrial and Labor Relations at Cornell University, I carry those values into my research and activism. My work focuses on the intersections of labor, race, and community. As the first in my family to pursue a doctorate, I strive to honor my community through my scholarship and to bridge academic research with grassroots organizing. I believe in the power of education and collective action to create meaningful change, and I remain grounded in the principles of solidarity and the working-class experiences that have guided me from the start.</p>
-        <section id="contact" aria-label="Contact">
-          <p><strong>Email:</strong> <a href="mailto:adolfhoromero@gmail.com">adolfhoromero@gmail.com</a></p>
-          <p><strong>ORCID:</strong> <a href="https://orcid.org/0009-0000-2505-0192" target="_blank">0009-0000-2505-0192</a></p>
-        </section>
-      </article>
-      <aside class="about-image">
-        <img src="me.jpeg" alt="Adolfho Romero field portrait"/>
-      </aside>
-    </div>
-    <div class="ethical">
-      <strong>Ethical Commitment:</strong> My work follows IRB-approved protocols, oral consent, and shared agency—grounded in respect and participant dignity.
+    <div class="hero-content">
+      <img src="adolfhoromero.jpeg" alt="Adolfho Romero portrait" class="hero-photo"/>
+      <h1>Adolfho Romero</h1>
+      <h2>PhD Candidate • Cornell ILR</h2>
+      <blockquote class="hero-quote">
+        “I am grateful to work alongside community organizations, mentors, and workers in the ongoing struggle for dignity and justice.”
+      </blockquote>
     </div>
   </section>
 
-  <footer>
-    &copy; 2025 Adolfho Romero · <a href="mailto:adolfhoromero@gmail.com">adolfhoromero@gmail.com</a>
-  </footer>
-
+  <script>
+    // Scroll-trigger reveal
+    window.addEventListener('load', () => {
+      document.querySelector('.hero-content').classList.add('visible');
+    });
+    // Dark-mode toggle skeleton
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+    }
+    // Persist preference
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
 </body>
 </html>
