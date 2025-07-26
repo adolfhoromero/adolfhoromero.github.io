@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Adolfho Romero</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1  <title>Adolfho Romero</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -163,8 +162,8 @@
       display: flex; justify-content: center;
     }
     .about-image img {
-      width: 240px;
-      height: auto;
+      width: 320px;       /* increased width */
+      height: auto;       /* maintain aspect ratio */
       border-radius: 12px;
       object-fit: cover;
       box-shadow: 0 7px 32px rgba(41,83,155,0.13);
@@ -194,6 +193,7 @@
       .about-container { flex-direction: column; text-align: center; }
       .about-text { max-width: 95%; }
       .about-image { order: -1; margin-bottom: 18px; }
+      .about-image img { width: 260px; }  /* adjust for smaller screens */
       .hero-photo { width: 150px; height: 150px; }
     }
   </style>
@@ -238,7 +238,8 @@
         </section>
       </article>
       <aside class="about-image">
-        <img src="adolfhoromero.jpeg" alt="Adolfho Romero field portrait"/>
+        <!-- Changed the src to me.jpeg and enlarged via CSS -->
+        <img src="me.jpeg" alt="Adolfho Romero field portrait"/>
       </aside>
     </div>
     <div class="ethical">
