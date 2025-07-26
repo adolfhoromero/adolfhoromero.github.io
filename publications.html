@@ -114,10 +114,10 @@
       letter-spacing: .08em;
     }
     .card-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem;
     }
-    @media (max-width: 800px){
-      .card-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+    @media (max-width: 900px){
+      .card-grid { grid-template-columns: 1fr; gap: 1.22rem; }
     }
     .card {
       background: var(--card-bg);
@@ -127,8 +127,8 @@
       box-shadow: var(--card-shadow);
       padding: 1.25rem 1.1rem;
       display: flex; align-items: flex-start; gap: 1.35rem;
-      font-size: 1.07rem;
-      transition: transform .19s, box-shadow .12s;
+      font-size: 1.09rem;
+      transition: transform .18s, box-shadow .12s;
       opacity: 0; transform: translateY(26px);
     }
     .card.visible {
@@ -140,11 +140,23 @@
       box-shadow: 0 14px 36px #2a4e8b19, var(--card-shadow);
     }
     .card img {
-      width: 86px; max-width: 100%; height: auto;
-      border-radius: 8px;
-      box-shadow: 0 2px 12px #b6b6c833;
-      object-fit: cover; background: #eef4fa;
-      flex-shrink: 0; border: .6px solid #29539b31;
+      width: 170px;
+      max-width: 100%;
+      min-width: 120px;
+      height: auto;
+      border-radius: 14px;
+      box-shadow: 0 2px 14px #b6b6c833;
+      object-fit: cover;
+      background: #eef4fa;
+      flex-shrink: 0;
+      border: .8px solid #29539b31;
+      cursor: pointer;
+      transition: box-shadow 0.2s, border-color 0.2s;
+      display: block;
+    }
+    .card img:hover {
+      box-shadow: 0 6px 20px #29539b33;
+      border-color: var(--accent-gold);
     }
     .card b {
       color: var(--accent);
@@ -156,8 +168,8 @@
       text-decoration: none;
       display: inline-block;
       font-weight: 500;
-      font-size: 0.97em;
-      transition: text-decoration .17s, color .19s;
+      font-size: 0.98em;
+      transition: text-decoration .15s, color .18s;
       word-break: break-all;
     }
     .card a:hover, .card a:focus {
@@ -180,6 +192,7 @@
     @media (max-width: 650px) {
       header { font-size: 2.07rem; padding: 1.8rem .6rem 0.45rem; }
       .card { flex-direction: column; gap: .7rem; }
+      .card img { width: 98vw; max-width: 370px; margin: 0 auto 0.7rem; }
       main, section { padding-left: 0; padding-right: 0; }
     }
   </style>
@@ -235,7 +248,9 @@
         <div class="year-heading">2025</div>
         <div class="card-grid">
           <div class="card animate-on-scroll">
-            <img src="labor.jpeg" alt="Cover of Labor Studies Journal, Vol 50, Issue 2">
+            <a href="https://doi.org/10.1177/0160449X251342375" target="_blank" rel="noopener noreferrer">
+              <img src="labor.jpeg" alt="Cover of Labor Studies Journal, Vol 50, Issue 2">
+            </a>
             <div>
               Ortiz, P. (2025). <i>Latino workers, the 2024 presidential election, and the future of the labor movement.</i>
               <br><i>Labor Studies Journal, 50(2)</i>, 153–165.
@@ -243,7 +258,9 @@
             </div>
           </div>
           <div class="card animate-on-scroll">
-            <img src="decolonizing.jpeg" alt="Ground Works Journal Cover">
+            <a href="https://doi.org/10.48807/2025.0.0134" target="_blank" rel="noopener noreferrer">
+              <img src="decolonizing.jpeg" alt="Ground Works Journal Cover">
+            </a>
             <div>
               Concha-Holmes, A. D., et al. (2025). <i>Decolonizing representations to evoke the complexity of Black lives in Florida.</i>
               <br><i>Ground Works Journal</i>.
@@ -256,7 +273,9 @@
         <div class="year-heading">2023</div>
         <div class="card-grid">
           <div class="card animate-on-scroll">
-            <img src="nativeamerican.jpeg" alt="SOURCE Journal Cover">
+            <a href="https://doi.org/10.32473/sourceuf.5.1.132681" target="_blank" rel="noopener noreferrer">
+              <img src="nativeamerican.jpeg" alt="SOURCE Journal Cover">
+            </a>
             <div>
               Mattson, I., Mahar, G., & Durant, F. (2023). <i>Revitalizing Native American Oral Histories at the University of Florida.</i>
               <br><i>SOURCE: The Magazine of the University of Florida George A. Smathers Libraries</i>.
@@ -269,7 +288,9 @@
         <div class="year-heading">2022</div>
         <div class="card-grid">
           <div class="card animate-on-scroll">
-            <img src="journalofimmigrant.jpeg" alt="Journal of Immigrant and Minority Health Cover">
+            <a href="https://doi.org/10.1007/s10903-021-01278-5" target="_blank" rel="noopener noreferrer">
+              <img src="journalofimmigrant.jpeg" alt="Journal of Immigrant and Minority Health Cover">
+            </a>
             <div>
               Anastario, M., Rodriguez, A. M., Xiuhtecutli, N., & Wagner, E. (2022). <i>Characterization of lifetime agrichemical exposure sequences relative to international migration in foreign born Latinx agricultural workers living in South Florida.</i>
               <br><i>Journal of Immigrant and Minority Health, 24(5)</i>, 1145–1153.
