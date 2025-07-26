@@ -19,8 +19,7 @@
       --card-bg: #fff;
       --card-shadow: 0 4px 36px #2e3a5022;
       --card-border: #29539b;
-      --text-main: #313b53;
-      --heading-color: #263045;
+      --text-main: #313-color: #263045;
       --accent: #29539b;
       --accent-gold: #ffcc00;
       --max-width: 980px;
@@ -221,6 +220,49 @@
       color: var(--accent-gold);
       text-decoration: underline;
     }
+    /* Teaching Portfolio Invitation Section */
+    .teaching-invitation {
+      background: var(--card-bg);
+      border-left: 5px solid var(--accent-gold);
+      border-radius: 16px;
+      box-shadow: var(--card-shadow);
+      padding: 2rem;
+      margin: 3rem 0;
+      text-align: center;
+      transition: transform .18s, background 0.4s, color 0.4s;
+    }
+    .teaching-invitation:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px #2a4e8b19, var(--card-shadow);
+    }
+    .teaching-invitation h3 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--heading-color);
+      margin-bottom: 1rem;
+    }
+    .teaching-invitation p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .teaching-cta {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--accent), var(--accent-gold));
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: filter .2s, box-shadow .2s;
+    }
+    .teaching-cta:hover {
+      filter: brightness(1.07) saturate(1.12);
+      box-shadow: 0 8px 22px rgba(41,83,155,0.19);
+      text-decoration: none;
+      color: #fff;
+    }
     footer {
       text-align: center;
       padding: 2.2rem 1rem;
@@ -240,6 +282,7 @@
       .card img { width: 100%; max-width: 300px; margin: 0 auto .7rem; }
       main, section { padding: 0; }
       nav.main-nav ul { gap: 14px; }
+      .teaching-invitation { padding: 1.5rem; }
     }
   </style>
 </head>
@@ -254,6 +297,7 @@
       <li><a href="index.html"><i class="fas fa-house-user"></i> Home</a></li>
       <li><a href="adolfhoromerocv.pdf" target="_blank" class="cv-link"><i class="fas fa-id-badge"></i> CV</a></li>
       <li><a href="publications.html" class="pubs-link"><i class="fas fa-feather-alt"></i> Publications</a></li>
+      <li><a href="teaching.html" class="teaching-link"><i class="fas fa-chalkboard-teacher"></i> Teaching</a></li>
     </ul>
   </nav>
   <main>
@@ -264,14 +308,14 @@
         <div class="card-grid">
           <div class="card animate-on-scroll">
             <div>
-              <b>Romero, A.</b> & Gleeson, S. <b>“Latinx Labor Rights and Workplace Enforcement.”</b><br>
+              <b>Romero, A.</b> & Gleeson, S. <b>"Latinx Labor Rights and Workplace Enforcement."</b><br>
               Contribution to the 50th Anniversary Special Issue on Latinx Labor Studies, <i>Aztlán: A Journal of Chicano Studies</i>.
               <span style="color:#8e99af;opacity:.70;">(Forthcoming, Fall 2026)</span>
             </div>
           </div>
           <div class="card animate-on-scroll">
             <div>
-              <b>Romero, A.</b> & Gleeson, S. <b>“Cities, Migrants, and Labor Conditions.”</b><br>
+              <b>Romero, A.</b> & Gleeson, S. <b>"Cities, Migrants, and Labor Conditions."</b><br>
               Chapter in preparation for the <i>Handbook on Cities and Migration</i> (Edward Elgar Publishing).
               <span style="color:#8e99af;opacity:.70;">(Forthcoming, Fall 2026)</span>
             </div>
@@ -287,12 +331,21 @@
         <div class="card-grid">
           <div class="card animate-on-scroll">
             <div>
-              Simmons, M., Hamilton, A., Davis, A., Dyer, W., Philippe, C.J., Heady, J., Houck, P., <b>Romero, A.</b>, Cordova, R.A., Hendrix, D., Ortiz, P., Moeller, S., & Tang, K. <b>“A Meeting of Two Worlds—Oral History and Linguistics: Partnerships, Perplexities, and Potentialities in Researching African American Language.”</b><br>
+              Simmons, M., Hamilton, A., Davis, A., Dyer, W., Philippe, C.J., Heady, J., Houck, P., <b>Romero, A.</b>, Cordova, R.A., Hendrix, D., Ortiz, P., Moeller, S., & Tang, K. <b>"A Meeting of Two Worlds—Oral History and Linguistics: Partnerships, Perplexities, and Potentialities in Researching African American Language."</b><br>
               <i>The Oral History Review</i>. <span style="color:#8e99af;opacity:.70;">(Forthcoming)</span>
             </div>
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- Teaching Portfolio Invitation Section -->
+    <section class="teaching-invitation">
+      <h3>Explore My Teaching Portfolio</h3>
+      <p>Discover my teaching philosophy, course experience, pedagogical innovations, and student feedback. Learn about my work as a Teaching Assistant for Introduction to US Labor History at Cornell University and my commitment to creating inclusive, engaging learning environments.</p>
+      <a href="teaching.html" class="teaching-cta">
+        <i class="fas fa-chalkboard-teacher"></i> Visit Teaching Portfolio
+      </a>
     </section>
 
     <section id="acknowledged">
