@@ -1,8 +1,9 @@
-<!DOCTYPE html>
+update my entire code now : <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1  <title>Adolfho Romero</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Adolfho Romero</title>
 
   <!-- Fonts: Poppins + Spectral -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -13,45 +14,47 @@
 
   <style>
     :root {
-      --background-top:   #f7f8fa;
-      --background-bottom:#e4e8ef;
-      --nav-bg:           #22304a;
-      --nav-text:         #ffffff;
-      --accent:           #29539b;
-      --accent-gold:      #ffcc00;
-      --text-main:        #232d41;
-      --heading-color:    #212c3e;
-      --gradient-start:   #f7f8fa;
-      --gradient-end:     #e4e8ef;
-      --max-width:        1100px;
+      --background-top:  #f7f8fa;
+      --background-bottom: #e4e8ef;
+      --nav-bg:          #22304a;
+      --nav-text:        #ffffff;
+      --accent:          #29539b;
+      --accent-gold:     #ffcc00;
+      --text-main:       #232d41;
+      --heading-color:   #212c3e;
+      --max-width:       1100px;
     }
     .dark {
-      --background-top:   #121212;
-      --background-bottom:#1e1e1e;
-      --nav-bg:           #111827;
-      --nav-text:         #e5e7eb;
-      --accent:           #3b82f6;
-      --accent-gold:      #fbbf24;
-      --text-main:        #d1d5db;
-      --heading-color:    #f9fafb;
-      --gradient-start:   #121212;
-      --gradient-end:     #1e1e1e;
+      --background-top: #121212;
+      --background-bottom: #1e1e1e;
+      --nav-bg: #111827;
+      --nav-text: #e5e7eb;
+      --accent: #3b82f6;
+      --accent-gold: #fbbf24;
+      --text-main: #d1d5db;
+      --heading-color: #f9fafb;
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, var(--background-top), var(--background-bottom));
       color: var(--text-main);
       line-height: 1.6;
-      transition: background .4s, color .4s;
+      transition: background 0.4s, color 0.4s;
     }
     a {
       color: var(--accent);
       text-decoration: none;
       transition: color .2s, background .25s, box-shadow .25s;
     }
-    a:hover, a:focus { color: var(--accent-gold); }
+    a:hover, a:focus {
+      color: var(--accent-gold);
+    }
 
     /* HEADER & NAV */
     header {
@@ -61,41 +64,58 @@
       padding: 1.5rem 1rem 0.8rem;
       box-shadow: 0 4px 22px rgba(34,48,74,0.47);
       position: relative;
-      transition: background .4s, color .4s;
+      transition: background 0.4s, color 0.4s;
     }
     .site-title {
       font-family: 'Spectral', serif;
       font-size: 2.95rem;
       font-weight: 700;
-      transition: color .4s;
+      color: var(--nav-text);
+      transition: color 0.4s;
     }
     .dark-toggle {
-      position: absolute; top: 1rem; right: 1rem;
+      position: absolute;
+      top: 1rem; right: 1rem;
       width: 2rem; height: 2rem;
       background: url('sun-moon.svg') center/contain no-repeat;
-      cursor: pointer; z-index: 10;
+      cursor: pointer;
+      z-index: 10;
     }
+
     nav.main-nav {
-      position: sticky; top: 0; z-index: 50;
+      position: sticky;
+      top: 0; z-index: 50;
       background: var(--nav-bg);
       box-shadow: inset 0 -1px 0 #3a496f;
       font-family: 'Spectral', serif;
-      transition: background .4s, color .4s;
+      transition: background 0.4s, color 0.4s;
     }
     nav.main-nav ul {
-      display: flex; justify-content: center; gap: 30px;
-      list-style: none; max-width: var(--max-width);
-      margin: 0 auto; padding: 8px 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      list-style: none;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 8px 0;
     }
     nav.main-nav a {
-      position: relative; padding: 10px 16px;
-      font-size: 1.1rem; font-weight: 700;
-      text-transform: uppercase; letter-spacing: .1em;
-      color: var(--nav-text); text-shadow: 0 1px 2px rgba(0,0,0,0.4);
-      background: none; border: none; outline: none;
+      position: relative;
+      padding: 10px 16px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--nav-text);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+      background: none;
+      border: none;
+      outline: none;
+      box-shadow: none;
     }
     nav.main-nav a::after {
-      content: ''; position: absolute;
+      content: '';
+      position: absolute;
       left: 18px; right: 18px; bottom: 6px;
       height: 3.5px; border-radius: 2px;
       background: linear-gradient(90deg, var(--accent), var(--accent-gold));
@@ -105,75 +125,82 @@
     nav.main-nav a:hover, nav.main-nav a:focus {
       color: var(--accent-gold);
       background: rgba(255,255,255,0.04);
-      box-shadow: 0 0 6px 1.5px var(--accent-gold);
+      box-shadow: 0 0 6px 1.5px var(--accent-gold, #ffcc00);
     }
     nav.main-nav a:hover::after, nav.main-nav a:focus::after {
       width: calc(100% - 36px); opacity: .82;
     }
+
+    /* Special standout for CV as button */
     nav.main-nav a.cv-link {
       background: linear-gradient(90deg, var(--accent), var(--accent-gold));
       color: #fff !important;
-      border-radius: 4px; padding: 10px 22px;
+      border-radius: 4px;
+      padding: 10px 22px;
+      font-weight: 700;
       box-shadow: 0 2px 8px rgba(41,83,155,0.09);
-      transition: filter .2s, box-shadow .2s;
+      margin-right: 8px;
+      transition: filter .2s, box-shadow .2s, color .2s, background .2s;
     }
     nav.main-nav a.cv-link:hover, nav.main-nav a.cv-link:focus {
       filter: brightness(1.07) saturate(1.12);
       box-shadow: 0 8px 22px rgba(41,83,155,0.19);
-    }
-
-    /* ANIMATIONS */
-    @keyframes subtleGradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    @keyframes slowZoom {
-      0% { transform: scale(1); }
-      100% { transform: scale(1.05); }
+      color: var(--nav-text) !important;
     }
 
     /* HERO */
     .hero {
-      position: relative; text-align: center;
-      padding: 20px 10px;
+      position: relative;
+      height: auto;
+      padding: 20px 10px 20px;
+      text-align: center;
+      background: linear-gradient(120deg, rgba(247,248,250,0.79), rgba(229,232,239,0.84)), url('cornellcampus.jpg') center 44%/cover no-repeat;
       border-bottom: 5px solid var(--accent);
       box-shadow: 0 2px 40px rgba(35,64,101,0.09);
       overflow: visible;
-      background: linear-gradient(120deg, var(--gradient-start), var(--gradient-end))
-                  center/200% 200% no-repeat;
-      animation: subtleGradient 20s ease-in-out infinite;
+      transition: background 0.4s, color 0.4s;
     }
-    .hero::before {
-      content: ""; position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: url('cornellcampus.jpg') center 44%/cover no-repeat;
-      will-change: transform;
-      animation: slowZoom 30s ease-in-out infinite alternate;
-      z-index: 0;
+    .dark .hero {
+      background: linear-gradient(120deg, rgba(17,24,39,0.88), rgba(40,51,74,0.92)), url('cornellcampus.jpg') center 44%/cover no-repeat;
     }
-    .hero > * { position: relative; z-index: 1; }
     .hero-photo {
-      width: 200px; height: 200px; border-radius: 50%;
-      object-fit: cover; background: #f5f8fc;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #f5f8fc;
       box-shadow: 0 0 0 4px #fff, 0 17px 44px rgba(34,48,74,0.07);
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
       transition: transform .4s ease;
+      z-index: 1;
+      position: relative;
     }
-    .hero-photo:hover { transform: scale(1.05); }
+    .hero-photo:hover {
+      transform: scale(1.05);
+    }
     .hero h1 {
-      margin-top: .3rem;
+      margin-top: 0.3rem;
       font-family: 'Spectral', serif;
       font-size: 2.5rem;
       color: var(--heading-color);
+      z-index: 1;
+      position: relative;
       transition: color .4s;
     }
+    .dark .hero h1 {
+      color: var(--heading-color);
+    }
     .hero h2 {
-      margin-top: .2rem;
+      margin-top: 0.2rem;
       font-size: 1.18rem;
       font-weight: 600;
       color: var(--accent);
+      z-index: 1;
+      position: relative;
       transition: color .4s;
+    }
+    .dark .hero h2 {
+      color: var(--accent);
     }
     .hero-quote {
       margin-top: 1.5rem;
@@ -186,14 +213,15 @@
       color: #495168;
       padding: 11px 21px;
       display: inline-block;
+      z-index: 1;
+      position: relative;
       transition: background .4s, color .4s;
     }
-
-    /* PARTICLE CANVAS (optional) */
-    #particle-canvas {
-      position: absolute; top: 0; left: 0;
-      width: 100%; height: 100%;
-      pointer-events: none; z-index: 1;
+    .dark .hero-quote {
+      background: #233158;
+      color: #fbbf24;
+      border-left: 4px solid var(--accent-gold);
+      box-shadow: 0 1.5px 8px rgba(41,130,246,0.10);
     }
 
     /* ABOUT SECTION */
@@ -201,7 +229,7 @@
       max-width: var(--max-width);
       margin: 2.3rem auto 4rem;
       padding: 0 1.1rem;
-      transition: color .4s, background .4s;
+      transition: color 0.4s, background 0.4s;
     }
     .section h2 {
       font-family: 'Spectral', serif;
@@ -211,31 +239,45 @@
       transition: color .4s;
     }
     .about-container {
-      display: flex; flex-wrap: wrap; gap: 46px;
-      justify-content: center; align-items: flex-start;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 46px;
+      justify-content: center;
+      align-items: flex-start;
     }
     .about-text {
-      flex: 2; min-width: 300px; max-width: 670px;
-      font-size: 1.16rem; line-height: 1.73;
+      flex: 2;
+      min-width: 300px;
+      max-width: 670px;
+      font-size: 1.16rem;
+      line-height: 1.73;
     }
-    .about-text p { margin-bottom: 1.45rem; }
+    .about-text p {
+      margin-bottom: 1.45rem;
+    }
     .about-image {
-      flex: 1; min-width: 220px; max-width: 360px;
-      display: flex; justify-content: center;
+      flex: 1;
+      min-width: 220px;
+      max-width: 360px;
+      display: flex;
+      justify-content: center;
     }
     .about-image img {
-      width: 320px; height: auto;
-      border-radius: 12px; object-fit: cover;
+      width: 320px;
+      height: auto;
+      border-radius: 12px;
+      object-fit: cover;
       box-shadow: 0 7px 32px rgba(41,83,155,0.13);
     }
     .ethical {
-      max-width: 650px; margin: 36px auto 0;
+      max-width: 650px;
+      margin: 36px auto 0;
       padding: 1rem;
       background: #f8f8ea;
       border-left: 4px solid rgba(188,159,91,0.18);
       border-radius: 7px;
       color: #775f29;
-      transition: background .4s, color .4s;
+      transition: background 0.4s, color 0.4s;
     }
     .dark .ethical {
       background: #23261c;
@@ -251,14 +293,24 @@
       font-size: .98rem;
       border-top: 1px solid rgba(45,57,85,0.2);
       margin-top: 4.8rem;
-      transition: background .4s, color .4s;
+      transition: background 0.4s, color 0.4s;
     }
 
     @media (max-width: 820px) {
-      .hero-photo { width: 150px; height: 150px; }
-      .about-image img { width: 260px; }
-      .about-container { flex-direction: column; text-align: center; }
-      .site-title { font-size: 2.5rem; }
+      .hero-photo {
+        width: 150px;
+        height: 150px;
+      }
+      .about-image img {
+        width: 260px;
+      }
+      .about-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .site-title {
+        font-size: 2.5rem;
+      }
     }
   </style>
 </head>
@@ -278,9 +330,6 @@
   </nav>
 
   <section class="hero" aria-label="Hero">
-    <!-- Optional particle overlay -->
-    <canvas id="particle-canvas"></canvas>
-
     <img src="adolfhoromero.jpeg" alt="Adolfho Romero portrait" class="hero-photo"/>
     <h1>Adolfho Romero</h1>
     <h2>PhD Student • Cornell ILR</h2>
@@ -323,45 +372,6 @@
     if (localStorage.getItem('theme') === 'dark') {
       document.documentElement.classList.add('dark');
     }
-
-    // Optional: particle overlay script
-    const canvas = document.getElementById('particle-canvas');
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-    function initParticles() {
-      resizeCanvas();
-      for (let i = 0; i < 50; i++) {
-        particles.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          r: Math.random() * 2 + 1,
-          vx: (Math.random() - 0.5) / 2,
-          vy: (Math.random() - 0.5) / 2
-        });
-      }
-      requestAnimationFrame(animateParticles);
-    }
-    function resizeCanvas() {
-      canvas.width = canvas.clientWidth;
-      canvas.height = canvas.clientHeight;
-    }
-    function animateParticles() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach(p => {
-        p.x += p.vx; p.y += p.vy;
-        if (p.x < 0) p.x = canvas.width;
-        if (p.x > canvas.width) p.x = 0;
-        if (p.y < 0) p.y = canvas.height;
-        if (p.y > canvas.height) p.y = 0;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, 2 * Math.PI);
-        ctx.fillStyle = 'rgba(255,255,255,0.3)';
-        ctx.fill();
-      });
-      requestAnimationFrame(animateParticles);
-    }
-    window.addEventListener('resize', resizeCanvas);
-    initParticles();
   </script>
 </body>
 </html>
