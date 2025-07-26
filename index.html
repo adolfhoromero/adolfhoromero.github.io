@@ -2,16 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Adolfho Romero</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1  <title>Adolfho Romero</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?
-    family=Poppins:wght@300;400;500;600;700&
-    family=Spectral:ital,wght@0,400;0,600;1,400;1,600&
-    display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet"/>
 
   <style>
     :root {
@@ -36,7 +32,9 @@
     }
 
     *, *::before, *::after {
-      box-sizing: border-box; margin: 0; padding: 0;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
     html { scroll-behavior: smooth; }
     body {
@@ -68,7 +66,6 @@
       font-weight: 700;
       letter-spacing: -1.5px;
       margin-bottom: 0.25rem;
-      color: var(--nav-text);
     }
     .subtitle {
       font-size: 1.12rem;
@@ -79,13 +76,17 @@
 
     /* Navigation */
     nav.main-nav {
-      position: sticky; top: 0; z-index: 50;
+      position: sticky;
+      top: 0;
+      z-index: 50;
       background: var(--nav-bg);
       box-shadow: inset 0 -1px 0 #3a496f;
       font-family: var(--font-heading);
     }
     nav.main-nav ul {
-      display: flex; justify-content: center; gap: 48px;
+      display: flex;
+      justify-content: center;
+      gap: 48px;
       list-style: none;
       max-width: var(--max-width);
       margin: 0 auto;
@@ -130,15 +131,22 @@
       box-shadow: 0 2px 40px rgba(35,64,101,0.09);
     }
     .hero-photo {
-      width: 200px; height: 200px;
-      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      border-radius: 0;          /* square corners */
       object-fit: cover;
-      background: #f5f8fc;
-      box-shadow: 0 0 0 4px #fff, 0 17px 44px rgba(34,48,74,0.07);
+      background: #fff;
+      box-shadow:
+        0 0 0 4px #fff,
+        0 0 0 1px #22304a,
+        0 17px 44px rgba(34,48,74,0.07);
       margin: 0 auto 1.1rem;
     }
     @media (max-width: 500px) {
-      .hero-photo { width: 130px; height: 130px; }
+      .hero-photo {
+        width: 130px;
+        height: 130px;
+      }
     }
     .hero h1 {
       font-family: var(--font-heading);
@@ -200,32 +208,52 @@
 
     /* About */
     .about-container {
-      display: flex; flex-wrap: wrap;
-      gap: 46px; justify-content: center; align-items: flex-start;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 46px;
+      justify-content: center;
+      align-items: flex-start;
     }
     .about-text {
-      flex: 2; min-width: 300px; max-width: 670px;
-      font-size: 1.16rem; line-height: 1.73;
-      font-weight: 400; color: var(--text-main);
+      flex: 2;
+      min-width: 300px;
+      max-width: 670px;
+      font-size: 1.16rem;
+      line-height: 1.73;
+      font-weight: 400;
     }
-    .about-text p { margin-bottom: 1.45rem; }
+    .about-text p {
+      margin-bottom: 1.45rem;
+    }
     .about-text hr {
-      border: none; border-top: 1px solid #d1d6df;
-      margin: 35px 0 25px; opacity: .33;
+      border: none;
+      border-top: 1px solid #d1d6df;
+      margin: 35px 0 25px;
+      opacity: .33;
     }
     .about-image {
-      flex: 1; min-width: 220px; max-width: 360px;
-      display: flex; justify-content: center;
+      flex: 1;
+      min-width: 220px;
+      max-width: 360px;
+      display: flex;
+      justify-content: center;
     }
     .about-image img {
-      width: 200px; height: 200px;
-      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      border-radius: 0;          /* square corners */
       object-fit: cover;
-      box-shadow: 0 7px 32px rgba(41,83,155,0.13);
       background: #fff;
+      box-shadow:
+        0 0 0 4px #fff,
+        0 0 0 1px #22304a,
+        0 7px 32px rgba(41,83,155,0.13);
     }
     @media (max-width: 500px) {
-      .about-image img { width: 130px; height: 130px; }
+      .about-image img {
+        width: 130px;
+        height: 130px;
+      }
     }
 
     /* Ethical note */
@@ -243,13 +271,19 @@
 
     /* Scroll-to-top */
     .scroll-top-btn {
-      position: fixed; bottom: 34px; right: 34px;
-      width: 44px; height: 44px;
+      position: fixed;
+      bottom: 34px;
+      right: 34px;
+      width: 44px;
+      height: 44px;
       background: var(--scroll-btn-bg);
       color: #f7f9fa;
-      border: none; border-radius: 50%;
-      font-size: 1.31em; cursor: pointer;
-      display: none; z-index: 80;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.31em;
+      cursor: pointer;
+      display: none;
+      z-index: 80;
       box-shadow: 0 3px 12px rgba(36,64,100,0.2);
       transition: background .22s;
     }
