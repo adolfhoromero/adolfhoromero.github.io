@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet"/>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
-    /* Base styles */
+    /* CORRECTED Base styles */
     :root {
       --background-top: #f7f8fa;
       --background-bottom: #e4e8ef;
@@ -20,8 +20,8 @@
       --card-shadow: 0 4px 36px #2e3a5022;
       --card-border: #29539b;
       --text-main: #313b53;
-      --heading-color: #263045539b;
-      --accent-gold: #ffcc00;
+      --heading-color: #263045;  /* FIXED: was #263045539b */
+      --accent: #29539b;         d: #ffcc00;
       --max-width: 980px;
       --font-body: 'Poppins', sans-serif;
       --font-heading: 'Spectral', serif;
@@ -55,7 +55,7 @@
       background: var(--nav-bg);
       color: var(--nav-text);
       text-align: center;
-      padding: 1.2rem 1rem 0rem;  /* Reduced bottom padding for less space */
+      padding: 1.2rem 1rem 0rem;
       position: relative;
       box-shadow: 0 4px 22px rgba(34,48,74,0.47);
     }
@@ -65,7 +65,7 @@
       font-weight: 700;
       color: var(--nav-text);
       transition: color 0.4s;
-      margin-bottom: 0.1rem;     /* Remove default h1 bottom margin */
+      margin-bottom: 0.1rem;
     }
     .dark-toggle {
       position: absolute;
@@ -113,7 +113,7 @@
       text-decoration: none;
     }
     nav.main-nav a::after {
-      display: none !important; /* No underline for nav links */
+      display: none !important;
     }
     nav.main-nav a:hover, nav.main-nav a:focus {
       color: var(--accent-gold);
@@ -135,7 +135,6 @@
       box-shadow: 0 8px 22px rgba(41,83,155,0.19);
       color: var(--nav-text) !important;
     }
-    /* Active state for current page */
     nav.main-nav a.active {
       color: var(--accent-gold);
       background: rgba(255,255,255,0.04);
@@ -213,7 +212,6 @@
     .outcome {background:var(--card-bg); border-radius: 12px; box-shadow:var(--card-shadow); padding:1.1rem 1.5rem; border-left:4px solid var(--accent); min-width:190px;}
     .outcome b {display:block; color:var(--accent); font-weight:600; margin-bottom:.22rem;}
     
-    /* EXACT FOOTER FROM PUBLICATIONS PAGE */
     footer {
       text-align: center;
       padding: 2.2rem 1rem;
@@ -227,7 +225,6 @@
     footer a { color: var(--accent); text-decoration: none; }
     footer a:hover { text-decoration: underline; }
     
-    /* Responsive - EXACT FROM PUBLICATIONS PAGE */
     @media (max-width:650px) {
       .site-title { font-size: 2.1rem; }
       header { padding: 1.8rem .6rem .3rem; }
@@ -239,7 +236,6 @@
   </style>
 </head>
 <body>
-  <!-- EXACT HEADER FROM PUBLICATIONS PAGE -->
   <header>
     <div class="dark-toggle" onclick="toggleDarkMode()" title="Toggle dark mode"></div>
     <h1 class="site-title">Adolfho Romero</h1>
@@ -271,7 +267,7 @@
     <section id="courses-taught">
       <h2>Courses Taught</h2>
       <div class="course-card-grid">
-        <!-- Example course card with expandable details -->
+        <!-- Cornell Labor History Course -->
         <div class="card-teaching card-slim">
           <div class="card-header">
             Introduction to US Labor History (ILRGL 1100)
@@ -300,6 +296,45 @@
               <li><b>Lowell Factory Girls/Black Folk</b>: Group activities exploring gender, class, and organizing</li>
               <li><b>Homestead Strike Simulation</b>: Structured debates and peer review</li>
               <li><b>Creative Assignments</b>: Timeline presentations, thematic reflections</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- NEW: Samuel Proctor Oral History Program Internship -->
+        <div class="card-teaching card-slim">
+          <div class="card-header">
+            Samuel Proctor Oral History Program Internship
+            <button class="details-toggle" onclick="toggleDetails(this)">Details <i class="fas fa-chevron-down"></i></button>
+          </div>
+          <div class="card-tags">
+            University of Florida · Fall 2020<br>
+            Teaching Assistant (functioned as Instructor of Record) · Mondays 11:45am – 1:40pm
+          </div>
+          <div class="card-desc">
+            Community-based oral history class in partnership with St. Patrick Catholic Church. Led all class sessions, facilitated student archival research, and coordinated digitization of rare local records. Students produced original historical materials on North-Central Florida's Catholic, working-class, and activist history, culminating in public presentations to community partners.<br>
+            <a href="Fall-2020-Internship-Syllabus-Draft-2-4.docx" target="_blank"><i class="fas fa-file-word"></i> Syllabus (Word Doc)</a>
+          </div>
+          <div class="card-details" aria-expanded="false">
+            <b>Community Partnership & Leadership:</b>
+            <ul>
+              <li>Direct collaboration with St. Patrick Catholic Church; students accessed, scanned, and interpreted historical church files dating back decades</li>
+              <li>Led all class meetings: designed lectures, provided individual mentorship, and supervised every student research project</li>
+              <li>Hands-on oral history training: interview protocols, digital production techniques, and archival preservation methods</li>
+              <li>Focus on discrimination, civil rights, Catholic activism, and the Sisters of St. Joseph's educational mission in Florida</li>
+              <li>Weekly creative assignments including community memory mapping and faith-based social justice narratives</li>
+            </ul>
+            <b>Sample Weekly Highlights:</b>
+            <ul>
+              <li><b>"Catholicism, the Sisters of St. Joseph, and Educational Activism in Florida"</b>: Comprehensive lecture on the Sisters' journey from Le Puy, France to Gainesville, their leadership in resisting segregation, and advancing social justice causes</li>
+              <li><b>"Father Conoley & the Ku Klux Klan"</b>: Historical analysis of the 1924 kidnapping and assault of Father John Conoley by local Klansmen, examining religious persecution and community resilience</li>
+              <li><b>Fieldwork & Digital Archive Creation</b>: Students scanned original church documents, designed oral history protocols, and produced digital materials for ongoing community use</li>
+              <li><b>Student Research Projects</b>: Individual archival and oral history projects covering parish working-class history, women's religious leadership, and civil rights activism</li>
+            </ul>
+            <b>Transformative Outcomes:</b>
+            <ul>
+              <li>Students presented final projects to church leadership and community partners, creating lasting historical record</li>
+              <li>Class received exceptional student feedback for its hands-on methodology, real-world impact, and transformative learning experience</li>
+              <li>Created permanent digital archive of previously inaccessible historical materials for future researchers and community members</li>
             </ul>
           </div>
         </div>
@@ -384,7 +419,7 @@
             <b>Debate Structure:</b>
             <ul>
               <li>Students assigned roles: workers, management, government officials, community members</li>
-              <li>Peer review of position papers before debut</li>
+              <li>Peer review of position papers before debate</li>
               <li>Structured deliberation with evidence-based arguments</li>
               <li>Reflection essays on multiple perspectives and historical complexity</li>
             </ul>
@@ -403,7 +438,6 @@
     <section id="materials">
       <h2>Key Course Materials</h2>
       <div class="key-materials-row">
-        <!-- Use actual covers or keep abstract. Add tooltips for context -->
         <div class="book-cover"><span>Rediker</span>
           <div class="book-tooltip">"The Slave Ship: A Human History"<br>Transatlantic slavery, labor, and resistance.</div>
         </div>
