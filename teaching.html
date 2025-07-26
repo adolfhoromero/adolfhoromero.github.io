@@ -477,4 +477,160 @@
               <ul style="margin-top:0.5rem;">
                 <li><b>The Slave Ship & Labor Resistance:</b> Analysis of Marcus Rediker's work, connecting transatlantic slavery to modern labor exploitation</li>
                 <li><b>Lowell Factory Girls & Black Folk:</b> Group activities exploring gender, class, and organizing in 19th century America</li>
-                <li><b>Battle for Homestead Simulation:</b> Role-playing debates and peer review
+                <li><b>Battle for Homestead Simulation:</b> Role-playing debates and peer review activities on 1892 labor conflict</li>
+                <li><b>New Deal Era Labor Organizing:</b> Discussion of Thomas Bell's "Out of This Furnace" and 1930s labor movements</li>
+              </ul>
+              <b>Course Objectives Achieved:</b>
+              <ul style="margin-top:0.5rem;">
+                <li>Students developed critical historical thinking and research skills</li>
+                <li>Enhanced ability to connect past labor struggles to contemporary workplace issues</li>
+                <li>Improved public speaking and collaborative discussion capabilities</li>
+                <li>Strengthened academic writing through evidence-based argumentation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Student Feedback -->
+    <section id="student-feedback">
+      <h2>What Students Say</h2>
+      <div class="feedback-carousel-block">
+        <blockquote id="feedback-quote">"Adolfho is extremely professional but creates a warm and welcoming environment with his students and tries to build personal relationships."</blockquote>
+        <div class="carousel-arrows">
+          <button class="carousel-arrow" aria-label="Previous" onclick="prevQuote()"><i class="fas fa-chevron-left"></i></button>
+          <button class="carousel-arrow" aria-label="Next" onclick="nextQuote()"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Course Materials -->
+    <section id="materials">
+      <h2>Key Course Materials</h2>
+      <div class="year-section">
+        <div class="year-heading">Primary Texts</div>
+        <div class="key-materials-row">
+          <div class="book-cover">
+            <span>Rediker</span>
+            <div class="book-tooltip">"The Slave Ship: A Human History"<br>Explores transatlantic slavery's impact on labor systems and resistance</div>
+          </div>
+          <div class="book-cover">
+            <span>Krause</span>
+            <div class="book-tooltip">"The Battle for Homestead"<br>1892 steel strike and American industrial conflict analysis</div>
+          </div>
+          <div class="book-cover">
+            <span>Kelley</span>
+            <div class="book-tooltip">"Black Folk: The Roots of the Black Working Class"<br>Humanistic approach to Black community experiences in labor history</div>
+          </div>
+          <div class="book-cover">
+            <span>Bell</span>
+            <div class="book-tooltip">"Out of This Furnace"<br>Immigrant labor narrative in American steel industry</div>
+          </div>
+          <div class="book-cover">
+            <span>Kingsolver</span>
+            <div class="book-tooltip">"Holding the Line"<br>Women and unions in 1983 Arizona mine strike</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learning Outcomes -->
+    <section id="outcomes">
+      <h2>Learning Outcomes</h2>
+      <div class="year-section">
+        <div class="year-heading">Student Achievement Goals</div>
+        <div class="card-grid">
+          <div class="card animate-on-scroll">
+            <b>Historical Thinking & Research Skills</b>
+            <p>Students develop critical analysis abilities through engagement with primary sources, scholarly texts, and evidence-based argumentation in synthesis essays.</p>
+          </div>
+          <div class="card animate-on-scroll">
+            <b>Contemporary Connections</b>
+            <p>Ability to analyze modern labor issues and workplace challenges through historical context, connecting past movements to current debates about economic security and social justice.</p>
+          </div>
+          <div class="card animate-on-scroll">
+            <b>Collaborative Communication</b>
+            <p>Enhanced confidence in public speaking, academic writing, and group collaboration through structured debates, peer review, and discussion-based learning.</p>
+          </div>
+          <div class="card animate-on-scroll">
+            <b>Critical Engagement</b>
+            <p>Develop ability to debate complex historical topics, analyze competing interpretations, and engage thoughtfully with diverse perspectives on labor history.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Link back to publications -->
+    <section style="text-align:center; margin: 3rem 0; padding: 1.5rem;">
+      <p style="font-size: 1.1rem;">
+        Explore my <a href="publications.html" style="color: var(--accent); font-weight: 600; text-decoration: underline;">research and publications</a> in labor history and related fields.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2025 Adolfho Romero · <a href="mailto:adolfhoromero@gmail.com">adolfhoromero@gmail.com</a>
+  </footer>
+
+<script>
+  // Smooth fade-in for cards
+  document.addEventListener("DOMContentLoaded", function() {
+    function revealOnScroll() {
+      const cards = document.querySelectorAll('.card.animate-on-scroll');
+      const windowHeight = window.innerHeight;
+      cards.forEach(el => {
+        if (el.getBoundingClientRect().top < windowHeight - 60) {
+          el.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+  });
+
+  // Dark mode toggle support
+  function toggleDarkMode() {
+    document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme',
+      document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+  }
+  if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.classList.add('dark');
+  }
+
+  // Details toggle for course cards
+  function toggleDetails(btn) {
+    const card = btn.closest('.card');
+    const details = card.querySelector('.card-details');
+    const expanded = details.getAttribute('aria-expanded') === 'true';
+    details.setAttribute('aria-expanded', !expanded);
+    btn.innerHTML = !expanded ? "Hide Details <i class='fas fa-chevron-up'></i>" : "Details <i class='fas fa-chevron-down'></i>";
+  }
+
+  // Student feedback carousel
+  const quotes = [
+    ""Adolfho is extremely professional but creates a warm and welcoming environment with his students and tries to build personal relationships."",
+    ""He is very knowledgeable and very open to helping everyone."",
+    ""Great in giving detailed feedback and actually writing new perspectives about the content in feedback."",
+    ""Makes time for students, creates inclusive and meaningful conversations, and allows students to ask questions."",
+    ""He is very kind.""
+  ];
+  let quoteIdx = 0;
+  const feedbackEl = document.getElementById('feedback-quote');
+  function renderQuote() {
+    feedbackEl.textContent = quotes[quoteIdx];
+  }
+  function prevQuote() {
+    quoteIdx = (quoteIdx - 1 + quotes.length) % quotes.length;
+    renderQuote();
+  }
+  function nextQuote() {
+    quoteIdx = (quoteIdx + 1) % quotes.length;
+    renderQuote();
+  }
+  renderQuote();
+</script>
+</body>
+</html>
