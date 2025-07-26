@@ -59,6 +59,31 @@
       color: var(--accent-gold);
     }
 
+    /* Scrolling Banner */
+    .scrolling-banner {
+      width: 100vw;
+      overflow: hidden;
+      background: var(--accent);
+      color: var(--nav-text);
+      white-space: nowrap;
+      font-weight: 600;
+      font-size: 1.08rem;
+      letter-spacing: 0.05em;
+      padding: 0.7em 0;
+      position: relative;
+      z-index: 1050;
+      font-family: 'Poppins', sans-serif;
+    }
+    .scrolling-banner span {
+      display: inline-block;
+      padding-left: 100vw;
+      animation: scrollbanner 18s linear infinite;
+    }
+    @keyframes scrollbanner {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-100vw); }
+    }
+
     /* HEADER & NAV */
     header {
       background: var(--nav-bg);
@@ -188,9 +213,20 @@
       box-shadow: 0 2px 40px rgba(35,64,101,0.09);
       overflow: visible;
       transition: background 0.4s, color 0.4s;
+      
+      /* Animated gradient background */
+      background-size: 200% 200%;
+      animation: heroGradient 8s ease-in-out infinite;
+    }
+    @keyframes heroGradient {
+      0%{ background-position: 0% 50%; }
+      50%{ background-position: 100% 50%; }
+      100%{ background-position: 0% 50%; }
     }
     .dark .hero {
       background: linear-gradient(120deg, rgba(17,24,39,0.88), rgba(40,51,74,0.92)), url('cornellcampus.jpg') center 44%/cover no-repeat;
+      background-size: 200% 200%;
+      animation: heroGradient 8s ease-in-out infinite;
     }
     .hero-photo {
       width: 200px;
@@ -218,6 +254,10 @@
       position: relative;
       transition: color .4s;
       word-wrap: break-word;
+
+      /* Fade in animation */
+      opacity: 0;
+      animation: fadeInUp 1.4s ease forwards;
     }
     .dark .hero h1 {
       color: var(--heading-color);
@@ -231,6 +271,11 @@
       position: relative;
       transition: color .4s;
       word-wrap: break-word;
+
+      /* Fade in animation delayed */
+      opacity: 0;
+      animation: fadeInUp 1.4s ease forwards;
+      animation-delay: 0.6s;
     }
     .dark .hero h2 {
       color: var(--accent);
@@ -256,6 +301,18 @@
       color: #fbbf24;
       border-left: 4px solid var(--accent-gold);
       box-shadow: 0 1.5px 8px rgba(41,130,246,0.10);
+    }
+
+    /* Fade-in keyframes */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* ABOUT SECTION */
@@ -396,6 +453,12 @@
     <div class="dark-toggle" onclick="toggleDarkMode()" title="Toggle dark mode"></div>
     <h1 class="site-title">Adolfho Romero</h1>
   </header>
+
+  <div class="scrolling-banner" aria-live="polite" role="region" aria-label="Announcements">
+    <span>
+      Welcome! PhD Student • Labor, Race & Community • Cornell ILR • Let’s connect!
+    </span>
+  </div>
 
   <nav class="main-nav" aria-label="Primary">
     <!-- Hamburger toggle button -->
