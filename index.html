@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en-US">
+update my entire code now : <!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -54,13 +54,6 @@
     }
     a:hover, a:focus {
       color: var(--accent-gold);
-      outline: none;
-    }
-
-    /* Visible focus outlines for keyboard users */
-    a:focus, button:focus {
-      outline: 3px solid var(--accent-gold);
-      outline-offset: 3px;
     }
 
     /* HEADER & NAV */
@@ -136,13 +129,6 @@
     }
     nav.main-nav a:hover::after, nav.main-nav a:focus::after {
       width: calc(100% - 36px); opacity: .82;
-    }
-
-    /* aria-current for active page link */
-    nav.main-nav a[aria-current="page"] {
-      font-weight: 700;
-      color: var(--accent-gold);
-      pointer-events: none;
     }
 
     /* Special standout for CV as button */
@@ -299,65 +285,6 @@
       border-left: 4px solid #fbbf24;
     }
 
-    /* NEW: RESEARCH HIGHLIGHTS SECTION */
-    #research-highlights {
-      margin-top: 4rem;
-    }
-    .highlights-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-      gap: 26px;
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-    .highlight-card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 1.6rem 1.8rem;
-      box-shadow: 0 4px 15px rgba(41,83,155,0.1);
-      transition: box-shadow 0.3s ease, transform 0.3s ease;
-      cursor: pointer;
-      outline-offset: 3px;
-    }
-    .highlight-card:focus,
-    .highlight-card:hover {
-      box-shadow: 0 8px 32px rgba(41,83,155,0.22);
-      transform: translateY(-6px);
-      background: linear-gradient(135deg, #e6f0fd 0%, #ffffff 100%);
-    }
-    .highlight-card h3 {
-      font-family: 'Spectral', serif;
-      font-weight: 700;
-      color: var(--heading-color);
-      font-size: 1.3rem;
-      margin-bottom: 0.8rem;
-      transition: color 0.3s ease;
-    }
-    .highlight-card p {
-      font-size: 1rem;
-      line-height: 1.5;
-      color: var(--text-main);
-    }
-    .highlight-card a {
-      color: var(--accent);
-      font-weight: 600;
-      text-decoration: underline;
-    }
-    .dark .highlight-card {
-      background: #1e293b;
-      color: var(--text-main);
-      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.15);
-    }
-    .dark .highlight-card:hover, .dark .highlight-card:focus {
-      background: linear-gradient(135deg, #334155 0%, #1e293b 100%);
-      box-shadow: 0 8px 32px rgba(59, 130, 246, 0.3);
-      color: #fbbf24;
-    }
-    .dark .highlight-card a {
-      color: var(--accent-gold);
-    }
-
     footer {
       text-align: center;
       background: var(--nav-bg);
@@ -389,72 +316,49 @@
 </head>
 
 <body>
-  <header role="banner">
+  <header>
     <div class="dark-toggle" onclick="toggleDarkMode()" title="Toggle dark mode"></div>
     <h1 class="site-title">Adolfho Romero</h1>
   </header>
 
-  <nav class="main-nav" aria-label="Primary" role="navigation">
+  <nav class="main-nav" aria-label="Primary">
     <ul>
-      <li><a href="adolfhoromerocv.pdf" target="_blank" class="cv-link" aria-current="page">CV</a></li>
+      <li><a href="adolfhoromerocv.pdf" target="_blank" class="cv-link">CV</a></li>
       <li><a href="publications.html" class="pubs-link">Publications</a></li>
       <li><a href="#contact" class="contact-link">Contact</a></li>
     </ul>
   </nav>
 
-  <main role="main">
-    <section class="hero" aria-label="Hero">
-      <img src="adolfhoromero.jpeg" alt="Adolfho Romero portrait" class="hero-photo"/>
-      <h1>Adolfho Romero</h1>
-      <h2>PhD Student • Cornell ILR</h2>
-      <blockquote class="hero-quote">
-        “I am grateful to work alongside community organizations, mentors, and workers in the ongoing struggle for dignity and justice.”
-      </blockquote>
-    </section>
+  <section class="hero" aria-label="Hero">
+    <img src="adolfhoromero.jpeg" alt="Adolfho Romero portrait" class="hero-photo"/>
+    <h1>Adolfho Romero</h1>
+    <h2>PhD Student • Cornell ILR</h2>
+    <blockquote class="hero-quote">
+      “I am grateful to work alongside community organizations, mentors, and workers in the ongoing struggle for dignity and justice.”
+    </blockquote>
+  </section>
 
-    <section class="section" id="about" aria-labelledby="about-title">
-      <h2 id="about-title">About My Journey</h2>
-      <div class="about-container">
-        <article class="about-text">
-          <p>As a first-generation student from a working-class family in Chicago, I learned early on about struggle and solidarity. Growing up, I saw my parents working long hours in factories under difficult conditions, which instilled in me a personal commitment to fighting for social and economic justice. Those experiences not only shaped my identity but also inspired me to uplift marginalized voices and foster unity in my community.</p>
-          <p>Now, as a Ph.D. student in Industrial and Labor Relations at Cornell University, I carry those values into my research and activism. My work focuses on the intersections of labor, race, and community. As the first in my family to pursue a doctorate, I strive to honor my community through my scholarship and to bridge academic research with grassroots organizing. I believe in the power of education and collective action to create meaningful change, and I remain grounded in the principles of solidarity and the working-class experiences that have guided me from the start.</p>
-          <section id="contact" aria-label="Contact">
-            <p><strong>Email:</strong> <a href="mailto:adolfhoromero@gmail.com">adolfhoromero@gmail.com</a></p>
-            <p><strong>ORCID:</strong> <a href="https://orcid.org/0009-0000-2505-0192" target="_blank">0009-0000-2505-0192</a></p>
-          </section>
-        </article>
-        <aside class="about-image">
-          <img src="me.jpeg" alt="Adolfho Romero field portrait"/>
-        </aside>
-      </div>
-      <div class="ethical">
-        <strong>Ethical Commitment:</strong> My work follows IRB-approved protocols, oral consent, and shared agency—grounded in respect and participant dignity.
-      </div>
-    </section>
+  <section class="section" id="about" aria-labelledby="about-title">
+    <h2 id="about-title">About My Journey</h2>
+    <div class="about-container">
+      <article class="about-text">
+        <p>As a first-generation student from a working-class family in Chicago, I learned early on about struggle and solidarity. Growing up, I saw my parents working long hours in factories under difficult conditions, which instilled in me a personal commitment to fighting for social and economic justice. Those experiences not only shaped my identity but also inspired me to uplift marginalized voices and foster unity in my community.</p>
+        <p>Now, as a Ph.D. student in Industrial and Labor Relations at Cornell University, I carry those values into my research and activism. My work focuses on the intersections of labor, race, and community. As the first in my family to pursue a doctorate, I strive to honor my community through my scholarship and to bridge academic research with grassroots organizing. I believe in the power of education and collective action to create meaningful change, and I remain grounded in the principles of solidarity and the working-class experiences that have guided me from the start.</p>
+        <section id="contact" aria-label="Contact">
+          <p><strong>Email:</strong> <a href="mailto:adolfhoromero@gmail.com">adolfhoromero@gmail.com</a></p>
+          <p><strong>ORCID:</strong> <a href="https://orcid.org/0009-0000-2505-0192" target="_blank">0009-0000-2505-0192</a></p>
+        </section>
+      </article>
+      <aside class="about-image">
+        <img src="me.jpeg" alt="Adolfho Romero field portrait"/>
+      </aside>
+    </div>
+    <div class="ethical">
+      <strong>Ethical Commitment:</strong> My work follows IRB-approved protocols, oral consent, and shared agency—grounded in respect and participant dignity.
+    </div>
+  </section>
 
-    <!-- NEW Research Highlights Section -->
-    <section class="section" id="research-highlights" aria-labelledby="research-title">
-      <h2 id="research-title">Research Highlights</h2>
-      <div class="highlights-grid">
-        <article class="highlight-card" tabindex="0" aria-label="Publication: Title 1">
-          <h3>Labor Market Dynamics in Post-Industrial Cities</h3>
-          <p>A detailed analysis of employment trends in Rust Belt metropolitan areas. <a href="publication1.pdf" target="_blank" rel="noopener">Read full text</a></p>
-        </article>
-
-        <article class="highlight-card" tabindex="0" aria-label="Award: Early Career Researcher Award 2024">
-          <h3>Early Career Researcher Award 2024</h3>
-          <p>Recognized by the Cornell ILR School for outstanding contributions to labor studies.</p>
-        </article>
-
-        <article class="highlight-card" tabindex="0" aria-label="Project: Community Labor Initiative">
-          <h3>Community Labor Initiative</h3>
-          <p>A collaborative project with local unions to improve worker rights education and advocacy.</p>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <footer role="contentinfo">
+  <footer>
     &copy; 2025 Adolfho Romero · <a href="mailto:adolfhoromero@gmail.com">adolfhoromero@gmail.com</a>
   </footer>
 
