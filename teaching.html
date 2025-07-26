@@ -7,10 +7,10 @@
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet"/>
+  <link href="https2?family=Poppins:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet"/>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
-    /* Base styles (from your publications page, for strong matching) */
+    /* Base styles (matching your publications page exactly) */
     :root {
       --background-top: #f7f8fa;
       --background-bottom: #e4e8ef;
@@ -40,6 +40,10 @@
       --accent: #3b82f6;
       --accent-gold: #fbbf24;
     }
+    
+    /* Reset & Base Styling */
+    html, body { height: 100%; margin: 0; padding: 0; }
+    
     body {
       min-height: 100vh;
       font-family: var(--font-body);
@@ -49,19 +53,198 @@
       scroll-behavior: smooth;
       transition: background 0.4s, color 0.4s;
     }
-    header,.main-nav,footer { /* From your site, unchanged */ }
-    main { max-width: var(--max-width); margin: 3rem auto 0; padding: 0 1.25rem;}
+    
+    /* HEADER - exactly matching your publications page */
+    header {
+      background: var(--nav-bg);
+      color: var(--nav-text);
+      text-align: center;
+      padding: 1.2rem 1rem 0rem;  /* Reduced bottom padding for less space */
+      position: relative;
+      box-shadow: 0 4px 22px rgba(34,48,74,0.47);
+    }
+    
+    .site-title {
+      font-family: var(--font-heading);
+      font-size: 2.95rem;
+      font-weight: 700;
+      color: var(--nav-text);
+      transition: color 0.4s;
+      margin-bottom: 0.1rem;     /* Remove default h1 bottom margin */
+    }
+    
+    .dark-toggle {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      width: 2rem; height: 2rem;
+      background: url('sun-moon.svg') center/contain no-repeat;
+      cursor: pointer;
+      z-index: 10;
+    }
+    
+    /* NAVIGATION - exactly matching your publications page */
+    nav.main-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--nav-bg);
+      box-shadow: inset 0 -1px 0 #3a496f;
+      font-family: var(--font-heading);
+      margin-top: 0;
+    }
+
+    nav.main-nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      list-style: none;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 8px 0;
+    }
+
+    nav.main-nav a {
+      position: relative;
+      padding: 10px 16px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--nav-text);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      outline: none;
+      box-shadow: none;
+      transition: color .2s, background .25s, box-shadow .25s;
+    }
+
+    nav.main-nav a::after {
+      display: none !important; /* No underline for nav links */
+    }
+
+    nav.main-nav a:hover, nav.main-nav a:focus {
+      color: var(--accent-gold);
+      background: rgba(255,255,255,0.04);
+      box-shadow: 0 0 6px 1.5px var(--accent-gold, #ffcc00);
+    }
+
+    nav.main-nav a.cv-link {
+      background: linear-gradient(90deg, var(--accent), var(--accent-gold));
+      color: #fff !important;
+      border-radius: 4px;
+      padding: 10px 22px;
+      font-weight: 700;
+      box-shadow: 0 2px 8px rgba(41,83,155,0.09);
+      margin-right: 8px;
+      transition: filter .2s, box-shadow .2s, color .2s, background .2s;
+    }
+
+    nav.main-nav a.cv-link:hover, nav.main-nav a.cv-link:focus {
+      filter: brightness(1.07) saturate(1.12);
+      box-shadow: 0 8px 22px rgba(41,83,155,0.19);
+      color: var(--nav-text) !important;
+    }
+
+    /* Main content */
+    main {
+      max-width: var(--max-width);
+      margin: 3rem auto 0;
+      padding: 0 1.25rem;
+    }
 
     h2 {
-      font-family: var(--font-heading); font-weight: 600; font-size: 2rem;
-      color: var(--heading-color); text-align: center; position: relative; margin-bottom: 2rem;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 2rem;
+      color: var(--heading-color);
+      text-align: center;
+      position: relative;
+      margin-bottom: 2rem;
     }
+    
     h2::after {
-      content: ''; display: block; width: 72px; height: 4px;
+      content: '';
+      display: block;
+      width: 72px; height: 4px;
       margin: .5rem auto 0;
-      background: linear-gradient(90deg,var(--accent),var(--accent-gold));
+      background: linear-gradient(90deg, var(--accent), var(--accent-gold));
       border-radius: 2px;
     }
+    
+    /* Year-section style for grouping (matching publications) */
+    .year-section {
+      margin-bottom: 2.7rem;
+      padding-left: 10px;
+      border-left: 3px solid var(--card-border);
+      font-family: var(--font-body);
+    }
+
+    .year-heading {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 1.12rem;
+      letter-spacing: .08em;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    /* Card grid like your publications */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+    }
+
+    @media (max-width: 900px) {
+      .card-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+    }
+
+    /* Cards style consistent with publications */
+    .card {
+      background: var(--card-bg);
+      border-left: 5px solid var(--card-border);
+      border-radius: 16px;
+      box-shadow: var(--card-shadow);
+      padding: 1.3rem;
+      display: flex; gap: 1.3rem;
+      opacity: 0; transform: translateY(26px);
+      transition: transform .18s, opacity .3s, background 0.4s, color 0.4s;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      flex-direction: column;
+    }
+
+    .card.visible { opacity: 1; transform: translateY(0); }
+    
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px #2a4e8b19, var(--card-shadow);
+    }
+
+    .card b {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: .25rem;
+      font-weight: 500; font-size: .98rem;
+      color: var(--accent);
+      text-decoration: none;
+      transition: color .18s;
+    }
+
+    .card a:hover, .card a:focus {
+      color: var(--accent-gold);
+      text-decoration: underline;
+    }
+
+    /* Philosophy banner */
     .philosophy-banner {
       background: linear-gradient(90deg, var(--card-bg), var(--accent-gold)17%, var(--background-top)83%);
       border-left: 5px solid var(--accent);
@@ -70,39 +253,41 @@
       margin: 2.9rem 0 2.2rem 0;
       font-size: 1.15rem;
     }
-    .philosophy-points { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; text-align: center; margin-bottom:2.2rem;}
+    
+    .philosophy-points { 
+      display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; 
+      text-align: center; margin-bottom:2.2rem;
+    }
+    
     .philosophy-point {
       background: var(--card-bg); border-radius: 10px; box-shadow: var(--card-shadow);
       padding: 0.85rem 1.35rem; font-size: 1rem; color: var(--text-main);
       border-left: 4px solid var(--accent);
     }
-    .course-card-grid { display: grid; grid-template-columns: 1fr 1fr; gap:2rem; }
-    @media (max-width: 900px) { .course-card-grid { grid-template-columns: 1fr; } }
-    .card-teaching {
-      border-radius: 15px;
-      background: var(--card-bg);
-      box-shadow: var(--card-shadow);
-      border-left: 5px solid var(--card-border);
-      margin-bottom: 2.2rem;
-      overflow: hidden;
-      transition: box-shadow .18s, background 0.4s, color 0.4s;
-      font-family: var(--font-body);
-      font-size: 1rem;
-      position: relative;
-    }
-    .card-slim {padding: 1.3rem 1.75rem;}
-    .card-header {font-family: var(--font-heading); font-weight: 600; font-size:1.25rem; color:var(--accent);}
-    .card-tags {font-size: .97rem; color:#8e99af; margin-bottom:.6rem;}
-    .card-desc {margin-top:.45rem;}
+
+    /* Teaching specific styles */
     .details-toggle {
-      background:none; border: none; color: var(--accent); font-weight:600; font-size:1rem; cursor:pointer;
-      padding:0; margin:0; float:right; transition:color .18s;
+      background:none; border:none; color: var(--accent); font-weight:600; font-size:1rem;
+      cursor:pointer; padding:0; margin:0 0 0 auto;
+      display: flex; align-items:center; gap: 0.25rem;
+      transition: color .18s;
     }
-    .details-toggle:hover {color:var(--accent-gold);}
-    .card-details {display:none; background:var(--background-bottom); border-top:1px solid #d2d3dd; padding:1.2rem 1.1rem;}
-    .card-details[aria-expanded='true']{display:block;}
-    .card-details ul {margin:0; padding-left:1.2em;}
-    .card-details li {margin-bottom:.5rem;}
+    .details-toggle:hover {
+      color: var(--accent-gold);
+    }
+    .card-details {
+      display: none;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--card-border);
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+    .card-details[aria-expanded="true"] {
+      display: block;
+    }
+
+    /* Feedback carousel */
     .feedback-carousel-block {
       max-width: 560px; margin:2.5rem auto; text-align:center; position: relative;
       background:var(--card-bg); border-left:5px solid var(--accent-gold); border-radius:14px;
@@ -112,6 +297,7 @@
     .carousel-arrows {position:absolute;bottom:8px;left:0;right:0;display:flex;justify-content:center;gap:44px;}
     .carousel-arrow {background:none;border:none;font-size:1.6rem;cursor:pointer; color:var(--accent);}
     .carousel-arrow:hover {color:var(--accent-gold);}
+    
     .key-materials-row {display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:center;margin:2.5rem 0;}
     .book-cover {width:85px;height:120px;background:#ededed;border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 7px #b6b6c833;position: relative;}
     .book-cover span {font-size:.95rem;color:var(--accent);font-weight:600;}
@@ -121,14 +307,35 @@
     .outcomes-list {display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;margin:2.2rem 0;}
     .outcome {background:var(--card-bg); border-radius: 12px; box-shadow:var(--card-shadow); padding:1.1rem 1.5rem; border-left:4px solid var(--accent); min-width:190px;}
     .outcome b {display:block; color:var(--accent); font-weight:600; margin-bottom:.22rem;}
+
+    /* Footer consistent */
+    footer {
+      text-align: center;
+      padding: 2.2rem 1rem;
+      color: #7b8fac;
+      border-top: 1px solid #c5c8d1;
+      margin-top: 4rem;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      background: var(--background-top);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    
     /* Responsive */
-    @media (max-width:650px) {
-      .course-card-grid,.outcomes-list,.key-materials-row {grid-template-columns:1fr!important; flex-direction:column;gap:1.1rem;}
+    @media (max-width: 650px) {
+      .site-title { font-size: 2.1rem; }
+      header { padding: 1.8rem .6rem .3rem; }
+      .card { flex-direction: column; }
+      main, section { padding: 0; }
+      nav.main-nav ul { gap: 14px; }
+      .outcomes-list,.key-materials-row {flex-direction:column;gap:1.1rem;}
       .book-cover {margin:0 auto;}
     }
   </style>
 </head>
 <body>
+  <!-- HEADER and MATCHING NAVIGATION -->
   <header>
     <div class="dark-toggle" onclick="toggleDarkMode()" title="Toggle dark mode"></div>
     <h1 class="site-title">Adolfho Romero</h1>
@@ -156,43 +363,55 @@
       </div>
     </section>
 
-    <!-- COURSES TAUGHT -->
-    <section id="courses-taught">
-      <h2>Courses Taught</h2>
-      <div class="course-card-grid">
-        <!-- Example course card with expandable details -->
-        <div class="card-teaching card-slim">
-          <div class="card-header">
-            Introduction to US Labor History (ILRGL 1100)
-            <button class="details-toggle" onclick="toggleDetails(this)">Details <i class="fas fa-chevron-down"></i></button>
-          </div>
-          <div class="card-tags">
-            Cornell University · Fall 2024<br>
-            Teaching Assistant to Prof. Paul Ortiz · Fridays 10:10am &amp; 11:15am
-          </div>
-          <div class="card-desc">
-            Explores working-class cultures, labor struggles, and the quest for dignity in US history. Emphasized peer-reviewed debate, collaborative timelines, and creative assignments. <br>
-            <a href="2024-Fall-Labor-History-Syllabus.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Syllabus (PDF)</a>
-          </div>
-          <div class="card-details" aria-expanded="false">
-            <b>Section Innovations:</b>
-            <ul>
-              <li>Peer review &amp; feedback workshops on synthesis essays</li>
-              <li>Collaborative history timeline creation</li>
-              <li>Debates on race, gender, and solidarity in labor movements</li>
-              <li>Oral history activities and student-centered analysis</li>
-              <li>Contemporary Thought Pieces linking past to news</li>
-            </ul>
-            <b>Sample Weekly Highlights:</b>
-            <ul>
-              <li><b>Rediker’s Slave Ship</b>: Critical discussion on labor, capital, and resistance</li>
-              <li><b>Lowell Factory Girls/Black Folk</b>: Group activities exploring gender, class, and organizing</li>
-              <li><b>Homestead Strike Simulation</b>: Structured debates and peer review</li>
-              <li><b>Creative Assignments</b>: Timeline presentations, thematic reflections</li>
-            </ul>
+    <!-- TEACHING EXPERIENCE BY YEAR -->
+    <section id="teaching-experience">
+      <h2>Teaching Experience</h2>
+      
+      <div class="year-section">
+        <div class="year-heading">2024</div>
+        <div class="card-grid">
+          <div class="card animate-on-scroll">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <b>Introduction to US Labor History (ILRGL 1100)</b>
+              <button class="details-toggle" onclick="toggleDetails(this)">Details <i class="fas fa-chevron-down"></i></button>
+            </div>
+            <div style="color:#8e99af; margin-top:0.5rem; font-size: 0.9rem;">
+              <b>Cornell University</b> · Teaching Assistant for Prof. Paul Ortiz<br>
+              Discussion Sections: Fridays 10:10am & 11:15am<br>
+              Office Hours: Mondays 1:30-3:00pm
+            </div>
+            <p style="margin-top:0.8rem; font-size: 0.95rem;">
+              Explores working-class cultures, labor struggles, and the quest for dignity in US history from colonial period to present. Emphasized peer collaboration, critical debates, and connecting historical patterns to contemporary issues.
+              <br><br>
+              <a href="2024-Fall-Labor-History-Syllabus.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Course Syllabus (PDF)</a>
+            </p>
+            <div class="card-details" aria-expanded="false">
+              <b>Section Innovations & Teaching Methods:</b>
+              <ul style="margin-top:0.5rem;">
+                <li><b>Active Discussion:</b> Weekly quizzes and thought-provoking activities to anchor key themes</li>
+                <li><b>Peer Review Workshops:</b> Structured feedback sessions on synthesis essays with focus on evidence integration</li>
+                <li><b>Collaborative Timeline Creation:</b> Group activities analyzing historical events and connecting themes across readings</li>
+                <li><b>Contemporary Connections:</b> Weekly "Contemporary Thought Pieces" linking historical content to current labor issues</li>
+                <li><b>Critical Debates:</b> Structured debates on topics like "The Role of Black Workers in Labor History"</li>
+                <li><b>Creative Assignments:</b> Oral history reflections, timeline presentations, and thematic analysis projects</li>
+              </ul>
+              <b>Sample Weekly Highlights:</b>
+              <ul style="margin-top:0.5rem;">
+                <li><b>The Slave Ship & Labor Resistance:</b> Analysis of Marcus Rediker's work, connecting transatlantic slavery to modern labor exploitation</li>
+                <li><b>Lowell Factory Girls & Black Folk:</b> Group activities exploring gender, class, and organizing in 19th century America</li>
+                <li><b>Battle for Homestead Simulation:</b> Role-playing debates and peer review activities on 1892 labor conflict</li>
+                <li><b>New Deal Era Labor Organizing:</b> Discussion of Thomas Bell's "Out of This Furnace" and 1930s labor movements</li>
+              </ul>
+              <b>Student Outcomes Achieved:</b>
+              <ul style="margin-top:0.5rem;">
+                <li>Students developed critical historical thinking and research skills</li>
+                <li>Enhanced ability to connect past labor struggles to contemporary workplace issues</li>
+                <li>Improved public speaking and collaborative discussion capabilities</li>
+                <li>Strengthened academic writing through evidence-based argumentation</li>
+              </ul>
+            </div>
           </div>
         </div>
-        <!-- Add more course cards here as you teach new courses. -->
       </div>
     </section>
 
@@ -200,7 +419,7 @@
     <section id="student-feedback">
       <h2>What Students Say</h2>
       <div class="feedback-carousel-block">
-        <blockquote id="feedback-quote" class="carousel-quote">“Adolfho is extremely professional but creates a warm and welcoming environment with his students and tries to build personal relationships.”</blockquote>
+        <blockquote id="feedback-quote" class="carousel-quote">"Adolfho is extremely professional but creates a warm and welcoming environment with his students and tries to build personal relationships."</blockquote>
         <div class="carousel-arrows">
           <button class="carousel-arrow" onclick="prevQuote()" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
           <button class="carousel-arrow" onclick="nextQuote()" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
@@ -211,24 +430,22 @@
     <!-- WEEKLY/MODULE HIGHLIGHTS - INTERACTIVE -->
     <section id="weekly-highlights">
       <h2>Weekly & Module Highlights</h2>
-      <div class="course-card-grid">
-        <div class="card-teaching card-slim">
-          <div class="card-header">Sample: The Slave Ship &amp; Labor Resistance</div>
-          <div class="card-desc">
-            Multimedia discussion, primary source debate, and connecting Marcus Rediker’s research to modern-day migrant labor.
-          </div>
+      <div class="card-grid">
+        <div class="card animate-on-scroll">
+          <b>The Slave Ship & Labor Resistance</b>
+          <p>Multimedia discussion, primary source debate, and connecting Marcus Rediker's research to modern-day migrant labor.</p>
         </div>
-        <div class="card-teaching card-slim">
-          <div class="card-header">Women’s Labor – Lowell Factory Girls</div>
-          <div class="card-desc">
-            Used documentary film, class discussion on industrialization, and group timeline assignments to explore women’s agency.
-          </div>
+        <div class="card animate-on-scroll">
+          <b>Women's Labor – Lowell Factory Girls</b>
+          <p>Used documentary film, class discussion on industrialization, and group timeline assignments to explore women's agency.</p>
         </div>
-        <div class="card-teaching card-slim">
-          <div class="card-header">Homestead Strike Debates</div>
-          <div class="card-desc">
-            Peer-reviewed debate on labor ideology, role-played advisory committee deliberations, built skills in evidence-based argument.
-          </div>
+        <div class="card animate-on-scroll">
+          <b>Homestead Strike Debates</b>
+          <p>Peer-reviewed debate on labor ideology, role-played advisory committee deliberations, built skills in evidence-based argument.</p>
+        </div>
+        <div class="card animate-on-scroll">
+          <b>New Deal Era Organizing</b>
+          <p>Discussion of Thomas Bell's "Out of This Furnace" and analysis of 1930s labor movements and CIO formation.</p>
         </div>
       </div>
     </section>
@@ -237,7 +454,6 @@
     <section id="materials">
       <h2>Key Course Materials</h2>
       <div class="key-materials-row">
-        <!-- Use actual covers or keep abstract. Add tooltips for context -->
         <div class="book-cover"><span>Rediker</span>
           <div class="book-tooltip">"The Slave Ship: A Human History"<br>Transatlantic slavery, labor, and resistance.</div>
         </div>
@@ -283,22 +499,39 @@
   <footer>
     © 2025 Adolfho Romero · <a href="mailto:adolfhoromero@gmail.com">adolfhoromero@gmail.com</a>
   </footer>
+  
   <script>
-    // Interactivity for course cards (expand details)
+    // Smooth fade-in for cards
+    document.addEventListener("DOMContentLoaded", function() {
+      function revealOnScroll() {
+        const cards = document.querySelectorAll('.card.animate-on-scroll');
+        const windowHeight = window.innerHeight;
+        cards.forEach(el => {
+          if (el.getBoundingClientRect().top < windowHeight - 60) {
+            el.classList.add('visible');
+          }
+        });
+      }
+      window.addEventListener('scroll', revealOnScroll);
+      revealOnScroll();
+    });
+
+    // Details toggle for course cards
     function toggleDetails(btn) {
-      const card = btn.closest('.card-teaching');
+      const card = btn.closest('.card');
       const details = card.querySelector('.card-details');
-      const isOpen = details.getAttribute("aria-expanded") === "true";
-      details.setAttribute("aria-expanded", !isOpen);
-      btn.innerHTML = (!isOpen ? "Hide Details <i class='fas fa-chevron-up'></i>" : "Details <i class='fas fa-chevron-down'></i>");
+      const expanded = details.getAttribute('aria-expanded') === 'true';
+      details.setAttribute('aria-expanded', !expanded);
+      btn.innerHTML = !expanded ? "Hide Details <i class='fas fa-chevron-up'></i>" : "Details <i class='fas fa-chevron-down'></i>";
     }
+
     // Student Feedback Carousel
     const quotes = [
-      "“Adolfho is extremely professional but creates a warm and welcoming environment with his students and tries to build personal relationships.”",
-      "“He is very knowledgeable and very open to helping everyone.”",
-      "“Great in giving detailed feedback and actually writing new perspectives about the content in feedback.”",
-      "“Makes time for students, creates inclusive and meaningful conversations, and allows students to ask questions.”",
-      "“He is very kind.”"
+      ""Adolfho is extremely professional but creates a warm and welcoming environment with his students and tries to build personal relationships."",
+      ""He is very knowledgeable and very open to helping everyone."",
+      ""Great in giving detailed feedback and actually writing new perspectives about the content in feedback."",
+      ""Makes time for students, creates inclusive and meaningful conversations, and allows students to ask questions."",
+      ""He is very kind.""
     ];
     let quoteIdx = 0;
     function renderQuote() {
@@ -308,6 +541,7 @@
     function nextQuote() { quoteIdx = (quoteIdx + 1) % quotes.length; renderQuote(); }
     // Initialize
     renderQuote();
+    
     // Night mode toggle support
     function toggleDarkMode() {
       document.documentElement.classList.toggle('dark');
