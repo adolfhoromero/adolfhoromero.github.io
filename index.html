@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+update my entire code now : <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Adolfho Romero</title>
 
   <!-- Fonts: Poppins + Spectral -->
@@ -11,10 +11,6 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,600;1,400;1,600&display=swap"
     rel="stylesheet"/>
-
-  <!-- GSAP + ScrollTrigger -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
   <style>
     :root {
@@ -38,7 +34,11 @@
       --text-main: #d1d5db;
       --heading-color: #f9fafb;
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Poppins', sans-serif;
@@ -46,166 +46,286 @@
       color: var(--text-main);
       line-height: 1.6;
       transition: background 0.4s, color 0.4s;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
-    a { color: var(--accent); text-decoration: none; transition: color .2s; }
-    a:hover, a:focus { color: var(--accent-gold); }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color .2s, background .25s, box-shadow .25s;
+    }
+    a:hover, a:focus {
+      color: var(--accent-gold);
+    }
 
     /* HEADER & NAV */
     header {
-      background: var(--nav-bg); color: var(--nav-text);
-      text-align: center; padding: 1.5rem 1rem .8rem;
+      background: var(--nav-bg);
+      color: var(--nav-text);
+      text-align: center;
+      padding: 1.5rem 1rem 0.8rem;
       box-shadow: 0 4px 22px rgba(34,48,74,0.47);
-      position: relative; transition: background .4s,color .4s; z-index:1000;
+      position: relative;
+      transition: background 0.4s, color 0.4s;
     }
     .site-title {
-      font-family: 'Spectral', serif; font-size:2.95rem; font-weight:700;
-      color: var(--nav-text); transition: color .4s;
+      font-family: 'Spectral', serif;
+      font-size: 2.95rem;
+      font-weight: 700;
+      color: var(--nav-text);
+      transition: color 0.4s;
     }
     .dark-toggle {
-      position:absolute; top:1rem; right:1rem;
-      width:2rem; height:2rem;
-      background:url('sun-moon.svg') center/contain no-repeat;
-      cursor:pointer; z-index:10;
+      position: absolute;
+      top: 1rem; right: 1rem;
+      width: 2rem; height: 2rem;
+      background: url('sun-moon.svg') center/contain no-repeat;
+      cursor: pointer;
+      z-index: 10;
     }
 
     nav.main-nav {
-      position:sticky; top:0; z-index:50;
-      background:var(--nav-bg); box-shadow:inset 0 -1px 0 #3a496f;
-      font-family:'Spectral', serif; transition:background .4s,color .4s;
+      position: sticky;
+      top: 0; z-index: 50;
+      background: var(--nav-bg);
+      box-shadow: inset 0 -1px 0 #3a496f;
+      font-family: 'Spectral', serif;
+      transition: background 0.4s, color 0.4s;
     }
     nav.main-nav ul {
-      display:flex; justify-content:center; gap:30px;
-      list-style:none; max-width:var(--max-width);
-      margin:0 auto; padding:8px 0;
-      transition:max-height .3s ease-out;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      list-style: none;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 8px 0;
     }
     nav.main-nav a {
-      position:relative; padding:10px 16px;
-      font-size:1.1rem; font-weight:700; text-transform:uppercase;
-      letter-spacing:.1em; color:var(--nav-text); text-shadow:0 1px 2px rgba(0,0,0,0.4);
-      background:none; border:none; outline:none; box-shadow:none; cursor:pointer;
+      position: relative;
+      padding: 10px 16px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--nav-text);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+      background: none;
+      border: none;
+      outline: none;
+      box-shadow: none;
     }
-    /* Animated underline SVG container */
-    nav.main-nav a svg {
-      position:absolute; bottom:4px; left:50%;
-      width:0; height:3px; transform:translateX(-50%);
-      fill:none; stroke:var(--accent-gold); stroke-width:3;
-      transition:width .4s ease-out;
+    nav.main-nav a::after {
+      content: '';
+      position: absolute;
+      left: 18px; right: 18px; bottom: 6px;
+      height: 3.5px; border-radius: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-gold));
+      width: 0; opacity: 0;
+      transition: width .26s, opacity .22s;
     }
-    nav.main-nav a:hover svg { width:80px; }
-
     nav.main-nav a:hover, nav.main-nav a:focus {
-      color:var(--accent-gold); background:rgba(255,255,255,0.04);
-      box-shadow:0 0 6px 1.5px var(--accent-gold);
+      color: var(--accent-gold);
+      background: rgba(255,255,255,0.04);
+      box-shadow: 0 0 6px 1.5px var(--accent-gold, #ffcc00);
+    }
+    nav.main-nav a:hover::after, nav.main-nav a:focus::after {
+      width: calc(100% - 36px); opacity: .82;
     }
 
+    /* Special standout for CV as button */
     nav.main-nav a.cv-link {
-      position:relative; overflow:hidden;
-      background:linear-gradient(90deg,var(--accent),var(--accent-gold));
-      color:#fff!important; border-radius:4px;
-      padding:10px 22px; font-weight:700;
-      box-shadow:0 2px 8px rgba(41,83,155,0.09);
-      transition:filter .2s,box-shadow .2s;
+      background: linear-gradient(90deg, var(--accent), var(--accent-gold));
+      color: #fff !important;
+      border-radius: 4px;
+      padding: 10px 22px;
+      font-weight: 700;
+      box-shadow: 0 2px 8px rgba(41,83,155,0.09);
+      margin-right: 8px;
+      transition: filter .2s, box-shadow .2s, color .2s, background .2s;
     }
-    /* shimmer effect */
-    nav.main-nav a.cv-link::before {
-      content:""; position:absolute; top:0; left:-100%;
-      width:100%; height:100%;
-      background:linear-gradient(120deg,rgba(255,255,255,0.2),rgba(255,255,255,0));
-      transform:skewX(-25deg); transition:all .6s ease-out;
+    nav.main-nav a.cv-link:hover, nav.main-nav a.cv-link:focus {
+      filter: brightness(1.07) saturate(1.12);
+      box-shadow: 0 8px 22px rgba(41,83,155,0.19);
+      color: var(--nav-text) !important;
     }
-    nav.main-nav a.cv-link:hover::before { left:200%; }
-
-    .menu-toggle { display:none; position:absolute; top:1.25rem; right:4.5rem;
-      width:2rem; height:2rem; cursor:pointer; z-index:1010;
-      flex-direction:column; justify-content:space-around;
-    }
-    .menu-toggle span {
-      height:3px; width:25px; background:var(--nav-text);
-      border-radius:2px; transition:all .3s ease;
-    }
-    .menu-toggle.open span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
-    .menu-toggle.open span:nth-child(2) { opacity:0; }
-    .menu-toggle.open span:nth-child(3) { transform:rotate(-45deg) translate(4px,-4px); }
 
     /* HERO */
     .hero {
-      position:relative; padding:20px 10px; text-align:center;
-      background:linear-gradient(120deg,rgba(247,248,250,0.79),rgba(229,232,239,0.84)),url('cornellcampus.jpg') center 44%/cover no-repeat;
-      border-bottom:5px solid var(--accent); box-shadow:0 2px 40px rgba(35,64,101,0.09);
-      overflow:hidden; transition:background .4s,color .4s;
+      position: relative;
+      height: auto;
+      padding: 20px 10px 20px;
+      text-align: center;
+      background: linear-gradient(120deg, rgba(247,248,250,0.79), rgba(229,232,239,0.84)), url('cornellcampus.jpg') center 44%/cover no-repeat;
+      border-bottom: 5px solid var(--accent);
+      box-shadow: 0 2px 40px rgba(35,64,101,0.09);
+      overflow: visible;
+      transition: background 0.4s, color 0.4s;
+    }
+    .dark .hero {
+      background: linear-gradient(120deg, rgba(17,24,39,0.88), rgba(40,51,74,0.92)), url('cornellcampus.jpg') center 44%/cover no-repeat;
     }
     .hero-photo {
-      width:200px; height:200px; border-radius:50%; object-fit:cover;
-      box-shadow:0 0 0 4px #fff,0 17px 44px rgba(34,48,74,0.07);
-      margin:0 auto .5rem; transition:transform .8s ease-out;
-      will-change:transform; position:relative; z-index:1;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #f5f8fc;
+      box-shadow: 0 0 0 4px #fff, 0 17px 44px rgba(34,48,74,0.07);
+      margin-bottom: 0.5rem;
+      transition: transform .4s ease;
+      z-index: 1;
+      position: relative;
     }
-    .hero-photo:hover { transform:scale(1.03) translateY(-10px); }
+    .hero-photo:hover {
+      transform: scale(1.05);
+    }
+    .hero h1 {
+      margin-top: 0.3rem;
+      font-family: 'Spectral', serif;
+      font-size: 2.5rem;
+      color: var(--heading-color);
+      z-index: 1;
+      position: relative;
+      transition: color .4s;
+    }
+    .dark .hero h1 {
+      color: var(--heading-color);
+    }
+    .hero h2 {
+      margin-top: 0.2rem;
+      font-size: 1.18rem;
+      font-weight: 600;
+      color: var(--accent);
+      z-index: 1;
+      position: relative;
+      transition: color .4s;
+    }
+    .dark .hero h2 {
+      color: var(--accent);
+    }
+    .hero-quote {
+      margin-top: 1.5rem;
+      max-width: 410px;
+      font-style: italic;
+      background: #fffdec;
+      border-left: 4px solid var(--accent-gold);
+      border-radius: 6px;
+      box-shadow: 0 1.5px 8px rgba(245,233,221,0.09);
+      color: #495168;
+      padding: 11px 21px;
+      display: inline-block;
+      z-index: 1;
+      position: relative;
+      transition: background .4s, color .4s;
+    }
+    .dark .hero-quote {
+      background: #233158;
+      color: #fbbf24;
+      border-left: 4px solid var(--accent-gold);
+      box-shadow: 0 1.5px 8px rgba(41,130,246,0.10);
+    }
 
     /* ABOUT SECTION */
     .section {
-      max-width:var(--max-width); margin:2.3rem auto 4rem; padding:0 1.1rem;
-      transition:color .4s,background .4s;
+      max-width: var(--max-width);
+      margin: 2.3rem auto 4rem;
+      padding: 0 1.1rem;
+      transition: color 0.4s, background 0.4s;
     }
     .section h2 {
-      font-family:'Spectral', serif; font-size:2.18rem; text-align:center;
-      margin-bottom:1.75rem; transition:color .4s;
+      font-family: 'Spectral', serif;
+      font-size: 2.18rem;
+      text-align: center;
+      margin-bottom: 1.75rem;
+      transition: color .4s;
+    }
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 46px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .about-text {
+      flex: 2;
+      min-width: 300px;
+      max-width: 670px;
+      font-size: 1.16rem;
+      line-height: 1.73;
+    }
+    .about-text p {
+      margin-bottom: 1.45rem;
+    }
+    .about-image {
+      flex: 1;
+      min-width: 220px;
+      max-width: 360px;
+      display: flex;
+      justify-content: center;
+    }
+    .about-image img {
+      width: 320px;
+      height: auto;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 7px 32px rgba(41,83,155,0.13);
+    }
+    .ethical {
+      max-width: 650px;
+      margin: 36px auto 0;
+      padding: 1rem;
+      background: #f8f8ea;
+      border-left: 4px solid rgba(188,159,91,0.18);
+      border-radius: 7px;
+      color: #775f29;
+      transition: background 0.4s, color 0.4s;
+    }
+    .dark .ethical {
+      background: #23261c;
+      color: #fbbf24;
+      border-left: 4px solid #fbbf24;
     }
 
-    /* Page fade transitions */
-    body.page-exit-active { opacity:0; transform:translateY(10px); transition:opacity .5s ease,transform .5s ease; }
-    body.page-enter-active { opacity:1; transform:translateY(0); transition:opacity .5s ease,transform .5s ease; }
-
-    /* Reduced-motion support */
-    @media (prefers-reduced-motion: reduce) {
-      *,*::before,*::after { animation-duration:0.001ms!important; transition-duration:0.001ms!important; }
-      .hero-photo:hover { transform:none; }
+    footer {
+      text-align: center;
+      background: var(--nav-bg);
+      color: #adadad;
+      padding: 23px 1rem;
+      font-size: .98rem;
+      border-top: 1px solid rgba(45,57,85,0.2);
+      margin-top: 4.8rem;
+      transition: background 0.4s, color 0.4s;
     }
 
-    /* Responsive */
-    @media (max-width:820px) {
-      .hero-photo { width:150px; height:150px; }
-      .about-image img { width:260px; }
-      .about-container { flex-direction:column; text-align:center; }
-    }
-    @media (max-width:600px) {
-      nav.main-nav ul { flex-direction:column; max-height:0; overflow:hidden; }
-      nav.main-nav ul.open { max-height:400px; transition:max-height .5s ease-in; }
-      .menu-toggle { display:flex; }
+    @media (max-width: 820px) {
+      .hero-photo {
+        width: 150px;
+        height: 150px;
+      }
+      .about-image img {
+        width: 260px;
+      }
+      .about-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .site-title {
+        font-size: 2.5rem;
+      }
     }
   </style>
 </head>
 
-<body class="page-enter-active">
+<body>
   <header>
     <div class="dark-toggle" onclick="toggleDarkMode()" title="Toggle dark mode"></div>
     <h1 class="site-title">Adolfho Romero</h1>
   </header>
 
   <nav class="main-nav" aria-label="Primary">
-    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation">
-      <span></span><span></span><span></span>
-    </button>
-    <ul id="primary-navigation">
-      <li>
-        <a href="adolfhoromerocv.pdf" target="_blank" class="cv-link">CV</a>
-      </li>
-      <li>
-        <a href="publications.html" class="pubs-link">
-          Publications
-          <svg viewBox="0 0 80 3"><path d="M0 1.5 H80"/></svg>
-        </a>
-      </li>
-      <li>
-        <a href="#contact" class="contact-link">
-          Contact
-          <svg viewBox="0 0 80 3"><path d="M0 1.5 H80"/></svg>
-        </a>
-      </li>
+    <ul>
+      <li><a href="adolfhoromerocv.pdf" target="_blank" class="cv-link">CV</a></li>
+      <li><a href="publications.html" class="pubs-link">Publications</a></li>
+      <li><a href="#contact" class="contact-link">Contact</a></li>
     </ul>
   </nav>
 
@@ -222,7 +342,8 @@
     <h2 id="about-title">About My Journey</h2>
     <div class="about-container">
       <article class="about-text">
-        <p>As a first-generation student from a working-class family in Chicago, I learned early on about struggle and solidarity...</p>
+        <p>As a first-generation student from a working-class family in Chicago, I learned early on about struggle and solidarity. Growing up, I saw my parents working long hours in factories under difficult conditions, which instilled in me a personal commitment to fighting for social and economic justice. Those experiences not only shaped my identity but also inspired me to uplift marginalized voices and foster unity in my community.</p>
+        <p>Now, as a Ph.D. student in Industrial and Labor Relations at Cornell University, I carry those values into my research and activism. My work focuses on the intersections of labor, race, and community. As the first in my family to pursue a doctorate, I strive to honor my community through my scholarship and to bridge academic research with grassroots organizing. I believe in the power of education and collective action to create meaningful change, and I remain grounded in the principles of solidarity and the working-class experiences that have guided me from the start.</p>
         <section id="contact" aria-label="Contact">
           <p><strong>Email:</strong> <a href="mailto:adolfhoromero@gmail.com">adolfhoromero@gmail.com</a></p>
           <p><strong>ORCID:</strong> <a href="https://orcid.org/0009-0000-2505-0192" target="_blank">0009-0000-2505-0192</a></p>
@@ -242,39 +363,6 @@
   </footer>
 
   <script>
-    // GSAP Scroll-triggered section reveals
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.utils.toArray(".section").forEach(section => {
-      gsap.from(section, {
-        opacity: 0, y: 60, duration: 1, ease: "power2.out",
-        scrollTrigger: {
-          trigger: section, start: "top 85%",
-          toggleActions: "play none none reverse"
-        }
-      });
-    });
-
-    // Hero parallax on scroll
-    window.addEventListener('scroll', () => {
-      const offset = window.scrollY * 0.2;
-      document.querySelector('.hero-photo')
-        .style.transform = `translateY(${-offset}px) scale(1.02)`;
-    });
-
-    // Page transitions
-    document.querySelectorAll('a[href^="#"], a[target="_blank"]').forEach(link => {
-      link.addEventListener('click', (e) => {
-        if (!link.href.includes('#')) e.preventDefault();
-        document.body.classList.add('page-exit-active');
-        setTimeout(() => {
-          if (!link.href.includes('#')) window.location = link.href;
-        }, 450);
-      });
-    });
-    window.addEventListener('DOMContentLoaded', () => {
-      document.body.classList.remove('page-exit-active');
-    });
-
     // Dark-mode toggle
     function toggleDarkMode() {
       document.documentElement.classList.toggle('dark');
@@ -284,16 +372,6 @@
     if (localStorage.getItem('theme') === 'dark') {
       document.documentElement.classList.add('dark');
     }
-
-    // Mobile menu toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navList = document.querySelector('nav.main-nav ul');
-    menuToggle.addEventListener('click', () => {
-      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-      menuToggle.setAttribute('aria-expanded', !expanded);
-      menuToggle.classList.toggle('open');
-      navList.classList.toggle('open');
-    });
   </script>
 </body>
 </html>
