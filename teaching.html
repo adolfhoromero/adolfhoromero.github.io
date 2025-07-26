@@ -14,7 +14,7 @@
     /* Matching your site root variables and dark mode */
     :root {
       --background-top: #f7f8fa;
-      --background-bottom: #e4e8ef;
+      --backgrounef;
       --nav-bg: #22304a;
       --nav-text: #fff;
       --card-bg: #fff;
@@ -346,76 +346,103 @@
       color: var(--accent-gold);
     }
 
-    /* Philosophy section */
-    .philosophy-banner {
+    /* Course Curriculum Table Styles */
+    .curriculum-table-container {
       background: var(--card-bg);
-      border-left: 5px solid var(--accent);
-      border-radius: 14px;
-      padding: 1.5rem 1.75rem;
-      margin: 2rem 0;
-      font-size: 1.15rem;
+      border-left: 5px solid var(--card-border);
+      border-radius: 16px;
       box-shadow: var(--card-shadow);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      overflow-x: auto;
+    }
+
+    .curriculum-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .curriculum-table th {
+      background: linear-gradient(90deg, var(--accent), var(--accent-gold));
+      color: white;
+      padding: 12px 8px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      border-bottom: 2px solid var(--card-border);
+    }
+
+    .curriculum-table td {
+      padding: 10px 8px;
+      border-bottom: 1px solid #e1e5e7;
+      vertical-align: top;
+      line-height: 1.5;
+    }
+
+    .curriculum-table tr:nth-child(even) {
+      background: var(--background-top);
+    }
+
+    .curriculum-table tr:hover {
+      background: rgba(41, 83, 155, 0.05);
+    }
+
+    .week-number {
+      font-weight: 600;
+      color: var(--accent);
+      white-space: nowrap;
+      min-width: 90px;
+    }
+
+    .topic-title {
+      font-weight: 600;
+      color: var(--heading-color);
+      font-size: 0.95rem;
+    }
+
+    .key-themes {
+      font-size: 0.85rem;
+      color: var(--text-main);
       font-style: italic;
     }
 
-    /* Key materials */
-    .key-materials-row {
-      display: flex;
-      gap: 1.2rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin: 2rem 0;
+    .readings-list {
+      font-size: 0.8rem;
+      line-height: 1.4;
     }
 
-    .book-cover {
-      width: 90px;
-      height: 120px;
-      background: var(--card-bg);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: var(--card-shadow);
-      position: relative;
-      border-left: 3px solid var(--card-border);
-      font-size: 0.9rem;
-      font-weight: 600;
+    .activities-list {
+      font-size: 0.8rem;
+      line-height: 1.4;
       color: var(--accent);
-      text-align: center;
-      padding: 0.5rem;
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .book-cover:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(41,83,155,0.15);
+    .contemporary-connection {
+      font-size: 0.8rem;
+      color: #666;
+      font-style: italic;
+      background: rgba(255, 204, 0, 0.1);
+      padding: 4px 6px;
+      border-radius: 4px;
     }
 
-    .book-tooltip {
-      visibility: hidden;
-      opacity: 0;
-      position: absolute;
-      bottom: 130%;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--nav-bg);
-      color: var(--nav-text);
-      border-radius: 6px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      padding: 8px 12px;
-      font-size: 0.85rem;
-      white-space: nowrap;
-      transition: opacity 0.2s;
-      z-index: 10;
-      max-width: 200px;
-      white-space: normal;
-      text-align: center;
-    }
-
-    .book-cover:hover .book-tooltip {
-      visibility: visible;
-      opacity: 1;
+    @media (max-width: 768px) {
+      .curriculum-table-container {
+        padding: 1rem;
+      }
+      
+      .curriculum-table {
+        font-size: 0.8rem;
+      }
+      
+      .curriculum-table th,
+      .curriculum-table td {
+        padding: 8px 6px;
+      }
     }
 
   </style>
@@ -437,58 +464,341 @@
     <!-- Teaching Philosophy -->
     <section id="teaching-philosophy">
       <h2>Teaching Philosophy</h2>
-      <div class="philosophy-banner">
-        My teaching centers on creating welcoming, rigorous environments where students connect the history of labor with contemporary realities—through collaborative discussion, critical debate, and creative assignments, I empower learners to see their own role in shaping history.
+      <div class="card">
+        My teaching centers on creating welcoming, rigorous environments where students connect the history of labor with contemporary realities — through collaborative discussion, critical debate, and creative assignments, I empower learners to see their own role in shaping history.
       </div>
     </section>
 
     <!-- Courses Taught -->
     <section id="courses-taught">
       <h2>Teaching Experience</h2>
-      <div class="year-section">
-        <div class="year-heading">Fall 2024</div>
-        <div class="card-grid">
-          <div class="card animate-on-scroll">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <b>Introduction to US Labor History (ILRGL 1100)</b>
-              <button class="details-toggle" onclick="toggleDetails(this)">Details <i class="fas fa-chevron-down"></i></button>
-            </div>
-            <div style="color:#8e99af; margin-top:0.5rem; font-size: 0.9rem;">
-              <b>Cornell University</b> · Teaching Assistant for Prof. Paul Ortiz<br>
-              Discussion Sections: Fridays 10:10am & 11:15am<br>
-              Office Hours: Mondays 1:30-3:00pm
-            </div>
-            <p style="margin-top:0.8rem; font-size: 0.95rem;">
-              Explores working-class cultures, labor struggles, and the quest for dignity in US history from colonial period to present. Emphasized peer collaboration, critical debates, and connecting historical patterns to contemporary issues.
-              <br><br>
-              <a href="2024-Fall-Labor-History-Syllabus.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Course Syllabus (PDF)</a>
-            </p>
-            <div class="card-details" aria-expanded="false">
-              <b>Section Innovations & Teaching Methods:</b>
-              <ul style="margin-top:0.5rem;">
-                <li><b>Active Discussion:</b> Weekly quizzes and thought-provoking activities to anchor key themes</li>
-                <li><b>Peer Review Workshops:</b> Structured feedback sessions on synthesis essays with focus on evidence integration</li>
-                <li><b>Collaborative Timeline Creation:</b> Group activities analyzing historical events and connecting themes across readings</li>
-                <li><b>Contemporary Connections:</b> Weekly "Contemporary Thought Pieces" linking historical content to current labor issues</li>
-                <li><b>Critical Debates:</b> Structured debates on topics like "The Role of Black Workers in Labor History"</li>
-                <li><b>Creative Assignments:</b> Oral history reflections, timeline presentations, and thematic analysis projects</li>
-              </ul>
-              <b>Weekly Section Highlights:</b>
-              <ul style="margin-top:0.5rem;">
-                <li><b>The Slave Ship & Labor Resistance:</b> Analysis of Marcus Rediker's work, connecting transatlantic slavery to modern labor exploitation</li>
-                <li><b>Lowell Factory Girls & Black Folk:</b> Group activities exploring gender, class, and organizing in 19th century America</li>
-                <li><b>Battle for Homestead Simulation:</b> Role-playing debates and peer review activities on 1892 labor conflict</li>
-                <li><b>New Deal Era Labor Organizing:</b> Discussion of Thomas Bell's "Out of This Furnace" and 1930s labor movements</li>
-              </ul>
-              <b>Course Objectives Achieved:</b>
-              <ul style="margin-top:0.5rem;">
-                <li>Students developed critical historical thinking and research skills</li>
-                <li>Enhanced ability to connect past labor struggles to contemporary workplace issues</li>
-                <li>Improved public speaking and collaborative discussion capabilities</li>
-                <li>Strengthened academic writing through evidence-based argumentation</li>
-              </ul>
-            </div>
+      <div class="card-grid">
+        <div class="card animate-on-scroll">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <b>Introduction to US Labor History (ILRGL 1100)</b>
+            <button class="details-toggle" onclick="toggleDetails(this)">Details <i class="fas fa-chevron-down"></i></button>
           </div>
+          <div style="color:#8e99af; margin-top:0.1rem; font-size: 0.9rem;">
+            Cornell University · Fall 2024 · Teaching Assistant for Prof. Paul Ortiz · Fridays 10:10am & 11:15am · Office Hours Mon 1:30-3:00pm
+          </div>
+          <p style="margin-top:0.7rem; font-size: 0.95rem;">
+            Explores working-class cultures, labor struggles, and the quest for dignity in US history. Emphasized peer-reviewed debate, collaborative timelines, and creative assignments.
+            <br>
+            <a href="2024-Fall-Labor-History-Syllabus.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Syllabus (PDF)</a>
+          </p>
+          <div class="card-details" aria-expanded="false">
+            <b>Section Innovations:</b>
+            <ul>
+              <li>Peer review & feedback workshops on synthesis essays</li>
+              <li>Collaborative history timeline creation</li>
+              <li>Debates on race, gender, and solidarity in labor movements</li>
+              <li>Oral history activities and student-centered analysis</li>
+              <li>Weekly Contemporary Thought Pieces linking past to present news</li>
+            </ul>
+            <b>Sample Weekly Highlights:</b>
+            <ul>
+              <li><b>Rediker's Slave Ship</b>: Critical discussion on labor, capital, and resistance</li>
+              <li><b>Lowell Factory Girls/Black Folk</b>: Group activities exploring gender, class, and organizing</li>
+              <li><b>Homestead Strike Simulation</b>: Structured debates and peer review</li>
+              <li><b>Creative Assignments</b>: Timeline presentations, thematic reflections</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Course Curriculum Table -->
+    <section id="course-curriculum">
+      <h2>Course Curriculum Overview</h2>
+      <div class="year-section">
+        <div class="year-heading">Fall 2024 - Weekly Structure</div>
+        <div class="curriculum-table-container">
+          <table class="curriculum-table">
+            <thead>
+              <tr>
+                <th style="width: 12%;">Week</th>
+                <th style="width: 20%;">Topic & Themes</th>
+                <th style="width: 25%;">Key Readings</th>
+                <th style="width: 23%;">Section Activities</th>
+                <th style="width: 20%;">Contemporary Connections</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="week-number">Week 1<br>Aug 27</td>
+                <td>
+                  <div class="topic-title">Working Class Nation: Introduction</div>
+                  <div class="key-themes">What is labor? Labor's role in liberal polity, Historical foundations</div>
+                </td>
+                <td class="readings-list">
+                  • Marcus Rediker - The Slave Ship (Intro & Ch.1)<br>
+                  • Abraham Lincoln on Labor and Capital<br>
+                  • The Statute of Laborers (1351)<br>
+                  • English Peasants' Revolt
+                </td>
+                <td class="activities-list">
+                  • Timeline group activity<br>
+                  • "Everything Poll" activity<br>
+                  • Group analysis of feudalism to contemporary labor
+                </td>
+                <td class="contemporary-connection">
+                  Migrant workers deaths in Qatar World Cup
+                </td>
+              </tr>
+              <tr>
+                <td class="week-number">Week 2<br>Sept 3</td>
+                <td>
+                  <div class="topic-title">Slavery, Forced Labor, and the Making of the Americas</div>
+                  <div class="key-themes">Transatlantic slavery, Plantation management, Parallel systems of forced labor</div>
+                </td>
+                <td class="readings-list">
+                  • Marcus Rediker - The Slave Ship (Ch. 2-6)<br>
+                  • Paul Ortiz on Colonial America<br>
+                  • Gustavus Myers - Supreme Court History
+                </td>
+                <td class="activities-list">
+                  • Clotilda documentary reflection<br>
+                  • Discussion on Middle Passage phases<br>
+                  • Analysis of ship's role in slave trade
+                </td>
+                <td class="contemporary-connection">
+                  Modern plantation management practices, Coalition of Immokalee Workers
+                </td>
+              </tr>
+              <tr>
+                <td class="week-number">Week 3<br>Sept 10</td>
+                <td>
+                  <div class="topic-title">Battles Against Slavery & American Revolution</div>
+                  <div class="key-themes">Cultures of resistance, Haitian Revolution, Revolutionary proletariat</div>
+                </td>
+                <td class="readings-list">
+                  • Paul Ortiz - Haitian Revolution<br>
+                  • Marcus Rediker - The Slave Ship (Ch. 7-8)<br>
+                  • Reading strategies workshop materials
+                </td>
+                <td class="activities-list">
+                  • Quiz discussions on race development<br>
+                  • Reading strategies workshop<br>
+                  • Peer review preparation
+                </td>
+                <td class="contemporary-connection">
+                  Life and death in Apple's Forbidden City, Latino workers in New Orleans rebuilding
+                </td>
+              </tr>
+              <tr>
+                <td class="week-number">Week 4<br>Sept 17</td>
+                <td>
+                  <div class="topic-title">Crisis of 'Many and Few' in Antebellum America</div>
+                  <div class="key-themes">Early labor parties, Women's organizing, Ten-hour day struggles</div>
+                </td>
+                <td class="readings-list">
+                  • Blair LM Kelley - Black Folk (Intro-62)<br>
+                  • Lowell Factory Girls Association Constitution<br>
+                  • Working Men's Declaration of Independence
+                </td>
+                <td class="activities-list">
+                  • Peer review workshops<br>
+                  • Evidence check activities<br>
+                  • Collaborative outline review<br>
+                  • Kheel Center visit discussion
+                </td>
+                <td class="contemporary-connection">
+                  Bangladesh factory collapse, worker organizing
+                </td>
+              </tr>
+              <tr>
+                <td class="week-number">Week 5<br>Sept 24</td>
+                <td>
+                  <div class="topic-title">Gilded Age/Progressive Era Struggles</div>
+                  <div class="key-themes">Civil War as Second Revolution, Reconstruction, Eight-hour movement</div>
+                </td>
+                <td class="readings-list">
+                  • Paul Krause - Battle for Homestead (Preface, Ch. 1-3)<br>
+                  • August Spies defense<br>
+                  • Thibodaux Massacre materials
+                </td>
+                <td class="activities-list">
+                  • Lowell Factory Girls film discussion<br>
+                  • Women's labor organizing analysis<br>
+                  • Dignity and morality discussions<br>
+                  • Black Folk humanistic approach analysis
+                </td>
+                <td class="contemporary-connection">
+                  Black Lives Matter and union revival
+                </td>
+              </tr>
+              <tr>
+                <td class="week-number">Week 6<br>Oct 1</td>
+                <td>
+                  <div class="topic-title">Revolution in Steel and American Politics</div>
+                  <div class="key-themes">Homestead Strike, Industrial conflict, Racial dynamics in labor</div>
+                </td>
+                <td class="readings-list">
+                  • Paul Krause - Battle for Homestead (Ch. 4-11)<br>
+                  • Peer review articles on Homestead<br>
+                  • Historical analysis materials
+                </td>
+                <td class="activities-list">
+                  • John Due celebration<br>
+                  • Dock workers union news analysis<br>
+                  • Homestead Strike debate simulation<br>
+                  • Peer review article analysis
+                </td>
+                <td class="contemporary-connection">
+                  International Longshoremen's Association current strikes
+                </td>
+              </tr>
+              <tr>
+                <td class="week-number">Week 7<br>Oct 15</td>
+                <td>
+                  <div class="topic-title">Voter Suppression & Fall of House of Labor</div>
+                  <div class="key-themes">Judicial oligarchy, Black labor before CIO, Government by injunction</div>
+                </td>
+                <td class="readings-list">
+                  • Blair LM Kelley - Black Folk (65-113)<br>
+                  • Paul Ortiz - Segregation and Black Labor<br>
+                  • Luisa Capetillo writings<br>
+                  • Thomas Bell - Out of This Furnace (Kracha)
+                </td>
+                <td class="activities-list">
+                  • Reading and coding chart workshop<br>
+                  • Discussion on winners and losers<br>
+                  • Out of This Furnace analysis<br>
+                  • Judicial oligarchy connections
+                </td>
+                <td class="contemporary-connection">
+                  Treating migrants as enemies in current policy
+                </td>
+              </tr>
+              <tr>
+                <td class="week-number">Week 8<br>Oct 25</td>
+                <td>
+                  <div class="topic-title">Whose Progressive Era?</div>
+                  <div class="key-themes">Immigrant labor experiences, Revolutionary Mexico connections, Synthesis essay development</div>
+                </td>
+                <td class="readings-list">
+                  • Thomas Bell - Out of This Furnace (Mike & Mary's stories)<br>
+                  • Hubert Harrison writings<br>
+                  • Sonia Hernandez on radical women
+                </td>
+                <td class="activities-list">
+                  • PARA resource introduction<br>
+                  • Synthesis essay peer review<br>
+                  • Individual feedback sessions<br>
+                  • Essay structure guidance
+                </td>
+                <td class="contemporary-connection">
+                  Minimum wage research analysis
+                </td>
+              </tr>
+              <tr>
+                <td class="week-number">Week 9<br>Nov 1</td>
+                <td>
+                  <div class="topic-title">Fascism or Democracy? New Deal Era</div>
+                  <div class="key-themes">New Deal organizing, CIO formation, Unemployed movements</div>
+                </td>
+                <td class="readings-list">
+                  • Thomas Bell - Out of This Furnace (Dobie's story)<br>
+                  • Sue Ko Lee - Chinese American organizer<br>
+                  • 1936 Steelworkers Declaration<br>
+                  • 1938 National Dollar Strike materials
+                </td>
+                <td class="activities-list">
+                  • Discussion board quiz on Thomas Bell<br>
+                  • 1938 National Dollar Strike analysis<br>
+                  • New Deal organizing discussion<br>
+                  • Contemporary connections to organizing
+                </td>
+                <td class="contemporary-connection">
+                  How to crush racial justice movements
+                </td>
+              </tr>
+              <tr>
+                <td class="week-number">Week 10<br>Nov 8</td>
+                <td>
+                  <div class="topic-title">Workers Make a New Deal</div>
+                  <div class="key-themes">Black workers organizing, WWII work stoppages, Labor democratization</div>
+                </td>
+                <td class="readings-list">
+                  • Blair LM Kelley - Black Folk (115-224)<br>
+                  • Paul Ortiz - Black Workers Birmingham Spring<br>
+                  • Martin Glaberman - WWII strikes
+                </td>
+                <td class="activities-list">
+                  • Debate: "Role of Black Workers in U.S. Labor History"<br>
+                  • Structured debate format<br>
+                  • Evidence-based argumentation<br>
+                  • Historical analysis discussion
+                </td>
+                <td class="contemporary-connection">
+                  Right to work origins and anti-Semitism
+                </td>
+              </tr>
+              <tr>
+                <td class="week-number">Week 11<br>Nov 15</td>
+                <td>
+                  <div class="topic-title">Social Movement Unionism</div>
+                  <div class="key-themes">Timeline development, Labor movements 1920-1970, Synthesis essay preparation</div>
+                </td>
+                <td class="readings-list">
+                  • Labor movements timeline materials<br>
+                  • Historical synthesis sources<br>
+                  • Essay template resources
+                </td>
+                <td class="activities-list">
+                  • Timeline group assignments<br>
+                  • Labor Movements Timeline Sheet 1920-1970<br>
+                  • Essay outline template activity<br>
+                  • Individual feedback sessions
+                </td>
+                <td class="contemporary-connection">
+                  State of gig work in 2021
+                </td>
+              </tr>
+              <tr>
+                <td class="week-number">Week 12<br>Nov 22</td>
+                <td>
+                  <div class="topic-title">Great Arizona Mine Strike of 1983</div>
+                  <div class="key-themes">Women in labor organizing, 1930s-1980s timeline, Contemporary strikes</div>
+                </td>
+                <td class="readings-list">
+                  • Barbara Kingsolver - Holding the Line (first half)<br>
+                  • 1930s-1980s historical materials<br>
+                  • Contemporary strike analysis
+                </td>
+                <td class="activities-list">
+                  • Holding the Line discussion<br>
+                  • 1930s-1980s History Timeline Group Assignment<br>
+                  • Strike differentiation analysis<br>
+                  • Group presentations on timeline
+                </td>
+                <td class="contemporary-connection">
+                  Wage theft and workplace harassment
+                </td>
+              </tr>
+              <tr>
+                <td class="week-number">Week 13<br>Dec 3</td>
+                <td>
+                  <div class="topic-title">Labor's Future in Present & Past</div>
+                  <div class="key-themes">New working class, Amazon organizing, Course synthesis</div>
+                </td>
+                <td class="readings-list">
+                  • Barbara Kingsolver - Holding the Line (finish)<br>
+                  • Paul Ortiz - African American and Latinx History Ch. 8<br>
+                  • Gabriel Winant - New Working Class
+                </td>
+                <td class="activities-list">
+                  • Final discussions and course reflection<br>
+                  • Historical connections analysis<br>
+                  • Contemporary labor organizing review<br>
+                  • Course wrap-up activities
+                </td>
+                <td class="contemporary-connection">
+                  Amazon immigrant workers organizing, intersectional labor studies
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
@@ -505,58 +815,25 @@
       </div>
     </section>
 
-    <!-- Key Course Materials -->
-    <section id="materials">
-      <h2>Key Course Materials</h2>
-      <div class="year-section">
-        <div class="year-heading">Primary Texts</div>
-        <div class="key-materials-row">
-          <div class="book-cover">
-            <span>Rediker</span>
-            <div class="book-tooltip">"The Slave Ship: A Human History"<br>Explores transatlantic slavery's impact on labor systems and resistance</div>
-          </div>
-          <div class="book-cover">
-            <span>Krause</span>
-            <div class="book-tooltip">"The Battle for Homestead"<br>1892 steel strike and American industrial conflict analysis</div>
-          </div>
-          <div class="book-cover">
-            <span>Kelley</span>
-            <div class="book-tooltip">"Black Folk: The Roots of the Black Working Class"<br>Humanistic approach to Black community experiences in labor history</div>
-          </div>
-          <div class="book-cover">
-            <span>Bell</span>
-            <div class="book-tooltip">"Out of This Furnace"<br>Immigrant labor narrative in American steel industry</div>
-          </div>
-          <div class="book-cover">
-            <span>Kingsolver</span>
-            <div class="book-tooltip">"Holding the Line"<br>Women and unions in 1983 Arizona mine strike</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Learning Outcomes -->
-    <section id="outcomes">
+    <section id="learning-outcomes">
       <h2>Learning Outcomes</h2>
-      <div class="year-section">
-        <div class="year-heading">Student Achievement Goals</div>
-        <div class="card-grid">
-          <div class="card animate-on-scroll">
-            <b>Historical Thinking & Research Skills</b>
-            <p>Students develop critical analysis abilities through engagement with primary sources, scholarly texts, and evidence-based argumentation in synthesis essays.</p>
-          </div>
-          <div class="card animate-on-scroll">
-            <b>Contemporary Connections</b>
-            <p>Ability to analyze modern labor issues and workplace challenges through historical context, connecting past movements to current debates about economic security and social justice.</p>
-          </div>
-          <div class="card animate-on-scroll">
-            <b>Collaborative Communication</b>
-            <p>Enhanced confidence in public speaking, academic writing, and group collaboration through structured debates, peer review, and discussion-based learning.</p>
-          </div>
-          <div class="card animate-on-scroll">
-            <b>Critical Engagement</b>
-            <p>Develop ability to debate complex historical topics, analyze competing interpretations, and engage thoughtfully with diverse perspectives on labor history.</p>
-          </div>
+      <div class="card-grid">
+        <div class="card animate-on-scroll">
+          <b>Historical Thinking</b>
+          <p>Develop critical analysis skills and interpret primary sources with attention to historical complexity.</p>
+        </div>
+        <div class="card animate-on-scroll">
+          <b>Contemporary Connections</b>
+          <p>Analyze modern labor issues in the context of historical events and movements.</p>
+        </div>
+        <div class="card animate-on-scroll">
+          <b>Collaboration</b>
+          <p>Engage effectively in peer review, group projects, and structured debates.</p>
+        </div>
+        <div class="card animate-on-scroll">
+          <b>Communication</b>
+          <p>Strengthen public speaking, academic writing, and dialogic skills through active participation.</p>
         </div>
       </div>
     </section>
@@ -604,33 +881,4 @@
   function toggleDetails(btn) {
     const card = btn.closest('.card');
     const details = card.querySelector('.card-details');
-    const expanded = details.getAttribute('aria-expanded') === 'true';
-    details.setAttribute('aria-expanded', !expanded);
-    btn.innerHTML = !expanded ? "Hide Details <i class='fas fa-chevron-up'></i>" : "Details <i class='fas fa-chevron-down'></i>";
-  }
-
-  // Student feedback carousel
-  const quotes = [
-    ""Adolfho is extremely professional but creates a warm and welcoming environment with his students and tries to build personal relationships."",
-    ""He is very knowledgeable and very open to helping everyone."",
-    ""Great in giving detailed feedback and actually writing new perspectives about the content in feedback."",
-    ""Makes time for students, creates inclusive and meaningful conversations, and allows students to ask questions."",
-    ""He is very kind.""
-  ];
-  let quoteIdx = 0;
-  const feedbackEl = document.getElementById('feedback-quote');
-  function renderQuote() {
-    feedbackEl.textContent = quotes[quoteIdx];
-  }
-  function prevQuote() {
-    quoteIdx = (quoteIdx - 1 + quotes.length) % quotes.length;
-    renderQuote();
-  }
-  function nextQuote() {
-    quoteIdx = (quoteIdx + 1) % quotes.length;
-    renderQuote();
-  }
-  renderQuote();
-</script>
-</body>
-</html>
+    const expanded = details.getAttribute
