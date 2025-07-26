@@ -40,7 +40,6 @@
       --accent: #3b82f6;
       --accent-gold: #fbbf24;
     }
-
     html, body { height: 100%; margin: 0; padding: 0; }
     body {
       min-height: 100vh;
@@ -51,13 +50,11 @@
       scroll-behavior: smooth;
       transition: background 0.4s, color 0.4s;
     }
-
-    /* HEADER & NAVIGATION (matches home page) */
     header {
       background: var(--nav-bg);
       color: var(--nav-text);
       text-align: center;
-      padding: 1.5rem 1rem 0.8rem;
+      padding: 1.5rem 1rem 0.3rem;  /* Tighter space with less bottom padding */
       position: relative;
       box-shadow: 0 4px 22px rgba(34,48,74,0.47);
     }
@@ -78,10 +75,12 @@
     }
     nav.main-nav {
       position: sticky;
-      top: 0; z-index: 50;
+      top: 0;
+      z-index: 50;
       background: var(--nav-bg);
       box-shadow: inset 0 -1px 0 #3a496f;
       font-family: var(--font-heading);
+      margin-top: 0;
     }
     nav.main-nav ul {
       display: flex;
@@ -111,21 +110,12 @@
       transition: color .2s, background .25s, box-shadow .25s;
     }
     nav.main-nav a::after {
-      content: '';
-      position: absolute;
-      left: 18px; right: 18px; bottom: 6px;
-      height: 3.5px; border-radius: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-gold));
-      width: 0; opacity: 0;
-      transition: width .26s, opacity .22s;
+      display: none !important; /* No underline for nav links */
     }
     nav.main-nav a:hover, nav.main-nav a:focus {
       color: var(--accent-gold);
       background: rgba(255,255,255,0.04);
       box-shadow: 0 0 6px 1.5px var(--accent-gold, #ffcc00);
-    }
-    nav.main-nav a:hover::after, nav.main-nav a:focus::after {
-      width: calc(100% - 36px); opacity: .82;
     }
     nav.main-nav a.cv-link {
       background: linear-gradient(90deg, var(--accent), var(--accent-gold));
@@ -142,8 +132,6 @@
       box-shadow: 0 8px 22px rgba(41,83,155,0.19);
       color: var(--nav-text) !important;
     }
-
-    /* MAIN CONTENT STYLES */
     main {
       max-width: var(--max-width);
       margin: 3rem auto 0;
@@ -246,7 +234,7 @@
     footer a:hover { text-decoration: underline; }
     @media (max-width: 650px) {
       .site-title { font-size: 2.1rem; }
-      header { padding: 1.8rem .6rem .6rem; }
+      header { padding: 1.8rem .6rem .3rem; }
       .card { flex-direction: column; }
       .card img { width: 100%; max-width: 300px; margin: 0 auto .7rem; }
       main, section { padding: 0; }
@@ -255,12 +243,11 @@
   </style>
 </head>
 <body>
-  <!-- HEADER/NAV MATCHES HOMEPAGE STYLE -->
+  <!-- HEADER and MATCHING NAVIGATION -->
   <header>
     <div class="dark-toggle" onclick="toggleDarkMode()" title="Toggle dark mode"></div>
     <h1 class="site-title">Adolfho Romero</h1>
   </header>
-
   <nav class="main-nav" aria-label="Primary">
     <ul>
       <li><a href="index.html"><i class="fas fa-house-user"></i> Home</a></li>
@@ -269,7 +256,6 @@
       <li><a href="#contact" class="contact-link"><i class="fas fa-paper-plane"></i> Contact</a></li>
     </ul>
   </nav>
-
   <main>
     <section id="manuscripts">
       <h2>Manuscripts in Preparation</h2>
@@ -368,11 +354,9 @@
       </div>
     </section>
   </main>
-
   <footer>
     © 2025 Adolfho Romero · <a href="mailto:adolfhoromero@gmail.com">adolfhoromero@gmail.com</a>
   </footer>
-
   <script>
     // Smooth fade-in for cards
     document.addEventListener("DOMContentLoaded", function() {
@@ -388,7 +372,7 @@
       window.addEventListener('scroll', revealOnScroll);
       revealOnScroll();
     });
-    // Dark-mode toggle (optional, works if you define 'sun-moon.svg')
+    // Night mode toggle support (if you use a sun-moon.svg icon)
     function toggleDarkMode() {
       document.documentElement.classList.toggle('dark');
       localStorage.setItem('theme',
