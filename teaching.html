@@ -10,9 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet"/>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
-    /* Base styles */
-    :root {
-      --background-top: #f7f8fa;
+    /* CORRECTED CSS VARIABLES */
+    :: #f7f8fa;
       --background-bottom: #e4e8ef;
       --nav-bg: #22304a;
       --nav-text: #fff;
@@ -20,7 +19,8 @@
       --card-shadow: 0 4px 36px #2e3a5022;
       --card-border: #29539b;
       --text-main: #313b53;
-      --heading-color: #263045539b;
+      --heading-color: #263045;
+      --accent: #29539b;
       --accent-gold: #ffcc00;
       --max-width: 980px;
       --font-body: 'Poppins', sans-serif;
@@ -55,7 +55,7 @@
       background: var(--nav-bg);
       color: var(--nav-text);
       text-align: center;
-      padding: 1.2rem 1rem 0rem;  /* Reduced bottom padding for less space */
+      padding: 1.2rem 1rem 0rem;
       position: relative;
       box-shadow: 0 4px 22px rgba(34,48,74,0.47);
     }
@@ -65,7 +65,7 @@
       font-weight: 700;
       color: var(--nav-text);
       transition: color 0.4s;
-      margin-bottom: 0.1rem;     /* Remove default h1 bottom margin */
+      margin-bottom: 0.1rem;
     }
     .dark-toggle {
       position: absolute;
@@ -113,7 +113,7 @@
       text-decoration: none;
     }
     nav.main-nav a::after {
-      display: none !important; /* No underline for nav links */
+      display: none !important;
     }
     nav.main-nav a:hover, nav.main-nav a:focus {
       color: var(--accent-gold);
@@ -135,7 +135,6 @@
       box-shadow: 0 8px 22px rgba(41,83,155,0.19);
       color: var(--nav-text) !important;
     }
-    /* Active state for current page */
     nav.main-nav a.active {
       color: var(--accent-gold);
       background: rgba(255,255,255,0.04);
@@ -227,7 +226,7 @@
     footer a { color: var(--accent); text-decoration: none; }
     footer a:hover { text-decoration: underline; }
     
-    /* Responsive - EXACT FROM PUBLICATIONS PAGE */
+    /* Responsive */
     @media (max-width:650px) {
       .site-title { font-size: 2.1rem; }
       header { padding: 1.8rem .6rem .3rem; }
@@ -384,7 +383,7 @@
             <b>Debate Structure:</b>
             <ul>
               <li>Students assigned roles: workers, management, government officials, community members</li>
-              <li>Peer review of position papers before debut</li>
+              <li>Peer review of position papers before debate</li>
               <li>Structured deliberation with evidence-based arguments</li>
               <li>Reflection essays on multiple perspectives and historical complexity</li>
             </ul>
@@ -403,7 +402,6 @@
     <section id="materials">
       <h2>Key Course Materials</h2>
       <div class="key-materials-row">
-        <!-- Use actual covers or keep abstract. Add tooltips for context -->
         <div class="book-cover"><span>Rediker</span>
           <div class="book-tooltip">"The Slave Ship: A Human History"<br>Transatlantic slavery, labor, and resistance.</div>
         </div>
