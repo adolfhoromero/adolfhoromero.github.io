@@ -17,7 +17,7 @@
       --background-top:#f7f8fa;--background-bottom:#e4e8ef;
       --nav-bg:#22304a;--nav-text:#fff;
       --card-bg:#fff;--card-shadow:0 4px 36px #2e3a5022;--card-border:#29539b;
-      --text-main:#313b53;--heading-color:#263045;
+      --text-main:#313045;
       --accent:#29539b;--accent-gold:#ffcc00;
       --max-width:980px;
       --font-body:'Poppins',sans-serif;--font-heading:'Spectral',serif;
@@ -124,16 +124,44 @@
     .card-details ul{margin:0;padding-left:1.2em}
     .card-details li{margin-bottom:.5rem}
 
-    /* ——  FEEDBACK  —— */
-    .feedback-carousel-block{
-      max-width:560px;margin:2.5rem auto;text-align:center;position:relative;
-      background:var(--card-bg);border-left:5px solid var(--accent-gold);border-radius:14px;
-      padding:1rem 1.6rem 2.4rem;box-shadow:var(--card-shadow);
+    /* ——  FEEDBACK LIST — MODERN, INTERACTIVE —— */
+    .feedback-list {
+      list-style: none;
+      padding: 0;
+      max-width: 750px;
+      margin: 2.2rem auto 4rem auto;
     }
-    .carousel-quote{font-size:1.15rem;color:var(--text-main);font-style:italic;min-height:50px}
-    .carousel-arrows{position:absolute;bottom:8px;left:0;right:0;display:flex;justify-content:center;gap:44px}
-    .carousel-arrow{background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--accent)}
-    .carousel-arrow:hover{color:var(--accent-gold)}
+    .feedback-list li {
+      background: var(--card-bg);
+      margin: 1.2rem 0;
+      border-left: 5px solid var(--accent-gold);
+      padding: 1.2rem 1rem 1.2rem 2rem;
+      font-size: 1.15rem;
+      color: var(--text-main);
+      font-style: italic;
+      position: relative;
+      transition: background 0.3s, box-shadow 0.3s;
+      cursor: default;
+      border-radius: 10px;
+      box-shadow: var(--card-shadow);
+    }
+    .feedback-list li:hover {
+      background: #fffbe6;
+      box-shadow: 0 4px 24px #cab97630;
+    }
+    .dark .feedback-list li:hover {
+      background: #2a2d3a;
+      box-shadow: 0 4px 24px #3b82f630;
+    }
+    .feedback-list li::before {
+      content: """;
+      color: var(--accent-gold);
+      font-size: 1.4em;
+      position: absolute;
+      left: 0.7rem;
+      top: 0.3rem;
+      font-family: serif;
+    }
 
     /* ——  MATERIALS & OUTCOMES  —— */
     .key-materials-row{display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:center;margin:2.5rem 0}
@@ -159,6 +187,15 @@
       .book-cover{margin:0 auto}
       main,section{padding:0}
       nav.main-nav ul{gap:14px}
+      .feedback-list li {
+        font-size: 1.05rem;
+        padding-left: 1.6rem;
+        margin: 1rem 0;
+      }
+      .feedback-list li::before {
+        left: 0.4rem;
+        font-size: 1.3em;
+      }
     }
   </style>
 </head>
@@ -232,7 +269,7 @@
 
           <b>Sample Weekly Highlights:</b>
           <ul>
-            <li><b>Rediker’s Slave Ship</b>: Critical discussion on labor, capital, and resistance</li>
+            <li><b>Rediker's Slave Ship</b>: Critical discussion on labor, capital, and resistance</li>
             <li><b>Lowell Factory Girls / Black Folk</b>: Group activities exploring gender, class, and organizing</li>
             <li><b>Homestead Strike Simulation</b>: Structured debates and peer review</li>
             <li><b>Creative Assignments</b>: Timeline presentations, thematic reflections</li>
@@ -258,7 +295,7 @@
           Teaching Assistant (acted as Instructor of Record) · Mondays 11:45 am–1:40 pm
         </div>
         <div class="card-desc">
-          Community-based oral-history class in partnership with St. Patrick Catholic Church. Led all sessions, guided student archival research, and digitized rare local records. Students produced original histories of North-Central Florida’s Catholic, working-class, and activist communities.<br>
+          Community-based oral-history class in partnership with St. Patrick Catholic Church. Led all sessions, guided student archival research, and digitized rare local records. Students produced original histories of North-Central Florida's Catholic, working-class, and activist communities.<br>
           <a href="Fall-2020-Internship-Syllabus-Draft-2-4.docx" target="_blank"><i class="fas fa-file-word"></i> Syllabus (Word)</a>
         </div>
 
@@ -268,15 +305,15 @@
             <li>Direct collaboration with St. Patrick Catholic Church; students accessed, scanned, and interpreted archival records dating back decades</li>
             <li>Solely designed lectures, mentored each student, and supervised all research projects</li>
             <li>Hands-on oral-history training: interview protocol, digital production, archival preservation</li>
-            <li>Explored discrimination, civil-rights activism, and the Sisters of St. Joseph’s educational mission</li>
+            <li>Explored discrimination, civil-rights activism, and the Sisters of St. Joseph's educational mission</li>
           </ul>
 
           <b>Weekly Highlights:</b>
           <ul>
-            <li><b>Catholicism &amp; Educational Activism</b>: Lecture on Sisters of St. Joseph’s fight against segregation</li>
+            <li><b>Catholicism &amp; Educational Activism</b>: Lecture on Sisters of St. Joseph's fight against segregation</li>
             <li><b>Father Conoley &amp; the Ku Klux Klan</b>: Case study of 1924 anti-Catholic violence in Gainesville</li>
             <li>Fieldwork: scanning church documents &amp; designing oral-history protocols</li>
-            <li>Student projects on parish labor history, women’s religious leadership, and social justice</li>
+            <li>Student projects on parish labor history, women's religious leadership, and social justice</li>
           </ul>
 
           <b>Transformative Outcomes:</b>
@@ -323,7 +360,7 @@
           <ul>
             <li>Alumni success narratives highlighting career trajectories &amp; program impact</li>
             <li>Interviews with Machen founders, staff, and program directors (institutional memory)</li>
-            <li>Current scholars’ perspectives on first-generation challenges &amp; support systems</li>
+            <li>Current scholars' perspectives on first-generation challenges &amp; support systems</li>
             <li>All interviews archived and published via YouTube playlist</li>
           </ul>
 
@@ -379,7 +416,7 @@
             <li>Held regular and after-hours TA office hours (in-person and online), ensuring every student had access to help</li>
             <li>Managed equipment and technology, coordinated digital resources for a 120+ student course</li>
             <li>Led feedback workshops on essay structure, argument building, and evidence integration</li>
-            <li>Provided detailed, actionable comments on drafts and assignments; fostered inclusive environment where students reported feeling “safe,” “encouraged,” and “truly cared for”</li>
+            <li>Provided detailed, actionable comments on drafts and assignments; fostered inclusive environment where students reported feeling "safe," "encouraged," and "truly cared for"</li>
           </ul>
 
           <b>Discussion &amp; Reading Guidance:</b>
@@ -397,17 +434,17 @@
             <li><strong>Paul Ortiz,</strong> <em>An African American and Latinx History of the United States</em></li>
             <li><strong>Blair Kelley,</strong> <em>Black Folk: The Roots of the Black Working Class</em></li>
             <li><strong>August Wilson,</strong> <em>The Piano Lesson</em></li>
-            <li><strong>Martín Espada,</strong> <em>Zapata’s Disciple</em></li>
+            <li><strong>Martín Espada,</strong> <em>Zapata's Disciple</em></li>
             <li><strong>Johanna Fernández,</strong> <em>The Young Lords: A Radical History</em></li>
           </ul>
 
           <b>Sample Weekly Readings &amp; Activities:</b>
           <ul>
-            <li><strong>Piri Thomas,</strong> <em>Down These Mean Streets</em> (multiple weeks, plus related films, e.g., “The World of Piri Thomas”)</li>
-            <li>Paul Ortiz, “Making History Matter” and “Memories of Revolution”</li>
-            <li>Martín Espada: selections from <em>Zapata’s Disciple</em>; poetry, e.g., “Litany at the Tomb of Frederick Douglass”</li>
+            <li><strong>Piri Thomas,</strong> <em>Down These Mean Streets</em> (multiple weeks, plus related films, e.g., "The World of Piri Thomas")</li>
+            <li>Paul Ortiz, "Making History Matter" and "Memories of Revolution"</li>
+            <li>Martín Espada: selections from <em>Zapata's Disciple</em>; poetry, e.g., "Litany at the Tomb of Frederick Douglass"</li>
             <li>Films &amp; media: <em>Half-Past Autumn: The Life and Works of Gordon Parks</em>, <em>Decade of Fire</em>, <em>The First Rainbow Coalition</em>, <em>I Am Not Your Negro</em></li>
-            <li>James Baldwin, “Open Letter to Angela Davis” and poetry selections</li>
+            <li>James Baldwin, "Open Letter to Angela Davis" and poetry selections</li>
           </ul>
 
           <b>Student Feedback Highlights:</b>
@@ -415,7 +452,7 @@
             <li>"Super kind, goes out of his way to help students, and very knowledgeable. Makes the classroom feel like a safe space."</li>
             <li>"Great in the one-to-one setting... clear with instructions."</li>
             <li>"He ensures students have a strong grasp on course material and is always willing to help anyone out."</li>
-            <li>Praised for making time after office hours and for “stimulating deeper thinking about the subject.”</li>
+            <li>Praised for making time after office hours and for "stimulating deeper thinking about the subject."</li>
           </ul>
         </div>
       </div>
@@ -423,19 +460,23 @@
     </div>
   </section>
 
-  <!-- STUDENT FEEDBACK -->
+  <!-- STUDENT FEEDBACK - Modern Interactive List -->
   <section id="student-feedback">
     <h2>What Students Say</h2>
-    <div class="feedback-carousel-block">
-      <blockquote id="feedback-quote" class="carousel-quote">“Adolfho is extremely professional but creates a warm and welcoming environment with his students and tries to build personal relationships.”</blockquote>
-      <div class="carousel-arrows">
-        <button class="carousel-arrow" onclick="prevQuote()" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
-        <button class="carousel-arrow" onclick="nextQuote()" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
-      </div>
-    </div>
+    <ul class="feedback-list">
+      <li>Adolfho was incredibly approachable and made it easy to ask questions—even beyond class material. He connected class content to real-world labor struggles in a way that made history feel urgent.</li>
+      <li>He pushed us to engage with difficult topics like race, class, and labor injustice. I left each section with something to think about.</li>
+      <li>Adolfho was one of the best TAs I've had. His feedback on our essays was detailed and helped me grow as a writer.</li>
+      <li>He encouraged participation by creating a safe space where every opinion mattered. It never felt like busywork—it felt like building understanding together.</li>
+      <li>Very responsive, clear expectations, and genuinely cares about student learning. One of the most thoughtful TAs I've had.</li>
+      <li>He helped connect us to the professor and made sure our concerns were heard. He was super accessible and always respectful.</li>
+      <li>Adolfho is extremely professional but creates a warm and welcoming environment with his students and tries to build personal relationships.</li>
+      <li>He is very knowledgeable and very open to helping everyone.</li>
+      <li>Great in giving detailed feedback and actually writing new perspectives about the content in feedback.</li>
+      <li>Makes time for students, creates inclusive and meaningful conversations, and allows students to ask questions.</li>
+      <li>He is very kind.</li>
+    </ul>
   </section>
-
-  <!-- OPTIONAL: Weekly Highlights, Materials, Outcomes (Keep as is) -->
 
 </main>
 
@@ -452,28 +493,6 @@
     details.setAttribute('aria-expanded', !isOpen);
     btn.innerHTML = (!isOpen ? "Hide Details <i class='fas fa-chevron-up'></i>" : "Details <i class='fas fa-chevron-down'></i>");
   }
-
-  // Feedback Carousel
-  const quotes = [
-    "“Adolfho is extremely professional but creates a warm and welcoming environment with his students and tries to build personal relationships.”",
-    "“He is very knowledgeable and very open to helping everyone.”",
-    "“Great in giving detailed feedback and actually writing new perspectives about the content in feedback.”",
-    "“Makes time for students, creates inclusive and meaningful conversations, and allows students to ask questions.”",
-    "“He is very kind.”"
-  ];
-  let q = 0;
-  function renderQuote(){
-    document.getElementById('feedback-quote').textContent = quotes[q];
-  }
-  function prevQuote(){
-    q = (q - 1 + quotes.length) % quotes.length;
-    renderQuote();
-  }
-  function nextQuote(){
-    q = (q + 1) % quotes.length;
-    renderQuote();
-  }
-  renderQuote();
 
   // Dark mode toggle
   function toggleDarkMode(){
