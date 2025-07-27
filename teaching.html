@@ -4,337 +4,962 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Adolfho Romero – Teaching</title>
-  <meta name="description" content="Teaching Portfolio of Adolfho Romero — Engaged pedagogy, innovative historical teaching, and student feedback.">
-  <link rel="icon" href="favicon.ico"/>
+
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet"/>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous" defer></script>
+
   <style>
-    :root {
-      --background-top: #f7f8fa;
-      --background-bottom: #e4e8ef;
-      --nav-bg: #22304a;
+    /* SYSTEM & TYPOGRAPHY  —— */
+    :root{
+      --background-primary: #fafbfc;
+      --background-secondary: #f1f3f6;
+      --background-accent: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --nav-bg: #1a1d29;
       --nav-text: #ffffff;
-      --accent: #29539b;
-      --accent-gold: #ffcc00;
-      --text-main: #232d41;
-      --heading-color: #212c3e;
-      --max-width: 1100px;
-      --card-bg: #fff;
-      --card-shadow: 0 8px 32px rgba(41,83,155,0.10);
-      --card-border: #29539b;
-      --card-radius: 15px;
-      --hero-bg: linear-gradient(122deg, #ffc107 0%, #29539b 100%);
-      --divider: #f1ebd9;
+      --card-bg: #ffffff;
+      --card-shadow: 0 8px 32px rgba(31, 38, 135, 0.08);
+      --card-shadow-hover: 0 16px 48px rgba(31, 38, 135, 0.12);
+      --card-border: #e1e5e9;
+      --text-primary: #2d3748;
+      --text-secondary: #4a5568;
+      --text-muted: #718096;
+      --heading-color: #1a202c;
+      --accent-primary: #667eea;
+      --accent-secondary: #764ba2;
+      --accent-gold: #f6ad55;
+      --accent-success: #48bb78;
+      --year-badge: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --max-width: 1200px;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-heading: 'Crimson Text', Georgia, serif;
+      --border-radius: 16px;
+      --border-radius-sm: 8px;
     }
-    .dark {
-      --background-top: #121212;
-      --background-bottom: #1e1e1e;
-      --nav-bg: #111827;
-      --nav-text: #e5e7eb;
-      --accent: #3b82f6;
-      --accent-gold: #fbbf24;
-      --text-main: #d1d5db;
-      --heading-color: #f9fafb;
-      --card-bg: #1c2232;
-      --card-border: #3b82f6;
-      --hero-bg: linear-gradient(122deg, #3b82f6 0%, #fbbf24 100%);
-      --divider: #212121;
+    
+    .dark{
+      --background-primary: #0f1419;
+      --background-secondary: #1a1f2e;
+      --nav-bg: #0d1117;
+      --nav-text: #f0f6fc;
+      --card-bg: #161b22;
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      --card-shadow-hover: 0 16px 48px rgba(0, 0, 0, 0.4);
+      --card-border: #30363d;
+      --text-primary: #f0f6fc;
+      --text-secondary: #c9d1d9;
+      --text-muted: #8b949e;
+      --heading-color: #ffffff;
     }
-    html { scroll-behavior: smooth;}
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, var(--background-top), var(--background-bottom));
-      color: var(--text-main);
+      font-family: var(--font-body);
+      background: var(--background-primary);
+      color: var(--text-primary);
       line-height: 1.6;
-      transition: background 0.4s, color 0.4s;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transition: all 0.3s ease;
     }
-    .skip-link {
-      position: absolute;
-      left: 0;
-      top: -40px;
-      background: #22304a;
-      color: #fff;
-      padding: 8px 16px;
-      font-size: 1rem;
-      z-index: 100;
-      border-radius: 0 0 8px 0;
-    }
-    .skip-link:focus { top: 8px; }
-    a { color: var(--accent); text-decoration: none;}
-    a:hover, a:focus { color: var(--accent-gold);}
+
+    /* ——  ELEVATED HEADER  —— */
     header {
       background: var(--nav-bg);
       color: var(--nav-text);
       text-align: center;
-      padding: 1.2rem 1rem 0.6rem;
-      box-shadow: 0 4px 22px rgba(34,48,74,0.47);
-      transition: background 0.4s, color 0.4s;
+      padding: 2rem 1rem 1rem;
       position: relative;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
     }
-    .hero-banner {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background: var(--hero-bg);
-      color: #fff;
-      text-align: center;
-      padding: 2rem 0 1.1rem 0;
-      margin-bottom: 2.4rem;
-      border-radius: 18px;
-      max-width: 900px;
-      margin-left: auto; margin-right: auto;
-      position: relative;
-      box-shadow: var(--card-shadow);
-    }
-    .profile-photo {
-      width: 110px;
-      height: 110px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid var(--accent-gold);
-      box-shadow: 0 6px 16px rgba(41,83,155,0.13);
-      margin-bottom: 1.18rem;
-      background: #fff;
-    }
+
     .site-title {
-      font-family: 'Spectral', serif;
-      font-size: 2.75rem;
-      font-weight: 700;
-      color: var(--nav-text);
-      margin-bottom: 0.35rem;
-      letter-spacing: .02em;
-    }
-    .hero-text {
-      font-size: 1.3rem;
+      font-family: var(--font-heading);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
       font-weight: 600;
-      font-family: 'Spectral', serif;
-      margin-bottom: 0.75rem;
-      letter-spacing: 0.02em;
+      margin: 0;
+      background: linear-gradient(135deg, #ffffff 0%, #f7fafc 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.02em;
     }
-    .divider {
-      height: 16px;
-      width: 100%;
-      background: url('data:image/svg+xml;utf8,<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 52"><path fill="%23f1ebd9" d="M0 17.4C121.59 36.2 317.2 61.67 576 23.86 801.31-7.96 1007.32 6.61 1095.3 21.1c83.93 13.69 213.29 18.15 344.7-21.09V52H0V17.4z"/></svg>');
-      background-size: cover; background-repeat: no-repeat;
-      margin: 1.15rem 0 2.45rem 0;
-      border: none;
-    }
-    .dark .divider { background: url('data:image/svg+xml;utf8,<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 52"><path fill="%23212121" d="M0 17.4C121.59 36.2 317.2 61.67 576 23.86 801.31-7.96 1007.32 6.61 1095.3 21.1c83.93 13.69 213.29 18.15 344.7-21.09V52H0V17.4z"/></svg>'); }
+
     .dark-toggle {
-      position: absolute; top: 1rem; right: 1rem;
-      width: 2rem; height: 2rem;
-      background: url('sun-moon.svg') center/contain no-repeat;
-      cursor: pointer; z-index: 10;
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: var(--nav-text);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
     }
+
+    .dark-toggle:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.05);
+    }
+
+    /* ——  PREMIUM NAVIGATION  —— */
     nav.main-nav {
-      position: sticky; top: 0; z-index: 50; background: var(--nav-bg);
-      box-shadow: inset 0 -1px 0 #3a496f;
-      font-family: 'Spectral', serif; 
-      transition: background 0.4s, color 0.4s;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--nav-bg);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
+
     nav.main-nav ul {
-      display: flex; justify-content: center; gap: 30px;
-      list-style: none; max-width: var(--max-width);
-      margin: 0 auto; padding: 8px 0;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 0;
     }
+
     nav.main-nav a {
-      position: relative; padding: 10px 16px;
-      font-size: 1.1rem; font-weight: 700;
-      text-transform: uppercase; letter-spacing: .1em;
-      color: var(--nav-text); text-shadow: 0 1px 2px rgba(0,0,0,0.4);
-      background: none; border: none; outline: none; box-shadow: none;
-      transition: color .2s, background .25s, box-shadow .25s, font-weight .15s;
-      border-radius: 5px;
+      position: relative;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--nav-text);
+      text-decoration: none;
+      border-radius: var(--border-radius-sm);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
-    nav.main-nav a.cv-link {
-      background: linear-gradient(90deg, var(--accent), var(--accent-gold));
-      color: #fff !important; border-radius: 24px; padding: 10px 22px;
-      font-weight: 700; box-shadow: 0 2px 8px rgba(41,83,155,0.09);
-      margin-right: 8px; transition: all .22s;
-    }
-    nav.main-nav a.cv-link:hover, nav.main-nav a.cv-link:focus { 
-      filter: brightness(1.08); box-shadow: 0 8px 22px rgba(41,83,155,0.19);color:var(--nav-text)!important; 
-    }
-    nav.main-nav a.active {
+
+    nav.main-nav a:hover {
+      background: rgba(255, 255, 255, 0.1);
       color: var(--accent-gold);
-      background: rgba(255,255,255,0.04);
+      transform: translateY(-2px);
     }
-    main {max-width: var(--max-width); margin: 0 auto; padding: 0 1.25rem;}
-    .section-header h2 {
-      font-family: 'Spectral', serif;
-      font-size: 2.18rem;
+
+    nav.main-nav a.cv-link {
+      background: var(--accent-primary);
+      color: white !important;
+      font-weight: 600;
+      box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
+    }
+
+    nav.main-nav a.cv-link:hover {
+      background: var(--accent-secondary);
+      box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+    }
+
+    nav.main-nav a.active {
+      background: rgba(246, 173, 85, 0.1);
+      color: var(--accent-gold);
+    }
+
+    /* ——  MAIN LAYOUT  —— */
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    /* ——  SECTION HEADERS  —— */
+    .section-header {
       text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-header h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 600;
       color: var(--heading-color);
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
     }
-    .philosophy-banner {
-      background: linear-gradient(90deg, var(--card-bg), var(--accent-gold) 17%, var(--background-top)83%);
-      border-left:5px solid var(--accent);border-radius:14px;padding:1.1rem 1.6rem;margin:2.9rem 0 2.2rem;
-      font-size:1.17rem;box-shadow:var(--card-shadow);
+
+    .section-header::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: var(--accent-primary);
+      border-radius: 2px;
+      margin: 1rem auto 0;
     }
-    .philosophy-points{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;text-align:center;margin-bottom:2.2rem}
-    .philosophy-point{
-      background:var(--card-bg);border-radius:10px;box-shadow:var(--card-shadow);
-      padding:.85rem 1.35rem;font-size:1rem;color:var(--text-main);
-      border-left:4px solid var(--accent);
-      display: flex; align-items: center; gap: 0.45em;
+
+    /* ——  YEAR SECTIONS  —— */
+    .year-section {
+      margin-bottom: 5rem;
     }
-    .philosophy-point i{font-size: 1.3em;color:var(--accent);}
-    /* --- Course Cards & Timeline --- */
-    .year-header { display:flex; align-items:center; justify-content:center; margin-bottom: 1.7rem;}
-    .year-line{flex:1;height:2px;background:linear-gradient(90deg,transparent 0%, #d2d6ed 47%, transparent 100%);}
+
+    .year-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
     .year-badge {
-      display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent-gold));
-      color:#fff;font-family:'Spectral',serif;
-      font-size:1.33rem;font-weight:600;
-      border-radius:35px;padding:0.2em 1.5em;margin:0 0 1.1em 0;
-      box-shadow:0 2px 10px rgba(41,83,155,0.12);
+      background: var(--year-badge);
+      color: white;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 600;
+      box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+      position: relative;
+      z-index: 2;
     }
-    .course-card-grid {
-      display: grid;grid-template-columns:repeat(auto-fit,minmax(415px,1fr));gap:2rem;margin-bottom:1.5rem;
+
+    .year-line {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, var(--card-border) 20%, var(--card-border) 80%, transparent 100%);
+      z-index: 1;
     }
-    @media (max-width:900px) {.course-card-grid{grid-template-columns:1fr}}
-    .card-teaching {
-      border-radius:var(--card-radius);background:var(--card-bg);box-shadow:var(--card-shadow);
-      border-left:5px solid var(--card-border);border:1px solid #dedede;margin-bottom:0.6rem;
-      overflow:hidden;transition:box-shadow .18s,background .4s,color .4s;
+
+    /* ——  ENHANCED COURSE CARDS  —— */
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
     }
-    .card-slim{padding:1.3rem 1.75rem;transition:box-shadow .2s;}
-    .card-teaching:hover { box-shadow: 0 12px 24px rgba(41,83,155,0.20);}
-    .card-header{
-      font-family:'Spectral',serif;font-weight:600;font-size:1.21rem;color:var(--accent);margin-bottom:0.5em;
-      display: flex; justify-content: space-between; align-items: center;
+
+    .course-card {
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: var(--card-shadow);
+      border: 1px solid var(--card-border);
+      overflow: hidden;
+      transition: all 0.4s ease;
+      position: relative;
     }
+
+    .course-card:hover {
+      box-shadow: var(--card-shadow-hover);
+      transform: translateY(-4px);
+      border-color: var(--accent-primary);
+    }
+
+    .card-header {
+      padding: 2rem 2rem 1rem;
+      background: linear-gradient(135deg, var(--background-secondary) 0%, var(--card-bg) 100%);
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .course-title {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--heading-color);
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+
+    .course-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .meta-badge {
+      background: var(--accent-primary);
+      color: white;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .university-badge {
+      background: var(--accent-secondary);
+    }
+
+    .role-badge {
+      background: var(--accent-success);
+    }
+
+    .card-body {
+      padding: 2rem;
+    }
+
+    .course-description {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .course-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .course-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      background: var(--background-secondary);
+      color: var(--accent-primary);
+      text-decoration: none;
+      border-radius: var(--border-radius-sm);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border: 1px solid var(--card-border);
+    }
+
+    .course-link:hover {
+      background: var(--accent-primary);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    }
+
     .details-toggle {
-      background:none;border:none;color:var(--accent);font-weight:600;font-size:1rem;cursor:pointer;padding:0;margin:0;transition:color .13s;
+      background: none;
+      border: none;
+      color: var(--accent-primary);
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      padding: 0.75rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+      width: 100%;
+      justify-content: center;
     }
-    .details-toggle:hover { color:var(--accent-gold);}
-    .card-tags, .course-meta{font-size:.97rem;color:#8e99af;margin-bottom:.6rem}
-    .card-desc,.course-description{margin-top:.45rem;font-size:1.01rem;}
-    .course-links {margin-top:0.8rem;}
-    .course-link{margin-right:.8em;}
-    .card-details{display:none;background:var(--background-bottom);border-top:1px solid #d2d3dd;padding:1.2rem 1.1rem}
-    .card-details[aria-expanded="true"]{display:block}
-    @keyframes fadeInUp{ from{opacity:0; transform:translateY(30px);} to{ opacity:1; transform:translateY(0);} }
-    /* --- Feedback Carousel --- */
-    .feedback-section{margin:5rem 0 0 0;}
-    .feedback-carousel-block{
-      max-width:560px;margin:2.5rem auto;text-align:center;position:relative;
-      background:var(--card-bg);border-left:5px solid var(--accent-gold);border-radius:14px;
-      padding:1rem 1.6rem 2.4rem;box-shadow:var(--card-shadow);
+
+    .details-toggle:hover {
+      color: var(--accent-secondary);
     }
-    .carousel-quote{
-      font-size:1.1rem;color:var(--text-main);font-style:italic;margin-bottom:1rem;
-      position: relative; padding: 1.15rem 0.8rem 0.5rem 2.3rem;
-      background: #fdf6e3; border-radius: 12px;
-      border-left: 5px solid var(--accent-gold);
-      box-shadow: 0 1.5px 6px rgba(255,204,0,0.07);
+
+    .card-details {
+      display: none;
+      background: var(--background-secondary);
+      border-top: 1px solid var(--card-border);
+      padding: 2rem;
+      animation: slideDown 0.3s ease;
     }
-    .feedback-avatar {
-      width:32px;height:32px;border-radius:50%;background:#e1e4ef;display:inline-block;
-      vertical-align:middle;margin-right:0.45em;object-fit:cover;
+
+    .card-details[aria-expanded="true"] {
+      display: block;
     }
-    .carousel-arrows{position:absolute;bottom:8px;left:0;right:0;display:flex;justify-content:center;gap:44px}
-    .carousel-arrow{background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--accent)}
-    .carousel-arrow:hover{color:var(--accent-gold)}
-    .carousel-progress {text-align: center; margin: 0.45rem 0 0;}
-    .carousel-dot {display: inline-block; width: 10px; height: 10px; background: #ffe082; border-radius: 50%; margin: 0 2px;}
-    .carousel-dot.active {background: var(--accent);}
-    /* --- Footer & Social --- */
+
+    .card-details h4 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--heading-color);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card-details ul {
+      margin: 0 0 1.5rem 0;
+      padding-left: 1.5rem;
+    }
+
+    .card-details li {
+      margin-bottom: 0.75rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .card-details li strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    /* ——  PHILOSOPHY SECTION  —— */
+    .philosophy-section {
+      margin-bottom: 5rem;
+    }
+
+    .philosophy-banner {
+      background: linear-gradient(135deg, var(--card-bg) 0%, var(--background-secondary) 100%);
+      border-left: 6px solid var(--accent-primary);
+      border-radius: var(--border-radius);
+      padding: 2.5rem 3rem;
+      margin: 3rem 0;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .philosophy-banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100px;
+      height: 100%;
+      background: linear-gradient(90deg, transparent 0%, var(--accent-primary) 100%);
+      opacity: 0.05;
+    }
+
+    .philosophy-points {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+
+    .philosophy-point {
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: var(--card-shadow);
+      padding: 1.5rem 2rem;
+      text-align: center;
+      border-left: 4px solid var(--accent-primary);
+      transition: all 0.3s ease;
+    }
+
+    .philosophy-point:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .philosophy-point i {
+      font-size: 2rem;
+      color: var(--accent-primary);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    /* ——  FEEDBACK SECTION  —— */
+    .feedback-section {
+      margin: 5rem 0;
+    }
+
+    .feedback-carousel {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      padding: 3rem 2rem;
+      box-shadow: var(--card-shadow);
+      border: 1px solid var(--card-border);
+    }
+
+    .carousel-quote {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      color: var(--text-primary);
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .carousel-arrows {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .carousel-arrow {
+      background: var(--accent-primary);
+      border: none;
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .carousel-arrow:hover {
+      background: var(--accent-secondary);
+      transform: scale(1.1);
+    }
+
+    /* ——  FOOTER  —— */
     footer {
-      text-align: center;background: var(--nav-bg);color: #adadad;
-      padding: 23px 1rem;font-size: .98rem;
-      border-top: 1px solid rgba(45,57,85,0.2);margin-top: 4.8rem;transition: background 0.4s, color 0.4s;
+      text-align: center;
+      padding: 3rem 2rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--card-border);
+      margin-top: 5rem;
+      background: var(--background-secondary);
     }
-    .footer-social {
-      margin-top: 0.9rem;
+
+    footer a {
+      color: var(--accent-primary);
+      text-decoration: none;
+      font-weight: 500;
     }
-    .footer-social a {
-      margin: 0 7px; color: #fbbf24; font-size: 1.25rem; display: inline-block; vertical-align: middle;
-      transition: color 0.21s;
+
+    footer a:hover {
+      text-decoration: underline;
     }
-    .footer-social a:hover { color: #fff;}
-    @media (max-width: 700px) {
-      .section-header h2{font-size:1.5rem;}
-      .course-card-grid {grid-template-columns: 1fr;}
-      .hero-banner {padding: 1.05rem 0 0.45rem;}
+
+    /* ——  ANIMATIONS  —— */
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .course-card {
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    /* ——  RESPONSIVE DESIGN  —— */
+    @media (max-width: 768px) {
+      main {
+        padding: 2rem 1rem;
+      }
+
+      .course-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .card-header,
+      .card-body {
+        padding: 1.5rem;
+      }
+
+      .philosophy-banner {
+        padding: 2rem;
+        font-size: 1.1rem;
+      }
+
+      .philosophy-points {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      nav.main-nav ul {
+        gap: 1rem;
+        padding: 0.75rem;
+      }
+
+      nav.main-nav a {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+      }
+
+      .year-badge {
+        padding: 0.75rem 1.5rem;
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .site-title {
+        font-size: 2rem;
+      }
+
+      .course-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .meta-badge {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
+      }
     }
   </style>
 </head>
+
 <body>
-<a href="#main-content" class="skip-link">Skip to main content</a>
 <header>
-  <div class="dark-toggle" onclick="toggleDarkMode()" aria-label="Toggle dark mode"></div>
-  <div class="hero-banner">
-    <img src="me.jpeg" alt="Adolfho Romero portrait" class="profile-photo" aria-label="Photo of Adolfho Romero"/>
-    <h1 class="site-title">Adolfho Romero</h1>
-    <div class="hero-text">Empowering students to shape history through inquiry, discussion, and creative scholarship.</div>
-  </div>
+  <div class="dark-toggle" onclick="toggleDarkMode()" title="Toggle dark mode">🌙</div>
+  <h1 class="site-title">Adolfho Romero</h1>
 </header>
+
 <nav class="main-nav" aria-label="Primary">
   <ul>
     <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-    <li><a href="adolfhoromerocv.pdf" target="_blank" class="cv-link" title="Download CV"><i class="fas fa-file-alt"></i> CV</a></li>
+    <li><a href="adolfhoromerocv.pdf" target="_blank" class="cv-link"><i class="fas fa-file-alt"></i> CV</a></li>
     <li><a href="publications.html"><i class="fas fa-book"></i> Publications</a></li>
     <li><a href="teaching.html" class="active"><i class="fas fa-chalkboard-teacher"></i> Teaching</a></li>
   </ul>
 </nav>
-<main id="main-content">
-  <div class="divider"></div>
-  <!-- Philosophy -->
-  <section class="philosophy-section" aria-labelledby="teaching-philosophy">
-    <div class="section-header"><h2 id="teaching-philosophy">Teaching Philosophy</h2></div>
+
+<main>
+  <!-- TEACHING PHILOSOPHY -->
+  <section class="philosophy-section">
+    <div class="section-header">
+      <h2>Teaching Philosophy</h2>
+    </div>
     <div class="philosophy-banner">
       My teaching centers on creating welcoming, rigorous environments where students connect labor history with contemporary realities—through collaborative discussion, critical debate, and creative assignments, I empower learners to see their own role in shaping history.
     </div>
     <div class="philosophy-points">
-      <div class="philosophy-point"><i class="fas fa-users" aria-label="Active Engagement"></i>Active Engagement</div>
-      <div class="philosophy-point"><i class="fas fa-landmark" aria-label="Historical Inquiry"></i>Historical Inquiry</div>
-      <div class="philosophy-point"><i class="fas fa-comments" aria-label="Inclusive Discussion"></i>Inclusive Discussion</div>
-      <div class="philosophy-point"><i class="fas fa-link" aria-label="Connecting Past and Present"></i>Connecting Past &amp; Present</div>
+      <div class="philosophy-point">
+        <i class="fas fa-users"></i>
+        <strong>Active Engagement</strong>
+      </div>
+      <div class="philosophy-point">
+        <i class="fas fa-landmark"></i>
+        <strong>Historical Inquiry</strong>
+      </div>
+      <div class="philosophy-point">
+        <i class="fas fa-comments"></i>
+        <strong>Inclusive Discussion</strong>
+      </div>
+      <div class="philosophy-point">
+        <i class="fas fa-link"></i>
+        <strong>Connecting Past & Present</strong>
+      </div>
     </div>
   </section>
-  <div class="divider"></div>
-  <!-- Courses by Year: unchanged existing content, but can be further enhanced with timeline or badges per previous recommendations -->
-  <!-- ... Existing teaching experience code goes here ... -->
-  <!-- Student Feedback Carousel -->
-  <section class="feedback-section" aria-labelledby="student-feedback">
-    <div class="section-header"><h2 id="student-feedback">What Students Say</h2></div>
-    <div class="feedback-carousel-block">
+
+  <!-- COURSES BY YEAR -->
+  <section class="courses-section">
+    <div class="section-header">
+      <h2>Teaching Experience</h2>
+    </div>
+
+    <!-- 2025 -->
+    <div class="year-section">
+      <div class="year-header">
+        <div class="year-line"></div>
+        <div class="year-badge">2025</div>
+      </div>
+      <div class="course-grid">
+        <div class="course-card">
+          <div class="card-header">
+            <h3 class="course-title">African American and Latinx Histories (ILRGL 3805)</h3>
+            <div class="course-meta">
+              <span class="meta-badge university-badge">Cornell University</span>
+              <span class="meta-badge">Spring 2025</span>
+              <span class="meta-badge role-badge">Graduate Teaching Assistant</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="course-description">
+              Large survey seminar tracing African American and Latinx histories, labor, culture, and social change from the Revolution to today. Led lectures and workshops on synthesis writing, grading, and feedback; guided reading analysis; managed course technology; and mentored students through one-on-one and group support. Consistently received top student ratings for helping students, stimulating deeper thinking, and making the course welcoming.
+            </p>
+            <div class="course-links">
+              <a href="2025-AF-Am-Latinx-Histories-seminar-Final-syllabus.pdf" target="_blank" class="course-link">
+                <i class="fas fa-file-pdf"></i> Course Syllabus
+              </a>
+            </div>
+            <button class="details-toggle" aria-expanded="false" onclick="toggleDetails(this)">
+              View Details <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="card-details" aria-expanded="false">
+              <h4><i class="fas fa-chalkboard"></i> Teaching & Student Support</h4>
+              <ul>
+                <li>Designed and led lecture on equitable grading and how to write historical synthesis essays</li>
+                <li>Held regular and after-hours TA office hours (in-person and online), ensuring every student had access to help</li>
+                <li>Managed equipment and technology, coordinated digital resources for a 120+ student course</li>
+                <li>Led feedback workshops on essay structure, argument building, and evidence integration</li>
+                <li>Provided detailed, actionable comments on drafts and assignments; fostered inclusive environment where students reported feeling "safe," "encouraged," and "truly cared for"</li>
+              </ul>
+
+              <h4><i class="fas fa-book-open"></i> Core Required Readings</h4>
+              <ul>
+                <li><strong>Piri Thomas,</strong> <em>Down These Mean Streets</em></li>
+                <li><strong>Juan Gonzalez,</strong> <em>Harvest of Empire: A History of Latinos in America</em></li>
+                <li><strong>Paul Ortiz,</strong> <em>An African American and Latinx History of the United States</em></li>
+                <li><strong>Blair Kelley,</strong> <em>Black Folk: The Roots of the Black Working Class</em></li>
+                <li><strong>August Wilson,</strong> <em>The Piano Lesson</em></li>
+                <li><strong>Martín Espada,</strong> <em>Zapata's Disciple</em></li>
+                <li><strong>Johanna Fernández,</strong> <em>The Young Lords: A Radical History</em></li>
+              </ul>
+
+              <h4><i class="fas fa-star"></i> Student Feedback Highlights</h4>
+              <ul>
+                <li>"Super kind, goes out of his way to help students, and very knowledgeable. Makes the classroom feel like a safe space."</li>
+                <li>"Great in the one-to-one setting... clear with instructions."</li>
+                <li>"He ensures students have a strong grasp on course material and is always willing to help anyone out."</li>
+                <li>Praised for making time after office hours and for "stimulating deeper thinking about the subject."</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2024 -->
+    <div class="year-section">
+      <div class="year-header">
+        <div class="year-line"></div>
+        <div class="year-badge">2024</div>
+      </div>
+      <div class="course-grid">
+        <div class="course-card">
+          <div class="card-header">
+            <h3 class="course-title">Introduction to US Labor History (ILRGL 1100)</h3>
+            <div class="course-meta">
+              <span class="meta-badge university-badge">Cornell University</span>
+              <span class="meta-badge">Fall 2024</span>
+              <span class="meta-badge role-badge">Teaching Assistant</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="course-description">
+              Explores working-class cultures, labor struggles, and the quest for dignity in US history. Emphasized peer-reviewed debate, collaborative timelines, and creative assignments.
+            </p>
+            <div class="course-links">
+              <a href="2024-Fall-Labor-History-Syllabus.pdf" target="_blank" class="course-link">
+                <i class="fas fa-file-pdf"></i> Course Syllabus
+              </a>
+            </div>
+            <button class="details-toggle" aria-expanded="false" onclick="toggleDetails(this)">
+              View Details <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="card-details" aria-expanded="false">
+              <h4><i class="fas fa-lightbulb"></i> Section Innovations</h4>
+              <ul>
+                <li>Peer-review & feedback workshops on synthesis essays</li>
+                <li>Collaborative history timeline creation</li>
+                <li>Debates on race, gender, and solidarity in labor movements</li>
+                <li>Oral-history activities and student-centered analysis</li>
+                <li>Contemporary thought pieces linking past to news</li>
+              </ul>
+
+              <h4><i class="fas fa-calendar-week"></i> Sample Weekly Highlights</h4>
+              <ul>
+                <li><strong>Rediker's Slave Ship</strong>: Critical discussion on labor, capital, and resistance</li>
+                <li><strong>Lowell Factory Girls / Black Folk</strong>: Group activities exploring gender, class, and organizing</li>
+                <li><strong>Homestead Strike Simulation</strong>: Structured debates and peer review</li>
+                <li><strong>Creative Assignments</strong>: Timeline presentations, thematic reflections</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2021 -->
+    <div class="year-section">
+      <div class="year-header">
+        <div class="year-line"></div>
+        <div class="year-badge">2021</div>
+      </div>
+      <div class="course-grid">
+        <div class="course-card">
+          <div class="card-header">
+            <h3 class="course-title">Machen Florida Opportunity Scholars Oral History Project</h3>
+            <div class="course-meta">
+              <span class="meta-badge university-badge">University of Florida</span>
+              <span class="meta-badge">Spring 2021</span>
+              <span class="meta-badge role-badge">Instructor of Record</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="course-description">
+              Flagship oral-history internship documenting the Machen Florida Opportunity Scholars (first-generation, low-income students). Students hosted national equity experts, conducted 40+ interviews, and collaborated with filmmakers—culminating in a gubernatorial visit by Jeb Bush.
+            </p>
+            <div class="course-links">
+              <a href="spring-2021-internship-syllabus-v6.0.pdf" target="_blank" class="course-link">
+                <i class="fas fa-file-pdf"></i> Syllabus v6.0
+              </a>
+              <a href="https://youtube.com/playlist?list=PLzMFflzfI0ETOUAMp8AtPFNlaCYlc1kt4" target="_blank" class="course-link">
+                <i class="fab fa-youtube"></i> Interview Playlist
+              </a>
+            </div>
+            <button class="details-toggle" aria-expanded="false" onclick="toggleDetails(this)">
+              View Details <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="card-details" aria-expanded="false">
+              <h4><i class="fas fa-users"></i> Distinguished Speakers & Fieldwork</h4>
+              <ul>
+                <li>McNair Scholars, national equity leaders, & UF administrators addressed the class</li>
+                <li>Governor Jeb Bush visited to review student oral-history presentations</li>
+                <li>Students assisted professional filmmakers documenting first-gen success stories</li>
+              </ul>
+
+              <h4><i class="fas fa-microphone"></i> Comprehensive Interview Collection</h4>
+              <ul>
+                <li>Alumni success narratives highlighting career trajectories & program impact</li>
+                <li>Interviews with Machen founders, staff, and program directors (institutional memory)</li>
+                <li>Current scholars' perspectives on first-generation challenges & support systems</li>
+                <li>All interviews archived and published via YouTube playlist</li>
+              </ul>
+
+              <h4><i class="fas fa-graduation-cap"></i> Lasting Impact</h4>
+              <ul>
+                <li>Digital archive used for program evaluation & future scholarship funding</li>
+                <li>Student work cited in UF equity reports & documentary film</li>
+                <li>Participants gained portfolio pieces for grad-school & career advancement</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2020 -->
+    <div class="year-section">
+      <div class="year-header">
+        <div class="year-line"></div>
+        <div class="year-badge">2020</div>
+      </div>
+      <div class="course-grid">
+        <div class="course-card">
+          <div class="card-header">
+            <h3 class="course-title">Samuel Proctor Oral History Program Internship</h3>
+            <div class="course-meta">
+              <span class="meta-badge university-badge">University of Florida</span>
+              <span class="meta-badge">Fall 2020</span>
+              <span class="meta-badge role-badge">Instructor of Record</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="course-description">
+              Community-based oral-history class in partnership with St. Patrick Catholic Church. Led all sessions, guided student archival research, and digitized rare local records. Students produced original histories of North-Central Florida's Catholic, working-class, and activist communities.
+            </p>
+            <div class="course-links">
+              <a href="Fall-2020-Internship-Syllabus-Draft-2-4.docx" target="_blank" class="course-link">
+                <i class="fas fa-file-word"></i> Course Syllabus
+              </a>
+            </div>
+            <button class="details-toggle" aria-expanded="false" onclick="toggleDetails(this)">
+              View Details <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="card-details" aria-expanded="false">
+              <h4><i class="fas fa-church"></i> Community Partnership & Leadership</h4>
+              <ul>
+                <li>Direct collaboration with St. Patrick Catholic Church; students accessed, scanned, and interpreted archival records dating back decades</li>
+                <li>Solely designed lectures, mentored each student, and supervised all research projects</li>
+                <li>Hands-on oral-history training: interview protocol, digital production, archival preservation</li>
+                <li>Explored discrimination, civil-rights activism, and the Sisters of St. Joseph's educational mission</li>
+              </ul>
+
+              <h4><i class="fas fa-calendar-alt"></i> Weekly Highlights</h4>
+              <ul>
+                <li><strong>Catholicism & Educational Activism</strong>: Lecture on Sisters of St. Joseph's fight against segregation</li>
+                <li><strong>Father Conoley & the Ku Klux Klan</strong>: Case study of 1924 anti-Catholic violence in Gainesville</li>
+                <li>Fieldwork: scanning church documents & designing oral-history protocols</li>
+                <li>Student projects on parish labor history, women's religious leadership, and social justice</li>
+              </ul>
+
+              <h4><i class="fas fa-trophy"></i> Transformative Outcomes</h4>
+              <ul>
+                <li>Public presentation of projects to parish & community</li>
+                <li>Exceptional student feedback for real-world impact</li>
+                <li>Permanent digital archive created for future researchers</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STUDENT FEEDBACK -->
+  <section class="feedback-section">
+    <div class="section-header">
+      <h2>What Students Say</h2>
+    </div>
+    <div class="feedback-carousel">
       <blockquote id="feedback-quote" class="carousel-quote">
-        <!-- Will be rendered by JS -->
+        "Adolfho is extremely professional but creates a warm and welcoming environment with his students and tries to build personal relationships."
       </blockquote>
       <div class="carousel-arrows">
-        <button class="carousel-arrow" onclick="prevQuote()" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
-        <button class="carousel-arrow" onclick="nextQuote()" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+        <button class="carousel-arrow" onclick="prevQuote()" aria-label="Previous">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="carousel-arrow" onclick="nextQuote()" aria-label="Next">
+          <i class="fas fa-chevron-right"></i>
+        </button>
       </div>
-      <div class="carousel-progress" id="carousel-progress"></div>
     </div>
-    <!-- Optionally, "Show All Feedback" modal can be added -->
   </section>
 </main>
+
 <footer>
-  &copy; 2025 Adolfho Romero · <a href="mailto:adolfhoromero@gmail.com">adolfhoromero@gmail.com</a>
-  <div class="footer-social">
-    <a href="https://www.linkedin.com/in/adolfhoromero" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="https://orcid.org/" aria-label="ORCID"><i class="fab fa-orcid"></i></a>
-    <a href="https://scholar.google.com/" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-  </div>
+  <p>© 2025 Adolfho Romero · <a href="mailto:adolfhoromero@gmail.com">adolfhoromero@gmail.com</a></p>
 </footer>
+
 <script>
-  // Details toggle for cards
-  function toggleDetails(btn){
-    const card = btn.closest('.card-teaching');
+  // Enhanced course card interactions
+  function toggleDetails(btn) {
+    const card = btn.closest('.course-card');
     const details = card.querySelector('.card-details');
     const isOpen = details.getAttribute('aria-expanded') === 'true';
+    
     details.setAttribute('aria-expanded', !isOpen);
-    btn.innerHTML = (!isOpen ? "Hide Details <i class='fas fa-chevron-up'></i>" : "Details <i class='fas fa-chevron-down'></i>");
-    if (!isOpen) setTimeout(() => { details.scrollIntoView({behavior:'smooth',block:'nearest'}); }, 100);
+    btn.innerHTML = (!isOpen 
+      ? "Hide Details <i class='fas fa-chevron-up'></i>" 
+      : "View Details <i class='fas fa-chevron-down'></i>");
+    
+    // Smooth scroll to details when opening
+    if (!isOpen) {
+      setTimeout(() => {
+        details.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 100);
+    }
   }
-  // Feedback Carousel
+
+  // Enhanced feedback carousel
   const quotes = [
     "Adolfho is extremely professional but creates a warm and welcoming environment with his students and tries to build personal relationships.",
     "He is very knowledgeable and very open to helping everyone.",
@@ -345,30 +970,86 @@
     "Great in the one-to-one setting... clear with instructions.",
     "He ensures students have a strong grasp on course material and is always willing to help anyone out."
   ];
-  let q = 0;
-  function renderQuote(){
-    document.getElementById('feedback-quote').textContent = quotes[q];
-    // Render progress dots
-    let dots = quotes.map((_,i) => `<span class="carousel-dot${q===i?' active':''}"></span>`).join('');
-    document.getElementById('carousel-progress').innerHTML = dots;
+  
+  let currentQuote = 0;
+  
+  function renderQuote() {
+    const quoteElement = document.getElementById('feedback-quote');
+    quoteElement.style.opacity = '0';
+    
+    setTimeout(() => {
+      quoteElement.textContent = `"${quotes[currentQuote]}"`;
+      quoteElement.style.opacity = '1';
+    }, 200);
   }
-  function prevQuote(){
-    q = (q - 1 + quotes.length) % quotes.length;
+  
+  function prevQuote() {
+    currentQuote = (currentQuote - 1 + quotes.length) % quotes.length;
     renderQuote();
   }
-  function nextQuote(){
-    q = (q + 1) % quotes.length;
+  
+  function nextQuote() {
+    currentQuote = (currentQuote + 1) % quotes.length;
     renderQuote();
   }
-  setInterval(nextQuote, 8000); renderQuote();
-  // Dark mode toggle
-  function toggleDarkMode(){
-    document.documentElement.classList.toggle('dark');
-    localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+  
+  // Auto-rotate quotes
+  setInterval(nextQuote, 8000);
+  
+  // Initialize
+  renderQuote();
+
+  // Enhanced dark mode toggle
+  function toggleDarkMode() {
+    const html = document.documentElement;
+    const toggle = document.querySelector('.dark-toggle');
+    
+    html.classList.toggle('dark');
+    const isDark = html.classList.contains('dark');
+    
+    // Update toggle icon
+    toggle.textContent = isDark ? '☀️' : '🌙';
+    
+    // Save preference
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
   }
-  if(localStorage.getItem('theme') === 'dark'){
-    document.documentElement.classList.add('dark');
+
+  // Initialize theme
+  function initTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    const toggle = document.querySelector('.dark-toggle');
+    
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      toggle.textContent = '☀️';
+    } else {
+      toggle.textContent = '🌙';
+    }
   }
+
+  // Initialize on load
+  document.addEventListener('DOMContentLoaded', initTheme);
+
+  // Intersection Observer for animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationDelay = '0s';
+        entry.target.style.animationPlayState = 'running';
+      }
+    });
+  }, observerOptions);
+
+  // Observe all course cards
+  document.querySelectorAll('.course-card').forEach(card => {
+    observer.observe(card);
+  });
 </script>
+
 </body>
 </html>
