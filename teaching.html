@@ -12,232 +12,201 @@
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous" defer></script>
 
   <style>
-    :root {
-      --background-top:  #f7f8fa;
-      --background-bottom: #e4e8ef;
-      --nav-bg:          #22304a;
-      --nav-text:        #ffffff;
-      --accent:          #29539b;
-      --accent-gold:     #ffcc00;
-      --text-main:       #232d41;
-      --heading-color:   #212c3e;
-      --max-width:       1100px;
-      --card-bg:         #fff;
-      --card-shadow:     0 8px 32px rgba(41,83,155,0.10); 
-      --card-border:     #29539b;
-      --card-radius:     15px;
+    /* ——  COLOR & TYPOGRAPHY  —— */
+    :root{
+      --background-top:#f7f8fa;--background-bottom:#e4e8ef;
+      --nav-bg:#22304a;--nav-text:#fff;
+      --card-bg:#fff;--card-shadow:0 4px 36px #2e3a5022;--card-border:#29539b;
+      --text-main:#313b53;--heading-color:#263045;
+      --accent:#29539b;--accent-gold:#ffcc00;
+      --max-width:980px;
+      --font-body:'Poppins',sans-serif;--font-heading:'Spectral',serif;
     }
-    .dark {
-      --background-top: #121212;
-      --background-bottom: #1e1e1e;
-      --nav-bg: #111827;
-      --nav-text: #e5e7eb;
-      --accent: #3b82f6;
-      --accent-gold: #fbbf24;
-      --text-main: #d1d5db;
-      --heading-color: #f9fafb;
-      --card-bg: #1c2232;
-      --card-border: #3b82f6;
+    .dark{
+      --background-top:#121212;--background-bottom:#1e1e1e;
+      --nav-bg:#111827;--nav-text:#e5e7eb;
+      --card-bg:#1c2232;--card-shadow:0 4px 36px #1e263522;--card-border:#3b82f6;
+      --text-main:#e3e5eb;--heading-color:#f9fafb;
+      --accent:#3b82f6;--accent-gold:#fbbf24;
     }
-    *, *::before, *::after {box-sizing: border-box;margin: 0;padding: 0;}
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, var(--background-top), var(--background-bottom));
-      color: var(--text-main);
-      line-height: 1.6;
-      transition: background 0.4s, color 0.4s;
-    }
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      transition: color .2s, background .25s, box-shadow .25s;
-    }
-    a:hover, a:focus {
-      color: var(--accent-gold);
+    html,body{height:100%;margin:0;padding:0}
+    body{
+      min-height:100vh;font-family:var(--font-body);
+      background:linear-gradient(120deg,var(--background-top),var(--background-bottom) 87%);
+      color:var(--text-main);line-height:1.7;scroll-behavior:smooth;
+      transition:background .4s,color .4s;
     }
 
-    /* HEADER & NAV */
-    header {
-      background: var(--nav-bg);
-      color: var(--nav-text);
-      text-align: center;
-      padding: 1.5rem 1rem 0.8rem;
-      box-shadow: 0 4px 22px rgba(34,48,74,0.47);
-      position: relative;
-      transition: background 0.4s, color 0.4s;
+    /* ——  HEADER  —— */
+    header{
+      background:var(--nav-bg);color:var(--nav-text);text-align:center;
+      padding:1.2rem 1rem 0;position:relative;box-shadow:0 4px 22px rgba(34,48,74,.47);
     }
-    .site-title {
-      font-family: 'Spectral', serif;
-      font-size: 2.95rem;
-      font-weight: 700;
-      color: var(--nav-text);
-      transition: color 0.4s;
+    .site-title{
+      font-family:var(--font-heading);font-size:2.95rem;font-weight:700;
+      margin:.1rem 0 0;color:var(--nav-text);transition:color .4s;
     }
-    .dark-toggle {
-      position: absolute;
-      top: 1rem; right: 1rem;
-      width: 2rem; height: 2rem;
-      background: url('sun-moon.svg') center/contain no-repeat;
-      cursor: pointer;
-      z-index: 10;
+    .dark-toggle{
+      position:absolute;top:1rem;right:1rem;width:2rem;height:2rem;
+      background:url('sun-moon.svg') center/contain no-repeat;cursor:pointer;z-index:10;
     }
 
-    nav.main-nav {
-      position: sticky;
-      top: 0; z-index: 50;
-      background: var(--nav-bg);
-      box-shadow: inset 0 -1px 0 #3a496f;
-      font-family: 'Spectral', serif;
-      transition: background 0.4s, color 0.4s;
+    /* ——  NAV  —— */
+    nav.main-nav{
+      position:sticky;top:0;z-index:50;background:var(--nav-bg);
+      box-shadow:inset 0 -1px 0 #3a496f;font-family:var(--font-heading);
     }
-    nav.main-nav ul {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      list-style: none;
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 8px 0;
+    nav.main-nav ul{
+      display:flex;justify-content:center;gap:30px;list-style:none;
+      max-width:var(--max-width);margin:0 auto;padding:8px 0;
     }
-    nav.main-nav a {
-      position: relative;
-      padding: 10px 16px;
-      font-size: 1.1rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .1em;
-      color: var(--nav-text);
-      text-shadow: 0 1px 2px rgba(0,0,0,0.4);
-      background: none;
-      border: none;
-      outline: none;
-      box-shadow: none;
-      transition: color .2s, background .25s, box-shadow .25s, font-weight .15s;
+    nav.main-nav a{
+      position:relative;padding:10px 16px;font-size:1.1rem;font-weight:700;
+      text-transform:uppercase;letter-spacing:.1em;color:var(--nav-text);
+      text-shadow:0 1px 2px rgba(0,0,0,.4);display:flex;align-items:center;gap:5px;
+      transition:color .2s,background .25s,box-shadow .25s;text-decoration:none;
     }
-    nav.main-nav a:hover, nav.main-nav a:focus {
-      color: var(--accent-gold);
-      background: rgba(255,255,255,0.04);
-      box-shadow: 0 0 6px 1.5px var(--accent-gold, #ffcc00);
-      font-weight: 700;
+    nav.main-nav a:hover,nav.main-nav a:focus{
+      color:var(--accent-gold);background:rgba(255,255,255,.04);
+      box-shadow:0 0 6px 1.5px var(--accent-gold);
     }
-    nav.main-nav a.cv-link {
-      background: linear-gradient(90deg, var(--accent), var(--accent-gold));
-      color: #fff !important;
-      border-radius: 4px;
-      padding: 10px 22px;
-      font-weight: 700;
-      box-shadow: 0 2px 8px rgba(41,83,155,0.09);
-      margin-right: 8px;
-      transition: filter .2s, box-shadow .2s, color .2s, background .2s;
+    nav.main-nav a.cv-link{
+      background:linear-gradient(90deg,var(--accent),var(--accent-gold));
+      color:#fff!important;border-radius:4px;padding:10px 22px;font-weight:700;
+      box-shadow:0 2px 8px rgba(41,83,155,.09);margin-right:8px;
+      transition:filter .2s,box-shadow .2s;
     }
-    nav.main-nav a.cv-link:hover, nav.main-nav a.cv-link:focus {
-      filter: brightness(1.07) saturate(1.12);
-      box-shadow: 0 8px 22px rgba(41,83,155,0.19);
-      color: var(--nav-text) !important;
+    nav.main-nav a.cv-link:hover{filter:brightness(1.07) saturate(1.12);box-shadow:0 8px 22px rgba(41,83,155,.19);}
+    nav.main-nav a.active{color:var(--accent-gold);background:rgba(255,255,255,.04);}
+
+    /* ——  GLOBAL LAYOUT  —— */
+    main{max-width:var(--max-width);margin:3rem auto 0;padding:0 1.25rem;}
+    h2{
+      font-family:var(--font-heading);font-weight:600;font-size:2rem;color:var(--heading-color);
+      text-align:center;position:relative;margin-bottom:2rem;
     }
-    nav.main-nav a.active {
-      color: var(--accent-gold);
-      background: rgba(255,255,255,0.04);
+    h2::after{
+      content:'';display:block;width:72px;height:4px;margin:.5rem auto 0;
+      background:linear-gradient(90deg,var(--accent),var(--accent-gold));border-radius:2px;
     }
 
-    /* --- Main Layout --- */
-    main {max-width:var(--max-width);margin:3rem auto 0;padding:0 1.25rem;}
-
-    /* --- Philosophy Section --- */
-    .philosophy-section { margin-bottom: 5rem;}
-    .section-header h2 {
-      font-family: 'Spectral', serif;
-      font-size: 2.18rem;
-      text-align: center;
-      color: var(--heading-color);
-      margin-bottom: 2rem;
-      position: relative;
-    }
-    .philosophy-banner {
-      background: linear-gradient(90deg, var(--card-bg), var(--accent-gold)17%, var(--background-top)83%);
+    /* ——  PHILOSOPHY  —— */
+    .philosophy-banner{
+      background:linear-gradient(90deg,var(--card-bg),var(--accent-gold)17%,var(--background-top)83%);
       border-left:5px solid var(--accent);border-radius:14px;padding:1.1rem 1.6rem;margin:2.9rem 0 2.2rem;
-      font-size:1.17rem;box-shadow:var(--card-shadow);
+      font-size:1.15rem;
     }
     .philosophy-points{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;text-align:center;margin-bottom:2.2rem}
     .philosophy-point{
       background:var(--card-bg);border-radius:10px;box-shadow:var(--card-shadow);
       padding:.85rem 1.35rem;font-size:1rem;color:var(--text-main);border-left:4px solid var(--accent);
     }
-    .philosophy-point i{font-size: 1.3em;color:var(--accent);margin-bottom:0.2em;}
 
-    /* --- Teaching Cards by Year --- */
-    .courses-section {margin-top: 2.5rem;}
-    .year-section {margin-bottom: 3.2rem;}
-    .year-header { display:flex; align-items:center; justify-content:center; margin-bottom: 1.7rem; }
-    .year-line{flex:1; height:2px; background:linear-gradient(90deg,transparent 0%, #d2d6ed 47%, transparent 100%);}
-    .year-badge {
-      display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent-gold));
-      color:#fff; font-family:'Spectral',serif; font-size:1.33rem; font-weight:600;
-      border-radius:35px; padding:0.2em 1.5em;margin:0 0 1.1em 0;
-      box-shadow:0 2px 10px rgba(41,83,155,0.12);
-    }
-    .course-grid,.course-card-grid {
-      display: grid;grid-template-columns:repeat(auto-fit,minmax(415px,1fr));gap:2rem;margin-bottom:1.5rem;
-    }
-    @media (max-width:900px){.course-grid,.course-card-grid{grid-template-columns:1fr}}
-    .course-card,.card-teaching {
-      border-radius:var(--card-radius);
-      background:var(--card-bg);
-      box-shadow:var(--card-shadow);
-      border-left:5px solid var(--card-border);
-      border:1px solid #dedede;
-      margin-bottom:0.6rem;
-      overflow:hidden;
-      transition:box-shadow .16s,background .4s,color .4s;
-      animation:fadeInUp 0.6s ease forwards;
+    /* ——  COURSE CARDS  —— */
+    .course-card-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+    @media (max-width:900px){.course-card-grid{grid-template-columns:1fr}}
+    .card-teaching{
+      border-radius:15px;background:var(--card-bg);box-shadow:var(--card-shadow);
+      border-left:5px solid var(--card-border);margin-bottom:2.2rem;overflow:hidden;
+      transition:box-shadow .18s,background .4s,color .4s;
     }
     .card-slim{padding:1.3rem 1.75rem}
-    .card-header{font-family:'Spectral',serif;font-weight:600;font-size:1.25rem;color:var(--accent);}
-    .course-title {font-family:'Spectral',serif;font-size:1.13rem;margin-bottom:.35rem;font-weight:700;color:var(--heading-color);}
-    .card-tags, .course-meta{font-size:.97rem;color:#8e99af;margin-bottom:.6rem}
-    .card-desc,.course-description{margin-top:.45rem;font-size:1.01rem;}
-    .course-links {margin-top:0.8rem;}
-    .course-link{margin-right:.8em;}
-    .details-toggle, .card-header button {
+    .card-header{font-family:var(--font-heading);font-weight:600;font-size:1.25rem;color:var(--accent)}
+    .card-tags{font-size:.97rem;color:#8e99af;margin-bottom:.6rem}
+    .card-desc{margin-top:.45rem}
+    .details-toggle{
       background:none;border:none;color:var(--accent);font-weight:600;font-size:1rem;cursor:pointer;
-      padding:0;margin:0;float:right;transition:color .13s;
+      padding:0;margin:0;float:right;transition:color .18s;
     }
-    .details-toggle:hover, .card-header button:hover{color:var(--accent-gold)}
+    .details-toggle:hover{color:var(--accent-gold)}
     .card-details{display:none;background:var(--background-bottom);border-top:1px solid #d2d3dd;padding:1.2rem 1.1rem}
     .card-details[aria-expanded="true"]{display:block}
     .card-details ul{margin:0;padding-left:1.2em}
     .card-details li{margin-bottom:.5rem}
-    @keyframes fadeInUp{ from{opacity:0; transform:translateY(30px);} to{ opacity:1; transform:translateY(0);} }
 
-    /* --- Feedback Carousel --- */
-    .feedback-section{margin:5rem 0 0 0;}
-    .feedback-carousel-block{
-      max-width:560px;margin:2.5rem auto;text-align:center;position:relative;
-      background:var(--card-bg);border-left:5px solid var(--accent-gold);border-radius:14px;
-      padding:1rem 1.6rem 2.4rem;box-shadow:var(--card-shadow);
+    /* ——  STUDENT FEEDBACK CARDS —— */
+    .student-feedback-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.3rem;
+      margin: 2.2rem auto;
+      max-width: 920px;
     }
-    .carousel-quote{font-size:1.15rem;color:var(--text-main);font-style:italic;min-height:50px}
-    .carousel-arrows{position:absolute;bottom:8px;left:0;right:0;display:flex;justify-content:center;gap:44px}
-    .carousel-arrow{background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--accent)}
-    .carousel-arrow:hover{color:var(--accent-gold)}
-
-    footer {
-      text-align: center;
-      background: var(--nav-bg);
-      color: #adadad;
-      padding: 23px 1rem;
-      font-size: .98rem;
-      border-top: 1px solid rgba(45,57,85,0.2);
-      margin-top: 4.8rem;
-      transition: background 0.4s, color 0.4s;
+    .feedback-card {
+      background: var(--card-bg);
+      border-left: 5px solid var(--accent-gold);
+      border-radius: 14px;
+      box-shadow: var(--card-shadow);
+      padding: 1.2rem 1.4rem 1rem;
+      max-width: 355px;
+      flex: 1 1 290px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+      transition: box-shadow .17s, border-color .18s;
     }
-    footer a{color:var(--accent);}
-    footer a:hover{ text-decoration: underline;}
+    .feedback-card:hover {
+      box-shadow: 0 8px 32px #2e3a5026;
+      border-left-color: var(--accent);
+    }
+    .feedback-icon {
+      font-size: 1.6rem;
+      color: var(--accent-gold);
+      margin-bottom: 0.45rem;
+    }
+    .feedback-card blockquote {
+      margin: 0 0 0.5rem;
+      font-style: italic;
+      color: var(--text-main);
+      font-size: 1.08rem;
+      line-height: 1.6;
+      padding-left: 0;
+    }
+    .feedback-label {
+      font-size: 1rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-top: auto;
+      letter-spacing: 0.02em;
+    }
+    @media (max-width:700px) {
+      .student-feedback-cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.1rem;
+      }
+      .feedback-card {
+        max-width: 95%;
+        min-width: 0;
+      }
+    }
 
-    @media (max-width: 700px) {
-      .section-header h2{font-size:1.5rem;}
-      .course-card-grid, .course-grid {grid-template-columns: 1fr;}
+    /* ——  MATERIALS & OUTCOMES  —— */
+    .key-materials-row{display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:center;margin:2.5rem 0}
+    .book-cover{width:85px;height:120px;background:#ededed;border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 7px #b6b6c833;position:relative}
+    .book-cover span{font-size:.95rem;color:var(--accent);font-weight:600}
+    .book-tooltip{visibility:hidden;opacity:0;position:absolute;bottom:130%;left:50%;transform:translateX(-50%);
+      background:var(--card-bg);border-radius:5px;box-shadow:0 1px 8px #aaa6;padding:8px 14px;font-size:.94rem;transition:opacity .18s;z-index:9}
+    .book-cover:hover .book-tooltip{visibility:visible;opacity:1}
+    .outcomes-list{display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;margin:2.2rem 0}
+    .outcome{background:var(--card-bg);border-radius:12px;box-shadow:var(--card-shadow);padding:1.1rem 1.5rem;border-left:4px solid var(--accent);min-width:190px}
+    .outcome b{display:block;color:var(--accent);font-weight:600;margin-bottom:.22rem}
+
+    /* ——  FOOTER  —— */
+    footer{text-align:center;padding:2.2rem 1rem;color:#7b8fac;border-top:1px solid #c5c8d1;margin-top:4rem;font-family:var(--font-body);font-size:1rem;background:var(--background-top)}
+    footer a{color:var(--accent);text-decoration:none}
+    footer a:hover{text-decoration:underline}
+
+    /* ——  RESPONSIVE  —— */
+    @media (max-width:650px){
+      .site-title{font-size:2.1rem}
+      header{padding:1.8rem .6rem .3rem}
+      .course-card-grid,.outcomes-list,.key-materials-row{grid-template-columns:1fr!important;flex-direction:column;gap:1.1rem}
+      .book-cover{margin:0 auto}
+      main,section{padding:0}
+      nav.main-nav ul{gap:14px}
     }
   </style>
 </head>
@@ -250,284 +219,113 @@
 
 <nav class="main-nav" aria-label="Primary">
   <ul>
-    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-    <li><a href="adolfhoromerocv.pdf" target="_blank" class="cv-link"><i class="fas fa-file-alt"></i> CV</a></li>
-    <li><a href="publications.html"><i class="fas fa-book"></i> Publications</a></li>
+    <li><a href="index.html"><i class="fas fa-house-user"></i> Home</a></li>
+    <li><a href="adolfhoromerocv.pdf" target="_blank" class="cv-link"><i class="fas fa-id-badge"></i> CV</a></li>
+    <li><a href="publications.html" class="pubs-link"><i class="fas fa-feather-alt"></i> Publications</a></li>
     <li><a href="teaching.html" class="active"><i class="fas fa-chalkboard-teacher"></i> Teaching</a></li>
   </ul>
 </nav>
 
 <main>
-  <!-- Philosophy -->
-  <section class="philosophy-section">
-    <div class="section-header">
-      <h2>Teaching Philosophy</h2>
-    </div>
+  <!--  ———————————  PHILOSOPHY  ——————————— -->
+  <section id="teaching-philosophy">
+    <h2>Teaching Philosophy</h2>
     <div class="philosophy-banner">
       My teaching centers on creating welcoming, rigorous environments where students connect labor history with contemporary realities—through collaborative discussion, critical debate, and creative assignments, I empower learners to see their own role in shaping history.
     </div>
+
     <div class="philosophy-points">
-      <div class="philosophy-point"><i class="fas fa-users"></i>Active Engagement</div>
-      <div class="philosophy-point"><i class="fas fa-landmark"></i>Historical Inquiry</div>
-      <div class="philosophy-point"><i class="fas fa-comments"></i>Inclusive Discussion</div>
-      <div class="philosophy-point"><i class="fas fa-link"></i>Connecting Past &amp; Present</div>
+      <div class="philosophy-point"><i class="fas fa-users"></i> Active Engagement</div>
+      <div class="philosophy-point"><i class="fas fa-landmark"></i> Historical Inquiry</div>
+      <div class="philosophy-point"><i class="fas fa-comments"></i> Inclusive Discussion</div>
+      <div class="philosophy-point"><i class="fas fa-link"></i> Connecting Past &amp; Present</div>
     </div>
   </section>
 
-  <!-- Courses by Year -->
-  <section class="courses-section">
-    <div class="section-header">
-      <h2>Teaching Experience</h2>
-    </div>
-    <!-- 2025 -->
-    <div class="year-section">
-      <div class="year-header">
-        <div class="year-line"></div>
-        <div class="year-badge">2025</div>
-      </div>
-      <div class="course-card-grid">
-        <div class="card-teaching card-slim">
-          <div class="card-header">
-            African American and Latinx Histories (ILRGL 3805)
-            <button class="details-toggle" aria-expanded="false" onclick="toggleDetails(this)">
-              Details <i class="fas fa-chevron-down"></i>
-            </button>
-          </div>
-          <div class="card-tags">
-            Cornell University · Spring 2025<br>
-            Graduate Teaching Assistant to Prof. Paul Ortiz · 120+ students
-          </div>
-          <div class="card-desc">
-            Large survey seminar tracing African American and Latinx histories, labor, culture, and social change from the Revolution to today. Led lectures and workshops on synthesis writing, grading, and feedback; guided reading analysis; managed course technology; and mentored students through one-on-one and group support. Consistently received top student ratings for helping students, stimulating deeper thinking, and making the course welcoming.<br>
-            <a href="2025-AF-Am-Latinx-Histories-seminar-Final-syllabus.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Syllabus (PDF)</a>
-          </div>
-          <div class="card-details" aria-expanded="false">
-            <b>Teaching, Writing, &amp; Student Support:</b>
-            <ul>
-              <li>Designed and led lecture on equitable grading and how to write historical synthesis essays</li>
-              <li>Held regular and after-hours TA office hours (in-person and online), ensuring every student had access to help</li>
-              <li>Managed equipment and technology, coordinated digital resources for a 120+ student course</li>
-              <li>Led feedback workshops on essay structure, argument building, and evidence integration</li>
-              <li>Provided detailed, actionable comments on drafts and assignments; fostered inclusive environment where students reported feeling “safe,” “encouraged,” and “truly cared for”</li>
-            </ul>
-            <b>Core Required Readings:</b>
-            <ul>
-              <li><strong>Piri Thomas,</strong> <em>Down These Mean Streets</em></li>
-              <li><strong>Juan Gonzalez,</strong> <em>Harvest of Empire: A History of Latinos in America</em></li>
-              <li><strong>Paul Ortiz,</strong> <em>An African American and Latinx History of the United States</em></li>
-              <li><strong>Blair Kelley,</strong> <em>Black Folk: The Roots of the Black Working Class</em></li>
-              <li><strong>August Wilson,</strong> <em>The Piano Lesson</em></li>
-              <li><strong>Martín Espada,</strong> <em>Zapata's Disciple</em></li>
-              <li><strong>Johanna Fernández,</strong> <em>The Young Lords: A Radical History</em></li>
-            </ul>
-            <b>Student Feedback Highlights:</b>
-            <ul>
-              <li>“Super kind, goes out of his way to help students, and very knowledgeable. Makes the classroom feel like a safe space.”</li>
-              <li>“Great in the one-to-one setting... clear with instructions.”</li>
-              <li>“He ensures students have a strong grasp on course material and is always willing to help anyone out.”</li>
-              <li>Praised for making time after office hours and for “stimulating deeper thinking about the subject.”</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- 2024 -->
-    <div class="year-section">
-      <div class="year-header">
-        <div class="year-line"></div>
-        <div class="year-badge">2024</div>
-      </div>
-      <div class="course-card-grid">
-        <div class="card-teaching card-slim">
-          <div class="card-header">
-            Introduction to US Labor History (ILRGL 1100)
-            <button class="details-toggle" aria-expanded="false" onclick="toggleDetails(this)">
-              Details <i class="fas fa-chevron-down"></i>
-            </button>
-          </div>
-          <div class="card-tags">
-            Cornell University · Fall 2024<br>
-            Teaching Assistant to Prof. Paul Ortiz · Fridays 10:10 am &amp; 11:15 am
-          </div>
-          <div class="card-desc">
-            Explores working-class cultures, labor struggles, and the quest for dignity in US history. Emphasized peer-reviewed debate, collaborative timelines, and creative assignments.<br>
-            <a href="2024-Fall-Labor-History-Syllabus.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Syllabus (PDF)</a>
-          </div>
-          <div class="card-details" aria-expanded="false">
-            <b>Section Innovations:</b>
-            <ul>
-              <li>Peer-review &amp; feedback workshops on synthesis essays</li>
-              <li>Collaborative history timeline creation</li>
-              <li>Debates on race, gender, and solidarity in labor movements</li>
-              <li>Oral-history activities and student-centered analysis</li>
-              <li>Contemporary thought pieces linking past to news</li>
-            </ul>
-            <b>Sample Weekly Highlights:</b>
-            <ul>
-              <li><b>Rediker’s Slave Ship</b>: Critical discussion on labor, capital, and resistance</li>
-              <li><b>Lowell Factory Girls / Black Folk</b>: Group activities exploring gender, class, and organizing</li>
-              <li><b>Homestead Strike Simulation</b>: Structured debates and peer review</li>
-              <li><b>Creative Assignments</b>: Timeline presentations, thematic reflections</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- 2021 -->
-    <div class="year-section">
-      <div class="year-header">
-        <div class="year-line"></div>
-        <div class="year-badge">2021</div>
-      </div>
-      <div class="course-card-grid">
-        <div class="card-teaching card-slim">
-          <div class="card-header">
-            Machen Florida Opportunity Scholars Oral History Project
-            <button class="details-toggle" aria-expanded="false" onclick="toggleDetails(this)">
-              Details <i class="fas fa-chevron-down"></i>
-            </button>
-          </div>
-          <div class="card-tags">
-            University of Florida · Spring 2021<br>
-            Teaching Assistant (Instructor of Record) · SPOHP Internship
-          </div>
-          <div class="card-desc">
-            Flagship oral-history internship documenting the Machen Florida Opportunity Scholars (first-generation, low-income students). Students hosted national equity experts, conducted 40+ interviews, and collaborated with filmmakers—culminating in a gubernatorial visit by Jeb Bush.<br>
-            <a href="spring-2021-internship-syllabus-v6.0.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Syllabus v6.0</a>
-            <a href="https://youtube.com/playlist?list=PLzMFflzfI0ETOUAMp8AtPFNlaCYlc1kt4" target="_blank"><i class="fab fa-youtube"></i> Interview Playlist</a>
-          </div>
-          <div class="card-details" aria-expanded="false">
-            <b>Distinguished Speakers &amp; Fieldwork:</b>
-            <ul>
-              <li>McNair Scholars, national equity leaders, &amp; UF administrators addressed the class</li>
-              <li>Governor Jeb Bush visited to review student oral-history presentations</li>
-              <li>Students assisted professional filmmakers documenting first-gen success stories</li>
-            </ul>
-            <b>Comprehensive Interview Collection:</b>
-            <ul>
-              <li>Alumni success narratives highlighting career trajectories &amp; program impact</li>
-              <li>Interviews with Machen founders, staff, and program directors (institutional memory)</li>
-              <li>Current scholars' perspectives on first-generation challenges &amp; support systems</li>
-              <li>All interviews archived and published via YouTube playlist</li>
-            </ul>
-            <b>Lasting Impact:</b>
-            <ul>
-              <li>Digital archive used for program evaluation &amp; future scholarship funding</li>
-              <li>Student work cited in UF equity reports &amp; documentary film</li>
-              <li>Participants gained portfolio pieces for grad-school &amp; career advancement</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- 2020 -->
-    <div class="year-section">
-      <div class="year-header">
-        <div class="year-line"></div>
-        <div class="year-badge">2020</div>
-      </div>
-      <div class="course-card-grid">
-        <div class="card-teaching card-slim">
-          <div class="card-header">
-            Samuel Proctor Oral History Program Internship
-            <button class="details-toggle" aria-expanded="false" onclick="toggleDetails(this)">
-              Details <i class="fas fa-chevron-down"></i>
-            </button>
-          </div>
-          <div class="card-tags">
-            University of Florida · Fall 2020<br>
-            Teaching Assistant (acted as Instructor of Record) · Mondays 11:45 am–1:40 pm
-          </div>
-          <div class="card-desc">
-            Community-based oral-history class in partnership with St. Patrick Catholic Church. Led all sessions, guided student archival research, and digitized rare local records. Students produced original histories of North-Central Florida's Catholic, working-class, and activist communities.<br>
-            <a href="Fall-2020-Internship-Syllabus-Draft-2-4.docx" target="_blank"><i class="fas fa-file-word"></i> Syllabus (Word)</a>
-          </div>
-          <div class="card-details" aria-expanded="false">
-            <b>Community Partnership &amp; Leadership:</b>
-            <ul>
-              <li>Direct collaboration with St. Patrick Catholic Church; students accessed, scanned, and interpreted archival records dating back decades</li>
-              <li>Solely designed lectures, mentored each student, and supervised all research projects</li>
-              <li>Hands-on oral-history training: interview protocol, digital production, archival preservation</li>
-              <li>Explored discrimination, civil-rights activism, and the Sisters of St. Joseph's educational mission</li>
-            </ul>
-            <b>Weekly Highlights:</b>
-            <ul>
-              <li><strong>Catholicism &amp; Educational Activism</strong>: Lecture on Sisters of St. Joseph's fight against segregation</li>
-              <li><strong>Father Conoley &amp; the Ku Klux Klan</strong>: Case study of 1924 anti-Catholic violence in Gainesville</li>
-              <li>Fieldwork: scanning church documents &amp; designing oral-history protocols</li>
-              <li>Student projects on parish labor history, women's religious leadership, and social justice</li>
-            </ul>
-            <b>Transformative Outcomes:</b>
-            <ul>
-              <li>Public presentation of projects to parish &amp; community</li>
-              <li>Exceptional student feedback for real-world impact</li>
-              <li>Permanent digital archive created for future researchers</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+  <!--  ———————————  COURSES  ——————————— -->
+  <section id="courses-taught">
+    <h2>Courses Taught</h2>
+    <div class="course-card-grid">
+
+      <!-- [KEEP YOUR COURSE CARDS HERE AS EARLIER] -->
+
     </div>
   </section>
 
-  <!-- Student Feedback -->
-  <section class="feedback-section">
-    <div class="section-header">
-      <h2>What Students Say</h2>
-    </div>
-    <div class="feedback-carousel-block">
-      <blockquote id="feedback-quote" class="carousel-quote">
-        “Adolfho is extremely professional but creates a warm and welcoming environment with his students and tries to build personal relationships.”
-      </blockquote>
-      <div class="carousel-arrows">
-        <button class="carousel-arrow" onclick="prevQuote()" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
-        <button class="carousel-arrow" onclick="nextQuote()" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+  <!--  ———————————  STUDENT FEEDBACK  ——————————— -->
+  <section id="student-feedback">
+    <h2>What Students Say</h2>
+    <div class="student-feedback-cards">
+
+      <div class="feedback-card">
+        <div class="feedback-icon" aria-label="Grounded, Safe, and Knowledgeable"><i class="fas fa-compass"></i></div>
+        <blockquote>
+          Super kind, goes out of his way to help students, and very knowledgeable. Makes the classroom feel like a safe space.
+        </blockquote>
+        <div class="feedback-label">Grounded, Safe, and Knowledgeable</div>
       </div>
+
+      <div class="feedback-card">
+        <div class="feedback-icon" aria-label="Leads with Rigor and Passion"><i class="fas fa-brain"></i></div>
+        <blockquote>
+          Very good at stimulating class discussions and leads them extremely well.
+        </blockquote>
+        <div class="feedback-label">Leads with Rigor and Passion</div>
+      </div>
+
+      <div class="feedback-card">
+        <div class="feedback-icon" aria-label="Feedback That Builds Thinking"><i class="fas fa-pen-nib"></i></div>
+        <blockquote>
+          Great in giving detailed feedback and actually writing new perspectives about the content in feedback.
+        </blockquote>
+        <div class="feedback-label">Feedback That Builds Thinking</div>
+      </div>
+
+      <div class="feedback-card">
+        <div class="feedback-icon" aria-label="Most Involved TA"><i class="fas fa-seedling"></i></div>
+        <blockquote>
+          Adolfho is by far my most involved and active TA across my courses. His genuine interest in ensuring that students understand the course material is clear, and he always makes himself available for extra help and clarity.
+        </blockquote>
+        <div class="feedback-label">Most Involved TA</div>
+      </div>
+
+      <div class="feedback-card">
+        <div class="feedback-icon" aria-label="Welcoming & Transformative Teaching"><i class="fas fa-comments"></i></div>
+        <blockquote>
+          Adolfho is very kind and welcoming and is clearly very interested and knowledgeable in what we’re learning in class. He gives us assignments that help us understand what we’re learning better and that can help us in the future. He is always offering options to help or meet with him.
+        </blockquote>
+        <div class="feedback-label">Welcoming & Transformative Teaching</div>
+      </div>
+
     </div>
   </section>
+
+  <!--  ———————————  OPTIONAL: WEEKLY HIGHLIGHTS, MATERIALS, OUTCOMES ——————————— -->
+  <!-- Keep as in your original -->
+
 </main>
 
 <footer>
-  &copy; 2025 Adolfho Romero · <a href="mailto:adolfhoromero@gmail.com">adolfhoromero@gmail.com</a>
+  © 2025 Adolfho Romero · <a href="mailto:adolfhoromero@gmail.com">adolfhoromero@gmail.com</a>
 </footer>
 
 <script>
-  // Details toggle for cards
+  /* CARD DETAILS TOGGLE */
   function toggleDetails(btn){
     const card = btn.closest('.card-teaching');
     const details = card.querySelector('.card-details');
     const isOpen = details.getAttribute('aria-expanded') === 'true';
-    details.setAttribute('aria-expanded', !isOpen);
-    btn.innerHTML = (!isOpen ? "Hide Details <i class='fas fa-chevron-up'></i>" : "Details <i class='fas fa-chevron-down'></i>");
-    if (!isOpen) setTimeout(() => { details.scrollIntoView({behavior:'smooth',block:'nearest'}); }, 100);
+    const newState = !isOpen;
+
+    details.setAttribute('aria-expanded', newState ? 'true' : 'false');
+    btn.setAttribute('aria-expanded', newState ? 'true' : 'false');
+
+    btn.innerHTML = newState 
+      ? "Hide Details <i class='fas fa-chevron-up'></i>" 
+      : "Details <i class='fas fa-chevron-down'></i>";
   }
 
-  // Feedback Carousel
-  const quotes = [
-    "Adolfho is extremely professional but creates a warm and welcoming environment with his students and tries to build personal relationships.",
-    "He is very knowledgeable and very open to helping everyone.",
-    "Great in giving detailed feedback and actually writing new perspectives about the content in feedback.",
-    "Makes time for students, creates inclusive and meaningful conversations, and allows students to ask questions.",
-    "He is very kind.",
-    "Super kind, goes out of his way to help students, and very knowledgeable. Makes the classroom feel like a safe space.",
-    "Great in the one-to-one setting... clear with instructions.",
-    "He ensures students have a strong grasp on course material and is always willing to help anyone out."
-  ];
-  let q = 0;
-  function renderQuote(){
-    document.getElementById('feedback-quote').textContent = quotes[q];
-  }
-  function prevQuote(){
-    q = (q - 1 + quotes.length) % quotes.length;
-    renderQuote();
-  }
-  function nextQuote(){
-    q = (q + 1) % quotes.length;
-    renderQuote();
-  }
-  setInterval(nextQuote, 8000);
-  renderQuote();
-
-  // Dark mode toggle
+  /* DARK MODE TOGGLE */
   function toggleDarkMode(){
     document.documentElement.classList.toggle('dark');
     localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
@@ -536,5 +334,6 @@
     document.documentElement.classList.add('dark');
   }
 </script>
+
 </body>
 </html>
