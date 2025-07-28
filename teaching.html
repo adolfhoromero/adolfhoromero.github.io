@@ -11,10 +11,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Spectral:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet"/>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous" defer></script>
 
-  <!-- Lightbox2 for interactive photo viewing -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"/>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js" defer></script>
-
   <style>
     /* ——  2025 ENHANCED COLOR & DESIGN SYSTEM  —— */
     :root{
@@ -408,44 +404,6 @@
       transform:scale(1.2);
     }
 
-    /* Accordion styles for Teaching Philosophy */
-    .philosophy-accordion{
-      display:flex;
-      flex-direction:column;
-      gap:1rem;
-      margin-top:1rem;
-    }
-    .philosophy-accordion details{
-      background:var(--card-bg);
-      border:1px solid rgba(59,130,246,0.1);
-      border-radius:var(--border-radius);
-      box-shadow:var(--card-shadow);
-      overflow:hidden;
-      transition:var(--transition-smooth);
-    }
-    .philosophy-accordion details[open]{
-      transform:translateY(-4px);
-      box-shadow:var(--card-shadow-hover);
-    }
-    .philosophy-accordion summary{
-      cursor:pointer;
-      font-weight:600;
-      padding:1rem 1.5rem;
-      font-family:var(--font-heading);
-      color:var(--accent-solid);
-      background:linear-gradient(90deg, rgba(59,130,246,0.05) 0%, rgba(59,130,246,0) 100%);
-      list-style:none;
-    }
-    .philosophy-accordion summary::marker,
-    .philosophy-accordion summary::-webkit-details-marker{
-      display:none;
-    }
-    .philosophy-accordion p{
-      padding:0 1.5rem 1.5rem;
-      line-height:1.7;
-      color:var(--text-secondary);
-    }
-
     /* ——  ENHANCED COURSE CARDS WITH ADVANCED INTERACTIONS  —— */
     .course-card-grid{
       display:grid;
@@ -467,34 +425,6 @@
       letter-spacing:0.06em;
       color:var(--accent-solid);
       margin-bottom:1rem;
-      cursor:pointer;
-      user-select:none;
-      position:relative;
-      padding-left:1.3rem;
-    }
-
-    /* Expand/collapse indicator for year headings */
-    .year-heading::before{
-      content:'▸';
-      position:absolute;
-      left:0;
-      top:0;
-      transition:transform 0.3s ease;
-    }
-    .year-section[aria-expanded="true"] .year-heading::before{
-      transform:rotate(90deg);
-    }
-
-    /* Collapse course grids by default and expand when active */
-    .year-section .course-card-grid{
-      max-height:0;
-      overflow:hidden;
-      opacity:0;
-      transition:max-height 0.6s ease, opacity 0.6s ease;
-    }
-    .year-section[aria-expanded="true"] .course-card-grid{
-      max-height:5000px;
-      opacity:1;
     }
     
     .card-teaching{
@@ -957,7 +887,7 @@
   <h1 class="site-title">Adolfho Romero</h1>
 </header>
 
-<nav class="main-nav" aria-label="Primary navigation">
+  <nav class="main-nav" aria-label="Primary navigation">
   <ul>
     <!-- Added Home link to provide a clear path back to the site’s landing page -->
     <li><a href="https://adolfhoromero.github.io/index.html">Home</a></li>
@@ -972,29 +902,11 @@
   <section id="teaching-philosophy" class="scroll-reveal">
     <h2>Teaching Philosophy</h2>
     <div class="philosophy-banner">
-      <!-- Break long philosophy text into interactive accordion items -->
-      <div class="philosophy-accordion">
-        <details>
-          <summary>Grounded in care, dignity &amp; honoring working‑class histories</summary>
-          <p>My approach to teaching is grounded in <strong>care, dignity, and the pursuit of critical understanding</strong>. I bring to the classroom a commitment to honoring working-class lives and histories—especially those often ignored or erased. As a first-generation Mexican and Salvadorean scholar from Humboldt Park, Chicago, I know that education can either replicate systems of exclusion or serve as a space to interrogate and undo them. I choose the latter.</p>
-        </details>
-        <details>
-          <summary>Collective process &amp; active listening</summary>
-          <p>I see teaching as a <strong>collective process, not a performance</strong>. It begins with listening—really listening—to students' questions, uncertainties, and insights. I work to create a classroom climate where students feel safe enough to take intellectual risks and connect their experiences with broader historical processes. My goal is not to lecture at students but to build knowledge with them. That means slowing down, asking good questions, and creating space for silence, reflection, and dialogue.</p>
-        </details>
-        <details>
-          <summary>Cultivating historical imagination &amp; complexity</summary>
-          <p>At the core of my pedagogy is a desire to help students develop a <strong>historical imagination</strong>—one that recognizes struggle, contradiction, and resilience. I teach labor and social history not as a linear march of progress, but as a series of contested efforts by ordinary people to make meaning, demand dignity, and shape the world around them. This lens opens space for complexity. It invites students to think historically about the present, to see themselves as part of broader movements, and to consider how race, class, gender, and migration shape not only labor conditions but also possibilities for solidarity.</p>
-        </details>
-        <details>
-          <summary>Linking research, politics &amp; classroom</summary>
-          <p>Teaching is not separate from my research or my politics. I'm drawn to classrooms where learning emerges from critical reflection and mutual respect. I view the classroom as a space where students can build the skills to name their world and change it. That means practicing analysis rooted in evidence, offering feedback that is direct and constructive, and modeling the kind of clarity and compassion I ask of students.</p>
-        </details>
-        <details>
-          <summary>Empowering students to ask deeper questions</summary>
-          <p>What matters to me most is not that students master content, but that they come away with the <strong>confidence and tools to ask deeper questions</strong>—about power, history, and their place in it. That's what I try to cultivate each time I walk into a room. Teaching, for me, is both responsibility and privilege. It is part of the work of building a more just world.</p>
-        </details>
-      </div>
+      <p>My approach to teaching is grounded in <strong>care, dignity, and the pursuit of critical understanding</strong>. I bring to the classroom a commitment to honoring working-class lives and histories—especially those often ignored or erased. As a first-generation Mexican and Salvadorean scholar from Humboldt Park, Chicago, I know that education can either replicate systems of exclusion or serve as a space to interrogate and undo them. I choose the latter.</p>
+      <p>I see teaching as a <strong>collective process, not a performance</strong>. It begins with listening—really listening—to students' questions, uncertainties, and insights. I work to create a classroom climate where students feel safe enough to take intellectual risks and connect their experiences with broader historical processes. My goal is not to lecture at students but to build knowledge with them. That means slowing down, asking good questions, and creating space for silence, reflection, and dialogue.</p>
+      <p>At the core of my pedagogy is a desire to help students develop a <strong>historical imagination</strong>—one that recognizes struggle, contradiction, and resilience. I teach labor and social history not as a linear march of progress, but as a series of contested efforts by ordinary people to make meaning, demand dignity, and shape the world around them. This lens opens space for complexity. It invites students to think historically about the present, to see themselves as part of broader movements, and to consider how race, class, gender, and migration shape not only labor conditions but also possibilities for solidarity.</p>
+      <p>Teaching is not separate from my research or my politics. I'm drawn to classrooms where learning emerges from critical reflection and mutual respect. I view the classroom as a space where students can build the skills to name their world and change it. That means practicing analysis rooted in evidence, offering feedback that is direct and constructive, and modeling the kind of clarity and compassion I ask of students.</p>
+      <p>What matters to me most is not that students master content, but that they come away with the <strong>confidence and tools to ask deeper questions</strong>—about power, history, and their place in it. That's what I try to cultivate each time I walk into a room. Teaching, for me, is both responsibility and privilege. It is part of the work of building a more just world.</p>
     </div>
     
     <div class="philosophy-points">
@@ -1017,26 +929,22 @@
     </div>
   </section>
 
-  <!-- Teaching in Action Photo Gallery -->
+  <!-- Teaching in Action Photo Gallery moved above courses for better engagement -->
   <section id="teaching-photos" class="scroll-reveal">
     <h2>Teaching in Action</h2>
     <div class="photo-gallery">
       <figure>
-        <a href="class.jpeg" data-lightbox="teaching-photos" data-title="Hands‑on workshop training session">
-          <img src="class.jpeg" alt="Adolfho Romero presenting at a conference">
-        </a>
+        <img src="class.jpeg" alt="Adolfho Romero presenting at a conference">
+        <!-- Swapped caption text with workshop caption -->
         <figcaption>Hands‑on workshop training session</figcaption>
       </figure>
       <figure>
-        <a href="class2.jpeg" data-lightbox="teaching-photos" data-title="Virtual classroom discussion">
-          <img src="class2.jpeg" alt="Adolfho Romero teaching via video conference">
-        </a>
+        <img src="class2.jpeg" alt="Adolfho Romero teaching via video conference">
         <figcaption>Virtual classroom discussion</figcaption>
       </figure>
       <figure>
-        <a href="class3.jpeg" data-lightbox="teaching-photos" data-title="Presenting on worker centers and working‑class empowerment">
-          <img src="class3.jpeg" alt="Adolfho Romero facilitating a hands‑on workshop with participants">
-        </a>
+        <img src="class3.jpeg" alt="Adolfho Romero facilitating a hands‑on workshop with participants">
+        <!-- Swapped caption text with presentation caption -->
         <figcaption>Presenting on worker centers and working‑class empowerment</figcaption>
       </figure>
     </div>
@@ -1046,7 +954,7 @@
   <section id="courses-taught" class="scroll-reveal">
   <h2>Courses Taught</h2>
   <!-- Timeline grouping by year -->
-  <div class="year-section" aria-expanded="true">
+  <div class="year-section">
     <div class="year-heading">2025</div>
     <div class="course-card-grid">
       <div class="card-teaching card-slim scroll-reveal">
@@ -1101,7 +1009,7 @@
       </div>
     </div>
   </div>
-  <div class="year-section" aria-expanded="false">
+  <div class="year-section">
     <div class="year-heading">2024</div>
     <div class="course-card-grid">
       <div class="card-teaching card-slim scroll-reveal">
@@ -1139,7 +1047,7 @@
       </div>
     </div>
   </div>
-  <div class="year-section" aria-expanded="false">
+  <div class="year-section">
     <div class="year-heading">2021</div>
     <div class="course-card-grid">
       <div class="card-teaching card-slim scroll-reveal">
@@ -1195,7 +1103,7 @@
       </div>
     </div>
   </div>
-  <div class="year-section" aria-expanded="false">
+  <div class="year-section">
     <div class="year-heading">2020</div>
     <div class="course-card-grid">
       <div class="card-teaching card-slim scroll-reveal">
@@ -1240,7 +1148,7 @@
   </div>
 </section>
 
-  <!-- Teaching in Action photo gallery has been relocated above the Courses section -->
+  <!-- The Teaching in Action photo gallery is now located above the courses section for improved flow -->
 
   <!-- ENHANCED STUDENT FEEDBACK SECTION -->
   <section id="student-feedback" class="scroll-reveal">
@@ -1406,28 +1314,6 @@
         feedbackContainer.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
       });
     }
-  });
-
-  // Interactive timeline: allow expanding/collapsing courses by year
-  document.addEventListener('DOMContentLoaded', function() {
-    const yearHeadings = document.querySelectorAll('.year-heading');
-    yearHeadings.forEach(function(heading) {
-      // Make headings focusable and act like buttons
-      heading.setAttribute('tabindex', '0');
-      heading.setAttribute('role', 'button');
-      heading.addEventListener('click', function() {
-        const parentSection = this.closest('.year-section');
-        if (!parentSection) return;
-        const isOpen = parentSection.getAttribute('aria-expanded') === 'true';
-        parentSection.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-      });
-      heading.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          this.click();
-        }
-      });
-    });
   });
 </script>
 
