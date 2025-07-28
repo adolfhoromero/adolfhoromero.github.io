@@ -7,7 +7,8 @@
 
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin2?family=Poppins:wght@300;400;500;600;700;800;900&family=Spectral:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Spectral:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet"/>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous" defer></script>
 
   <style>
@@ -15,17 +16,18 @@
     :root{
       --background-top: linear-gradient(135deg, #f7f8fa 0%, #e8ecf3 100%);
       --background-bottom: linear-gradient(135deg, #e4e8ef 0%, #d0d7e1 100%);
-      --nav-bg: linear-gradient(135deg, #1a2332 0%, #22304a 100%);
+      --nav-bg: linear-gradient(135deg, #1a 100%);
       --nav-text: #ffffff;
       --card-bg: #ffffff;
       --card-shadow: 0 8px 32px rgba(46, 58, 85, 0.12);
       --card-shadow-hover: 0 16px 48px rgba(46, 58, 85, 0.18);
       --text-main: #2c3e50;
       --text-secondary: #5a6c7d;
-      --accent: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-      --accent-gold: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-      --accent-solid: #3b82f6;
-      --accent-gold-solid: #fbbf24;
+      --heading-color: #1e293b;
+      --accent: #3b82f6;
+      --accent-gold: #fbbf24;
+      --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+      --accent-gold-gradient: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
       --success: #10b981;
       --warning: #f59e0b;
       --error: #ef4444;
@@ -48,8 +50,12 @@
       --card-shadow-hover: 0 16px 48px rgba(0, 0, 0, 0.4);
       --text-main: #f1f5f9;
       --text-secondary: #cbd5e1;
-      --accent: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
-      --accent-gold: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+      --heading-color: #f8fafc;
+      --accent: #3b82f6;
+      --accent-gold: #fbbf24;
+      --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+      --accent-gold-gradient: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+      --card-border: #3b82f6;
     }
 
     /* ——  ENHANCED BASE STYLES  —— */
@@ -67,7 +73,7 @@
       overflow-x:hidden;
     }
 
-    /* ——  ENHANCED HEADER WITH ANIMATIONS  —— */
+    /* ——  YOUR ORIGINAL HEADER PRESERVED & ENHANCED  —— */
     header{
       background:var(--nav-bg);
       color:var(--nav-text);
@@ -176,7 +182,7 @@
       content:'';
       position:absolute;
       top:0;left:0;right:0;bottom:0;
-      background:var(--accent);
+      background:var(--accent-gradient);
       transform:scaleX(0);
       transform-origin:left;
       transition:transform 0.3s ease;
@@ -193,7 +199,7 @@
     }
     
     nav.main-nav a.cv-link{
-      background:var(--accent);
+      background:var(--accent-gradient);
       color:#ffffff !important;
       font-weight:700;
       box-shadow:0 4px 16px rgba(59,130,246,0.3);
@@ -223,7 +229,7 @@
     
     nav.main-nav a.active{
       background:rgba(251,191,36,0.1);
-      color:var(--accent-gold-solid);
+      color:var(--accent-gold);
     }
 
     /* ——  ENHANCED GLOBAL LAYOUT  —— */
@@ -238,7 +244,7 @@
       font-family:var(--font-heading);
       font-weight:700;
       font-size:clamp(2.5rem, 4vw, 3.5rem);
-      color:var(--text-main);
+      color:var(--heading-color);
       text-align:center;
       position:relative;
       margin-bottom:3rem;
@@ -253,9 +259,8 @@
       width:80px;
       height:4px;
       margin:1rem auto 0;
-      background:var(--accent);
+      background:var(--accent-gradient);
       border-radius:2px;
-      position:relative;
     }
     
     h2::before{
@@ -291,7 +296,7 @@
       position:absolute;
       top:0;left:0;right:0;
       height:4px;
-      background:var(--accent);
+      background:var(--accent-gradient);
     }
     
     .philosophy-banner:hover{
@@ -300,22 +305,39 @@
     }
     
     .philosophy-banner p{
-      margin-bottom:1.5rem;
+      margin-bottom:2rem;
       opacity:0;
       transform:translateY(20px);
-      animation:fadeInUp 0.6s ease forwards;
+      animation:fadeInUp 0.8s ease forwards;
     }
     
     .philosophy-banner p:nth-child(1){animation-delay:0.1s;}
-    .philosophy-banner p:nth-child(2){animation-delay:0.2s;}
-    .philosophy-banner p:nth-child(3){animation-delay:0.3s;}
-    .philosophy-banner p:nth-child(4){animation-delay:0.4s;}
-    .philosophy-banner p:nth-child(5){animation-delay:0.5s;}
+    .philosophy-banner p:nth-child(2){animation-delay:0.3s;}
+    .philosophy-banner p:nth-child(3){animation-delay:0.5s;}
+    .philosophy-banner p:nth-child(4){animation-delay:0.7s;}
+    .philosophy-banner p:nth-child(5){animation-delay:0.9s;}
+
+    .philosophy-banner strong{
+      color:var(--accent);
+      font-weight:700;
+      position:relative;
+    }
+
+    .philosophy-banner strong::after{
+      content:'';
+      position:absolute;
+      bottom:-2px;
+      left:0;
+      width:100%;
+      height:2px;
+      background:var(--accent-gold-gradient);
+      opacity:0.7;
+    }
 
     .philosophy-points{
       display:grid;
       grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
-      gap:1.5rem;
+      gap:2rem;
       margin:3rem 0;
     }
     
@@ -323,19 +345,20 @@
       background:var(--card-bg);
       border-radius:var(--border-radius);
       box-shadow:var(--card-shadow);
-      padding:1.5rem;
+      padding:2rem;
       text-align:center;
       transition:var(--transition-bounce);
       position:relative;
       overflow:hidden;
       border:1px solid rgba(59,130,246,0.1);
+      cursor:default;
     }
     
     .philosophy-point::before{
       content:'';
       position:absolute;
       top:0;left:0;right:0;bottom:0;
-      background:var(--accent);
+      background:var(--accent-gradient);
       opacity:0;
       transition:var(--transition-smooth);
       z-index:-1;
@@ -352,15 +375,20 @@
     }
     
     .philosophy-point i{
-      font-size:2rem;
+      font-size:2.5rem;
       margin-bottom:1rem;
-      color:var(--accent-solid);
+      color:var(--accent);
       transition:var(--transition-smooth);
     }
     
     .philosophy-point:hover i{
       color:#ffffff;
-      transform:scale(1.2);
+      transform:scale(1.2) rotateY(360deg);
+    }
+
+    .philosophy-point div{
+      font-weight:600;
+      font-size:1.1rem;
     }
 
     /* ——  ENHANCED COURSE CARDS WITH ADVANCED INTERACTIONS  —— */
@@ -387,7 +415,7 @@
       position:absolute;
       top:0;left:0;
       width:100%;height:4px;
-      background:var(--accent);
+      background:var(--accent-gradient);
       transform:scaleX(0);
       transition:transform 0.3s ease;
     }
@@ -409,7 +437,7 @@
       font-family:var(--font-heading);
       font-weight:700;
       font-size:1.4rem;
-      color:var(--accent-solid);
+      color:var(--accent);
       margin-bottom:1rem;
       position:relative;
     }
@@ -427,7 +455,7 @@
     }
     
     .card-desc a{
-      color:var(--accent-solid);
+      color:var(--accent);
       text-decoration:none;
       font-weight:600;
       transition:var(--transition-smooth);
@@ -439,7 +467,7 @@
       position:absolute;
       bottom:-2px;left:0;
       width:0;height:2px;
-      background:var(--accent);
+      background:var(--accent-gradient);
       transition:width 0.3s ease;
     }
     
@@ -450,7 +478,7 @@
     .details-toggle{
       background:none;
       border:none;
-      color:var(--accent-solid);
+      color:var(--accent);
       font-weight:600;
       font-size:1rem;
       cursor:pointer;
@@ -475,7 +503,7 @@
     
     .details-toggle:hover{
       color:#ffffff;
-      background:var(--accent-solid);
+      background:var(--accent);
       transform:scale(1.05);
     }
     
@@ -509,11 +537,11 @@
     }
     
     .card-details li::marker{
-      color:var(--accent-solid);
+      color:var(--accent);
     }
     
     .card-details b{
-      color:var(--accent-solid);
+      color:var(--accent);
       font-weight:700;
       display:block;
       margin-bottom:0.5rem;
@@ -574,7 +602,7 @@
     
     .feedback-list li::before{
       content:'"';
-      color:var(--accent-gold-solid);
+      color:var(--accent-gold);
       font-size:4rem;
       position:absolute;
       left:1rem;
@@ -586,7 +614,7 @@
     
     .feedback-list li::after{
       content:'"';
-      color:var(--accent-gold-solid);
+      color:var(--accent-gold);
       font-size:4rem;
       position:absolute;
       right:1rem;
@@ -609,7 +637,7 @@
     }
     
     footer a{
-      color:var(--accent-solid);
+      color:var(--accent);
       text-decoration:none;
       font-weight:600;
       position:relative;
@@ -620,7 +648,7 @@
       position:absolute;
       bottom:-2px;left:0;
       width:0;height:2px;
-      background:var(--accent);
+      background:var(--accent-gradient);
       transition:width 0.3s ease;
     }
     
@@ -670,11 +698,6 @@
     @keyframes pulse{
       0%, 100%{opacity:1;}
       50%{opacity:0.7;}
-    }
-    
-    @keyframes shimmer{
-      0%{background-position:-200% center;}
-      100%{background-position:200% center;}
     }
 
     /* ——  ENHANCED RESPONSIVE DESIGN  —— */
@@ -746,7 +769,7 @@
 
     /* Focus indicators */
     *:focus{
-      outline:2px solid var(--accent-solid);
+      outline:2px solid var(--accent);
       outline-offset:2px;
     }
   </style>
@@ -1152,6 +1175,17 @@
   }
 
   window.addEventListener('scroll', requestTick);
+
+  // Initialize animations on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    revealOnScroll();
+    
+    // Add staggered animation to philosophy points
+    const points = document.querySelectorAll('.philosophy-point');
+    points.forEach((point, index) => {
+      point.style.animationDelay = `${index * 0.2}s`;
+    });
+  });
 </script>
 
 </body>
