@@ -7,7 +7,7 @@
 
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin2?family=Poppins:wght@300;400;500;600;700;800;900&amp;family=Spectral:ital,wght@0,400;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin2?family=Poppins:wght@300;400;500;600;700;800;900&family=Spectral:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet"/>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous" defer></script>
 
   <style>
@@ -683,25 +683,15 @@
       header{padding:1.5rem 1rem;}
       .course-card-grid{grid-template-columns:1fr;}
       .philosophy-points{grid-template-columns:1fr;}
-
-      /* Updated navigation styles for mobile */
       nav.main-nav ul{
-        flex-direction: column;
-        gap: 0.5rem;
-        padding: 0.5rem 0;
-        max-width: 100vw;
-        box-sizing: border-box;
-        width: 100%;
+        flex-direction:column;
+        gap:0.5rem;
+        padding:1rem;
       }
       nav.main-nav a{
-        padding: 1rem;
-        text-align: center;
-        display: block;
-        width: 100%;
-        box-sizing: border-box;
-        word-break: break-word;
+        padding:1rem;
+        text-align:center;
       }
-
       .feedback-list li{
         font-size:1.1rem;
         padding:1.5rem;
@@ -719,12 +709,6 @@
       }
       .card-slim{padding:1.5rem;}
       .philosophy-banner{padding:1.5rem;}
-
-      /* Additional mobile nav link adjustments */
-      nav.main-nav a {
-        font-size: 1rem;
-        padding: 0.75rem;
-      }
     }
 
     /* ——  SCROLL REVEAL CLASSES  —— */
@@ -819,7 +803,245 @@
     </div>
   </section>
 
-  <!-- ... (Rest of your content remains unchanged) ... -->
+  <!-- ENHANCED COURSES SECTION -->
+  <section id="courses-taught" class="scroll-reveal">
+    <h2>Courses Taught</h2>
+    <div class="course-card-grid">
+
+      <!-- Enhanced Course Card 1 -->
+      <div class="card-teaching card-slim scroll-reveal">
+        <div class="card-header">
+          Introduction to US Labor History (ILRGL&nbsp;1100)
+          <button 
+            class="details-toggle" 
+            aria-expanded="false" 
+            aria-controls="details-labor-history" 
+            onclick="toggleDetails(this)"
+          >
+            Details <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+        <div class="card-tags">
+          <i class="fas fa-university"></i> Cornell University · Fall 2024<br>
+          <i class="fas fa-user-graduate"></i> Teaching Assistant to Prof. Paul Ortiz · Fridays 10:10 am & 11:15 am
+        </div>
+        <div class="card-desc">
+          Explores working-class cultures, labor struggles, and the quest for dignity in US history. Emphasized peer-reviewed debate, collaborative timelines, and creative assignments.<br>
+          <a href="2024-Fall-Labor-History-Syllabus.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Syllabus (PDF)</a>
+        </div>
+
+        <div class="card-details" id="details-labor-history" aria-expanded="false">
+          <b><i class="fas fa-lightbulb"></i> Section Innovations:</b>
+          <ul>
+            <li>Peer-review & feedback workshops on synthesis essays</li>
+            <li>Collaborative history timeline creation with interactive elements</li>
+            <li>Structured debates on race, gender, and solidarity in labor movements</li>
+            <li>Oral-history activities and student-centered analysis</li>
+            <li>Contemporary thought pieces linking historical events to current news</li>
+          </ul>
+
+          <b><i class="fas fa-calendar-week"></i> Sample Weekly Highlights:</b>
+          <ul>
+            <li><strong>Rediker's Slave Ship:</strong> Critical discussion on labor, capital, and resistance</li>
+            <li><strong>Lowell Factory Girls / Black Folk:</strong> Group activities exploring gender, class, and organizing</li>
+            <li><strong>Homestead Strike Simulation:</strong> Structured debates and peer review sessions</li>
+            <li><strong>Creative Assignments:</strong> Timeline presentations and thematic reflections</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Enhanced Course Card 2 -->
+      <div class="card-teaching card-slim scroll-reveal">
+        <div class="card-header">
+          Samuel Proctor Oral History Program Internship
+          <button
+            class="details-toggle"
+            aria-expanded="false"
+            aria-controls="details-spohp-internship"
+            onclick="toggleDetails(this)"
+          >
+            Details <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+        <div class="card-tags">
+          <i class="fas fa-university"></i> University of Florida · Fall 2020<br>
+          <i class="fas fa-chalkboard-teacher"></i> Teaching Assistant (acted as Instructor of Record) · Mondays 11:45 am–1:40 pm
+        </div>
+        <div class="card-desc">
+          Community-based oral-history class in partnership with St. Patrick Catholic Church. Led all sessions, guided student archival research, and digitized rare local records. Students produced original histories of North-Central Florida's Catholic, working-class, and activist communities.<br>
+          <a href="Fall-2020-Internship-Syllabus-Draft-2-4.docx" target="_blank"><i class="fas fa-file-word"></i> Syllabus (Word)</a>
+        </div>
+
+        <div class="card-details" id="details-spohp-internship" aria-expanded="false">
+          <b><i class="fas fa-handshake"></i> Community Partnership & Leadership:</b>
+          <ul>
+            <li>Direct collaboration with St. Patrick Catholic Church; students accessed, scanned, and interpreted archival records dating back decades</li>
+            <li>Solely designed lectures, mentored each student, and supervised all research projects</li>
+            <li>Hands-on oral-history training: interview protocol, digital production, archival preservation</li>
+            <li>Explored discrimination, civil-rights activism, and the Sisters of St. Joseph's educational mission</li>
+          </ul>
+
+          <b><i class="fas fa-star"></i> Weekly Highlights:</b>
+          <ul>
+            <li><strong>Catholicism & Educational Activism:</strong> Lecture on Sisters of St. Joseph's fight against segregation</li>
+            <li><strong>Father Conoley & the Ku Klux Klan:</strong> Case study of 1924 anti-Catholic violence in Gainesville</li>
+            <li><strong>Fieldwork:</strong> Scanning church documents & designing oral-history protocols</li>
+            <li><strong>Student Projects:</strong> Parish labor history, women's religious leadership, and social justice</li>
+          </ul>
+
+          <b><i class="fas fa-trophy"></i> Transformative Outcomes:</b>
+          <ul>
+            <li>Public presentation of projects to parish & community members</li>
+            <li>Exceptional student feedback for real-world impact and engagement</li>
+            <li>Permanent digital archive created for future researchers and scholars</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Enhanced Course Card 3 -->
+      <div class="card-teaching card-slim scroll-reveal">
+        <div class="card-header">
+          Machen Florida Opportunity Scholars Oral History Project
+          <button
+            class="details-toggle"
+            aria-expanded="false"
+            aria-controls="details-machen-project"
+            onclick="toggleDetails(this)"
+          >
+            Details <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+        <div class="card-tags">
+          <i class="fas fa-university"></i> University of Florida · Spring 2021<br>
+          <i class="fas fa-award"></i> Teaching Assistant (Instructor of Record) · SPOHP Internship
+        </div>
+        <div class="card-desc">
+          Flagship oral-history internship documenting the Machen Florida Opportunity Scholars (first-generation, low-income students). Students hosted national equity experts, conducted 40+ interviews, and collaborated with filmmakers—culminating in a gubernatorial visit by Jeb Bush.<br>
+          <a href="spring-2021-internship-syllabus-v6.0.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Syllabus v6.0</a> ·
+          <a href="https://youtube.com/playlist?list=PLzMFflzfI0ETOUAMp8AtPFNlaCYlc1kt4" target="_blank"><i class="fab fa-youtube"></i> Interview Playlist</a>
+        </div>
+
+        <div class="card-details" id="details-machen-project" aria-expanded="false">
+          <b><i class="fas fa-microphone"></i> Distinguished Speakers & Fieldwork:</b>
+          <ul>
+            <li>McNair Scholars, national equity leaders, & UF administrators addressed the class</li>
+            <li>Governor Jeb Bush visited to review student oral-history presentations</li>
+            <li>Students assisted professional filmmakers documenting first-gen success stories</li>
+          </ul>
+
+          <b><i class="fas fa-video"></i> Comprehensive Interview Collection:</b>
+          <ul>
+            <li>Alumni success narratives highlighting career trajectories & program impact</li>
+            <li>Interviews with Machen founders, staff, and program directors (institutional memory)</li>
+            <li>Current scholars' perspectives on first-generation challenges & support systems</li>
+            <li>All interviews archived and published via YouTube playlist for public access</li>
+          </ul>
+
+          <b><i class="fas fa-cogs"></i> Methodological & Professional Training:</b>
+          <ul>
+            <li>Intensive workshops on interview design, active listening, and transcription</li>
+            <li>Hands-on practice with audio gear, transcription software, and archiving standards</li>
+            <li>Collaboration with documentary crew—camera, lighting, and editing basics</li>
+            <li>Presentation coaching for public showcases to UF leadership & state officials</li>
+          </ul>
+
+          <b><i class="fas fa-balance-scale"></i> Equity & Social-Justice Lens:</b>
+          <ul>
+            <li>Analyzed systemic barriers facing first-generation students</li>
+            <li>Positioned Machen Program as model for expanding educational access statewide</li>
+            <li>Connected oral histories to broader research on socioeconomic mobility</li>
+          </ul>
+
+          <b><i class="fas fa-impact"></i> Lasting Impact:</b>
+          <ul>
+            <li>Digital archive used for program evaluation & future scholarship funding</li>
+            <li>Student work cited in UF equity reports & documentary film</li>
+            <li>Participants gained portfolio pieces for grad-school & career advancement</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Enhanced Course Card 4 -->
+      <div class="card-teaching card-slim scroll-reveal">
+        <div class="card-header">
+          African American and Latinx Histories (ILRGL 3805)
+          <button
+            class="details-toggle"
+            aria-expanded="false"
+            aria-controls="details-afrlatx-3805"
+            onclick="toggleDetails(this)"
+          >
+            Details <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+        <div class="card-tags">
+          <i class="fas fa-university"></i> Cornell University · Spring 2025<br>
+          <i class="fas fa-users"></i> Graduate Teaching Assistant to Prof. Paul Ortiz · 120+ students
+        </div>
+        <div class="card-desc">
+          Large survey seminar tracing African American and Latinx histories, labor, culture, and social change from the Revolution to today. Led lectures and workshops on synthesis writing, grading, and feedback; guided reading analysis; managed course technology; and mentored students through one-on-one and group support. Consistently received top student ratings for helping students, stimulating deeper thinking, and making the course welcoming.<br>
+          <a href="2025-AF-Am-Latinx-Histories-seminar-Final-syllabus.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Syllabus (PDF)</a>
+        </div>
+        
+        <div class="card-details" id="details-afrlatx-3805" aria-expanded="false">
+          <b><i class="fas fa-graduation-cap"></i> Teaching, Writing, & Student Support:</b>
+          <ul>
+            <li>Designed and led lecture on equitable grading and how to write historical synthesis essays</li>
+            <li>Held regular and after-hours TA office hours (in-person and online), ensuring every student had access to help</li>
+            <li>Managed equipment and technology, coordinated digital resources for a 120+ student course</li>
+            <li>Led feedback workshops on essay structure, argument building, and evidence integration</li>
+            <li>Provided detailed, actionable comments on drafts and assignments; fostered inclusive environment where students reported feeling "safe," "encouraged," and "truly cared for"</li>
+          </ul>
+
+          <b><i class="fas fa-comments"></i> Discussion & Reading Guidance:</b>
+          <ul>
+            <li>Ran recurring class and small-group discussions breaking down complex readings, thematic questions, and primary sources</li>
+            <li>Guided analysis of lecture content and readings during reviews and pre-assessment Q&A</li>
+            <li>Supported group oral presentations; modeled historical argumentation and evidence-based debate</li>
+            <li>Helped students connect readings (across Black and Latinx literature/history) to contemporary issues</li>
+          </ul>
+
+          <b><i class="fas fa-book"></i> Core Required Readings:</b>
+          <ul>
+            <li><strong>Piri Thomas,</strong> <em>Down These Mean Streets</em></li>
+            <li><strong>Juan Gonzalez,</strong> <em>Harvest of Empire: A History of Latinos in America</em></li>
+            <li><strong>Paul Ortiz,</strong> <em>An African American and Latinx History of the United States</em></li>
+            <li><strong>Blair Kelley,</strong> <em>Black Folk: The Roots of the Black Working Class</em></li>
+            <li><strong>August Wilson,</strong> <em>The Piano Lesson</em></li>
+            <li><strong>Martín Espada,</strong> <em>Zapata's Disciple</em></li>
+            <li><strong>Johanna Fernández,</strong> <em>The Young Lords: A Radical History</em></li>
+          </ul>
+
+          <b><i class="fas fa-star"></i> Student Feedback Highlights:</b>
+          <ul>
+            <li><em>"Super kind, goes out of his way to help students, and very knowledgeable. Makes the classroom feel like a safe space."</em></li>
+            <li><em>"Great in the one-to-one setting... clear with instructions."</em></li>
+            <li><em>"He ensures students have a strong grasp on course material and is always willing to help anyone out."</em></li>
+            <li><em>Praised for making time after office hours and for "stimulating deeper thinking about the subject."</em></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ENHANCED STUDENT FEEDBACK SECTION -->
+  <section id="student-feedback" class="scroll-reveal">
+    <h2>What Students Say</h2>
+    <ul class="feedback-list">
+      <li>Adolfho was incredibly approachable and made it easy to ask questions—even beyond class material. He connected class content to real-world labor struggles in a way that made history feel urgent.</li>
+      <li>He pushed us to engage with difficult topics like race, class, and labor injustice. I left each section with something to think about.</li>
+      <li>Adolfho was one of the best TAs I've had. His feedback on our essays was detailed and helped me grow as a writer.</li>
+      <li>He encouraged participation by creating a safe space where every opinion mattered. It never felt like busywork—it felt like building understanding together.</li>
+      <li>Very responsive, clear expectations, and genuinely cares about student learning. One of the most thoughtful TAs I've had.</li>
+      <li>He helped connect us to the professor and made sure our concerns were heard. He was super accessible and always respectful.</li>
+      <li>Adolfho is extremely professional but creates a warm and welcoming environment with his students and tries to build personal relationships.</li>
+      <li>He is very knowledgeable and very open to helping everyone.</li>
+      <li>Great in giving detailed feedback and actually writing new perspectives about the content in feedback.</li>
+      <li>Makes time for students, creates inclusive and meaningful conversations, and allows students to ask questions.</li>
+      <li>He is very kind.</li>
+    </ul>
+  </section>
 
 </main>
 
