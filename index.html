@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet"/>
 
   <style>
+    /* FIXED: Light mode as default, dark mode only when chosen */
     :root {
       --background-top:  #f7f8fa;
       --background-bottom: #e4e8ef;
@@ -20,7 +21,12 @@
       --text-main:       #232d41;
       --heading-color:   #212c3e;
       --max-width:       1100px;
+      --contact-bg:      #ffffff;
+      --contact-border:  #e2e8f0;
+      --contact-shadow:  rgba(0, 0, 0, 0.1);
     }
+    
+    /* Dark mode only when explicitly chosen or system preference */
     .dark {
       --background-top: #121212;
       --background-bottom: #1e1e1e;
@@ -30,19 +36,11 @@
       --accent-gold: #fbbf24;
       --text-main: #d1d5db;
       --heading-color: #f9fafb;
+      --contact-bg: #1f2937;
+      --contact-border: #374151;
+      --contact-shadow: rgba(0, 0, 0, 0.3);
     }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --background-top: #121212;
-        --background-bottom: #1e1e1e;
-        --nav-bg: #111827;
-        --nav-text: #e5e7eb;
-        --accent: #3b82f6;
-        --accent-gold: #fbbf24;
-        --text-main: #d1d5db;
-        --heading-color: #f9fafb;
-      }
-    }
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
@@ -299,6 +297,112 @@
       object-fit: cover;
       box-shadow: 0 7px 32px rgba(41,83,155,0.13);
     }
+
+    /* MODERN CONTACT SECTION - 2025 DESIGN */
+    .contact-section {
+      margin-top: 2.5rem;
+      background: var(--contact-bg);
+      border: 1px solid var(--contact-border);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 10px 25px var(--contact-shadow);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    .contact-section:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 40px var(--contact-shadow);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      padding: 1.2rem;
+      background: rgba(41, 83, 155, 0.05);
+      border-radius: 12px;
+      border: 1px solid rgba(41, 83, 155, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-gold));
+      transform: scaleY(0);
+      transition: transform 0.3s ease;
+    }
+    .contact-item:hover::before {
+      transform: scaleY(1);
+    }
+    .contact-item:hover {
+      transform: translateX(8px);
+      background: rgba(41, 83, 155, 0.08);
+      border-color: var(--accent);
+    }
+    .contact-icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 1rem;
+      flex-shrink: 0;
+    }
+    .contact-info {
+      flex: 1;
+    }
+    .contact-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.25rem;
+    }
+    .contact-link {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-main);
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .contact-link:hover {
+      color: var(--accent-gold);
+      transform: translateX(4px);
+    }
+    
+    /* ORCID Official Styling */
+    .orcid-icon {
+      background: #a6ce39;
+      border-radius: 50%;
+      padding: 2px;
+    }
+    .orcid-link {
+      font-family: 'Courier New', monospace;
+      font-weight: 600;
+    }
+    
+    /* LinkedIn Styling */
+    .linkedin-icon {
+      background: #0077B5;
+      border-radius: 4px;
+      padding: 2px;
+    }
+    
+    /* Email Styling */
+    .email-icon {
+      color: var(--accent);
+    }
+
     .ethical {
       max-width: 650px;
       margin: 36px auto 0;
@@ -329,6 +433,8 @@
       .about-image img { width: 260px; }
       .about-container { flex-direction: column; text-align: center; }
       .site-title { font-size: 2.5rem; }
+      .contact-section { padding: 1.5rem; }
+      .contact-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -356,7 +462,7 @@
     <h1>Adolfho Romero</h1>
     <h2>PhD Student • Cornell ILR</h2>
     <blockquote class="hero-quote">
-      “I am grateful to work alongside community organizations, mentors, and workers in the ongoing struggle for dignity and justice.”
+      "I am grateful to work alongside community organizations, mentors, and workers in the ongoing struggle for dignity and justice."
     </blockquote>
   </section>
 
@@ -365,11 +471,58 @@
     <div class="about-container">
       <article class="about-text">
         <p>I am a Ph.D. student in the School of Industrial and Labor Relations at Cornell University, where I study how worker centers and non-profit organizations empower marginalized communities—particularly immigrant, low-wage, and undocumented workers—across New York and Florida. My research draws from oral history, ethnography, and the Power Resource Approach to understand how these organizations cultivate leadership, build coalitions, and generate collective power in the absence of formal union protections. I focus on the strategies used by grassroots groups to create spaces of dignity and democratic participation within structurally unequal labor systems. This work builds on years of experience in fieldwork, archival research, and policy collaboration with organizations like the Farmworkers Association of Florida and the Samuel Proctor Oral History Program.</p>
-        <p>My commitment to this work has been shaped through years of oral history fieldwork alongside communities across the United States, particularly in the Deep South. From documenting Black resistance in the Mississippi Delta to collaborating with Indigenous leaders through the Doris Duke Oral History Project, I’ve seen how storytelling and memory preserve dignity and challenge systems of oppression. These experiences continue to guide my approach to labor scholarship—one that is grounded in collective memory, accountable to the communities I study, and committed to amplifying the voices of those historically excluded from power.</p>
-        <section id="contact" aria-label="Contact">
-          <p><strong>Email:</strong> <a href="mailto:ar2539@cornell.edu">ar2539@cornell.edu</a></p>
-          <p><strong>ORCID:</strong> <a href="https://orcid.org/0009-0000-2505-0192" target="_blank">0009-0000-2505-0192</a></p>
-        </section>
+        <p>My commitment to this work has been shaped through years of oral history fieldwork alongside communities across the United States, particularly in the Deep South. From documenting Black resistance in the Mississippi Delta to collaborating with Indigenous leaders through the Doris Duke Oral History Project, I've seen how storytelling and memory preserve dignity and challenge systems of oppression. These experiences continue to guide my approach to labor scholarship—one that is grounded in collective memory, accountable to the communities I study, and committed to amplifying the voices of those historically excluded from power.</p>
+        
+        <!-- NEW MODERN CONTACT SECTION -->
+        <div class="contact-section">
+          <div class="contact-grid">
+            <div class="contact-item">
+              <svg class="contact-icon email-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V19A2 2 0 0 0 5 21H11V19H5V3H13V9H21ZM14 21V15H16L13 12L10 15H12V21H14Z"/>
+              </svg>
+              <div class="contact-info">
+                <div class="contact-label">Academic Email</div>
+                <a href="mailto:ar2539@cornell.edu" class="contact-link">
+                  ar2539@cornell.edu
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <svg class="contact-icon orcid-icon" width="24" height="24" viewBox="0 0 24 24" fill="white">
+                <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c2.272 0 3.376-1.197 3.376-3.722 0-2.016-1.284-3.722-3.376-3.722h-2.297z"/>
+              </svg>
+              <div class="contact-info">
+                <div class="contact-label">ORCID iD</div>
+                <a href="https://orcid.org/0009-0000-2505-0192" target="_blank" class="contact-link orcid-link">
+                  0009-0000-2505-0192
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <svg class="contact-icon linkedin-icon" width="24" height="24" viewBox="0 0 24 24" fill="white">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+              <div class="contact-info">
+                <div class="contact-label">LinkedIn</div>
+                <a href="https://www.linkedin.com/in/adolfho/" target="_blank" class="contact-link">
+                  /in/adolfho
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
       </article>
       <aside class="about-image">
         <img src="me.jpeg" alt="Adolfho Romero field portrait"/>
@@ -385,7 +538,7 @@
   </footer>
 
   <script>
-    // Dark mode toggle and initialization
+    // FIXED: Light mode default, dark mode only when chosen
     const darkToggle = document.querySelector('.dark-toggle');
     function setAriaPressed() {
       darkToggle.setAttribute('aria-pressed', document.documentElement.classList.contains('dark'));
@@ -395,9 +548,10 @@
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
       setAriaPressed();
     }
-    // Apply initial theme preference:
+    
+    // Apply theme: Check saved preference first, then system preference
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    if (savedTheme === 'dark' || (savedTheme === null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.classList.add('dark');
     }
     setAriaPressed();
@@ -431,6 +585,16 @@
       } else {
         nav.classList.remove('hide-nav');
       }
+    });
+
+    // Contact item interaction effects
+    document.querySelectorAll('.contact-item').forEach(item => {
+      item.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateX(8px) scale(1.02)';
+      });
+      item.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateX(0) scale(1)';
+      });
     });
   </script>
 </body>
