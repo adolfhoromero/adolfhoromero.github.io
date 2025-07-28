@@ -92,7 +92,8 @@
     .dark-toggle svg {
       width: 2.1rem; height: 2.1rem; display: block;
     }
-    .dark-toggle .icon-sun-moon, .dark .dark-toggle .icon-sun-moon {
+    .dark-toggle .icon-sun-moon,
+    .dark .dark-toggle .icon-sun-moon {
       fill: var(--accent-gold); stroke: var(--accent);
     }
 
@@ -106,7 +107,6 @@
       font-family: 'Spectral', serif;
       transition: background 0.4s, color 0.4s, top 0.38s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    /* Hide nav when scrolled down - visible on mobile only */
     .hide-nav { top: -65px; }
     @media (min-width: 821px) { .hide-nav { top: 0 !important; } }
 
@@ -124,13 +124,13 @@
     }
     nav.main-nav a {
       position: relative;
-      font-size: 1rem;
-      min-width: 88px;
-      padding: 10px 14px;
+      font-size: 1.15rem;
+      min-width: 110px;
+      padding: 14px 22px;
       flex-shrink: 0;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: .1em;
+      letter-spacing: .12em;
       color: var(--nav-text);
       text-shadow: 0 1px 2px rgba(0,0,0,0.4);
       background: none;
@@ -160,7 +160,7 @@
       background: linear-gradient(90deg, var(--accent), var(--accent-gold));
       color: #fff !important;
       border-radius: 4px;
-      padding: 10px 22px;
+      padding: 14px 22px;
       font-weight: 700;
       box-shadow: 0 2px 8px rgba(41,83,155,0.09);
       margin-right: 8px;
@@ -172,12 +172,14 @@
       color: var(--nav-text) !important;
     }
 
-    /* Responsive: shrink padding/font */
     @media (max-width: 600px) {
-      nav.main-nav a { font-size: 0.97rem; padding: 8px 10px; }
+      nav.main-nav a {
+        font-size: 1.05rem;
+        padding: 12px 16px;
+        min-width: 88px;
+      }
     }
 
-    /* HERO SECTION - Overlay, Parallax, Spacing */
     .hero {
       position: relative;
       height: auto;
@@ -255,7 +257,6 @@
       box-shadow: 0 1.5px 8px rgba(41,130,246,0.10);
     }
 
-    /* ABOUT SECTION */
     .section {
       max-width: var(--max-width);
       margin: 2.3rem auto 4rem;
