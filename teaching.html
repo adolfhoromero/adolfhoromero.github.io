@@ -216,6 +216,57 @@
       color:var(--accent-gold-solid);
     }
 
+    /* ——  TEACHING IN ACTION PHOTO GALLERY —— */
+    .photo-gallery {
+      /* Use a flexible layout so images maintain equal height and modern spacing */
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.6rem;
+      margin: 3rem 0;
+    }
+    .photo-gallery figure {
+      position: relative;
+      /* Allow items to grow and shrink but keep a minimum width */
+      flex: 1 1 300px;
+      max-width: 340px;
+      height: 240px;
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition-smooth);
+    }
+    .photo-gallery figure:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--card-shadow-hover);
+    }
+    .photo-gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .photo-gallery figcaption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0.6rem 1rem;
+      background: rgba(0, 0, 0, 0.55);
+      color: #fff;
+      font-size: 0.95rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .photo-gallery figure:hover figcaption {
+      opacity: 1;
+    }
+
+    /* Add spacing above the photo gallery to prevent the sticky nav from overlapping */
+    #teaching-photos {
+      margin-top: 4rem;
+    }
+
     /* ——  ENHANCED GLOBAL LAYOUT  —— */
     main{
       max-width:var(--max-width);
@@ -1074,6 +1125,25 @@
     </div>
   </div>
 </section>
+
+  <!-- TEACHING IN ACTION PHOTO GALLERY -->
+  <section id="teaching-photos" class="scroll-reveal">
+    <h2>Teaching in Action</h2>
+    <div class="photo-gallery">
+      <figure>
+        <img src="class.jpeg" alt="Adolfho Romero presenting at a conference">
+        <figcaption>Presenting on worker centers and working‑class empowerment</figcaption>
+      </figure>
+      <figure>
+        <img src="class2.jpeg" alt="Adolfho Romero teaching via video conference">
+        <figcaption>Virtual classroom discussion</figcaption>
+      </figure>
+      <figure>
+        <img src="class3.jpeg" alt="Adolfho Romero facilitating a hands‑on workshop with participants">
+        <figcaption>Hands‑on workshop training session</figcaption>
+      </figure>
+    </div>
+  </section>
 
   <!-- ENHANCED STUDENT FEEDBACK SECTION -->
   <section id="student-feedback" class="scroll-reveal">
