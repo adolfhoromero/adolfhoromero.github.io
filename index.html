@@ -1,36 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Adolfho Romero</title>
-
   <!-- Fonts: Poppins + Spectral -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,600;1,400;1,600&display=swap"
-    rel="stylesheet"
-  />
-
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet"/>
   <style>
-    /* === COLOR VARIABLES: LIGHT MODE DEFAULT === */
     :root {
-      --background-top: #f7f8fa;
+      --background-top:  #f7f8fa;
       --background-bottom: #e4e8ef;
-      --nav-bg: #22304a;
-      --nav-text: #ffffff;
-      --accent: #29539b;
-      --accent-gold: #ffcc00;
-      --text-main: #232d41;
-      --heading-color: #212c3e;
-      --max-width: 1100px;
-      --contact-bg: #ffffff;
-      --contact-border: #e2e8f0;
-      --contact-shadow: rgba(0, 0, 0, 0.1);
+      --nav-bg:          #22304a;
+      --nav-text:        #ffffff;
+      --accent:          #29539b;
+      --accent-gold:     #ffcc00;
+      --text-main:       #232d41;
+      --heading-color:   #212c3e;
+      --max-width:       1100px;
+      --contact-bg:      #ffffff;
+      --contact-border:  #e2e8f0;
+      --contact-shadow:  rgba(0, 0, 0, 0.1);
     }
-
-    /* === DARK MODE VARIABLES === */
     .dark {
       --background-top: #121212;
       --background-bottom: #1e1e1e;
@@ -44,16 +36,8 @@
       --contact-border: #374151;
       --contact-shadow: rgba(0, 0, 0, 0.3);
     }
-
-    /* GLOBAL STYLES */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, var(--background-top), var(--background-bottom));
@@ -62,25 +46,18 @@
       transition: background 0.4s, color 0.4s;
       min-height: 100vh;
     }
-
     a {
       color: var(--accent);
       text-decoration: none;
-      transition: color 0.2s, background 0.25s, box-shadow 0.25s;
+      transition: color .2s, background .25s, box-shadow .25s;
     }
-    a:hover, a:focus {
-      color: var(--accent-gold);
-      outline: none;
-    }
-
-    /* HEADER */
-
+    a:hover, a:focus { color: var(--accent-gold); outline: none; }
     header {
       background: var(--nav-bg);
       color: var(--nav-text);
       text-align: center;
       padding: 1.5rem 1rem 0.8rem;
-      box-shadow: 0 4px 22px rgba(34, 48, 74, 0.47);
+      box-shadow: 0 4px 22px rgba(34,48,74,0.47);
       position: relative;
       transition: background 0.4s, color 0.4s;
       user-select: none;
@@ -94,10 +71,8 @@
     }
     .dark-toggle {
       position: absolute;
-      top: 1rem;
-      right: 1rem;
-      width: 2.3rem;
-      height: 2.3rem;
+      top: 1rem; right: 1rem;
+      width: 2.3rem; height: 2.3rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -109,18 +84,12 @@
       transition: filter 0.3s;
     }
     .dark-toggle svg {
-      width: 2.1rem;
-      height: 2.1rem;
-      display: block;
+      width: 2.1rem; height: 2.1rem; display: block;
     }
     .dark-toggle .icon-sun-moon,
     .dark .dark-toggle .icon-sun-moon {
-      fill: var(--accent-gold);
-      stroke: var(--accent);
+      fill: var(--accent-gold); stroke: var(--accent);
     }
-
-    /* NAVIGATION */
-
     nav.main-nav {
       position: sticky;
       top: 0;
@@ -131,14 +100,8 @@
       font-family: 'Spectral', serif;
       transition: background 0.4s, color 0.4s, top 0.38s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .hide-nav {
-      top: -65px;
-    }
-    @media (min-width: 821px) {
-      .hide-nav {
-        top: 0 !important;
-      }
-    }
+    .hide-nav { top: -65px; }
+    @media (min-width: 821px) { .hide-nav { top: 0 !important; } }
     nav.main-nav ul {
       display: flex;
       justify-content: flex-start;
@@ -159,9 +122,9 @@
       flex-shrink: 0;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: .12em;
       color: var(--nav-text);
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.4);
       background: none;
       border: none;
       outline: none;
@@ -171,26 +134,19 @@
     nav.main-nav a::after {
       content: '';
       position: absolute;
-      left: 18px;
-      right: 18px;
-      bottom: 6px;
-      height: 3.5px;
-      border-radius: 2px;
+      left: 18px; right: 18px; bottom: 6px;
+      height: 3.5px; border-radius: 2px;
       background: linear-gradient(90deg, var(--accent), var(--accent-gold));
-      width: 0;
-      opacity: 0;
-      transition: width 0.26s, opacity 0.22s;
+      width: 0; opacity: 0;
+      transition: width .26s, opacity .22s;
     }
-    nav.main-nav a:hover,
-    nav.main-nav a:focus {
+    nav.main-nav a:hover, nav.main-nav a:focus {
       color: var(--accent-gold);
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255,255,255,0.04);
       box-shadow: 0 0 6px 1.5px var(--accent-gold, #ffcc00);
     }
-    nav.main-nav a:hover::after,
-    nav.main-nav a:focus::after {
-      width: calc(100% - 36px);
-      opacity: 0.82;
+    nav.main-nav a:hover::after, nav.main-nav a:focus::after {
+      width: calc(100% - 36px); opacity: .82;
     }
     nav.main-nav a.cv-link {
       background: linear-gradient(90deg, var(--accent), var(--accent-gold));
@@ -198,14 +154,13 @@
       border-radius: 4px;
       padding: 14px 22px;
       font-weight: 700;
-      box-shadow: 0 2px 8px rgba(41, 83, 155, 0.09);
+      box-shadow: 0 2px 8px rgba(41,83,155,0.09);
       margin-right: 8px;
-      transition: filter 0.2s, box-shadow 0.2s, color 0.2s, background 0.2s;
+      transition: filter .2s, box-shadow .2s, color .2s, background .2s;
     }
-    nav.main-nav a.cv-link:hover,
-    nav.main-nav a.cv-link:focus {
+    nav.main-nav a.cv-link:hover, nav.main-nav a.cv-link:focus {
       filter: brightness(1.07) saturate(1.12);
-      box-shadow: 0 8px 22px rgba(41, 83, 155, 0.19);
+      box-shadow: 0 8px 22px rgba(41,83,155,0.19);
       color: var(--nav-text) !important;
     }
     @media (max-width: 600px) {
@@ -216,40 +171,39 @@
       }
     }
 
-    /* HERO SECTION */
+    /* HERO */
     .hero {
       position: relative;
       height: auto;
       padding: 20px 10px 20px;
       text-align: center;
-      background: linear-gradient(
-          120deg,
-          rgba(47, 58, 85, 0.28),
-          rgba(41, 83, 155, 0.23)
-        ),
-        url('cornellcampus.jpg') center 44%/cover no-repeat;
+      background: linear-gradient(120deg, rgba(47,58,85,0.28), rgba(41,83,155,0.23)), url('cornellcampus.jpg') center 44%/cover no-repeat;
       border-bottom: 5px solid var(--accent);
-      box-shadow: 0 2px 40px rgba(35, 64, 101, 0.09);
+      box-shadow: 0 2px 40px rgba(35,64,101,0.09);
       overflow: visible;
       transition: background 0.4s, color 0.4s;
       background-attachment: fixed;
       filter: brightness(1.07) contrast(1.12);
       user-select: none;
     }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(120deg,rgba(255,255,255,0.56),rgba(205,225,255,0.20));
+      z-index: 0;
+      pointer-events: none;
+    }
     .dark .hero {
-      background: linear-gradient(
-          120deg,
-          rgba(17, 24, 39, 0.75),
-          rgba(40, 51, 74, 0.7)
-        ),
-        url('cornellcampus.jpg') center 44%/cover no-repeat;
+      background: linear-gradient(120deg, rgba(17,24,39,0.75), rgba(40,51,74,0.7)), url('cornellcampus.jpg') center 44%/cover no-repeat;
       background-attachment: fixed;
       filter: brightness(1) contrast(1.05);
     }
+    .dark .hero::before {
+      background: linear-gradient(120deg,rgba(18,20,28,0.55),rgba(33,35,45,0.16));
+    }
     @media (max-width: 820px) {
-      .hero {
-        background-attachment: scroll !important;
-      }
+      .hero { background-attachment: scroll !important; }
     }
     .hero-photo {
       width: 200px;
@@ -257,30 +211,35 @@
       border-radius: 50%;
       object-fit: cover;
       background: #f5f8fc;
-      box-shadow: 0 0 0 4px #fff, 0 17px 44px rgba(34, 48, 74, 0.07);
+      box-shadow: 0 0 0 4px #fff, 0 17px 44px rgba(34,48,74,0.07);
       margin-bottom: 0.5rem;
-      transition: transform 0.4s ease;
+      transition: transform .4s ease;
       z-index: 1;
       position: relative;
       margin-top: 2rem;
     }
-    .hero-photo:hover {
-      transform: scale(1.05);
-    }
+    .hero-photo:hover { transform: scale(1.05); }
+    .hero > * { position: relative; z-index: 1;}
     .hero h1 {
-      margin-top: 0.3rem;
+      color: #181c22 !important; /* Very deep navy for maximum contrast */
       font-family: 'Spectral', serif;
       font-size: 2.5rem;
-      color: var(--heading-color);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin-top: 0.35rem;
+      text-shadow:
+        0 2px 10px rgba(255,255,255,0.43),
+        0 1px 1.5px #dee7ee;
       z-index: 1;
       position: relative;
       transition: color 0.4s;
     }
     .dark .hero h1 {
-      color: var(--heading-color);
+      color: #fffdfa !important;
+      text-shadow:
+        0 2px 16px rgba(41,51,86,0.38),
+        0 1.5px 7px #131820;
     }
-
-    /* == Improved subtitle for readability == */
     .hero-subtitle {
       font-family: 'Poppins', sans-serif;
       color: #22304a;
@@ -289,13 +248,12 @@
       letter-spacing: 0.08em;
       margin-bottom: 0.5rem;
       margin-top: 0.2rem;
-      text-shadow: 0 1px 3px rgba(240, 240, 240, 0.12);
+      text-shadow: 0 1px 3px rgba(240,240,240,0.12);
     }
     .dark .hero-subtitle {
       color: #fbbf24;
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.38);
+      text-shadow: 0 1px 4px rgba(0,0,0,0.38);
     }
-
     .hero-quote {
       margin-top: 1.5rem;
       max-width: 410px;
@@ -303,24 +261,23 @@
       background: #fffdec;
       border-left: 4px solid var(--accent-gold);
       border-radius: 6px;
-      box-shadow: 0 1.5px 8px rgba(245, 233, 221, 0.09);
+      box-shadow: 0 1.5px 8px rgba(245,233,221,0.09);
       color: #495168;
       padding: 11px 21px;
       display: inline-block;
       z-index: 1;
       position: relative;
-      transition: background 0.4s, color 0.4s;
+      transition: background .4s, color .4s;
       user-select: text;
     }
     .dark .hero-quote {
       background: #233158;
       color: #fbbf24;
       border-left: 4px solid var(--accent-gold);
-      box-shadow: 0 1.5px 8px rgba(41, 130, 246, 0.1);
+      box-shadow: 0 1.5px 8px rgba(41,130,246,0.10);
     }
 
-    /* SECTIONS */
-
+    /* LAYOUT & ABOUT */
     .section {
       max-width: var(--max-width);
       margin: 2.3rem auto 4rem;
@@ -332,7 +289,7 @@
       font-size: 2.18rem;
       text-align: center;
       margin-bottom: 1.75rem;
-      transition: color 0.4s;
+      transition: color .4s;
     }
     .about-container {
       display: flex;
@@ -348,9 +305,7 @@
       font-size: 1.16rem;
       line-height: 1.73;
     }
-    .about-text p {
-      margin-bottom: 1.45rem;
-    }
+    .about-text p { margin-bottom: 1.45rem; }
     .about-image {
       flex: 1;
       min-width: 220px;
@@ -363,11 +318,10 @@
       height: auto;
       border-radius: 12px;
       object-fit: cover;
-      box-shadow: 0 7px 32px rgba(41, 83, 155, 0.13);
+      box-shadow: 0 7px 32px rgba(41,83,155,0.13);
     }
 
-    /* MODERN CONTACT SECTION */
-
+    /* CONTACT SECTION */
     .contact-section {
       margin-top: 2.5rem;
       background: var(--contact-bg);
@@ -391,18 +345,17 @@
       display: flex;
       align-items: center;
       padding: 1.1rem 1rem;
-      background: rgba(41, 83, 155, 0.03);
+      background: rgba(41,83,155,.03);
       border-radius: 12px;
-      border: 1px solid rgba(41, 83, 155, 0.09);
+      border: 1px solid rgba(41,83,155,.09);
       transition: border-color 0.3s, background 0.3s, transform 0.2s;
       position: relative;
       overflow: hidden;
       cursor: pointer;
       user-select: none;
     }
-    .contact-item:hover,
-    .contact-item:focus {
-      background: rgba(41, 83, 155, 0.08);
+    .contact-item:hover, .contact-item:focus {
+      background: rgba(41,83,155,.08);
       border-color: var(--accent);
       transform: translateX(8px) scale(1.025);
       outline: none;
@@ -429,40 +382,27 @@
       flex: 1;
     }
     .contact-label {
-      font-size: 0.85rem;
+      font-size: .85rem;
       font-weight: 600;
-      color: var(--accent);
+      color: var(--accent, #29539b);
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: .05em;
       margin-bottom: 2px;
     }
     .contact-link {
       font-size: 1rem;
       font-weight: 500;
-      color: var(--text-main);
-      transition: color 0.2s, transform 0.18s;
+      color: var(--text-main, #232d41);
+      transition: color .2s, transform .18s;
       display: flex;
       align-items: center;
       gap: 0.5em;
     }
-    .contact-link:hover,
-    .contact-link:focus {
-      color: var(--accent-gold);
-      transform: translateX(4px);
-      outline: none;
-    }
-    .orcid-link {
-      font-family: 'Courier New', monospace;
-      font-weight: 600;
-    }
-
+    .contact-link:hover { color: var(--accent-gold, #ffcc00); transform: translateX(4px);}
+    .orcid-link { font-family: 'Courier New', monospace; font-weight: 600; }
     @media (max-width: 700px) {
-      .contact-section {
-        padding: 1.3rem;
-      }
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
+      .contact-section { padding: 1.3rem; }
+      .contact-grid { grid-template-columns: 1fr; }
     }
 
     /* ETHICAL COMMITMENT */
@@ -471,7 +411,7 @@
       margin: 36px auto 0;
       padding: 1rem;
       background: #f8f8ea;
-      border-left: 4px solid rgba(188, 159, 91, 0.18);
+      border-left: 4px solid rgba(188,159,91,0.18);
       border-radius: 7px;
       color: #775f29;
       transition: background 0.4s, color 0.4s;
@@ -482,65 +422,37 @@
       color: #fbbf24;
       border-left: 4px solid #fbbf24;
     }
-
-    /* FOOTER */
     footer {
       text-align: center;
       background: var(--nav-bg);
       color: #adadad;
       padding: 23px 1rem;
-      font-size: 0.98rem;
-      border-top: 1px solid rgba(45, 57, 85, 0.2);
+      font-size: .98rem;
+      border-top: 1px solid rgba(45,57,85,0.2);
       margin-top: 4.8rem;
       transition: background 0.4s, color 0.4s;
       user-select: none;
     }
-
     @media (max-width: 820px) {
-      .hero-photo {
-        width: 150px;
-        height: 150px;
-        margin-top: 1.3rem;
-      }
-      .about-image img {
-        width: 260px;
-      }
-      .about-container {
-        flex-direction: column;
-        text-align: center;
-      }
-      .site-title {
-        font-size: 2.5rem;
-      }
-      .contact-section {
-        padding: 1.5rem;
-      }
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
+      .hero-photo { width: 150px; height: 150px; margin-top: 1.3rem; }
+      .about-image img { width: 260px; }
+      .about-container { flex-direction: column; text-align: center; }
+      .site-title { font-size: 2.5rem; }
+      .contact-section { padding: 1.5rem; }
+      .contact-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   <header>
-    <button
-      class="dark-toggle"
-      role="button"
-      tabindex="0"
-      aria-pressed="false"
-      aria-label="Toggle dark mode"
-      title="Toggle dark mode"
-    >
-      <svg class="icon-sun-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <circle cx="12" cy="12" r="5.5" stroke-width="2" />
-        <path
-          d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M17.36 17.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M17.36 6.64l1.42-1.42"
-        />
+    <button class="dark-toggle" role="button" tabindex="0" aria-pressed="false" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <svg class="icon-sun-moon" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="5.5" stroke-width="2"/>
+        <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M17.36 17.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M17.36 6.64l1.42-1.42"/>
       </svg>
     </button>
     <h1 class="site-title">Adolfho Romero</h1>
   </header>
-
   <nav class="main-nav" aria-label="Primary">
     <ul>
       <li><a href="adolfhoromerocv.pdf" target="_blank" class="cv-link">CV</a></li>
@@ -548,171 +460,102 @@
       <li><a href="teaching.html" class="teaching-link">Teaching</a></li>
     </ul>
   </nav>
-
   <section class="hero" aria-label="Hero">
-    <img src="adolfhoromero.jpeg" alt="Adolfho Romero portrait" class="hero-photo" />
+    <img src="adolfhoromero.jpeg" alt="Adolfho Romero portrait" class="hero-photo"/>
     <h1>Adolfho Romero</h1>
     <h2 class="hero-subtitle">PhD Student &bull; Cornell ILR</h2>
     <blockquote class="hero-quote">
-      “I am grateful to work alongside community organizations, mentors, and workers in the ongoing struggle
-      for dignity and justice.”
+      “I am grateful to work alongside community organizations, mentors, and workers in the ongoing struggle for dignity and justice.”
     </blockquote>
   </section>
-
   <section class="section" id="about" aria-labelledby="about-title">
     <h2 id="about-title">About My Journey</h2>
     <div class="about-container">
       <article class="about-text">
-        <p>
-          I am a Ph.D. student in the School of Industrial and Labor Relations at Cornell University, where I study how
-          worker centers and non-profit organizations empower marginalized communities—particularly immigrant, low-wage,
-          and undocumented workers—across New York and Florida. My research draws from oral history, ethnography, and the
-          Power Resource Approach to understand how these organizations cultivate leadership, build coalitions, and generate
-          collective power in the absence of formal union protections. I focus on the strategies used by grassroots groups to
-          create spaces of dignity and democratic participation within structurally unequal labor systems. This work builds on
-          years of experience in fieldwork, archival research, and policy collaboration with organizations like the Farmworkers
-          Association of Florida and the Samuel Proctor Oral History Program.
-        </p>
-        <p>
-          My commitment to this work has been shaped through years of oral history fieldwork alongside communities across the
-          United States, particularly in the Deep South. From documenting Black resistance in the Mississippi Delta to
-          collaborating with Indigenous leaders through the Doris Duke Oral History Project, I’ve seen how storytelling and
-          memory preserve dignity and challenge systems of oppression. These experiences continue to guide my approach to
-          labor scholarship—one that is grounded in collective memory, accountable to the communities I study, and committed to
-          amplifying the voices of those historically excluded from power.
-        </p>
-
-        <!-- MODERN CONTACT SECTION -->
+        <p>I am a Ph.D. student in the School of Industrial and Labor Relations at Cornell University, where I study how worker centers and non-profit organizations empower marginalized communities—particularly immigrant, low-wage, and undocumented workers—across New York and Florida. My research draws from oral history, ethnography, and the Power Resource Approach to understand how these organizations cultivate leadership, build coalitions, and generate collective power in the absence of formal union protections. I focus on the strategies used by grassroots groups to create spaces of dignity and democratic participation within structurally unequal labor systems. This work builds on years of experience in fieldwork, archival research, and policy collaboration with organizations like the Farmworkers Association of Florida and the Samuel Proctor Oral History Program.</p>
+        <p>My commitment to this work has been shaped through years of oral history fieldwork alongside communities across the United States, particularly in the Deep South. From documenting Black resistance in the Mississippi Delta to collaborating with Indigenous leaders through the Doris Duke Oral History Project, I’ve seen how storytelling and memory preserve dignity and challenge systems of oppression. These experiences continue to guide my approach to labor scholarship—one that is grounded in collective memory, accountable to the communities I study, and committed to amplifying the voices of those historically excluded from power.</p>
         <div class="contact-section" aria-label="Contact Information">
           <div class="contact-grid">
-            <!-- Email -->
             <div class="contact-item" tabindex="0">
-              <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
-                <path d="M4 4h16v16H4V4zm8 7L4 6h16l-8 5zm0 2l8 5H4l8-5z" />
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M4 4h16v16H4V4zm8 7L4 6h16l-8 5zm0 2l8 5H4l8-5z"/>
               </svg>
               <div class="contact-info">
                 <div class="contact-label">Academic Email</div>
                 <a href="mailto:ar2539@cornell.edu" class="contact-link">ar2539@cornell.edu</a>
               </div>
             </div>
-
-            <!-- ORCID -->
             <div class="contact-item" tabindex="0">
-              <svg class="contact-icon orcid-icon" width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden="true" focusable="false">
-                <circle cx="12" cy="12" r="12" fill="#a6ce39" />
-                <text
-                  x="50%"
-                  y="58%"
-                  text-anchor="middle"
-                  fill="#fff"
-                  font-size="13"
-                  font-family="Arial"
-                  dy=".3em"
-                  >iD</text
-                >
+              <svg class="contact-icon orcid-icon" width="28" height="28" viewBox="0 0 24 24" fill="white">
+                <circle cx="12" cy="12" r="12" fill="#a6ce39"/>
+                <text x="50%" y="58%" text-anchor="middle" fill="#fff" font-size="13" font-family="Arial" dy=".3em">iD</text>
               </svg>
               <div class="contact-info">
                 <div class="contact-label">ORCID iD</div>
-                <a
-                  href="https://orcid.org/0009-0000-2505-0192"
-                  target="_blank"
-                  rel="noopener"
-                  class="contact-link orcid-link"
-                  >0009-0000-2505-0192</a
-                >
+                <a href="https://orcid.org/0009-0000-2505-0192" target="_blank" rel="noopener" class="contact-link orcid-link">
+                  0009-0000-2505-0192
+                </a>
               </div>
             </div>
-
-            <!-- LinkedIn -->
             <div class="contact-item" tabindex="0">
-              <svg
-                class="contact-icon linkedin-icon"
-                width="28"
-                height="28"
-                viewBox="0 0 24 24"
-                fill="white"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <rect width="24" height="24" rx="4" fill="#0077B5" />
-                <path
-                  d="M19 19h-3.4v-5.07c0-1.21-.43-2.04-1.52-2.04-0.83 0-1.32.56-1.54 1.1-.08.19-.1.45-.1.72V19H9.08s.05-9.19 0-10.15h3.41v1.44c.45-.69 1.25-1.67 3.04-1.67C18.47 8.62 19 10 19 12.23V19zM6.34 7.43c-1.09 0-1.81-.73-1.81-1.64 0-.93.74-1.64 1.85-1.64S8.13 5 8.13 5.79c0 .91-.72 1.64-1.79 1.64zm-1.7 11.57h3.39V9.26H4.64V19z"
-                  fill="#fff"
-                />
+              <svg class="contact-icon linkedin-icon" width="28" height="28" viewBox="0 0 24 24" fill="white">
+                <rect width="24" height="24" rx="4" fill="#0077B5"/>
+                <path d="M19 19h-3.4v-5.07c0-1.21-.43-2.04-1.52-2.04-0.83 0-1.32.56-1.54 1.1-.08.19-.1.45-.1.72V19H9.08s.05-9.19 0-10.15h3.41v1.44c.45-.69 1.25-1.67 3.04-1.67C18.47 8.62 19 10 19 12.23V19zM6.34 7.43c-1.09 0-1.81-.73-1.81-1.64 0-.93.74-1.64 1.85-1.64S8.13 5 8.13 5.79c0 .91-.72 1.64-1.79 1.64zm-1.7 11.57h3.39V9.26H4.64V19z" fill="#fff"/>
               </svg>
               <div class="contact-info">
                 <div class="contact-label">LinkedIn</div>
-                <a
-                  href="https://www.linkedin.com/in/adolfho/"
-                  target="_blank"
-                  rel="noopener"
-                  class="contact-link"
-                  >/in/adolfho</a
-                >
+                <a href="https://www.linkedin.com/in/adolfho/" target="_blank" rel="noopener" class="contact-link">
+                  /in/adolfho
+                </a>
               </div>
             </div>
           </div>
         </div>
       </article>
-
       <aside class="about-image">
-        <img src="me.jpeg" alt="Adolfho Romero field portrait" />
+        <img src="me.jpeg" alt="Adolfho Romero field portrait"/>
       </aside>
     </div>
-
     <div class="ethical">
-      <strong>Ethical Commitment:</strong> My work follows IRB-approved protocols, oral consent, and shared agency—grounded
-      in respect and participant dignity.
+      <strong>Ethical Commitment:</strong> My work follows IRB-approved protocols, oral consent, and shared agency—grounded in respect and participant dignity.
     </div>
   </section>
-
   <footer>
-    &copy; 2025 Adolfho Romero &middot; <a href="mailto:adolfhoromero@gmail.com">adolfhoromero@gmail.com</a>
+    &copy; 2025 Adolfho Romero · <a href="mailto:adolfhoromero@gmail.com">adolfhoromero@gmail.com</a>
   </footer>
-
   <script>
     // DARK MODE TOGGLE LOGIC - Light mode default, dark only if user saved or prefers dark system theme
     const darkToggle = document.querySelector('.dark-toggle');
-
     function setAriaPressed() {
       darkToggle.setAttribute('aria-pressed', document.documentElement.classList.contains('dark'));
     }
-
     function toggleDarkMode() {
       const isDark = document.documentElement.classList.toggle('dark');
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
       setAriaPressed();
     }
-
-    // Apply saved theme or system preference
     const savedTheme = localStorage.getItem('theme');
-    if (
-      savedTheme === 'dark' ||
-      (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)
-    ) {
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.classList.add('dark');
     }
     setAriaPressed();
-
     darkToggle.addEventListener('click', toggleDarkMode);
-    darkToggle.addEventListener('keydown', (e) => {
+    darkToggle.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         toggleDarkMode();
       }
     });
-
-    // Parallax hero background effect
-    window.addEventListener('scroll', () => {
+    // Parallax hero background
+    window.addEventListener('scroll', function() {
       const hero = document.querySelector('.hero');
-      const scrolled = window.scrollY;
+      let scrolled = window.scrollY;
       hero.style.backgroundPosition = `center ${44 + scrolled * 0.055}%`;
     });
-
-    // Hide nav bar on scroll down show on scroll up (mobile only)
+    // Hide nav bar on scroll down, show on scroll up (mobile only)
     let lastScrollTop = 0;
     const nav = document.querySelector('.main-nav');
-    window.addEventListener('scroll', () => {
+    window.addEventListener('scroll', function() {
       if (window.innerWidth <= 820) {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         if (scrollTop > lastScrollTop && scrollTop > 60) {
