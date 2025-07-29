@@ -85,10 +85,11 @@
 
     .site-title{
       font-family: var(--font-heading);
-      /* Match the home page header size (≈2.95rem). Use clamp for responsiveness while
-         capping the maximum at 2.95rem so the heading looks consistent across
-         pages and devices. */
-      font-size: clamp(2.5rem, 5vw, 2.95rem);
+      /* Match the home page header size exactly. The home page uses a fixed
+         2.95rem font size for its site title【918556394036919†L60-L65】. Using a fixed value
+         here ensures the teaching page header aligns perfectly with the index
+         page on all devices. */
+      font-size: 2.95rem;
       font-weight: 700;
       margin: .5rem 0;
       color: var(--nav-text);
@@ -261,6 +262,49 @@
     }
     .photo-gallery figure:hover figcaption {
       opacity: 1;
+    }
+
+    /* ——  COURSE TEXTS GALLERY —— */
+    /* Horizontal scrollable gallery showcasing required course books. Each
+       book item is given a fixed width so that visitors can scan the covers
+       easily. Use scroll-snap to provide a smooth experience on touch devices. */
+    .book-gallery {
+      display: flex;
+      overflow-x: auto;
+      gap: 1.5rem;
+      margin: 2.5rem 0;
+      padding-bottom: 1rem;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    .book-item {
+      flex: 0 0 220px;
+      scroll-snap-align: start;
+      border-radius: var(--border-radius);
+      background: var(--card-bg);
+      box-shadow: var(--card-shadow);
+      overflow: hidden;
+      transition: var(--transition-smooth);
+    }
+    .book-item:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--card-shadow-hover);
+    }
+    .book-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .book-item .caption {
+      padding: 0.8rem;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      color: var(--text-secondary);
+    }
+    .book-item .caption strong {
+      color: var(--text-main);
+      display: block;
+      margin-bottom: 0.3rem;
     }
 
     /* Add spacing above the photo gallery to prevent the sticky nav from overlapping */
@@ -993,14 +1037,15 @@
   <div class="year-section">
     <div class="year-heading">2025</div>
     <div class="course-card-grid">
-      <div class="card-teaching card-slim scroll-reveal">
+      <div class="card-teaching card-slim scroll-reveal expanded">
         <div class="card-header">
           <span>African American and Latinx Histories (ILRGL 3805)</span>
           <!-- Button to expand or collapse the entire course card -->
-          <button class="card-toggle" aria-expanded="false" onclick="toggleCard(this)">Open <i class="fas fa-chevron-down"></i></button>
+          <!-- Set cards to open by default. The button reflects the open state and uses an up chevron icon. -->
+          <button class="card-toggle" aria-expanded="true" onclick="toggleCard(this)">Close <i class="fas fa-chevron-up"></i></button>
         </div>
         <!-- Collapsible body containing summary, syllabus link and detailed sections -->
-        <div class="card-body" aria-expanded="false">
+        <div class="card-body" aria-expanded="true">
           <div class="card-tags">
             <i class="fas fa-university"></i> Cornell University · Spring 2025<br/>
             <i class="fas fa-users"></i> Graduate Teaching Assistant to Prof. Paul Ortiz · 120+ students
@@ -1054,12 +1099,13 @@
   <div class="year-section">
     <div class="year-heading">2024</div>
     <div class="course-card-grid">
-      <div class="card-teaching card-slim scroll-reveal">
+      <div class="card-teaching card-slim scroll-reveal expanded">
         <div class="card-header">
           <span>Introduction to US Labor History (ILRGL 1100)</span>
-          <button class="card-toggle" aria-expanded="false" onclick="toggleCard(this)">Open <i class="fas fa-chevron-down"></i></button>
+          <!-- Default state is expanded; update the button text and state. -->
+          <button class="card-toggle" aria-expanded="true" onclick="toggleCard(this)">Close <i class="fas fa-chevron-up"></i></button>
         </div>
-        <div class="card-body" aria-expanded="false">
+        <div class="card-body" aria-expanded="true">
           <div class="card-tags">
             <i class="fas fa-university"></i> Cornell University · Fall 2024<br/>
             <i class="fas fa-user-graduate"></i> Teaching Assistant to Prof. Paul Ortiz · Fridays 10:10 am &amp; 11:15 am
@@ -1095,12 +1141,12 @@
   <div class="year-section">
     <div class="year-heading">2021</div>
     <div class="course-card-grid">
-      <div class="card-teaching card-slim scroll-reveal">
+      <div class="card-teaching card-slim scroll-reveal expanded">
         <div class="card-header">
           <span>Machen Florida Opportunity Scholars Oral History Project</span>
-          <button class="card-toggle" aria-expanded="false" onclick="toggleCard(this)">Open <i class="fas fa-chevron-down"></i></button>
+          <button class="card-toggle" aria-expanded="true" onclick="toggleCard(this)">Close <i class="fas fa-chevron-up"></i></button>
         </div>
-        <div class="card-body" aria-expanded="false">
+        <div class="card-body" aria-expanded="true">
           <div class="card-tags">
             <i class="fas fa-university"></i> University of Florida · Spring 2021<br/>
             <i class="fas fa-award"></i> Teaching Assistant (Instructor of Record) · SPOHP Internship
@@ -1154,12 +1200,12 @@
   <div class="year-section">
     <div class="year-heading">2020</div>
     <div class="course-card-grid">
-      <div class="card-teaching card-slim scroll-reveal">
+      <div class="card-teaching card-slim scroll-reveal expanded">
         <div class="card-header">
           <span>Samuel Proctor Oral History Program Internship</span>
-          <button class="card-toggle" aria-expanded="false" onclick="toggleCard(this)">Open <i class="fas fa-chevron-down"></i></button>
+          <button class="card-toggle" aria-expanded="true" onclick="toggleCard(this)">Close <i class="fas fa-chevron-up"></i></button>
         </div>
-        <div class="card-body" aria-expanded="false">
+        <div class="card-body" aria-expanded="true">
           <div class="card-tags">
             <i class="fas fa-university"></i> University of Florida · Fall 2020<br/>
             <i class="fas fa-chalkboard-teacher"></i> Teaching Assistant (acted as Instructor of Record) · Mondays 11:45 am–1:40 pm
@@ -1198,6 +1244,90 @@
     </div>
   </div>
 </section>
+
+  <!-- COURSE TEXTS AND REVIEWS -->
+  <section id="course-texts" class="scroll-reveal">
+    <h2>Course Texts &amp; Perspectives</h2>
+    <p>Below are some of the books that anchor my courses. Each text opens a window onto
+    the lived experiences of workers, activists, and artists. Scroll through the gallery
+    to explore the covers and learn more about what we read.</p>
+    <div class="book-gallery">
+      <!-- Down These Mean Streets -->
+      <figure class="book-item">
+        <img src="book_covers/down_these_mean_streets.jpg" alt="Cover of Down These Mean Streets by Piri Thomas">
+        <figcaption class="caption"><strong>Down These Mean Streets</strong><br/>
+          Piri Thomas’s memoir follows his life in Spanish Harlem. It chronicles
+          poverty, street gangs, racism, addiction and his struggle to define his
+          identity as a dark‑complexioned Puerto Rican【958419120452643†L142-L155】.
+        </figcaption>
+      </figure>
+      <!-- Harvest of Empire -->
+      <figure class="book-item">
+        <img src="book_covers/harvest_of_empire.jpg" alt="Cover of Harvest of Empire: A History of Latinos in America by Juan Gonzalez">
+        <figcaption class="caption"><strong>Harvest of Empire</strong><br/>
+          Juan Gonzalez presents a non‑fiction account of how U.S. policies
+          throughout the Americas led to mass Latinx migration; his updated
+          narrative explains the role the United States played in shaping these
+          movements【246428949601107†L58-L65】.
+        </figcaption>
+      </figure>
+      <!-- An African American and Latinx History of the United States -->
+      <figure class="book-item">
+        <img src="book_covers/african_american_latinx_history.jpg" alt="Cover of An African American and Latinx History of the United States by Paul Ortiz">
+        <figcaption class="caption"><strong>An African American and Latinx History of the United States</strong><br/>
+          Paul Ortiz’s intersectional history centers Black, Latinx and Indigenous voices,
+          linking civil‑rights struggles, labor organizing and imperialism from the
+          18th century through the Day Without Immigrants【505807744668406†L95-L115】.
+        </figcaption>
+      </figure>
+      <!-- Black Folk -->
+      <figure class="book-item">
+        <img src="book_covers/black_folk.jpg" alt="Cover of Black Folk: The Roots of the Black Working Class by Blair L. M. Kelley">
+        <figcaption class="caption"><strong>Black Folk</strong><br/>
+          Blair L. M. Kelley uses personal narratives to show how Black laborers built
+          networks of community and resistance amid racism and segregation in the
+          late 19th and early 20th centuries【260653356403488†L75-L78】.
+        </figcaption>
+      </figure>
+      <!-- The Piano Lesson -->
+      <figure class="book-item">
+        <img src="book_covers/the_piano_lesson.jpg" alt="Cover of The Piano Lesson by August Wilson">
+        <figcaption class="caption"><strong>The Piano Lesson</strong><br/>
+          August Wilson’s Pulitzer Prize–winning play is set in 1936 Pittsburgh. It
+          follows the Charles family and an heirloom piano carved by an enslaved
+          ancestor; siblings Boy Willie and Berniece debate selling it, exploring
+          heritage and the legacy of slavery【251255682064757†L173-L181】.
+        </figcaption>
+      </figure>
+      <!-- Zapata's Disciple -->
+      <figure class="book-item">
+        <img src="book_covers/zapatas_disciple.jpg" alt="Cover of Zapata's Disciple by Martín Espada">
+        <figcaption class="caption"><strong>Zapata’s Disciple</strong><br/>
+          Poet Martín Espada interweaves essays and poems to challenge social
+          injustice. He chronicles censorship battles, critiques corporate
+          exploitation and defends the dignity of Spanish‑speaking communities【481304068199055†L128-L143】.
+        </figcaption>
+      </figure>
+      <!-- The Young Lords: A Radical History -->
+      <figure class="book-item">
+        <img src="book_covers/young_lords_radical_history.png" alt="Cover of The Young Lords: A Radical History by Johanna Fernández">
+        <figcaption class="caption"><strong>The Young Lords: A Radical History</strong><br/>
+          Johanna Fernández provides a definitive account of the Young Lords. She
+          shows how Puerto Rican youth redefined protest by occupying hospitals,
+          blocking traffic and linking local problems to global struggles【405574761370657†L73-L127】.
+        </figcaption>
+      </figure>
+      <!-- The Slave Ship: A Human History -->
+      <figure class="book-item">
+        <img src="book_covers/the_slave_ship_painting.jpg" alt="Painting The Slave Ship by J. M. W. Turner, used to illustrate The Slave Ship: A Human History">
+        <figcaption class="caption"><strong>The Slave Ship: A Human History</strong><br/>
+          Marcus Rediker explores the horrific conditions aboard slave ships between
+          1700 and 1807, drawing on primary records to connect the transatlantic
+          slave trade, capitalist exploitation and acts of resistance【293669125992887†L46-L80】.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
 
   <!-- The Teaching in Action photo gallery is now located above the courses section for improved flow -->
 
