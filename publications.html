@@ -40,21 +40,12 @@
       --accent: #3b82f6;
       --accent-gold: #fbbf24;
     }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --background-top: #121212;
-        --background-bottom: #1e1e1e;
-        --nav-bg: #111827;
-        --nav-text: #e5e7eb;
-        --card-bg: #1c2232;
-        --card-shadow: 0 4px 36px #1e263522;
-        --card-border: #3b82f6;
-        --text-main: #e3e5eb;
-        --heading-color: #f9fafb;
-        --accent: #3b82f6;
-        --accent-gold: #fbbf24;
-      }
-    }
+    /*
+     * The `prefers-color-scheme` media query was removed to ensure that the
+     * default theme is always light. Dark theme is now applied exclusively
+     * via the `.dark` class toggled by the user. This avoids overriding the
+     * light palette when visitors have a system dark mode preference.
+     */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
