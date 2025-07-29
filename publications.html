@@ -507,8 +507,11 @@
       setAriaPressed();
     }
     // Apply initial theme preference:
+    // Default to the light theme unless the user previously selected dark.
+    // We deliberately ignore the user's system preference (prefers‑color‑scheme)
+    // to ensure the page always loads in light mode until toggled.
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    if (savedTheme === 'dark') {
       document.documentElement.classList.add('dark');
     }
     setAriaPressed();
