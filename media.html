@@ -8,52 +8,273 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="styles.css"/>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #f7f8fa, #e4e8ef);
+      color: #232d41;
+      line-height: 1.6;
+    }
+    .dark {
+      background: linear-gradient(135deg, #121212, #1e1e1e);
+      color: #d1d5db;
+    }
+
+    /* NAVBAR */
+    nav.main-nav {
+      background: #22304a;
+      box-shadow: inset 0 -1px 0 #3a496f;
+      font-family: 'Spectral', serif;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    nav.main-nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav.main-nav a {
+      color: #ffffff;
+      padding: 14px 22px;
+      text-decoration: none;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      transition: color 0.3s;
+    }
+    nav.main-nav a:hover {
+      color: #ffcc00;
+    }
+    nav.main-nav a.cv-link {
+      background: linear-gradient(90deg, #29539b, #ffcc00);
+      border-radius: 4px;
+      color: #fff !important;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: linear-gradient(120deg, rgba(47,58,85,0.28), rgba(41,83,155,0.23));
+      border-bottom: 5px solid #29539b;
+    }
+    .hero h1 {
+      font-family: 'Spectral', serif;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .hero-subtitle {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: #22304a;
+    }
+    .dark .hero-subtitle { color: #fbbf24; }
+
+    /* MAIN SECTION */
+    .section {
+      max-width: 900px;
+      margin: 2.5rem auto;
+      padding: 0 1rem;
+    }
+    h2 {
+      font-family: 'Spectral', serif;
+      font-size: 2rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* MEDIA ITEMS */
+    .media-list { margin-bottom: 2rem; }
+    .media-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+      border-left: 5px solid transparent;
+    }
+    .media-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    }
+    .media-icon {
+      font-size: 2rem;
+      min-width: 35px;
+    }
+    .media-item p { margin: 0; font-size: 1rem; }
+    .media-item a { color: inherit; text-decoration: underline; }
+    .media-item a:hover { color: #ffcc00; }
+
+    /* BRAND COLORS */
+    .miami-herald { border-left-color: #0074C8; }
+    .gainesville-sun { border-left-color: #FFC107; }
+    .spotify { border-left-color: #1DB954; }
+    .footnote { border-left-color: #6C63FF; }
+    .iguana { border-left-color: #388E3C; }
+
+    .dark .media-item { background: rgba(31, 41, 55, 0.85); color: #e5e7eb; }
+
+    /* FADE-IN ANIMATION */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      background: #22304a;
+      color: #adadad;
+      padding: 1rem;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+  </style>
 </head>
 <body>
   <!-- NAVIGATION -->
-  <nav class="navbar">
+  <nav class="main-nav" aria-label="Primary">
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="research.html">Research</a></li>
+      <li><a href="adolfhoromerocv.pdf" target="_blank" class="cv-link">CV</a></li>
       <li><a href="publications.html">Publications</a></li>
       <li><a href="teaching.html">Teaching</a></li>
       <li><a href="media.html" class="active">Media & Public Engagement</a></li>
     </ul>
   </nav>
 
-  <header class="page-header">
+  <!-- HERO -->
+  <section class="hero">
     <h1>Media & Public Engagement</h1>
-    <p>Selected press coverage, articles, and public-facing scholarship.</p>
-  </header>
+    <p class="hero-subtitle">Press coverage, digital articles, and podcasts</p>
+  </section>
 
-  <main class="content">
-    <section>
-      <h2><i class="fas fa-newspaper"></i> Press Coverage</h2>
-      <ul>
-        <li>Smalls II, C. I. (2023). “<a href="https://www.miamiherald.com/news/local/education/article279659394.html" target="_blank">‘Uncertainty and chaos’: UF faculty discuss DeSantis policies</a>,” <em>Miami Herald</em>.</li>
-        <li><a href="https://www.gainesville.com/story/news/guardian/2023/01/18/uf-panel-talks-about-gainesville-suns-jim-crow-era-coverage/69814656007/" target="_blank">UF panel talks about Gainesville Sun’s Jim Crow-era coverage</a>, <em>The Gainesville Sun</em>, Jan 18, 2023.</li>
-        <li><a href="https://www.gainesville.com/story/news/guardian/2023/03/01/2-trailblazers-tied-to-former-all-black-gainesville-lincoln-high-to-be-honored/69958248007/" target="_blank">Lincoln High trailblazers honored</a>, <em>The Gainesville Sun</em>, Mar 1, 2023.</li>
-        <li><a href="https://www.alligator.org/article/2024/04/uff-uf-holds-virtual-teach-in-to-discuss-academic-freedom-future-of-higher-education" target="_blank">UFF virtual teach-in on academic freedom</a>, <em>The Independent Florida Alligator</em>, Apr 2024.</li>
-        <li><a href="https://www.gainesville.com/story/news/2022/11/28/uf-oral-history-students-report-annual-trip-mississippi-delta/10788979002/" target="_blank">UF oral history students report on Mississippi Delta trip</a>, <em>The Gainesville Sun</em>, Nov 2022.</li>
-      </ul>
-    </section>
+  <!-- MAIN CONTENT -->
+  <main class="section">
+    <!-- PRESS COVERAGE -->
+    <h2><i class="fas fa-newspaper"></i> Press Coverage</h2>
+    <div class="media-list">
+      <div class="media-item fade-in miami-herald">
+        <i class="fas fa-newspaper media-icon"></i>
+        <p><strong>Smalls II, C. I.</strong> (2023). 
+          <a href="https://www.miamiherald.com/news/local/education/article279659394.html" target="_blank">
+            “‘Uncertainty and chaos’: UF faculty discuss DeSantis policies”
+          </a>, <em>Miami Herald</em>.
+        </p>
+      </div>
+      <div class="media-item fade-in gainesville-sun">
+        <i class="fas fa-newspaper media-icon"></i>
+        <p>
+          <a href="https://www.gainesville.com/story/news/guardian/2023/01/18/uf-panel-talks-about-gainesville-suns-jim-crow-era-coverage/69814656007/" target="_blank">
+            UF panel talks about Gainesville Sun’s Jim Crow-era coverage
+          </a>, <em>The Gainesville Sun</em>.
+        </p>
+      </div>
+      <div class="media-item fade-in gainesville-sun">
+        <i class="fas fa-newspaper media-icon"></i>
+        <p>
+          <a href="https://www.gainesville.com/story/news/guardian/2023/03/01/2-trailblazers-tied-to-former-all-black-gainesville-lincoln-high-to-be-honored/69958248007/" target="_blank">
+            Lincoln High trailblazers honored
+          </a>, <em>The Gainesville Sun</em>.
+        </p>
+      </div>
+      <div class="media-item fade-in gainesville-sun">
+        <i class="fas fa-newspaper media-icon"></i>
+        <p>
+          <a href="https://www.gainesville.com/story/news/2022/11/28/uf-oral-history-students-report-annual-trip-mississippi-delta/10788979002/" target="_blank">
+            UF oral history students report on Mississippi Delta trip
+          </a>, <em>The Gainesville Sun</em>.
+        </p>
+      </div>
+      <div class="media-item fade-in">
+        <i class="fas fa-newspaper media-icon"></i>
+        <p>
+          <a href="https://www.alligator.org/article/2024/04/uff-uf-holds-virtual-teach-in-to-discuss-academic-freedom-future-of-higher-education" target="_blank">
+            UFF virtual teach-in on academic freedom
+          </a>, <em>The Independent Florida Alligator</em>.
+        </p>
+      </div>
+    </div>
 
-    <section>
-      <h2><i class="fas fa-laptop"></i> Digital Articles & Op-Eds</h2>
-      <ul>
-        <li>Grey, P. (2025). “<a href="https://the-footnote.org/2025/04/22/an-oral-history-of-a-native-son-the-elaine-massacre-and-its-living-memory/" target="_blank">An Oral History of a Native Son</a>,” <em>The Footnote</em>.</li>
-        <li>Romero, A. (2022). <em>Challenging Racism at University of Florida.</em></li>
-        <li>Romero, A. (2021). <em>History and the People Who Make It: Madelyn Lockhart.</em> <span>The Gainesville Iguana.</span></li>
-        <li>Romero, A. (2021). <em>The Alachua County Tenants Association: Updates.</em> <span>The Gainesville Iguana.</span></li>
-        <li>Romero, A. (2021). <em>Diverse Communities Are Transforming Florida.</em> <span>The Gainesville Sun.</span></li>
-      </ul>
-    </section>
+    <!-- PODCASTS -->
+    <h2><i class="fas fa-podcast"></i> Podcasts</h2>
+    <div class="media-list">
+      <div class="media-item fade-in spotify">
+        <i class="fab fa-spotify media-icon"></i>
+        <p><strong>Challenging Racism at UF</strong> (2022). <em>The SPOHP Podcast.</em> 
+          <a href="https://open.spotify.com/episode/48PxeaSW0SnKVNc6zHhz2u" target="_blank">Listen on Spotify</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- DIGITAL ARTICLES -->
+    <h2><i class="fas fa-laptop"></i> Digital Articles & Op-Eds</h2>
+    <div class="media-list">
+      <div class="media-item fade-in footnote">
+        <i class="fas fa-pen-fancy media-icon"></i>
+        <p>Grey, P. (2025). 
+          <a href="https://the-footnote.org/2025/04/22/an-oral-history-of-a-native-son-the-elaine-massacre-and-its-living-memory/" target="_blank">
+            An Oral History of a Native Son
+          </a>, <em>The Footnote</em>.
+        </p>
+      </div>
+      <div class="media-item fade-in iguana">
+        <i class="fas fa-pen-fancy media-icon"></i>
+        <p>Romero, A. (2021, Aug). 
+          <a href="https://gainesvilleiguana.org/2021/articles/history-and-the-people-who-make-it-madelyn-lockhart/" target="_blank">
+            History and the People Who Make It: Madelyn Lockhart
+          </a>, <em>The Gainesville Iguana</em>.
+        </p>
+      </div>
+      <div class="media-item fade-in iguana">
+        <i class="fas fa-pen-fancy media-icon"></i>
+        <p>Romero, A. (2021, Mar). 
+          <a href="https://gainesvilleiguana.org/2021/articles/the-alachua-county-tenants-association-updates/" target="_blank">
+            The Alachua County Tenants Association: Updates
+          </a>, <em>The Gainesville Iguana</em>.
+        </p>
+      </div>
+      <div class="media-item fade-in gainesville-sun">
+        <i class="fas fa-pen-fancy media-icon"></i>
+        <p>Romero, A. (2021, Feb). 
+          <a href="https://www.gainesville.com/story/opinion/2021/02/19/adolfho-romero-diverse-communities-transforming-florida/6781175002/" target="_blank">
+            Diverse Communities Are Transforming Florida
+          </a>, <em>The Gainesville Sun</em>.
+        </p>
+      </div>
+    </div>
   </main>
 
+  <!-- FOOTER -->
   <footer>
-    <p>© 2025 Adolfho Romero | Built with GitHub Pages</p>
+    © 2025 Adolfho Romero · <a href="mailto:ar2539@cornell.edu">ar2539@cornell.edu</a>
   </footer>
+
+  <!-- FADE-IN SCRIPT -->
+  <script>
+    const fadeIns = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    fadeIns.forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
