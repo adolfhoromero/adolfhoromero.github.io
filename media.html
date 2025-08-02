@@ -4,277 +4,205 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Adolfho Romero – Media & Public Engagement</title>
-  <!-- Fonts and Styles -->
+  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet"/>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      background: linear-gradient(135deg, #f7f8fa, #e4e8ef);
-      color: #232d41;
-      line-height: 1.6;
+    /* --- SAME THEME AS PUBLICATIONS --- */
+    :root {
+      --background-top: #f7f8fa;
+      --background-bottom: #e4e8ef;
+      --nav-bg: #22304a;
+      --nav-text: #fff;
+      --card-bg: #fff;
+      --card-shadow: 0 4px 36px #2e3a5022;
+      --card-border: #29539b;
+      --text-main: #263045;
+      --accent: #29539b;
+      --accent-gold: #ffcc00;
+      --heading-color: #212c3e;
+      --max-width: 1100px;
+      --font-body: 'Poppins', sans-serif;
+      --font-heading: 'Spectral', serif;
     }
     .dark {
-      background: linear-gradient(135deg, #121212, #1e1e1e);
-      color: #d1d5db;
+      --background-top: #121212;
+      --background-bottom: #1e1e1e;
+      --nav-bg: #111827;
+      --nav-text: #e5e7eb;
+      --card-bg: #1c2232;
+      --card-shadow: 0 4px 36px #1e263522;
+      --card-border: #3b82f6;
+      --text-main: #e3e5eb;
+      --heading-color: #f9fafb;
+      --accent: #3b82f6;
+      --accent-gold: #fbbf24;
     }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: linear-gradient(135deg, var(--background-top), var(--background-bottom));
+      color: var(--text-main);
+      line-height: 1.6;
+      min-height: 100vh;
+      transition: background 0.4s, color 0.4s;
+    }
+    a { color: var(--accent); text-decoration: none; transition: color .2s; }
+    a:hover { color: var(--accent-gold); }
 
-    /* NAVBAR */
+    /* HEADER & NAV - EXACT MATCH */
+    header {
+      background: var(--nav-bg);
+      color: var(--nav-text);
+      text-align: center;
+      padding: 1.5rem 1rem 0.8rem;
+      box-shadow: 0 4px 22px rgba(34,48,74,0.47);
+      position: relative;
+    }
+    .site-title { font-family: var(--font-heading); font-size: 2.95rem; font-weight: 700; }
+    .dark-toggle {
+      position: absolute; top: 1rem; right: 1rem;
+      width: 2.3rem; height: 2.3rem;
+      display: flex; align-items: center; justify-content: center;
+      background: none; border: none; cursor: pointer;
+    }
+    .dark-toggle svg { width: 2.1rem; height: 2.1rem; fill: var(--accent-gold); stroke: var(--accent); }
     nav.main-nav {
-      background: #22304a;
-      box-shadow: inset 0 -1px 0 #3a496f;
-      font-family: 'Spectral', serif;
-      position: sticky;
-      top: 0;
-      z-index: 50;
+      position: sticky; top: 0; z-index: 50;
+      background: var(--nav-bg); box-shadow: inset 0 -1px 0 #3a496f;
+      font-family: var(--font-heading);
     }
     nav.main-nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      margin: 0;
-      padding: 0;
+      display: flex; gap: 10px; list-style: none;
+      margin: 0 auto; padding: 8px 0;
+      overflow-x: auto; white-space: nowrap;
     }
     nav.main-nav a {
-      color: #ffffff;
-      padding: 14px 22px;
-      text-decoration: none;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .12em;
-      transition: color 0.3s;
-    }
-    nav.main-nav a:hover {
-      color: #ffcc00;
+      font-size: 1.15rem; padding: 14px 22px;
+      font-weight: 700; text-transform: uppercase;
+      color: var(--nav-text); display: flex; gap: 7px;
+      transition: color 0.4s, background 0.4s;
     }
     nav.main-nav a.cv-link {
-      background: linear-gradient(90deg, #29539b, #ffcc00);
-      border-radius: 4px;
-      color: #fff !important;
+      background: linear-gradient(90deg, var(--accent), var(--accent-gold));
+      color: #fff !important; border-radius: 4px;
     }
+    nav.main-nav a:hover { color: var(--accent-gold); background: rgba(255,255,255,0.04); }
 
-    /* HERO SECTION */
-    .hero {
-      text-align: center;
-      padding: 3rem 1rem;
-      background: linear-gradient(120deg, rgba(47,58,85,0.28), rgba(41,83,155,0.23));
-      border-bottom: 5px solid #29539b;
-    }
-    .hero h1 {
-      font-family: 'Spectral', serif;
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-    .hero-subtitle {
-      font-size: 1.25rem;
-      font-weight: 500;
-      color: #22304a;
-    }
-    .dark .hero-subtitle { color: #fbbf24; }
-
-    /* MAIN SECTION */
-    .section {
-      max-width: 900px;
-      margin: 2.5rem auto;
-      padding: 0 1rem;
-    }
+    /* MAIN CONTENT */
+    main { max-width: var(--max-width); margin: 3rem auto; padding: 0 1.25rem; }
     h2 {
-      font-family: 'Spectral', serif;
-      font-size: 2rem;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      font-family: var(--font-heading); font-weight: 600;
+      font-size: 2rem; text-align: center; margin-bottom: 2rem;
+      color: var(--heading-color); position: relative;
     }
+    h2::after {
+      content: ''; display: block; width: 72px; height: 4px;
+      margin: .5rem auto 0; background: linear-gradient(90deg, var(--accent), var(--accent-gold));
+      border-radius: 2px;
+    }
+    .year-section { margin-bottom: 2.7rem; padding-left: 10px; border-left: 3px solid var(--card-border); }
+    .year-heading {
+      font-family: var(--font-heading); font-size: 1.12rem; font-weight: 600;
+      letter-spacing: .08em; color: var(--accent); margin-bottom: 1rem;
+    }
+    .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; }
+    @media (max-width: 900px) { .card-grid { grid-template-columns: 1fr; } }
+    .card {
+      background: var(--card-bg); border-left: 5px solid var(--card-border);
+      border-radius: 16px; box-shadow: var(--card-shadow);
+      display: flex; gap: 1.3rem; padding: 1.3rem;
+      opacity: 0; transform: translateY(26px);
+      transition: transform .18s, opacity .3s;
+    }
+    .card.visible { opacity: 1; transform: translateY(0); }
+    .card img {
+      width: 170px; min-width: 120px; border-radius: 12px;
+      box-shadow: 0 2px 14px #b6b6c833; object-fit: cover;
+    }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 14px 36px #2a4e8b19; }
+    .card img:hover { box-shadow: 0 6px 20px #29539b33; border: 1px solid var(--accent-gold); }
+    footer { text-align: center; padding: 2.2rem 1rem; color: #7b8fac; border-top: 1px solid #c5c8d1; margin-top: 4rem; }
 
-    /* MEDIA ITEMS */
-    .media-list { margin-bottom: 2rem; }
-    .media-item {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      background: rgba(255, 255, 255, 0.7);
-      padding: 1rem 1.5rem;
-      border-radius: 10px;
-      margin-bottom: 1.2rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
-      border-left: 5px solid transparent;
-    }
-    .media-item:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-    }
-    .media-icon {
-      font-size: 2rem;
-      min-width: 35px;
-    }
-    .media-item p { margin: 0; font-size: 1rem; }
-    .media-item a { color: inherit; text-decoration: underline; }
-    .media-item a:hover { color: #ffcc00; }
-
-    /* BRAND COLORS */
-    .miami-herald { border-left-color: #0074C8; }
-    .gainesville-sun { border-left-color: #FFC107; }
-    .spotify { border-left-color: #1DB954; }
-    .footnote { border-left-color: #6C63FF; }
-    .iguana { border-left-color: #388E3C; }
-
-    .dark .media-item { background: rgba(31, 41, 55, 0.85); color: #e5e7eb; }
-
-    /* FADE-IN ANIMATION */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      background: #22304a;
-      color: #adadad;
-      padding: 1rem;
-      font-size: 0.9rem;
-      margin-top: 3rem;
-    }
   </style>
 </head>
 <body>
-  <!-- NAVIGATION -->
-  <nav class="main-nav" aria-label="Primary">
-    <ul>
-      <li><a href="adolfhoromerocv.pdf" target="_blank" class="cv-link">CV</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="teaching.html">Teaching</a></li>
-      <li><a href="media.html" class="active">Media & Public Engagement</a></li>
-    </ul>
-  </nav>
+<header>
+  <button class="dark-toggle" aria-label="Toggle dark mode">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5.5" stroke-width="2"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M17.36 17.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M17.36 6.64l1.42-1.42"/></svg>
+  </button>
+  <h1 class="site-title">Adolfho Romero</h1>
+</header>
+<nav class="main-nav">
+  <ul>
+    <li><a href="index.html"><i class="fas fa-house-user"></i> Home</a></li>
+    <li><a href="adolfhoromerocv.pdf" target="_blank" class="cv-link"><i class="fas fa-id-badge"></i> CV</a></li>
+    <li><a href="publications.html"><i class="fas fa-feather-alt"></i> Publications</a></li>
+    <li><a href="teaching.html"><i class="fas fa-chalkboard-teacher"></i> Teaching</a></li>
+    <li><a href="media.html"><i class="fas fa-newspaper"></i> Media</a></li>
+  </ul>
+</nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Media & Public Engagement</h1>
-    <p class="hero-subtitle">Press coverage, digital articles, and podcasts</p>
-  </section>
+<main>
+  <h2>Media & Public Engagement</h2>
 
-  <!-- MAIN CONTENT -->
-  <main class="section">
-    <!-- PRESS COVERAGE -->
-    <h2><i class="fas fa-newspaper"></i> Press Coverage</h2>
-    <div class="media-list">
-      <div class="media-item fade-in miami-herald">
-        <i class="fas fa-newspaper media-icon"></i>
-        <p><strong>Smalls II, C. I.</strong> (2023). 
-          <a href="https://www.miamiherald.com/news/local/education/article279659394.html" target="_blank">
-            “‘Uncertainty and chaos’: UF faculty discuss DeSantis policies”
-          </a>, <em>Miami Herald</em>.
-        </p>
-      </div>
-      <div class="media-item fade-in gainesville-sun">
-        <i class="fas fa-newspaper media-icon"></i>
-        <p>
-          <a href="https://www.gainesville.com/story/news/guardian/2023/01/18/uf-panel-talks-about-gainesville-suns-jim-crow-era-coverage/69814656007/" target="_blank">
-            UF panel talks about Gainesville Sun’s Jim Crow-era coverage
-          </a>, <em>The Gainesville Sun</em>.
-        </p>
-      </div>
-      <div class="media-item fade-in gainesville-sun">
-        <i class="fas fa-newspaper media-icon"></i>
-        <p>
-          <a href="https://www.gainesville.com/story/news/guardian/2023/03/01/2-trailblazers-tied-to-former-all-black-gainesville-lincoln-high-to-be-honored/69958248007/" target="_blank">
-            Lincoln High trailblazers honored
-          </a>, <em>The Gainesville Sun</em>.
-        </p>
-      </div>
-      <div class="media-item fade-in gainesville-sun">
-        <i class="fas fa-newspaper media-icon"></i>
-        <p>
-          <a href="https://www.gainesville.com/story/news/2022/11/28/uf-oral-history-students-report-annual-trip-mississippi-delta/10788979002/" target="_blank">
-            UF oral history students report on Mississippi Delta trip
-          </a>, <em>The Gainesville Sun</em>.
-        </p>
-      </div>
-      <div class="media-item fade-in">
-        <i class="fas fa-newspaper media-icon"></i>
-        <p>
-          <a href="https://www.alligator.org/article/2024/04/uff-uf-holds-virtual-teach-in-to-discuss-academic-freedom-future-of-higher-education" target="_blank">
-            UFF virtual teach-in on academic freedom
-          </a>, <em>The Independent Florida Alligator</em>.
-        </p>
+  <!-- 2025 -->
+  <div class="year-section">
+    <div class="year-heading">2025</div>
+    <div class="card-grid">
+      <div class="card animate-on-scroll">
+        <a href="https://the-footnote.org/2025/04/22/an-oral-history-of-a-native-son-the-elaine-massacre-and-its-living-memory/" target="_blank">
+          <img src="footnote.jpeg" alt="The Footnote Logo">
+        </a>
+        <div>
+          Grey, P. (2025). <b>"An Oral History of a Native Son."</b><br>
+          <i>The Footnote</i>.<br>
+          <a href="https://the-footnote.org/2025/04/22/an-oral-history-of-a-native-son-the-elaine-massacre-and-its-living-memory/" target="_blank">Read article</a>
+        </div>
       </div>
     </div>
+  </div>
 
-    <!-- PODCASTS -->
-    <h2><i class="fas fa-podcast"></i> Podcasts</h2>
-    <div class="media-list">
-      <div class="media-item fade-in spotify">
-        <i class="fab fa-spotify media-icon"></i>
-        <p><strong>Challenging Racism at UF</strong> (2022). <em>The SPOHP Podcast.</em> 
-          <a href="https://open.spotify.com/episode/48PxeaSW0SnKVNc6zHhz2u" target="_blank">Listen on Spotify</a>
-        </p>
+  <!-- 2022 -->
+  <div class="year-section">
+    <div class="year-heading">2022</div>
+    <div class="card-grid">
+      <div class="card animate-on-scroll">
+        <a href="https://gainesvilleiguana.org/2021/articles/history-and-the-people-who-make-it-madelyn-lockhart/" target="_blank">
+          <img src="iguana.jpeg" alt="Gainesville Iguana Logo">
+        </a>
+        <div>
+          Romero, A. (2021, Aug). <b>"History and the People Who Make It: Madelyn Lockhart."</b><br>
+          <i>The Gainesville Iguana</i>.<br>
+          <a href="https://gainesvilleiguana.org/2021/articles/history-and-the-people-who-make-it-madelyn-lockhart/" target="_blank">Read article</a>
+        </div>
       </div>
     </div>
+  </div>
+</main>
 
-    <!-- DIGITAL ARTICLES -->
-    <h2><i class="fas fa-laptop"></i> Digital Articles & Op-Eds</h2>
-    <div class="media-list">
-      <div class="media-item fade-in footnote">
-        <i class="fas fa-pen-fancy media-icon"></i>
-        <p>Grey, P. (2025). 
-          <a href="https://the-footnote.org/2025/04/22/an-oral-history-of-a-native-son-the-elaine-massacre-and-its-living-memory/" target="_blank">
-            An Oral History of a Native Son
-          </a>, <em>The Footnote</em>.
-        </p>
-      </div>
-      <div class="media-item fade-in iguana">
-        <i class="fas fa-pen-fancy media-icon"></i>
-        <p>Romero, A. (2021, Aug). 
-          <a href="https://gainesvilleiguana.org/2021/articles/history-and-the-people-who-make-it-madelyn-lockhart/" target="_blank">
-            History and the People Who Make It: Madelyn Lockhart
-          </a>, <em>The Gainesville Iguana</em>.
-        </p>
-      </div>
-      <div class="media-item fade-in iguana">
-        <i class="fas fa-pen-fancy media-icon"></i>
-        <p>Romero, A. (2021, Mar). 
-          <a href="https://gainesvilleiguana.org/2021/articles/the-alachua-county-tenants-association-updates/" target="_blank">
-            The Alachua County Tenants Association: Updates
-          </a>, <em>The Gainesville Iguana</em>.
-        </p>
-      </div>
-      <div class="media-item fade-in gainesville-sun">
-        <i class="fas fa-pen-fancy media-icon"></i>
-        <p>Romero, A. (2021, Feb). 
-          <a href="https://www.gainesville.com/story/opinion/2021/02/19/adolfho-romero-diverse-communities-transforming-florida/6781175002/" target="_blank">
-            Diverse Communities Are Transforming Florida
-          </a>, <em>The Gainesville Sun</em>.
-        </p>
-      </div>
-    </div>
-  </main>
+<footer>© 2025 Adolfho Romero · <a href="mailto:ar2539@cornell.edu">ar2539@cornell.edu</a></footer>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2025 Adolfho Romero · <a href="mailto:ar2539@cornell.edu">ar2539@cornell.edu</a>
-  </footer>
-
-  <!-- FADE-IN SCRIPT -->
-  <script>
-    const fadeIns = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll('.card.animate-on-scroll');
+    function revealOnScroll() {
+      const windowHeight = window.innerHeight;
+      cards.forEach(el => {
+        if (el.getBoundingClientRect().top < windowHeight - 60) el.classList.add('visible');
       });
-    }, { threshold: 0.1 });
-    fadeIns.forEach(el => observer.observe(el));
-  </script>
+    }
+    window.addEventListener('scroll', revealOnScroll); revealOnScroll();
+    const toggle = document.querySelector('.dark-toggle');
+    toggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+    });
+    if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
+  });
+</script>
 </body>
 </html>
