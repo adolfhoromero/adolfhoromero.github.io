@@ -128,26 +128,36 @@
 
     /* CARDS */
     .card {
-      display: flex; gap: 1.2rem;
-      background: var(--card-bg); border-left: 5px solid var(--card-border);
-      border-radius: 14px; padding: 1.2rem;
-      box-shadow: var(--card-shadow);
-      opacity: 0; transform: translateY(20px);
-      transition: transform .3s, opacity .3s;
+      display: flex;
       align-items: center;
+      gap: 1.2rem;
+      background: var(--card-bg);
+      border-left: 5px solid var(--card-border);
+      border-radius: 14px;
+      padding: 1.2rem;
+      box-shadow: var(--card-shadow);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: transform .3s, opacity .3s;
     }
     .card.visible { opacity: 1; transform: translateY(0); }
+
+    /* LOGO IMAGE AUTO-SCALE */
     .card img {
-      max-width: 240px;
-      max-height: 100px;
       width: auto;
       height: auto;
-      border-radius: 8px;
+      max-width: 220px;
+      max-height: 120px;
       object-fit: contain;
       background: #fff;
-      padding: 6px;
+      padding: 8px;
       display: block;
+      margin: auto;
     }
+    /* Wide logos shrink proportionally */
+    .card img.wide-logo { max-width: 200px; height: auto; }
+    /* Tall logos shrink proportionally */
+    .card img.tall-logo { max-height: 100px; width: auto; }
 
     /* PULL QUOTE */
     .pull-quote {
@@ -205,7 +215,7 @@
       <div class="year-heading">2024–2023</div>
       <div class="card-grid">
         <div class="card animate">
-          <img src="miami.jpeg" alt="Miami Herald">
+          <img src="miami.jpeg" alt="Miami Herald" class="wide-logo">
           <div>
             Smalls II, C. I. (2023). <b>"‘Uncertainty and chaos’: UF faculty discuss DeSantis policies."</b><br>
             <em>Miami Herald</em><br>
@@ -221,7 +231,7 @@
           </div>
         </div>
         <div class="card animate">
-          <img src="gainesvillesun.jpeg" alt="Lincoln High">
+          <img src="gainesvillesun.jpeg" alt="Gainesville Sun">
           <div>
             (2023). <b>"Lincoln High Trailblazers Honored."</b><br>
             <em>The Gainesville Sun</em><br>
@@ -229,7 +239,7 @@
           </div>
         </div>
         <div class="card animate">
-          <img src="alligator.jpeg" alt="Alligator">
+          <img src="alligator.jpeg" alt="Alligator" class="wide-logo">
           <div>
             (2024). <b>"UFF-UF Holds Virtual Teach-In on Academic Freedom."</b><br>
             <em>The Independent Florida Alligator</em><br>
