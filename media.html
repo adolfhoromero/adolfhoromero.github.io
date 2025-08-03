@@ -134,11 +134,19 @@
       box-shadow: var(--card-shadow);
       opacity: 0; transform: translateY(20px);
       transition: transform .3s, opacity .3s;
+      align-items: center;
     }
     .card.visible { opacity: 1; transform: translateY(0); }
     .card img {
-      width: 240px; border-radius: 12px; object-fit: cover;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      max-width: 240px;
+      max-height: 100px;
+      width: auto;
+      height: auto;
+      border-radius: 8px;
+      object-fit: contain;
+      background: #fff;
+      padding: 6px;
+      display: block;
     }
 
     /* PULL QUOTE */
@@ -230,6 +238,7 @@
         </div>
       </div>
     </div>
+
     <div class="year-section">
       <div class="year-heading">2022</div>
       <div class="card-grid">
@@ -279,7 +288,7 @@
       <div class="year-heading">2022–2021</div>
       <div class="card-grid">
         <div class="card animate">
-          <img src="placeholder.jpg" alt="UF">
+          <img src="uf.jpeg" alt="UF Campus">
           <div>
             Romero, A. (2022). <b>"Challenging Racism at University of Florida."</b>
           </div>
@@ -348,4 +357,3 @@
 </script>
 </body>
 </html>
-
