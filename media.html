@@ -96,18 +96,21 @@
       color: var(--heading-color);
     }
 
-    /* TABS */
+    /* TABS (matching nav) */
     .tabs {
       display: flex; justify-content: center; gap: 1rem;
       margin-bottom: 2rem; flex-wrap: wrap;
     }
     .tab-btn {
       flex: 1; max-width: 280px;
-      background: var(--accent); color: #fff;
+      background: var(--nav-bg); 
+      color: var(--nav-text);
       padding: 0.9rem 1.2rem; border: none;
-      border-radius: 8px; font-size: 1rem;
+      border-radius: 8px; font-size: 1.05rem;
       font-weight: 600; cursor: pointer;
-      transition: all 0.3s ease; font-family: var(--font-heading);
+      transition: all 0.3s ease;
+      font-family: var(--font-heading);
+      text-transform: uppercase;
     }
     .tab-btn.active, .tab-btn:hover {
       background: var(--accent-gold); color: #000; transform: scale(1.04);
@@ -154,10 +157,6 @@
       display: block;
       margin: auto;
     }
-    /* Wide logos shrink proportionally */
-    .card img.wide-logo { max-width: 200px; height: auto; }
-    /* Tall logos shrink proportionally */
-    .card img.tall-logo { max-height: 100px; width: auto; }
 
     /* PULL QUOTE */
     .pull-quote {
@@ -215,35 +214,39 @@
       <div class="year-heading">2024–2023</div>
       <div class="card-grid">
         <div class="card animate">
-          <img src="miami.jpeg" alt="Miami Herald" class="wide-logo">
+          <a href="https://www.miamiherald.com/news/local/education/article279659394.html" target="_blank">
+            <img src="miami.jpeg" alt="Miami Herald">
+          </a>
           <div>
             Smalls II, C. I. (2023). <b>"‘Uncertainty and chaos’: UF faculty discuss DeSantis policies."</b><br>
-            <em>Miami Herald</em><br>
-            <a href="https://www.miamiherald.com/news/local/education/article279659394.html" target="_blank">Read More</a>
+            <em>Miami Herald</em>
           </div>
         </div>
         <div class="card animate">
-          <img src="gainesvillesun.jpeg" alt="Gainesville Sun">
+          <a href="https://www.gainesville.com/story/news/guardian/2023/01/18/uf-panel-talks-about-gainesville-suns-jim-crow-era-coverage/69814656007/" target="_blank">
+            <img src="gainesvillesun.jpeg" alt="Gainesville Sun">
+          </a>
           <div>
             (2023). <b>"UF Panel Talks About Gainesville Sun’s Jim Crow-Era Coverage."</b><br>
-            <em>The Gainesville Sun</em><br>
-            <a href="https://www.gainesville.com/story/news/guardian/2023/01/18/uf-panel-talks-about-gainesville-suns-jim-crow-era-coverage/69814656007/" target="_blank">Read More</a>
+            <em>The Gainesville Sun</em>
           </div>
         </div>
         <div class="card animate">
-          <img src="gainesvillesun.jpeg" alt="Gainesville Sun">
+          <a href="https://www.gainesville.com/story/news/guardian/2023/03/01/2-trailblazers-tied-to-former-all-black-gainesville-lincoln-high-to-be-honored/69958248007/" target="_blank">
+            <img src="gainesvillesun.jpeg" alt="Gainesville Sun">
+          </a>
           <div>
             (2023). <b>"Lincoln High Trailblazers Honored."</b><br>
-            <em>The Gainesville Sun</em><br>
-            <a href="https://www.gainesville.com/story/news/guardian/2023/03/01/2-trailblazers-tied-to-former-all-black-gainesville-lincoln-high-to-be-honored/69958248007/" target="_blank">Read More</a>
+            <em>The Gainesville Sun</em>
           </div>
         </div>
         <div class="card animate">
-          <img src="alligator.jpeg" alt="Alligator" class="wide-logo">
+          <a href="https://www.alligator.org/article/2024/04/uff-uf-holds-virtual-teach-in-to-discuss-academic-freedom-future-of-higher-education" target="_blank">
+            <img src="alligator.jpeg" alt="Alligator">
+          </a>
           <div>
             (2024). <b>"UFF-UF Holds Virtual Teach-In on Academic Freedom."</b><br>
-            <em>The Independent Florida Alligator</em><br>
-            <a href="https://www.alligator.org/article/2024/04/uff-uf-holds-virtual-teach-in-to-discuss-academic-freedom-future-of-higher-education" target="_blank">Read More</a>
+            <em>The Independent Florida Alligator</em>
           </div>
         </div>
       </div>
@@ -253,11 +256,12 @@
       <div class="year-heading">2022</div>
       <div class="card-grid">
         <div class="card animate">
-          <img src="gainesvillesun.jpeg" alt="Gainesville Sun">
+          <a href="https://www.gainesville.com/story/news/2022/11/28/uf-oral-history-students-report-annual-trip-mississippi-delta/10788979002/" target="_blank">
+            <img src="gainesvillesun.jpeg" alt="Gainesville Sun">
+          </a>
           <div>
             (2022). <b>"UF Oral History Students Report Annual Trip to Mississippi Delta."</b><br>
-            <em>The Gainesville Sun</em><br>
-            <a href="https://www.gainesville.com/story/news/2022/11/28/uf-oral-history-students-report-annual-trip-mississippi-delta/10788979002/" target="_blank">Read More</a>
+            <em>The Gainesville Sun</em>
           </div>
         </div>
       </div>
@@ -270,11 +274,12 @@
       <div class="year-heading">2025–2022</div>
       <div class="card-grid">
         <div class="card animate">
-          <img src="footnote.jpeg" alt="The Footnote">
+          <a href="https://the-footnote.org/2025/04/22/an-oral-history-of-a-native-son-the-elaine-massacre-and-its-living-memory/" target="_blank">
+            <img src="footnote.jpeg" alt="The Footnote">
+          </a>
           <div>
             Grey, P. (2025). <b>"An Oral History of a Native Son: The Elaine Massacre and Its Living Memory."</b><br>
-            <em>The Footnote</em><br>
-            <a href="https://the-footnote.org/2025/04/22/an-oral-history-of-a-native-son-the-elaine-massacre-and-its-living-memory/" target="_blank">Read More</a>
+            <em>The Footnote</em>
           </div>
         </div>
         <div class="pull-quote">
@@ -282,7 +287,9 @@
           <strong>Romero:</strong> “Ask yourself: Am I honoring this person’s dignity? If yes, you’re on the right path.”
         </div>
         <div class="card animate">
-          <img src="podcast.jpeg" alt="Podcast">
+          <a href="https://open.spotify.com/episode/48PxeaSW0SnKVNc6zHhz2u?si=e49a0224cc2349a4" target="_blank">
+            <img src="podcast.jpeg" alt="Podcast">
+          </a>
           <div>
             Romero, A. (2022). <b>"Challenging Racism at University of Florida."</b><br>
             <em>Podcast Interview</em>
@@ -295,30 +302,30 @@
   <!-- AUTHORED -->
   <div id="authored" class="content">
     <div class="year-section">
-      <div class="year-heading">2022–2021</div>
+      <div class="year-heading">2021</div>
       <div class="card-grid">
         <div class="card animate">
-          <img src="uf.jpeg" alt="UF Campus">
-          <div>
-            Romero, A. (2022). <b>"Challenging Racism at University of Florida."</b>
-          </div>
-        </div>
-        <div class="card animate">
-          <img src="iguana.jpeg" alt="Iguana">
+          <a href="https://gainesvilleiguana.org/2021/articles/history-and-the-people-who-make-it-madelyn-lockhart/" target="_blank">
+            <img src="iguana.jpeg" alt="Iguana">
+          </a>
           <div>
             Romero, A. (2021, Aug). <b>"History and the People Who Make It: Madelyn Lockhart."</b><br>
             <em>The Gainesville Iguana</em>
           </div>
         </div>
         <div class="card animate">
-          <img src="iguana.jpeg" alt="Iguana">
+          <a href="https://gainesvilleiguana.org/2021/articles/the-alachua-county-tenants-association-updates/" target="_blank">
+            <img src="iguana.jpeg" alt="Iguana">
+          </a>
           <div>
             Romero, A. (2021, Mar). <b>"The Alachua County Tenants Association: Updates."</b><br>
             <em>The Gainesville Iguana</em>
           </div>
         </div>
         <div class="card animate">
-          <img src="gainesvillesun.jpeg" alt="Gainesville Sun">
+          <a href="https://www.gainesville.com/story/opinion/2021/02/19/adolfho-romero-diverse-communities-transforming-florida/6781175002/" target="_blank">
+            <img src="gainesvillesun.jpeg" alt="Gainesville Sun">
+          </a>
           <div>
             Romero, A. (2021, Feb). <b>"Diverse Communities Are Transforming Florida."</b><br>
             <em>The Gainesville Sun</em>
