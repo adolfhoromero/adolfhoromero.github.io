@@ -1,14 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Adolfho Romero</title>
-  <!-- Fonts: Poppins + Spectral -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet"/>
-  <style>
+```html
+
+
+
+  
+  
+  Adolfho Romero
+  
+  
+  
+  
+  
     :root {
       --background-top:  #f7f8fa;
       --background-bottom: #e4e8ef;
@@ -49,235 +50,277 @@
       background: linear-gradient(135deg, var(--background-top), var(--background-bottom));
       color: var(--text-main);
       line-height: 1.6;
-      transition: background 0.4s, color 0.4s;
+      transition: background .4s, color .4s;
       min-height: 100vh;
     }
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      transition: color .2s;
-    }
+    a { color: var(--accent); text-decoration: none; transition: color .2s; }
     a:hover { color: var(--accent-gold); }
 
     /* HEADER & NAV */
     header {
       background: var(--nav-bg);
       color: var(--nav-text);
-      padding: 1rem;
+      padding: 1rem 1rem .8rem;
       text-align: center;
+      position: relative;
       box-shadow: 0 4px 22px rgba(34,48,74,0.47);
-      transition: background 0.4s, color 0.4s;
+      transition: background .4s, color .4s;
     }
     .site-title {
       font-family: 'Spectral', serif;
-      font-size: 2.5rem;
+      font-size: 2.95rem;
       font-weight: 700;
     }
+    .dark-toggle {
+      position: absolute; top: 1rem; right: 1rem;
+      width: 2.3rem; height: 2.3rem;
+      background: none; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 10; outline: none;
+    }
+    .dark-toggle svg {
+      width: 2.1rem; height: 2.1rem;
+      fill: var(--accent-gold); stroke: var(--accent);
+    }
     nav.main-nav {
+      position: sticky; top: 0; width: 100%; z-index: 50;
       background: var(--nav-bg);
       box-shadow: inset 0 -1px 0 rgba(58,73,111,0.5);
-      position: sticky;
-      top: 0;
-      z-index: 50;
+      font-family: 'Spectral', serif;
+      transition: top .38s cubic-bezier(0.4,0,0.2,1), background .4s;
     }
     nav.main-nav ul {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      list-style: none;
-      padding: .5rem 1rem;
-      flex-wrap: wrap;
+      display: flex; justify-content: center; gap: 10px;
+      list-style: none; margin: 0 auto; padding: 8px 0;
+      overflow-x: auto; white-space: nowrap;
     }
     nav.main-nav a {
-      font-family: 'Spectral', serif;
-      font-size: 1rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      padding: .6rem 1rem;
-      border-radius: 4px;
-      transition: background .3s, color .3s;
-      color: var(--nav-text);
+      font-size: 1.15rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .12em; padding: 12px 16px; border-radius: 4px;
+      color: var(--nav-text); background: none; transition: background .3s;
     }
     nav.main-nav a:hover {
-      background: var(--accent);
-      color: #fff;
+      background: var(--accent); color: #fff;
     }
     .cv-link {
       background: linear-gradient(90deg, var(--accent), var(--accent-gold));
       color: #fff !important;
+      box-shadow: 0 2px 8px rgba(41,83,155,0.09);
     }
+    .hide-nav { top: -65px; }
+    @media (min-width:821px) { .hide-nav { top:0!important; } }
 
     /* HERO */
     .hero {
-      text-align: center;
-      padding: 3rem 1rem 2rem;
-      background: linear-gradient(120deg, rgba(47,58,85,0.3), rgba(41,83,155,0.2)), url('cornellcampus.jpg') center/cover no-repeat;
-      color: #fff;
-      position: relative;
-      overflow: hidden;
+      position: relative; text-align:center;
+      padding: 20px 10px 20px;
+      background: linear-gradient(120deg,rgba(47,58,85,0.28),rgba(41,83,155,0.23)),
+                  url('cornellcampus.jpg') center/cover no-repeat;
+      border-bottom:5px solid var(--accent);
+      filter: brightness(1.07) contrast(1.12);
+      background-attachment: fixed;
+      transition: background .4s, filter .4s;
     }
     .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: rgba(0,0,0,0.4);
-      z-index: 0;
+      content:''; position:absolute; inset:0;
+      background: linear-gradient(120deg,rgba(255,255,255,0.56),rgba(205,225,255,0.20));
+      z-index:0; pointer-events:none;
+    }
+    .dark .hero {
+      background: linear-gradient(120deg,rgba(17,24,39,0.75),rgba(40,51,74,0.7)),
+                  url('cornellcampus.jpg') center/cover no-repeat;
+      filter: brightness(1) contrast(1.05);
+    }
+    .dark .hero::before {
+      background: linear-gradient(120deg,rgba(18,20,28,0.55),rgba(33,35,45,0.16));
     }
     .hero-photo {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #fff;
-      margin-bottom: 1rem;
-      position: relative;
-      z-index: 1;
+      width:200px;height:200px;border-radius:50%;
+      object-fit:cover;background:#f5f8fc;
+      box-shadow:0 0 0 4px #fff,0 17px 44px rgba(34,48,74,0.07);
+      margin:2rem auto .5rem; position:relative; z-index:1;
+      transition:transform .4s ease;
     }
+    .hero-photo:hover { transform:scale(1.05); }
     .hero h1 {
-      font-family: 'Spectral', serif;
-      font-size: 2.25rem;
-      font-weight: 700;
-      margin-bottom: .5rem;
-      position: relative;
-      z-index: 1;
+      font-family:'Spectral',serif; font-size:2.5rem;
+      font-weight:700; color:#181c22!important;
+      letter-spacing:.04em; margin-top:.35rem;
+      text-shadow:0 2px 10px rgba(255,255,255,0.43),0 1px 1.5px #dee7ee;
+      position:relative; z-index:1;
+    }
+    .dark .hero h1 {
+      color:#fffdfa!important;
+      text-shadow:0 2px 16px rgba(41,51,86,0.38),0 1.5px 7px #131820;
     }
     .hero-subtitle {
-      font-size: 1.1rem;
-      font-weight: 500;
-      letter-spacing: .1em;
-      position: relative;
-      z-index: 1;
-      color: #e0e7ff;
+      font-family:'Poppins',sans-serif;
+      color:#22304a; font-size:1.25rem; font-weight:600;
+      letter-spacing:.08em; margin:.2rem 0 .5rem;
+      text-shadow:0 1px 3px rgba(240,240,240,0.12);
+    }
+    .dark .hero-subtitle {
+      color:#fbbf24; text-shadow:0 1px 4px rgba(0,0,0,0.38);
     }
     .hero-quote {
-      max-width: 400px;
-      margin: 1.5rem auto 0;
-      font-style: italic;
-      background: #fffdec;
-      color: #495168;
-      padding: .8rem 1.2rem;
-      border-left: 4px solid var(--accent-gold);
-      border-radius: 6px;
-      position: relative;
-      z-index: 1;
+      margin-top:1.5rem; max-width:410px; font-style:italic;
+      background:#fffdec; border-left:4px solid var(--accent-gold);
+      border-radius:6px; box-shadow:0 1.5px 8px rgba(245,233,221,0.09);
+      color:#495168; padding:11px 21px; display:inline-block;
+      position:relative; z-index:1; user-select:text;
+    }
+    .dark .hero-quote {
+      background:#233158; color:#fbbf24;
+      border-left:4px solid var(--accent-gold);
+      box-shadow:0 1.5px 8px rgba(41,130,246,0.10);
     }
 
-    /* RESEARCH FOCUS CARDS */
-    .focus-section {
-      max-width: var(--max-width);
-      margin: 3rem auto;
-      padding: 0 1rem;
-      text-align: center;
-    }
-    .focus-section h2 {
-      font-family: 'Spectral', serif;
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      color: var(--heading-color);
-    }
+    /* RESEARCH FOCUS */
+    .focus-section { max-width:var(--max-width); margin:3rem auto; padding:0 1.1rem; }
+    .focus-section h2 { font-family:'Spectral',serif; font-size:2.18rem; text-align:center; margin-bottom:1rem; color:var(--heading-color); }
+    .focus-sub { text-align:center; margin-bottom:2rem; color:var(--text-main); }
     .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.25rem;
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.25rem;
     }
     .card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 8px;
-      padding: 1.25rem;
-      box-shadow: 0 4px 12px var(--card-shadow);
-      transition: transform .3s, box-shadow .3s;
+      background:var(--card-bg); border:1px solid var(--card-border);
+      border-radius:8px; padding:1.25rem; box-shadow:0 4px 12px var(--card-shadow);
+      transition:transform .3s,box-shadow .3s;
     }
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px var(--card-shadow);
+      transform:translateY(-5px); box-shadow:0 8px 20px var(--card-shadow);
     }
-    .card h3 {
-      font-size: 1.25rem;
-      margin-bottom: .75rem;
-      color: var(--accent);
-    }
-    .card p {
-      font-size: 1rem;
-      color: var(--text-main);
-    }
+    .card h3 { font-size:1.25rem; margin-bottom:.75rem; color:var(--accent); }
+    .card p { font-size:1rem; color:var(--text-main); }
 
-    /* LAYOUT & ABOUT (unchanged) */
-    .section { /* ... existing CSS ... */ }
-    .about-container { /* ... existing CSS ... */ }
-    .about-text { /* ... existing CSS ... */ }
-    .contact-section { /* ... existing CSS ... */ }
-    .ethical { /* ... existing CSS ... */ }
-    footer { /* ... existing CSS ... */ }
+    /* ABOUT */
+    .section { max-width:var(--max-width); margin:2.3rem auto 4rem; padding:0 1.1rem; }
+    .section h2 { font-family:'Spectral',serif; font-size:2.18rem; text-align:center; margin-bottom:1.75rem; color:var(--heading-color); }
+    .about-container { display:flex; flex-wrap:wrap; gap:46px; justify-content:center; align-items:flex-start; }
+    .about-text { flex:2; min-width:300px; max-width:670px; font-size:1.16rem; line-height:1.73; }
+    .about-text p { margin-bottom:1.45rem; }
+    .about-image { flex:1; min-width:220px; max-width:360px; display:flex; justify-content:center; }
+    .about-image img { width:320px; height:auto; border-radius:12px; object-fit:cover; box-shadow:0 7px 32px rgba(41,83,155,0.13); }
+
+    /* CONTACT & FOOTER unchanged */
 
     /* RESPONSIVE */
-    @media (max-width: 600px) {
-      .hero-photo { width: 140px; height: 140px; }
-      .hero h1 { font-size: 2rem; }
-      .hero-subtitle { font-size: 1rem; }
+    @media (max-width:820px) { .hero { background-attachment:scroll!important; } }
+    @media (max-width:600px) {
+      .hero-photo { width:150px;height:150px; }
+      .hero h1 { font-size:2rem; }
+      .hero-subtitle { font-size:1rem; }
     }
-  </style>
-</head>
-<body>
-  <!-- HEADER -->
-  <header>
-    <h1 class="site-title">Adolfho Romero</h1>
-  </header>
+  
 
-  <!-- NAVIGATION -->
-  <nav class="main-nav" aria-label="Primary">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="research.html" class="cv-link">Research Focus</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="teaching.html">Teaching</a></li>
-      <li><a href="media.html">Media</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="adolfhoromerocv.pdf" target="_blank" class="cv-link">Download CV</a></li>
-    </ul>
-  </nav>
 
-  <!-- HERO -->
-  <section class="hero" aria-label="Hero">
-    <img src="adolfhoromero.jpeg" alt="Adolfho Romero portrait" class="hero-photo"/>
-    <h1>Adolfho Romero</h1>
-    <h2 class="hero-subtitle">PhD Student · Cornell ILR</h2>
-    <blockquote class="hero-quote">
+  
+  
+    
+      
+    
+    Adolfho Romero
+  
+
+  
+  
+    
+      Home
+      About
+      Research Focus
+      Publications
+      Teaching
+      Media
+      Contact
+      Download CV
+    
+  
+
+  
+  
+    
+    Adolfho Romero
+    PhD Student · Cornell ILR
+    
       “I am grateful to work alongside community organizations, mentors, and workers in the ongoing struggle for dignity and justice.”
-    </blockquote>
-  </section>
+    
+  
 
-  <!-- RESEARCH FOCUS -->
-  <section class="focus-section" aria-labelledby="focus-title">
-    <h2 id="focus-title">Research Focus</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Worker Centers</h3>
-        <p>How community organizations build power for marginalized workers.</p>
-      </div>
-      <div class="card">
-        <h3>Oral History</h3>
-        <p>Documenting worker experiences and preserving excluded voices.</p>
-      </div>
-      <div class="card">
-        <h3>Power Resource Approach</h3>
-        <p>Examining grassroots leadership in non-union contexts.</p>
-      </div>
-      <div class="card">
-        <h3>Labor Rights</h3>
-        <p>Intersection of labor organizing, civil rights, and social justice.</p>
-      </div>
-      <div class="card">
-        <h3>Community Partnerships</h3>
-        <p>Collaborative research benefiting partner organizations.</p>
-      </div>
-      <div class="card">
-        <h3>Collective Memory</h3>
-        <p>Storytelling as a tool to challenge systems of oppression.</p>
-      </div>
-    </div>
-  </section>
+  
+  
+    Research Focus
+    Labor studies, community organizing, and social justice
+    
+      Worker CentersHow community organizations build power for marginalized workers.
+      Oral HistoryDocumenting worker experiences and preserving excluded voices.
+      Power Resource ApproachExamining grassroots leadership in non-union contexts.
+      Labor RightsIntersection of labor organizing, civil rights, and social justice.
+      Community PartnershipsCollaborative research benefiting partner organizations.
+      Collective MemoryStorytelling as a tool to challenge systems of oppression.
+    
+  
 
-  <!-- ABOUT, CONTACT, ETHICAL, FOOTER, and existing scripts remain unchanged -->
-</body>
-</html>
+  
+  
+    About My Journey
+    
+      
+        I am a Ph.D. student in the School of Industrial and Labor Relations at Cornell University, where I study how worker centers and non-profit organizations empower marginalized communities—particularly immigrant, low-wage, and undocumented workers—across New York and Florida...
+        My commitment to this work has been shaped through years of oral history fieldwork alongside communities across the United States, particularly in the Deep South...
+      
+      
+        
+      
+    
+    
+      Ethical Commitment: My work follows IRB-approved protocols, oral consent, and shared agency—grounded in respect and participant dignity.
+    
+  
+
+  
+  
+    
+      
+    
+  
+
+  
+  
+    &copy; 2025 Adolfho Romero · ar2539@cornell.edu
+  
+
+  
+  
+    // Dark mode toggle
+    const darkToggle = document.querySelector('.dark-toggle');
+    function setPressed() {
+      darkToggle.setAttribute('aria-pressed', document.documentElement.classList.contains('dark'));
+    }
+    function toggleDark() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      setPressed();
+    }
+    const saved = localStorage.getItem('theme');
+    if (saved==='dark'||(!saved&&window.matchMedia('(prefers-color-scheme:dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+    setPressed();
+    darkToggle.addEventListener('click',toggleDark);
+    darkToggle.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault();toggleDark(); }});
+    // Parallax
+    window.addEventListener('scroll',()=>{
+      const hero=document.querySelector('.hero');
+      let s=window.scrollY;
+      hero.style.backgroundPosition=`center ${44 + s*0.055}%`;
+    });
+    // Hide nav on mobile scroll
+    let last=0; const nav=document.querySelector('.main-nav');
+    window.addEventListener('scroll',()=>{
+      if(window.innerWidthlast&&st>60);
+        last=st
+
+
+```
+
+[1] https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/images/38345009/fcee74b9-0ecd-4fb8-828b-f637833fc76c/Screenshot-2025-08-03-at-10.24.23-PM.jpg
