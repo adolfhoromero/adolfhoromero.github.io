@@ -1,383 +1,573 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Adolfho Romero | PhD Industrial &amp; Labor Relations – Cornell University</title>
-  <meta name="description" content="PhD student in Industrial &amp; Labor Relations at Cornell University researching worker centers, oral history, and labor organizing among marginalized communities.">
-
-  <!-- Performance: early connection for Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- Modern academic font pair -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Icons -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous" defer></script>
-
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Adolfho Romero</title>
+  <!-- Fonts: Poppins + Spectral -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet"/>
   <style>
-    /* ─────  2025-LEVEL DESIGN SYSTEM  ───── */
-    :root{
-      /* Brand palette */
-      --primary:        #1e40af;
-      --primary-light:  #3b82f6;
-      --accent:         #f59e0b;
-      --accent-light:   #fbbf24;
-
-      /* Neutrals */
-      --bg:             #ffffff;
-      --bg-alt:         #f9fafb;
-      --text-main:      #1f2937;
-      --text-muted:     #6b7280;
-      --border:         #e5e7eb;
-
-      /* Scale */
-      --radius:         12px;
-      --radius-lg:      20px;
-      --max:            1200px;
-
-      /* Shadows */
-      --shadow-sm:      0 1px 2px rgba(0,0,0,.06);
-      --shadow-md:      0 4px 6px rgba(0,0,0,.1);
-      --shadow-lg:      0 12px 20px rgba(0,0,0,.12);
-
-      /* Timing */
-      --fast:           .15s ease;
-      --norm:           .3s ease;
+    :root {
+      --background-top:  #f7f8fa;
+      --background-bottom: #e4e8ef;
+      --nav-bg:          #22304a;
+      --nav-text:        #ffffff;
+      --accent:          #29539b;
+      --accent-gold:     #ffcc00;
+      --text-main:       #232d41;
+      --heading-color:   #212c3e;
+      --max-width:       1100px;
+      --contact-bg:      #ffffff;
+      --contact-border:  #e2e8f0;
+      --contact-shadow:  rgba(0, 0, 0, 0.1);
     }
-    .dark{
-      --bg:        #111827;
-      --bg-alt:    #1f2937;
-      --text-main: #f9fafb;
-      --text-muted:#d1d5db;
-      --border:    #334155;
+    .dark {
+      --background-top: #121212;
+      --background-bottom: #1e1e1e;
+      --nav-bg: #111827;
+      --nav-text: #e5e7eb;
+      --accent: #3b82f6;
+      --accent-gold: #fbbf24;
+      --text-main: #d1d5db;
+      --heading-color: #f9fafb;
+      --contact-bg: #1f2937;
+      --contact-border: #374151;
+      --contact-shadow: rgba(0, 0, 0, 0.3);
     }
-
-    /* Base */
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth;scroll-padding-top:80px}
-    body{
-      font-family:'Inter',system-ui,sans-serif;
-      background:var(--bg);
-      color:var(--text-main);
-      line-height:1.6;
-      transition:background var(--norm),color var(--norm);
-      overflow-x:hidden;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, var(--background-top), var(--background-bottom));
+      color: var(--text-main);
+      line-height: 1.6;
+      transition: background 0.4s, color 0.4s;
+      min-height: 100vh;
     }
-    h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;line-height:1.2}
-    h1{font-size:clamp(2.5rem,5vw,4rem)}
-    h2{font-size:clamp(2rem,4vw,3rem)}
-    h3{font-size:1.5rem}
-
-    a{color:var(--primary);text-decoration:none;transition:color var(--fast)}
-    a:hover,a:focus{color:var(--primary-light);outline:none}
-
-    /* ─────  Sticky Header  ───── */
-    .site-header{
-      position:sticky;top:0;z-index:1000;
-      backdrop-filter:blur(20px);
-      background:rgba(255,255,255,.9);
-      border-bottom:1px solid var(--border);
-      transition:box-shadow var(--fast),background var(--norm)
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color .2s, background .25s, box-shadow .25s;
     }
-    .dark .site-header{background:rgba(17,24,39,.9)}
-    .nav-container{
-      max-width:var(--max);margin:auto;
-      height:80px;padding:0 2rem;
-      display:flex;align-items:center;justify-content:space-between
+    a:hover, a:focus { color: var(--accent-gold); outline: none; }
+    header {
+      background: var(--nav-bg);
+      color: var(--nav-text);
+      text-align: center;
+      padding: 1.5rem 1rem 0.8rem;
+      box-shadow: 0 4px 22px rgba(34,48,74,0.47);
+      position: relative;
+      transition: background 0.4s, color 0.4s;
+      user-select: none;
     }
-    .logo{
-      font-family:'Playfair Display',serif;font-size:1.75rem;font-weight:700;
-      color:var(--text-main);transition:color var(--fast)
+    .site-title {
+      font-family: 'Spectral', serif;
+      font-size: 2.95rem;
+      font-weight: 700;
+      color: var(--nav-text);
+      transition: color 0.4s;
     }
-    .logo:hover{color:var(--primary)}
-    /* menu */
-    .main-nav ul{display:flex;gap:2rem;list-style:none}
-    .main-nav a{
-      font-weight:500;padding:.5rem 1rem;border-radius:8px;
-      transition:background var(--fast),transform var(--fast)
+    .dark-toggle {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      width: 2.3rem; height: 2.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 10;
+      outline: none;
+      transition: filter 0.3s;
     }
-    .main-nav a:hover{background:rgba(59,130,246,.1);transform:translateY(-2px)}
-    .cv-link{
-      background:var(--primary);color:#fff!important;border-radius:var(--radius);
-      box-shadow:var(--shadow-sm);padding:.65rem 1.4rem;font-weight:600
+    .dark-toggle svg {
+      width: 2.1rem; height: 2.1rem; display: block;
     }
-    .cv-link:hover{background:var(--primary-light);box-shadow:var(--shadow-md)}
-
-    /* toggles */
-    .menu-toggle,.dark-toggle{
-      display:none;border:none;background:none;font-size:1.5rem;
-      color:var(--text-main);padding:.5rem;border-radius:50%;cursor:pointer;
-      transition:background var(--fast),transform var(--norm)
+    .dark-toggle .icon-sun-moon,
+    .dark .dark-toggle .icon-sun-moon {
+      fill: var(--accent-gold); stroke: var(--accent);
     }
-    .dark-toggle{margin-left:.5rem}
-    .dark-toggle:hover,.menu-toggle:hover{background:rgba(59,130,246,.1)}
-    .dark-toggle:hover{transform:rotate(180deg)}
-
-    /* ─────  Hero  ───── */
-    .hero{
-      background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
-      color:#fff;text-align:center;padding:7rem 1.5rem 6rem;position:relative;
-      overflow:hidden
+    nav.main-nav {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 50;
+      background: var(--nav-bg);
+      box-shadow: inset 0 -1px 0 #3a496f;
+      font-family: 'Spectral', serif;
+      transition: background 0.4s, color 0.4s, top 0.38s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .hero::before{
-      content:'';position:absolute;inset:0;pointer-events:none;
-      background:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><defs><pattern id=%22p%22 width=%22100%22 height=%22100%22 patternUnits=%22userSpaceOnUse%22><circle cx=%2225%22 cy=%2225%22 r=%221%22 fill=%22%23fff%22 opacity=%220.1%22/><circle cx=%2275%22 cy=%2275%22 r=%221%22 fill=%22%23fff%22 opacity=%220.1%22/></pattern></defs><rect width=%22100%22 height=%22100%22 fill=%22url(%23p)%22/></svg>');
+    .hide-nav { top: -65px; }
+    @media (min-width: 821px) { .hide-nav { top: 0 !important; } }
+    nav.main-nav ul {
+      display: flex;
+      justify-content: flex-start;
+      gap: 10px;
+      list-style: none;
+      max-width: 100vw;
+      margin: 0 auto;
+      padding: 8px 0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      white-space: nowrap;
     }
-    .hero-content{max-width:var(--max);margin:auto;position:relative;z-index:1}
-    .hero-photo{
-      width:200px;height:200px;border-radius:50%;object-fit:cover;
-      margin:auto 0 2rem;border:4px solid rgba(255,255,255,.3);
-      box-shadow:var(--shadow-lg);transition:transform var(--norm);
-      animation:float 6s ease-in-out infinite
+    nav.main-nav a {
+      position: relative;
+      font-size: 1.15rem;
+      min-width: 110px;
+      padding: 14px 22px;
+      flex-shrink: 0;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--nav-text);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+      background: none;
+      border: none;
+      outline: none;
+      box-shadow: none;
+      transition: color 0.4s, background 0.4s;
     }
-    .hero-photo:hover{transform:scale(1.05)}
-    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-    .hero-quote{
-      font-style:italic;font-size:1.1rem;margin:2rem auto 3rem;
-      max-width:600px;padding:1.75rem;background:rgba(255,255,255,.12);
-      border-radius:var(--radius);backdrop-filter:blur(10px);
-      border:1px solid rgba(255,255,255,.25)
+    nav.main-nav a::after {
+      content: '';
+      position: absolute;
+      left: 18px; right: 18px; bottom: 6px;
+      height: 3.5px; border-radius: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-gold));
+      width: 0; opacity: 0;
+      transition: width .26s, opacity .22s;
     }
-    .cta{display:inline-block;background:var(--accent);color:#fff;
-      padding:1rem 2rem;border-radius:var(--radius);font-weight:600;
-      transition:background var(--fast),transform var(--fast);box-shadow:var(--shadow-sm)}
-    .cta:hover{background:var(--accent-light);transform:translateY(-3px)}
-
-    /* ─────  Sections  ───── */
-    .main{max-width:var(--max);margin:auto;padding:0 2rem}
-    section{padding:6rem 0}
-    .section-head{text-align:center;margin-bottom:4rem}
-    .section-head h2{margin-bottom:1rem;position:relative}
-    .section-head h2::after{
-      content:'';position:absolute;left:50%;bottom:-.5rem;transform:translateX(-50%);
-      width:60px;height:4px;background:var(--primary);border-radius:2px
+    nav.main-nav a:hover, nav.main-nav a:focus {
+      color: var(--accent-gold);
+      background: rgba(255,255,255,0.04);
+      box-shadow: 0 0 6px 1.5px var(--accent-gold, #ffcc00);
     }
-    .section-head p{color:var(--text-muted);font-size:1.15rem}
-
-    /* About */
-    .about-grid{display:grid;grid-template-columns:1fr 320px;gap:4rem}
-    .about-img img{width:100%;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg)}
-    .about-img{position:sticky;top:100px}
-
-    /* Research cards */
-    .research-grid{display:grid;gap:2rem;
-       grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-    .card{
-      background:var(--bg-alt);border:1px solid var(--border);
-      border-radius:var(--radius-lg);padding:2rem;position:relative;
-      transition:transform var(--fast),box-shadow var(--fast)}
-    .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
-    .card h3{color:var(--primary);margin-bottom:1rem;font-size:1.4rem}
-    .card::before{
-      content:'';position:absolute;left:0;top:0;width:0;height:4px;
-      background:var(--primary);transition:width var(--norm)}
-    .card:hover::before{width:100%}
-
-    /* Contact */
-    .contact-grid{display:grid;gap:2rem;
-       grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-    .contact-item{
-      display:flex;gap:1rem;align-items:center;background:var(--bg-alt);
-      border:1px solid var(--border);padding:1.5rem;border-radius:var(--radius);
-      transition:transform var(--fast),box-shadow var(--fast)}
-    .contact-item:hover{transform:translateY(-3px);box-shadow:var(--shadow-sm)}
-    .icon{
-      width:48px;height:48px;border-radius:50%;
-      background:var(--primary);color:#fff;font-size:1.25rem;
-      display:flex;align-items:center;justify-content:center;flex-shrink:0
+    nav.main-nav a:hover::after, nav.main-nav a:focus::after {
+      width: calc(100% - 36px); opacity: .82;
+    }
+    nav.main-nav a.cv-link {
+      background: linear-gradient(90deg, var(--accent), var(--accent-gold));
+      color: #fff !important;
+      border-radius: 4px;
+      padding: 14px 22px;
+      font-weight: 700;
+      box-shadow: 0 2px 8px rgba(41,83,155,0.09);
+      margin-right: 8px;
+      transition: filter .2s, box-shadow .2s, color .2s, background .2s;
+    }
+    nav.main-nav a.cv-link:hover, nav.main-nav a.cv-link:focus {
+      filter: brightness(1.07) saturate(1.12);
+      box-shadow: 0 8px 22px rgba(41,83,155,0.19);
+      color: var(--nav-text) !important;
+    }
+    @media (max-width: 600px) {
+      nav.main-nav a {
+        font-size: 1.05rem;
+        padding: 12px 16px;
+        min-width: 88px;
+      }
     }
 
-    /* Footer */
-    footer{
-      background:var(--bg-alt);border-top:1px solid var(--border);
-      text-align:center;padding:3rem 1rem 1rem;margin-top:6rem}
-    .links{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
-    .links a{color:var(--text-muted);font-weight:500}
-    .links a:hover{color:var(--primary)}
-    .copy{color:var(--text-muted);font-size:.9rem}
-
-    /* Responsive */
-    @media(max-width:768px){
-      .main-nav ul{display:none;position:absolute;top:100%;left:0;right:0;
-        background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);
-        flex-direction:column;gap:.5rem;margin:.5rem;padding:1rem;box-shadow:var(--shadow-lg)}
-      .main-nav.open ul{display:flex}
-      .menu-toggle{display:block}
-      .about-grid{grid-template-columns:1fr;gap:2rem}.about-img{position:static}
-      section{padding:4rem 0}
+    /* HERO */
+    .hero {
+      position: relative;
+      height: auto;
+      padding: 20px 10px 20px;
+      text-align: center;
+      background: linear-gradient(120deg, rgba(47,58,85,0.28), rgba(41,83,155,0.23)), url('cornellcampus.jpg') center 44%/cover no-repeat;
+      border-bottom: 5px solid var(--accent);
+      box-shadow: 0 2px 40px rgba(35,64,101,0.09);
+      overflow: visible;
+      transition: background 0.4s, color 0.4s;
+      background-attachment: fixed;
+      filter: brightness(1.07) contrast(1.12);
+      user-select: none;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(120deg,rgba(255,255,255,0.56),rgba(205,225,255,0.20));
+      z-index: 0;
+      pointer-events: none;
+    }
+    .dark .hero {
+      background: linear-gradient(120deg, rgba(17,24,39,0.75), rgba(40,51,74,0.7)), url('cornellcampus.jpg') center 44%/cover no-repeat;
+      background-attachment: fixed;
+      filter: brightness(1) contrast(1.05);
+    }
+    .dark .hero::before {
+      background: linear-gradient(120deg,rgba(18,20,28,0.55),rgba(33,35,45,0.16));
+    }
+    @media (max-width: 820px) {
+      .hero { background-attachment: scroll !important; }
+    }
+    .hero-photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #f5f8fc;
+      box-shadow: 0 0 0 4px #fff, 0 17px 44px rgba(34,48,74,0.07);
+      margin-bottom: 0.5rem;
+      transition: transform .4s ease;
+      z-index: 1;
+      position: relative;
+      margin-top: 2rem;
+    }
+    .hero-photo:hover { transform: scale(1.05); }
+    .hero > * { position: relative; z-index: 1;}
+    .hero h1 {
+      color: #181c22 !important; /* Very deep navy for maximum contrast */
+      font-family: 'Spectral', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin-top: 0.35rem;
+      text-shadow:
+        0 2px 10px rgba(255,255,255,0.43),
+        0 1px 1.5px #dee7ee;
+      z-index: 1;
+      position: relative;
+      transition: color 0.4s;
+    }
+    .dark .hero h1 {
+      color: #fffdfa !important;
+      text-shadow:
+        0 2px 16px rgba(41,51,86,0.38),
+        0 1.5px 7px #131820;
+    }
+    .hero-subtitle {
+      font-family: 'Poppins', sans-serif;
+      color: #22304a;
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+      margin-top: 0.2rem;
+      text-shadow: 0 1px 3px rgba(240,240,240,0.12);
+    }
+    .dark .hero-subtitle {
+      color: #fbbf24;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.38);
+    }
+    .hero-quote {
+      margin-top: 1.5rem;
+      max-width: 410px;
+      font-style: italic;
+      background: #fffdec;
+      border-left: 4px solid var(--accent-gold);
+      border-radius: 6px;
+      box-shadow: 0 1.5px 8px rgba(245,233,221,0.09);
+      color: #495168;
+      padding: 11px 21px;
+      display: inline-block;
+      z-index: 1;
+      position: relative;
+      transition: background .4s, color .4s;
+      user-select: text;
+    }
+    .dark .hero-quote {
+      background: #233158;
+      color: #fbbf24;
+      border-left: 4px solid var(--accent-gold);
+      box-shadow: 0 1.5px 8px rgba(41,130,246,0.10);
     }
 
-    /* A11y: focus */
-    *:focus{outline:2px solid var(--primary);outline-offset:2px}
-    @media(prefers-reduced-motion:reduce){
-      *,*::before,*::after{animation-duration:.01ms!important;transition:none!important}
+    /* LAYOUT & ABOUT */
+    .section {
+      max-width: var(--max-width);
+      margin: 2.3rem auto 4rem;
+      padding: 0 1.1rem;
+      transition: color 0.4s, background 0.4s;
+    }
+    .section h2 {
+      font-family: 'Spectral', serif;
+      font-size: 2.18rem;
+      text-align: center;
+      margin-bottom: 1.75rem;
+      transition: color .4s;
+    }
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 46px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .about-text {
+      flex: 2;
+      min-width: 300px;
+      max-width: 670px;
+      font-size: 1.16rem;
+      line-height: 1.73;
+    }
+    .about-text p { margin-bottom: 1.45rem; }
+    .about-image {
+      flex: 1;
+      min-width: 220px;
+      max-width: 360px;
+      display: flex;
+      justify-content: center;
+    }
+    .about-image img {
+      width: 320px;
+      height: auto;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 7px 32px rgba(41,83,155,0.13);
     }
 
-    /* Appear on scroll */
-    .fade{opacity:0;transform:translateY(30px);transition:opacity .6s,transform .6s}
-    .fade.show{opacity:1;transform:translateY(0)}
+    /* CONTACT SECTION */
+    .contact-section {
+      margin-top: 2.5rem;
+      background: var(--contact-bg);
+      border: 1px solid var(--contact-border);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 10px 25px var(--contact-shadow);
+      backdrop-filter: blur(10px);
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .contact-section:hover {
+      box-shadow: 0 20px 40px var(--contact-shadow);
+      transform: translateY(-2px);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1.25rem;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      padding: 1.1rem 1rem;
+      background: rgba(41,83,155,.03);
+      border-radius: 12px;
+      border: 1px solid rgba(41,83,155,.09);
+      transition: border-color 0.3s, background 0.3s, transform 0.2s;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      user-select: none;
+    }
+    .contact-item:hover, .contact-item:focus {
+      background: rgba(41,83,155,.08);
+      border-color: var(--accent);
+      transform: translateX(8px) scale(1.025);
+      outline: none;
+      user-select: text;
+    }
+    .contact-icon {
+      width: 28px;
+      height: 28px;
+      margin-right: 0.95rem;
+      flex-shrink: 0;
+      display: inline-block;
+    }
+    .orcid-icon {
+      background: #a6ce39;
+      border-radius: 50%;
+      padding: 2px;
+    }
+    .linkedin-icon {
+      background: #0077B5;
+      border-radius: 4px;
+      padding: 2px;
+    }
+    .contact-info {
+      flex: 1;
+    }
+    .contact-label {
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--accent, #29539b);
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: 2px;
+    }
+    .contact-link {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-main, #232d41);
+      transition: color .2s, transform .18s;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+    .contact-link:hover { color: var(--accent-gold, #ffcc00); transform: translateX(4px);}
+    .orcid-link { font-family: 'Courier New', monospace; font-weight: 600; }
+    @media (max-width: 700px) {
+      .contact-section { padding: 1.3rem; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ETHICAL COMMITMENT */
+    .ethical {
+      max-width: 650px;
+      margin: 36px auto 0;
+      padding: 1rem;
+      background: #f8f8ea;
+      border-left: 4px solid rgba(188,159,91,0.18);
+      border-radius: 7px;
+      color: #775f29;
+      transition: background 0.4s, color 0.4s;
+      user-select: text;
+    }
+    .dark .ethical {
+      background: #23261c;
+      color: #fbbf24;
+      border-left: 4px solid #fbbf24;
+    }
+    footer {
+      text-align: center;
+      background: var(--nav-bg);
+      color: #adadad;
+      padding: 23px 1rem;
+      font-size: .98rem;
+      border-top: 1px solid rgba(45,57,85,0.2);
+      margin-top: 4.8rem;
+      transition: background 0.4s, color 0.4s;
+      user-select: none;
+    }
+    @media (max-width: 820px) {
+      .hero-photo { width: 150px; height: 150px; margin-top: 1.3rem; }
+      .about-image img { width: 260px; }
+      .about-container { flex-direction: column; text-align: center; }
+      .site-title { font-size: 2.5rem; }
+      .contact-section { padding: 1.5rem; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
-
 <body>
-  <!-- Header -->
-  <header class="site-header">
-    <div class="nav-container">
-      <a href="#top" class="logo">Adolfho Romero</a>
-
-      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <i class="fas fa-bars"></i>
-      </button>
-
-      <nav class="main-nav" aria-label="Main navigation">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#research">Research</a></li>
-          <li><a href="publications.html">Publications</a></li>
-          <li><a href="teaching.html">Teaching</a></li>
-          <li><a href="media.html">Media</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="adolfhoromerocv.pdf" target="_blank" class="cv-link">Download CV</a></li>
-        </ul>
-      </nav>
-
-      <button class="dark-toggle" aria-label="Toggle dark mode">
-        <i class="fas fa-moon"></i>
-      </button>
-    </div>
+  <header>
+    <button class="dark-toggle" role="button" tabindex="0" aria-pressed="false" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <svg class="icon-sun-moon" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="5.5" stroke-width="2"/>
+        <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M17.36 17.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M17.36 6.64l1.42-1.42"/>
+      </svg>
+    </button>
+    <h1 class="site-title">Adolfho Romero</h1>
   </header>
-
-  <!-- Hero -->
-  <section class="hero" id="top">
-    <div class="hero-content">
-      <img src="adolfhoromero.jpeg" alt="Adolfho Romero portrait" class="hero-photo">
-      <h1>Adolfho Romero</h1>
-      <p class="hero-subtitle">PhD Student • Industrial &amp; Labor Relations • Cornell University</p>
-      <blockquote class="hero-quote">
-        “I am grateful to work alongside community organizations, mentors, and workers in the ongoing struggle for dignity and justice.”
-      </blockquote>
-      <a href="#about" class="cta">Learn About My Work</a>
+  <nav class="main-nav" aria-label="Primary">
+    <ul>
+      <li><a href="adolfhoromerocv.pdf" target="_blank" class="cv-link">CV</a></li>
+      <li><a href="publications.html" class="pubs-link">Publications</a></li>
+      <li><a href="teaching.html" class="teaching-link">Teaching</a></li>
+      <li><a href="media.html">Media & Public Engagement</a></li>
+    </ul>
+  </nav>
+  <section class="hero" aria-label="Hero">
+    <img src="adolfhoromero.jpeg" alt="Adolfho Romero portrait" class="hero-photo"/>
+    <h1>Adolfho Romero</h1>
+    <h2 class="hero-subtitle">PhD Student &bull; Cornell ILR</h2>
+    <blockquote class="hero-quote">
+      “I am grateful to work alongside community organizations, mentors, and workers in the ongoing struggle for dignity and justice.”
+    </blockquote>
+  </section>
+  <section class="section" id="about" aria-labelledby="about-title">
+    <h2 id="about-title">About My Journey</h2>
+    <div class="about-container">
+      <article class="about-text">
+        <p>I am a Ph.D. student in the School of Industrial and Labor Relations at Cornell University, where I study how worker centers and non-profit organizations empower marginalized communities—particularly immigrant, low-wage, and undocumented workers—across New York and Florida. My research draws from oral history, ethnography, and the Power Resource Approach to understand how these organizations cultivate leadership, build coalitions, and generate collective power in the absence of formal union protections. I focus on the strategies used by grassroots groups to create spaces of dignity and democratic participation within structurally unequal labor systems. This work builds on years of experience in fieldwork, archival research, and policy collaboration with organizations like the Farmworkers Association of Florida and the Samuel Proctor Oral History Program.</p>
+        <p>My commitment to this work has been shaped through years of oral history fieldwork alongside communities across the United States, particularly in the Deep South. From documenting Black resistance in the Mississippi Delta to collaborating with Indigenous leaders through the Doris Duke Oral History Project, I’ve seen how storytelling and memory preserve dignity and challenge systems of oppression. These experiences continue to guide my approach to labor scholarship—one that is grounded in collective memory, accountable to the communities I study, and committed to amplifying the voices of those historically excluded from power.</p>
+        <div class="contact-section" aria-label="Contact Information">
+          <div class="contact-grid">
+            <div class="contact-item" tabindex="0">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M4 4h16v16H4V4zm8 7L4 6h16l-8 5zm0 2l8 5H4l8-5z"/>
+              </svg>
+              <div class="contact-info">
+                <div class="contact-label">Academic Email</div>
+                <a href="mailto:ar2539@cornell.edu" class="contact-link">ar2539@cornell.edu</a>
+              </div>
+            </div>
+            <div class="contact-item" tabindex="0">
+              <svg class="contact-icon orcid-icon" width="28" height="28" viewBox="0 0 24 24" fill="white">
+                <circle cx="12" cy="12" r="12" fill="#a6ce39"/>
+                <text x="50%" y="58%" text-anchor="middle" fill="#fff" font-size="13" font-family="Arial" dy=".3em">iD</text>
+              </svg>
+              <div class="contact-info">
+                <div class="contact-label">ORCID iD</div>
+                <a href="https://orcid.org/0009-0000-2505-0192" target="_blank" rel="noopener" class="contact-link orcid-link">
+                  0009-0000-2505-0192
+                </a>
+              </div>
+            </div>
+            <div class="contact-item" tabindex="0">
+              <svg class="contact-icon linkedin-icon" width="28" height="28" viewBox="0 0 24 24" fill="white">
+                <rect width="24" height="24" rx="4" fill="#0077B5"/>
+                <path d="M19 19h-3.4v-5.07c0-1.21-.43-2.04-1.52-2.04-0.83 0-1.32.56-1.54 1.1-.08.19-.1.45-.1.72V19H9.08s.05-9.19 0-10.15h3.41v1.44c.45-.69 1.25-1.67 3.04-1.67C18.47 8.62 19 10 19 12.23V19zM6.34 7.43c-1.09 0-1.81-.73-1.81-1.64 0-.93.74-1.64 1.85-1.64S8.13 5 8.13 5.79c0 .91-.72 1.64-1.79 1.64zm-1.7 11.57h3.39V9.26H4.64V19z" fill="#fff"/>
+              </svg>
+              <div class="contact-info">
+                <div class="contact-label">LinkedIn</div>
+                <a href="https://www.linkedin.com/in/adolfho/" target="_blank" rel="noopener" class="contact-link">
+                  /in/adolfho
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+      <aside class="about-image">
+        <img src="me.jpeg" alt="Adolfho Romero field portrait"/>
+      </aside>
+    </div>
+    <div class="ethical">
+      <strong>Ethical Commitment:</strong> My work follows IRB-approved protocols, oral consent, and shared agency—grounded in respect and participant dignity.
     </div>
   </section>
-
-  <main class="main">
-    <!-- About -->
-    <section id="about">
-      <div class="section-head">
-        <h2>About My Journey</h2>
-        <p>Exploring labor organizing, oral history, and community empowerment</p>
-      </div>
-
-      <div class="about-grid fade">
-        <div>
-          <p>I am a Ph.D. student in the School of Industrial and Labor Relations at Cornell University, where I study how worker centers and non-profit organizations empower marginalized communities—particularly immigrant, low-wage, and undocumented workers—across New York and Florida.</p>
-
-          <p>My research draws from oral history, ethnography, and the Power Resource Approach to understand how these organizations cultivate leadership, build coalitions, and generate collective power in the absence of formal union protections.</p>
-
-          <p>This work builds on years of fieldwork, archival research, and policy collaboration with organizations like the Farmworkers Association of Florida and the Samuel Proctor Oral History Program.</p>
-
-          <p>These experiences guide my approach to labor scholarship—grounded in collective memory, accountable to the communities I study, and committed to amplifying the voices of those historically excluded from power.</p>
-        </div>
-
-        <div class="about-img">
-          <img src="me.jpeg" alt="Adolfho Romero field portrait">
-        </div>
-      </div>
-    </section>
-
-    <!-- Research -->
-    <section id="research">
-      <div class="section-head">
-        <h2>Research Focus</h2>
-        <p>Labor studies, community organizing, and social justice</p>
-      </div>
-
-      <div class="research-grid fade">
-        <div class="card"><h3><i class="fas fa-users"></i> Worker Centers</h3><p>How community organizations build power for marginalized workers.</p></div>
-        <div class="card"><h3><i class="fas fa-microphone-alt"></i> Oral History</h3><p>Documenting worker experiences and preserving excluded voices.</p></div>
-        <div class="card"><h3><i class="fas fa-fist-raised"></i> Power Resource Approach</h3><p>Examining grassroots leadership in non-union contexts.</p></div>
-        <div class="card"><h3><i class="fas fa-balance-scale"></i> Labor Rights</h3><p>Intersection of labor organizing, civil rights, and social justice.</p></div>
-        <div class="card"><h3><i class="fas fa-handshake"></i> Community Partnerships</h3><p>Collaborative research benefiting partner organizations.</p></div>
-        <div class="card"><h3><i class="fas fa-history"></i> Collective Memory</h3><p>Storytelling as a tool to challenge systems of oppression.</p></div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-      <div class="section-head">
-        <h2>Get in Touch</h2>
-        <p>Connect with me about research, collaboration, or academic opportunities</p>
-      </div>
-
-      <div class="contact-grid fade">
-        <div class="contact-item">
-          <div class="icon"><i class="fas fa-envelope"></i></div>
-          <div><h3>Email</h3><p><a href="mailto:ar2539@cornell.edu">ar2539@cornell.edu</a></p></div>
-        </div>
-        <div class="contact-item">
-          <div class="icon"><i class="fas fa-university"></i></div>
-          <div><h3>Institution</h3><p>Cornell University<br>ILR School</p></div>
-        </div>
-        <div class="contact-item">
-          <div class="icon"><i class="fab fa-orcid"></i></div>
-          <div><h3>ORCID iD</h3><p><a href="https://orcid.org/0009-0000-2505-0192" target="_blank" rel="noopener">0009-0000-2505-0192</a></p></div>
-        </div>
-        <div class="contact-item">
-          <div class="icon"><i class="fab fa-linkedin"></i></div>
-          <div><h3>LinkedIn</h3><p><a href="https://www.linkedin.com/in/adolfho/" target="_blank" rel="noopener">/in/adolfho</a></p></div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
   <footer>
-    <div class="links">
-      <a href="publications.html">Publications</a>
-      <a href="teaching.html">Teaching</a>
-      <a href="media.html">Media &amp; Press</a>
-      <a href="adolfhoromerocv.pdf" target="_blank">CV</a>
-    </div>
-    <p class="copy">&copy; 2025 Adolfho Romero · Ethical research grounded in respect and participant dignity.</p>
+    &copy; 2025 Adolfho Romero · <a href="mailto:ar2539@cornell.edu">ar2539@cornell.edu</a>
   </footer>
-
-  <!-- ─────  Interactivity  ───── -->
   <script>
-    /* Mobile nav */
-    const toggleBtn = document.querySelector('.menu-toggle'),
-          nav       = document.querySelector('.main-nav');
-    toggleBtn.addEventListener('click',()=>{
-      nav.classList.toggle('open');
-      const open = nav.classList.contains('open');
-      toggleBtn.setAttribute('aria-expanded',open);
-      toggleBtn.firstElementChild.className = open ? 'fas fa-times' : 'fas fa-bars';
+    // DARK MODE TOGGLE LOGIC - Light mode default, dark only if user saved or prefers dark system theme
+    const darkToggle = document.querySelector('.dark-toggle');
+    function setAriaPressed() {
+      darkToggle.setAttribute('aria-pressed', document.documentElement.classList.contains('dark'));
+    }
+    function toggleDarkMode() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      setAriaPressed();
+    }
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+    setAriaPressed();
+    darkToggle.addEventListener('click', toggleDarkMode);
+    darkToggle.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleDarkMode();
+      }
     });
-    nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');toggleBtn.firstElementChild.className='fas fa-bars';toggleBtn.setAttribute('aria-expanded','false')}));
-
-    /* Dark mode */
-    const darkBtn = document.querySelector('.dark-toggle'),
-          root    = document.body;
-    function setIcon(){darkBtn.firstElementChild.className = root.classList.contains('dark') ? 'fas fa-sun' : 'fas fa-moon';}
-    if(localStorage.theme==='dark')root.classList.add('dark');
-    setIcon();
-    darkBtn.addEventListener('click',()=>{
-      root.classList.toggle('dark');
-      localStorage.theme = root.classList.contains('dark') ? 'dark':'light';
-      setIcon();
+    // Parallax hero background
+    window.addEventListener('scroll', function() {
+      const hero = document.querySelector('.hero');
+      let scrolled = window.scrollY;
+      hero.style.backgroundPosition = `center ${44 + scrolled * 0.055}%`;
     });
-
-    /* Scroll appear */
-    const observer=new IntersectionObserver(entries=>{
-      entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');observer.unobserve(e.target);}})
-    },{threshold:.1});
-    document.querySelectorAll('.fade').forEach(el=>observer.observe(el));
-
-    /* Header shadow */
-    window.addEventListener('scroll',()=>{
-      document.querySelector('.site-header').style.boxShadow =
-        window.pageYOffset>50?'0 2px 10px rgba(0,0,0,.08)':'none';
+    // Hide nav bar on scroll down, show on scroll up (mobile only)
+    let lastScrollTop = 0;
+    const nav = document.querySelector('.main-nav');
+    window.addEventListener('scroll', function() {
+      if (window.innerWidth <= 820) {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop && scrollTop > 60) {
+          nav.classList.add('hide-nav');
+        } else {
+          nav.classList.remove('hide-nav');
+        }
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+      } else {
+        nav.classList.remove('hide-nav');
+      }
     });
   </script>
 </body>
