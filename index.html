@@ -1,15 +1,14 @@
-```html
-
-
-
-  
-  
-  Adolfho Romero
-  
-  
-  
-  
-  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Adolfho Romero</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet"/>
+  <style>
     :root {
       --background-top:  #f7f8fa;
       --background-bottom: #e4e8ef;
@@ -211,86 +210,86 @@
       .hero h1 { font-size:2rem; }
       .hero-subtitle { font-size:1rem; }
     }
-  
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <button class="dark-toggle" aria-pressed="false" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5.5" stroke-width="2"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M17.36 17.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M17.36 6.64l1.42-1.42"/></svg>
+    </button>
+    <h1 class="site-title">Adolfho Romero</h1>
+  </header>
 
+  <!-- NAVIGATION -->
+  <nav class="main-nav" aria-label="Primary">
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#focus">Research Focus</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#media">Media</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="adolfhoromerocv.pdf" target="_blank" class="cv-link">Download CV</a></li>
+    </ul>
+  </nav>
 
-  
-  
-    
-      
-    
-    Adolfho Romero
-  
-
-  
-  
-    
-      Home
-      About
-      Research Focus
-      Publications
-      Teaching
-      Media
-      Contact
-      Download CV
-    
-  
-
-  
-  
-    
-    Adolfho Romero
-    PhD Student · Cornell ILR
-    
+  <!-- HERO -->
+  <section id="hero" class="hero" aria-label="Hero">
+    <img src="adolfhoromero.jpeg" alt="Adolfho Romero portrait" class="hero-photo"/>
+    <h1>Adolfho Romero</h1>
+    <h2 class="hero-subtitle">PhD Student · Cornell ILR</h2>
+    <blockquote class="hero-quote">
       “I am grateful to work alongside community organizations, mentors, and workers in the ongoing struggle for dignity and justice.”
-    
-  
+    </blockquote>
+  </section>
 
-  
-  
-    Research Focus
-    Labor studies, community organizing, and social justice
-    
-      Worker CentersHow community organizations build power for marginalized workers.
-      Oral HistoryDocumenting worker experiences and preserving excluded voices.
-      Power Resource ApproachExamining grassroots leadership in non-union contexts.
-      Labor RightsIntersection of labor organizing, civil rights, and social justice.
-      Community PartnershipsCollaborative research benefiting partner organizations.
-      Collective MemoryStorytelling as a tool to challenge systems of oppression.
-    
-  
+  <!-- RESEARCH FOCUS -->
+  <section id="focus" class="focus-section" aria-labelledby="focus-title">
+    <h2 id="focus-title">Research Focus</h2>
+    <div class="focus-sub">Labor studies, community organizing, and social justice</div>
+    <div class="cards">
+      <div class="card"><h3>Worker Centers</h3><p>How community organizations build power for marginalized workers.</p></div>
+      <div class="card"><h3>Oral History</h3><p>Documenting worker experiences and preserving excluded voices.</p></div>
+      <div class="card"><h3>Power Resource Approach</h3><p>Examining grassroots leadership in non-union contexts.</p></div>
+      <div class="card"><h3>Labor Rights</h3><p>Intersection of labor organizing, civil rights, and social justice.</p></div>
+      <div class="card"><h3>Community Partnerships</h3><p>Collaborative research benefiting partner organizations.</p></div>
+      <div class="card"><h3>Collective Memory</h3><p>Storytelling as a tool to challenge systems of oppression.</p></div>
+    </div>
+  </section>
 
-  
-  
-    About My Journey
-    
-      
-        I am a Ph.D. student in the School of Industrial and Labor Relations at Cornell University, where I study how worker centers and non-profit organizations empower marginalized communities—particularly immigrant, low-wage, and undocumented workers—across New York and Florida...
-        My commitment to this work has been shaped through years of oral history fieldwork alongside communities across the United States, particularly in the Deep South...
-      
-      
-        
-      
-    
-    
-      Ethical Commitment: My work follows IRB-approved protocols, oral consent, and shared agency—grounded in respect and participant dignity.
-    
-  
+  <!-- ABOUT -->
+  <section id="about" class="section" aria-labelledby="about-title">
+    <h2 id="about-title">About My Journey</h2>
+    <div class="about-container">
+      <article class="about-text">
+        <p>I am a Ph.D. student in the School of Industrial and Labor Relations at Cornell University, where I study how worker centers and non-profit organizations empower marginalized communities—particularly immigrant, low-wage, and undocumented workers—across New York and Florida...</p>
+        <p>My commitment to this work has been shaped through years of oral history fieldwork alongside communities across the United States, particularly in the Deep South...</p>
+      </article>
+      <aside class="about-image">
+        <img src="me.jpeg" alt="Adolfho Romero field portrait"/>
+      </aside>
+    </div>
+    <div class="ethical">
+      <strong>Ethical Commitment:</strong> My work follows IRB-approved protocols, oral consent, and shared agency—grounded in respect and participant dignity.
+    </div>
+  </section>
 
-  
-  
-    
-      
-    
-  
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section" aria-label="Contact Information">
+    <div class="contact-grid">
+      <!-- email, ORCID, LinkedIn items as before -->
+    </div>
+  </section>
 
-  
-  
-    &copy; 2025 Adolfho Romero · ar2539@cornell.edu
-  
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Adolfho Romero · <a href="mailto:ar2539@cornell.edu">ar2539@cornell.edu</a>
+  </footer>
 
-  
-  
+  <!-- SCRIPTS -->
+  <script>
     // Dark mode toggle
     const darkToggle = document.querySelector('.dark-toggle');
     function setPressed() {
@@ -317,10 +316,12 @@
     // Hide nav on mobile scroll
     let last=0; const nav=document.querySelector('.main-nav');
     window.addEventListener('scroll',()=>{
-      if(window.innerWidthlast&&st>60);
-        last=st
-
-
-```
-
-[1] https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/images/38345009/fcee74b9-0ecd-4fb8-828b-f637833fc76c/Screenshot-2025-08-03-at-10.24.23-PM.jpg
+      if(window.innerWidth<=820){
+        let st=window.pageYOffset||document.documentElement.scrollTop;
+        nav.classList.toggle('hide-nav',st>last&&st>60);
+        last=st<=0?0:st;
+      } else nav.classList.remove('hide-nav');
+    });
+  </script>
+</body>
+</html>
