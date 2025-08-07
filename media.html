@@ -155,17 +155,26 @@
     .card.visible { opacity: 1; transform: translateY(0); }
 
     /* LOGO IMAGE AUTO-SCALE */
-    .card img {
-      width: auto;
-      height: auto;
-      max-width: 220px;
-      max-height: 120px;
-      object-fit: contain;
-      background: #fff;
-      padding: 8px;
-      display: block;
-      margin: auto;
-    }
+    
+.card img {
+  width: auto;
+  height: auto;
+  max-width: 220px;
+  max-height: 120px;
+  object-fit: contain;
+  background: #fff;
+  padding: 8px;
+  display: block;
+  margin: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px #888;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.card img:hover {
+  box-shadow: 0 6px 20px #29539b33;
+  border: 1px solid var(--accent-gold);
+}
+
 
     /* PULL QUOTE */
     .pull-quote {
