@@ -971,6 +971,54 @@
     /* Unsplash credit style */
     .img-credit{ font-size:.8rem; color:var(--text-secondary); margin:.35rem 0 0 .1rem; }
     
+
+/* HERO image overlay inside each course card */
+.card-hero{
+  position: relative;
+  min-height: 240px;
+  border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+.card-hero::before{
+  content: "";
+  position: absolute; inset: 0;
+  background: var(--bg) center/cover no-repeat;
+  transform: scale(1.02);
+  z-index: -2;
+}
+.card-hero::after{
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.6) 70%);
+  z-index: -1;
+}
+.card-hero .hero-inner{
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 1.1rem 1.3rem;
+  color: #fff;
+  display:flex; align-items: flex-end; justify-content: space-between; gap: 1rem;
+}
+.card-hero h3{
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+  line-height: 1.25;
+  text-shadow: 0 2px 10px rgba(0,0,0,.45);
+}
+.card-hero .hero-meta{ font-size:.95rem; opacity:.92; margin-top:.35rem; }
+.card-hero .hero-left{ max-width: 78%; }
+.card-hero .card-toggle{
+  background: rgba(255,255,255,.14);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.25);
+  box-shadow: 0 6px 22px rgba(0,0,0,.24);
+}
+.card-hero .card-toggle:hover{ background: var(--accent-solid); border-color: transparent; }
+.card-teaching .card-body{ padding-top: 1.2rem; }
+@media (max-width: 700px){ .card-hero{ min-height: 200px; } }
+
 </style>
 </head>
 
@@ -1052,177 +1100,16 @@
     <div class="year-heading">2025</div>
     <div class="course-card-grid">
       \1
-              <div class="card-hero" style="background-image:url(https://images.unsplash.com/photo-1596524430615-b46475ddff6e?auto=format&fit=crop&w=1600&q=80);"></div>
-        <div class="card-header">
-          <span>African American and Latinx Histories (ILRGL 3805)</span>
-          <!-- Button to expand or collapse the entire course card -->
-          <!-- Set cards to open by default. The button reflects the open state and uses an up chevron icon. -->
-          <button class="card-toggle" aria-expanded="true" onclick="toggleCard(this)">Close <i class="fas fa-chevron-up"></i></button>
-        </div>
-        <!-- Collapsible body containing summary, syllabus link and detailed sections -->
-        <div class="card-body" aria-expanded="true">
-          <div class="card-tags">
-            <i class="fas fa-university"></i> Cornell University · Spring 2025<br/>
-            <i class="fas fa-users"></i> Graduate Teaching Assistant to Prof. Paul Ortiz · 120+ students
-          </div>
-          <div class="card-desc">
-            Large survey seminar tracing African American and Latinx histories, labor, culture, and social change from the Revolution to today. Led lectures and workshops on synthesis writing, grading, and feedback; guided reading analysis; managed course technology; and mentored students through one-on-one and group support. Consistently received top student ratings for helping students, stimulating deeper thinking, and making the course welcoming.<br/>
-            <a href="2025spring.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Syllabus (PDF)</a>
-          </div>
-          <!-- Button inside the card body to show/hide extended details -->
-          <button aria-controls="details-afrlatx-3805" aria-expanded="false" class="details-toggle" onclick="toggleDetails(this)">
-            Details <i class="fas fa-chevron-down"></i>
-          </button>
-          <div aria-expanded="false" class="card-details" id="details-afrlatx-3805">
-            <b><i class="fas fa-graduation-cap"></i> Teaching, Writing, &amp; Student Support:</b>
-            <ul>
-              <li>Designed and led lecture on equitable grading and how to write historical synthesis essays</li>
-              <li>Held regular and after-hours TA office hours (in-person and online), ensuring every student had access to help</li>
-              <li>Managed equipment and technology, coordinated digital resources for a 120+ student course</li>
-              <li>Led feedback workshops on essay structure, argument building, and evidence integration</li>
-              <li>Provided detailed, actionable comments on drafts and assignments; fostered inclusive environment where students reported feeling "safe," "encouraged," and "truly cared for"</li>
-            </ul>
-            <b><i class="fas fa-comments"></i> Discussion &amp; Reading Guidance:</b>
-            <ul>
-              <li>Ran recurring class and small-group discussions breaking down complex readings, thematic questions, and primary sources</li>
-              <li>Guided analysis of lecture content and readings during reviews and pre-assessment Q&amp;A</li>
-              <li>Supported group oral presentations; modeled historical argumentation and evidence-based debate</li>
-              <li>Helped students connect readings (across Black and Latinx literature/history) to contemporary issues</li>
-            </ul>
-            <b><i class="fas fa-book"></i> Core Required Readings:</b>
-            <ul>
-              <li><strong>Piri Thomas,</strong> <em>Down These Mean Streets</em></li>
-              <li><strong>Juan Gonzalez,</strong> <em>Harvest of Empire: A History of Latinos in America</em></li>
-              <li><strong>Paul Ortiz,</strong> <em>An African American and Latinx History of the United States</em></li>
-              <li><strong>Blair Kelley,</strong> <em>Black Folk: The Roots of the Black Working Class</em></li>
-              <li><strong>August Wilson,</strong> <em>The Piano Lesson</em></li>
-              <li><strong>Martín Espada,</strong> <em>Zapata's Disciple</em></li>
-              <li><strong>Johanna Fernández,</strong> <em>The Young Lords: A Radical History</em></li>
-            </ul>
-            <b><i class="fas fa-star"></i> Student Feedback Highlights:</b>
-            <ul>
-              <li><em>"Super kind, goes out of his way to help students, and very knowledgeable. Makes the classroom feel like a safe space."</em></li>
-              <li><em>"Great in the one-to-one setting... clear with instructions."</em></li>
-              <li><em>"He ensures students have a strong grasp on course material and is always willing to help anyone out."</em></li>
-              <li><em>Praised for making time after office hours and for "stimulating deeper thinking about the subject."</em></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+              <div class="card-hero" style="--bg: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1600&q=80')">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <h3>Samuel Proctor Oral History Program Internship</h3>
+      <div class="hero-meta">University of Florida · Fall 2020 — Instructor (SPOHP)</div>
     </div>
+    <button class="card-toggle" aria-expanded="true" onclick="toggleCard(this)">Close <i class="fas fa-chevron-up"></i></button>
   </div>
-  <div class="year-section">
-    <div class="year-heading">2024</div>
-    <div class="course-card-grid">
-      <div class="card-teaching card-slim scroll-reveal expanded">
-        <div class="card-header">
-          <span>Introduction to US Labor History (ILRGL 1100)</span>
-          <!-- Default state is expanded; update the button text and state. -->
-          <button class="card-toggle" aria-expanded="true" onclick="toggleCard(this)">Close <i class="fas fa-chevron-up"></i></button>
-        </div>
-        <div class="card-body" aria-expanded="true">
-          <div class="card-tags">
-            <i class="fas fa-university"></i> Cornell University · Fall 2024<br/>
-            <i class="fas fa-user-graduate"></i> Teaching Assistant to Prof. Paul Ortiz · Fridays 10:10 am &amp; 11:15 am
-          </div>
-          <div class="card-desc">
-            Explores working-class cultures, labor struggles, and the quest for dignity in US history. Emphasized peer-reviewed debate, collaborative timelines, and creative assignments.<br/>
-            <a href="2024syllabus.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Syllabus (PDF)</a>
-          </div>
-          <button aria-controls="details-labor-history" aria-expanded="false" class="details-toggle" onclick="toggleDetails(this)">
-            Details <i class="fas fa-chevron-down"></i>
-          </button>
-          <div aria-expanded="false" class="card-details" id="details-labor-history">
-            <b><i class="fas fa-lightbulb"></i> Section Innovations:</b>
-            <ul>
-              <li>Peer-review &amp; feedback workshops on synthesis essays</li>
-              <li>Collaborative history timeline creation with interactive elements</li>
-              <li>Structured debates on race, gender, and solidarity in labor movements</li>
-              <li>Oral-history activities and student-centered analysis</li>
-              <li>Contemporary thought pieces linking historical events to current news</li>
-            </ul>
-            <b><i class="fas fa-calendar-week"></i> Sample Weekly Highlights:</b>
-            <ul>
-              <li><strong>Rediker's Slave Ship:</strong> Critical discussion on labor, capital, and resistance</li>
-              <li><strong>Lowell Factory Girls / Black Folk:</strong> Group activities exploring gender, class, and organizing</li>
-              <li><strong>Homestead Strike Simulation:</strong> Structured debates and peer review sessions</li>
-              <li><strong>Creative Assignments:</strong> Timeline presentations and thematic reflections</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="year-section">
-    <div class="year-heading">2021</div>
-    <div class="course-card-grid">
-      \1
-              <div class="card-hero" style="background-image:url(https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1600&q=80);"></div>
-        <div class="card-header">
-          <span>Machen Florida Opportunity Scholars Oral History Project</span>
-          <button class="card-toggle" aria-expanded="true" onclick="toggleCard(this)">Close <i class="fas fa-chevron-up"></i></button>
-        </div>
-<div class="img-credit"><em>Header photo: Unsplash (free use)</em></div>
-        <div class="card-body" aria-expanded="true">
-          <div class="card-tags">
-            <i class="fas fa-university"></i> University of Florida · Spring 2021<br/>
-            <i class="fas fa-award"></i> Teaching Assistant (Instructor of Record) · SPOHP Internship
-          </div>
-          <div class="card-desc">
-            Flagship oral-history internship documenting the Machen Florida Opportunity Scholars (first-generation, low-income students). Students hosted national equity experts, conducted 40+ interviews, and collaborated with filmmakers—culminating in a gubernatorial visit by Jeb Bush.<br/>
-            <a href="2021spring.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Syllabus (PDF)</a> ·
-            <a href="https://youtube.com/playlist?list=PLzMFflzfI0ETOUAMp8AtPFNlaCYlc1kt4" target="_blank"><i class="fab fa-youtube"></i> Interview Playlist</a>
-          </div>
-          <button aria-controls="details-machen-project" aria-expanded="false" class="details-toggle" onclick="toggleDetails(this)">
-            Details <i class="fas fa-chevron-down"></i>
-          </button>
-          <div aria-expanded="false" class="card-details" id="details-machen-project">
-            <b><i class="fas fa-microphone"></i> Distinguished Speakers &amp; Fieldwork:</b>
-            <ul>
-              <li>McNair Scholars, national equity leaders, &amp; UF administrators addressed the class</li>
-              <li>Governor Jeb Bush visited to review student oral-history presentations</li>
-              <li>Students assisted professional filmmakers documenting first-gen success stories</li>
-            </ul>
-            <b><i class="fas fa-video"></i> Comprehensive Interview Collection:</b>
-            <ul>
-              <li>Alumni success narratives highlighting career trajectories &amp; program impact</li>
-              <li>Interviews with Machen founders, staff, and program directors (institutional memory)</li>
-              <li>Current scholars' perspectives on first-generation challenges &amp; support systems</li>
-              <li>All interviews archived and published via YouTube playlist for public access</li>
-            </ul>
-            <b><i class="fas fa-cogs"></i> Methodological &amp; Professional Training:</b>
-            <ul>
-              <li>Intensive workshops on interview design, active listening, and transcription</li>
-              <li>Hands-on practice with audio gear, transcription software, and archiving standards</li>
-              <li>Collaboration with documentary crew—camera, lighting, and editing basics</li>
-              <li>Presentation coaching for public showcases to UF leadership &amp; state officials</li>
-            </ul>
-            <b><i class="fas fa-balance-scale"></i> Equity &amp; Social-Justice Lens:</b>
-            <ul>
-              <li>Analyzed systemic barriers facing first-generation students</li>
-              <li>Positioned Machen Program as model for expanding educational access statewide</li>
-              <li>Connected oral histories to broader research on socioeconomic mobility</li>
-            </ul>
-            <b><i class="fas fa-impact"></i> Lasting Impact:</b>
-            <ul>
-              <li>Digital archive used for program evaluation &amp; future scholarship funding</li>
-              <li>Student work cited in UF equity reports &amp; documentary film</li>
-              <li>Participants gained portfolio pieces for grad-school &amp; career advancement</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="year-section">
-    <div class="year-heading">2020</div>
-    <div class="course-card-grid">
-      \1
-              <div class="card-hero" style="background-image:url(https://images.unsplash.com/photo-1604881982521-5486c0c80b1b?auto=format&fit=crop&w=1600&q=80);"></div>
-        <div class="card-header">
-          <span>Samuel Proctor Oral History Program Internship</span>
-          <button class="card-toggle" aria-expanded="true" onclick="toggleCard(this)">Close <i class="fas fa-chevron-up"></i></button>
-        </div>
+</div>
+
         <div class="card-body" aria-expanded="true">
           <div class="card-tags">
             <i class="fas fa-university"></i> University of Florida · Fall 2020<br/>
