@@ -967,7 +967,11 @@
       outline:2px solid var(--accent-solid);
       outline-offset:2px;
     }
-  </style>
+  
+    /* Unsplash credit style */
+    .img-credit{ font-size:.8rem; color:var(--text-secondary); margin:.35rem 0 0 .1rem; }
+    
+</style>
 </head>
 
 <body>
@@ -1046,38 +1050,15 @@
   <!-- Timeline grouping by year -->
   <div class="year-section">
     <div class="year-heading">2025</div>
-    
-<div class="course-card" style="
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  background: url('https://images.unsplash.com/photo-1520024420572-7e5b94cf6d89') center/cover no-repeat;
-  color: white;
-  padding: 1.5rem;
-  min-height: 220px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-">
-  <div style="background: rgba(0,0,0,0.55); padding: 1rem; border-radius: 8px;">
-    <h3 style="margin: 0;">Course Title</h3>
-    <p class="preview-text" style="margin-top: 0.5rem; max-height: 3.6em; overflow: hidden;">
-      
-    </p>
-    <button class="read-more" style="
-      margin-top: 0.8rem;
-      padding: 0.4rem 0.8rem;
-      border: none;
-      background: var(--accent-color);
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
-      display: none;
-    ">Read More</button>
-  </div>
-</div>
-
+    <div class="course-card-grid">
+      \1
+              <div class="card-hero" style="background-image:url(https://images.unsplash.com/photo-1596524430615-b46475ddff6e?auto=format&fit=crop&w=1600&q=80);"></div>
+        <div class="card-header">
+          <span>African American and Latinx Histories (ILRGL 3805)</span>
+          <!-- Button to expand or collapse the entire course card -->
+          <!-- Set cards to open by default. The button reflects the open state and uses an up chevron icon. -->
+          <button class="card-toggle" aria-expanded="true" onclick="toggleCard(this)">Close <i class="fas fa-chevron-up"></i></button>
+        </div>
         <!-- Collapsible body containing summary, syllabus link and detailed sections -->
         <div class="card-body" aria-expanded="true">
           <div class="card-tags">
@@ -1132,38 +1113,13 @@
   </div>
   <div class="year-section">
     <div class="year-heading">2024</div>
-    
-<div class="course-card" style="
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  background: url('https://images.unsplash.com/photo-1509099836639-18ba1795216d') center/cover no-repeat;
-  color: white;
-  padding: 1.5rem;
-  min-height: 220px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-">
-  <div style="background: rgba(0,0,0,0.55); padding: 1rem; border-radius: 8px;">
-    <h3 style="margin: 0;">Course Title</h3>
-    <p class="preview-text" style="margin-top: 0.5rem; max-height: 3.6em; overflow: hidden;">
-      
-    </p>
-    <button class="read-more" style="
-      margin-top: 0.8rem;
-      padding: 0.4rem 0.8rem;
-      border: none;
-      background: var(--accent-color);
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
-      display: none;
-    ">Read More</button>
-  </div>
-</div>
-
+    <div class="course-card-grid">
+      <div class="card-teaching card-slim scroll-reveal expanded">
+        <div class="card-header">
+          <span>Introduction to US Labor History (ILRGL 1100)</span>
+          <!-- Default state is expanded; update the button text and state. -->
+          <button class="card-toggle" aria-expanded="true" onclick="toggleCard(this)">Close <i class="fas fa-chevron-up"></i></button>
+        </div>
         <div class="card-body" aria-expanded="true">
           <div class="card-tags">
             <i class="fas fa-university"></i> Cornell University · Fall 2024<br/>
@@ -1199,38 +1155,14 @@
   </div>
   <div class="year-section">
     <div class="year-heading">2021</div>
-    
-<div class="course-card" style="
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c') center/cover no-repeat;
-  color: white;
-  padding: 1.5rem;
-  min-height: 220px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-">
-  <div style="background: rgba(0,0,0,0.55); padding: 1rem; border-radius: 8px;">
-    <h3 style="margin: 0;">Course Title</h3>
-    <p class="preview-text" style="margin-top: 0.5rem; max-height: 3.6em; overflow: hidden;">
-      
-    </p>
-    <button class="read-more" style="
-      margin-top: 0.8rem;
-      padding: 0.4rem 0.8rem;
-      border: none;
-      background: var(--accent-color);
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
-      display: none;
-    ">Read More</button>
-  </div>
-</div>
-
+    <div class="course-card-grid">
+      \1
+              <div class="card-hero" style="background-image:url(https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1600&q=80);"></div>
+        <div class="card-header">
+          <span>Machen Florida Opportunity Scholars Oral History Project</span>
+          <button class="card-toggle" aria-expanded="true" onclick="toggleCard(this)">Close <i class="fas fa-chevron-up"></i></button>
+        </div>
+<div class="img-credit"><em>Header photo: Unsplash (free use)</em></div>
         <div class="card-body" aria-expanded="true">
           <div class="card-tags">
             <i class="fas fa-university"></i> University of Florida · Spring 2021<br/>
@@ -1284,38 +1216,13 @@
   </div>
   <div class="year-section">
     <div class="year-heading">2020</div>
-    
-<div class="course-card" style="
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  background: url('https://images.unsplash.com/photo-1551836022-4c4c79ecde51') center/cover no-repeat;
-  color: white;
-  padding: 1.5rem;
-  min-height: 220px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-">
-  <div style="background: rgba(0,0,0,0.55); padding: 1rem; border-radius: 8px;">
-    <h3 style="margin: 0;">Course Title</h3>
-    <p class="preview-text" style="margin-top: 0.5rem; max-height: 3.6em; overflow: hidden;">
-      
-    </p>
-    <button class="read-more" style="
-      margin-top: 0.8rem;
-      padding: 0.4rem 0.8rem;
-      border: none;
-      background: var(--accent-color);
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
-      display: none;
-    ">Read More</button>
-  </div>
-</div>
-
+    <div class="course-card-grid">
+      \1
+              <div class="card-hero" style="background-image:url(https://images.unsplash.com/photo-1604881982521-5486c0c80b1b?auto=format&fit=crop&w=1600&q=80);"></div>
+        <div class="card-header">
+          <span>Samuel Proctor Oral History Program Internship</span>
+          <button class="card-toggle" aria-expanded="true" onclick="toggleCard(this)">Close <i class="fas fa-chevron-up"></i></button>
+        </div>
         <div class="card-body" aria-expanded="true">
           <div class="card-tags">
             <i class="fas fa-university"></i> University of Florida · Fall 2020<br/>
@@ -1705,33 +1612,6 @@
         feedbackContainer.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
       });
     }
-  });
-</script>
-
-
-<style>
-  .course-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  }
-</style>
-<script>
-  document.querySelectorAll('.course-card').forEach(card => {
-    const btn = card.querySelector('.read-more');
-    const text = card.querySelector('.preview-text');
-
-    card.addEventListener('mouseenter', () => btn.style.display = 'inline-block');
-    card.addEventListener('mouseleave', () => btn.style.display = 'none');
-
-    btn.addEventListener('click', () => {
-      if (text.style.maxHeight && text.style.maxHeight !== 'none') {
-        text.style.maxHeight = 'none';
-        btn.textContent = 'Show Less';
-      } else {
-        text.style.maxHeight = '3.6em';
-        btn.textContent = 'Read More';
-      }
-    });
   });
 </script>
 
