@@ -22,7 +22,7 @@
 
   <style>
     /* ——  2025 ENHANCED COLOR & DESIGN SYSTEM  —— */
-    :root{
+    :root{ --overlay-top: 0.58; --overlay-bottom: 0.82; 
       --background-top: linear-gradient(135deg, #f7f8fa 0%, #e8ecf3 100%);
       --background-bottom: linear-gradient(135deg, #e4e8ef 0%, #d0d7e1 100%);
       --nav-bg: linear-gradient(135deg, #1a2332 0%, #22304a 100%);
@@ -520,12 +520,7 @@
     }
 
     /* Add a gradient overlay to improve text contrast over busy artwork */
-    .card-teaching::after{
-      content:'';
-      position:absolute;
-      top:0;left:0;
-      width:100%;height:100%;
-      background:linear-gradient(180deg, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+    .card-teaching::after{ content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,var(--overlay-top)), rgba(0,0,0,var(--overlay-bottom)));
       z-index:1;
       pointer-events:none;
     }
@@ -572,7 +567,7 @@
     .card-desc{
       margin-top:1rem;
       line-height:1.7;
-    }
+     text-shadow: 0 1px 4px rgba(0,0,0,0.7);}
     
     .card-desc a{
       color:var(--accent-solid);
@@ -1032,7 +1027,7 @@
     .card-machen .card-desc,
     .card-spohp .card-desc{
       color: #f4f4f4;
-    }
+     text-shadow: 0 1px 4px rgba(0,0,0,0.7);}
     .card-afrlatx .card-desc a,
     .card-laborhistory .card-desc a,
     .card-machen .card-desc a,
@@ -1066,13 +1061,11 @@ main{ max-width: var(--max-width); }
 
 /* Card sizing & readability */
 .card-slim{ padding: 2rem 2.25rem; }
-.card-desc{ line-height: 1.65; }
+.card-desc{ line-height: 1.65;  text-shadow: 0 1px 4px rgba(0,0,0,0.7);}
 .card-tags{ color: rgba(255,255,255,0.9); }
 
 /* Subtle overlay for text contrast */
-.card-teaching::after{
-  content:''; position:absolute; inset:0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.34), rgba(0,0,0,0.58));
+.card-teaching::after{ content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,var(--overlay-top)), rgba(0,0,0,var(--overlay-bottom)));
   z-index:1; pointer-events:none;
 }
 .card-teaching > *{ position:relative; z-index:2; }
