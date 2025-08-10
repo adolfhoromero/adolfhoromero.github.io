@@ -1102,6 +1102,10 @@ main{ max-width: var(--max-width); }
   margin: 1rem 0 2.2rem;
 }
 
+
+    .site-title a { color: inherit; text-decoration: none; }
+    .site-title a:focus, .site-title a:hover { opacity: .9; }
+    
 </style>
 <style>
   /* === Sitewide Header & Nav Overrides for Consistency === */
@@ -1225,11 +1229,12 @@ main{ max-width: var(--max-width); }
       <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M17.36 17.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M17.36 6.64l1.42-1.42"/>
     </svg>
   </button>
-  <h1 class="site-title">Adolfho Romero</h1>
+  <h1 class="site-title"><a href="index.html" aria-label="Go to Home">Adolfho Romero</a></h1>
 </header>
 
   <nav class="main-nav" aria-label="Primary">
   <ul>
+      <li><a href="index.html">Home</a></li>
     <li><a href="adolfhoromerocv.pdf" target="_blank" class="cv-link">CV</a></li>
     <li><a href="publications.html" class="pubs-link">Publications</a></li>
     <li><a href="teaching.html" class="teaching-link">Teaching</a></li>
