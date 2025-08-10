@@ -1039,11 +1039,11 @@
     .card-spohp .card-desc a{
       color: var(--accent-gold-solid);
     }
-  /* === WIDE LAYOUT + ALWAYS OPEN (non-destructive overrides) === */
-:root{ --max-width: 1360px; }           /* give the grid more room */
+  
+/* === Two-column wide grid + overlay + gold "View more" link === */
+:root{ --max-width: 1360px; }
 main{ max-width: var(--max-width); }
 
-/* Two generous columns; each column can grow wide */
 .years-grid{
   display:grid;
   grid-template-columns: repeat(2, minmax(560px, 1fr));
@@ -1053,33 +1053,46 @@ main{ max-width: var(--max-width); }
 @media (max-width: 1200px){ .years-grid{ grid-template-columns: repeat(2, minmax(480px, 1fr)); } }
 @media (max-width: 1040px){ .years-grid{ grid-template-columns: 1fr; } }
 
-/* Remove the vertical timeline bar in this grid layout */
 .year-section{ border-left: none !important; padding-left: 0 !important; }
 
-/* Cards fill their column width and breathe a bit more */
-.course-card-grid{ grid-template-columns: 1fr !important; }
-.card-teaching{ width: 100%; border-radius: 22px; }
-.card-slim{ padding: 2rem 2.25rem; }
+/* Keep summary visible; details collapsed by default */
+.card-body{ display:block !important; }
+.card-details{ max-height:0; opacity:0; overflow:hidden; background:rgba(0,0,0,0.12); }
 
-/* Keep everything visible by default */
-.card-body{ display: block !important; }
-.card-details{ max-height: none !important; opacity: 1 !important; overflow: visible !important; background: rgba(0,0,0,0.12); }
+/* Hide the big card toggle (Open/Close) */
+.card-toggle{ display:none !important; }
 
-/* Hide toggles since content is open; declutters header */
-.card-toggle, .details-toggle{ display: none !important; }
+/* Style the "View more" details toggle like a subtle link, anchored bottom-right */
+.details-toggle{
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+  padding:.4rem .6rem;
+  background:transparent;
+  border:none;
+  color:var(--accent-gold-solid);
+  font-weight:700;
+  font-size:1rem;
+  cursor:pointer;
+  margin-top:1rem;
+  float:right; /* tucks to the right as requested */
+  text-decoration:none;
+}
+.details-toggle:hover{ color:#111827; background:var(--accent-gold-solid); border-radius:10px; }
 
-/* Gold accents + readable links on image cards */
-.card-header{ color: var(--accent-gold-solid); }
-.card-desc a{ color: var(--accent-gold-solid) !important; text-shadow: 0 1px 3px rgba(0,0,0,0.55); }
-
-/* Darken overlay slightly for stronger contrast on busy art */
+/* Darken overlay slightly for legibility on busy artwork */
 .card-teaching::after{
   content:''; position:absolute; inset:0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.38), rgba(0,0,0,0.62));
+  background: linear-gradient(180deg, rgba(0,0,0,0.38), rgba(0,0,0,0.6));
   z-index:1; pointer-events:none;
 }
 .card-teaching > *{ position:relative; z-index:2; }
 .card-teaching::before{ z-index:3; }
+
+/* Ensure titles and links read well on images */
+.card-header{ color: var(--accent-gold-solid); }
+.card-desc a{ color: var(--accent-gold-solid); text-shadow: 0 1px 3px rgba(0,0,0,.55); }
+
 
 </style>
 </head>
@@ -1546,12 +1559,12 @@ main{ max-width: var(--max-width); }
     if (!isOpen) {
       details.style.maxHeight = details.scrollHeight + "px";
       details.setAttribute('aria-expanded', 'true');
-      btn.innerHTML = "Hide Details <i class='fas fa-chevron-up'></i>";
+      btn.innerHTML = "View less <i class='fas fa-chevron-up'></i>";
       if(icon) icon.style.transform = 'rotate(180deg)';
     } else {
       details.style.maxHeight = "0px";
       details.setAttribute('aria-expanded', 'false');
-      btn.innerHTML = "Details <i class='fas fa-chevron-down'></i>";
+      btn.innerHTML = "View more <i class='fas fa-chevron-down'></i>";
       if(icon) icon.style.transform = 'rotate(0deg)';
     }
   }
