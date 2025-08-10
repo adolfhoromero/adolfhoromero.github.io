@@ -1039,60 +1039,69 @@
     .card-spohp .card-desc a{
       color: var(--accent-gold-solid);
     }
-  
-/* === Two-column wide grid + overlay + gold "View more" link === */
-:root{ --max-width: 1360px; }
+  /* === HORIZONTAL, TIGHT TWO-COLUMN LAYOUT + VIEW MORE === */
+:root{ --max-width: 1600px; }
 main{ max-width: var(--max-width); }
 
+/* Make columns wider and reduce the gap */
 .years-grid{
   display:grid;
-  grid-template-columns: repeat(2, minmax(560px, 1fr));
-  gap: 3rem 2.25rem;
+  grid-template-columns: repeat(2, minmax(680px, 1fr)); /* wider cards for shorter height */
+  column-gap: 1.5rem;
+  row-gap: 2rem;
   align-items: start;
 }
-@media (max-width: 1200px){ .years-grid{ grid-template-columns: repeat(2, minmax(480px, 1fr)); } }
-@media (max-width: 1040px){ .years-grid{ grid-template-columns: 1fr; } }
+@media (max-width: 1350px){
+  .years-grid{ grid-template-columns: repeat(2, minmax(560px, 1fr)); }
+}
+@media (max-width: 1100px){
+  .years-grid{ grid-template-columns: 1fr; }
+}
 
+/* Remove the vertical timeline bar */
 .year-section{ border-left: none !important; padding-left: 0 !important; }
 
-/* Keep summary visible; details collapsed by default */
-.card-body{ display:block !important; }
-.card-details{ max-height:0; opacity:0; overflow:hidden; background:rgba(0,0,0,0.12); }
+/* Inside each year, keep a single wide card per row */
+.course-card-grid{ display:grid; grid-template-columns: 1fr !important; }
 
-/* Hide the big card toggle (Open/Close) */
-.card-toggle{ display:none !important; }
+/* Card sizing & readability */
+.card-slim{ padding: 2rem 2.25rem; }
+.card-desc{ line-height: 1.65; }
+.card-tags{ color: rgba(255,255,255,0.9); }
 
-/* Style the "View more" details toggle like a subtle link, anchored bottom-right */
-.details-toggle{
-  display:inline-flex;
-  align-items:center;
-  gap:.4rem;
-  padding:.4rem .6rem;
-  background:transparent;
-  border:none;
-  color:var(--accent-gold-solid);
-  font-weight:700;
-  font-size:1rem;
-  cursor:pointer;
-  margin-top:1rem;
-  float:right; /* tucks to the right as requested */
-  text-decoration:none;
-}
-.details-toggle:hover{ color:#111827; background:var(--accent-gold-solid); border-radius:10px; }
-
-/* Darken overlay slightly for legibility on busy artwork */
+/* Subtle overlay for text contrast */
 .card-teaching::after{
   content:''; position:absolute; inset:0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.38), rgba(0,0,0,0.6));
+  background: linear-gradient(180deg, rgba(0,0,0,0.34), rgba(0,0,0,0.58));
   z-index:1; pointer-events:none;
 }
 .card-teaching > *{ position:relative; z-index:2; }
 .card-teaching::before{ z-index:3; }
 
-/* Ensure titles and links read well on images */
+/* Gold accents and better link contrast */
 .card-header{ color: var(--accent-gold-solid); }
-.card-desc a{ color: var(--accent-gold-solid); text-shadow: 0 1px 3px rgba(0,0,0,.55); }
+.card-desc a{ color: var(--accent-gold-solid); text-shadow: 0 1px 3px rgba(0,0,0,0.55); }
 
+/* View more pattern: show summary, collapse details initially */
+.card-body{ display:block !important; }
+.card-details{ max-height:0; opacity:0; overflow:hidden; background: rgba(0,0,0,0.12); }
+
+/* Hide the big Open/Close button in header */
+.card-toggle{ display:none !important; }
+
+/* Style the "View more" link at the bottom-right of each card */
+.details-toggle{
+  display:inline-flex; align-items:center; gap:.4rem;
+  background:transparent; border:none; cursor:pointer;
+  color: var(--accent-gold-solid); font-weight:700; font-size:1rem;
+  padding:.4rem .65rem; margin-top:1rem; float:right;
+}
+.details-toggle:hover{ background: var(--accent-gold-solid); color:#111827; border-radius:10px; }
+
+/* Mobile: fall back to single column */
+@media (max-width: 600px){
+  .details-toggle{ float:none; display:block; margin-left:auto; }
+}
 
 </style>
 </head>
