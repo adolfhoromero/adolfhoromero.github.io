@@ -79,20 +79,7 @@
       color: var(--nav-text);
       transition: color 0.4s;
     }
-    .dark-toggle {
-      position: absolute;
-      top: 1rem; right: 1rem;
-      width: 2.3rem; height: 2.3rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: none;
-      border: none;
-      cursor: pointer;
-      z-index: 200;
-      outline: none;
-      transition: filter 0.3s;
-    }
+    .dark-toggle { position: absolute; top: calc(0.6rem + env(safe-area-inset-top)); right: calc(1rem + env(safe-area-inset-right)); width: 2.3rem; height: 2.3rem; display:flex; align-items:center; justify-content:center; background:none; border:none; cursor:pointer; z-index:200; outline:none; transition: filter .3s; }
     .dark-toggle svg {
       width: 2.1rem; height: 2.1rem; display: block;
     }
@@ -1233,18 +1220,7 @@ nav.main-nav a.cv-link {
 
 
 /* === Mobile drawer additions (appended) === */
-.menu-toggle{
-  position:absolute;
-  top: calc(0.6rem + env(safe-area-inset-top));
-  left: calc(0.6rem + env(safe-area-inset-left));
-  width:44px; height:44px; display:flex; align-items:center; justify-content:center;
-  color:var(--nav-text);
-  background: rgba(255,255,255,.12);
-  border:1px solid rgba(255,255,255,.28);
-  border-radius:12px;
-  backdrop-filter: blur(4px);
-  cursor:pointer; z-index:200;
-}
+.menu-toggle{ position:absolute; top: calc(0.6rem + env(safe-area-inset-top)); right: calc(3.8rem + env(safe-area-inset-right)); left:auto; width:44px; height:44px; display:flex; align-items:center; justify-content:center; color:var(--nav-text); background: rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.28); border-radius:12px; backdrop-filter: blur(4px); box-shadow: 0 2px 10px rgba(0,0,0,.25); cursor:pointer; z-index:200; }
 .menu-toggle svg{ width:22px; height:22px; display:block; }
 @media (min-width:821px){ .menu-toggle{ display:none; } }
 .menu-toggle svg path{ fill: currentColor; }
