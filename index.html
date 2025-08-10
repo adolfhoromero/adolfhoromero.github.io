@@ -462,6 +462,127 @@
     .site-title a { color: inherit; text-decoration: none; }
     .site-title a:focus, .site-title a:hover { opacity: .9; }
     
+
+/* === Uniform Header and Navigation Sizing === */
+:root {
+  --nav-bg: #22304a;
+  --nav-text: #ffffff;
+  --accent: #29539b;
+  --accent-gold: #ffcc00;
+}
+.dark {
+  --nav-bg: #111827;
+  --nav-text: #e5e7eb;
+  --accent: #3b82f6;
+  --accent-gold: #fbbf24;
+}
+header {
+  background: var(--nav-bg) !important;
+  color: var(--nav-text) !important;
+  text-align: center !important;
+  padding: 1.5rem 1rem 0 !important;
+  box-shadow: 0 4px 22px rgba(34,48,74,0.47) !important;
+  position: relative !important;
+  z-index: 100 !important;
+}
+.site-title {
+  font-family: 'Spectral', serif !important;
+  font-size: 2.95rem !important;
+  font-weight: 700 !important;
+  color: var(--nav-text) !important;
+}
+.site-title a { color: inherit !important; text-decoration: none !important; }
+.site-title a:focus, .site-title a:hover { opacity: .9 !important; }
+nav.main-nav {
+  position: sticky !important;
+  top: 0 !important;
+  width: 100% !important;
+  z-index: 40 !important;
+  background: var(--nav-bg) !important;
+  box-shadow: inset 0 -1px 0 #3a496f !important;
+  font-family: 'Spectral', serif !important;
+}
+nav.main-nav ul {
+  display: flex !important;
+  justify-content: flex-start !important;
+  gap: 10px !important;
+  list-style: none !important;
+  max-width: 100vw !important;
+  margin: 0 auto !important;
+  padding: 8px 0 !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  white-space: nowrap !important;
+}
+nav.main-nav a {
+  position: relative !important;
+  font-size: 1.15rem !important;
+  min-width: 110px !important;
+  padding: 14px 22px !important;
+  flex-shrink: 0 !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: .12em !important;
+  color: var(--nav-text) !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4) !important;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+/* Remove any old "active" background styles coming from previous CSS */
+nav.main-nav a.active,
+nav.main-nav li.active > a,
+nav.main-nav a.is-active {
+  background: none !important;
+  color: var(--nav-text) !important;
+  box-shadow: none !important;
+}
+/* Uniform hover and focus */
+nav.main-nav a:hover, nav.main-nav a:focus {
+  color: var(--accent-gold) !important;
+  background: rgba(255,255,255,0.04) !important;
+  box-shadow: 0 0 6px 1.5px var(--accent-gold) !important;
+}
+/* Underline indicator */
+nav.main-nav a::after {
+  content: '' !important;
+  position: absolute !important;
+  left: 18px !important; right: 18px !important; bottom: 6px !important;
+  height: 3.5px !important; border-radius: 2px !important;
+  background: linear-gradient(90deg, var(--accent), var(--accent-gold)) !important;
+  width: 0 !important; opacity: 0 !important;
+  transition: width .26s, opacity .22s !important;
+}
+nav.main-nav a:hover::after, nav.main-nav a:focus::after {
+  width: calc(100% - 36px) !important;
+  opacity: .82 !important;
+}
+/* Active page via aria-current */
+nav.main-nav a[aria-current="page"] {
+  color: var(--accent-gold) !important;
+}
+nav.main-nav a[aria-current="page"]::after {
+  width: calc(100% - 36px) !important;
+  opacity: .82 !important;
+}
+/* CV button keeps its gradient and consistent height */
+nav.main-nav a.cv-link {
+  background: linear-gradient(90deg, var(--accent), var(--accent-gold)) !important;
+  color: #fff !important;
+  border-radius: 4px !important;
+  padding: 14px 22px !important;
+  font-weight: 700 !important;
+  min-width: 110px !important;
+  box-shadow: 0 2px 8px rgba(41,83,155,0.09) !important;
+}
+@media (max-width: 600px) {
+  nav.main-nav a {
+    font-size: 1.05rem !important;
+    padding: 12px 16px !important;
+    min-width: 88px !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -472,11 +593,11 @@
         <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M17.36 17.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M17.36 6.64l1.42-1.42"/>
       </svg>
     </button>
-    <h1 class="site-title"><a href="index.html" aria-label="Go to Home">Adolfho Romero</a></h1>
+    <h1 class="site-title"><a href="index.html" aria-label="Go to Home" aria-current="page">Adolfho Romero</a></h1>
   </header>
   <nav class="main-nav" aria-label="Primary">
     <ul>
-      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="publications.html" class="pubs-link">Publications</a></li>
       <li><a href="teaching.html" class="teaching-link">Teaching</a></li>
       <li><a href="media.html">Media & Public Engagement</a></li>
