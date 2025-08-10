@@ -461,9 +461,18 @@
     /* ——  ENHANCED COURSE CARDS WITH ADVANCED INTERACTIONS  —— */
     .course-card-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(400px, 1fr));
+      /* On narrow screens cards automatically wrap but maintain a minimum width.
+         Increasing the minimum width encourages pairing on larger viewports. */
+      grid-template-columns:repeat(auto-fit, minmax(420px, 1fr));
       gap:2rem;
       margin:2rem 0;
+    }
+
+    @media (min-width: 900px){
+      /* Force two columns on wider screens so cards sit side by side */
+      .course-card-grid{
+        grid-template-columns:repeat(2, 1fr);
+      }
     }
 
     /* Timeline styles for grouping courses by year */
@@ -482,7 +491,13 @@
     }
     
     .card-teaching{
+      /* Provide a fallback colour and configure image behaviour. Individual
+         course cards will apply their own background images via separate
+         classes. */
       background:var(--card-bg);
+      background-size:cover;
+      background-position:center;
+      color:#ffffff;
       border-radius:var(--border-radius-lg);
       box-shadow:var(--card-shadow);
       margin-bottom:2rem;
@@ -491,7 +506,8 @@
       position:relative;
       border:1px solid rgba(59,130,246,0.1);
     }
-    
+
+    /* Position the accent bar above the overlay */
     .card-teaching::before{
       content:'';
       position:absolute;
@@ -500,6 +516,24 @@
       background:var(--accent);
       transform:scaleX(0);
       transition:transform 0.3s ease;
+      z-index:2;
+    }
+
+    /* Add a gradient overlay to improve text contrast over busy artwork */
+    .card-teaching::after{
+      content:'';
+      position:absolute;
+      top:0;left:0;
+      width:100%;height:100%;
+      background:linear-gradient(180deg, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+      z-index:1;
+      pointer-events:none;
+    }
+
+    /* Elevate direct descendants above the overlay */
+    .card-teaching > * {
+      position:relative;
+      z-index:2;
     }
     
     .card-teaching:hover{
@@ -967,6 +1001,44 @@
       outline:2px solid var(--accent-solid);
       outline-offset:2px;
     }
+
+    /* ——  COURSE-SPECIFIC BACKGROUND IMAGES  —— */
+    /* Each card receives a unique class corresponding to its course. These
+       classes assign the appropriate generated illustration as the card's
+       background image. The images live alongside the HTML file in the
+       repository and are loaded relative to this document. */
+    .card-afrlatx{ background-image:url('afrlatx-bg.png'); }
+    .card-laborhistory{ background-image:url('laborhistory-bg.png'); }
+    .card-machen{ background-image:url('machen-bg.png'); }
+    .card-spohp{ background-image:url('spohp-bg.png'); }
+
+    /* When cards use photographic backgrounds, override some text colours
+       to ensure sufficient contrast. Highlight course titles using the
+       warm gold accent and lighten supporting text. */
+    .card-afrlatx .card-header span,
+    .card-laborhistory .card-header span,
+    .card-machen .card-header span,
+    .card-spohp .card-header span{
+      color: var(--accent-gold-solid);
+    }
+    .card-afrlatx .card-tags,
+    .card-laborhistory .card-tags,
+    .card-machen .card-tags,
+    .card-spohp .card-tags{
+      color: rgba(255, 255, 255, 0.8);
+    }
+    .card-afrlatx .card-desc,
+    .card-laborhistory .card-desc,
+    .card-machen .card-desc,
+    .card-spohp .card-desc{
+      color: #f4f4f4;
+    }
+    .card-afrlatx .card-desc a,
+    .card-laborhistory .card-desc a,
+    .card-machen .card-desc a,
+    .card-spohp .card-desc a{
+      color: var(--accent-gold-solid);
+    }
   </style>
 </head>
 
@@ -1047,7 +1119,7 @@
   <div class="year-section">
     <div class="year-heading">2025</div>
     <div class="course-card-grid">
-      <div class="card-teaching card-slim scroll-reveal expanded">
+      <div class="card-teaching card-afrlatx card-slim scroll-reveal expanded">
         <div class="card-header">
           <span>African American and Latinx Histories (ILRGL 3805)</span>
           <!-- Button to expand or collapse the entire course card -->
@@ -1109,7 +1181,7 @@
   <div class="year-section">
     <div class="year-heading">2024</div>
     <div class="course-card-grid">
-      <div class="card-teaching card-slim scroll-reveal expanded">
+      <div class="card-teaching card-laborhistory card-slim scroll-reveal expanded">
         <div class="card-header">
           <span>Introduction to US Labor History (ILRGL 1100)</span>
           <!-- Default state is expanded; update the button text and state. -->
@@ -1151,7 +1223,7 @@
   <div class="year-section">
     <div class="year-heading">2021</div>
     <div class="course-card-grid">
-      <div class="card-teaching card-slim scroll-reveal expanded">
+      <div class="card-teaching card-machen card-slim scroll-reveal expanded">
         <div class="card-header">
           <span>Machen Florida Opportunity Scholars Oral History Project</span>
           <button class="card-toggle" aria-expanded="true" onclick="toggleCard(this)">Close <i class="fas fa-chevron-up"></i></button>
@@ -1210,7 +1282,7 @@
   <div class="year-section">
     <div class="year-heading">2020</div>
     <div class="course-card-grid">
-      <div class="card-teaching card-slim scroll-reveal expanded">
+      <div class="card-teaching card-spohp card-slim scroll-reveal expanded">
         <div class="card-header">
           <span>Samuel Proctor Oral History Program Internship</span>
           <button class="card-toggle" aria-expanded="true" onclick="toggleCard(this)">Close <i class="fas fa-chevron-up"></i></button>
