@@ -598,7 +598,7 @@
     .details-toggle{
       background:none;
       border:none;
-      color:var(--accent-gold-solid);
+      color:var(--accent-solid);
       font-weight:600;
       font-size:1rem;
       cursor:pointer;
@@ -622,8 +622,8 @@
     }
     
     .details-toggle:hover{
-      color:#111827;
-      background:var(--accent-gold-solid);
+      color:#ffffff;
+      background:var(--accent-solid);
       transform:scale(1.05);
     }
     
@@ -684,7 +684,7 @@
     .card-toggle{
       background:none;
       border:none;
-      color:var(--accent-gold-solid);
+      color:var(--accent-solid);
       font-weight:600;
       font-size:1rem;
       cursor:pointer;
@@ -694,8 +694,8 @@
       transition:var(--transition-smooth);
     }
     .card-toggle:hover{
-      color:#111827;
-      background:var(--accent-gold-solid);
+      color:#ffffff;
+      background:var(--accent-solid);
     }
 
     /* ——  ENHANCED FEEDBACK SECTION WITH ANIMATIONS  —— */
@@ -1039,18 +1039,47 @@
     .card-spohp .card-desc a{
       color: var(--accent-gold-solid);
     }
-  /* —— Two-column YEARS grid (desktop) —— */
+  /* === WIDE LAYOUT + ALWAYS OPEN (non-destructive overrides) === */
+:root{ --max-width: 1360px; }           /* give the grid more room */
+main{ max-width: var(--max-width); }
+
+/* Two generous columns; each column can grow wide */
 .years-grid{
   display:grid;
-  grid-template-columns:repeat(2, minmax(420px, 1fr));
-  gap:2.5rem 2rem;
-  align-items:start;
+  grid-template-columns: repeat(2, minmax(560px, 1fr));
+  gap: 3rem 2.25rem;
+  align-items: start;
 }
-@media (max-width: 980px){
-  .years-grid{ grid-template-columns:1fr; }
+@media (max-width: 1200px){ .years-grid{ grid-template-columns: repeat(2, minmax(480px, 1fr)); } }
+@media (max-width: 1040px){ .years-grid{ grid-template-columns: 1fr; } }
+
+/* Remove the vertical timeline bar in this grid layout */
+.year-section{ border-left: none !important; padding-left: 0 !important; }
+
+/* Cards fill their column width and breathe a bit more */
+.course-card-grid{ grid-template-columns: 1fr !important; }
+.card-teaching{ width: 100%; border-radius: 22px; }
+.card-slim{ padding: 2rem 2.25rem; }
+
+/* Keep everything visible by default */
+.card-body{ display: block !important; }
+.card-details{ max-height: none !important; opacity: 1 !important; overflow: visible !important; background: rgba(0,0,0,0.12); }
+
+/* Hide toggles since content is open; declutters header */
+.card-toggle, .details-toggle{ display: none !important; }
+
+/* Gold accents + readable links on image cards */
+.card-header{ color: var(--accent-gold-solid); }
+.card-desc a{ color: var(--accent-gold-solid) !important; text-shadow: 0 1px 3px rgba(0,0,0,0.55); }
+
+/* Darken overlay slightly for stronger contrast on busy art */
+.card-teaching::after{
+  content:''; position:absolute; inset:0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.38), rgba(0,0,0,0.62));
+  z-index:1; pointer-events:none;
 }
-/* Remove left timeline line inside the grid on small screens if desired */
-/*.years-grid .year-section{ border-left:none; padding-left:0; }*/
+.card-teaching > *{ position:relative; z-index:2; }
+.card-teaching::before{ z-index:3; }
 
 </style>
 </head>
@@ -1128,8 +1157,8 @@
   <!-- ENHANCED COURSES SECTION -->
   <section id="courses-taught" class="scroll-reveal">
   <h2>Courses Taught</h2>
-  <!-- Timeline grouping by year -->
-<div class="years-grid">
+  <div class="years-grid">
+<!-- Timeline grouping by year -->
   <div class="year-section">
     <div class="year-heading">2025</div>
     <div class="course-card-grid">
