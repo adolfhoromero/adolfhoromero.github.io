@@ -884,16 +884,96 @@ nav.main-nav a.cv-link {
 }
 
 
+
+/* Skip link for keyboard and screen reader users */
+.skip-link {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  padding: .5rem .75rem;
+  background: #ffffff;
+  color: #111827;
+  border-radius: 6px;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0,0,0,.25);
+}
+
+/* Mobile friendly nav: no sideways scroll needed */
+@media (max-width: 560px) {
+  nav.main-nav ul {
+    flex-wrap: wrap;
+    white-space: normal;
+    overflow-x: visible;
+    gap: 6px;
+  }
+  nav.main-nav li {
+    flex: 1 1 48%;
+  }
+  nav.main-nav a {
+    width: 100%;
+    min-width: 0;
+    font-size: 1rem;
+    padding: 12px 14px;
+  }
+  nav.main-nav a.cv-link {
+    width: 100%;
+  }
+}
+
+
+/* === Consistent dark-mode toggle across all pages === */
+.dark-toggle {
+  position: absolute !important;
+  top: 0.8rem !important;
+  right: 0.8rem !important;
+  width: 40px !important;
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 9999px !important;
+  cursor: pointer !important;
+  z-index: 200 !important;
+}
+.dark-toggle:focus-visible {
+  outline: 2px solid var(--accent-gold) !important;
+  outline-offset: 2px !important;
+}
+.dark-toggle .icon-sun-moon {
+  width: 24px !important;
+  height: 24px !important;
+  fill: var(--accent-gold) !important;
+  stroke: var(--accent) !important;
+  display: block !important;
+  transition: transform .2s ease, filter .2s ease !important;
+}
+.dark .dark-toggle .icon-sun-moon {
+  filter: brightness(0.95) saturate(1.1) !important;
+}
+
 </style>
 </head>
 <body>
+  <a class=\"skip-link\" href=\"#main\">Skip to content</a>
   <header>
     <button class="dark-toggle" role="button" tabindex="0" aria-pressed="false" aria-label="Toggle dark mode" title="Toggle dark mode">
-      <svg class="icon-sun-moon" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="5.5" stroke-width="2"/>
-        <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M17.36 17.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M17.36 6.64l1.42-1.42"/>
-      </svg>
-    </button>
+  <svg class="icon-sun-moon" viewBox="0 0 24 24" aria-hidden="true">
+    <circle cx="12" cy="12" r="5.5" stroke-width="2"></circle>
+    <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M17.36 17.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M17.36 6.64l1.42-1.42" stroke-width="2" fill="none"></path>
+  </svg>
+</button>
     <h1 class="site-title"><a href="index.html" aria-label="Go to Home">Adolfho Romero</a></h1>
   </header>
 
@@ -1101,5 +1181,36 @@ nav.main-nav a.cv-link {
       }
     });
   </script>
+
+<script>
+(function(){
+  const btn = document.querySelector('.dark-toggle');
+  function setPressed(){
+    if (!btn) return;
+    btn.setAttribute('aria-pressed', document.documentElement.classList.contains('dark'));
+  }
+  function toggle(){
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    setPressed();
+  }
+  // Apply saved theme
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark' || (!saved && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+  }
+  setPressed();
+  if (btn){
+    // Remove any previous listeners by cloning the node
+    const newBtn = btn.cloneNode(true);
+    btn.parentNode.replaceChild(newBtn, btn);
+    newBtn.addEventListener('click', toggle);
+    newBtn.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    });
+  }
+})();
+</script>
+
 </body>
 </html>
