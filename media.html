@@ -300,6 +300,18 @@
     .site-title a { color: inherit; text-decoration: none; }
     .site-title a:focus, .site-title a:hover { opacity: .9; }
     
+
+    /* Active tab highlight */
+    nav.main-nav a[aria-current="page"] {
+      color: var(--accent-gold);
+    }
+    nav.main-nav a[aria-current="page"]::after {
+      width: calc(100% - 36px);
+      opacity: .82;
+    }
+    .site-title a { color: inherit; text-decoration: none; }
+    .site-title a:focus, .site-title a:hover { opacity: .9; }
+    
 </style>
 </head>
 <body>
@@ -316,11 +328,12 @@
   <nav class="main-nav" aria-label="Primary">
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="adolfhoromerocv.pdf" target="_blank" class="cv-link">CV</a></li>
       <li><a href="publications.html" class="pubs-link">Publications</a></li>
       <li><a href="teaching.html" class="teaching-link">Teaching</a></li>
-      <li><a href="media.html">Media & Public Engagement</a></li>
+      <li><a href="media.html" aria-current="page">Media & Public Engagement</a></li>
+      <li><a href="adolfhoromerocv.pdf" target="_blank" class="cv-link">CV</a></li>
     </ul>
+  
   </nav>
 
   <main>
