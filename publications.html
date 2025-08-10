@@ -317,7 +317,15 @@
       nav.main-nav ul { gap: 14px; }
       .teaching-invitation { padding: 1.5rem; }
     }
-  </style>
+  
+/* Header title link inherits color and keeps clean look */
+.site-title a { color: inherit; text-decoration: none; }
+.site-title a:focus, .site-title a:hover { opacity: .9; }
+
+/* Ensure consistent header font size */
+.site-title { font-family: 'Spectral', serif; font-size: 2.95rem; font-weight: 700; }
+
+</style>
 </head>
 <body>
   <header>
@@ -327,16 +335,16 @@
         <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M17.36 17.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M17.36 6.64l1.42-1.42"></path>
       </svg>
     </button>
-    <h1 class="site-title">Adolfho Romero</h1>
+    <h1 class="site-title"><a href="index.html" aria-label="Go to Home">Adolfho Romero</a></h1>
   </header>
 
   <nav class="main-nav" aria-label="Primary">
     <a class="skip-link" href="#main">Skip to content</a>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="teaching.html">Teaching</a></li>
-      <li><a href="media.html">Media</a></li>
+      <li><a href="publications.html" aria-current="page" class="pubs-link">Publications</a></li>
+      <li><a href="teaching.html" class="teaching-link">Teaching</a></li>
+      <li><a href="media.html">Media & Public Engagement</a></li>
       <li><a href="adolfhoromerocv.pdf" target="_blank" class="cv-link" rel="noopener">CV</a></li>
     </ul>
   </nav>
