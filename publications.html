@@ -101,14 +101,9 @@
     .hide-nav { top: -65px; }
     @media (min-width: 821px){ .hide-nav { top: 0 !important; } }
 
-    /* Skip link for keyboard users */
-    .skip-link{
-      position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
-    }
-    .skip-link:focus{
-      position: static; width: auto; height: auto; margin: 0 1rem; padding: .5rem .75rem;
-      background: #fff; color: #000; border-radius: 6px;
-    }
+    
+    
+    
 
     nav.main-nav ul{
       display: flex; justify-content: flex-start;
@@ -885,28 +880,9 @@ nav.main-nav a.cv-link {
 
 
 
-/* Skip link for keyboard and screen reader users */
-.skip-link {
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-.skip-link:focus {
-  position: fixed;
-  left: 1rem;
-  top: 1rem;
-  width: auto;
-  height: auto;
-  padding: .5rem .75rem;
-  background: #ffffff;
-  color: #111827;
-  border-radius: 6px;
-  z-index: 9999;
-  box-shadow: 0 4px 12px rgba(0,0,0,.25);
-}
+
+
+
 
 /* Mobile friendly nav: no sideways scroll needed */
 @media (max-width: 560px) {
@@ -962,6 +938,19 @@ nav.main-nav a.cv-link {
 .dark .dark-toggle .icon-sun-moon {
   filter: brightness(0.95) saturate(1.1) !important;
 }
+
+
+/* Remove any thin seam between header and nav */
+header, nav.main-nav { background: var(--nav-bg) !important; }
+header, header::before, header::after,
+nav.main-nav, nav.main-nav::before, nav.main-nav::after {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+/* Ensure nav hugs header tightly */
+header + nav.main-nav { margin-top: 0 !important; }
+/* Normalize internal padding so spacing matches across pages */
+nav.main-nav ul { padding-top: 6px !important; padding-bottom: 6px !important; }
 
 </style>
 </head>
