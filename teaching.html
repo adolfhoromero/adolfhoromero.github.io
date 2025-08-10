@@ -1,1611 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ED6EYFE6NT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ED6EYFE6NT');
-</script>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Adolfho Romero – Teaching</title>
-
-  <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Spectral:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet"/>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous" defer></script>
-
+  <meta charset="UTF-8">
+  <title>Teaching Philosophy & Courses</title>
+  <meta name="viewport" content="width=divice-width, initial-scale=1.0">
   <style>
-    /* ——  2025 ENHANCED COLOR & DESIGN SYSTEM  —— */
-    :root{
-      --background-top: linear-gradient(135deg, #f7f8fa 0%, #e8ecf3 100%);
-      --background-bottom: linear-gradient(135deg, #e4e8ef 0%, #d0d7e1 100%);
-      --nav-bg: linear-gradient(135deg, #1a2332 0%, #22304a 100%);
-      --nav-text: #ffffff;
-      --card-bg: #ffffff;
-      --card-shadow: 0 8px 32px rgba(46, 58, 85, 0.12);
-      --card-shadow-hover: 0 16px 48px rgba(46, 58, 85, 0.18);
-      --text-main: #2c3e50;
-      --text-secondary: #5a6c7d;
-      --accent: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-      --accent-gold: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-      --accent-solid: #3b82f6;
-      --accent-gold-solid: #fbbf24;
-      --success: #10b981;
-      --warning: #f59e0b;
-      --error: #ef4444;
-      --max-width: 1200px;
-      --font-body: 'Poppins', sans-serif;
-      --font-heading: 'Spectral', serif;
-      --border-radius: 16px;
-      --border-radius-lg: 24px;
-      --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f7f9fb;
+      margin: 0;
+      padding: 0;
+      color: #222;
     }
-
-    .dark{
-      --background-top: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      --background-bottom: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-      --nav-bg: linear-gradient(135deg, #020617 0%, #0f172a 100%);
-      --nav-text: #f1f5f9;
-      --card-bg: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-      --card-shadow-hover: 0 16px 48px rgba(0, 0, 0, 0.4);
-      --text-main: #f1f5f9;
-      --text-secondary: #cbd5e1;
-      --accent: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
-      --accent-gold: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    h2, h3 {
+      margin-top: 0.2em;
     }
-
-    /* ——  ENHANCED BASE STYLES  —— */
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    
-    html{scroll-behavior:smooth;font-size:16px;}
-    
-    body{
-      min-height:100vh;
-      font-family:var(--font-body);
-      background:var(--background-top);
-      color:var(--text-main);
-      line-height:1.7;
-      transition:var(--transition-smooth);
-      overflow-x:hidden;
+    .section-title {
+      margin-top: 2em;
+      margin-bottom: 1em;
+      font-size: 2em;
+      font-weight: bold;
     }
-
-    /* ——  CONSISTENT HEADER (MATCHES HOME PAGE)  —— */
-    header{
-      /* Match the home page header styling for consistency */
-      background: var(--nav-bg);
-      color: var(--nav-text);
-      text-align: center;
-      /* Use similar padding to the home page: more compact top/bottom spacing */
-      padding: 1.5rem 1rem 0.8rem;
-      position: relative;
-      /* Slightly softer shadow, consistent with the home page */
-      box-shadow: 0 4px 22px rgba(34,48,74,0.47);
-    }
-
-    /* The animated overlay was removed for a cleaner look matching the home page */
-
-    .site-title{
-      font-family: var(--font-heading);
-      /* Match the home page header size exactly. The home page uses a fixed
-         2.95rem font size for its site title【918556394036919†L60-L65】. Using a fixed value
-         here ensures the teaching page header aligns perfectly with the index
-         page on all devices. */
-      font-size: 2.95rem;
-      font-weight: 700;
-      margin: .5rem 0;
-      color: var(--nav-text);
-      transition: var(--transition-smooth);
-    }
-
-    .dark-toggle{
-      position:absolute;
-      top:1.5rem;right:1.5rem;
-      width:3rem;height:3rem;
-      background:rgba(255,255,255,0.1);
-      border:2px solid rgba(255,255,255,0.2);
-      border-radius:50%;
-      cursor:pointer;
-      z-index:10;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      transition:var(--transition-smooth);
-      backdrop-filter:blur(10px);
-    }
-    
-    .dark-toggle:hover{
-      background:rgba(255,255,255,0.2);
-      transform:rotate(180deg) scale(1.1);
-    }
-    
-    .dark-toggle::before{
-      content:'🌙';
-      font-size:1.2rem;
-      transition:var(--transition-smooth);
-    }
-    
-    .dark .dark-toggle::before{
-      content:'☀️';
-    }
-
-    /* ——  INDEX-5 NAVIGATION SYSTEM WITH HIDE-ON-SCROLL  —— */
-    nav.main-nav{
-      position:sticky;
-      top:0;
-      z-index:50;
-      background:var(--nav-bg);
-      backdrop-filter:blur(20px);
-      box-shadow:inset 0 -1px 0 #3a496f;
-      font-family:var(--font-heading);
-      transition:var(--transition-smooth), top 0.38s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .hide-nav { top: -65px; }
-    @media (min-width: 821px) { .hide-nav { top: 0 !important; } }
-    
-    nav.main-nav ul{
-      display: flex;
-      /* Align items to the left like the home page navigation */
-      justify-content: flex-start;
-      gap: 10px;
-      list-style: none;
-      /* Allow the nav list to take up the full viewport width */
-      max-width: 100vw;
-      margin: 0 auto;
-      padding: 8px 0;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      white-space: nowrap;
-    }
-    
-    nav.main-nav a{
-      position:relative;
-      font-size:1.15rem;
-      min-width:110px;
-      padding:14px 22px;
-      flex-shrink:0;
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:.12em;
-      color:var(--nav-text);
-      text-shadow:0 1px 2px rgba(0,0,0,0.4);
-      text-decoration:none;
-      background:none;
-      border:none;
-      outline:none;
-      box-shadow:none;
-      transition:color 0.4s, background 0.4s;
-    }
-    
-    nav.main-nav a::after{
-      content:'';
-      position:absolute;
-      left:18px;right:18px;bottom:6px;
-      height:3.5px;border-radius:2px;
-      background:linear-gradient(90deg, var(--accent-solid), var(--accent-gold-solid));
-      width:0;opacity:0;
-      transition:width .26s, opacity .22s;
-    }
-    
-    nav.main-nav a:hover, nav.main-nav a:focus{
-      color:var(--accent-gold-solid);
-      background:rgba(255,255,255,0.04);
-      box-shadow:0 0 6px 1.5px var(--accent-gold-solid);
-    }
-    
-    nav.main-nav a:hover::after, nav.main-nav a:focus::after{
-      width:calc(100% - 36px);opacity:.82;
-    }
-    
-    nav.main-nav a.cv-link{
-      background:linear-gradient(90deg, var(--accent-solid), var(--accent-gold-solid));
-      color:#fff !important;
-      border-radius:4px;
-      padding:14px 22px;
-      font-weight:700;
-      box-shadow:0 2px 8px rgba(59,130,246,0.09);
-      margin-right:8px;
-      transition:filter .2s, box-shadow .2s, color .2s, background .2s;
-    }
-    
-    nav.main-nav a.cv-link:hover, nav.main-nav a.cv-link:focus{
-      filter:brightness(1.07) saturate(1.12);
-      box-shadow:0 8px 22px rgba(59,130,246,0.19);
-      color:#fff !important;
-    }
-    
-    nav.main-nav a.active{
-      background:rgba(251,191,36,0.1);
-      color:var(--accent-gold-solid);
-    }
-
-    /* ——  TEACHING IN ACTION PHOTO GALLERY —— */
-    .photo-gallery {
-      /* Use a flexible layout so images maintain equal height and modern spacing */
+    /* Flip card grid layout */
+    .card-grid {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.6rem;
-      margin: 3rem 0;
+      gap: 1.5em;
+      margin-bottom: 2em;
     }
-    .photo-gallery figure {
+    .flip-card {
+      background-color: transparent;
+      width: 320px;
+      height: 400px;
+      perspective: 1000px;
+      margin: 0 auto;
+    }
+    .flip-card-inner {
       position: relative;
-      /* Allow items to grow and shrink but keep a minimum width */
-      flex: 1 1 300px;
-      max-width: 340px;
-      height: 240px;
-      border-radius: var(--border-radius-lg);
-      overflow: hidden;
-      box-shadow: var(--card-shadow);
-      transition: var(--transition-smooth);
-    }
-    .photo-gallery figure:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--card-shadow-hover);
-    }
-    .photo-gallery img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      display: block;
+      transition: transform 0.8s cubic-bezier(0.4,0.2,0.2,1);
+      transform-style: preserve-3d;
     }
-    .photo-gallery figcaption {
+    /* Flip the card on click via .flipped class (added in JS) */
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    /* Show pointer on hover */
+    .flip-card {
+      cursor: pointer;
+    }
+    .flip-card-front, .flip-card-back {
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 0.6rem 1rem;
-      background: rgba(0, 0, 0, 0.55);
-      color: #fff;
-      font-size: 0.95rem;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    .photo-gallery figure:hover figcaption {
-      opacity: 1;
-    }
-
-    /* ——  COURSE TEXTS GALLERY —— */
-    /* Horizontal scrollable gallery showcasing required course books. Each
-       book item is given a fixed width so that visitors can scan the covers
-       easily. Use scroll-snap to provide a smooth experience on touch devices. */
-    .book-gallery {
-      display: flex;
-      overflow-x: auto;
-      gap: 1.5rem;
-      margin: 2.5rem 0;
-      padding-bottom: 1rem;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-    }
-    .book-item {
-      flex: 0 0 220px;
-      scroll-snap-align: start;
-      border-radius: var(--border-radius);
-      background: var(--card-bg);
-      box-shadow: var(--card-shadow);
-      overflow: hidden;
-      transition: var(--transition-smooth);
-    }
-    .book-item:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--card-shadow-hover);
-    }
-    .book-item img {
       width: 100%;
-      height: auto;
-      display: block;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(80,80,120,0.10);
+      background: white;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      transition: box-shadow 0.2s;
     }
-    .book-item .caption {
-      padding: 0.8rem;
-      font-size: 0.9rem;
-      line-height: 1.4;
-      color: var(--text-secondary);
+    .flip-card-front:hover, .flip-card:focus-within .flip-card-front {
+      box-shadow: 0 12px 34px rgba(80,80,120,0.18);
     }
-    .book-item .caption strong {
-      color: var(--text-main);
-      display: block;
-      margin-bottom: 0.3rem;
+    .flip-card-front img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 16px 16px 0 0;
     }
-
-    /* Add spacing above the photo gallery to prevent the sticky nav from overlapping */
-    #teaching-photos {
-      margin-top: 4rem;
+    .flip-card-front h2 {
+      font-size: 1.2em;
+      margin: 1.2em 0 0.7em 0;
+      padding: 0 1em;
+      text-align: center;
+      font-weight: 600;
     }
-
-    /* ——  ENHANCED GLOBAL LAYOUT  —— */
-    main{
-      max-width:var(--max-width);
-      margin:0 auto;
-      padding:3rem 1.5rem;
-      position:relative;
+    .flip-card-back {
+      background: #4666ff;
+      color: #fff;
+      transform: rotateY(180deg);
+      padding: 1.7em 1.2em 1em 1.2em;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
     }
-    
-    h2{
-      font-family:var(--font-heading);
-      font-weight:700;
-      font-size:clamp(2.5rem, 4vw, 3.5rem);
-      color:var(--text-main);
-      text-align:center;
-      position:relative;
-      margin-bottom:3rem;
-      opacity:0;
-      transform:translateY(30px);
-      animation:fadeInUp 0.8s ease forwards;
+    .flip-card-back h3 {
+      margin-top: 0;
+      margin-bottom: 0.8em;
+      font-size: 1.1em;
     }
-    
-    h2::after{
-      content:'';
-      display:block;
-      width:80px;
-      height:4px;
-      margin:1rem auto 0;
-      background:var(--accent);
-      border-radius:2px;
-      position:relative;
+    .flip-card-back ul {
+      padding-left: 1.1em;
+      margin: 0;
+      font-size: 1em;
     }
-    
-    h2::before{
-      content:'';
-      position:absolute;
-      top:50%;
-      left:50%;
-      width:120px;
-      height:120px;
-      background:radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 70%);
-      border-radius:50%;
-      transform:translate(-50%,-50%);
-      z-index:-1;
-    }
-
-    /* ——  ENHANCED PHILOSOPHY SECTION WITH SCROLL ANIMATIONS  —— */
-    .philosophy-banner{
-      background:var(--card-bg);
-      border:1px solid rgba(59,130,246,0.1);
-      border-radius:var(--border-radius-lg);
-      padding:2.5rem;
-      margin:3rem 0;
-      font-size:1.2rem;
-      line-height:1.8;
-      box-shadow:var(--card-shadow);
-      position:relative;
-      overflow:hidden;
-      transition:var(--transition-smooth);
-    }
-    
-    .philosophy-banner::before{
-      content:'';
-      position:absolute;
-      top:0;left:0;right:0;
-      height:4px;
-      background:var(--accent);
-    }
-    
-    .philosophy-banner:hover{
-      transform:translateY(-4px);
-      box-shadow:var(--card-shadow-hover);
-    }
-    
-    .philosophy-banner p{
-      margin-bottom:1.5rem;
-      opacity:0;
-      transform:translateY(20px);
-      animation:fadeInUp 0.6s ease forwards;
-    }
-    
-    .philosophy-banner p:nth-child(1){animation-delay:0.1s;}
-    .philosophy-banner p:nth-child(2){animation-delay:0.2s;}
-    .philosophy-banner p:nth-child(3){animation-delay:0.3s;}
-    .philosophy-banner p:nth-child(4){animation-delay:0.4s;}
-    .philosophy-banner p:nth-child(5){animation-delay:0.5s;}
-
-    .philosophy-points{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
-      gap:1.5rem;
-      margin:3rem 0;
-    }
-    
-    .philosophy-point{
-      background:var(--card-bg);
-      border-radius:var(--border-radius);
-      box-shadow:var(--card-shadow);
-      padding:1.5rem;
-      text-align:center;
-      transition:var(--transition-bounce);
-      position:relative;
-      overflow:hidden;
-      border:1px solid rgba(59,130,246,0.1);
-    }
-    
-    .philosophy-point::before{
-      content:'';
-      position:absolute;
-      top:0;left:0;right:0;bottom:0;
-      background:var(--accent);
-      opacity:0;
-      transition:var(--transition-smooth);
-      z-index:-1;
-    }
-    
-    .philosophy-point:hover{
-      transform:translateY(-8px) scale(1.02);
-      box-shadow:var(--card-shadow-hover);
-      color:#ffffff;
-    }
-    
-    .philosophy-point:hover::before{
-      opacity:1;
-    }
-    
-    .philosophy-point i{
-      font-size:2rem;
-      margin-bottom:1rem;
-      color:var(--accent-solid);
-      transition:var(--transition-smooth);
-    }
-    
-    .philosophy-point:hover i{
-      color:#ffffff;
-      transform:scale(1.2);
-    }
-
-    /* ——  ENHANCED COURSE CARDS WITH ADVANCED INTERACTIONS  —— */
-    .course-card-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(400px, 1fr));
-      gap:2rem;
-      margin:2rem 0;
-    }
-
-    /* Timeline styles for grouping courses by year */
-    .year-section{
-      margin-bottom:2.5rem;
-      padding-left:12px;
-      border-left:3px solid var(--accent-solid);
-    }
-    .year-heading{
-      font-family:var(--font-heading);
-      font-weight:600;
-      font-size:1.2rem;
-      letter-spacing:0.06em;
-      color:var(--accent-solid);
-      margin-bottom:1rem;
-    }
-    
-    .card-teaching{
-      background:var(--card-bg);
-      border-radius:var(--border-radius-lg);
-      box-shadow:var(--card-shadow);
-      margin-bottom:2rem;
-      overflow:hidden;
-      transition:var(--transition-smooth);
-      position:relative;
-      border:1px solid rgba(59,130,246,0.1);
-    }
-    
-    .card-teaching::before{
-      content:'';
-      position:absolute;
-      top:0;left:0;
-      width:100%;height:4px;
-      background:var(--accent);
-      transform:scaleX(0);
-      transition:transform 0.3s ease;
-    }
-    
-    .card-teaching:hover{
-      transform:translateY(-8px);
-      box-shadow:var(--card-shadow-hover);
-    }
-    
-    .card-teaching:hover::before{
-      transform:scaleX(1);
-    }
-    
-    .card-slim{
-      padding:2rem;
-    }
-    
-    .card-header{
-      font-family:var(--font-heading);
-      font-weight:700;
-      font-size:1.4rem;
-      color:var(--accent-solid);
-      /* Lay out the header content (title and toggle button) on a single row */
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      margin-bottom:1rem;
-      position:relative;
-    }
-    
-    .card-tags{
-      font-size:0.95rem;
-      color:var(--text-secondary);
-      margin-bottom:1rem;
-      font-weight:500;
-    }
-    
-    .card-desc{
-      margin-top:1rem;
-      line-height:1.7;
-    }
-    
-    .card-desc a{
-      color:var(--accent-solid);
-      text-decoration:none;
-      font-weight:600;
-      transition:var(--transition-smooth);
-      position:relative;
-    }
-    
-    .card-desc a::after{
-      content:'';
-      position:absolute;
-      bottom:-2px;left:0;
-      width:0;height:2px;
-      background:var(--accent);
-      transition:width 0.3s ease;
-    }
-    
-    .card-desc a:hover::after{
-      width:100%;
-    }
-    
-    .details-toggle{
-      background:none;
-      border:none;
-      color:var(--accent-solid);
-      font-weight:600;
-      font-size:1rem;
-      cursor:pointer;
-      padding:0.5rem 1rem;
-      margin:0;
-      float:right;
-      transition:var(--transition-smooth);
-      border-radius:var(--border-radius);
-      position:relative;
-      overflow:hidden;
-    }
-    
-    .details-toggle::before{
-      content:'';
-      position:absolute;
-      top:0;left:0;right:0;bottom:0;
-      background:rgba(59,130,246,0.1);
-      transform:scaleX(0);
-      transition:transform 0.3s ease;
-      z-index:-1;
-    }
-    
-    .details-toggle:hover{
-      color:#ffffff;
-      background:var(--accent-solid);
-      transform:scale(1.05);
-    }
-    
-    .details-toggle:hover::before{
-      transform:scaleX(1);
-    }
-    
-    .card-details{
-      background:rgba(59,130,246,0.05);
-      border-top:1px solid rgba(59,130,246,0.1);
-      padding:2rem;
-      max-height:0;
-      overflow:hidden;
-      transition:all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      opacity:0;
-    }
-    
-    .card-details[aria-expanded="true"]{
-      max-height:1000px;
-      opacity:1;
-    }
-    
-    .card-details ul{
-      margin:1rem 0;
-      padding-left:1.5rem;
-    }
-    
-    .card-details li{
-      margin-bottom:0.75rem;
-      position:relative;
-    }
-    
-    .card-details li::marker{
-      color:var(--accent-solid);
-    }
-    
-    .card-details b{
-      color:var(--accent-solid);
-      font-weight:700;
-      display:block;
-      margin-bottom:0.5rem;
-    }
-
-    /* ——— NEW COLLAPSIBLE CARD BODY AND TOGGLE STYLES ——— */
-    /* Hide the card body by default. When the parent card-teaching has the
-       .expanded class this section will be shown. Using display instead of
-       height animations keeps the layout simple and performant. */
-    .card-body{
-      display:none;
-    }
-    .card-teaching.expanded .card-body{
-      display:block;
-    }
-
-    /* Button to open/close the entire course card. It mirrors the styling of
-       the details toggle button, but sits in the card header next to the
-       course title. */
-    .card-toggle{
-      background:none;
-      border:none;
-      color:var(--accent-solid);
-      font-weight:600;
-      font-size:1rem;
-      cursor:pointer;
-      padding:0.5rem 1rem;
-      margin-left:1rem;
-      border-radius:var(--border-radius);
-      transition:var(--transition-smooth);
-    }
-    .card-toggle:hover{
-      color:#ffffff;
-      background:var(--accent-solid);
-    }
-
-    /* ——  ENHANCED FEEDBACK SECTION WITH ANIMATIONS  —— */
-    .feedback-list{
-      list-style:none;
-      padding:0;
-      max-width:900px;
-      margin:3rem auto 4rem auto;
-    }
-    
-    .feedback-list li{
-      background:var(--card-bg);
-      margin:1.5rem 0;
-      border-radius:var(--border-radius);
-      padding:2rem;
-      font-size:1.2rem;
-      color:var(--text-main);
-      font-style:italic;
-      position:relative;
-      transition:var(--transition-smooth);
-      cursor:default;
-      box-shadow:var(--card-shadow);
-      border:1px solid rgba(59,130,246,0.1);
-      opacity:0;
-      transform:translateX(-30px);
-      animation:slideInLeft 0.8s ease forwards;
-    }
-    
-    .feedback-list li:nth-child(even){
-      transform:translateX(30px);
-      animation:slideInRight 0.8s ease forwards;
-    }
-    
-    .feedback-list li:nth-child(1){animation-delay:0.1s;}
-    .feedback-list li:nth-child(2){animation-delay:0.2s;}
-    .feedback-list li:nth-child(3){animation-delay:0.3s;}
-    .feedback-list li:nth-child(4){animation-delay:0.4s;}
-    .feedback-list li:nth-child(5){animation-delay:0.5s;}
-    .feedback-list li:nth-child(6){animation-delay:0.6s;}
-    .feedback-list li:nth-child(7){animation-delay:0.7s;}
-    .feedback-list li:nth-child(8){animation-delay:0.8s;}
-    .feedback-list li:nth-child(9){animation-delay:0.9s;}
-    .feedback-list li:nth-child(10){animation-delay:1.0s;}
-    .feedback-list li:nth-child(11){animation-delay:1.1s;}
-    
-    .feedback-list li:hover{
-      transform:translateY(-4px) scale(1.02);
-      box-shadow:var(--card-shadow-hover);
-      background:linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-    }
-    
-    .dark .feedback-list li:hover{
-      background:linear-gradient(135deg, #334155 0%, #475569 100%);
-    }
-    
-    .feedback-list li::before{
-      content:'"';
-      color:var(--accent-gold-solid);
-      font-size:4rem;
-      position:absolute;
-      left:1rem;
-      top:0.5rem;
-      font-family:serif;
-      line-height:1;
-      opacity:0.7;
-    }
-    
-    .feedback-list li::after{
-      content:'"';
-      color:var(--accent-gold-solid);
-      font-size:4rem;
-      position:absolute;
-      right:1rem;
-      bottom:0.5rem;
-      font-family:serif;
-      line-height:1;
-      opacity:0.7;
-    }
-
-  /* Modern horizontal testimonials */
-  .feedback-wrapper{
-    position: relative;
-    margin-top: 2rem;
-  }
-  .feedback-container{
-    display: flex;
-    gap: 1.5rem;
-    overflow-x: auto;
-    padding: 1rem 0;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
-  .feedback-container::-webkit-scrollbar{
-    height: 8px;
-  }
-  .feedback-container::-webkit-scrollbar-thumb{
-    background: rgba(41,83,155,0.3);
-    border-radius: 4px;
-  }
-  .feedback-item{
-    flex: 0 0 calc(100% / 2.2);
-    min-width: 280px;
-    background: var(--card-bg);
-    border-radius: var(--border-radius);
-    box-shadow: var(--card-shadow);
-    padding: 1.5rem;
-    color: var(--text-main);
-    scroll-snap-align: start;
-    transition: transform 0.3s ease;
-  }
-  .feedback-item:hover{
-    transform: translateY(-6px);
-  }
-  @media (max-width: 700px){
-    .feedback-item{
-      flex-basis: 80%;
-    }
-  }
-  .feedback-nav{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: var(--accent);
-    border: none;
-    color: #fff;
-    padding: 0.6rem;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    z-index: 5;
-  }
-  .feedback-nav.prev{
-    left: -1.5rem;
-  }
-  .feedback-nav.next{
-    right: -1.5rem;
-  }
-  .feedback-nav i{
-    font-size: 1rem;
-  }
-
-    /* ——  ENHANCED FOOTER  —— */
-    footer{
-      text-align:center;
-      padding:3rem 1rem;
-      color:var(--text-secondary);
-      border-top:1px solid rgba(59,130,246,0.1);
-      margin-top:4rem;
-      font-family:var(--font-body);
-      font-size:1rem;
-      background:var(--background-bottom);
-    }
-    
-    footer a{
-      color:var(--accent-solid);
-      text-decoration:none;
-      font-weight:600;
-      position:relative;
-    }
-    
-    footer a::after{
-      content:'';
-      position:absolute;
-      bottom:-2px;left:0;
-      width:0;height:2px;
-      background:var(--accent);
-      transition:width 0.3s ease;
-    }
-    
-    footer a:hover::after{
-      width:100%;
-    }
-
-    /* ——  ENHANCED ANIMATIONS & KEYFRAMES  —— */
-    @keyframes fadeInUp{
-      from{
-        opacity:0;
-        transform:translateY(30px);
+    /* Responsive Grid */
+    @media (max-width: 1000px) {
+      .card-grid {
+        flex-direction: column;
+        align-items: center;
       }
-      to{
-        opacity:1;
-        transform:translateY(0);
+      .flip-card {
+        width: 90vw;
+        max-width: 340px;
       }
-    }
-    
-    @keyframes slideInLeft{
-      from{
-        opacity:0;
-        transform:translateX(-30px);
-      }
-      to{
-        opacity:1;
-        transform:translateX(0);
-      }
-    }
-    
-    @keyframes slideInRight{
-      from{
-        opacity:0;
-        transform:translateX(30px);
-      }
-      to{
-        opacity:1;
-        transform:translateX(0);
-      }
-    }
-    
-    @keyframes float{
-      0%, 100%{transform:translateY(0px);}
-      50%{transform:translateY(-10px);}
-    }
-    
-    @keyframes pulse{
-      0%, 100%{opacity:1;}
-      50%{opacity:0.7;}
-    }
-    
-    @keyframes shimmer{
-      0%{background-position:-200% center;}
-      100%{background-position:200% center;}
-    }
-
-    /* ——  ENHANCED RESPONSIVE DESIGN  —— */
-    @media (max-width: 768px){
-      .site-title{font-size:2.5rem;}
-      header{padding:1.5rem 1rem;}
-      .course-card-grid{grid-template-columns:1fr;}
-      .philosophy-points{grid-template-columns:1fr;}
-
-      /* Updated navigation styles for mobile */
-      nav.main-nav ul{
-        flex-direction:row;
-        gap:0.5rem;
-        padding:0.5rem;
-        justify-content:flex-start;
-      }
-      nav.main-nav a{
-        padding:12px 16px;
-        font-size:1.05rem;
-        min-width:88px;
-      }
-
-      .feedback-list li{
-        font-size:1.1rem;
-        padding:1.5rem;
-      }
-      main{padding:2rem 1rem;}
-      h2{font-size:2.5rem;}
-    }
-    
-    @media (max-width: 480px){
-      .dark-toggle{
-        top:1rem;
-        right:1rem;
-        width:2.5rem;
-        height:2.5rem;
-      }
-      .card-slim{padding:1.5rem;}
-      .philosophy-banner{padding:1.5rem;}
-
-      nav.main-nav a {
-        font-size: 1rem;
-        padding: 10px 14px;
-        min-width: 80px;
-      }
-    }
-
-    /* ——  SCROLL REVEAL CLASSES  —— */
-    .scroll-reveal{
-      opacity:0;
-      transform:translateY(50px);
-      transition:all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .scroll-reveal.revealed{
-      opacity:1;
-      transform:translateY(0);
-    }
-
-    /* ——  ENHANCED ACCESSIBILITY  —— */
-    @media (prefers-reduced-motion: reduce){
-      *,*::before,*::after{
-        animation-duration:0.01ms !important;
-        animation-iteration-count:1 !important;
-        transition-duration:0.01ms !important;
-      }
-    }
-    
-    .sr-only{
-      position:absolute;
-      width:1px;
-      height:1px;
-      padding:0;
-      margin:-1px;
-      overflow:hidden;
-      clip:rect(0,0,0,0);
-      white-space:nowrap;
-      border:0;
-    }
-
-    /* Focus indicators */
-    *:focus{
-      outline:2px solid var(--accent-solid);
-      outline-offset:2px;
     }
   </style>
 </head>
-
 <body>
-<header>
-  <div class="dark-toggle" onclick="toggleDarkMode()" title="Toggle dark mode" role="button" tabindex="0" aria-label="Toggle dark mode"></div>
-  <h1 class="site-title">Adolfho Romero</h1>
-</header>
-
-  <nav class="main-nav">
+  <h1>Teaching Philosophy</h1>
   <ul>
-    <li><a href="index.html"><i class="fas fa-house-user"></i> Home</a></li>
-    <li><a href="publications.html"><i class="fas fa-feather-alt"></i> Publications</a></li>
-    <li><a href="teaching.html"><i class="fas fa-chalkboard-teacher"></i> Teaching</a></li>
-    <li><a href="media.html"><i class="fas fa-newspaper"></i> Media</a></li>
-    <li><a href="adolfhoromerocv.pdf" target="_blank"><i class="fas fa-id-badge"></i> CV</a></li>
+    <li><b>Active Engagement</b></li>
+    <li><b>Historical Inquiry</b></li>
+    <li><b>Inclusive Discussion</b></li>
+    <li><b>Connecting Past &amp; Present</b></li>
   </ul>
-</nav>
-<main>
-  <!-- ENHANCED PHILOSOPHY SECTION -->
-  <section id="teaching-philosophy" class="scroll-reveal">
-    <h2>Teaching Philosophy</h2>
-    <div class="philosophy-banner">
-      <p>My approach to teaching is grounded in <strong>care, dignity, and the pursuit of critical understanding</strong>. I bring to the classroom a commitment to honoring working-class lives and histories—especially those often ignored or erased. As a first-generation Mexican and Salvadorean scholar from Humboldt Park, Chicago, I know that education can either replicate systems of exclusion or serve as a space to interrogate and undo them. I choose the latter.</p>
-      <p>I see teaching as a <strong>collective process, not a performance</strong>. It begins with listening—really listening—to students' questions, uncertainties, and insights. I work to create a classroom climate where students feel safe enough to take intellectual risks and connect their experiences with broader historical processes. My goal is not to lecture at students but to build knowledge with them. That means slowing down, asking good questions, and creating space for silence, reflection, and dialogue.</p>
-      <p>At the core of my pedagogy is a desire to help students develop a <strong>historical imagination</strong>—one that recognizes struggle, contradiction, and resilience. I teach labor and social history not as a linear march of progress, but as a series of contested efforts by ordinary people to make meaning, demand dignity, and shape the world around them. This lens opens space for complexity. It invites students to think historically about the present, to see themselves as part of broader movements, and to consider how race, class, gender, and migration shape not only labor conditions but also possibilities for solidarity.</p>
-      <p>Teaching is not separate from my research or my politics. I'm drawn to classrooms where learning emerges from critical reflection and mutual respect. I view the classroom as a space where students can build the skills to name their world and change it. That means practicing analysis rooted in evidence, offering feedback that is direct and constructive, and modeling the kind of clarity and compassion I ask of students.</p>
-      <p>What matters to me most is not that students master content, but that they come away with the <strong>confidence and tools to ask deeper questions</strong>—about power, history, and their place in it. That's what I try to cultivate each time I walk into a room. Teaching, for me, is both responsibility and privilege. It is part of the work of building a more just world.</p>
-    </div>
-    
-    <div class="philosophy-points">
-      <div class="philosophy-point scroll-reveal">
-        <i class="fas fa-users"></i>
-        <div><strong>Active Engagement</strong></div>
-      </div>
-      <div class="philosophy-point scroll-reveal">
-        <i class="fas fa-landmark"></i>
-        <div><strong>Historical Inquiry</strong></div>
-      </div>
-      <div class="philosophy-point scroll-reveal">
-        <i class="fas fa-comments"></i>
-        <div><strong>Inclusive Discussion</strong></div>
-      </div>
-      <div class="philosophy-point scroll-reveal">
-        <i class="fas fa-link"></i>
-        <div><strong>Connecting Past & Present</strong></div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Teaching in Action Photo Gallery moved above courses for better engagement -->
-  <section id="teaching-photos" class="scroll-reveal">
-    <h2>Teaching in Action</h2>
-    <div class="photo-gallery">
-      <figure>
-        <img src="class.jpeg" alt="Adolfho Romero presenting at a conference">
-        <!-- Swapped caption text with workshop caption -->
-        <figcaption>Hands‑on workshop training session</figcaption>
-      </figure>
-      <figure>
-        <img src="class2.jpeg" alt="Adolfho Romero teaching via video conference">
-        <figcaption>Virtual classroom discussion</figcaption>
-      </figure>
-      <figure>
-        <img src="class3.jpeg" alt="Adolfho Romero facilitating a hands‑on workshop with participants">
-        <!-- Swapped caption text with presentation caption -->
-        <figcaption>Presenting on worker centers and working‑class empowerment</figcaption>
-      </figure>
-
-
-    </div>
-  </section>
-
-  <!-- ENHANCED COURSES SECTION -->
-  <section id="courses-taught" class="scroll-reveal">
-  <h2>Courses Taught</h2>
-  <!-- Timeline grouping by year -->
-  <div class="year-section">
-    <div class="year-heading">2025</div>
-    <div class="course-card-grid">
-      <div class="card-teaching card-slim scroll-reveal expanded">
-        <div class="card-header">
-          <span>African American and Latinx Histories (ILRGL 3805)</span>
-          <!-- Button to expand or collapse the entire course card -->
-          <!-- Set cards to open by default. The button reflects the open state and uses an up chevron icon. -->
-          <button class="card-toggle" aria-expanded="true" onclick="toggleCard(this)">Close <i class="fas fa-chevron-up"></i></button>
+  <h1 class="section-title">Teaching in Action</h1>
+  <h2 class="section-title">Courses Taught</h2>
+  
+  <!-- INTERACTIVE COURSE CARDS GRID -->
+  <div class="card-grid">
+    <!-- African American and Latinx Histories Card -->
+    <div class="flip-card" tabindex="0" aria-label="African American and Latinx Histories. Click for more information.">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="https://nmaahc.si.edu/sites/default/files/styles/slider_xl/public/images/2022-12/NMAAHC_LATINX_8876.jpg" alt="African American and Latinx Histories">
+          <h2>African American &amp; Latinx Histories</h2>
         </div>
-        <!-- Collapsible body containing summary, syllabus link and detailed sections -->
-        <div class="card-body" aria-expanded="true">
-          <div class="card-tags">
-            <i class="fas fa-university"></i> Cornell University · Spring 2025<br/>
-            <i class="fas fa-users"></i> Graduate Teaching Assistant to Prof. Paul Ortiz · 120+ students
-          </div>
-          <div class="card-desc">
-            Large survey seminar tracing African American and Latinx histories, labor, culture, and social change from the Revolution to today. Led lectures and workshops on synthesis writing, grading, and feedback; guided reading analysis; managed course technology; and mentored students through one-on-one and group support. Consistently received top student ratings for helping students, stimulating deeper thinking, and making the course welcoming.<br/>
-            <a href="2025spring.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Syllabus (PDF)</a>
-          </div>
-          <!-- Button inside the card body to show/hide extended details -->
-          <button aria-controls="details-afrlatx-3805" aria-expanded="false" class="details-toggle" onclick="toggleDetails(this)">
-            Details <i class="fas fa-chevron-down"></i>
-          </button>
-          <div aria-expanded="false" class="card-details" id="details-afrlatx-3805">
-            <b><i class="fas fa-graduation-cap"></i> Teaching, Writing, &amp; Student Support:</b>
-            <ul>
-              <li>Designed and led lecture on equitable grading and how to write historical synthesis essays</li>
-              <li>Held regular and after-hours TA office hours (in-person and online), ensuring every student had access to help</li>
-              <li>Managed equipment and technology, coordinated digital resources for a 120+ student course</li>
-              <li>Led feedback workshops on essay structure, argument building, and evidence integration</li>
-              <li>Provided detailed, actionable comments on drafts and assignments; fostered inclusive environment where students reported feeling "safe," "encouraged," and "truly cared for"</li>
-            </ul>
-            <b><i class="fas fa-comments"></i> Discussion &amp; Reading Guidance:</b>
-            <ul>
-              <li>Ran recurring class and small-group discussions breaking down complex readings, thematic questions, and primary sources</li>
-              <li>Guided analysis of lecture content and readings during reviews and pre-assessment Q&amp;A</li>
-              <li>Supported group oral presentations; modeled historical argumentation and evidence-based debate</li>
-              <li>Helped students connect readings (across Black and Latinx literature/history) to contemporary issues</li>
-            </ul>
-            <b><i class="fas fa-book"></i> Core Required Readings:</b>
-            <ul>
-              <li><strong>Piri Thomas,</strong> <em>Down These Mean Streets</em></li>
-              <li><strong>Juan Gonzalez,</strong> <em>Harvest of Empire: A History of Latinos in America</em></li>
-              <li><strong>Paul Ortiz,</strong> <em>An African American and Latinx History of the United States</em></li>
-              <li><strong>Blair Kelley,</strong> <em>Black Folk: The Roots of the Black Working Class</em></li>
-              <li><strong>August Wilson,</strong> <em>The Piano Lesson</em></li>
-              <li><strong>Martín Espada,</strong> <em>Zapata's Disciple</em></li>
-              <li><strong>Johanna Fernández,</strong> <em>The Young Lords: A Radical History</em></li>
-            </ul>
-            <b><i class="fas fa-star"></i> Student Feedback Highlights:</b>
-            <ul>
-              <li><em>"Super kind, goes out of his way to help students, and very knowledgeable. Makes the classroom feel like a safe space."</em></li>
-              <li><em>"Great in the one-to-one setting... clear with instructions."</em></li>
-              <li><em>"He ensures students have a strong grasp on course material and is always willing to help anyone out."</em></li>
-              <li><em>Praised for making time after office hours and for "stimulating deeper thinking about the subject."</em></li>
-            </ul>
-          </div>
+        <div class="flip-card-back">
+          <h3>Course Details</h3>
+          <ul>
+            <li>Surveys Black and Latinx histories, labor, and cultural change</li>
+            <li>Guided reading engagement &amp; feedback</li>
+            <li>Student voices: “Super kind... makes the classroom feel like a safe space.”</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- US Labor History Card -->
+    <div class="flip-card" tabindex="0" aria-label="Introduction to US Labor History. Click for more information.">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="https://www.docsteach.org/documents/documentimages/af63a083-04a7-4cf6-94b3-98598d5865aa.jpg" alt="US Labor History">
+          <h2>Introduction to US Labor History</h2>
+        </div>
+        <div class="flip-card-back">
+          <h3>Course Details</h3>
+          <ul>
+            <li>Working-class history, unions, labor movements</li>
+            <li>Peer-reviewed debate and creative assignments</li>
+            <li>Debates, timelines, and student-centered research</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Oral History Project Card -->
+    <div class="flip-card" tabindex="0" aria-label="Machen Opportunity Scholars Oral History. Click for more information.">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="https://iumaa.iu.edu/images/oral-history-lesson-short.jpg" alt="Oral History Project">
+          <h2>Machen Scholars Oral History</h2>
+        </div>
+        <div class="flip-card-back">
+          <h3>Project Details</h3>
+          <ul>
+            <li>Flagship oral-history internship and digital archive</li>
+            <li>Conducted 40+ interviews, produced lasting archive</li>
+            <li>Hands-on media, equity, and field research</li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
-  <div class="year-section">
-    <div class="year-heading">2024</div>
-    <div class="course-card-grid">
-      <div class="card-teaching card-slim scroll-reveal expanded">
-        <div class="card-header">
-          <span>Introduction to US Labor History (ILRGL 1100)</span>
-          <!-- Default state is expanded; update the button text and state. -->
-          <button class="card-toggle" aria-expanded="true" onclick="toggleCard(this)">Close <i class="fas fa-chevron-up"></i></button>
-        </div>
-        <div class="card-body" aria-expanded="true">
-          <div class="card-tags">
-            <i class="fas fa-university"></i> Cornell University · Fall 2024<br/>
-            <i class="fas fa-user-graduate"></i> Teaching Assistant to Prof. Paul Ortiz · Fridays 10:10 am &amp; 11:15 am
-          </div>
-          <div class="card-desc">
-            Explores working-class cultures, labor struggles, and the quest for dignity in US history. Emphasized peer-reviewed debate, collaborative timelines, and creative assignments.<br/>
-            <a href="2024syllabus.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Syllabus (PDF)</a>
-          </div>
-          <button aria-controls="details-labor-history" aria-expanded="false" class="details-toggle" onclick="toggleDetails(this)">
-            Details <i class="fas fa-chevron-down"></i>
-          </button>
-          <div aria-expanded="false" class="card-details" id="details-labor-history">
-            <b><i class="fas fa-lightbulb"></i> Section Innovations:</b>
-            <ul>
-              <li>Peer-review &amp; feedback workshops on synthesis essays</li>
-              <li>Collaborative history timeline creation with interactive elements</li>
-              <li>Structured debates on race, gender, and solidarity in labor movements</li>
-              <li>Oral-history activities and student-centered analysis</li>
-              <li>Contemporary thought pieces linking historical events to current news</li>
-            </ul>
-            <b><i class="fas fa-calendar-week"></i> Sample Weekly Highlights:</b>
-            <ul>
-              <li><strong>Rediker's Slave Ship:</strong> Critical discussion on labor, capital, and resistance</li>
-              <li><strong>Lowell Factory Girls / Black Folk:</strong> Group activities exploring gender, class, and organizing</li>
-              <li><strong>Homestead Strike Simulation:</strong> Structured debates and peer review sessions</li>
-              <li><strong>Creative Assignments:</strong> Timeline presentations and thematic reflections</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="year-section">
-    <div class="year-heading">2021</div>
-    <div class="course-card-grid">
-      <div class="card-teaching card-slim scroll-reveal expanded">
-        <div class="card-header">
-          <span>Machen Florida Opportunity Scholars Oral History Project</span>
-          <button class="card-toggle" aria-expanded="true" onclick="toggleCard(this)">Close <i class="fas fa-chevron-up"></i></button>
-        </div>
-        <div class="card-body" aria-expanded="true">
-          <div class="card-tags">
-            <i class="fas fa-university"></i> University of Florida · Spring 2021<br/>
-            <i class="fas fa-award"></i> Teaching Assistant (Instructor of Record) · SPOHP Internship
-          </div>
-          <div class="card-desc">
-            Flagship oral-history internship documenting the Machen Florida Opportunity Scholars (first-generation, low-income students). Students hosted national equity experts, conducted 40+ interviews, and collaborated with filmmakers—culminating in a gubernatorial visit by Jeb Bush.<br/>
-            <a href="2021spring.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Syllabus (PDF)</a> ·
-            <a href="https://youtube.com/playlist?list=PLzMFflzfI0ETOUAMp8AtPFNlaCYlc1kt4" target="_blank"><i class="fab fa-youtube"></i> Interview Playlist</a>
-          </div>
-          <button aria-controls="details-machen-project" aria-expanded="false" class="details-toggle" onclick="toggleDetails(this)">
-            Details <i class="fas fa-chevron-down"></i>
-          </button>
-          <div aria-expanded="false" class="card-details" id="details-machen-project">
-            <b><i class="fas fa-microphone"></i> Distinguished Speakers &amp; Fieldwork:</b>
-            <ul>
-              <li>McNair Scholars, national equity leaders, &amp; UF administrators addressed the class</li>
-              <li>Governor Jeb Bush visited to review student oral-history presentations</li>
-              <li>Students assisted professional filmmakers documenting first-gen success stories</li>
-            </ul>
-            <b><i class="fas fa-video"></i> Comprehensive Interview Collection:</b>
-            <ul>
-              <li>Alumni success narratives highlighting career trajectories &amp; program impact</li>
-              <li>Interviews with Machen founders, staff, and program directors (institutional memory)</li>
-              <li>Current scholars' perspectives on first-generation challenges &amp; support systems</li>
-              <li>All interviews archived and published via YouTube playlist for public access</li>
-            </ul>
-            <b><i class="fas fa-cogs"></i> Methodological &amp; Professional Training:</b>
-            <ul>
-              <li>Intensive workshops on interview design, active listening, and transcription</li>
-              <li>Hands-on practice with audio gear, transcription software, and archiving standards</li>
-              <li>Collaboration with documentary crew—camera, lighting, and editing basics</li>
-              <li>Presentation coaching for public showcases to UF leadership &amp; state officials</li>
-            </ul>
-            <b><i class="fas fa-balance-scale"></i> Equity &amp; Social-Justice Lens:</b>
-            <ul>
-              <li>Analyzed systemic barriers facing first-generation students</li>
-              <li>Positioned Machen Program as model for expanding educational access statewide</li>
-              <li>Connected oral histories to broader research on socioeconomic mobility</li>
-            </ul>
-            <b><i class="fas fa-impact"></i> Lasting Impact:</b>
-            <ul>
-              <li>Digital archive used for program evaluation &amp; future scholarship funding</li>
-              <li>Student work cited in UF equity reports &amp; documentary film</li>
-              <li>Participants gained portfolio pieces for grad-school &amp; career advancement</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="year-section">
-    <div class="year-heading">2020</div>
-    <div class="course-card-grid">
-      <div class="card-teaching card-slim scroll-reveal expanded">
-        <div class="card-header">
-          <span>Samuel Proctor Oral History Program Internship</span>
-          <button class="card-toggle" aria-expanded="true" onclick="toggleCard(this)">Close <i class="fas fa-chevron-up"></i></button>
-        </div>
-        <div class="card-body" aria-expanded="true">
-          <div class="card-tags">
-            <i class="fas fa-university"></i> University of Florida · Fall 2020<br/>
-            <i class="fas fa-chalkboard-teacher"></i> Teaching Assistant (acted as Instructor of Record) · Mondays 11:45 am–1:40 pm
-          </div>
-          <div class="card-desc">
-            Community-based oral-history class in partnership with St. Patrick Catholic Church. Led all sessions, guided student archival research, and digitized rare local records. Students produced original histories of North-Central Florida's Catholic, working-class, and activist communities.<br/>
-            <a href="2020syllabus.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Syllabus (PDF)</a>
-          </div>
-          <button aria-controls="details-spohp-internship" aria-expanded="false" class="details-toggle" onclick="toggleDetails(this)">
-            Details <i class="fas fa-chevron-down"></i>
-          </button>
-          <div aria-expanded="false" class="card-details" id="details-spohp-internship">
-            <b><i class="fas fa-handshake"></i> Community Partnership &amp; Leadership:</b>
-            <ul>
-              <li>Direct collaboration with St. Patrick Catholic Church; students accessed, scanned, and interpreted archival records dating back decades</li>
-              <li>Solely designed lectures, mentored each student, and supervised all research projects</li>
-              <li>Hands-on oral-history training: interview protocol, digital production, archival preservation</li>
-              <li>Explored discrimination, civil-rights activism, and the Sisters of St. Joseph's educational mission</li>
-            </ul>
-            <b><i class="fas fa-star"></i> Weekly Highlights:</b>
-            <ul>
-              <li><strong>Catholicism &amp; Educational Activism:</strong> Lecture on Sisters of St. Joseph's fight against segregation</li>
-              <li><strong>Father Conoley &amp; the Ku Klux Klan:</strong> Case study of 1924 anti-Catholic violence in Gainesville</li>
-              <li><strong>Fieldwork:</strong> Scanning church documents &amp; designing oral-history protocols</li>
-              <li><strong>Student Projects:</strong> Parish labor history, women's religious leadership, and social justice</li>
-            </ul>
-            <b><i class="fas fa-trophy"></i> Transformative Outcomes:</b>
-            <ul>
-              <li>Public presentation of projects to parish &amp; community members</li>
-              <li>Exceptional student feedback for real-world impact and engagement</li>
-              <li>Permanent digital archive created for future researchers and scholars</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-  <!-- COURSE TEXTS AND REVIEWS -->
-  <section id="course-texts" class="scroll-reveal">
-    <h2>Course Texts &amp; Perspectives</h2>
-    <p>Below are some of the books that anchor my courses. Each text opens a window onto
-    the lived experiences of workers, activists, and artists. Scroll through the gallery
-    to explore the covers and learn more about what we read.</p>
-    <div class="book-gallery">
-      <!-- Down These Mean Streets -->
-      <figure class="book-item">
-        <!-- Updated image paths: images are stored at the repository root -->
-        <img src="meanstreets.jpeg" alt="Cover of Down These Mean Streets by Piri Thomas">
-        <figcaption class="caption"><strong>Down These Mean Streets</strong><br/>
-          Piri Thomas’s memoir follows his life in Spanish Harlem. It chronicles
-          poverty, street gangs, racism, addiction and his struggle to define his
-          identity as a dark‑complexioned Puerto Rican.
-        </figcaption>
-      </figure>
-      <!-- Harvest of Empire -->
-      <figure class="book-item">
-        <img src="harvest.jpeg" alt="Cover of Harvest of Empire: A History of Latinos in America by Juan Gonzalez">
-        <figcaption class="caption"><strong>Harvest of Empire</strong><br/>
-          Juan Gonzalez presents a non‑fiction account of how U.S. policies
-          throughout the Americas led to mass Latinx migration; his updated
-          narrative explains the role the United States played in shaping these
-          movements.
-        </figcaption>
-      </figure>
-      <!-- An African American and Latinx History of the United States -->
-      <figure class="book-item">
-        <img src="africanamerican.jpeg" alt="Cover of An African American and Latinx History of the United States by Paul Ortiz">
-        <figcaption class="caption"><strong>An African American and Latinx History of the United States</strong><br/>
-          Paul Ortiz’s intersectional history centers Black, Latinx and Indigenous voices,
-          linking civil‑rights struggles, labor organizing and imperialism from the
-          18th century through the Day Without Immigrants.
-        </figcaption>
-      </figure>
-      <!-- Black Folk -->
-      <figure class="book-item">
-        <img src="blackfolk.jpeg" alt="Cover of Black Folk: The Roots of the Black Working Class by Blair L. M. Kelley">
-        <figcaption class="caption"><strong>Black Folk</strong><br/>
-          Blair L. M. Kelley uses personal narratives to show how Black laborers built
-          networks of community and resistance amid racism and segregation in the
-          late 19th and early 20th centuries.
-        </figcaption>
-      </figure>
-      <!-- The Piano Lesson -->
-      <figure class="book-item">
-        <img src="pianolesson.jpeg" alt="Cover of The Piano Lesson by August Wilson">
-        <figcaption class="caption"><strong>The Piano Lesson</strong><br/>
-          August Wilson’s Pulitzer Prize–winning play is set in 1936 Pittsburgh. It
-          follows the Charles family and an heirloom piano carved by an enslaved
-          ancestor; siblings Boy Willie and Berniece debate selling it, exploring
-          heritage and the legacy of slavery.
-        </figcaption>
-      </figure>
-      <!-- Zapata's Disciple -->
-      <figure class="book-item">
-        <img src="zapatas.jpeg" alt="Cover of Zapata's Disciple by Martín Espada">
-        <figcaption class="caption"><strong>Zapata’s Disciple</strong><br/>
-          Poet Martín Espada interweaves essays and poems to challenge social
-          injustice. He chronicles censorship battles, critiques corporate
-          exploitation and defends the dignity of Spanish‑speaking communities.
-        </figcaption>
-      </figure>
-      <!-- The Young Lords: A Radical History -->
-      <figure class="book-item">
-        <img src="younglords.jpeg" alt="Cover of The Young Lords: A Radical History by Johanna Fernández">
-        <figcaption class="caption"><strong>The Young Lords: A Radical History</strong><br/>
-          Johanna Fernández provides a definitive account of the Young Lords. She
-          shows how Puerto Rican youth redefined protest by occupying hospitals,
-          blocking traffic and linking local problems to global struggles.
-        </figcaption>
-      </figure>
-      <!-- The Slave Ship: A Human History -->
-      <figure class="book-item">
-        <img src="slaveship.jpeg" alt="Cover of The Slave Ship: A Human History by Marcus Rediker">
-        <figcaption class="caption"><strong>The Slave Ship: A Human History</strong><br/>
-          Marcus Rediker explores the horrific conditions aboard slave ships between
-          1700 and 1807, drawing on primary records to connect the transatlantic
-          slave trade, capitalist exploitation and acts of resistance.
-        </figcaption>
-      </figure>
-
-      <!-- Fight in the Fields: Cesar Chavez and the Farmworkers’ Movement -->
-      <figure class="book-item">
-        <img src="fightinthefields.jpeg" alt="Cover of Fight in the Fields: Cesar Chavez and the Farmworkers’ Movement">
-        <figcaption class="caption"><strong>Fight in the Fields</strong><br/>
-          An illustrated history of Cesar Chavez and the United Farm Workers that combines archival photographs and narrative to trace the evolution of the farmworkers’ movement and its impact on labor and civil‑rights struggles.
-        </figcaption>
-      </figure>
-
-      <!-- Holding the Line: Women in the Great Arizona Mine Strike of 1983 -->
-      <figure class="book-item">
-        <img src="holdingtheline.jpeg" alt="Cover of Holding the Line: Women in the Great Arizona Mine Strike of 1983 by Barbara Kingsolver">
-        <figcaption class="caption"><strong>Holding the Line</strong><br/>
-          Barbara Kingsolver’s nonfiction debut recounts the 1983 Phelps Dodge copper strike in Arizona, focusing on the miners’ wives and mothers who formed picket lines, faced arrests and violence, and discovered their political power during the long standoff.
-        </figcaption>
-      </figure>
-
-      <!-- Lucy Parsons: Freedom, Equality & Solidarity: Writings & Speeches, 1878–1937 -->
-      <figure class="book-item">
-        <img src="lucyparsons.jpeg" alt="Cover of Lucy Parsons: Freedom, Equality & Solidarity">
-        <figcaption class="caption"><strong>Lucy Parsons: Freedom, Equality &amp; Solidarity</strong><br/>
-          A collection of speeches and essays by labor radical Lucy Parsons, whose writings championed the rights of the poor, the unemployed and political prisoners and reveal her pivotal role in anarchist and workers’ movements.
-        </figcaption>
-      </figure>
-
-      <!-- Recording Oral History: A Guide for the Humanities and Social Sciences -->
-      <figure class="book-item">
-        <img src="recordingoralhistory.jpeg" alt="Cover of Recording Oral History: A Guide for the Humanities and Social Sciences by Valerie Yow">
-        <figcaption class="caption"><strong>Recording Oral History</strong><br/>
-          Valerie Yow’s practical manual explains how to plan, conduct, transcribe and interpret oral‑history interviews, addressing ethical issues and providing methodological guidance for researchers in the humanities and social sciences.
-        </figcaption>
-      </figure>
-
-      <!-- Beyond Women’s Words -->
-      <figure class="book-item">
-        <img src="beyondwomenswords.jpeg" alt="Cover of Beyond Women’s Words">
-        <figcaption class="caption"><strong>Beyond Women’s Words</strong><br/>
-          Edited by Katrina Srigley and colleagues, this collection explores feminist oral‑history methodologies and the ways gender, race and class shape personal narratives, drawing on examples from immigrant communities and Indigenous women’s activism.
-        </figcaption>
-      </figure>
-
-      <!-- The Oral History Reader -->
-      <figure class="book-item">
-        <img src="oralhistoryreader.jpeg" alt="Cover of The Oral History Reader">
-        <figcaption class="caption"><strong>The Oral History Reader</strong><br/>
-          Edited by Robert Perks and Alistair Thomson, this widely used reader compiles classic and contemporary essays that examine theory, ethics and practice in oral history, offering insights into interview techniques, memory and digital media.
-        </figcaption>
-      </figure>
-
-    </div>
-  </section>
-
-  <!-- The Teaching in Action photo gallery is now located above the courses section for improved flow -->
-
-  <!-- ENHANCED STUDENT FEEDBACK SECTION -->
-  <section id="student-feedback" class="scroll-reveal">
-    <h2>What Students Say</h2>
-    <div class="feedback-wrapper">
-      <button class="feedback-nav prev" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
-      <div class="feedback-container">
-        <div class="feedback-item">“Adolfho was incredibly approachable and made it easy to ask questions—even beyond class material. He connected class content to real-world labor struggles in a way that made history feel urgent.”</div>
-        <div class="feedback-item">“He pushed us to engage with difficult topics like race, class, and labor injustice. I left each section with something to think about.”</div>
-        <div class="feedback-item">“Adolfho was one of the best TAs I've had. His feedback on our essays was detailed and helped me grow as a writer.”</div>
-        <div class="feedback-item">“He encouraged participation by creating a safe space where every opinion mattered. It never felt like busywork—it felt like building understanding together.”</div>
-        <div class="feedback-item">“Very responsive, clear expectations, and genuinely cares about student learning. One of the most thoughtful TAs I've had.”</div>
-        <div class="feedback-item">“He helped connect us to the professor and made sure our concerns were heard. He was super accessible and always respectful.”</div>
-        <div class="feedback-item">“Adolfho is extremely professional but creates a warm and welcoming environment with his students and tries to build personal relationships.”</div>
-        <div class="feedback-item">“He is very knowledgeable and very open to helping everyone.”</div>
-        <div class="feedback-item">“Great in giving detailed feedback and actually writing new perspectives about the content in feedback.”</div>
-        <div class="feedback-item">“Makes time for students, creates inclusive and meaningful conversations, and allows students to ask questions.”</div>
-      </div>
-      <button class="feedback-nav next" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  © 2025 Adolfho Romero · <a href="mailto:ar2539@cornell.edu">ar2539@cornell.edu</a>
-</footer>
-
-<script>
-  // Enhanced interactivity for course cards
-  function toggleDetails(btn){
-    const card = btn.closest('.card-teaching');
-    const details = card.querySelector('.card-details');
-    const isOpen = details.getAttribute('aria-expanded') === 'true';
-    const icon = btn.querySelector('i');
-    
-    // Smooth animation
-    if (!isOpen) {
-      details.style.maxHeight = details.scrollHeight + "px";
-      details.setAttribute('aria-expanded', 'true');
-      btn.innerHTML = "Hide Details <i class='fas fa-chevron-up'></i>";
-      if(icon) icon.style.transform = 'rotate(180deg)';
-    } else {
-      details.style.maxHeight = "0px";
-      details.setAttribute('aria-expanded', 'false');
-      btn.innerHTML = "Details <i class='fas fa-chevron-down'></i>";
-      if(icon) icon.style.transform = 'rotate(0deg)';
-    }
-  }
-
-  /**
-   * Toggle the visibility of an entire course card. When a card is expanded
-   * the summary content (tags, description and details button) becomes visible.
-   * Collapsing the card hides all inner content and resets any open details
-   * section to its closed state. This improves the browsing experience by
-   * allowing visitors to skim course titles and open only those they are
-   * interested in.
-   *
-   * @param {HTMLButtonElement} btn The button that triggered the toggle.
-   */
-  function toggleCard(btn) {
-    const card = btn.closest('.card-teaching');
-    const body = card.querySelector('.card-body');
-    const isExpanded = card.classList.contains('expanded');
-
-    if (!isExpanded) {
-      card.classList.add('expanded');
-      btn.innerHTML = 'Close <i class="fas fa-chevron-up"></i>';
-      btn.setAttribute('aria-expanded', 'true');
-      if (body) body.setAttribute('aria-expanded', 'true');
-    } else {
-      card.classList.remove('expanded');
-      btn.innerHTML = 'Open <i class="fas fa-chevron-down"></i>';
-      btn.setAttribute('aria-expanded', 'false');
-      if (body) body.setAttribute('aria-expanded', 'false');
-      // Also collapse any open details when closing the card
-      const details = card.querySelector('.card-details');
-      const detailsBtn = card.querySelector('.details-toggle');
-      if (details && details.getAttribute('aria-expanded') === 'true') {
-        details.style.maxHeight = '0px';
-        details.setAttribute('aria-expanded', 'false');
-        if (detailsBtn) {
-          detailsBtn.innerHTML = 'Details <i class="fas fa-chevron-down"></i>';
-          detailsBtn.setAttribute('aria-expanded', 'false');
+  <!-- JS FOR CLICK-TO-FLIP -->
+  <script>
+    // Only require "click to flip" for accessibility
+    document.querySelectorAll('.flip-card').forEach(card => {
+      card.addEventListener('click', function() {
+        card.classList.toggle('flipped');
+      });
+      // Flip-on-keyboard activation (space/enter)
+      card.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          card.classList.toggle('flipped');
         }
-      }
-    }
-  }
+      });
+    });
+  </script>
 
-  // Enhanced dark mode toggle with animation
-  function toggleDarkMode(){
-    document.documentElement.classList.toggle('dark');
-    const isDark = document.documentElement.classList.contains('dark');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  <!-- ORIGINAL COURSE & TEACHING CONTENT FOLLOWS -->
+  <div>
+    <h3>2025</h3>
+    <b>African American and Latinx Histories (ILRGL 3805)</b>
+    <p>Large survey seminar tracing African American and Latinx histories, labor, culture, and social change from the Revolution to today. Led lectures and workshops on synthesis writing, grading, and feedback; guided reading analysis; managed course technology; and mentored students through one-on-one and group support. Consistently received top student ratings for helping students, stimulating deeper thinking, and making the course welcoming.</p>
+    <p><a href="#">Syllabus (PDF)</a></p>
+    <ul>
+      <li><b>Teaching, Writing, &amp; Student Support:</b></li>
+      <li>Designed and led lecture on equitable grading and how to write historical synthesis essays</li>
+      <li>Held regular and after-hours TA office hours (in-person and online), ensuring every student had access to help</li>
+      <li>Managed equipment and technology, coordinated digital resources for a 120+ student course</li>
+      <li>Led feedback workshops on essay structure, argument building, and evidence integration</li>
+      <li>Provided detailed, actionable comments on drafts and assignments; fostered inclusive environment where students reported feeling "safe," "encouraged," and "truly cared for"</li>
+    </ul>
+    <ul>
+      <li><b>Discussion & Reading Guidance:</b></li>
+      <li>Ran recurring class and small-group discussions breaking down complex readings, thematic questions, and primary sources</li>
+      <li>Guided analysis of lecture content and readings during reviews and pre-assessment Q&amp;A</li>
+      <li>Supported group oral presentations; modeled historical argumentation and evidence-based debate</li>
+      <li>Helped students connect readings (across Black and Latinx literature/history) to contemporary issues</li>
+    </ul>
+    <p><b>Core Required Readings:</b> <i>Piri Thomas, Down These Mean Streets; Juan Gonzalez, Harvest of Empire; Paul Ortiz, An African American and Latinx History of the United States; Blair Kelley, Black Folk: The Roots of the Black Working Class; August Wilson, The Piano Lesson; Martín Espada, Zapata's Disciple; Johanna Fernández, The Young Lords: A Radical History</i></p>
+    <p><b>Student Feedback Highlights:</b> "Super kind, goes out of his way to help students, and very knowledgeable. Makes the classroom feel like a safe space." ...</p>
     
-    // Add animation feedback
-    const toggle = document.querySelector('.dark-toggle');
-    toggle.style.transform = 'rotate(360deg) scale(1.2)';
-    setTimeout(() => {
-      toggle.style.transform = '';
-    }, 400);
-  }
-
-  // Initialize theme
-  if(localStorage.getItem('theme') === 'dark'){
-    document.documentElement.classList.add('dark');
-  }
-
-  // Enhanced scroll reveal functionality
-  function revealOnScroll() {
-    const reveals = document.querySelectorAll('.scroll-reveal');
-    const windowHeight = window.innerHeight;
-    const elementVisible = 150;
-
-    reveals.forEach(reveal => {
-      const elementTop = reveal.getBoundingClientRect().top;
-      
-      if (elementTop < windowHeight - elementVisible) {
-        reveal.classList.add('revealed');
-      }
-    });
-  }
-
-  // Smooth scroll behavior for navigation anchors
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    });
-  });
-
-  // Initialize scroll reveals and add event listeners
-  window.addEventListener('scroll', revealOnScroll);
-  window.addEventListener('load', revealOnScroll);
-
-  // Enhanced accessibility: keyboard navigation for toggle buttons
-  document.querySelectorAll('.details-toggle').forEach(button => {
-    button.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        this.click();
-      }
-    });
-  });
-
-  // Keyboard support for course card toggle buttons
-  document.querySelectorAll('.card-toggle').forEach(button => {
-    button.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        this.click();
-      }
-    });
-  });
-
-  // Dark mode toggle keyboard accessibility
-  document.querySelector('.dark-toggle').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      toggleDarkMode();
-    }
-  });
-
-  // Index-5 Navigation hide-on-scroll functionality
-  let lastScrollTop = 0;
-  const nav = document.querySelector('.main-nav');
-  window.addEventListener('scroll', function() {
-    if (window.innerWidth <= 820) {
-      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      if (scrollTop > lastScrollTop && scrollTop > 60) {
-        nav.classList.add('hide-nav');
-      } else {
-        nav.classList.remove('hide-nav');
-      }
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    } else {
-      nav.classList.remove('hide-nav');
-    }
-  });
-
-  // Performance optimization: Throttle scroll events for reveal
-  let ticking = false;
-  function requestTick() {
-    if (!ticking) {
-      requestAnimationFrame(revealOnScroll);
-      ticking = true;
-      setTimeout(() => ticking = false, 16);
-    }
-  }
-
-  window.addEventListener('scroll', requestTick);
-
-  // Horizontal feedback navigation: enable next/previous buttons to scroll testimonials
-  document.addEventListener('DOMContentLoaded', function() {
-    const feedbackContainer = document.querySelector('.feedback-container');
-    const prevBtn = document.querySelector('.feedback-nav.prev');
-    const nextBtn = document.querySelector('.feedback-nav.next');
-    if (feedbackContainer && prevBtn && nextBtn) {
-      function getScrollAmount() {
-        return feedbackContainer.clientWidth * 0.8;
-      }
-      prevBtn.addEventListener('click', function () {
-        feedbackContainer.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
-      });
-      nextBtn.addEventListener('click', function () {
-        feedbackContainer.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-      });
-    }
-  });
-</script>
-
+    <h3>2024</h3>
+    <b>Introduction to US Labor History (ILRGL 1100)</b>
+    <p>Explores working-class cultures, labor struggles, and the quest for dignity in US history. Emphasized peer-reviewed debate, collaborative timelines, and creative assignments.</p>
+    <p><a href="#">Syllabus (PDF)</a></p>
+    <ul>
+      <li><b>Section Innovations:</b></li>
+      <li>Peer-review &amp; feedback workshops on synthesis essays</li>
+      <li>Collaborative history timeline creation with interactive elements</li>
+      <li>Structured debates on race, gender, and solidarity in labor movements</li>
+      <li>Oral-history activities and student-centered analysis</li>
+      <li>Contemporary thought pieces linking historical events to current news</li>
+    </ul>
+    <ul>
+      <li><b>Sample Weekly Highlights:</b> <i>Rediker's Slave Ship, Lowell Factory Girls, Homestead Strike Simulation, Timeline presentations, Thematic reflections</i></li>
+    </ul>
+    <h3>2021</h3>
+    <b>Machen Florida Opportunity Scholars Oral History Project</b>
+    <p>Flagship oral-history internship documenting the Machen Florida Opportunity Scholars (first-generation, low-income students). Students hosted national equity experts, conducted 40+ interviews, and collaborated with filmmakers—culminating in a gubernatorial visit by Jeb Bush.</p>
+    <p><a href="#">Syllabus (PDF)</a> &middot; <a href="#">Interview Playlist</a></p>
+    <ul>
+      <li><b>Distinguished Speakers & Fieldwork:</b></li>
+      <li>McNair Scholars, national equity leaders, &amp; UF administrators addressed the class</li>
+      <li>Governor Jeb Bush visited to review student oral-history presentations</li>
+      <li>Students assisted professional filmmakers documenting first-gen success stories</li>
+    </ul>
+    <ul>
+      <li><b>Comprehensive Interview Collection:</b></li>
+      <li>Alumni success narratives highlighting career trajectories &amp; program impact</li>
+      <li>Interviews with Machen founders, staff, and program directors (institutional memory)</li>
+      <li>Current scholars' perspectives on first-generation challenges &amp; support systems</li>
+      <li>All interviews archived and published via YouTube playlist for public access</li>
+    </ul>
+    <ul>
+      <li><b>Methodological & Professional Training:</b></li>
+      <li>Intensive workshops on interview design, active listening, and transcription</li>
+      <li>Hands-on practice with audio gear, transcription software, and archiving standards</li>
+      <li>Collaboration with documentary crew—camera, lighting, and editing basics</li>
+      <li>Presentation coaching for public showcases to UF leadership &amp; state officials</li>
+    </ul>
+    <ul>
+      <li><b>Equity & Social-Justice Lens:</b></li>
+      <li>Analyzed systemic barriers facing first-generation students</li>
+      <li>Positioned Machen Program as model for expanding educational access statewide</li>
+      <li>Connected oral histories to broader research on socioeconomic mobility</li>
+    </ul>
+    <ul>
+      <li><b>Lasting Impact:</b></li>
+      <li>Digital archive used for program evaluation &amp; future scholarship funding</li>
+      <li>Student work cited in UF equity reports &amp; documentary film</li>
+      <li>Participants gained portfolio pieces for grad-school &amp; career advancement</li>
+    </ul>
+    
+    <h3>2020</h3>
+    <b>Samuel Proctor Oral History Program Internship</b>
+    <p>Community-based oral-history class in partnership with St. Patrick Catholic Church. Led all sessions, guided student archival research, and digitized rare local records. Students produced original histories of North-Central Florida's Catholic, working-class, and activist communities.</p>
+    <p><a href="#">Syllabus (PDF)</a></p>
+    <ul>
+      <li><b>Community Partnership & Leadership:</b></li>
+      <li>Direct collaboration with St. Patrick Catholic Church; students accessed, scanned, and interpreted archival records dating back decades</li>
+      <li>Solely designed lectures, mentored each student, and supervised all research projects</li>
+      <li>Hands-on oral-history training: interview protocol, digital production, archival preservation</li>
+      <li>Explored discrimination, civil-rights activism, and the Sisters of St. Joseph's educational mission</li>
+    </ul>
+    <ul>
+      <li><b>Weekly Highlights:</b> <i>Catholicism & Educational Activism, Father Conoley & the Ku Klux Klan, Fieldwork, Student Projects</i></li>
+    </ul>
+    <ul>
+      <li><b>Transformative Outcomes:</b></li>
+      <li>Public presentation of projects to parish & community members</li>
+      <li>Exceptional student feedback for real-world impact and engagement</li>
+      <li>Permanent digital archive created for future researchers and scholars</li>
+    </ul>
+  </div>
 </body>
 </html>
