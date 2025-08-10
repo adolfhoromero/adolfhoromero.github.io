@@ -300,6 +300,11 @@
     .site-title a { color: inherit; text-decoration: none; }
     .site-title a:focus, .site-title a:hover { opacity: .9; }
     
+
+
+/* Keep CV tab pinned to the far right */
+nav.main-nav li.cv-item { margin-left: auto; order: 99; }
+
 </style>
 </head>
 <body>
@@ -315,11 +320,12 @@
 
   <nav class="main-nav" aria-label="Primary">
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="adolfhoromerocv.pdf" target="_blank" class="cv-link">CV</a></li>
+    <li><a href="index.html">Home</a></li>
+      
       <li><a href="publications.html" class="pubs-link">Publications</a></li>
       <li><a href="teaching.html" class="teaching-link">Teaching</a></li>
       <li><a href="media.html">Media & Public Engagement</a></li>
+      <li class="cv-item"><a href="adolfhoromerocv.pdf" target="_blank" class="cv-link">CV</a></li>
     </ul>
   </nav>
 
