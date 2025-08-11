@@ -228,8 +228,8 @@
     <div class="wrap site__bar">
       <div class="title">Adolfho Romero · CV</div>
       <div class="actions">
-        <a class="btn" href="/adolfhoromerocv.pdf" target="_blank" rel="noopener">View PDF</a>
-        <a class="btn primary" href="/adolfhoromerocv.pdf" download>Download CV</a>
+        <a class="btn" href="./adolfhoromerocv.pdf" target="_blank" rel="noopener">View PDF</a>
+        <a class="btn primary" id="downloadBtn" href="./adolfhoromerocv.pdf" download>Download CV</a>
         <button class="btn" id="printBtn">Print</button>
       </div>
     </div>
@@ -834,5 +834,36 @@
   <style>
     @keyframes fade{ to { opacity:0 } }
   </style>
+
+<script>
+  (function(){
+    const btn = document.getElementById('downloadBtn');
+    if(!btn) return;
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    btn.addEventListener('click', async function(e){
+      if(isSafari){
+        e.preventDefault();
+        try{
+          const url = btn.getAttribute('href');
+          const resp = await fetch(url);
+          const blob = await resp.blob();
+          const a = document.createElement('a');
+          const objectUrl = URL.createObjectURL(blob);
+          a.href = objectUrl;
+          a.download = 'Adolfho_Romero_CV.pdf';
+          document.body.appendChild(a);
+          a.click();
+          setTimeout(()=>{
+            URL.revokeObjectURL(objectUrl);
+            a.remove();
+          }, 1000);
+        }catch(err){
+          window.open(btn.getAttribute('href'), '_blank', 'noopener');
+        }
+      }
+    }, { passive:false });
+  })();
+</script>
+
 </body>
 </html>
