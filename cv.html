@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adolfho Romero — CV</title>
+
+  <!-- Fonts to match your site -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Spectral:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #0b0b0c;
+      --text: #f3f4f6;
+      --muted: #9aa0a6;
+      --card: #131417;
+      --brand: #a21caf;
+      --chip-bg:#1f2937;
+      --chip-active:#312e81;
+      --focus: #93c5fd;
+      --border: #26272b;
+      --max: 1000px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg: #ffffff;
+        --text: #0f172a;
+        --muted:#475569;
+        --card: #ffffff;
+        --chip-bg:#eef2ff;
+        --chip-active:#c7d2fe;
+        --border:#e5e7eb;
+      }
+    }
+    * { box-sizing: border-box; }
+    html,body { height: 100%; }
+    body{
+      margin:0;
+      font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: radial-gradient(1200px 800px at 10% -10%, rgba(162,28,175,.12), transparent 50%),
+                  radial-gradient(1200px 800px at 110% 0%, rgba(14,165,233,.10), transparent 50%),
+                  var(--bg);
+      line-height:1.6;
+    }
+    a{ color: inherit; }
+    .wrap{ max-width: var(--max); margin:0 auto; padding: clamp(16px, 3vw, 28px); }
+    header.site{
+      position: sticky; top:0; z-index: 50;
+      backdrop-filter: blur(8px);
+      background: color-mix(in srgb, var(--bg) 80%, transparent);
+      border-bottom: 1px solid var(--border);
+    }
+    .site__bar{ display:flex; align-items:center; gap:12px; justify-content:space-between; }
+    .title{
+      font-family: Spectral, Georgia, serif;
+      font-size: clamp(24px, 3.2vw, 36px);
+      letter-spacing:.2px;
+    }
+    .actions{ display:flex; gap:10px; flex-wrap:wrap; }
+    .btn{
+      appearance: none; border:1px solid var(--border); background: var(--card);
+      color: var(--text); padding:.6rem .9rem; border-radius: 12px; cursor: pointer;
+      font-weight:600;
+    }
+    .btn.primary{ background: var(--brand); border-color: transparent; color: #fff; }
+    .btn:focus-visible{ outline: 3px solid var(--focus); outline-offset: 2px; }
+
+    /* Sticky subnav with filters */
+    .subnav{
+      position: sticky; top:68px; z-index: 40;
+      background: color-mix(in srgb, var(--bg) 85%, transparent);
+      border-bottom:1px solid var(--border);
+    }
+    .chips{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+    .chip{
+      padding:.45rem .8rem; border-radius:999px; border:1px solid var(--border);
+      background: var(--chip-bg); color: var(--text); font-size:.95rem; cursor:pointer;
+    }
+    .chip[aria-pressed="true"]{ background: var(--chip-active); }
+
+    /* CV content */
+    .cv{ display:grid; gap:22px; margin-top:18px; }
+    .section{ border:1px solid var(--border); background: var(--card); border-radius:16px; padding:18px; }
+    .section h2{
+      margin:0 0 6px 0; font-family: Spectral, Georgia, serif;
+      font-size: clamp(20px, 2.6vw, 26px);
+    }
+    .cv-item{
+      border:1px solid var(--border); border-radius:14px; padding:14px;
+      background: color-mix(in srgb, var(--card) 90%, transparent);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .cv-item:hover{ transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,.15); }
+    .cv-head{ display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; }
+    .cv-role{ font-weight:700; }
+    .cv-meta{ color: var(--muted); font-size:.95rem; }
+    .cv-tags{ display:flex; gap:8px; flex-wrap:wrap; margin-top:6px; }
+    .tag{ font-size:.85rem; background: var(--chip-bg); border:1px solid var(--border); padding:.25rem .55rem; border-radius:999px; }
+    details{ margin-top:8px; }
+    summary{ cursor:pointer; font-weight:600; list-style:none; }
+    summary::-webkit-details-marker{ display:none; }
+    .muted{ color: var(--muted); }
+    .sr-only{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+    .foot{ text-align:center; color: var(--muted); padding:30px 0; }
+
+    @media print{
+      header.site, .subnav, .actions, .foot{ display:none !important; }
+      body{ background:#fff; color:#000; }
+      .section{ border:0; padding:0; }
+      .cv-item{ break-inside: avoid; border:0; padding:0 0 10px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header bar. If you have a shared header, you can replace this block with your site header -->
+  <header class="site">
+    <div class="wrap site__bar">
+      <div class="title">Adolfho Romero · CV</div>
+      <div class="actions">
+        <a class="btn" href="/adolfhoromerocv.pdf" target="_blank" rel="noopener">View PDF</a>
+        <a class="btn primary" href="/adolfhoromerocv.pdf" download>Download CV</a>
+        <button class="btn" onclick="window.print()">Print</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky subnav with quick filters -->
+  <nav class="subnav" aria-label="CV filters">
+    <div class="wrap chips">
+      <button class="chip" data-filter="all" aria-pressed="true">All</button>
+      <button class="chip" data-filter="research">Research</button>
+      <button class="chip" data-filter="teaching">Teaching</button>
+      <button class="chip" data-filter="grants">Grants</button>
+      <button class="chip" data-filter="talks">Talks</button>
+      <!-- Optional extras:
+      <button class="chip" data-filter="service">Service</button>
+      <button class="chip" data-filter="awards">Awards</button>
+      -->
+      <span class="muted" id="count" aria-live="polite"></span>
+    </div>
+  </nav>
+
+  <main class="wrap cv" id="cv">
+    <!-- Education -->
+    <section class="section" aria-labelledby="edu">
+      <h2 id="edu">Education</h2>
+      <div class="cv-item" data-cats="research">
+        <div class="cv-head">
+          <div>
+            <div class="cv-role">PhD, Industrial and Labor Relations</div>
+            <div class="cv-meta">Cornell University · Ithaca, NY · Expected 2028</div>
+          </div>
+          <div class="cv-tags"><span class="tag">Global Labor & Work</span></div>
+        </div>
+      </div>
+
+      <div class="cv-item" data-cats="research">
+        <div class="cv-head">
+          <div>
+            <div class="cv-role">MA, Latin American Studies</div>
+            <div class="cv-meta">University of Florida · 2021</div>
+          </div>
+          <div class="cv-tags"><span class="tag">Latinx Studies</span><span class="tag">Migration</span></div>
+        </div>
+      </div>
+
+      <!-- Add BA and AA similarly if you like -->
+    </section>
+
+    <!-- Research appointments and publications -->
+    <section class="section" aria-labelledby="research">
+      <h2 id="research">Research</h2>
+
+      <article class="cv-item" data-cats="research">
+        <div class="cv-head">
+          <div>
+            <div class="cv-role">Article · The Oral History Review · 2025</div>
+            <div class="cv-meta">“A Meeting of Two Worlds: Oral History and Linguistics in Researching African American Language”</div>
+          </div>
+          <div class="cv-tags"><span class="tag">Oral history</span><span class="tag">Linguistics</span></div>
+        </div>
+        <details>
+          <summary>Show more</summary>
+          <ul>
+            <li>Contributor on methods integration and archive practice.</li>
+            <li><a href="https://www.tandfonline.com/doi/full/10.1080/00940798.2025.2536129" target="_blank" rel="noopener">Open article</a></li>
+          </ul>
+        </details>
+      </article>
+
+      <article class="cv-item" data-cats="research">
+        <div class="cv-head">
+          <div>
+            <div class="cv-role">Manuscript in progress</div>
+            <div class="cv-meta">Latinx labor rights and workplace enforcement · with Shannon Gleeson</div>
+          </div>
+          <div class="cv-tags"><span class="tag">Worker centers</span><span class="tag">Co enforcement</span></div>
+        </div>
+        <details>
+          <summary>Show more</summary>
+          <p class="muted">Add citation, venue, and stage when ready.</p>
+        </details>
+      </article>
+    </section>
+
+    <!-- Teaching -->
+    <section class="section" aria-labelledby="teach">
+      <h2 id="teach">Teaching</h2>
+
+      <article class="cv-item" data-cats="teaching">
+        <div class="cv-head">
+          <div>
+            <div class="cv-role">Graduate Teaching Assistant</div>
+            <div class="cv-meta">African American and Latinx Histories · Cornell University · Spring 2025</div>
+          </div>
+          <div class="cv-tags"><span class="tag">Large lecture</span><span class="tag">Writing workshops</span></div>
+        </div>
+        <details>
+          <summary>Show more</summary>
+          <ul>
+            <li>Led lectures and synthesis writing sessions.</li>
+            <li>Managed grading and feedback for 120 plus students.</li>
+          </ul>
+        </details>
+      </article>
+
+      <article class="cv-item" data-cats="teaching">
+        <div class="cv-head">
+          <div>
+            <div class="cv-role">TA · ILRGL 1100 Introduction to U.S. Labor History</div>
+            <div class="cv-meta">Cornell University · 2024–2025</div>
+          </div>
+          <div class="cv-tags"><span class="tag">Labor history</span></div>
+        </div>
+        <details>
+          <summary>Show more</summary>
+          <p class="muted">Add bullets on sections you led, materials, and assessments.</p>
+        </details>
+      </article>
+    </section>
+
+    <!-- Grants and funding -->
+    <section class="section" aria-labelledby="grants">
+      <h2 id="grants">Grants</h2>
+
+      <article class="cv-item" data-cats="grants">
+        <div class="cv-head">
+          <div>
+            <div class="cv-role">Grant or Fellowship title</div>
+            <div class="cv-meta">Sponsor · Amount · Year</div>
+          </div>
+          <div class="cv-tags"><span class="tag">Funding</span></div>
+        </div>
+        <details>
+          <summary>Show more</summary>
+          <p class="muted">Add a one line description and your role.</p>
+        </details>
+      </article>
+    </section>
+
+    <!-- Talks -->
+    <section class="section" aria-labelledby="talks">
+      <h2 id="talks">Talks</h2>
+
+      <article class="cv-item" data-cats="talks">
+        <div class="cv-head">
+          <div>
+            <div class="cv-role">Conference talk title</div>
+            <div class="cv-meta">Venue · City · Year</div>
+          </div>
+          <div class="cv-tags"><span class="tag">Invited</span></div>
+        </div>
+        <details>
+          <summary>Show more</summary>
+          <p class="muted">Add abstract link or deck when public.</p>
+        </details>
+      </article>
+    </section>
+
+    <!-- Optional sections you can duplicate:
+         Service, Awards, Skills. Change data-cats to match new filters if you add them. -->
+  </main>
+
+  <footer class="foot wrap">
+    Keep the PDF for committees that need a printable file. This HTML page is for phones and quick scan.
+  </footer>
+
+  <script>
+    // Simple filter logic
+    const chips = [...document.querySelectorAll('.chip')];
+    const items = [...document.querySelectorAll('.cv-item')];
+    const count = document.getElementById('count');
+
+    function apply(filter){
+      items.forEach(el=>{
+        const cats = (el.dataset.cats || '').split(/\s+/);
+        const show = filter === 'all' ? true : cats.includes(filter);
+        el.style.display = show ? '' : 'none';
+      });
+      const visible = items.filter(el => el.style.display !== 'none').length;
+      count.textContent = `Showing ${visible} item${visible===1?'':'s'}`;
+    }
+
+    chips.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        chips.forEach(b=>b.setAttribute('aria-pressed','false'));
+        btn.setAttribute('aria-pressed','true');
+        apply(btn.dataset.filter);
+      });
+    });
+
+    // Respect reduced motion for summary marker jump
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('details').forEach(d=>{
+        d.addEventListener('toggle', ()=>{
+          if(d.open) d.scrollIntoView({ block: 'nearest' });
+        });
+      });
+    }
+
+    // Initial state
+    apply('all');
+  </script>
+</body>
+</html>
