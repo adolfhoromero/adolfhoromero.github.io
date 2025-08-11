@@ -3,27 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Adolfho Romero — Curriculum Vitae</title>
+  <title>Adolfho Romero — CV</title>
 
-  <!-- Preconnects for fonts -->
+  <!-- Fonts to match your site -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Pull in the same font families used on the rest of the site -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Spectral:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Spectral:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    /* ---------------------------------------------------------------------
-       Theming
-       This page supports both light and dark themes.  The base colours are
-       defined on the `:root` element and then overridden when a `data-theme`
-       attribute is present on the <html> element.  Users can toggle between
-       modes using the button in the header.  A small script persists the
-       selected mode in localStorage so the preference carries across visits.
-    --------------------------------------------------------------------- */
     :root{
       --bg: #0b0b0c;
       --text: #f3f4f6;
-      --muted: #9aa0a6;
+      --muted: #98a2b3;
       --card: #131417;
       --brand: #1d4ed8;
       --brand-2: #3b82f6;
@@ -31,11 +22,11 @@
       --chip-active:#1e3a8a;
       --focus: #93c5fd;
       --border: #26272b;
-      --max: 1060px;
+      --max: 1100px;
       --gold: #f59e0b;
       --ring: rgba(29,78,216,.45);
     }
-    html[data-theme='light']{
+    html[data-theme="light"]{
       --bg: #ffffff;
       --text: #0f172a;
       --muted:#475569;
@@ -45,10 +36,8 @@
       --border:#e5e7eb;
       --ring: rgba(59,130,246,.35);
     }
-
-    * { box-sizing: border-box; }
-    html,body { height:100%; }
-
+    *{ box-sizing: border-box; }
+    html,body{ height:100%; }
     body{
       margin:0;
       font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -60,345 +49,163 @@
       line-height:1.6;
     }
     a{ color: inherit; }
-    .wrap{ max-width: var(--max); margin:0 auto; padding: clamp(16px,3vw,28px); }
+    .wrap{ max-width: var(--max); margin:0 auto; padding: clamp(16px, 3vw, 28px); }
 
-    /* ---------------------------------------------------------------------
-       Header and navigation
-       The sticky header houses the page title, theme toggle and actions such
-       as viewing or downloading the PDF version of the CV.  It uses a
-       translucent background with backdrop blur to subtly stand out against
-       the page content.
-    --------------------------------------------------------------------- */
+    /* Header */
     header.site{
-      position: sticky; top:0; z-index:60;
+      position: sticky; top:0; z-index: 60;
       backdrop-filter: blur(8px);
       background: color-mix(in srgb, var(--bg) 80%, transparent);
       border-bottom: 1px solid var(--border);
     }
-    .site__bar{
-      display:flex; align-items:center; gap:12px; justify-content:space-between;
-    }
+    .site__bar{ display:flex; align-items:center; gap:12px; justify-content:space-between; }
     .title{
       font-family: Spectral, Georgia, serif;
-      font-size: clamp(24px,3.2vw,36px);
+      font-size: clamp(24px, 3.2vw, 36px);
       letter-spacing:.2px;
     }
     .actions{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
     .btn{
-      appearance:none;
-      border:1px solid var(--border);
-      background: var(--card);
-      color: var(--text);
-      padding:.6rem .95rem;
-      border-radius:14px;
-      cursor:pointer;
-      font-weight:700;
-      position:relative;
-      overflow:hidden;
+      appearance: none; border:1px solid var(--border); background: var(--card);
+      color: var(--text); padding:.6rem .95rem; border-radius: 14px; cursor: pointer;
+      font-weight:700; position: relative; overflow: hidden;
       transition: transform .12s ease, box-shadow .2s ease, background .2s ease, border-color .2s;
     }
     .btn:active{ transform: translateY(1px); }
     .btn.primary{
-      color:#fff;
-      border-color:transparent;
-      background: linear-gradient(135deg,var(--brand),var(--brand-2));
-      box-shadow:0 10px 24px rgba(29,78,216,.24);
+      color: #fff;
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      box-shadow: 0 10px 24px rgba(29,78,216,.24);
     }
     .btn.primary::after{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      pointer-events:none;
-      background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);
-      transform:translateX(-120%);
+      content:""; position:absolute; inset:-2px; pointer-events:none;
+      background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.35) 50%, transparent 70%);
+      transform: translateX(-120%);
       transition: transform .6s ease;
     }
-    .btn.primary:hover::after{ transform:translateX(120%); }
-    .btn:focus-visible{
-      outline:3px solid var(--focus);
-      outline-offset:2px;
-      box-shadow:0 0 0 6px var(--ring);
-    }
+    .btn.primary:hover::after{ transform: translateX(120%); }
+    .btn:focus-visible{ outline: 3px solid var(--focus); outline-offset: 2px; box-shadow: 0 0 0 6px var(--ring); }
 
-    /* Theme toggle styles */
-    .theme-toggle{
-      display:flex;
-      align-items:center;
-      border:0;
-      background:transparent;
-      cursor:pointer;
-      color:var(--text);
-      padding:.4rem;
-      border-radius:8px;
-      transition: background .2s ease;
-    }
-    .theme-toggle:hover{
-      background:color-mix(in srgb,var(--chip-active) 20%, transparent);
-    }
-    .theme-toggle svg{
-      width:20px;
-      height:20px;
-    }
+    /* Theme toggle */
+    .theme-toggle{ border:0; background:transparent; color:var(--text); padding:.45rem; border-radius:10px; cursor:pointer; }
+    .theme-toggle:hover{ background: color-mix(in srgb, var(--chip-active) 20%, transparent); }
+    .theme-toggle svg{ width:20px; height:20px; display:block; }
 
-    /* ---------------------------------------------------------------------
-       Subnavigation: filter chips and search box
-       The chips provide quick category filters for the CV items.  They show
-       a subtle underline in dark mode when active.  The search input filters
-       visible items by any free‑form text.  Note: categories attached to each
-       card via the data-cats attribute.
-    --------------------------------------------------------------------- */
-    nav.subnav{
-      position: sticky;
-      top:68px;
-      z-index:55;
-      background: color-mix(in srgb, var(--bg) 85%, transparent);
-      border-bottom:1px solid var(--border);
-    }
+    /* Subnav chips + search */
+    nav.subnav{ position: sticky; top:68px; z-index:55; background: color-mix(in srgb, var(--bg) 85%, transparent); border-bottom:1px solid var(--border); }
     .chips{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
     .chip{
-      padding:.5rem .9rem;
-      border-radius:999px;
-      border:1px solid var(--border);
-      background: var(--chip-bg);
-      color: var(--text);
-      font-size:.95rem;
-      cursor:pointer;
-      position:relative;
-      overflow:hidden;
-      transition:border-color .2s ease, transform .06s ease;
+      padding:.5rem .9rem; border-radius:999px; border:1px solid var(--border);
+      background: var(--chip-bg); color: var(--text); font-size:.95rem; cursor:pointer;
+      position: relative; overflow: hidden;
+      transition: border-color .2s ease, transform .06s ease;
       will-change: transform;
     }
-    .chip:hover{ transform:translateY(-1px); }
+    .chip:hover{ transform: translateY(-1px); }
     .chip[aria-pressed="true"]{
-      background:color-mix(in srgb,var(--chip-active) 70%,transparent);
-      border-color:color-mix(in srgb,var(--chip-active) 80%,var(--border));
-      box-shadow:0 0 0 2px color-mix(in srgb,var(--chip-active) 40%,transparent);
+      background: color-mix(in srgb, var(--chip-active) 70%, transparent);
+      border-color: color-mix(in srgb, var(--chip-active) 80%, var(--border));
+      box-shadow: 0 0 0 2px color-mix(in srgb, var(--chip-active) 40%, transparent);
     }
     @media (prefers-color-scheme: dark){
       .chip[aria-pressed="true"]::after{
-        content:"";
-        position:absolute;
-        left:14px;
-        right:14px;
-        bottom:6px;
-        height:2px;
-        background: linear-gradient(90deg,transparent,var(--gold),transparent);
+        content:""; position:absolute; left:14px; right:14px; bottom:6px; height:2px;
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
         border-radius:2px;
       }
     }
-    .search{
-      margin-left:auto;
-      display:flex;
-      gap:8px;
-      align-items:center;
-      padding:.35rem .6rem;
-      border:1px solid var(--border);
-      border-radius:999px;
-      background:var(--card);
-    }
-    .search input{
-      background:transparent;
-      border:0;
-      outline:0;
-      color:var(--text);
-      width:180px;
-    }
+    .search{ margin-left:auto; display:flex; gap:8px; align-items:center; padding:.35rem .6rem; border:1px solid var(--border); border-radius:999px; background:var(--card); }
+    .search input{ background:transparent; border:0; outline:0; color:var(--text); width:200px; }
     .search input::placeholder{ color:var(--muted); }
 
-    /* ---------------------------------------------------------------------
-       CV sections and cards
-       Each section groups related experience or information and can be
-       individually expanded or collapsed.  Cards reveal on scroll and are
-       filterable by category and keyword.
-    --------------------------------------------------------------------- */
+    /* Sections + cards */
     .cv{ display:grid; gap:22px; margin-top:18px; }
-    .section{
-      border:1px solid var(--border);
-      background:var(--card);
-      border-radius:18px;
-      padding:18px;
-      position:relative;
-    }
+    .section{ border:1px solid var(--border); background: var(--card); border-radius:18px; padding:18px; position: relative; }
     .section h2{
-      margin:0 0 10px 0;
-      font-family: Spectral, Georgia, serif;
-      font-size:clamp(20px,2.6vw,26px);
-      line-height:1.2;
-      padding-bottom:8px;
-      background: linear-gradient(90deg,color-mix(in srgb,var(--brand) 35%,transparent), transparent 50%);
-      -webkit-background-clip:text;
-      background-clip:text;
-      color:var(--text);
+      margin:0 0 10px 0; font-family: Spectral, Georgia, serif;
+      font-size: clamp(20px, 2.6vw, 26px); line-height:1.2; padding-bottom:8px;
+      background: linear-gradient(90deg, color-mix(in srgb, var(--brand) 35%, transparent), transparent 50%);
+      -webkit-background-clip: text; background-clip: text; color: var(--text);
     }
     @media (prefers-color-scheme: dark){
       .section h2{
-        border-bottom:1px dashed color-mix(in srgb,var(--gold) 40%,var(--border));
-        box-shadow:0 1px 0 0 color-mix(in srgb,var(--gold) 20%,transparent) inset;
+        border-bottom: 1px dashed color-mix(in srgb, var(--gold) 40%, var(--border));
+        box-shadow: 0 1px 0 0 color-mix(in srgb, var(--gold) 20%, transparent) inset;
       }
     }
-    .cv-item{
-      border:1px solid var(--border);
-      border-radius:16px;
-      padding:14px;
-      background:color-mix(in srgb,var(--card) 90%,transparent);
-      position:relative;
-      transition: transform .2s ease, box-shadow .25s ease, border-color .2s ease, opacity .5s ease;
-      opacity:0;
-      transform:translateY(8px);
-    }
+    .cv-item{ border:1px solid var(--border); border-radius:16px; padding:14px; background: color-mix(in srgb, var(--card) 90%, transparent); position: relative; transition: transform .2s ease, box-shadow .25s ease, border-color .2s ease, opacity .5s ease; opacity: 0; transform: translateY(8px); }
     @media (prefers-color-scheme: dark){
-      .cv-item:hover{
-        box-shadow:0 10px 28px rgba(0,0,0,.28),0 0 0 1px color-mix(in srgb,var(--gold) 30%,var(--border)) inset;
-        border-color:color-mix(in srgb,var(--gold) 25%,var(--border));
-      }
+      .cv-item:hover{ box-shadow: 0 10px 28px rgba(0,0,0,.28), 0 0 0 1px color-mix(in srgb, var(--gold) 30%, var(--border)) inset; border-color: color-mix(in srgb, var(--gold) 25%, var(--border)); }
     }
-    .cv-item.reveal{ opacity:1; transform:translateY(0); }
-    .cv-head{
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      flex-wrap:wrap;
-    }
+    .cv-item.reveal{ opacity: 1; transform: translateY(0); }
+    .cv-head{ display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; }
     .cv-role{ font-weight:800; letter-spacing:.2px; }
-    .cv-meta{ color:var(--muted); font-size:.95rem; }
+    .cv-meta{ color: var(--muted); font-size:.95rem; }
     .cv-tags{ display:flex; gap:8px; flex-wrap:wrap; margin-top:6px; }
-    .tag{
-      font-size:.85rem;
-      background:var(--chip-bg);
-      border:1px solid var(--border);
-      padding:.25rem .55rem;
-      border-radius:999px;
-    }
+    .tag{ font-size:.85rem; background: var(--chip-bg); border:1px solid var(--border); padding:.25rem .55rem; border-radius:999px; }
+
     details{ margin-top:8px; }
-    summary{
-      cursor:pointer;
-      font-weight:700;
-      list-style:none;
-    }
+    summary{ cursor:pointer; font-weight:700; list-style:none; }
     summary::-webkit-details-marker{ display:none; }
-    .muted{ color:var(--muted); }
-    .sr-only{
-      position:absolute;
-      width:1px;
-      height:1px;
-      overflow:hidden;
-      clip:rect(0 0 0 0);
-      white-space:nowrap;
-    }
-    .foot{
-      text-align:center;
-      color:var(--muted);
-      padding:30px 0;
-    }
-    .controls{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin:4px 0 12px;
-    }
+
+    .muted{ color: var(--muted); }
+    .sr-only{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+    .foot{ text-align:center; color: var(--muted); padding:30px 0; }
+
+    .controls{ display:flex; gap:10px; flex-wrap:wrap; margin:4px 0 12px; }
     .controls button{ font-size:.9rem; }
 
-    /* Reading progress bar */
-    .progress{
-      position:fixed;
-      z-index:80;
-      left:0;
-      top:0;
-      height:3px;
-      width:0%;
-      background:linear-gradient(90deg,var(--brand),color-mix(in srgb,var(--gold) 60%,var(--brand)));
-      box-shadow:0 0 10px color-mix(in srgb,var(--brand) 60%,transparent);
-      transition: width .1s linear;
-    }
+    /* reading progress */
+    .progress{ position: fixed; z-index: 80; left:0; top:0; height:3px; width:0%; background: linear-gradient(90deg, var(--brand), color-mix(in srgb, var(--gold) 60%, var(--brand))); box-shadow: 0 0 10px color-mix(in srgb, var(--brand) 60%, transparent); transition: width .1s linear; }
 
-    /* Floating action button (back to top) */
-    .fab{
-      position:fixed;
-      right:16px;
-      bottom:16px;
-      z-index:85;
-      border:0;
-      border-radius:999px;
-      padding:.9rem;
-      background:linear-gradient(135deg,var(--brand),var(--brand-2));
-      color:#fff;
-      cursor:pointer;
-      box-shadow:0 12px 24px rgba(0,0,0,.25);
-      transform:translateY(120%);
-      transition: transform .25s ease;
-    }
-    .fab.show{ transform:translateY(0); }
+    /* back-to-top FAB */
+    .fab{ position: fixed; right:16px; bottom:16px; z-index:85; border:0; border-radius: 999px; padding:.9rem; background: linear-gradient(135deg, var(--brand), var(--brand-2)); color:#fff; cursor:pointer; box-shadow: 0 12px 24px rgba(0,0,0,.25); transform: translateY(120%); transition: transform .25s ease; }
+    .fab.show{ transform: translateY(0); }
 
-    /* Anchor copy icon next to section headings */
-    .anchor{
-      opacity:0;
-      margin-left:8px;
-      font-weight:700;
-      font-size:.9rem;
-      color:var(--muted);
-      transition: opacity .2s;
-      text-decoration:none;
-    }
-    .section:hover .anchor{ opacity:1; }
+    /* anchor icon */
+    .anchor{ opacity: 0; margin-left:8px; font-weight:700; font-size:.9rem; color: var(--muted); transition: opacity .2s; text-decoration: none; }
+    .section:hover .anchor{ opacity: 1; }
 
     @media print{
       header.site, .subnav, .actions, .foot, .search, .controls, .progress, .fab, .anchor, .theme-toggle{ display:none !important; }
       body{ background:#fff; color:#000; }
       .section{ border:0; padding:0; }
-      .cv-item{ break-inside:avoid; border:0; padding:0 0 10px 0; opacity:1 !important; transform:none !important; }
-    }
-
-    /* Smooth ripple fade for chips */
-    @keyframes fade{ to { opacity:0 } }
-
-    /* Full CV images container */
-    .full-cv{
-      margin-top:32px;
-      display:none;
-      flex-direction:column;
-      gap:20px;
-    }
-    .full-cv img{
-      width:100%;
-      height:auto;
-      border:1px solid var(--border);
-      border-radius:12px;
-      display:block;
+      .cv-item{ break-inside: avoid; border:0; padding:0 0 10px 0; opacity:1 !important; transform:none !important; }
     }
   </style>
 </head>
 <body>
   <div class="progress" id="progress"></div>
+
   <header class="site">
     <div class="wrap site__bar">
       <div class="title">Adolfho Romero · CV</div>
       <div class="actions">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
-          <!-- Icon will be injected by script based on current theme -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-          </svg>
+        <button class="theme-toggle" id="themeToggle" title="Toggle theme" aria-label="Toggle light/dark">
+          <!-- Sun/Moon -->
+          <svg id="sun" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.76 4.84l-1.8-1.79L3.17 4.84l1.79 1.79 1.8-1.79zm10.48 14.32l1.79 1.79 1.79-1.79-1.79-1.79-1.79 1.79zM12 4V1h-0v3h0zm0 19v-3h0v3h0zM4 12H1v0h3v0zm19 0h-3v0h3v0zM6.76 19.16l-1.8 1.79 1.8 1.79 1.79-1.79-1.79-1.79zM17.24 4.84l1.79-1.79-1.79-1.79-1.79 1.79 1.79 1.79zM12 6a6 6 0 100 12 6 6 0 000-12z"/></svg>
         </button>
-        <a class="btn" href="./adolfho_romero_cv.pdf" target="_blank" rel="noopener">View PDF</a>
-        <a class="btn primary" id="downloadBtn" href="./adolfho_romero_cv.pdf" download>Download CV</a>
+        <a class="btn" href="./adolfhoromerocv.pdf" target="_blank" rel="noopener">View PDF</a>
+        <a class="btn primary" id="downloadBtn" href="./adolfhoromerocv.pdf" download>Download CV</a>
         <button class="btn" id="printBtn">Print</button>
       </div>
     </div>
   </header>
 
-  <!-- Filter navigation -->
   <nav class="subnav" aria-label="CV filters">
     <div class="wrap chips">
       <button class="chip" data-filter="all" aria-pressed="true">All</button>
-      <button class="chip" data-filter="education">Education</button>
       <button class="chip" data-filter="research">Research</button>
+      <button class="chip" data-filter="teaching">Teaching</button>
       <button class="chip" data-filter="grants">Grants</button>
-      <button class="chip" data-filter="development">Development</button>
-      <button class="chip" data-filter="fieldwork">Fieldwork</button>
-      <button class="chip" data-filter="writing">Writing</button>
+      <button class="chip" data-filter="talks">Talks</button>
+      <button class="chip" data-filter="publications">Publications</button>
+      <button class="chip" data-filter="service">Service</button>
       <button class="chip" data-filter="media">Media</button>
       <button class="chip" data-filter="awards">Awards</button>
-      <button class="chip" data-filter="associations">Associations</button>
+      <button class="chip" data-filter="skills">Skills</button>
+      <button class="chip" data-filter="fieldwork">Fieldwork</button>
       <span class="muted" id="count" aria-live="polite"></span>
       <div class="search" role="search">
         <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.471 6.471 0 0 0 1.57-4.23A6.5 6.5 0 1 0 9.5 16a6.471 6.471 0 0 0 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zM4 9.5C4 6.46 6.46 4 9.5 4S15 6.46 15 9.5 12.54 15 9.5 15 4 12.54 4 9.5z"/></svg>
@@ -407,32 +214,8 @@
     </div>
   </nav>
 
-  <!-- Main CV content -->
   <main class="wrap cv" id="cv">
-
-    <!-- Contact section -->
-    <span id="contact" class="sr-only">Contact</span>
-    <section class="section" aria-labelledby="contact">
-      <div style="display:flex;align-items:center;justify-content:space-between;">
-        <h2>Contact</h2>
-        <a class="anchor" href="#contact" title="Copy link to section">#</a>
-      </div>
-      <article class="cv-item reveal" data-cats="education">
-        <div class="cv-head">
-          <div>
-            <div class="cv-role">Adolfho Romero</div>
-            <div class="cv-meta"><a href="mailto:adolfhoromero@gmail.com">adolfhoromero@gmail.com</a> · 312‑671‑0164</div>
-          </div>
-        </div>
-        <details><summary>Show more</summary>
-          <p>Ph.D. student at Cornell University’s School of Industrial and Labor Relations.  My research focuses on how
-          worker centers and non‑profit organizations empower marginalized communities—particularly immigrant, low‑wage,
-          and undocumented workers—across New York and Florida.</p>
-        </details>
-      </article>
-    </section>
-
-    <!-- Education section -->
+    <!-- Education -->
     <span id="edu" class="sr-only">Education</span>
     <section class="section" aria-labelledby="edu">
       <div style="display:flex;align-items:center;justify-content:space-between;">
@@ -443,10 +226,11 @@
         <button class="btn" data-expand="#edu">Expand all</button>
         <button class="btn" data-collapse="#edu">Collapse all</button>
       </div>
-      <article class="cv-item reveal" data-cats="education">
+
+      <article class="cv-item reveal" data-cats="research">
         <div class="cv-head">
           <div>
-            <div class="cv-role">Ph.D., Industrial &amp; Labor Relations</div>
+            <div class="cv-role">PhD, Industrial and Labor Relations</div>
             <div class="cv-meta">Cornell University · Ithaca, NY · Expected 2028 · GPA 4.0</div>
           </div>
           <div class="cv-tags"><span class="tag">Global Labor and Work</span></div>
@@ -455,10 +239,11 @@
           <p>School of Industrial and Labor Relations. Specialization in Global Labor and Work.</p>
         </details>
       </article>
-      <article class="cv-item" data-cats="education">
+
+      <article class="cv-item" data-cats="research">
         <div class="cv-head">
           <div>
-            <div class="cv-role">M.A., Latin American Studies</div>
+            <div class="cv-role">MA, Latin American Studies</div>
             <div class="cv-meta">University of Florida · Gainesville, FL · 2021 · GPA 3.9</div>
           </div>
           <div class="cv-tags">
@@ -468,29 +253,27 @@
           </div>
         </div>
         <details><summary>Show more</summary>
-          <p>Master’s essay: “¡Si se puede! Yes, We Can!” – An analysis of a nonprofit organization and its effectiveness.  The Farmworkers
-          Association of Florida.</p>
+          <p>Essay: “¡Si se puede! Yes, We Can!” An analysis of a nonprofit organization and its effectiveness. The Farmworkers Association of Florida.</p>
         </details>
       </article>
-      <article class="cv-item" data-cats="education">
+
+      <article class="cv-item" data-cats="research">
         <div class="cv-head">
           <div>
-            <div class="cv-role">B.A., Spanish</div>
+            <div class="cv-role">BA, Spanish</div>
             <div class="cv-meta">Northeastern Illinois University · Chicago, IL · 2018 · GPA 4.0</div>
           </div>
-          <div class="cv-tags">
-            <span class="tag">Latino &amp; Latin American Studies minor</span>
-            <span class="tag">Human Resources Development minor</span>
-          </div>
+          <div class="cv-tags"><span class="tag">Latino & Latin American Studies minor</span><span class="tag">Human Resources Development minor</span></div>
         </div>
         <details><summary>Show more</summary>
           <p>Senior thesis: Puerto Rican Displacement and the Effects of Gentrification.</p>
         </details>
       </article>
-      <article class="cv-item" data-cats="education">
+
+      <article class="cv-item" data-cats="research">
         <div class="cv-head">
           <div>
-            <div class="cv-role">Associate of Arts with Honors</div>
+            <div class="cv-role">AA with Honors</div>
             <div class="cv-meta">Harold Washington Community College · Chicago, IL · 2015</div>
           </div>
         </div>
@@ -510,12 +293,12 @@
           <div class="cv-meta">Focus areas</div>
         </div>
         <div class="cv-tags">
-          <span class="tag">Working‑Class Studies</span>
-          <span class="tag">Industrial &amp; Labor Relations</span>
+          <span class="tag">Working-Class Studies</span>
+          <span class="tag">Industrial and Labor Relations</span>
           <span class="tag">African American Studies</span>
           <span class="tag">Latinx Studies</span>
-          <span class="tag">Comparative Race &amp; Ethnicity</span>
-          <span class="tag">Migration &amp; Transnational Studies</span>
+          <span class="tag">Comparative Race and Ethnicity</span>
+          <span class="tag">Migration & Transnational Studies</span>
           <span class="tag">Oral History</span>
           <span class="tag">Memory</span>
           <span class="tag">Ethnography</span>
@@ -538,18 +321,16 @@
       <article class="cv-item" data-cats="research">
         <div class="cv-head">
           <div>
-            <div class="cv-role">Research Assistant to Dr. Andrew Wolf</div>
-            <div class="cv-meta">Cornell University · ILR School · Ithaca, NY · Aug 2025 – Jan 2026 (expected)</div>
+            <div class="cv-role">Research Assistant to Dr. Andrew Wolf</div>
+            <div class="cv-meta">Cornell University · ILR School · Ithaca, NY · Aug 2025 to Jan 2026 expected</div>
           </div>
-          <div class="cv-tags">
-            <span class="tag">Coalition research</span><span class="tag">Interviews</span>
-          </div>
+          <div class="cv-tags"><span class="tag">Coalition research</span><span class="tag">Interviews</span></div>
         </div>
         <details><summary>Show more</summary>
           <ul>
-            <li>Conducting semi‑structured Spanish‑language interviews with members of the Fund Excluded Workers Coalition to document organizing behind New York’s Excluded Workers Fund.</li>
-            <li>Supporting transcription, data organization and analysis of coalition‑building strategies, labor policy advocacy and migrant worker exclusion.</li>
-            <li>Assisting with survey outreach and contributing to a joint Cornell–Syracuse University study on the development of the Unemployment Bridge Program.</li>
+            <li>Conducting semi-structured Spanish-language interviews with members of the Fund Excluded Workers Coalition to document organizing behind New York’s Excluded Workers Fund.</li>
+            <li>Supporting transcription, data organization, and analysis of coalition building strategies, labor policy advocacy, and migrant worker exclusion.</li>
+            <li>Assisting with survey outreach and contributing to a Cornell and Syracuse University study on the Unemployment Bridge Program.</li>
           </ul>
         </details>
       </article>
@@ -557,15 +338,15 @@
       <article class="cv-item" data-cats="research">
         <div class="cv-head">
           <div>
-            <div class="cv-role">Research Assistant to Dr. Paul Ortiz</div>
-            <div class="cv-meta">Cornell University · May 2025 – Present</div>
+            <div class="cv-role">Research Assistant to Dr. Paul Ortiz</div>
+            <div class="cv-meta">Cornell University · May 2025 to Present</div>
           </div>
           <div class="cv-tags"><span class="tag">Archives</span><span class="tag">Labor history</span></div>
         </div>
         <details><summary>Show more</summary>
           <ul>
-            <li>Compiled and organized archival materials on U.S. labor and farmworker organizing campaigns for long‑term preservation.</li>
-            <li>Supported preliminary research for a forthcoming book on union‑led social movements during the Great Depression.</li>
+            <li>Compiled and organized archival materials on U.S. labor and farmworker organizing campaigns for preservation.</li>
+            <li>Supported preliminary research for a forthcoming book on union led social movements during the Great Depression.</li>
             <li>Assisted in preparing documentation for university archiving focused on labor and social justice movements.</li>
           </ul>
         </details>
@@ -574,16 +355,16 @@
       <article class="cv-item" data-cats="research">
         <div class="cv-head">
           <div>
-            <div class="cv-role">ILR Research Aide IV to Dr. Shannon Gleeson</div>
-            <div class="cv-meta">Cornell University · Jan 2025 – Present</div>
+            <div class="cv-role">ILR Research Aide IV to Dr. Shannon Gleeson</div>
+            <div class="cv-meta">Cornell University · Jan 2025 to Present</div>
           </div>
-          <div class="cv-tags"><span class="tag">Latinx labor</span><span class="tag">Co‑enforcement</span></div>
+          <div class="cv-tags"><span class="tag">Latinx labor</span><span class="tag">Co-enforcement</span></div>
         </div>
         <details><summary>Show more</summary>
           <ul>
-            <li>Supported research and co‑authored a contribution to the <em>Aztlán</em> 50th anniversary issue on Latinx labor rights and workplace enforcement.</li>
-            <li>Contributed to a book chapter on cities, migrants and labor conditions, examining how urban governance shapes inclusion and precarity.</li>
-            <li>Synthesized comparative case studies from the U.S., Europe and Latin America; analyzed exclusionary enforcement mechanisms and municipal labor policy innovations.</li>
+            <li>Supported research and co-authored a contribution to the Aztlán 50th anniversary issue on Latinx labor rights and workplace enforcement.</li>
+            <li>Contributed to a book chapter on Cities, Migrants, and Labor Conditions, examining how urban governance shapes inclusion and precarity.</li>
+            <li>Synthesized comparative case studies from the U.S., Europe, and Latin America. Analyzed enforcement mechanisms and municipal labor policy innovations.</li>
           </ul>
         </details>
       </article>
@@ -592,16 +373,16 @@
         <div class="cv-head">
           <div>
             <div class="cv-role">Assistant Director</div>
-            <div class="cv-meta">Samuel Proctor Oral History Program · University of Florida · 2021 – 2023</div>
+            <div class="cv-meta">Samuel Proctor Oral History Program · University of Florida · 2021 to 2023</div>
           </div>
           <div class="cv-tags"><span class="tag">Program management</span><span class="tag">Oral history</span></div>
         </div>
         <details><summary>Show more</summary>
           <ul>
-            <li>Supervised grant‑funded teams and managed fieldwork initiatives, including an annual excursion to the Mississippi Delta.</li>
-            <li>Co‑managed the Doris Duke Revitalizing Oral History project by designing workshops and archiving protocols.</li>
-            <li>Fostered collaborations with institutions and partnered with UCLA and the Latino Policy and Politics Institute on public programs addressing Latinx identity and social justice.</li>
-            <li>Oversaw educational initiatives—including co‑teaching seminar courses, organizing open house events and leading oral history training workshops.</li>
+            <li>Supervised grant-funded teams and managed fieldwork initiatives including the Mississippi Delta excursion.</li>
+            <li>Co-managed the Doris Duke Revitalizing Oral History project by designing workshops and archiving protocols.</li>
+            <li>Fostered collaborations with institutions and partnered with UCLA and the Latino Policy and Politics Institute on public programs.</li>
+            <li>Oversaw educational initiatives, co-teaching seminars, organizing events, and leading oral history training workshops.</li>
           </ul>
         </details>
       </article>
@@ -609,15 +390,15 @@
       <article class="cv-item" data-cats="research teaching">
         <div class="cv-head">
           <div>
-            <div class="cv-role">Graduate Assistant &amp; Project Coordinator</div>
-            <div class="cv-meta">SPOHP · University of Florida · 2019 – 2021</div>
+            <div class="cv-role">Graduate Assistant & Project Coordinator</div>
+            <div class="cv-meta">SPOHP · University of Florida · 2019 to 2021</div>
           </div>
           <div class="cv-tags"><span class="tag">Teaching</span><span class="tag">Training</span><span class="tag">Metadata</span></div>
         </div>
         <details><summary>Show more</summary>
           <ul>
-            <li>Co‑taught internship courses on equity and community‑based oral history methodologies.</li>
-            <li>Led training workshops for volunteers and maintained transcription standards.</li>
+            <li>Co-taught internship courses on equity and community-based oral history methodologies.</li>
+            <li>Led training workshops and maintained transcription standards.</li>
             <li>Coordinated the Latinx Diaspora in the Americas archive and developed metadata for UF Digital Collections.</li>
             <li>Coordinated public programs and event logistics.</li>
           </ul>
@@ -633,10 +414,7 @@
           <div class="cv-tags"><span class="tag">Community health</span><span class="tag">Outreach</span></div>
         </div>
         <details><summary>Show more</summary>
-          <ul>
-            <li>Assisted with the creation of Medicaid materials and delivered instructional sessions to local communities.</li>
-            <li>Led workshops to improve enrollment by analysing data and strategically restructuring outreach, resulting in increased monthly enrollment rates.</li>
-          </ul>
+          <ul><li>Assisted with Medicaid materials and led workshops that improved enrollment through data-informed outreach.</li></ul>
         </details>
       </article>
 
@@ -644,49 +422,46 @@
         <div class="cv-head">
           <div>
             <div class="cv-role">Graduate Intern</div>
-            <div class="cv-meta">Farmworkers Association of Florida · 2020 – 2021</div>
+            <div class="cv-meta">Farmworkers Association of Florida · 2020 to 2021</div>
           </div>
-          <div class="cv-tags"><span class="tag">Masters research</span><span class="tag">COVID‑19 response</span></div>
+          <div class="cv-tags"><span class="tag">Masters research</span><span class="tag">COVID-19 response</span></div>
         </div>
         <details><summary>Show more</summary>
           <ul>
-            <li>Completed master’s research internship project on ¡Si se puede! Yes, We Can! exploring the effectiveness of the Farmworkers Association of Florida.</li>
-            <li>Participated in weekly webinars, collaborated with justice groups and developed policy and regional action campaigns through strategic communications.</li>
-            <li>Supported FWAF across multiple locations during the pandemic, obtained PPE supplies, distributed food and contributed to testing and surveys for grant projects.</li>
+            <li>Completed Masters research internship project “¡Si se puede! Yes, We Can!” on non-profit effectiveness.</li>
+            <li>Collaborated with justice groups and supported policy development and regional action campaigns.</li>
+            <li>Supported sites during the pandemic and contributed to testing and surveys.</li>
           </ul>
         </details>
       </article>
 
-      <article class="cv-item" data-cats="research service">
+      <article class="cv-item" data-cats="research">
         <div class="cv-head">
           <div>
-            <div class="cv-role">Research Assistant to Dr. Victor Ortiz</div>
-            <div class="cv-meta">Northeastern Illinois University · Department of Sociology · 2019</div>
+            <div class="cv-role">Research Assistant to Dr. Victor Ortiz</div>
+            <div class="cv-meta">Northeastern Illinois University · 2019</div>
           </div>
           <div class="cv-tags"><span class="tag">GIS</span><span class="tag">Survey design</span></div>
         </div>
         <details><summary>Show more</summary>
           <ul>
-            <li>Conducted GIS mapping and spatial analysis of Latino settlement patterns using census block group and property assessment data.</li>
-            <li>Built and maintained Excel databases to organise local property and demographic data.</li>
-            <li>Developed and piloted community surveys in Qualtrics and assisted with IRB modifications for a project titled “Suburban Latinos and Non‑Latinos: Diminishing Social Interactions and Race.”</li>
-            <li>Created visual materials and maps used by the City of Yorkville to support survey outreach and community engagement.</li>
+            <li>Conducted GIS mapping and spatial analysis of Latino settlement patterns.</li>
+            <li>Built databases to organize property and demographic data.</li>
+            <li>Helped develop community surveys and assisted with IRB modifications.</li>
           </ul>
         </details>
       </article>
 
-      <article class="cv-item" data-cats="research teaching">
+      <article class="cv-item" data-cats="teaching">
         <div class="cv-head">
           <div>
-            <div class="cv-role">Peer Tutor &amp; Writing Fellow</div>
-            <div class="cv-meta">Center for Academic Writing (Writing Intensive Program) · 2017 – 2018</div>
+            <div class="cv-role">Peer Tutor and Writing Fellow</div>
+            <div class="cv-meta">Center for Academic Writing · NEIU · 2017–2018</div>
           </div>
           <div class="cv-tags"><span class="tag">Writing support</span></div>
         </div>
         <details><summary>Show more</summary>
-          <ul>
-            <li>Provided tutoring to students in Latin American Studies courses, reviewed research investigations and offered constructive feedback on structure, critical thinking and syntax development.</li>
-          </ul>
+          <ul><li>Tutored students in Latin American Studies and provided structured feedback on writing.</li></ul>
         </details>
       </article>
     </section>
@@ -698,481 +473,230 @@
         <h2>Research Grants</h2>
         <a class="anchor" href="#grants" title="Copy link to section">#</a>
       </div>
+      <div class="controls">
+        <button class="btn" data-expand="#grants">Expand all</button>
+        <button class="btn" data-collapse="#grants">Collapse all</button>
+      </div>
+
       <article class="cv-item" data-cats="grants">
-        <div class="cv-head">
-          <div class="cv-role">Network to Freedom Underground Railroad</div>
-          <div class="cv-meta">National Park Service · Project Researcher · $425,000 · 2022 – 2024</div>
-        </div>
+        <div class="cv-head"><div><div class="cv-role">Network to Freedom Underground Railroad</div><div class="cv-meta">National Park Service · Project Researcher · $425,000 · 2022–2024</div></div><div class="cv-tags"><span class="tag">NPS</span></div></div>
       </article>
       <article class="cv-item" data-cats="grants">
-        <div class="cv-head">
-          <div class="cv-role">Challenging Racism at UF: Using History to Create a Welcoming University</div>
-          <div class="cv-meta">University of Florida · Lead Project Coordinator · $62,699 · 2022 – 2023</div>
-        </div>
+        <div class="cv-head"><div><div class="cv-role">Challenging Racism at UF</div><div class="cv-meta">University of Florida · Lead Project Coordinator · $62,699 · 2022–2023</div></div><div class="cv-tags"><span class="tag">Public programs</span></div></div>
       </article>
       <article class="cv-item" data-cats="grants">
-        <div class="cv-head">
-          <div class="cv-role">Reanimating African American Oral Histories of the Gulf South</div>
-          <div class="cv-meta">NEH · Research Coordinator · $349,000 · 2021 – 2024</div>
-        </div>
+        <div class="cv-head"><div><div class="cv-role">Reanimating African American Oral Histories of the Gulf South</div><div class="cv-meta">NEH · Research Coordinator · $349,000 · 2021–2024</div></div><div class="cv-tags"><span class="tag">NEH</span></div></div>
       </article>
       <article class="cv-item" data-cats="grants">
-        <div class="cv-head">
-          <div class="cv-role">The Recruitment and Retention of Black Faculty at UF</div>
-          <div class="cv-meta">University of Florida · Project Researcher · $75,000 · 2021 – 2023</div>
-        </div>
+        <div class="cv-head"><div><div class="cv-role">The Recruitment and Retention of Black Faculty at UF</div><div class="cv-meta">University of Florida · Project Researcher · $75,000 · 2021–2023</div></div><div class="cv-tags"><span class="tag">Higher ed</span></div></div>
       </article>
       <article class="cv-item" data-cats="grants">
-        <div class="cv-head">
-          <div class="cv-role">Doris Duke Native American Oral History Revitalization Project</div>
-          <div class="cv-meta">Doris Duke Charitable Foundation · Research Coordinator · $200,000 · 2021 – 2022</div>
-        </div>
-      </article>
-      <article class="cv-item" data-cats="grants">
-        <div class="cv-head">
-          <div class="cv-role">A Rural State of Mind: Addressing Health of Farm Communities in Florida</div>
-          <div class="cv-meta">Robert Wood Johnson Foundation · Research Assistant · $350,000 · 2021 – 2021</div>
-        </div>
-      </article>
-      <article class="cv-item" data-cats="grants">
-        <div class="cv-head">
-          <div class="cv-role">National Institute on Minority Health and Health Disparities Project</div>
-          <div class="cv-meta">Florida International University · Research Assistant · $25,000 · 2021 – 2021</div>
-        </div>
-      </article>
-      <article class="cv-item" data-cats="grants">
-        <div class="cv-head">
-          <div class="cv-role">Suburban Latinos &amp; Non‑Latinos: Diminishing Social Interactions and Race</div>
-          <div class="cv-meta">National Science Foundation · Research Assistant · $149,934 · 2019 – 2019</div>
-        </div>
+        <div class="cv-head"><div><div class="cv-role">Doris Duke Native American Oral History Revitalization Project</div><div class="cv-meta">Doris Duke Charitable Foundation · Research Coordinator · $200,000 · 2021–2022</div></div></div>
       </article>
     </section>
 
-    <!-- Professional Development -->
-    <span id="development" class="sr-only">Professional Development</span>
-    <section class="section" aria-labelledby="development">
+    <!-- Professional Development (short) -->
+    <span id="prodev" class="sr-only">Professional Development</span>
+    <section class="section" aria-labelledby="prodev">
       <div style="display:flex;align-items:center;justify-content:space-between;">
         <h2>Professional Development</h2>
-        <a class="anchor" href="#development" title="Copy link to section">#</a>
+        <a class="anchor" href="#prodev" title="Copy link to section">#</a>
       </div>
-      <article class="cv-item" data-cats="development">
-        <div class="cv-head">
-          <div class="cv-role">UT Austin Ethnographic Summer School</div>
-          <div class="cv-meta">Urban Ethnography Lab · University of Texas at Austin · Aug 2025</div>
-        </div>
-        <details><summary>Show more</summary>
-          <ul>
-            <li>Four‑day intensive course on ethnographic methods, focusing on observation, in‑depth interviewing, qualitative coding and ethical research practices.</li>
-            <li>Participated in lectures and workshops led by UT Austin Sociology faculty, including one‑on‑one feedback on research projects.</li>
-            <li>Topics included the architecture of ethnographic fieldwork, reflexivity, theory‑building and navigating human subjects protocols.</li>
-          </ul>
-        </details>
+      <article class="cv-item" data-cats="research">
+        <div class="cv-head"><div><div class="cv-role">UT Austin Ethnographic Summer School</div><div class="cv-meta">Urban Ethnography Lab · The University of Texas at Austin · Aug 2025</div></div></div>
       </article>
-      <article class="cv-item" data-cats="development">
-        <div class="cv-head">
-          <div class="cv-role">QMUL–Cornell Migration Spring School</div>
-          <div class="cv-meta">Queen Mary University of London &amp; Cornell University · Gozo &amp; Malta · May 2025</div>
-        </div>
-        <details><summary>Show more</summary>
-          <ul>
-            <li>Interdisciplinary training program focused on migration, labor rights and urban policy in the Mediterranean region.</li>
-            <li>Engaged in lectures, discussions and workshops led by scholars from geography, film studies, history, law, psychology, public health and policy.</li>
-            <li>Explored themes such as economic migration, displacement and the role of cities in shaping migrant labor conditions.</li>
-            <li>Participated in site visits, discussions with migration activists and experiential learning activities in Gozo and Malta.</li>
-          </ul>
-        </details>
-      </article>
-      <article class="cv-item" data-cats="development">
-        <div class="cv-head">
-          <div class="cv-role">Harvard Kennedy School &amp; MA Black and Latino Legislative Caucus Retreat</div>
-          <div class="cv-meta">Cambridge, Massachusetts · Dec 2024</div>
-        </div>
-        <details><summary>Show more</summary>
-          <ul>
-            <li>Supported Dr. Paul Ortiz’s presentation to the Massachusetts Black and Latino Legislative Caucus, engaging with legislators and audience members during the retreat.</li>
-            <li>Met with publishing leaders from Beacon Press to discuss dissemination of oral history projects.</li>
-          </ul>
-        </details>
+      <article class="cv-item" data-cats="research">
+        <div class="cv-head"><div><div class="cv-role">QMUL–Cornell Migration Spring School</div><div class="cv-meta">Queen Mary University of London & Cornell University · Gozo and Malta · May 2025</div></div></div>
       </article>
     </section>
 
-    <!-- Awards &amp; Honors -->
-    <span id="awards" class="sr-only">Awards &amp; Honors</span>
-    <section class="section" aria-labelledby="awards">
-      <div style="display:flex;align-items:center;justify-content:space-between;">
-        <h2>Honors &amp; Awards</h2>
-        <a class="anchor" href="#awards" title="Copy link to section">#</a>
-      </div>
-      <article class="cv-item" data-cats="awards">
-        <div class="cv-head">
-          <div class="cv-role">Industrial and Labor Relations Travel Grant</div>
-          <div class="cv-meta">$2,000 · 2025</div>
-        </div>
-      </article>
-      <article class="cv-item" data-cats="awards">
-        <div class="cv-head">
-          <div class="cv-role">Cornell Graduate School Conference Travel Grant</div>
-          <div class="cv-meta">$700 · 2025</div>
-        </div>
-      </article>
-      <article class="cv-item" data-cats="awards">
-        <div class="cv-head">
-          <div class="cv-role">Spring Community‑Engagement Working Group Award</div>
-          <div class="cv-meta">$500 · 2023</div>
-        </div>
-      </article>
-      <article class="cv-item" data-cats="awards">
-        <div class="cv-head">
-          <div class="cv-role">Oral History Association Presenter Scholarship</div>
-          <div class="cv-meta">$500 · 2022</div>
-        </div>
-      </article>
-      <article class="cv-item" data-cats="awards">
-        <div class="cv-head">
-          <div class="cv-role">UF Machen Florida Opportunity Scholars Champion Award</div>
-          <div class="cv-meta">2022</div>
-        </div>
-      </article>
-      <article class="cv-item" data-cats="awards">
-        <div class="cv-head">
-          <div class="cv-role">Certificate of Appreciation – Evoking the Complexity of Black Lives in Florida</div>
-          <div class="cv-meta">2022</div>
-        </div>
-      </article>
-      <article class="cv-item" data-cats="awards">
-        <div class="cv-head">
-          <div class="cv-role">Graduate Assistantship</div>
-          <div class="cv-meta">University of Florida · 2021</div>
-        </div>
-      </article>
-      <article class="cv-item" data-cats="awards">
-        <div class="cv-head">
-          <div class="cv-role">Summa Cum Laude</div>
-          <div class="cv-meta">Northeastern Illinois University · 2018</div>
-        </div>
-      </article>
-      <article class="cv-item" data-cats="awards">
-        <div class="cv-head">
-          <div class="cv-role">College of Arts and Sciences Dean’s List</div>
-          <div class="cv-meta">Northeastern Illinois University · 2017–2018</div>
-        </div>
-      </article>
-      <article class="cv-item" data-cats="awards">
-        <div class="cv-head">
-          <div class="cv-role">Illinois Legislative Latino Caucus Foundation Scholarship</div>
-          <div class="cv-meta">2007</div>
-        </div>
-      </article>
-    </section>
-
-    <!-- Professional Associations -->
-    <span id="associations" class="sr-only">Professional Associations</span>
-    <section class="section" aria-labelledby="associations">
-      <div style="display:flex;align-items:center;justify-content:space-between;">
-        <h2>Professional Associations</h2>
-        <a class="anchor" href="#associations" title="Copy link to section">#</a>
-      </div>
-      <article class="cv-item" data-cats="associations">
-        <div class="cv-head">
-          <div class="cv-role">Ronald E. McNair Post Baccalaureate Achievement Program</div>
-          <div class="cv-meta">2017 – Present</div>
-        </div>
-      </article>
-      <article class="cv-item" data-cats="associations">
-        <div class="cv-head">
-          <div class="cv-role">Constitutional Committee Member, Cornell Graduate Students United – UE</div>
-          <div class="cv-meta">2025</div>
-        </div>
-      </article>
-      <article class="cv-item" data-cats="associations">
-        <div class="cv-head">
-          <div class="cv-role">Member, Society for the Advancement of Socio‑Economics</div>
-          <div class="cv-meta">2025</div>
-        </div>
-      </article>
-      <article class="cv-item" data-cats="associations">
-        <div class="cv-head">
-          <div class="cv-role">Treasurer, Alachua County Labor Coalition</div>
-          <div class="cv-meta">2022 – 2024</div>
-        </div>
-      </article>
-      <article class="cv-item" data-cats="associations">
-        <div class="cv-head">
-          <div class="cv-role">Member, Oral History Association</div>
-          <div class="cv-meta">2023</div>
-        </div>
-      </article>
-      <article class="cv-item" data-cats="associations">
-        <div class="cv-head">
-          <div class="cv-role">Chair, Alachua County Tenants Association</div>
-          <div class="cv-meta">2021</div>
-        </div>
-      </article>
-      <article class="cv-item" data-cats="associations">
-        <div class="cv-head">
-          <div class="cv-role">Treasurer, Caribbean, Latinx and Latin American Exchange Organization</div>
-          <div class="cv-meta">2020</div>
-        </div>
-      </article>
-      <article class="cv-item" data-cats="associations">
-        <div class="cv-head">
-          <div class="cv-role">Member, National Spanish Honors Society – Sigma Delta Pi</div>
-          <div class="cv-meta">2018</div>
-        </div>
-      </article>
-      <article class="cv-item" data-cats="associations">
-        <div class="cv-head">
-          <div class="cv-role">Participant, Big 10 Academic Alliance Summer Research Opportunity Program</div>
-          <div class="cv-meta">2018</div>
-        </div>
-      </article>
-    </section>
-
-    <!-- Languages &amp; Skills -->
-    <span id="skills" class="sr-only">Languages &amp; Skills</span>
+    <!-- Skills -->
+    <span id="skills" class="sr-only">Skills</span>
     <section class="section" aria-labelledby="skills">
       <div style="display:flex;align-items:center;justify-content:space-between;">
-        <h2>Languages &amp; Skills</h2>
+        <h2>Skills</h2>
         <a class="anchor" href="#skills" title="Copy link to section">#</a>
       </div>
       <article class="cv-item" data-cats="skills">
         <div class="cv-head">
-          <div class="cv-role">Languages</div>
+          <div class="cv-role">Languages & Tools</div>
+          <div class="cv-meta">Summary</div>
         </div>
         <div class="cv-tags">
           <span class="tag">Spanish (Native)</span>
           <span class="tag">English (Fluent)</span>
-        </div>
-      </article>
-      <article class="cv-item" data-cats="skills">
-        <div class="cv-head">
-          <div class="cv-role">Research &amp; Data Analysis</div>
-        </div>
-        <div class="cv-tags">
-          <span class="tag">RStudio</span>
-          <span class="tag">Atlas.ti</span>
-          <span class="tag">Zotero</span>
+          <span class="tag">R / RStudio</span>
           <span class="tag">MAXQDA</span>
-        </div>
-      </article>
-      <article class="cv-item" data-cats="skills">
-        <div class="cv-head">
-          <div class="cv-role">Audio &amp; Transcription</div>
-        </div>
-        <div class="cv-tags">
+          <span class="tag">Zotero</span>
+          <span class="tag">Atlas.ti</span>
           <span class="tag">Descript</span>
           <span class="tag">Adobe Audition</span>
           <span class="tag">Hindenburg</span>
-        </div>
-      </article>
-      <article class="cv-item" data-cats="skills">
-        <div class="cv-head">
-          <div class="cv-role">Finance &amp; Administration</div>
-        </div>
-        <div class="cv-tags">
           <span class="tag">QuickBooks</span>
         </div>
       </article>
     </section>
 
-    <!-- Full CV images gallery -->
+    <!-- Full CV Viewer -->
     <span id="fullcv" class="sr-only">Full CV</span>
     <section class="section" aria-labelledby="fullcv">
       <div style="display:flex;align-items:center;justify-content:space-between;">
-        <h2>Full CV Document</h2>
+        <h2>Full CV (PDF)</h2>
         <a class="anchor" href="#fullcv" title="Copy link to section">#</a>
       </div>
-      <p>Below you can view the complete curriculum vitae exactly as formatted in the original PDF. Use the button to toggle the embedded pages.</p>
-      <button class="btn primary" id="toggleFullCv">Show full CV</button>
-      <div class="full-cv" id="fullCvContainer">
-        <!-- Images inserted via script -->
-      </div>
+      <article class="cv-item" data-cats="publications">
+        <p class="muted">Open the embedded PDF below or use the action buttons in the header to view or download.</p>
+        <details open>
+          <summary>Show/Hide embedded PDF</summary>
+          <div style="margin-top:10px; border:1px solid var(--border); border-radius:12px; overflow:hidden; background:var(--card)">
+            <object data="./adolfhoromerocv.pdf#toolbar=1&navpanes=0" type="application/pdf" width="100%" height="720">
+              <iframe src="./adolfhoromerocv.pdf#toolbar=1&navpanes=0" width="100%" height="720" style="border:0;"></iframe>
+            </object>
+          </div>
+        </details>
+      </article>
     </section>
 
+    <footer class="foot">© 2025 Adolfho Romero · ar2539@cornell.edu</footer>
   </main>
 
   <button class="fab" id="fab" aria-label="Back to top">↑</button>
 
-  <footer class="foot">© 2025 Adolfho Romero · <a href="mailto:adolfhoromero@gmail.com">adolfhoromero@gmail.com</a></footer>
-
-  <!-- Behaviour scripts -->
   <script>
-    // Theme toggle logic
+    // Theme boot
     (function(){
-      const root = document.documentElement;
-      const toggle = document.getElementById('themeToggle');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const stored = localStorage.getItem('theme');
-      const current = stored || (prefersDark ? 'dark' : 'light');
-      root.setAttribute('data-theme', current);
-      renderIcon(current);
-      function renderIcon(theme){
-        // Switch the SVG icon based on the current theme
-        const svg = toggle.querySelector('svg');
-        svg.innerHTML = '';
-        if(theme === 'dark'){
-          // sun icon for dark mode (to switch to light)
-          svg.setAttribute('viewBox','0 0 24 24');
-          svg.innerHTML = '<circle cx="12" cy="12" r="5" fill="currentColor"></circle><g stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></g>';
-        }else{
-          // moon icon for light mode (to switch to dark)
-          svg.setAttribute('viewBox','0 0 24 24');
-          svg.innerHTML = '<path d="M21 12.79A9 9 0 0 1 11.21 3 7 7 0 1 0 21 12.79z" fill="currentColor"></path>';
-        }
+      const stored = localStorage.getItem("theme");
+      if(stored){ document.documentElement.setAttribute("data-theme", stored); }
+      // prefer system if none stored
+      if(!stored){
+        const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+        if(prefersLight) document.documentElement.setAttribute('data-theme','light');
       }
-      toggle.addEventListener('click', () => {
-        const currentTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        root.setAttribute('data-theme', currentTheme);
-        localStorage.setItem('theme', currentTheme);
-        renderIcon(currentTheme);
-      });
     })();
 
-    // Filter chips and search
-    (function(){
-      const chips = Array.from(document.querySelectorAll('.chip'));
-      const items = Array.from(document.querySelectorAll('.cv-item'));
-      const countEl = document.getElementById('count');
-      const searchInput = document.getElementById('search');
-      function apply(filter){
-        const query = (searchInput.value || '').toLowerCase();
-        items.forEach(el => {
-          const cats = (el.dataset.cats || '').split(/\s+/);
-          const text = el.textContent.toLowerCase();
-          const matchCat = filter === 'all' ? true : cats.includes(filter);
-          const matchText = query ? text.includes(query) : true;
-          const show = matchCat && matchText;
-          el.style.display = show ? '' : 'none';
-        });
-        const visible = items.filter(el => el.style.display !== 'none').length;
-        countEl.textContent = `Showing ${visible} item${visible === 1 ? '' : 's'}`;
-      }
-      chips.forEach(btn => {
-        btn.addEventListener('click', () => {
-          chips.forEach(b => b.setAttribute('aria-pressed','false'));
-          btn.setAttribute('aria-pressed','true');
-          apply(btn.dataset.filter);
-          // ripple effect
-          const r = document.createElement('span');
-          r.style.position='absolute';
-          r.style.inset='0';
-          r.style.background='radial-gradient(circle at var(--x,50%) var(--y,50%), rgba(255,255,255,.15), transparent 40%)';
-          r.style.pointerEvents='none';
-          r.style.animation='fade .6s ease forwards';
-          btn.appendChild(r);
-          setTimeout(() => r.remove(), 600);
-        });
-        btn.addEventListener('pointermove', e => {
-          const rect = btn.getBoundingClientRect();
-          btn.style.setProperty('--x', ((e.clientX - rect.left) / rect.width * 100) + '%');
-          btn.style.setProperty('--y', ((e.clientY - rect.top) / rect.height * 100) + '%');
-        });
-      });
-      searchInput.addEventListener('input', () => {
-        const active = document.querySelector('.chip[aria-pressed="true"]') || { dataset:{ filter:'all' } };
-        apply(active.dataset.filter);
-      });
-      // initial call
-      apply('all');
-    })();
+    const chips = [...document.querySelectorAll('.chip')];
+    const items = [...document.querySelectorAll('.cv-item')];
+    const count = document.getElementById('count');
+    const searchInput = document.getElementById('search');
+    const progress = document.getElementById('progress');
+    const fab = document.getElementById('fab');
+    const printBtn = document.getElementById('printBtn');
+    const themeToggle = document.getElementById('themeToggle');
 
-    // Expand/collapse behaviour
-    (function(){
-      document.querySelectorAll('.controls [data-expand]').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const sel = btn.getAttribute('data-expand');
-          document.querySelectorAll(sel + ' ~ .cv-item details').forEach(d => d.open = true);
-        });
+    // Theme toggle
+    themeToggle?.addEventListener('click', ()=>{
+      const cur = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', cur);
+      localStorage.setItem('theme', cur);
+    });
+
+    function apply(filter){
+      const q = (searchInput.value || '').toLowerCase();
+      items.forEach(el=>{
+        const cats = (el.dataset.cats || '').split(/\\s+/);
+        const text = el.textContent.toLowerCase();
+        const matchCat = filter === 'all' ? true : cats.includes(filter);
+        const matchText = q ? text.includes(q) : true;
+        const show = matchCat && matchText;
+        el.style.display = show ? '' : 'none';
       });
-      document.querySelectorAll('.controls [data-collapse]').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const sel = btn.getAttribute('data-collapse');
-          document.querySelectorAll(sel + ' ~ .cv-item details').forEach(d => d.open = false);
-        });
+      const visible = items.filter(el => el.style.display !== 'none').length;
+      count.textContent = `Showing ${visible} item${visible===1?'':'s'}`;
+    }
+
+    chips.forEach(btn=>{
+      btn.addEventListener('click', (e)=>{
+        chips.forEach(b=>b.setAttribute('aria-pressed','false'));
+        btn.setAttribute('aria-pressed','true');
+        apply(btn.dataset.filter);
+        // ripple
+        const r = document.createElement('span');
+        r.style.position='absolute'; r.style.inset='0'; r.style.background='radial-gradient(circle at var(--x,50%) var(--y,50%), rgba(255,255,255,.15), transparent 40%)';
+        r.style.pointerEvents='none'; r.style.animation='fade .6s ease forwards'; btn.appendChild(r);
+        setTimeout(()=>r.remove(), 600);
       });
-    })();
+      btn.addEventListener('pointermove', e=>{
+        const rect = btn.getBoundingClientRect();
+        btn.style.setProperty('--x', ((e.clientX-rect.left)/rect.width*100)+'%');
+        btn.style.setProperty('--y', ((e.clientY-rect.top)/rect.height*100)+'%');
+      });
+    });
+
+    // Search
+    searchInput.addEventListener('input', ()=>{
+      const active = document.querySelector('.chip[aria-pressed="true"]') || { dataset: { filter:'all' } };
+      apply(active.dataset.filter);
+    });
+
+    // Expand/collapse
+    document.querySelectorAll('.controls [data-expand]').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const sel = btn.getAttribute('data-expand');
+        document.querySelectorAll(sel + ' ~ .cv-item details').forEach(d => d.open = true);
+      });
+    });
+    document.querySelectorAll('.controls [data-collapse]').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const sel = btn.getAttribute('data-collapse');
+        document.querySelectorAll(sel + ' ~ .cv-item details').forEach(d => d.open = false);
+      });
+    });
 
     // Print
-    (function(){
-      const btn = document.getElementById('printBtn');
-      btn?.addEventListener('click', () => window.print());
-    })();
+    printBtn?.addEventListener('click', ()=>window.print());
 
     // Reveal on scroll
-    (function(){
-      const items = document.querySelectorAll('.cv-item');
-      const io = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if(entry.isIntersecting){
-            entry.target.classList.add('reveal');
-            io.unobserve(entry.target);
-          }
-        });
-      }, { rootMargin:'0px 0px -10% 0px', threshold:0.01 });
-      items.forEach(el => io.observe(el));
-    })();
-
-    // Reading progress & back to top FAB
-    (function(){
-      const progress = document.getElementById('progress');
-      const fab = document.getElementById('fab');
-      const onScroll = () => {
-        const h = document.documentElement;
-        const scrolled = h.scrollTop;
-        const height = h.scrollHeight - h.clientHeight;
-        const pct = height > 0 ? (scrolled / height) * 100 : 0;
-        progress.style.width = pct + '%';
-        fab.classList.toggle('show', scrolled > 600);
-      };
-      document.addEventListener('scroll', onScroll, { passive:true });
-      onScroll();
-      fab.addEventListener('click', () => window.scrollTo({ top:0, behavior:'smooth' }));
-    })();
-
-    // Keyboard shortcuts
-    (function(){
-      const searchInput = document.getElementById('search');
-      const items = Array.from(document.querySelectorAll('.cv-item'));
-      document.addEventListener('keydown', e => {
-          if(document.activeElement === searchInput) return;
-          const key = e.key.toLowerCase();
-          if(key === '/'){
-            e.preventDefault();
-            searchInput.focus();
-            return;
-          }
-          if(key === 't'){
-            window.scrollTo({ top:0, behavior:'smooth' });
-            return;
-          }
-          if(key === 'e'){
-            const visible = items.filter(el => el.style.display !== 'none');
-            visible.forEach(el => el.querySelectorAll('details').forEach(d => d.open = true));
-            return;
-          }
-          if(key === 'c'){
-            const visible = items.filter(el => el.style.display !== 'none');
-            visible.forEach(el => el.querySelectorAll('details').forEach(d => d.open = false));
-            return;
-          }
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('reveal');
+          io.unobserve(entry.target);
+        }
       });
-    })();
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.01 });
+    items.forEach(el=>io.observe(el));
 
-    // Anchor copy behaviour
-    (function(){
-      document.querySelectorAll('.anchor').forEach(a => {
-        a.addEventListener('click', e => {
-          e.preventDefault();
-          const id = a.getAttribute('href');
-          history.replaceState(null,'',id);
-          navigator.clipboard?.writeText(location.href);
-          a.textContent = '✓';
-          setTimeout(() => a.textContent = '#', 1000);
-        });
+    // Reading progress
+    const onScroll = () => {
+      const h = document.documentElement;
+      const scrolled = h.scrollTop;
+      const height = h.scrollHeight - h.clientHeight;
+      const pct = height>0 ? (scrolled/height)*100 : 0;
+      progress.style.width = pct + '%';
+      fab.classList.toggle('show', scrolled > 600);
+    };
+    document.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // FAB
+    fab.addEventListener('click', ()=>window.scrollTo({ top:0, behavior:'smooth' }));
+
+    // Shortcuts
+    document.addEventListener('keydown', (e)=>{
+      if(document.activeElement === searchInput) return;
+      if(e.key === '/'){ e.preventDefault(); searchInput.focus(); }
+      if(e.key.toLowerCase() === 't'){ window.scrollTo({ top:0, behavior:'smooth' }); }
+      if(e.key.toLowerCase() === 'e'){
+        items.filter(el => el.style.display !== 'none').forEach(el=> el.querySelectorAll('details').forEach(d=>d.open=true));
+      }
+      if(e.key.toLowerCase() === 'c'){
+        items.filter(el => el.style.display !== 'none').forEach(el=> el.querySelectorAll('details').forEach(d=>d.open=false));
+      }
+    });
+
+    // Anchor copy
+    document.querySelectorAll('.anchor').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        e.preventDefault();
+        const id = a.getAttribute('href');
+        history.replaceState(null, '', id);
+        navigator.clipboard?.writeText(location.href);
+        a.textContent = '✓';
+        setTimeout(()=>a.textContent = '#', 1000);
       });
-    })();
+    });
 
-    // Safari fallback for PDF downloads
+    // Safari-safe download
     (function(){
       const btn = document.getElementById('downloadBtn');
       if(!btn) return;
@@ -1190,38 +714,15 @@
             a.download = 'Adolfho_Romero_CV.pdf';
             document.body.appendChild(a);
             a.click();
-            setTimeout(() => {
-              URL.revokeObjectURL(objectUrl);
-              a.remove();
-            }, 1000);
+            setTimeout(()=>{ URL.revokeObjectURL(objectUrl); a.remove(); }, 1000);
           }catch(err){
-            window.open(btn.getAttribute('href'),'_blank','noopener');
+            window.open(btn.getAttribute('href'), '_blank', 'noopener');
           }
         }
       }, { passive:false });
     })();
-
-    // Full CV toggle and lazy image loading
-    (function(){
-      const toggleBtn = document.getElementById('toggleFullCv');
-      const container = document.getElementById('fullCvContainer');
-      let loaded = false;
-      toggleBtn.addEventListener('click', () => {
-        if(!loaded){
-          // Build image elements for each PDF page
-          const pages = 10; // update if you regenerate the PDF images
-          for(let i = 1; i <= pages; i++){
-            const img = document.createElement('img');
-            img.src = 'cv_images/page-' + String(i).padStart(2,'0') + '.png';
-            img.alt = 'CV page ' + i;
-            container.appendChild(img);
-          }
-          loaded = true;
-        }
-        container.style.display = container.style.display === 'flex' ? 'none' : 'flex';
-        toggleBtn.textContent = container.style.display === 'flex' ? 'Hide full CV' : 'Show full CV';
-      });
-    })();
   </script>
+
+  <style>@keyframes fade{ to { opacity:0 } }</style>
 </body>
 </html>
