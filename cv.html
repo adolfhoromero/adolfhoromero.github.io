@@ -68,7 +68,6 @@
     .btn.primary{ background: var(--brand); border-color: transparent; color: #fff; }
     .btn:focus-visible{ outline: 3px solid var(--focus); outline-offset: 2px; }
 
-    /* Sticky subnav with filters */
     .subnav{
       position: sticky; top:68px; z-index: 40;
       background: color-mix(in srgb, var(--bg) 85%, transparent);
@@ -81,7 +80,6 @@
     }
     .chip[aria-pressed="true"]{ background: var(--chip-active); }
 
-    /* CV content */
     .cv{ display:grid; gap:22px; margin-top:18px; }
     .section{ border:1px solid var(--border); background: var(--card); border-radius:16px; padding:18px; }
     .section h2{
@@ -115,8 +113,6 @@
   </style>
 </head>
 <body>
-
-  <!-- Header bar. If you have a shared header, you can replace this block with your site header -->
   <header class="site">
     <div class="wrap site__bar">
       <div class="title">Adolfho Romero · CV</div>
@@ -128,7 +124,6 @@
     </div>
   </header>
 
-  <!-- Sticky subnav with quick filters -->
   <nav class="subnav" aria-label="CV filters">
     <div class="wrap chips">
       <button class="chip" data-filter="all" aria-pressed="true">All</button>
@@ -136,16 +131,11 @@
       <button class="chip" data-filter="teaching">Teaching</button>
       <button class="chip" data-filter="grants">Grants</button>
       <button class="chip" data-filter="talks">Talks</button>
-      <!-- Optional extras:
-      <button class="chip" data-filter="service">Service</button>
-      <button class="chip" data-filter="awards">Awards</button>
-      -->
       <span class="muted" id="count" aria-live="polite"></span>
     </div>
   </nav>
 
   <main class="wrap cv" id="cv">
-    <!-- Education -->
     <section class="section" aria-labelledby="edu">
       <h2 id="edu">Education</h2>
       <div class="cv-item" data-cats="research">
@@ -167,11 +157,8 @@
           <div class="cv-tags"><span class="tag">Latinx Studies</span><span class="tag">Migration</span></div>
         </div>
       </div>
-
-      <!-- Add BA and AA similarly if you like -->
     </section>
 
-    <!-- Research appointments and publications -->
     <section class="section" aria-labelledby="research">
       <h2 id="research">Research</h2>
 
@@ -207,7 +194,6 @@
       </article>
     </section>
 
-    <!-- Teaching -->
     <section class="section" aria-labelledby="teach">
       <h2 id="teach">Teaching</h2>
 
@@ -243,7 +229,6 @@
       </article>
     </section>
 
-    <!-- Grants and funding -->
     <section class="section" aria-labelledby="grants">
       <h2 id="grants">Grants</h2>
 
@@ -262,7 +247,6 @@
       </article>
     </section>
 
-    <!-- Talks -->
     <section class="section" aria-labelledby="talks">
       <h2 id="talks">Talks</h2>
 
@@ -280,9 +264,6 @@
         </details>
       </article>
     </section>
-
-    <!-- Optional sections you can duplicate:
-         Service, Awards, Skills. Change data-cats to match new filters if you add them. -->
   </main>
 
   <footer class="foot wrap">
@@ -313,7 +294,7 @@
       });
     });
 
-    // Respect reduced motion for summary marker jump
+    // Respect reduced motion
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       document.querySelectorAll('details').forEach(d=>{
         d.addEventListener('toggle', ()=>{
