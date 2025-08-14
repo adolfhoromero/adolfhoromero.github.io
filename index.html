@@ -1367,48 +1367,53 @@ nav.main-nav a.cv-link {
 .contact-modern h3 { font-family:'Spectral',serif; margin-bottom:.5rem; color:var(--heading-color) }
 </style>
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
-<!-- Mobile Tabs v4: kill top black gap -->
+<!-- Mobile Tabs v5: scrolling + position polish -->
 <style>
-  :root{ --bottom-bar-h:54px; }
-  @media (min-width:821px){ :root{ --bottom-bar-h:0px; } }
+  :root{ --bottom-bar-h:54px; --bottom-offset:10px; }
+  @media (min-width:821px){ :root{ --bottom-bar-h:0px; --bottom-offset:0px; } }
 
-  /* Always leave space for bottom tabs */
-  body{ padding-bottom: calc(var(--bottom-bar-h) + env(safe-area-inset-bottom, 0px)); }
-
-  /* Hide sticky top nav on phones (we replace with bottom tabs) */
-  @media (max-width:820px){
-    nav.main-nav{ display:none !important; }
-    header{ padding-top: calc(8px + env(safe-area-inset-top,0px)) !important; padding-bottom: 8px !important; }
-    header .site-title{ font-size: clamp(1.25rem,5.2vw,1.85rem) !important; line-height: 1.12 !important; margin:.2rem 0 !important; }
-    /* Remove any gap above the hero */
-    .hero{ margin-top:0 !important; background-attachment: scroll !important; }
+  /* Give the page extra breathing room so nothing is covered */
+  body{ padding-bottom: calc(var(--bottom-bar-h) + var(--bottom-offset) + env(safe-area-inset-bottom,0px)); }
+  main, #main, .main, .page-content, .container, #content{
+    padding-bottom: calc(var(--bottom-bar-h) + var(--bottom-offset) + env(safe-area-inset-bottom,0px) + 12px);
   }
 
-  /* Ensure hero never creates a tall spacer on iOS */
-  @supports (-webkit-touch-callout: none) {
-    @media (max-width:820px){
-      .hero{ background-attachment: scroll !important; }
-    }
-  }
-
-  /* Bottom tab bar */
+  /* Lift the bar slightly and pass through vertical scroll gestures */
   .bottom-tabs{
-    position: fixed; left: 0; right: 0; bottom: 0; z-index: 9999;
-    height: calc(var(--bottom-bar-h) + env(safe-area-inset-bottom, 0px));
-    padding-bottom: env(safe-area-inset-bottom, 0px);
+    position: fixed; left: 0; right: 0;
+    bottom: calc(var(--bottom-offset) + env(safe-area-inset-bottom,0px));
+    z-index: 9999;
+    height: var(--bottom-bar-h);
     background: rgba(17,24,39,.92);
-    border-top:1px solid rgba(255,255,255,.12);
+    border-top: 1px solid rgba(255,255,255,.12);
     backdrop-filter: blur(10px);
+    pointer-events: none; /* allow page to scroll when swiping over it */
+    touch-action: pan-y;
+    border-radius: 14px 14px 0 0;
+    margin: 0 8px; /* create a little breathing room left/right */
+    box-shadow: 0 10px 24px rgba(0,0,0,.28);
   }
   @media (min-width:821px){ .bottom-tabs{ display:none } }
-  .tabs-row{ display:grid; grid-template-columns:repeat(5,1fr); height:var(--bottom-bar-h) }
-  .tab-link{ display:grid; place-items:center; gap:2px; color:#e5e7eb; font-size:.7rem; font-weight:600; letter-spacing:.02em; text-decoration:none; position:relative; isolation:isolate }
+
+  .tabs-row{ display:grid; grid-template-columns:repeat(5,1fr); height:100%; }
+  .tab-link{
+    display:grid; place-items:center; gap:2px;
+    color:#e5e7eb; font-size:.7rem; font-weight:600; letter-spacing:.02em;
+    text-decoration:none; position:relative; isolation:isolate;
+    pointer-events:auto; /* keep links clickable even though parent is pass-through */
+  }
   .tab-link .ico{ width:20px; height:20px; opacity:.94 }
   .tab-link[aria-current="page"]{ color:#fbbf24 }
-  .tab-link[aria-current="page"]::before{ content:''; position:absolute; inset:0 8px 6px; height:28px; margin:auto; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-radius:999px; z-index:-1; box-shadow:0 8px 22px rgba(0,0,0,.25) }
+  .tab-link[aria-current="page"]::before{
+    content:''; position:absolute; inset:6px 10px; 
+    background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14);
+    border-radius: 999px; z-index: -1; box-shadow: 0 8px 22px rgba(0,0,0,.25);
+  }
 
-  /* Hide Calendly badge on phones (use Schedule tab) */
-  @media (max-width:820px){ .calendly-badge-widget{ display:none !important; } }
+  /* Optional: nudge the hero quote up a bit so it doesn't sit behind the bar visually */
+  @media (max-width:820px){
+    .hero .quote, .banner .quote{ margin-bottom: 10px !important; }
+  }
 </style>
 </head>
 <body>
@@ -1817,7 +1822,7 @@ document.querySelectorAll('.copy-email').forEach(btn => {
 });
 </script>
 <script async="True" src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script><script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/ar2539-cornell/30min', text: 'Schedule time with me', color: '#0069ff', textColor: '#ffffff', branding: true }); }</script>
-<!-- Bottom tabs (mobile) -->
+<!-- Mobile Tabs v5 -->
 <nav class="bottom-tabs" aria-label="Bottom navigation">
   <div class="tabs-row">
     <a class="tab-link" href="index.html">
@@ -1843,20 +1848,9 @@ document.querySelectorAll('.copy-email').forEach(btn => {
   </div>
 </nav>
 
-<!-- Mobile v4: override parallax on phones & set active tab -->
+<!-- Mobile Tabs v5: set active tab -->
 <script>
   (function(){
-    var hero = document.querySelector('.hero');
-    var isPhone = window.matchMedia('(max-width: 820px)').matches;
-    if (hero && isPhone){
-      hero.style.backgroundAttachment = 'scroll';
-      hero.style.backgroundPosition = 'center 44%';
-      // Override any parallax updates from earlier listeners
-      window.addEventListener('scroll', function(){
-        hero.style.backgroundPosition = 'center 44%';
-      }, { passive: true });
-    }
-    // Highlight current tab
     var path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
     document.querySelectorAll('.bottom-tabs .tab-link').forEach(function(a){
       var href = (a.getAttribute('href')||'').toLowerCase();
