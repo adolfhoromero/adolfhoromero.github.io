@@ -1367,61 +1367,63 @@ nav.main-nav a.cv-link {
 .contact-modern h3 { font-family:'Spectral',serif; margin-bottom:.5rem; color:var(--heading-color) }
 </style>
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
-<!-- Mobile Tabs v2: styles and layout fixes -->
+<!-- Mobile Tabs v3: stronger hero/iOS fixes -->
 <style>
   :root{ --bottom-bar-h:54px; }
   @media (min-width:821px){ :root{ --bottom-bar-h:0px; } }
 
-  /* Global spacing so content never sits under bars */
+  /* Always make room for bottom tabs */
   body{ padding-bottom: calc(var(--bottom-bar-h) + env(safe-area-inset-bottom, 0px)); }
-  main, #main, .main, .page-content, .container, #content{
-    padding-bottom: calc(var(--bottom-bar-h) + env(safe-area-inset-bottom, 0px) + 16px);
-  }
+  main, #main, .main, .page-content, .container, #content{ padding-bottom: calc(var(--bottom-bar-h) + env(safe-area-inset-bottom, 0px) + 12px); }
 
-  /* Compact header + title scaling on mobile */
+  /* Ultra-compact mobile header */
   @media (max-width:820px){
     header{ padding-top: calc(8px + env(safe-area-inset-top, 0px)) !important; padding-bottom: 8px !important; }
-    header h1, header .site-title, .banner .title, .masthead .title, .masthead h1, .hero h1, .name, [data-role="site-title"]{
-      font-size: clamp(1.35rem, 5.4vw, 1.95rem) !important;
-      line-height: 1.12 !important;
-      margin: .2rem 0 !important;
-      letter-spacing: .02em;
-    }
-    /* Tame oversized hero banners that create the giant black gap */
-    .hero, .banner, .masthead, .cover, .intro {
-      min-height: 28svh; max-height: 44svh;
-      background-position: center !important; background-size: cover !important;
+    header h1, header .site-title{ font-size: clamp(1.25rem, 5.2vw, 1.85rem) !important; margin:.2rem 0 !important; line-height:1.12 !important; }
+  }
+
+  /* iOS-specific: disable fixed backgrounds which can cause blank/black bands */
+  @supports (-webkit-touch-callout: none) {
+    @media (max-width: 820px){
+      .hero{ background-attachment: scroll !important; }
     }
   }
 
-  /* Calendly: hide badge on mobile and rely on our Schedule tab */
+  /* Strong hero overrides on mobile to kill the gap and vertically align content */
   @media (max-width:820px){
-    .calendly-badge-widget{ display: none !important; }
+    .hero{
+      min-height: 0 !important;
+      max-height: none !important;
+      padding-top: 10px !important;
+      padding-bottom: 14px !important;
+      display: grid !important;
+      align-content: start !important;
+      justify-items: center !important;
+      background-position: center 38% !important;
+      background-size: cover !important;
+    }
+    .hero::before{ background: linear-gradient(120deg, rgba(255,255,255,0.38), rgba(205,225,255,0.16)) !important; }
+    .dark .hero::before{ background: linear-gradient(120deg, rgba(18,20,28,0.35), rgba(33,35,45,0.12)) !important; }
+    .hero-photo{ margin-top: 0 !important; width: 128px !important; height: 128px !important; }
   }
 
-  /* Bottom tab bar (refined) */
+  /* Hide Calendly bubble on mobile; use a Schedule tab instead */
+  @media (max-width:820px){ .calendly-badge-widget{ display:none !important; } }
+
+  /* Bottom tab bar (carryover) */
   .bottom-tabs{
     position: fixed; left: 0; right: 0; bottom: 0; z-index: 9999;
     height: calc(var(--bottom-bar-h) + env(safe-area-inset-bottom, 0px));
     padding-bottom: env(safe-area-inset-bottom, 0px);
-    background: rgba(17,24,39,.90);
-    border-top: 1px solid rgba(255,255,255,.12);
+    background: rgba(17,24,39,.92); border-top:1px solid rgba(255,255,255,.12);
     backdrop-filter: blur(10px);
   }
-  @media (min-width:821px){ .bottom-tabs{ display: none; } }
-  .tabs-row{ display: grid; grid-template-columns: repeat(5, 1fr); height: var(--bottom-bar-h); }
-  .tab-link{
-    display: grid; place-items: center; gap: 2px;
-    color: #e5e7eb; font-size: .7rem; font-weight: 600; letter-spacing: .02em;
-    text-decoration: none; position: relative; isolation: isolate;
-  }
-  .tab-link .ico{ width: 20px; height: 20px; opacity: .92 }
-  .tab-link[aria-current="page"]{ color: #fbbf24 }
-  .tab-link[aria-current="page"]::before{
-    content:''; position:absolute; inset: 0 8px 6px; height:28px; margin:auto;
-    background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14);
-    border-radius: 999px; z-index: -1; box-shadow: 0 8px 22px rgba(0,0,0,.25);
-  }
+  @media (min-width:821px){ .bottom-tabs{ display:none } }
+  .tabs-row{ display:grid; grid-template-columns:repeat(5,1fr); height:var(--bottom-bar-h) }
+  .tab-link{ display:grid; place-items:center; gap:2px; color:#e5e7eb; font-size:.7rem; font-weight:600; letter-spacing:.02em; text-decoration:none; position:relative; isolation:isolate }
+  .tab-link .ico{ width:20px; height:20px; opacity:.94 }
+  .tab-link[aria-current="page"]{ color:#fbbf24 }
+  .tab-link[aria-current="page"]::before{ content:''; position:absolute; inset:0 8px 6px; height:28px; margin:auto; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-radius:999px; z-index:-1; box-shadow:0 8px 22px rgba(0,0,0,.25) }
 </style>
 </head>
 <body>
@@ -1830,7 +1832,7 @@ document.querySelectorAll('.copy-email').forEach(btn => {
 });
 </script>
 <script async="True" src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script><script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/ar2539-cornell/30min', text: 'Schedule time with me', color: '#0069ff', textColor: '#ffffff', branding: true }); }</script>
-<!-- Mobile Tabs v2: bottom tab bar with Schedule link -->
+<!-- Mobile Tabs v3: bottom tab bar with Schedule -->
 <nav class="bottom-tabs" aria-label="Bottom navigation">
   <div class="tabs-row">
     <a class="tab-link" href="index.html">
@@ -1856,7 +1858,7 @@ document.querySelectorAll('.copy-email').forEach(btn => {
   </div>
 </nav>
 
-<!-- Mobile Tabs v2: active state script -->
+<!-- Mobile Tabs v3: active state -->
 <script>
   (function(){
     var path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
