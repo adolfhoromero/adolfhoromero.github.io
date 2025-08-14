@@ -1367,44 +1367,35 @@ nav.main-nav a.cv-link {
 .contact-modern h3 { font-family:'Spectral',serif; margin-bottom:.5rem; color:var(--heading-color) }
 </style>
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
-<!-- Mobile Tabs v6: kill white gap under header + lift bar -->
+<!-- Mobile Tabs v7: z-index + tap reliability -->
 <style>
   :root{ --bottom-bar-h:54px; --bottom-offset:12px; }
   @media (min-width:821px){ :root{ --bottom-bar-h:0px; --bottom-offset:0px; } }
 
-  /* Ensure no default margins cause a gap */
   body{ margin:0 !important; padding-bottom: calc(var(--bottom-bar-h) + var(--bottom-offset) + env(safe-area-inset-bottom,0px)); }
 
-  /* Hide sticky top nav on phones; bottom tabs replace it */
-  @media (max-width:820px){ nav.main-nav{ display:none !important; } }
-
-  /* Hard reset the element immediately after the header to avoid gaps */
-  @media (max-width:820px){
-    header + *{ margin-top:0 !important; padding-top:0 !important; }
-    /* And the hero itself */
-    .hero{ background-attachment: scroll !important; background-position: center 44% !important; padding-top: 12px !important; }
-    .hero::before{ background: linear-gradient(120deg, rgba(255,255,255,0.32), rgba(205,225,255,0.12)) !important; }
-  }
-
-  /* Float the tab bar a bit higher and let vertical scroll pass through */
+  /* Lift the bar and make sure it's on top and clickable */
   .bottom-tabs{
     position:fixed; left:8px; right:8px;
     bottom: calc(var(--bottom-offset) + env(safe-area-inset-bottom,0px));
-    z-index:9999; height:var(--bottom-bar-h);
-    background: rgba(17,24,39,.92);
-    border-top:1px solid rgba(255,255,255,.12);
+    height: var(--bottom-bar-h);
+    background: rgba(17,24,39,.96);
+    border-top: 1px solid rgba(255,255,255,.12);
     backdrop-filter: blur(10px);
-    pointer-events:none; touch-action: pan-y;
-    border-radius:14px; box-shadow:0 10px 24px rgba(0,0,0,.28);
+    border-radius: 14px;
+    box-shadow: 0 10px 24px rgba(0,0,0,.28);
+    z-index: 2147483647; /* bring to absolute front */
+    pointer-events: auto; /* ensure taps register */
+    touch-action: pan-y;  /* still allow vertical scroll gestures */
   }
   @media (min-width:821px){ .bottom-tabs{ display:none } }
   .tabs-row{ display:grid; grid-template-columns:repeat(5,1fr); height:100% }
-  .tab-link{ display:grid; place-items:center; gap:2px; color:#e5e7eb; font-size:.7rem; font-weight:600; letter-spacing:.02em; text-decoration:none; position:relative; isolation:isolate; pointer-events:auto }
+  .tab-link{ display:grid; place-items:center; gap:2px; color:#e5e7eb; font-size:.7rem; font-weight:600; letter-spacing:.02em; text-decoration:none; position:relative; isolation:isolate }
   .tab-link .ico{ width:20px; height:20px; opacity:.94 }
   .tab-link[aria-current="page"]{ color:#fbbf24 }
   .tab-link[aria-current="page"]::before{ content:''; position:absolute; inset:6px 10px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-radius:999px; z-index:-1; box-shadow:0 8px 22px rgba(0,0,0,.25) }
 
-  /* Hide Calendly bubble on phones (we provide a Schedule tab) */
+  /* Hide Calendly bubble on phones to avoid overlap */
   @media (max-width:820px){ .calendly-badge-widget{ display:none !important; } }
 </style>
 </head>
@@ -1814,7 +1805,7 @@ document.querySelectorAll('.copy-email').forEach(btn => {
 });
 </script>
 <script async="True" src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script><script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/ar2539-cornell/30min', text: 'Schedule time with me', color: '#0069ff', textColor: '#ffffff', branding: true }); }</script>
-<!-- Mobile Tabs v6 -->
+<!-- Mobile Tabs v7 -->
 <nav class="bottom-tabs" aria-label="Bottom navigation">
   <div class="tabs-row">
     <a class="tab-link" href="index.html">
@@ -1840,10 +1831,9 @@ document.querySelectorAll('.copy-email').forEach(btn => {
   </div>
 </nav>
 
-<!-- Mobile Tabs v6: active tab + top-gap sweeper -->
+<!-- Mobile Tabs v7: set active -->
 <script>
   (function(){
-    // Active state
     var path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
     document.querySelectorAll('.bottom-tabs .tab-link').forEach(function(a){
       var href = (a.getAttribute('href')||'').toLowerCase();
@@ -1851,23 +1841,6 @@ document.querySelectorAll('.copy-email').forEach(btn => {
         a.setAttribute('aria-current','page');
       }
     });
-
-    // Top-gap sweeper (handles odd margins/spacers on mobile)
-    var isPhone = window.matchMedia('(max-width: 820px)').matches;
-    if(isPhone){
-      var header = document.querySelector('header');
-      var hero   = document.querySelector('.hero');
-      if(header && hero){
-        var hb = header.getBoundingClientRect().bottom + window.scrollY;
-        var ht = hero.getBoundingClientRect().top + window.scrollY;
-        if(ht - hb > 6){
-          hero.style.marginTop  = '0px';
-          hero.style.paddingTop = '12px';
-          var prev = hero.previousElementSibling;
-          if(prev && prev.matches('.main-nav')) prev.style.display = 'none';
-        }
-      }
-    }
   })();
 </script>
 </body>
