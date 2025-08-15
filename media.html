@@ -221,6 +221,48 @@
 
     footer { text-align: center; padding: 2rem; background: var(--nav-bg); color: var(--nav-text); margin-top: 3rem; font-size: 0.95rem; }
   </style>
+
+  <!-- Mobile bottom tabs + hide top nav on phones -->
+  <style>
+    :root{ --bottom-bar-h:54px; --bottom-offset:12px; }
+    @media (min-width:821px){ :root{ --bottom-bar-h:0px; --bottom-offset:0px; } }
+
+    /* Keep content above the bottom bar */
+    body{ padding-bottom: calc(var(--bottom-bar-h) + var(--bottom-offset) + env(safe-area-inset-bottom,0px)); }
+
+    /* Hide the top sticky nav on phones */
+    @media (max-width: 820px){
+      nav.main-nav{ display:none !important; }
+      header{ padding-bottom: .4rem !important; }
+      main{ margin-top: 1rem !important; }
+    }
+
+    /* Bottom tabs styling */
+    .bottom-tabs{
+      position:fixed; left:8px; right:8px;
+      bottom: calc(var(--bottom-offset) + env(safe-area-inset-bottom,0px));
+      height: var(--bottom-bar-h);
+      background: rgba(17,24,39,.96);
+      border-top: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(10px);
+      border-radius: 14px;
+      box-shadow: 0 10px 24px rgba(0,0,0,.28);
+      z-index: 2147483647;
+      pointer-events: auto;
+      touch-action: pan-y;
+    }
+    @media (min-width:821px){ .bottom-tabs{ display:none } }
+    .tabs-row{ display:grid; grid-template-columns:repeat(5,1fr); height:100% }
+    .tab-link{ display:grid; place-items:center; gap:2px; color:#e5e7eb; font-size:.7rem; font-weight:600; letter-spacing:.02em; text-decoration:none; position:relative; isolation:isolate }
+    .tab-link .ico{ width:20px; height:20px; opacity:.94 }
+    .tab-link[aria-current="page"]{ color:#fbbf24 }
+    .tab-link[aria-current="page"]::before{
+      content:''; position:absolute; inset:6px 10px;
+      background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14);
+      border-radius:999px; z-index:-1; box-shadow:0 8px 22px rgba(0,0,0,.25);
+    }
+  </style>
+
 </head>
 <body>
   <header>
@@ -505,5 +547,45 @@
       });
     })();
   </script>
+
+  <!-- Bottom tabs HTML -->
+  <nav class="bottom-tabs" aria-label="Bottom navigation">
+    <div class="tabs-row">
+      <a class="tab-link" href="index.html" aria-label="Home">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7v8a2 2 0 0 1-2 2h-4v-6H9v6H5a2 2 0 0 1-2-2z" fill="currentColor"/></svg>
+        <span>Home</span>
+      </a>
+      <a class="tab-link" href="publications.html" aria-label="Publications">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h12v16H4zM16 6h4v14H8" fill="currentColor"/></svg>
+        <span>Pubs</span>
+      </a>
+      <a class="tab-link" href="teaching.html" aria-label="Teaching">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4-9-4zm2 6v4l7 3 7-3v-4" fill="currentColor"/></svg>
+        <span>Teach</span>
+      </a>
+      <a class="tab-link" href="media.html" aria-label="Media">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4zM8 6v12" fill="currentColor"/></svg>
+        <span>Media</span>
+      </a>
+      <a class="tab-link" href="https://calendly.com/ar2539-cornell/30min" target="_blank" rel="noopener" aria-label="Schedule">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a2 2 0 0 1 2 2v16l-7-3-7 3V4a2 2 0 0 1 2-2zm3 6h6m-6 4h6m-6 4h6" fill="currentColor"/></svg>
+        <span>Schedule</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Bottom tabs active highlight -->
+  <script>
+    (function(){
+      var path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+      document.querySelectorAll('.bottom-tabs .tab-link').forEach(function(a){
+        var href = (a.getAttribute('href')||'').toLowerCase();
+        if(!href.startsWith('http') && ((path === '' && href === 'index.html') || path === href)){
+          a.setAttribute('aria-current','page');
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
+
