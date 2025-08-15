@@ -12,79 +12,57 @@
 
   <style>
     :root{
-      /* Brand palette tuned to adolfhoromero.com vibe */
-      --brand: #29539b;     /* Royal blue */
-      --brand-2:#22304a;    /* Deep navy */
-      --gold:  #ffcc00;     /* Accent gold */
-      --bg:    #0b0c10;
-      --card:  #141822;
-      --text:  #eef2f7;
-      --muted: #9aa7bd;
-      --border:#243046;
-      --chip-bg:#1b2130;
-      --chip-active:#1f3664;
-      --ring: rgba(41,83,155,.45);
-      --max: 1120px;
-      --radius: 18px;
-      --shadow: 0 18px 40px rgba(0,0,0,.35);
-      --grid: radial-gradient( circle at 25px 25px, rgba(255,255,255,.06) 2px, transparent 3px );
+      --bg: #0b0b0c;
+      --text: #f3f4f6;
+      --muted: #98a2b3;
+      --card: #131417;
+      --brand: #1d4ed8;
+      --brand-2: #3b82f6;
+      --chip-bg:#1f2937;
+      --chip-active:#1e3a8a;
+      --focus: #93c5fd;
+      --border: #26272b;
+      --max: 1100px;
+      --gold: #f59e0b;
+      --ring: rgba(29,78,216,.45);
     }
     html[data-theme="light"]{
-      --bg:#ffffff;
-      --card:#ffffff;
-      --text:#0f172a;
+      --bg: #ffffff;
+      --text: #0f172a;
       --muted:#475569;
-      --border:#e5e7eb;
+      --card: #ffffff;
       --chip-bg:#eef2ff;
       --chip-active:#c7d2fe;
-      --ring: rgba(41,83,155,.30);
-      --shadow: 0 12px 28px rgba(2,6,23,.10);
-      --grid: radial-gradient( circle at 25px 25px, rgba(0,0,0,.05) 2px, transparent 3px );
+      --border:#e5e7eb;
+      --ring: rgba(59,130,246,.35);
     }
-
     *{ box-sizing: border-box; }
-    html,body{ height:100%; scroll-behavior:smooth; }
+    html,body{ height:100%; }
     body{
       margin:0;
       font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(1000px 600px at 10% -10%, color-mix(in srgb, var(--brand) 12%, transparent), transparent 60%),
-        radial-gradient(1200px 800px at 110% 0%, color-mix(in srgb, var(--gold) 10%, transparent), transparent 50%),
+        radial-gradient(1200px 800px at 10% -10%, color-mix(in srgb, var(--brand) 12%, transparent), transparent 60%),
+        radial-gradient(1200px 800px at 110% 0%, rgba(14,165,233,.10), transparent 50%),
         var(--bg);
       line-height:1.6;
     }
-    a{ color: inherit; text-decoration: none; }
+    a{ color: inherit; }
     .wrap{ max-width: var(--max); margin:0 auto; padding: clamp(16px, 3vw, 28px); }
 
     /* Header */
     header.site{
-      position: sticky; top:0; z-index: 70;
-      backdrop-filter: blur(10px);
-      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      position: sticky; top:0; z-index: 60;
+      backdrop-filter: blur(8px);
+      background: color-mix(in srgb, var(--bg) 80%, transparent);
       border-bottom: 1px solid var(--border);
     }
-    /* Colorful animated top bar */
-    .ribbon{
-      height: 4px;
-      background: linear-gradient(90deg, var(--brand), var(--gold), var(--brand-2), var(--brand));
-      background-size: 300% 100%;
-      animation: slide 8s linear infinite;
-    }
-    @keyframes slide{ 0%{background-position:0% 0} 100%{background-position:300% 0} }
-
     .site__bar{ display:flex; align-items:center; gap:12px; justify-content:space-between; }
     .title{
-      display:flex; align-items:center; gap:12px;
       font-family: Spectral, Georgia, serif;
       font-size: clamp(24px, 3.2vw, 36px);
       letter-spacing:.2px;
-    }
-    .initials{
-      width:40px; height:40px; border-radius:12px;
-      background: linear-gradient(135deg, var(--brand), var(--brand-2));
-      color:#fff; display:grid; place-items:center; font-weight:800;
-      box-shadow: 0 10px 20px rgba(0,0,0,.25);
     }
     .actions{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
     .btn{
@@ -95,9 +73,9 @@
     }
     .btn:active{ transform: translateY(1px); }
     .btn.primary{
-      color: #0b1020;
+      color: #fff;
       border-color: transparent;
-      background: linear-gradient(135deg, var(--gold), color-mix(in srgb, var(--gold) 20%, var(--brand)));
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
       box-shadow: 0 10px 24px rgba(29,78,216,.24);
     }
     .btn.primary::after{
@@ -107,35 +85,15 @@
       transition: transform .6s ease;
     }
     .btn.primary:hover::after{ transform: translateX(120%); }
-    .btn:focus-visible{ outline: 3px solid color-mix(in srgb, var(--brand) 40%, var(--gold)); outline-offset: 2px; box-shadow: 0 0 0 6px var(--ring); }
+    .btn:focus-visible{ outline: 3px solid var(--focus); outline-offset: 2px; box-shadow: 0 0 0 6px var(--ring); }
 
-    /* Theme + palette toggles */
-    .theme-toggle, .palette{ border:0; background:transparent; color:var(--text); padding:.45rem; border-radius:10px; cursor:pointer; }
+    /* Theme toggle */
+    .theme-toggle{ border:0; background:transparent; color:var(--text); padding:.45rem; border-radius:10px; cursor:pointer; }
     .theme-toggle:hover{ background: color-mix(in srgb, var(--chip-active) 20%, transparent); }
     .theme-toggle svg{ width:20px; height:20px; display:block; }
-    .palette{ display:flex; gap:6px; align-items:center; }
-    .swatch{ width:16px; height:16px; border-radius:50%; border:1px solid var(--border); box-shadow: inset 0 0 0 2px rgba(255,255,255,.15); cursor:pointer; }
-    .swatch[aria-pressed="true"]{ outline:2px solid var(--gold); }
-
-    /* Quick section nav */
-    .qnav{
-      position: sticky; top:64px; z-index: 65;
-      background: color-mix(in srgb, var(--bg) 88%, transparent);
-      border-bottom: 1px solid var(--border);
-      overflow-x: auto; white-space: nowrap;
-    }
-    .qnav .wrap{ display:flex; gap:8px; }
-    .qchip{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:.45rem .8rem; border-radius:999px; border:1px solid var(--border);
-      background: var(--chip-bg); color: var(--text); font-size:.95rem; cursor:pointer;
-      transition: transform .06s ease, border-color .2s ease;
-    }
-    .qchip:hover{ transform: translateY(-1px); }
-    .qchip[aria-current="true"]{ background: color-mix(in srgb, var(--chip-active) 70%, transparent); border-color: color-mix(in srgb, var(--chip-active) 80%, var(--border)); }
 
     /* Subnav chips + search */
-    nav.subnav{ position: sticky; top:108px; z-index:60; background: color-mix(in srgb, var(--bg) 88%, transparent); border-bottom:1px solid var(--border); }
+    nav.subnav{ position: sticky; top:68px; z-index:55; background: color-mix(in srgb, var(--bg) 85%, transparent); border-bottom:1px solid var(--border); }
     .chips{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
     .chip{
       padding:.5rem .9rem; border-radius:999px; border:1px solid var(--border);
@@ -158,20 +116,17 @@
       }
     }
     .search{ margin-left:auto; display:flex; gap:8px; align-items:center; padding:.35rem .6rem; border:1px solid var(--border); border-radius:999px; background:var(--card); }
-    .search input{ background:transparent; border:0; outline:0; color:var(--text); width:220px; }
+    .search input{ background:transparent; border:0; outline:0; color:var(--text); width:200px; }
     .search input::placeholder{ color:var(--muted); }
-    .count{ color:var(--muted); font-size:.95rem; }
 
-    /* Section cards */
-    main{ background-image: var(--grid); background-size: 50px 50px; }
+    /* Sections + cards */
     .cv{ display:grid; gap:22px; margin-top:18px; }
-    .section{ border:1px solid var(--border); background: color-mix(in srgb, var(--card) 96%, transparent); border-radius:var(--radius); padding:18px; position: relative; box-shadow: var(--shadow); scroll-margin-top: 140px; }
+    .section{ border:1px solid var(--border); background: var(--card); border-radius:18px; padding:18px; position: relative; }
     .section h2{
       margin:0 0 10px 0; font-family: Spectral, Georgia, serif;
       font-size: clamp(20px, 2.6vw, 26px); line-height:1.2; padding-bottom:8px;
-      color: var(--text);
       background: linear-gradient(90deg, color-mix(in srgb, var(--brand) 35%, transparent), transparent 50%);
-      -webkit-background-clip: text; background-clip: text;
+      -webkit-background-clip: text; background-clip: text; color: var(--text);
     }
     @media (prefers-color-scheme: dark){
       .section h2{
@@ -179,10 +134,9 @@
         box-shadow: 0 1px 0 0 color-mix(in srgb, var(--gold) 20%, transparent) inset;
       }
     }
-    .cv-item{ border:1px solid var(--border); border-radius:16px; padding:14px; background: color-mix(in srgb, var(--card) 90%, transparent); position: relative; transition: transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s ease, border-color .2s ease, opacity .5s ease; opacity: 0; transform: translateY(10px); }
-    .cv-item:hover{ transform: translateY(-2px); }
+    .cv-item{ border:1px solid var(--border); border-radius:16px; padding:14px; background: color-mix(in srgb, var(--card) 90%, transparent); position: relative; transition: transform .2s ease, box-shadow .25s ease, border-color .2s ease, opacity .5s ease; opacity: 0; transform: translateY(8px); }
     @media (prefers-color-scheme: dark){
-      .cv-item:hover{ box-shadow: 0 14px 28px rgba(0,0,0,.28), 0 0 0 1px color-mix(in srgb, var(--gold) 30%, var(--border)) inset; border-color: color-mix(in srgb, var(--gold) 25%, var(--border)); }
+      .cv-item:hover{ box-shadow: 0 10px 28px rgba(0,0,0,.28), 0 0 0 1px color-mix(in srgb, var(--gold) 30%, var(--border)) inset; border-color: color-mix(in srgb, var(--gold) 25%, var(--border)); }
     }
     .cv-item.reveal{ opacity: 1; transform: translateY(0); }
     .cv-head{ display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; }
@@ -197,66 +151,47 @@
 
     .muted{ color: var(--muted); }
     .sr-only{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+    .foot{ text-align:center; color: var(--muted); padding:30px 0; }
 
     .controls{ display:flex; gap:10px; flex-wrap:wrap; margin:4px 0 12px; }
     .controls button{ font-size:.9rem; }
 
     /* reading progress */
-    .progress{ position: fixed; z-index: 90; left:0; top:0; height:3px; width:0%; background: linear-gradient(90deg, var(--brand), color-mix(in srgb, var(--gold) 60%, var(--brand))); box-shadow: 0 0 10px color-mix(in srgb, var(--brand) 60%, transparent); transition: width .1s linear; }
+    .progress{ position: fixed; z-index: 80; left:0; top:0; height:3px; width:0%; background: linear-gradient(90deg, var(--brand), color-mix(in srgb, var(--gold) 60%, var(--brand))); box-shadow: 0 0 10px color-mix(in srgb, var(--brand) 60%, transparent); transition: width .1s linear; }
 
     /* back-to-top FAB */
-    .fab{ position: fixed; right:16px; bottom:16px; z-index:95; border:0; border-radius: 999px; padding:.9rem; background: linear-gradient(135deg, var(--brand), var(--brand-2)); color:#fff; cursor:pointer; box-shadow: 0 12px 24px rgba(0,0,0,.25); transform: translateY(120%); transition: transform .25s ease; }
+    .fab{ position: fixed; right:16px; bottom:16px; z-index:85; border:0; border-radius: 999px; padding:.9rem; background: linear-gradient(135deg, var(--brand), var(--brand-2)); color:#fff; cursor:pointer; box-shadow: 0 12px 24px rgba(0,0,0,.25); transform: translateY(120%); transition: transform .25s ease; }
     .fab.show{ transform: translateY(0); }
 
     /* anchor icon */
     .anchor{ opacity: 0; margin-left:8px; font-weight:700; font-size:.9rem; color: var(--muted); transition: opacity .2s; text-decoration: none; }
     .section:hover .anchor{ opacity: 1; }
 
-    /* search highlight */
-    mark{ background: color-mix(in srgb, var(--gold) 35%, transparent); padding: .05rem .2rem; border-radius: 4px; }
-
-    footer.foot{ text-align:center; color: var(--muted); padding:30px 0; }
     @media print{
-      header.site, .qnav, .subnav, .actions, .foot, .search, .controls, .progress, .fab, .anchor, .theme-toggle, .palette{ display:none !important; }
+      header.site, .subnav, .actions, .foot, .search, .controls, .progress, .fab, .anchor, .theme-toggle{ display:none !important; }
       body{ background:#fff; color:#000; }
-      .section{ border:0; padding:0; box-shadow:none; }
+      .section{ border:0; padding:0; }
       .cv-item{ break-inside: avoid; border:0; padding:0 0 10px 0; opacity:1 !important; transform:none !important; }
     }
   </style>
 </head>
 <body>
   <div class="progress" id="progress"></div>
+
   <header class="site">
-    <div class="ribbon"></div>
     <div class="wrap site__bar">
-      <div class="title">
-        <div class="initials" aria-hidden="true">AR</div>
-        <span>Adolfho Romero · CV</span>
-      </div>
+      <div class="title">Adolfho Romero · CV</div>
       <div class="actions">
-        <button class="theme-toggle" id="themeToggle" title="Toggle theme" aria-label="Toggle light or dark">
+        <button class="theme-toggle" id="themeToggle" title="Toggle theme" aria-label="Toggle light/dark">
           <!-- Sun/Moon -->
           <svg id="sun" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.76 4.84l-1.8-1.79L3.17 4.84l1.79 1.79 1.8-1.79zm10.48 14.32l1.79 1.79 1.79-1.79-1.79-1.79-1.79 1.79zM12 4V1h-0v3h0zm0 19v-3h0v3h0zM4 12H1v0h3v0zm19 0h-3v0h3 v0zM6.76 19.16l-1.8 1.79 1.8 1.79 1.79-1.79-1.79-1.79zM17.24 4.84l1.79-1.79-1.79-1.79-1.79 1.79 1.79 1.79zM12 6a6 6 0 100 12 6 6 0 000-12z"/></svg>
         </button>
-        <div class="palette" aria-label="Accent palette">
-          <button class="swatch" data-palette="site" title="Site Blue and Gold" style="background:linear-gradient(135deg,#29539b,#22304a)"></button>
-          <button class="swatch" data-palette="cornell" title="Cornell Red" style="background:linear-gradient(135deg,#b31b1b,#22304a)"></button>
-          <button class="swatch" data-palette="teal" title="Teal" style="background:linear-gradient(135deg,#0ea5a5,#1f2937)"></button>
-          <button class="swatch" data-palette="violet" title="Violet" style="background:linear-gradient(135deg,#7c3aed,#1e1b4b)"></button>
-        </div>
         <a class="btn" href="./adolfhoromerocv.pdf" target="_blank" rel="noopener">View PDF</a>
         <a class="btn primary" id="downloadBtn" href="./adolfhoromerocv.pdf" download>Download CV</a>
         <button class="btn" id="printBtn">Print</button>
       </div>
     </div>
   </header>
-
-  <!-- Quick section nav -->
-  <nav class="qnav" aria-label="Jump to section">
-    <div class="wrap" id="qnavWrap">
-      <!-- auto-populated -->
-    </div>
-  </nav>
 
   <nav class="subnav" aria-label="CV filters">
     <div class="wrap chips">
@@ -271,7 +206,7 @@
       <button class="chip" data-filter="awards">Awards</button>
       <button class="chip" data-filter="skills">Skills</button>
       <button class="chip" data-filter="fieldwork">Fieldwork</button>
-      <span class="count" id="count" aria-live="polite"></span>
+      <span class="muted" id="count" aria-live="polite"></span>
       <div class="search" role="search">
         <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.471 6.471 0 0 0 1.57-4.23A6.5 6.5 0 1 0 9.5 16a6.471 6.471 0 0 0 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zM4 9.5C4 6.46 6.46 4 9.5 4S15 6.46 15 9.5 12.54 15 9.5 15 4 12.54 4 9.5z"/></svg>
         <input id="search" type="search" placeholder="Search CV…" aria-label="Search CV" />
@@ -292,7 +227,7 @@
         <button class="btn" data-collapse="#edu">Collapse all</button>
       </div>
 
-      <article class="cv-item reveal" data-cats="research" data-year="2028">
+      <article class="cv-item reveal" data-cats="research">
         <div class="cv-head">
           <div>
             <div class="cv-role">PhD, Industrial and Labor Relations</div>
@@ -305,7 +240,7 @@
         </details>
       </article>
 
-      <article class="cv-item" data-cats="research" data-year="2021">
+      <article class="cv-item" data-cats="research">
         <div class="cv-head">
           <div>
             <div class="cv-role">MA, Latin American Studies</div>
@@ -322,7 +257,7 @@
         </details>
       </article>
 
-      <article class="cv-item" data-cats="research" data-year="2018">
+      <article class="cv-item" data-cats="research">
         <div class="cv-head">
           <div>
             <div class="cv-role">BA, Spanish</div>
@@ -335,7 +270,7 @@
         </details>
       </article>
 
-      <article class="cv-item" data-cats="research" data-year="2015">
+      <article class="cv-item" data-cats="research">
         <div class="cv-head">
           <div>
             <div class="cv-role">AA with Honors</div>
@@ -383,7 +318,7 @@
         <button class="btn" data-collapse="#exp">Collapse all</button>
       </div>
 
-      <article class="cv-item" data-cats="research" data-year="2025">
+      <article class="cv-item" data-cats="research">
         <div class="cv-head">
           <div>
             <div class="cv-role">Research Assistant to Dr. Andrew Wolf</div>
@@ -400,7 +335,7 @@
         </details>
       </article>
 
-      <article class="cv-item" data-cats="research" data-year="2025">
+      <article class="cv-item" data-cats="research">
         <div class="cv-head">
           <div>
             <div class="cv-role">Research Assistant to Dr. Paul Ortiz</div>
@@ -417,7 +352,7 @@
         </details>
       </article>
 
-      <article class="cv-item" data-cats="research" data-year="2025">
+      <article class="cv-item" data-cats="research">
         <div class="cv-head">
           <div>
             <div class="cv-role">ILR Research Aide IV to Dr. Shannon Gleeson</div>
@@ -434,7 +369,7 @@
         </details>
       </article>
 
-      <article class="cv-item" data-cats="research service" data-year="2021">
+      <article class="cv-item" data-cats="research service">
         <div class="cv-head">
           <div>
             <div class="cv-role">Assistant Director</div>
@@ -452,7 +387,7 @@
         </details>
       </article>
 
-      <article class="cv-item" data-cats="research teaching" data-year="2019">
+      <article class="cv-item" data-cats="research teaching">
         <div class="cv-head">
           <div>
             <div class="cv-role">Graduate Assistant & Project Coordinator</div>
@@ -470,7 +405,7 @@
         </details>
       </article>
 
-      <article class="cv-item" data-cats="research service" data-year="2021">
+      <article class="cv-item" data-cats="research service">
         <div class="cv-head">
           <div>
             <div class="cv-role">Research Coordinator</div>
@@ -483,7 +418,7 @@
         </details>
       </article>
 
-      <article class="cv-item" data-cats="research service" data-year="2020">
+      <article class="cv-item" data-cats="research service">
         <div class="cv-head">
           <div>
             <div class="cv-role">Graduate Intern</div>
@@ -500,7 +435,7 @@
         </details>
       </article>
 
-      <article class="cv-item" data-cats="research" data-year="2019">
+      <article class="cv-item" data-cats="research">
         <div class="cv-head">
           <div>
             <div class="cv-role">Research Assistant to Dr. Victor Ortiz</div>
@@ -517,7 +452,7 @@
         </details>
       </article>
 
-      <article class="cv-item" data-cats="teaching" data-year="2017">
+      <article class="cv-item" data-cats="teaching">
         <div class="cv-head">
           <div>
             <div class="cv-role">Peer Tutor and Writing Fellow</div>
@@ -543,19 +478,19 @@
         <button class="btn" data-collapse="#grants">Collapse all</button>
       </div>
 
-      <article class="cv-item" data-cats="grants" data-year="2024">
+      <article class="cv-item" data-cats="grants">
         <div class="cv-head"><div><div class="cv-role">Network to Freedom Underground Railroad</div><div class="cv-meta">National Park Service · Project Researcher · $425,000 · 2022–2024</div></div><div class="cv-tags"><span class="tag">NPS</span></div></div>
       </article>
-      <article class="cv-item" data-cats="grants" data-year="2023">
+      <article class="cv-item" data-cats="grants">
         <div class="cv-head"><div><div class="cv-role">Challenging Racism at UF</div><div class="cv-meta">University of Florida · Lead Project Coordinator · $62,699 · 2022–2023</div></div><div class="cv-tags"><span class="tag">Public programs</span></div></div>
       </article>
-      <article class="cv-item" data-cats="grants" data-year="2024">
+      <article class="cv-item" data-cats="grants">
         <div class="cv-head"><div><div class="cv-role">Reanimating African American Oral Histories of the Gulf South</div><div class="cv-meta">NEH · Research Coordinator · $349,000 · 2021–2024</div></div><div class="cv-tags"><span class="tag">NEH</span></div></div>
       </article>
-      <article class="cv-item" data-cats="grants" data-year="2023">
+      <article class="cv-item" data-cats="grants">
         <div class="cv-head"><div><div class="cv-role">The Recruitment and Retention of Black Faculty at UF</div><div class="cv-meta">University of Florida · Project Researcher · $75,000 · 2021–2023</div></div><div class="cv-tags"><span class="tag">Higher ed</span></div></div>
       </article>
-      <article class="cv-item" data-cats="grants" data-year="2022">
+      <article class="cv-item" data-cats="grants">
         <div class="cv-head"><div><div class="cv-role">Doris Duke Native American Oral History Revitalization Project</div><div class="cv-meta">Doris Duke Charitable Foundation · Research Coordinator · $200,000 · 2021–2022</div></div></div>
       </article>
     </section>
@@ -567,10 +502,10 @@
         <h2>Professional Development</h2>
         <a class="anchor" href="#prodev" title="Copy link to section">#</a>
       </div>
-      <article class="cv-item" data-cats="research" data-year="2025">
+      <article class="cv-item" data-cats="research">
         <div class="cv-head"><div><div class="cv-role">UT Austin Ethnographic Summer School</div><div class="cv-meta">Urban Ethnography Lab · The University of Texas at Austin · Aug 2025</div></div></div>
       </article>
-      <article class="cv-item" data-cats="research" data-year="2025">
+      <article class="cv-item" data-cats="research">
         <div class="cv-head"><div><div class="cv-role">QMUL–Cornell Migration Spring School</div><div class="cv-meta">Queen Mary University of London & Cornell University · Gozo and Malta · May 2025</div></div></div>
       </article>
     </section>
@@ -582,7 +517,7 @@
         <h2>Skills</h2>
         <a class="anchor" href="#skills" title="Copy link to section">#</a>
       </div>
-      <article class="cv-item" data-cats="skills" data-year="2025">
+      <article class="cv-item" data-cats="skills">
         <div class="cv-head">
           <div class="cv-role">Languages & Tools</div>
           <div class="cv-meta">Summary</div>
@@ -609,10 +544,10 @@
         <h2>Full CV (PDF)</h2>
         <a class="anchor" href="#fullcv" title="Copy link to section">#</a>
       </div>
-      <article class="cv-item" data-cats="publications" data-year="2025">
+      <article class="cv-item" data-cats="publications">
         <p class="muted">Open the embedded PDF below or use the action buttons in the header to view or download.</p>
         <details open>
-          <summary>Show or Hide embedded PDF</summary>
+          <summary>Show/Hide embedded PDF</summary>
           <div style="margin-top:10px; border:1px solid var(--border); border-radius:12px; overflow:hidden; background:var(--card)">
             <object data="./adolfhoromerocv.pdf#toolbar=1&navpanes=0" type="application/pdf" width="100%" height="720">
               <iframe src="./adolfhoromerocv.pdf#toolbar=1&navpanes=0" width="100%" height="720" style="border:0;"></iframe>
@@ -632,6 +567,7 @@
     (function(){
       const stored = localStorage.getItem("theme");
       if(stored){ document.documentElement.setAttribute("data-theme", stored); }
+      // prefer system if none stored
       if(!stored){
         const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
         if(prefersLight) document.documentElement.setAttribute('data-theme','light');
@@ -647,53 +583,6 @@
     const printBtn = document.getElementById('printBtn');
     const themeToggle = document.getElementById('themeToggle');
 
-    // Palette switcher
-    const paletteButtons = [...document.querySelectorAll('.swatch')];
-    const palettes = {
-      site:   { brand:'#29539b', brand2:'#22304a', gold:'#ffcc00' },
-      cornell:{ brand:'#b31b1b', brand2:'#22304a', gold:'#ffd166' },
-      teal:   { brand:'#0ea5a5', brand2:'#1f2937', gold:'#f59e0b' },
-      violet: { brand:'#7c3aed', brand2:'#1e1b4b', gold:'#eab308' },
-    };
-    function setPalette(key){
-      const p = palettes[key] || palettes.site;
-      document.documentElement.style.setProperty('--brand', p.brand);
-      document.documentElement.style.setProperty('--brand-2', p.brand2);
-      document.documentElement.style.setProperty('--gold', p.gold);
-      localStorage.setItem('palette', key);
-      paletteButtons.forEach(b=>b.setAttribute('aria-pressed','false'));
-      const active = paletteButtons.find(b=>b.dataset.palette===key);
-      active?.setAttribute('aria-pressed','true');
-    }
-    paletteButtons.forEach(b=>b.addEventListener('click', ()=> setPalette(b.dataset.palette)));
-    setPalette(localStorage.getItem('palette') || 'site');
-
-    // Build quick section nav
-    const sections = [...document.querySelectorAll('main .section')];
-    const qwrap = document.getElementById('qnavWrap');
-    sections.forEach((sec, i)=>{
-      const h = sec.querySelector('h2');
-      const id = sec.previousElementSibling?.id || 's' + i;
-      if(!sec.previousElementSibling?.id){ const s = document.createElement('span'); s.id = id; s.className='sr-only'; sec.parentNode.insertBefore(s, sec); }
-      const btn = document.createElement('a');
-      btn.href = '#' + id;
-      btn.className = 'qchip';
-      btn.textContent = h.textContent;
-      qwrap.appendChild(btn);
-    });
-
-    // Scrollspy for qnav
-    const qchips = [...document.querySelectorAll('.qchip')];
-    const spy = new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          const id = entry.target.previousElementSibling?.id;
-          qchips.forEach(c=> c.setAttribute('aria-current', String(c.getAttribute('href')==='#'+id)));
-        }
-      });
-    }, { rootMargin:'-40% 0% -55% 0%', threshold:0.01 });
-    sections.forEach(sec=>spy.observe(sec));
-
     // Theme toggle
     themeToggle?.addEventListener('click', ()=>{
       const cur = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
@@ -701,13 +590,8 @@
       localStorage.setItem('theme', cur);
     });
 
-    // Filter apply
     function apply(filter){
       const q = (searchInput.value || '').toLowerCase();
-      // remove old highlights
-      items.forEach(el=>{
-        el.querySelectorAll('mark').forEach(m=> m.replaceWith(m.textContent));
-      });
       items.forEach(el=>{
         const cats = (el.dataset.cats || '').split(/\\s+/);
         const text = el.textContent.toLowerCase();
@@ -715,37 +599,19 @@
         const matchText = q ? text.includes(q) : true;
         const show = matchCat && matchText;
         el.style.display = show ? '' : 'none';
-        // highlight matches
-        if(show && q){
-          const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
-          const nodes = [];
-          while(walker.nextNode()) nodes.push(walker.currentNode);
-          nodes.forEach(n=>{
-            const idx = n.nodeValue.toLowerCase().indexOf(q);
-            if(idx>-1 && n.nodeValue.trim().length){
-              const span = document.createElement('span');
-              const before = n.nodeValue.slice(0, idx);
-              const match = n.nodeValue.slice(idx, idx+q.length);
-              const after  = n.nodeValue.slice(idx+q.length);
-              span.innerHTML = before + '<mark>' + match + '</mark>' + after;
-              n.parentNode.replaceChild(span, n);
-            }
-          });
-        }
       });
       const visible = items.filter(el => el.style.display !== 'none').length;
       count.textContent = `Showing ${visible} item${visible===1?'':'s'}`;
     }
 
     chips.forEach(btn=>{
-      btn.addEventListener('click', ()=>{
+      btn.addEventListener('click', (e)=>{
         chips.forEach(b=>b.setAttribute('aria-pressed','false'));
         btn.setAttribute('aria-pressed','true');
         apply(btn.dataset.filter);
         // ripple
         const r = document.createElement('span');
-        r.style.position='absolute'; r.style.inset='0';
-        r.style.background='radial-gradient(circle at var(--x,50%) var(--y,50%), rgba(255,255,255,.15), transparent 40%)';
+        r.style.position='absolute'; r.style.inset='0'; r.style.background='radial-gradient(circle at var(--x,50%) var(--y,50%), rgba(255,255,255,.15), transparent 40%)';
         r.style.pointerEvents='none'; r.style.animation='fade .6s ease forwards'; btn.appendChild(r);
         setTimeout(()=>r.remove(), 600);
       });
@@ -755,18 +621,6 @@
         btn.style.setProperty('--y', ((e.clientY-rect.top)/rect.height*100)+'%');
       });
     });
-
-    // Show counts on chips
-    function updateChipCounts(){
-      const totals = {};
-      items.forEach(el=> (el.dataset.cats || '').split(/\\s+/).forEach(c=> totals[c]=(totals[c]||0)+1 ));
-      chips.forEach(c=>{
-        const f = c.dataset.filter;
-        const n = f==='all' ? items.length : (totals[f]||0);
-        c.innerHTML = c.textContent.split(' (')[0] + ' ('+n+')';
-      });
-    }
-    updateChipCounts();
 
     // Search
     searchInput.addEventListener('input', ()=>{
@@ -802,7 +656,7 @@
     }, { rootMargin: '0px 0px -10% 0px', threshold: 0.01 });
     items.forEach(el=>io.observe(el));
 
-    // Reading progress + FAB
+    // Reading progress
     const onScroll = () => {
       const h = document.documentElement;
       const scrolled = h.scrollTop;
@@ -828,7 +682,6 @@
       if(e.key.toLowerCase() === 'c'){
         items.filter(el => el.style.display !== 'none').forEach(el=> el.querySelectorAll('details').forEach(d=>d.open=false));
       }
-      if(e.key.toLowerCase() === 'f'){ searchInput.focus(); }
     });
 
     // Anchor copy
