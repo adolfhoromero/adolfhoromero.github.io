@@ -202,6 +202,8 @@
       padding:1.1rem 1rem;
       margin:1rem 0 1.4rem;
       transition:transform .18s, background .35s, color .35s;
+    
+      scroll-margin-top: 110px;
     }
     .cv-item{
       background:rgba(41,83,155,.04);
@@ -223,6 +225,7 @@
   </style>
 </head>
 <body>
+  <a id="top" style="position:absolute; top:0; left:0; width:1px; height:1px; overflow:hidden;"></a>
   <header>
     <button class="dark-toggle" role="button" tabindex="0" aria-pressed="false" aria-label="Toggle dark mode" title="Toggle dark mode">
       <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -245,40 +248,38 @@
 
   <main id="main">
     <div class="page-actions">
-      <a class="btn accent" href="./Adolfho_Romero_CV.pdf" target="_blank" rel="noopener" aria-label="Open the CV PDF in a new tab">View PDF</a>
       <a class="btn gold" href="./Adolfho_Romero_CV.pdf" download aria-label="Download the CV PDF">Download CV</a>
     </div>
 
     <!-- Lively sticky tabs -->
+    
     <div class="tabbar" role="tablist" aria-label="CV filters">
-      <button role="tab" data-filter="all" aria-selected="true">All</button>
-      <button role="tab" data-filter="education">Education</button>
-      <button role="tab" data-filter="research">Research</button>
-      <button role="tab" data-filter="teaching">Teaching</button>
-      <button role="tab" data-filter="grants">Grants</button>
-      <button role="tab" data-filter="publications">Publications</button>
-      <button role="tab" data-filter="development">Professional Development</button>
-      <button role="tab" data-filter="conferences">Conferences</button>
-      <button role="tab" data-filter="lectures">Guest Lectures</button>
-      <button role="tab" data-filter="programs">Public Programs</button>
-      <button role="tab" data-filter="writing">Public Writing</button>
-      <button role="tab" data-filter="media">Media</button>
-      <button role="tab" data-filter="honors">Honors</button>
-      <button role="tab" data-filter="associations">Associations</button>
-      <button role="tab" data-filter="fieldwork">Fieldwork</button>
-      <button role="tab" data-filter="skills">Skills</button>
+      <a role="tab" data-filter="all" aria-selected="true" href="#top">All</a>
+      <a role="tab" data-filter="education" href="#education">Education</a>
+      <a role="tab" data-filter="research" href="#research">Research</a>
+      <a role="tab" data-filter="teaching" href="#teaching">Teaching</a>
+      <a role="tab" data-filter="grants" href="#grants">Grants</a>
+      <a role="tab" data-filter="publications" href="#publications">Publications</a>
+      <a role="tab" data-filter="development" href="#development">Professional Development</a>
+      <a role="tab" data-filter="conferences" href="#conferences">Conferences</a>
+      <a role="tab" data-filter="lectures" href="#lectures">Guest Lectures</a>
+      <a role="tab" data-filter="programs" href="#programs">Public Programs</a>
+      <a role="tab" data-filter="writing" href="#writing">Public Writing</a>
+      <a role="tab" data-filter="media" href="#media">Media</a>
+      <a role="tab" data-filter="honors" href="#honors">Honors</a>
+      <a role="tab" data-filter="associations" href="#associations">Associations</a>
+      <a role="tab" data-filter="fieldwork" href="#fieldwork">Fieldwork</a>
+      <a role="tab" data-filter="skills" href="#skills">Skills</a>
       <span class="count" id="count" aria-live="polite"></span>
       <label class="searchbar" role="search" aria-label="Search CV">
         <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.471 6.471 0 0 0 1.57-4.23A6.5 6.5 0 1 0 9.5 16a6.471 6.471 0 0 0 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zM4 9.5C4 6.46 6.46 4 9.5 4S15 6.46 15 9.5 12.54 15 9.5 15 4 12.54 4 9.5z"/></svg>
         <input id="search" type="search" placeholder="Search CV..." aria-label="Search CV"/>
       </label>
     </div>
-
-    <!-- ===== CONTENT START ===== -->
+<!-- ===== CONTENT START ===== -->
 
     <!-- Education -->
-    <section class="section">
-      <h2>Education</h2>
+    <section class="section" id="education"><h2>Education</h2>
 
       <article class="cv-item" data-cats="education research">
         <div class="cv-head">
@@ -327,8 +328,7 @@
     </section>
 
     <!-- Research Interests -->
-    <section class="section">
-      <h2>Research Interests</h2>
+    <section class="section" id="research"><h2>Research Interests</h2>
       <article class="cv-item" data-cats="research skills">
         <div class="cv-head">
           <div class="cv-role">Areas</div>
@@ -338,8 +338,7 @@
     </section>
 
     <!-- Academic Research Experience -->
-    <section class="section">
-      <h2>Academic Research Experience</h2>
+    <section class="section" id="research-exp"><h2>Academic Research Experience</h2>
 
       <article class="cv-item" data-cats="research fieldwork service">
         <div class="cv-head">
@@ -474,8 +473,7 @@
     </section>
 
     <!-- Grants -->
-    <section class="section">
-      <h2>Research Grants</h2>
+    <section class="section" id="grants"><h2>Research Grants</h2>
 
       <article class="cv-item" data-cats="grants">
         <div class="cv-head">
@@ -535,8 +533,7 @@
     </section>
 
     <!-- Professional Development -->
-    <section class="section">
-      <h2>Professional Development</h2>
+    <section class="section" id="development"><h2>Professional Development</h2>
 
       <article class="cv-item" data-cats="development">
         <div class="cv-head">
@@ -580,8 +577,7 @@
     </section>
 
     <!-- Conference Presentations -->
-    <section class="section">
-      <h2>Conference Presentations</h2>
+    <section class="section" id="conferences"><h2>Conference Presentations</h2>
 
       <article class="cv-item" data-cats="conferences research">
         <div class="cv-head">
@@ -634,8 +630,7 @@
     </section>
 
     <!-- Guest Lectures and Workshops -->
-    <section class="section">
-      <h2>Guest Lectures & Workshops</h2>
+    <section class="section" id="lectures"><h2>Guest Lectures & Workshops</h2>
 
       <article class="cv-item" data-cats="lectures teaching">
         <div class="cv-head">
@@ -688,8 +683,7 @@
     </section>
 
     <!-- Teaching Experience -->
-    <section class="section">
-      <h2>Teaching Experience</h2>
+    <section class="section" id="teaching"><h2>Teaching Experience</h2>
 
       <article class="cv-item" data-cats="teaching">
         <div class="cv-head">
@@ -736,8 +730,7 @@
     </section>
 
     <!-- Publications -->
-    <section class="section">
-      <h2>Publications and Works in Progress</h2>
+    <section class="section" id="publications"><h2>Publications and Works in Progress</h2>
 
       <article class="cv-item" data-cats="publications research">
         <div class="cv-head">
@@ -780,8 +773,7 @@
     </section>
 
     <!-- Public Programs -->
-    <section class="section">
-      <h2>Public Programs</h2>
+    <section class="section" id="programs"><h2>Public Programs</h2>
 
       <article class="cv-item" data-cats="programs service">
         <div class="cv-head">
@@ -806,8 +798,7 @@
     </section>
 
     <!-- Public Writing -->
-    <section class="section">
-      <h2>Public Writing & Digital Publications</h2>
+    <section class="section" id="writing"><h2>Public Writing & Digital Publications</h2>
 
       <article class="cv-item" data-cats="writing media">
         <div class="cv-head">
@@ -832,8 +823,7 @@
     </section>
 
     <!-- Media Features -->
-    <section class="section">
-      <h2>Media Features & Press Mentions</h2>
+    <section class="section" id="media"><h2>Media Features & Press Mentions</h2>
 
       <article class="cv-item" data-cats="media">
         <div class="cv-head">
@@ -858,8 +848,7 @@
     </section>
 
     <!-- Honors -->
-    <section class="section">
-      <h2>Honors, Awards, & Certificates</h2>
+    <section class="section" id="honors"><h2>Honors, Awards, & Certificates</h2>
 
       <article class="cv-item" data-cats="honors">
         <div class="cv-head">
@@ -891,8 +880,7 @@
     </section>
 
     <!-- Professional Associations & Service -->
-    <section class="section">
-      <h2>Professional Associations & Service</h2>
+    <section class="section" id="associations"><h2>Professional Associations & Service</h2>
 
       <article class="cv-item" data-cats="associations service">
         <div class="cv-head">
@@ -931,8 +919,7 @@
     </section>
 
     <!-- Fieldwork & Trip Coordination -->
-    <section class="section">
-      <h2>Oral History Fieldwork & Trip Coordination</h2>
+    <section class="section" id="fieldwork"><h2>Oral History Fieldwork & Trip Coordination</h2>
 
       <article class="cv-item" data-cats="fieldwork service">
         <div class="cv-head">
@@ -981,8 +968,7 @@
     </section>
 
     <!-- Skills -->
-    <section class="section">
-      <h2>Skills</h2>
+    <section class="section" id="skills"><h2>Skills</h2>
       <article class="cv-item" data-cats="skills">
         <div class="cv-head">
           <div class="cv-role">Languages</div>
@@ -1010,8 +996,7 @@
     </section>
 
     <!-- Embedded PDF -->
-    <section class="section">
-      <h2>Full CV (PDF)</h2>
+    <section class="section" id="full-pdf"><h2>Full CV (PDF)</h2>
       <article class="cv-item">
         <p class="cv-meta">Open the embedded PDF or use the buttons above.</p>
         <div style="margin-top:10px; border:1px solid rgba(41,83,155,.18); border-radius:12px; overflow:hidden; background:var(--card-bg)">
@@ -1062,7 +1047,7 @@
       const term = (q?.value || '').toLowerCase();
       let visible = 0;
       items.forEach(el => {
-        const cats = (el.dataset.cats || '').split(/\\s+/);
+        const cats = (el.dataset.cats || '').split(/\s+/);
         const show = (filter==='all' || cats.includes(filter)) && (!term || el.textContent.toLowerCase().includes(term));
         el.style.display = show ? '' : 'none';
         if (show) visible++;
@@ -1073,10 +1058,7 @@
     function setActive(tab){
       tabs.forEach(t => t.setAttribute('aria-selected','false'));
       tab.setAttribute('aria-selected','true');
-      const filter = tab.dataset.filter;
-      // Deep link
-      if (filter && filter !== 'all') location.hash = filter;
-      else history.replaceState(null, '', location.pathname);
+      const filter = tab.dataset.filter || 'all';
       apply(filter);
     }
 
