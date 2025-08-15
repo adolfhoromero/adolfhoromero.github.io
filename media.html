@@ -204,6 +204,21 @@
     .pull-quote blockquote { margin: 0; font-family: 'Spectral', serif; font-size: 1.15rem; line-height: 1.65; font-style: italic; color: var(--heading-color); }
     .pull-quote figcaption { margin-top: 0.75rem; font-weight: 600; color: var(--accent); }
 
+    /* Badges */
+    .badge {
+      display: inline-block;
+      margin-left: .45rem;
+      padding: .2rem .5rem;
+      font-size: .72rem;
+      font-weight: 700;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-gold));
+      color: #111;
+      vertical-align: middle;
+      box-shadow: 0 1px 3px rgba(0,0,0,.12);
+    }
+    .dark .badge { color: #000; }
+
     footer { text-align: center; padding: 2rem; background: var(--nav-bg); color: var(--nav-text); margin-top: 3rem; font-size: 0.95rem; }
   </style>
 </head>
@@ -224,8 +239,8 @@
       <li><a href="publications.html" class="pubs-link">Publications</a></li>
       <li><a href="teaching.html" class="teaching-link">Teaching</a></li>
       <li><a href="media.html" aria-current="page">Media & Public Engagement</a></li>
-      <!-- Moved CV next to Media link -->
-      <li><a href="adolfhoromerocv.pdf" target="_blank" rel="noopener" class="cv-link">CV</a></li>
+      <!-- CV links to the CV page -->
+      <li><a href="cv/" class="cv-link">CV</a></li>
     </ul>
   </nav>
 
@@ -281,7 +296,8 @@
             <div>
               (2024). <b>“UFF-UF Holds Virtual Teach-In on Academic Freedom.”</b><br>
               <em>The Independent Florida Alligator</em>
-              <p class="quote">“The teach-in was concluded with additional resources provided by Adolfho Romero, Samuel Proctor Oral History Program project coordinator.”<cite>Apr 18, 2024</cite></p>
+              <span class="badge" title="Mentions Adolfho Romero">Mentions</span>
+              <!-- Removed the prior quote per preference -->
             </div>
           </article>
         </div>
@@ -300,7 +316,7 @@
             </div>
           </article>
 
-          <!-- Added WUSF feature with quote -->
+          <!-- WUSF feature with quote and mentions badge -->
           <article class="card animate">
             <a href="https://www.wusf.org/arts-culture/2022-01-29/lynching-victims-in-alachua-county-will-be-remembered-through-a-soil-collection-ceremony" target="_blank" rel="noopener" aria-label="Open WUSF Public Media article">
               <img src="wusf.png" alt="WUSF Public Media logo" loading="lazy" decoding="async" width="220" height="120">
@@ -308,6 +324,7 @@
             <div>
               Stones, S. (2022). <b>“Lynching victims in Alachua County will be remembered through a soil collection ceremony.”</b><br>
               <em>WUSF Public Media</em>
+              <span class="badge" title="Mentions Adolfho Romero">Mentions</span>
               <p class="quote">“This dark time of violence and barbarity led to separation between groups,” said Adolfho Romero, assistant director of the Samuel Proctor Oral History Program.<cite>Jan 29, 2022</cite></p>
             </div>
           </article>
@@ -332,7 +349,7 @@
 
           <!-- Featured pull-quote from interview -->
           <figure class="pull-quote" role="group" aria-label="Highlighted quote from interview">
-            <blockquote>“Oral history is not about collecting, it is about connecting.”</blockquote>
+            <blockquote>“Oral history is not about connecting, it is about connecting.”</blockquote>
             <figcaption>— Adolfho Romero, <a href="https://the-footnote.org/2025/04/22/an-oral-history-of-a-native-son-the-elaine-massacre-and-its-living-memory/" target="_blank" rel="noopener">The Footnote</a></figcaption>
           </figure>
 
