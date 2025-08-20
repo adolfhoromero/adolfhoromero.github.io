@@ -1416,6 +1416,44 @@ nav.main-nav a.cv-link {
     .mobile-nav, .overlay-nav, .drawer, .drawer-backdrop{ display:none !important; height:0 !important; }
   }
 </style>
+  <style>
+    /* Unified bottom navigation design across all pages */
+    :root{ --bottom-bar-h:60px; --bottom-offset:14px; }
+    .bottom-tabs{
+      background: rgba(22,33,54,.92);
+      border-top: 1px solid rgba(255,255,255,.15);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      box-shadow: 0 8px 18px rgba(0,0,0,.30);
+    }
+    .tabs-row{ grid-template-columns: repeat(6,1fr); }
+    .tab-link{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:3px;
+      color:#e5e7eb;
+      font-size:.75rem;
+      font-weight:600;
+      letter-spacing:.02em;
+      text-decoration:none;
+      position:relative;
+      isolation:isolate;
+    }
+    .tab-link .ico{ width:22px; height:22px; opacity:.95; }
+    .tab-link[aria-current="page"]{ color: var(--accent-gold); }
+    .tab-link[aria-current="page"]::before{
+      content:'';
+      position:absolute;
+      inset:5px 8px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:12px;
+      z-index:-1;
+      box-shadow:0 6px 18px rgba(0,0,0,.25);
+    }
+  </style>
 </head>
 <body>
 <header>
@@ -1842,18 +1880,19 @@ document.querySelectorAll('.copy-email').forEach(btn => {
 <svg aria-hidden="true" class="ico" viewbox="0 0 24 24"><path d="M4 6h16v12H4zM8 6v12" fill="currentColor"></path></svg>
 <span>Media</span>
 </a>
-<a class="tab-link" href="https://calendly.com/ar2539-cornell" rel="noopener" target="_blank">
-<svg aria-hidden="true" class="ico" viewbox="0 0 24 24"><path d="M7 2h10a2 2 0 0 1 2 2v16l-7-3-7 3V4a2 2 0 0 1 2-2zm3 6h6m-6 4h6m-6 4h6" fill="currentColor"></path></svg>
-<span>Schedule</span>
-</a>
-
+<!-- CV tab moved before schedule -->
 <a class="tab-link" href="cv.html">
-<svg aria-hidden="true" class="ico" height="24" viewbox="0 0 24 24" width="24">
-<path d="M6 2h9l3 3v17H6z" fill="currentColor"></path>
-<path d="M15 2v4h4" fill="currentColor"></path>
-<path d="M8 10h8v1.5H8zM8 13h8v1.5H8zM8 16h6v1.5H8z" fill="currentColor"></path>
+<svg aria-hidden="true" class="ico" viewbox="0 0 24 24">
+  <path d="M6 2h9l3 3v17H6z" fill="currentColor"></path>
+  <path d="M15 2v4h4" fill="currentColor"></path>
+  <path d="M8 10h8v1.5H8zM8 13h8v1.5H8zM8 16h6v1.5H8z" fill="currentColor"></path>
 </svg>
 <span>CV</span>
+</a>
+<!-- Schedule tab at end -->
+<a class="tab-link" href="https://calendly.com/ar2539-cornell/30min" rel="noopener" target="_blank">
+<svg aria-hidden="true" class="ico" viewbox="0 0 24 24"><path d="M7 2h10a2 2 0 0 1 2 2v16l-7-3-7 3V4a2 2 0 0 1 2-2zm3 6h6m-6 4h6m-6 4h6" fill="currentColor"></path></svg>
+<span>Schedule</span>
 </a>
 </div>
 </nav>
