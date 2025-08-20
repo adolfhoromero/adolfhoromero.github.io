@@ -199,7 +199,7 @@
       touch-action: pan-y;
     }
     @media (min-width:821px){ .bottom-tabs{ display:none } }
-    .tabs-row{ display:grid; grid-template-columns:repeat(5,1fr); height:100% }
+    .tabs-row{ display:grid; grid-template-columns:repeat(6,1fr); height:100% }
     .tab-link{ display:grid; place-items:center; gap:2px; color:#e5e7eb; font-size:.7rem; font-weight:600; letter-spacing:.02em; text-decoration:none; position:relative; isolation:isolate }
     .tab-link .ico{ width:20px; height:20px; opacity:.94 }
     .tab-link[aria-current="page"]{ color:#fbbf24 }
@@ -209,6 +209,25 @@
       border-radius:999px; z-index:-1; box-shadow:0 8px 22px rgba(0,0,0,.25);
     }
   </style>
+
+  <style>
+    /* Mobile fix: stack card content and prevent image cropping */
+    @media (max-width: 820px){
+      .card{ 
+        flex-direction: column !important; 
+        align-items: stretch !important; 
+      }
+      .card img{ 
+        width: 100% !important; 
+        max-width: 100% !important; 
+        height: auto !important; 
+        max-height: none !important; 
+        object-fit: contain !important; 
+        display: block !important;
+      }
+    }
+  </style>
+
 </head>
 <body>
   <header>
@@ -399,7 +418,14 @@
         <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4zM8 6v12" fill="currentColor"/></svg>
         <span>Media</span>
       </a>
-      <a class="tab-link" href="https://calendly.com/ar2539-cornell/30min" target="_blank" rel="noopener" aria-label="Schedule">
+      
+      <a class="tab-link" href="cv.html" aria-label="CV">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1v5h5" fill="currentColor"/>
+        </svg>
+        <span>CV</span>
+      </a>
+<a class="tab-link" href="https://calendly.com/ar2539-cornell/30min" target="_blank" rel="noopener" aria-label="Schedule">
         <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a2 2 0 0 1 2 2v16l-7-3-7 3V4a2 2 0 0 1 2-2zm3 6h6m-6 4h6m-6 4h6" fill="currentColor"/></svg>
         <span>Schedule</span>
       </a>
