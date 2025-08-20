@@ -9,6 +9,8 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;family=Spectral:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap" rel="stylesheet"/>
+  <!-- Calendly widget style -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
 <style>
     /* ===== Theme Variables (match your site) ===== */
     :root{
@@ -354,7 +356,46 @@
     nav.main-nav a.cv-link:hover, nav.main-nav a.cv-link:focus { filter: brightness(1.07) saturate(1.12); box-shadow: 0 8px 22px rgba(41,83,155,0.19); color: var(--nav-text) !important; }
     @media (max-width: 600px) { nav.main-nav a { font-size: 1.05rem; padding: 12px 16px; min-width: 88px; } }
 
-    </style></head>
+    </style>
+    <style>
+      /* Unified bottom navigation design across all pages */
+      :root{ --bottom-bar-h:60px; --bottom-offset:14px; }
+      .bottom-tabs{
+        background: rgba(22,33,54,.92);
+        border-top: 1px solid rgba(255,255,255,.15);
+        backdrop-filter: blur(12px);
+        border-radius: 16px;
+        box-shadow: 0 8px 18px rgba(0,0,0,.30);
+      }
+      .tabs-row{ grid-template-columns: repeat(6,1fr); }
+      .tab-link{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        gap:3px;
+        color:#e5e7eb;
+        font-size:.75rem;
+        font-weight:600;
+        letter-spacing:.02em;
+        text-decoration:none;
+        position:relative;
+        isolation:isolate;
+      }
+      .tab-link .ico{ width:22px; height:22px; opacity:.95; }
+      .tab-link[aria-current="page"]{ color: var(--accent-gold); }
+      .tab-link[aria-current="page"]::before{
+        content:'';
+        position:absolute;
+        inset:5px 8px;
+        background:rgba(255,255,255,.08);
+        border:1px solid rgba(255,255,255,.16);
+        border-radius:12px;
+        z-index:-1;
+        box-shadow:0 6px 18px rgba(0,0,0,.25);
+      }
+    </style>
+  </head>
 <body><script>
 (function(){
   try {
@@ -1175,6 +1216,19 @@
       }
     });
   </script>
+<!-- Calendly badge widget -->
+<script async src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+<script type="text/javascript">
+  window.addEventListener('load', function() {
+    Calendly.initBadgeWidget({
+      url: 'https://calendly.com/ar2539-cornell/30min',
+      text: 'Schedule time with me',
+      color: '#0069ff',
+      textColor: '#ffffff',
+      branding: true
+    });
+  });
+</script>
 <!-- Bottom tabs HTML -->
 <nav aria-label="Bottom navigation" class="bottom-tabs">
 <div class="tabs-row">
@@ -1194,6 +1248,10 @@
 <svg aria-hidden="true" class="ico" viewbox="0 0 24 24"><path d="M4 6h16v12H4zM8 6v12" fill="currentColor"></path></svg>
 <span>Media</span>
 </a>
+  <a aria-label="CV" class="tab-link" href="cv.html">
+<svg aria-hidden="true" class="ico" viewbox="0 0 24 24"><path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1v5h5" fill="currentColor"></path></svg>
+<span>CV</span>
+  </a>
 <a aria-label="Schedule" class="tab-link" href="https://calendly.com/ar2539-cornell/30min" rel="noopener" target="_blank">
 <svg aria-hidden="true" class="ico" viewbox="0 0 24 24"><path d="M7 2h10a2 2 0 0 1 2 2v16l-7-3-7 3V4a2 2 0 0 1 2-2zm3 6h6m-6 4h6m-6 4h6" fill="currentColor"></path></svg>
 <span>Schedule</span>
