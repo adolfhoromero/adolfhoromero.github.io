@@ -235,6 +235,82 @@
       * { transition: none !important; animation: none !important; }
     }
 
+    /* ===== Custom CV page layout ===== */
+    /* A responsive two-column grid for the CV filters and content. The sidebar becomes sticky on wider screens. */
+    .cv-grid{
+      display:flex;
+      flex-direction:column;
+      gap:2rem;
+    }
+    .cv-sidebar{
+      background:linear-gradient(135deg,rgba(41,83,155,.05),rgba(255,204,0,.07));
+      padding:1rem;
+      border-radius:var(--radius-xl);
+      box-shadow:0 2px 8px rgba(41,83,155,.06);
+    }
+    /* The tab list within the sidebar stacks vertically. */
+    .cv-sidebar .tabbar{
+      display:flex;
+      flex-direction:column;
+      gap:.4rem;
+    }
+    .cv-sidebar .tabbar [role="tab"]{
+      width:100%;
+    }
+    .cv-sidebar .searchbar{
+      margin-top:1rem;
+      width:100%;
+    }
+    .cv-content{
+      flex:1 1 auto;
+    }
+    @media (min-width:950px){
+      .cv-grid{ flex-direction:row; align-items:flex-start; }
+      .cv-sidebar{
+        flex:0 0 260px;
+        position:sticky;
+        top:110px;
+        max-height:calc(100vh - 130px);
+        overflow-y:auto;
+      }
+    }
+    /* Scroll progress indicator fixed at top of viewport */
+    #progress-bar{
+      position:fixed;
+      top:0;
+      left:0;
+      height:4px;
+      width:0%;
+      background:linear-gradient(90deg,var(--accent),var(--accent-gold));
+      z-index:1000;
+      transition:width .2s ease-out;
+    }
+
+    /* Floating back-to-top button */
+    #back-to-top{
+      position:fixed;
+      bottom:100px;
+      right:32px;
+      width:48px;
+      height:48px;
+      border-radius:50%;
+      background:linear-gradient(90deg,var(--accent),var(--accent-gold));
+      color:#fff;
+      border:none;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      font-size:1.4rem;
+      font-weight:700;
+      box-shadow:0 4px 14px rgba(0,0,0,.18);
+      cursor:pointer;
+      z-index:1000;
+    }
+    #back-to-top:hover{
+      filter:brightness(1.1);
+      transform:translateY(-2px);
+    }
+
   </style>
 <!-- Mobile bottom tabs + hide top nav on phones -->
 <style>
@@ -458,33 +534,57 @@
 </ul>
 </nav>
 <main id="main">
-<div class="page-actions">
-<a aria-label="Download the CV PDF" class="btn gold" download="" href="/adolfhoromerocv.pdf" rel="noopener" target="_blank">Download CV</a>
-</div>
-<!-- Lively sticky tabs -->
-<div aria-label="CV filters" class="tabbar" role="tablist">
-<a aria-selected="true" data-filter="all" href="#top" role="tab">All</a>
-<a data-filter="education" href="#education" role="tab">Education</a>
-<a data-filter="research" href="#research" role="tab">Research</a>
-<a data-filter="teaching" href="#teaching" role="tab">Teaching</a>
-<a data-filter="grants" href="#grants" role="tab">Grants</a>
-<a data-filter="publications" href="#publications" role="tab">Publications</a>
-<a data-filter="development" href="#development" role="tab">Professional Development</a>
-<a data-filter="conferences" href="#conferences" role="tab">Conferences</a>
-<a data-filter="lectures" href="#lectures" role="tab">Guest Lectures</a>
-<a data-filter="programs" href="#programs" role="tab">Public Programs</a>
-<a data-filter="writing" href="#writing" role="tab">Public Writing</a>
-<a data-filter="media" href="#media" role="tab">Media</a>
-<a data-filter="honors" href="#honors" role="tab">Honors</a>
-<a data-filter="associations" href="#associations" role="tab">Associations</a>
-<a data-filter="fieldwork" href="#fieldwork" role="tab">Fieldwork</a>
-<a data-filter="skills" href="#skills" role="tab">Skills</a>
-<span aria-live="polite" class="count" id="count"></span>
-<label aria-label="Search CV" class="searchbar" role="search">
-<svg aria-hidden="true" height="16" viewbox="0 0 24 24" width="16"><path d="M15.5 14h-.79l-.28-.27a6.471 6.471 0 0 0 1.57-4.23A6.5 6.5 0 1 0 9.5 16a6.471 6.471 0 0 0 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zM4 9.5C4 6.46 6.46 4 9.5 4S15 6.46 15 9.5 12.54 15 9.5 15 4 12.54 4 9.5z" fill="currentColor"></path></svg>
-<input aria-label="Search CV" id="search" placeholder="Search CV..." type="search"/>
-</label>
-</div>
+  <!-- Progress bar for scroll tracking -->
+  <div id="progress-bar"></div>
+  <!-- Top actions: download button and PDF embed -->
+  <div class="page-actions">
+    <a aria-label="Download the CV PDF" class="btn gold" download="" href="/adolfhoromerocv.pdf" rel="noopener" target="_blank">Download CV</a>
+  </div>
+  <!-- Embedded full PDF is now near the top for easier access -->
+  <section class="section" id="full-pdf">
+    <h2>Full CV (PDF)</h2>
+    <article class="cv-item">
+      <p class="cv-meta">Open the embedded PDF or use the buttons below.</p>
+      <div aria-label="Embedded PDF viewer" class="pdf-shell" id="pdf-shell" role="region">
+        <embed id="pdf-embed" src="/adolfhoromerocv.pdf#toolbar=1&amp;navpanes=0" style="display:block;width:100%;height:100%;" type="application/pdf" />
+      </div>
+      <div class="page-actions" style="display:flex; gap:12px; justify-content:flex-start; margin-top:10px;">
+        <a aria-label="Open CV PDF in a new tab" class="btn accent" href="/adolfhoromerocv.pdf" rel="noopener" target="_blank">Open in new tab</a>
+        <button class="btn gold" id="toggle-pdf-full" type="button">Full screen</button>
+      </div>
+      <noscript>
+        <p>If the PDF does not display, <a href="/adolfhoromerocv.pdf" rel="noopener" target="_blank">open it in a new tab</a>.</p>
+      </noscript>
+    </article>
+  </section>
+  <!-- Two-column layout: sidebar for filters and content area -->
+  <div class="cv-grid">
+    <aside class="cv-sidebar">
+      <div aria-label="CV filters" class="tabbar" role="tablist">
+        <a aria-selected="true" data-filter="all" href="#top" role="tab">All</a>
+        <a data-filter="education" href="#education" role="tab">Education</a>
+        <a data-filter="research" href="#research" role="tab">Research</a>
+        <a data-filter="teaching" href="#teaching" role="tab">Teaching</a>
+        <a data-filter="grants" href="#grants" role="tab">Grants</a>
+        <a data-filter="publications" href="#publications" role="tab">Publications</a>
+        <a data-filter="development" href="#development" role="tab">Professional Development</a>
+        <a data-filter="conferences" href="#conferences" role="tab">Conferences</a>
+        <a data-filter="lectures" href="#lectures" role="tab">Guest Lectures</a>
+        <a data-filter="programs" href="#programs" role="tab">Public Programs</a>
+        <a data-filter="writing" href="#writing" role="tab">Public Writing</a>
+        <a data-filter="media" href="#media" role="tab">Media</a>
+        <a data-filter="honors" href="#honors" role="tab">Honors</a>
+        <a data-filter="associations" href="#associations" role="tab">Associations</a>
+        <a data-filter="fieldwork" href="#fieldwork" role="tab">Fieldwork</a>
+        <a data-filter="skills" href="#skills" role="tab">Skills</a>
+        <span aria-live="polite" class="count" id="count"></span>
+      </div>
+      <label aria-label="Search CV" class="searchbar" role="search">
+        <svg aria-hidden="true" height="16" viewBox="0 0 24 24" width="16"><path d="M15.5 14h-.79l-.28-.27a6.471 6.471 0 0 0 1.57-4.23A6.5 6.5 0 1 0 9.5 16a6.471 6.471 0 0 0 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zM4 9.5C4 6.46 6.46 4 9.5 4S15 6.46 15 9.5 12.54 15 9.5 15 4 12.54 4 9.5z" fill="currentColor"></path></svg>
+        <input aria-label="Search CV" id="search" placeholder="Search CV..." type="search"/>
+      </label>
+    </aside>
+    <div class="cv-content">
 <!-- ===== CONTENT START ===== -->
 <!-- Education -->
 <section class="section" id="education"><h2>Education</h2>
@@ -1117,26 +1217,13 @@
 </div>
 </article>
 </section>
-<!-- Embedded PDF -->
-<!-- Embedded PDF -->
-<section class="section" id="full-pdf">
-<h2>Full CV (PDF)</h2>
-<article class="cv-item">
-<p class="cv-meta">Open the embedded PDF or use the buttons below.</p>
-<div aria-label="Embedded PDF viewer" class="pdf-shell" id="pdf-shell" role="region">
-<embed id="pdf-embed" src="/adolfhoromerocv.pdf#toolbar=1&amp;navpanes=0" style="display:block;width:100%;height:100%;" type="application/pdf"/>
-</div>
-<div class="page-actions" style="display:flex; gap:12px; justify-content:flex-start; margin-top:10px;">
-<a aria-label="Open CV PDF in a new tab" class="btn accent" href="/adolfhoromerocv.pdf" rel="noopener" target="_blank">Open in new tab</a>
-<button class="btn gold" id="toggle-pdf-full" type="button">Full screen</button>
-</div>
-<noscript>
-<p>If the PDF does not display, <a href="/adolfhoromerocv.pdf" rel="noopener" target="_blank">open it in a new tab</a>.</p>
-</noscript>
-</article>
-</section>
-<footer>© 2025 Adolfho Romero · <a href="mailto:ar2539@cornell.edu">ar2539@cornell.edu</a></footer>
+      <!-- close content and grid wrappers -->
+    </div><!-- .cv-content -->
+  </div><!-- .cv-grid -->
+  <footer>© 2025 Adolfho Romero · <a href="mailto:ar2539@cornell.edu">ar2539@cornell.edu</a></footer>
 </main>
+<!-- Back to top floating button -->
+<button aria-label="Back to top" id="back-to-top" type="button">↑</button>
 <script>
     // Theme persistence
     (function(){
@@ -1229,6 +1316,46 @@
     });
   });
 </script>
+
+  <!-- Scroll progress bar logic -->
+  <script>
+    (function(){
+      function updateProgress(){
+        var bar = document.getElementById('progress-bar');
+        if(!bar) return;
+        var doc = document.documentElement;
+        var scrollTop = window.scrollY || doc.scrollTop;
+        var height = doc.scrollHeight - window.innerHeight;
+        var percent = 0;
+        if (height > 0) percent = (scrollTop / height) * 100;
+        bar.style.width = percent + '%';
+      }
+      window.addEventListener('scroll', updateProgress);
+      window.addEventListener('resize', updateProgress);
+      document.addEventListener('DOMContentLoaded', updateProgress);
+    })();
+  </script>
+
+  <!-- Back to top button logic -->
+  <script>
+    (function(){
+      var btn = document.getElementById('back-to-top');
+      if(!btn) return;
+      function checkBtn(){
+        var scrollTop = window.scrollY || document.documentElement.scrollTop;
+        if(scrollTop > 400){
+          btn.style.display = 'flex';
+        } else {
+          btn.style.display = 'none';
+        }
+      }
+      btn.addEventListener('click', function(){
+        window.scrollTo({ top:0, behavior:'smooth' });
+      });
+      window.addEventListener('scroll', checkBtn);
+      document.addEventListener('DOMContentLoaded', checkBtn);
+    })();
+  </script>
 <!-- Bottom tabs HTML -->
 <nav aria-label="Bottom navigation" class="bottom-tabs">
 <div class="tabs-row">
