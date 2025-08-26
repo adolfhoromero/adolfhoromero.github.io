@@ -1380,13 +1380,31 @@
     }
 
     function setActive(tab){
+      // If the selected tab is clicked again, reset to "all"
+      const alreadySelected = tab.getAttribute('aria-selected') === 'true';
+      if(alreadySelected){
+        const allTab = tabs.find(t => t.dataset.filter === 'all') || tabs[0];
+        // clear all selections
+        tabs.forEach(t => t.setAttribute('aria-selected','false'));
+        // activate the "all" tab if it exists
+        if(allTab){
+          allTab.setAttribute('aria-selected','true');
+        }
+        apply('all');
+        return;
+      }
       tabs.forEach(t => t.setAttribute('aria-selected','false'));
       tab.setAttribute('aria-selected','true');
       const filter = tab.dataset.filter || 'all';
       apply(filter);
     }
 
-    tabs.forEach(t => t.addEventListener('click', () => setActive(t)));
+    // When clicking on a tab, prevent the anchor from jumping to the section and toggle filter state
+    tabs.forEach(t => t.addEventListener('click', (e) => {
+      // avoid default anchor navigation
+      e.preventDefault();
+      setActive(t);
+    }));
     q?.addEventListener('input', () => {
       const active = document.querySelector('.tabbar [aria-selected="true"]') || { dataset:{ filter:'all' } };
       apply(active.dataset.filter);
@@ -1526,9 +1544,14 @@
   function setPDFHeight(){
     try{
       var shell = document.getElementById('pdf-shell');
-      var headerOffset = shell.getBoundingClientRect().top + window.scrollY;
-      var viewport = window.innerHeight;
-      var desired = viewport - (shell.getBoundingClientRect().top) - 24; // leave a little space
+      if(!shell) return;
+      // On small screens, avoid programmatic height and let CSS handle responsiveness
+      if(window.innerWidth <= 820){
+        shell.style.height = '';
+        return;
+      }
+      // compute dynamic height on larger screens
+      var desired = window.innerHeight - (shell.getBoundingClientRect().top) - 24; // leave a little space
       if(desired < 480) desired = 480;
       shell.style.height = desired + 'px';
     }catch(e){}
@@ -1549,5 +1572,18 @@
   });
 })();
 </script>
+<!-- Extra responsive fixes -->
+<style>
+  /* On small screens, ensure the embedded PDF does not overflow the viewport.
+     Override inline width/height with auto height so the PDF maintains its aspect ratio. */
+  @media (max-width: 820px){
+    #pdf-shell embed{
+      width: 100% !important;
+      max-width: 100%;
+      height: auto !important;
+    }
+  }
+</style>
+<!-- Removed interactive CV item toggling script -->
 </body>
 </html>
