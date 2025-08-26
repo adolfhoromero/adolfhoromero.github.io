@@ -1368,40 +1368,61 @@
     const q = document.getElementById('search');
 
     function apply(filter){
+      // Apply the selected filter and search term to all CV items
       const term = (q?.value || '').toLowerCase();
       let visible = 0;
       items.forEach(el => {
         const cats = (el.dataset.cats || '').split(/\s+/);
-        const show = (filter==='all' || cats.includes(filter)) && (!term || el.textContent.toLowerCase().includes(term));
+        const show = (filter === 'all' || cats.includes(filter)) && (!term || el.textContent.toLowerCase().includes(term));
         el.style.display = show ? '' : 'none';
         if (show) visible++;
+      });
+      // Hide or show entire sections based on whether any of their .cv-item children are visible.
+      document.querySelectorAll('section.section').forEach(section => {
+        // Skip the PDF section from being hidden
+        if (section.id && section.id === 'full-pdf') return;
+        const itemsInSection = section.querySelectorAll('.cv-item');
+        // Determine if at least one item is visible (display not 'none')
+        const anyVisible = Array.from(itemsInSection).some(el => el.style.display !== 'none');
+        // Toggle the section's display accordingly
+        section.style.display = anyVisible ? '' : 'none';
       });
       count.textContent = 'Showing ' + visible;
     }
 
     function setActive(tab){
-      // If the selected tab is clicked again, reset to "all"
+      // Determine if the clicked tab is already active. If so, revert to the "all" filter.
       const alreadySelected = tab.getAttribute('aria-selected') === 'true';
       if(alreadySelected){
         const allTab = tabs.find(t => t.dataset.filter === 'all') || tabs[0];
-        // clear all selections
+        // reset all selections
         tabs.forEach(t => t.setAttribute('aria-selected','false'));
-        // activate the "all" tab if it exists
-        if(allTab){
-          allTab.setAttribute('aria-selected','true');
-        }
+        if(allTab) allTab.setAttribute('aria-selected','true');
         apply('all');
+        // update the URL hash for accessibility / anchor reference
+        try{
+          if(location.hash !== '#all'){
+            history.replaceState(null, '', '#all');
+          }
+        }catch(e){}
         return;
       }
+      // Set selected state on the current tab
       tabs.forEach(t => t.setAttribute('aria-selected','false'));
       tab.setAttribute('aria-selected','true');
       const filter = tab.dataset.filter || 'all';
       apply(filter);
+      // update the URL hash to reflect the new filter
+      try{
+        const newHash = filter === 'all' ? '#all' : '#' + filter;
+        if(location.hash !== newHash){
+          history.replaceState(null, '', newHash);
+        }
+      }catch(e){}
     }
 
-    // When clicking on a tab, prevent the anchor from jumping to the section and toggle filter state
+    // Override default anchor behaviour and apply filters on click
     tabs.forEach(t => t.addEventListener('click', (e) => {
-      // avoid default anchor navigation
       e.preventDefault();
       setActive(t);
     }));
@@ -1527,31 +1548,69 @@
   </script>
 <style>
   /* Strong override so the viewer expands */
-  #pdf-shell{ border:1px solid rgba(41,83,155,.18); border-radius:12px; overflow:hidden; background:var(--card-bg); height:70vh; min-height:600px; }
-  @media (max-width: 820px){
-    #pdf-shell{ height:80svh; min-height:70svh; }
+  #pdf-shell{
+    border:1px solid rgba(41,83,155,.18);
+    border-radius:12px;
+    overflow:hidden;
+    background:var(--card-bg);
+    width:100%;
+    /* Use a responsive height on larger screens. The height will be at least 480px,
+       ideal at 70vh, but will not exceed 90vh. */
+    height:clamp(480px,70vh,90vh);
   }
-  /* Full screen mode */
+  /* Ensure the embedded PDF scales to its container */
+  #pdf-shell embed{
+    display:block;
+    width:100%;
+    height:100%;
+  }
+  /* On small screens, allow the viewer to grow naturally without forcing a fixed height.
+     Let the embed determine its own height based on intrinsic ratio to avoid stretching. */
+  @media (max-width: 820px){
+    #pdf-shell{
+      height:auto;
+      min-height:0;
+    }
+    #pdf-shell embed{
+      height:auto;
+    }
+  }
+  /* Full screen mode for the PDF viewer */
   #pdf-shell.fullscreen{
     position: fixed; inset: 0; z-index: 9999; border-radius: 0; border: none;
-    height: 100vh; width: 100vw; margin: 0; background: var(--background-top);
+    height: 100vh; width: 100vw; margin: 0;
+    background: var(--background-top);
   }
-  #pdf-shell.fullscreen + .page-actions{ position: fixed; right: 16px; top: 16px; z-index: 10000; }
+  #pdf-shell.fullscreen + .page-actions{
+    position: fixed;
+    right: 16px;
+    top: 16px;
+    z-index: 10000;
+  }
   #toggle-pdf-full{ cursor:pointer; }
 </style>
 <script>
 (function(){
+  /**
+   * Dynamically adjust the height of the PDF viewer on larger screens.
+   * On small screens (≤820px), no explicit height is applied so that
+   * the embed can size naturally and avoid stretching the viewport.
+   */
   function setPDFHeight(){
     try{
-      var shell = document.getElementById('pdf-shell');
+      const shell = document.getElementById('pdf-shell');
       if(!shell) return;
-      // On small screens, avoid programmatic height and let CSS handle responsiveness
+      // If the screen is small, let CSS handle sizing and reset any inline height.
       if(window.innerWidth <= 820){
         shell.style.height = '';
         return;
       }
-      // compute dynamic height on larger screens
-      var desired = window.innerHeight - (shell.getBoundingClientRect().top) - 24; // leave a little space
+      // Determine an appropriate height based on available viewport space.
+      const rect = shell.getBoundingClientRect();
+      const viewport = window.innerHeight;
+      // Subtract the top offset of the shell and leave a bit of space below (24px).
+      let desired = viewport - rect.top - 24;
+      // Ensure a minimum height of 480px for comfortable viewing.
       if(desired < 480) desired = 480;
       shell.style.height = desired + 'px';
     }catch(e){}
@@ -1565,25 +1624,14 @@
       btn.addEventListener('click', function(){
         shell.classList.toggle('fullscreen');
         btn.textContent = shell.classList.contains('fullscreen') ? 'Exit full screen' : 'Full screen';
-        document.documentElement.style.overflow = shell.classList.contains('fullscreen') ? 'hidden' : '';
-        document.body.style.overflow = shell.classList.contains('fullscreen') ? 'hidden' : '';
+        // Prevent background scrolling when full screen is active
+        const isFull = shell.classList.contains('fullscreen');
+        document.documentElement.style.overflow = isFull ? 'hidden' : '';
+        document.body.style.overflow = isFull ? 'hidden' : '';
       });
     }
   });
 })();
 </script>
-<!-- Extra responsive fixes -->
-<style>
-  /* On small screens, ensure the embedded PDF does not overflow the viewport.
-     Override inline width/height with auto height so the PDF maintains its aspect ratio. */
-  @media (max-width: 820px){
-    #pdf-shell embed{
-      width: 100% !important;
-      max-width: 100%;
-      height: auto !important;
-    }
-  }
-</style>
-<!-- Removed interactive CV item toggling script -->
 </body>
 </html>
