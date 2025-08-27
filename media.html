@@ -222,7 +222,311 @@
     .dark .badge { color: #000; }
 
     footer { text-align: center; padding: 2rem; background: var(--nav-bg); color: var(--nav-text); margin-top: 3rem; font-size: 0.95rem; }
-  </style>
+  
+
+
+
+    /* ===== Theme Variables (match your site) ===== */
+    :root{
+      --background-top:  #f7f8fa;
+      --background-bottom:#e4e8ef;
+      --nav-bg:          #22304a;
+      --nav-text:        #ffffff;
+      --card-bg:         #ffffff;
+      --card-shadow:     0 6px 28px #2e3a5030;
+      --card-border:     #29539b;
+      --text-main:       #232d41;
+      --heading-color:   #212c3e;
+      --accent:          #29539b;
+      --accent-2:       #3f63b7;
+      --accent-gold:     #ffcc00;
+      --muted:           #6b7a99;
+      --max-width:       1100px;
+      --radius-xl:       18px;
+      --radius-lg:       14px;
+      --radius-md:       10px;
+      --font-body:       'Poppins', sans-serif;
+      --font-heading:    'Spectral', serif;
+    }
+    .dark{
+      --background-top:  #0f1115;
+      --background-bottom:#161a22;
+      --nav-bg:          #0d1424;
+      --nav-text:        #e5e7eb;
+      --card-bg:         #121a2a;
+      --card-shadow:     0 6px 28px #0b122430;
+      --card-border:     #3b82f6;
+      --text-main:       #d9e0ee;
+      --heading-color:   #f9fafb;
+      --accent:          #3b82f6;
+      --accent-2:       #60a5fa;
+      --accent-gold:     #fbbf24;
+      --muted:           #9aa6c2;
+    }
+
+    *,*::before,*::after{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family:var(--font-body);
+      background:linear-gradient(135deg,var(--background-top),var(--background-bottom));
+      color:var(--text-main);
+      line-height:1.6;
+      min-height:100vh;
+      transition:background .35s,color .35s;
+    }
+    a{ color:var(--accent); text-decoration:none; transition:color .2s, box-shadow .25s, background .25s; }
+    a:hover, a:focus{ color:var(--accent-gold); outline:0; }
+
+    /* ===== Header and Nav copied to match site ===== */
+    header{
+      background:var(--nav-bg);
+      color:var(--nav-text);
+      text-align:center;
+      padding:1.6rem 1rem .6rem;
+      box-shadow:0 4px 22px rgba(34,48,74,.47);
+      position:relative;
+      z-index:100;
+      transition:background .35s,color .35s;
+    }
+    .site-title{
+      font-family:var(--font-heading);
+      font-size:2.8rem;
+      font-weight:700;
+      margin:0;
+      color:var(--nav-text);
+    }
+    .site-title a{ color:inherit; }
+    .dark-toggle{
+      position:absolute; top:.9rem; right:1rem;
+      width:2.4rem; height:2.4rem; display:grid; place-items:center;
+      background:none; border:0; cursor:pointer; z-index:200;
+    }
+    .dark-toggle svg{ width:2.1rem; height:2.1rem; fill:var(--accent-gold); stroke:var(--accent); }
+
+    nav.main-nav{
+      position:sticky; top:0; z-index:40;
+      background:var(--nav-bg);
+      box-shadow:inset 0 -1px 0 #3a496f;
+      font-family:var(--font-heading);
+    }
+    nav.main-nav ul{
+      display:flex; gap:10px; list-style:none; margin:0; padding:8px 8px;
+      overflow-x:auto; -webkit-overflow-scrolling:touch; white-space:nowrap;
+    }
+    nav.main-nav a{
+      color:var(--nav-text);
+      font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+      padding:14px 22px; min-width:110px; display:inline-flex; align-items:center; gap:7px;
+      position:relative;
+    }
+    nav.main-nav a::after{
+      content:''; position:absolute; left:18px; right:18px; bottom:6px; height:3.5px; border-radius:2px;
+      background:linear-gradient(90deg,var(--accent),var(--accent-gold)); width:0; opacity:0; transition:width .25s, opacity .22s;
+    }
+    nav.main-nav a:hover{ color:var(--accent-gold); background:rgba(255,255,255,.05); }
+    nav.main-nav a:hover::after{ width:calc(100% - 36px); opacity:.85; }
+    nav.main-nav a[aria-current="page"]{ color:var(--accent-gold); }
+    nav.main-nav a[aria-current="page"]::after{ width:calc(100% - 36px); opacity:.85; }
+
+    main{ max-width:var(--max-width); margin:1rem auto 3rem; padding:0 1rem; }
+
+    /* ===== Page actions ===== */
+    .page-actions{
+      display:flex; gap:12px; justify-content:flex-end; align-items:center;
+      padding:.8rem 0 0;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px; font-weight:800;
+      border-radius:14px; border:2px solid #2d3955; padding:14px 20px; font-size:1.06rem;
+      background:rgba(255,255,255,.08); color:var(--nav-text);
+      backdrop-filter:saturate(1.2) blur(2px);
+      transition:transform .06s, filter .2s, box-shadow .2s;
+      box-shadow: 0 6px 22px rgba(17,24,39,.18);
+    }
+    .btn:hover{ filter:brightness(1.08); transform:translateY(-1px); box-shadow: 0 10px 28px rgba(17,24,39,.22); }
+    .btn.gold{ background:linear-gradient(90deg,var(--accent),var(--accent-gold)); border-color:transparent; color:#fff; }
+    .btn.accent{ background:linear-gradient(90deg, var(--accent), var(--accent-2)); border-color:transparent; color:#ffffff; }
+    @media (max-width: 540px){
+      .page-actions{ justify-content:stretch; }
+      .page-actions .btn{ flex:1 1 100%; font-size:1.02rem; padding:14px 18px; }
+    }
+
+    
+    /* ===== Tabs: big, colorful, sticky (high-contrast) ===== */
+    .tabbar{
+      position:static; top:auto; z-index:auto;
+      margin:.8rem 0 1rem; padding:.6rem;
+      border-radius:var(--radius-xl);
+      background:linear-gradient(135deg,rgba(41,83,155,.08),rgba(255,204,0,.10));
+      box-shadow:0 2px 8px rgba(41,83,155,.06);
+      display:flex; gap:.6rem; align-items:center; flex-wrap:wrap;
+    }
+    .tabbar [role="tab"]{
+      --ring: 0 0 0 0 rgba(41,83,155,.0);
+      appearance:none;
+      border:1px solid rgba(34,48,74,.25);
+      background:#ffffff;
+      color:var(--text-main);
+      font-weight:800; letter-spacing:.03em;
+      padding:.65rem 1rem; border-radius:999px; cursor:pointer;
+      display:inline-flex; align-items:center; gap:.55rem;
+      box-shadow:var(--ring);
+      transition:background .25s, border-color .25s, transform .06s, box-shadow .2s, color .2s;
+      user-select:none;
+    }
+    .dark .tabbar [role="tab"]{
+      background:#1a2235;
+      border-color:#334155;
+      color:#e5e7eb;
+    }
+    .tabbar [role="tab"]:hover{ transform:translateY(-1px); background:rgba(41,83,155,.18); }
+    .dark .tabbar [role="tab"]:hover{ background:rgba(59,130,246,.22); }
+    .tabbar [role="tab"][aria-selected="true"]{
+      border-color:transparent;
+      background:linear-gradient(90deg,var(--accent),var(--accent-gold));
+      color:#ffffff;
+      text-shadow:0 1px 0 rgba(0,0,0,.35);
+      box-shadow:0 0 0 6px rgba(41,83,155,.12);
+    }
+    .count{ margin-left:auto; font-weight:700; color:var(--text-main); }
+
+
+    .searchbar{
+      margin-left:auto; display:flex; gap:.6rem; align-items:center;
+      padding:.35rem .6rem; border:1px solid rgba(41,83,155,.25); border-radius:999px;
+      background:rgba(255,255,255,.5);
+    }
+    .dark .searchbar{ background:rgba(0,0,0,.15); }
+    .searchbar input{
+      width:220px; background:transparent; border:0; outline:0; color:var(--text-main);
+    }
+    @media (max-width:840px){ .searchbar input{ width:160px; } }
+
+    /* ===== Sections ===== */
+    h2{
+      font-family:var(--font-heading); font-weight:600; font-size:2rem; color:var(--heading-color);
+      margin:1.4rem 0 .8rem;
+    }
+    .section{
+      background:var(--card-bg);
+      border-left:5px solid var(--card-border);
+      border-radius:var(--radius-xl);
+      box-shadow:var(--card-shadow);
+      padding:1.1rem 1rem;
+      margin:1rem 0 1.4rem;
+      transition:transform .18s, background .35s, color .35s;
+    
+      scroll-margin-top: 110px;
+    }
+    .cv-item{
+      background:rgba(41,83,155,.04);
+      border:1px solid rgba(41,83,155,.12);
+      border-radius:var(--radius-lg);
+      padding:12px; margin-top:12px;
+    }
+.cv-head{ display:flex; flex-direction:column; align-items:flex-start; gap:4px; }
+    .cv-role{ font-weight:800; letter-spacing:.2px; }
+    .cv-meta{ color:var(--muted); font-size:.95rem; }
+    details{ margin-top:8px; }
+    summary{ cursor:pointer; font-weight:700; list-style:none; }
+    summary::-webkit-details-marker{ display:none; }
+
+    footer{
+      text-align:center; padding:2.2rem 1rem; color:#adadad; border-top:1px solid #2d3955;
+      margin-top:2rem; background:var(--nav-bg);
+    }
+  
+    /* ===== Small fixes ===== */
+    nav.main-nav { transition: transform .25s ease; will-change: transform; }
+    nav.main-nav.hide-nav { transform: translateY(-100%); }
+    .pdf-shell { border:1px solid rgba(41,83,155,.18); border-radius:12px; overflow:hidden; background:var(--card-bg); }
+    @media (max-width: 820px){
+      .pdf-shell embed { height: 70vh; }
+    }
+    @media (prefers-reduced-motion: reduce){
+      * { transition: none !important; animation: none !important; }
+    }
+
+    /* ===== Custom CV page layout ===== */
+    /* A responsive two-column grid for the CV filters and content. The sidebar becomes sticky on wider screens. */
+    .cv-grid{
+      display:flex;
+      flex-direction:column;
+      gap:2rem;
+    }
+    .cv-sidebar{
+      background:linear-gradient(135deg,rgba(41,83,155,.05),rgba(255,204,0,.07));
+      padding:1rem;
+      border-radius:var(--radius-xl);
+      box-shadow:0 2px 8px rgba(41,83,155,.06);
+    }
+    /* The tab list within the sidebar stacks vertically. */
+    .cv-sidebar .tabbar{
+      display:flex;
+      flex-direction:column;
+      gap:.4rem;
+    }
+    .cv-sidebar .tabbar [role="tab"]{
+      width:100%;
+    }
+    .cv-sidebar .searchbar{
+      margin-top:1rem;
+      width:100%;
+    }
+    .cv-content{
+      flex:1 1 auto;
+    }
+    @media (min-width:950px){
+      .cv-grid{ flex-direction:row; align-items:flex-start; }
+      .cv-sidebar{
+        flex:0 0 260px;
+        position:sticky;
+        top:110px;
+        max-height:calc(100vh - 130px);
+        overflow-y:auto;
+      }
+    }
+    /* Scroll progress indicator fixed at top of viewport */
+    #progress-bar{
+      position:fixed;
+      top:0;
+      left:0;
+      height:4px;
+      width:0%;
+      background:linear-gradient(90deg,var(--accent),var(--accent-gold));
+      z-index:1000;
+      transition:width .2s ease-out;
+    }
+
+    /* Floating back-to-top button */
+    #back-to-top{
+      position:fixed;
+      bottom:100px;
+      right:32px;
+      width:48px;
+      height:48px;
+      border-radius:50%;
+      background:linear-gradient(90deg,var(--accent),var(--accent-gold));
+      color:#fff;
+      border:none;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      font-size:1.4rem;
+      font-weight:700;
+      box-shadow:0 4px 14px rgba(0,0,0,.18);
+      cursor:pointer;
+      z-index:1000;
+    }
+    #back-to-top:hover{
+      filter:brightness(1.1);
+      transform:translateY(-2px);
+    }
+
+  
+</style>
 
   <!-- Mobile bottom tabs + hide top nav on phones -->
   <style>
@@ -305,6 +609,9 @@
   </style>
 </head>
 <body>
+  <div id="progress-bar"></div>
+</div>
+
   <header>
     <button class="dark-toggle" role="button" tabindex="0" aria-pressed="false" aria-label="Toggle dark mode" title="Toggle dark mode">
       <svg class="icon-sun-moon" viewBox="0 0 24 24">
@@ -653,16 +960,24 @@
   </nav>
 
   <!-- Bottom tabs active highlight -->
-  <script>
+<script>
+
     (function(){
-      var path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-      document.querySelectorAll('.bottom-tabs .tab-link').forEach(function(a){
-        var href = (a.getAttribute('href')||'').toLowerCase();
-        if(!href.startsWith('http') && ((path === '' && href === 'index.html') || path === href)){
-          a.setAttribute('aria-current','page');
-        }
-      });
+      function updateProgress(){
+        var bar = document.getElementById('progress-bar');
+        if(!bar) return;
+        var doc = document.documentElement;
+        var scrollTop = window.scrollY || doc.scrollTop;
+        var height = doc.scrollHeight - window.innerHeight;
+        var percent = 0;
+        if (height > 0) percent = (scrollTop / height) * 100;
+        bar.style.width = percent + '%';
+      }
+      window.addEventListener('scroll', updateProgress);
+      window.addEventListener('resize', updateProgress);
+      document.addEventListener('DOMContentLoaded', updateProgress);
     })();
-  </script>
+  
+</script>
 </body>
 </html>
