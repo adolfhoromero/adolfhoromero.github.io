@@ -2480,6 +2480,14 @@ nav.main-nav a.cv-link {
         }
       }
     </style>
+
+<style>
+/* Force sun-only toggle and neutralize older rules */
+.dark-toggle::before{ content:none !important; }
+.dark-toggle .icon-sun-moon{ display:none !important; }
+.dark-toggle .icon-sun{ width:2.1rem; height:2.1rem; fill:var(--accent-gold); stroke:var(--accent); display:block; }
+</style>
+
 </head>
 
 <body>
@@ -2488,9 +2496,18 @@ nav.main-nav a.cv-link {
 
   <header>
     <button class="dark-toggle" role="button" tabindex="0" aria-pressed="false" aria-label="Toggle dark mode" title="Toggle dark mode">
-      <svg class="icon-sun-moon" viewBox="0 0 24 24">
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
         <circle cx="12" cy="12" r="5.5" stroke-width="2"/>
-        <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M17.36 17.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M17.36 6.64l1.42-1.42"/>
+        <g stroke-width="2" stroke-linecap="round">
+          <path d="M12 1.5v3"/>
+          <path d="M12 19.5v3"/>
+          <path d="M4.22 4.22l2.12 2.12"/>
+          <path d="M17.66 17.66l2.12 2.12"/>
+          <path d="M1.5 12h3"/>
+          <path d="M19.5 12h3"/>
+          <path d="M4.22 19.78l2.12-2.12"/>
+          <path d="M17.66 6.34l2.12-2.12"/>
+        </g>
       </svg>
     </button>
     <h1 class="site-title"><a href="index.html" aria-label="Go to Home">Adolfho Romero</a></h1>
@@ -3014,6 +3031,13 @@ nav.main-nav a.cv-link {
   if(localStorage.getItem('theme') === 'dark'){
     document.documentElement.classList.add('dark');
   }
+
+  // Hook up click for the sun button
+  document.addEventListener('DOMContentLoaded', function(){
+    var btn = document.querySelector('.dark-toggle');
+    if(btn){ btn.addEventListener('click', toggleDarkMode); }
+  });
+
 
   // Enhanced scroll reveal functionality
   function revealOnScroll() {
