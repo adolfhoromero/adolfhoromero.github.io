@@ -2128,42 +2128,43 @@ nav.main-nav a.cv-link {
 })();
 </script>
 <script>
-  // Quotes carousel logic (with images synced to the active quote)
+  // Quotes carousel logic (with robust image fallbacks)
   (function() {
     var quotesData = [
       {
         text: "The teach-in was concluded with additional resources provided by Adolfho Romero, Samuel Proctor Oral History Program project coordinator.",
         source: "The Independent Florida Alligator, Apr 18, 2024",
         link: "https://www.alligator.org/article/2024/04/uff-uf-holds-virtual-teach-in-to-discuss-academic-freedom-future-of-higher-education",
-        img: "images/media/alligator.jpg",
+        // full path already known for this one
+        img: "alligator.jpeg",
         imgAlt: "Independent Florida Alligator article"
       },
       {
         text: "This dark time of violence and barbarity led to separation between groups, said Adolfho Romero, assistant director of the Samuel Proctor Oral History Program.",
         source: "WUSF Public Media, Jan 29, 2022",
         link: "https://www.wusf.org/arts-culture/2022-01-29/lynching-victims-in-alachua-county-will-be-remembered-through-a-soil-collection-ceremony",
-        img: "images/media/WUSF.jpg",
+        img: "WUSF.jpg",
         imgAlt: "WUSF feature"
       },
       {
         text: "Oral history is not about collecting, it is about connecting.",
         source: "The Footnote, Apr 22, 2025",
         link: "https://the-footnote.org/2025/04/22/an-oral-history-of-a-native-son-the-elaine-massacre-and-its-living-memory/",
-        img: "images/media/footnote.jpeg",
+        img: "footnote.jpeg",
         imgAlt: "The Footnote article"
       },
       {
         text: "This episode will examine how the University of Florida has challenged racism.",
         source: "Podcast Interview",
         link: "https://open.spotify.com/episode/48PxeaSW0SnKVNc6zHhz2u?si=e49a0224cc2349a4",
-        img: "images/media/podcast.jpeg",
+        img: "podcast.jpeg",
         imgAlt: "Podcast cover"
       },
       {
         text: "Since the early summer of 2020, the Alachua County Labor Coalition started helping tenants by developing the Alachua County Tenants Association.",
         source: "The Gainesville Iguana, Mar 2021",
         link: "https://gainesvilleiguana.org/2021/articles/the-alachua-county-tenants-association-updates/",
-        img: "images/media/iguana.jpeg",
+        img: "iguana.jpeg",
         imgAlt: "Gainesville Iguana piece"
       }
     ];
@@ -2172,13 +2173,73 @@ nav.main-nav a.cv-link {
     var mediaA = document.getElementById('quote-media');
     var mediaImg = document.getElementById('quote-image');
 
+    function tryLoad(srcs, done){
+      if (!srcs || !srcs.length){ done(""); return; }
+      var s = srcs[0];
+      var test = new Image();
+      test.onload = function(){ done(s); };
+      test.onerror = function(){ tryLoad(srcs.slice(1), done); };
+      test.src = s;
+    }
+
+    
+function candidatesFor(imgValue){
+  var parts = [];
+  if (!imgValue){ return parts; }
+  if (imgValue.indexOf('/') !== -1){
+    // path already includes folders; try as-is and a root-absolute variant
+    parts = [imgValue, "/" + imgValue.replace(/^\//, "")];
+  } else {
+    var f = imgValue.trim();
+    // include the bare filename FIRST (repo root files)
+    parts = [f];
+    // then common folders used on sites
+    var roots = ["images/media/", "images/", "/images/media/", "/images/", "media/", "/media/", "img/", "/img/", "assets/", "/assets/"];
+    for (var i=0;i<roots.length;i++){ parts.push(roots[i] + f); }
+  }
+  // Deduplicate
+  var seen = {}; var out = [];
+  for (var i=0;i<parts.length;i++){ if(!seen[parts[i]]){ seen[parts[i]] = 1; out.push(parts[i]); } }
+  return out;
+}
+ else {
+        var f = imgValue.trim();
+        // common folders used on your site
+        var roots = ["images/media/", "images/", "/images/media/", "/images/", "media/", "/media/", "img/", "/img/", "assets/", "/assets/"];
+        parts = roots.map(function(r){ return r + f; });
+      }
+      // Deduplicate
+      var seen = {}; var out = [];
+      for (var i=0;i<parts.length;i++){ if(!seen[parts[i]]){ seen[parts[i]] = 1; out.push(parts[i]); } }
+      return out;
+    }
+
+    function setImageForQuote(q){
+      var srcList = candidatesFor(q.img || "");
+      if (!mediaImg){ return; }
+      tryLoad(srcList, function(okSrc){
+        if (okSrc){
+          mediaImg.src = okSrc;
+          mediaImg.alt = q.imgAlt || q.source || "Media image";
+          if (mediaA) mediaA.href = q.link || "#";
+          mediaImg.style.visibility = "visible";
+        } else {
+          // Nothing found: hide image block gracefully
+          mediaImg.removeAttribute("src");
+          mediaImg.alt = "";
+          mediaImg.style.visibility = "hidden";
+          if (mediaA) mediaA.removeAttribute("href");
+        }
+      });
+    }
+
     if (carousel) {
       // Build quote slides
       quotesData.forEach(function(q, idx){
         var slide = document.createElement('div');
         slide.className = 'quote-slide';
         if (idx === 0) slide.classList.add('active');
-        slide.innerHTML = '<p>' + q.text + '</p><cite>— <a href="' + q.link + '" target="_blank" rel="noopener">' + q.source + '</a></cite>';
+        slide.innerHTML = '<p>' + q.text + '</p><cite>— <a href=\"' + q.link + '\" target=\"_blank\" rel=\"noopener\">' + q.source + '</a></cite>';
         carousel.appendChild(slide);
       });
 
@@ -2187,29 +2248,20 @@ nav.main-nav a.cv-link {
       var prevBtn = document.querySelector('.carousel-prev');
       var nextBtn = document.querySelector('.carousel-next');
 
-      function updateMedia(i){
-        var q = quotesData[i];
-        if (mediaA) mediaA.href = q.link || '#';
-        if (mediaImg){
-          mediaImg.src = q.img || '';
-          mediaImg.alt = q.imgAlt || q.source || 'Media image';
-        }
-      }
-
       function showSlide(index) {
         slides[current].classList.remove('active');
         current = (index + slides.length) % slides.length;
         slides[current].classList.add('active');
-        updateMedia(current);
+        setImageForQuote(quotesData[current]);
       }
 
-      // init image for first slide
-      updateMedia(0);
+      // init for first slide
+      setImageForQuote(quotesData[0]);
 
       if (prevBtn) prevBtn.addEventListener('click', function(){ showSlide(current - 1); });
       if (nextBtn) nextBtn.addEventListener('click', function(){ showSlide(current + 1); });
 
-      // Auto rotate every 8s + pause on hover/focus if your controls exist
+      // Auto rotate every 8s + pause on hover/focus
       var timer = setInterval(function(){ showSlide(current + 1); }, 8000);
       [prevBtn, nextBtn, carousel].forEach(function(el){
         if (!el) return;
