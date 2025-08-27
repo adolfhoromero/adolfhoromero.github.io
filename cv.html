@@ -471,6 +471,42 @@
         box-shadow:0 6px 18px rgba(0,0,0,.25);
       }
     </style>
+    <style>
+      /* Custom overrides to remove extra bottom whitespace on larger screens and reposition the Calendly badge button. */
+      @media (min-width: 821px) {
+        body {
+          /* Remove extra space beneath the footer on desktop */
+          padding-bottom: 0 !important;
+        }
+        .calendly-badge-widget {
+          /* Shift the badge upwards so it clears the footer. */
+          transform: translateY(-120px) !important;
+          opacity: 0.85;
+          transition: opacity 0.3s ease;
+        }
+        .calendly-badge-widget:hover {
+          opacity: 1;
+        }
+      }
+    </style>
+    <style>
+      /* Custom overrides to remove extra bottom whitespace on larger screens and reposition the Calendly badge button. */
+      @media (min-width: 821px) {
+        body {
+          /* Remove extra space beneath the footer on desktop */
+          padding-bottom: 0 !important;
+        }
+        .calendly-badge-widget {
+          /* Shift the badge upwards so it clears the footer. */
+          transform: translateY(-120px) !important;
+          opacity: 0.85;
+          transition: opacity 0.3s ease;
+        }
+        .calendly-badge-widget:hover {
+          opacity: 1;
+        }
+      }
+    </style>
   </head>
 <body><script>
 (function(){
@@ -538,7 +574,7 @@
   <div id="progress-bar"></div>
   <!-- Top actions: download button and PDF embed -->
   <div class="page-actions">
-    <a aria-label="Download the CV PDF" class="btn gold" download="" href="/adolfhoromerocv.pdf" rel="noopener" target="_blank">Download CV</a>
+    <a aria-label="Download the CV PDF" class="btn gold" download="" href="adolfhoromerocv.pdf" rel="noopener" target="_blank">Download CV</a>
   </div>
   <!-- Embedded full PDF is now near the top for easier access -->
   <section class="section" id="full-pdf">
@@ -546,14 +582,14 @@
     <article class="cv-item">
       <p class="cv-meta">Open the embedded PDF or use the buttons below.</p>
       <div aria-label="Embedded PDF viewer" class="pdf-shell" id="pdf-shell" role="region">
-        <embed id="pdf-embed" src="/adolfhoromerocv.pdf#toolbar=1&amp;navpanes=0" style="display:block;width:100%;height:100%;" type="application/pdf" />
+        <embed id="pdf-embed" src="adolfhoromerocv.pdf#toolbar=1&amp;navpanes=0" style="display:block;width:100%;height:100%;" type="application/pdf" />
       </div>
       <div class="page-actions" style="display:flex; gap:12px; justify-content:flex-start; margin-top:10px;">
-        <a aria-label="Open CV PDF in a new tab" class="btn accent" href="/adolfhoromerocv.pdf" rel="noopener" target="_blank">Open in new tab</a>
+        <a aria-label="Open CV PDF in a new tab" class="btn accent" href="adolfhoromerocv.pdf" rel="noopener" target="_blank">Open in new tab</a>
         <button class="btn gold" id="toggle-pdf-full" type="button">Full screen</button>
       </div>
       <noscript>
-        <p>If the PDF does not display, <a href="/adolfhoromerocv.pdf" rel="noopener" target="_blank">open it in a new tab</a>.</p>
+        <p>If the PDF does not display, <a href="adolfhoromerocv.pdf" rel="noopener" target="_blank">open it in a new tab</a>.</p>
       </noscript>
     </article>
   </section>
@@ -1633,5 +1669,64 @@
   });
 })();
 </script>
+  <script>
+    /*
+      Fade out the Calendly badge near the bottom of the page.
+      The Calendly widget injects a floating button fixed to the bottom right.  Without
+      adjustment it can overlap the dark footer.  This listener reduces its opacity and
+      disables interaction when the user approaches the bottom of the page.
+    */
+    (function() {
+      function handleBadgeVisibility() {
+        var badge = document.querySelector('.calendly-badge-widget');
+        if (!badge) return;
+        var scrollTop = window.scrollY || document.documentElement.scrollTop;
+        var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        var distance = maxScroll - scrollTop;
+        if (distance < 200) {
+          badge.style.opacity = '0';
+          badge.style.pointerEvents = 'none';
+        } else {
+          badge.style.opacity = '';
+          badge.style.pointerEvents = '';
+        }
+      }
+      window.addEventListener('scroll', handleBadgeVisibility);
+      window.addEventListener('resize', handleBadgeVisibility);
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(handleBadgeVisibility, 600);
+      });
+    })();
+  </script>
+  <script>
+    /*
+      Fade out the Calendly badge near the bottom of the page.
+      The Calendly widget injects a floating button fixed to the bottom right.  Without
+      adjustment it can overlap the dark footer.  This listener reduces its opacity and
+      disables interaction when the user approaches the bottom of the page.
+    */
+    (function() {
+      function handleBadgeVisibility() {
+        var badge = document.querySelector('.calendly-badge-widget');
+        if (!badge) return;
+        var scrollTop = window.scrollY || document.documentElement.scrollTop;
+        var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        var distance = maxScroll - scrollTop;
+        if (distance < 200) {
+          badge.style.opacity = '0';
+          badge.style.pointerEvents = 'none';
+        } else {
+          badge.style.opacity = '';
+          badge.style.pointerEvents = '';
+        }
+      }
+      window.addEventListener('scroll', handleBadgeVisibility);
+      window.addEventListener('resize', handleBadgeVisibility);
+      document.addEventListener('DOMContentLoaded', function() {
+        // Allow time for Calendly script to inject the badge
+        setTimeout(handleBadgeVisibility, 600);
+      });
+    })();
+  </script>
 </body>
 </html>
