@@ -1067,13 +1067,13 @@ nav.main-nav a.cv-link {
       color: #000;
     }
 
-    /* Small logo under each quote in the carousel */
-    .quote-slide .quote-logo {
+    /* Logo display beneath each quote in the carousel */
+    .quote-logo {
       margin-top: 0.6rem;
       display: flex;
       align-items: center;
     }
-    .quote-slide .quote-logo img {
+    .quote-logo img {
       height: 36px;
       width: auto;
       border-radius: 4px;
@@ -2142,48 +2142,46 @@ nav.main-nav a.cv-link {
 <script>
   // Quotes carousel logic (with images synced to the active quote)
   (function() {
-    // Each quote now includes a logo property used to display a small image at the bottom
     var quotesData = [
       {
         text: "The teach-in was concluded with additional resources provided by Adolfho Romero, Samuel Proctor Oral History Program project coordinator.",
         source: "The Independent Florida Alligator, Apr 18, 2024",
         link: "https://www.alligator.org/article/2024/04/uff-uf-holds-virtual-teach-in-to-discuss-academic-freedom-future-of-higher-education",
-        // updated image path and matching logo; alligator.jpeg is the filename provided by the user
-        img: "images/media/alligator.jpeg",
+        img: "alligator.jpeg",
         imgAlt: "Independent Florida Alligator article",
-        logo: "images/media/alligator.jpeg"
+        logo: "alligator.jpeg"
       },
       {
         text: "This dark time of violence and barbarity led to separation between groups, said Adolfho Romero, assistant director of the Samuel Proctor Oral History Program.",
         source: "WUSF Public Media, Jan 29, 2022",
         link: "https://www.wusf.org/arts-culture/2022-01-29/lynching-victims-in-alachua-county-will-be-remembered-through-a-soil-collection-ceremony",
-        img: "images/media/WUSF.jpg",
+        img: "WUSF.jpg",
         imgAlt: "WUSF feature",
-        logo: "images/media/WUSF.jpg"
+        logo: "WUSF.jpg"
       },
       {
         text: "Oral history is not about collecting, it is about connecting.",
         source: "The Footnote, Apr 22, 2025",
         link: "https://the-footnote.org/2025/04/22/an-oral-history-of-a-native-son-the-elaine-massacre-and-its-living-memory/",
-        img: "images/media/footnote.jpeg",
+        img: "footnote.jpeg",
         imgAlt: "The Footnote article",
-        logo: "images/media/footnote.jpeg"
+        logo: "footnote.jpeg"
       },
       {
         text: "This episode will examine how the University of Florida has challenged racism.",
         source: "Podcast Interview",
         link: "https://open.spotify.com/episode/48PxeaSW0SnKVNc6zHhz2u?si=e49a0224cc2349a4",
-        img: "images/media/podcast.jpeg",
+        img: "podcast.jpeg",
         imgAlt: "Podcast cover",
-        logo: "images/media/podcast.jpeg"
+        logo: "podcast.jpeg"
       },
       {
         text: "Since the early summer of 2020, the Alachua County Labor Coalition started helping tenants by developing the Alachua County Tenants Association.",
         source: "The Gainesville Iguana, Mar 2021",
         link: "https://gainesvilleiguana.org/2021/articles/the-alachua-county-tenants-association-updates/",
-        img: "images/media/iguana.jpeg",
+        img: "iguana.jpeg",
         imgAlt: "Gainesville Iguana piece",
-        logo: "images/media/iguana.jpeg"
+        logo: "iguana.jpeg"
       }
     ];
 
@@ -2197,17 +2195,14 @@ nav.main-nav a.cv-link {
         var slide = document.createElement('div');
         slide.className = 'quote-slide';
         if (idx === 0) slide.classList.add('active');
-        // Build the HTML for each quote, including a small logo beneath the citation
-        var html = '';
-        html += '<p>' + q.text + '</p>';
-        html += '<cite>— <a href="' + q.link + '" target="_blank" rel="noopener">' + q.source + '</a></cite>';
-        // Only add the logo if it exists; this allows extension without logos
+        // Build quote HTML with an optional logo shown underneath
+        var quoteHtml = '<p>' + q.text + '</p>';
+        quoteHtml += '<cite>— <a href="' + q.link + '" target="_blank" rel="noopener">' + q.source + '</a></cite>';
+        // Append the logo if one is provided on the data object
         if (q.logo) {
-          // use the provided imgAlt for alt text on the small logo to improve accessibility
-          var smallAlt = q.imgAlt || (q.source + ' logo');
-          html += '<div class="quote-logo"><img src="' + q.logo + '" alt="' + smallAlt + '"></div>';
+          quoteHtml += '<div class="quote-logo"><img src="' + q.logo + '" alt="' + (q.imgAlt || '') + '"></div>';
         }
-        slide.innerHTML = html;
+        slide.innerHTML = quoteHtml;
         carousel.appendChild(slide);
       });
 
