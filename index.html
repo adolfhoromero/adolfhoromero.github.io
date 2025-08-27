@@ -1067,7 +1067,7 @@ nav.main-nav a.cv-link {
       color: #000;
     }
 
-    /* Logo display beneath each quote in the carousel */
+    /* Additional styling for small logos beneath quotes */
     .quote-logo {
       margin-top: 0.6rem;
       display: flex;
@@ -2148,7 +2148,7 @@ nav.main-nav a.cv-link {
         source: "The Independent Florida Alligator, Apr 18, 2024",
         link: "https://www.alligator.org/article/2024/04/uff-uf-holds-virtual-teach-in-to-discuss-academic-freedom-future-of-higher-education",
         img: "alligator.jpeg",
-        imgAlt: "Independent Florida Alligator article",
+        imgAlt: "The Independent Florida Alligator logo",
         logo: "alligator.jpeg"
       },
       {
@@ -2156,7 +2156,7 @@ nav.main-nav a.cv-link {
         source: "WUSF Public Media, Jan 29, 2022",
         link: "https://www.wusf.org/arts-culture/2022-01-29/lynching-victims-in-alachua-county-will-be-remembered-through-a-soil-collection-ceremony",
         img: "WUSF.jpg",
-        imgAlt: "WUSF feature",
+        imgAlt: "WUSF Public Media logo",
         logo: "WUSF.jpg"
       },
       {
@@ -2164,7 +2164,7 @@ nav.main-nav a.cv-link {
         source: "The Footnote, Apr 22, 2025",
         link: "https://the-footnote.org/2025/04/22/an-oral-history-of-a-native-son-the-elaine-massacre-and-its-living-memory/",
         img: "footnote.jpeg",
-        imgAlt: "The Footnote article",
+        imgAlt: "The Footnote logo",
         logo: "footnote.jpeg"
       },
       {
@@ -2172,7 +2172,7 @@ nav.main-nav a.cv-link {
         source: "Podcast Interview",
         link: "https://open.spotify.com/episode/48PxeaSW0SnKVNc6zHhz2u?si=e49a0224cc2349a4",
         img: "podcast.jpeg",
-        imgAlt: "Podcast cover",
+        imgAlt: "Podcast art for Challenging Racism at UF",
         logo: "podcast.jpeg"
       },
       {
@@ -2180,7 +2180,7 @@ nav.main-nav a.cv-link {
         source: "The Gainesville Iguana, Mar 2021",
         link: "https://gainesvilleiguana.org/2021/articles/the-alachua-county-tenants-association-updates/",
         img: "iguana.jpeg",
-        imgAlt: "Gainesville Iguana piece",
+        imgAlt: "The Gainesville Iguana logo",
         logo: "iguana.jpeg"
       }
     ];
@@ -2195,10 +2195,7 @@ nav.main-nav a.cv-link {
         var slide = document.createElement('div');
         slide.className = 'quote-slide';
         if (idx === 0) slide.classList.add('active');
-        // Build quote HTML with an optional logo shown underneath
-        var quoteHtml = '<p>' + q.text + '</p>';
-        quoteHtml += '<cite>— <a href="' + q.link + '" target="_blank" rel="noopener">' + q.source + '</a></cite>';
-        // Append the logo if one is provided on the data object
+        var quoteHtml = '<p>' + q.text + '</p><cite>— <a href="' + q.link + '" target="_blank" rel="noopener">' + q.source + '</a></cite>';
         if (q.logo) {
           quoteHtml += '<div class="quote-logo"><img src="' + q.logo + '" alt="' + (q.imgAlt || '') + '"></div>';
         }
