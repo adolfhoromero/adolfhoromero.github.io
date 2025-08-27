@@ -1807,17 +1807,20 @@ nav.main-nav a.cv-link {
 }
 @media (min-width: 821px){
   .quotes-layout{
-    grid-template-columns: minmax(280px, 420px) minmax(320px, 1fr);
+    grid-template-columns: minmax(220px, 340px) minmax(400px, 1fr);
   }
 }
 .quote-media{
   position:relative;
+  max-width: 560px;
+  width: 100%;
+  margin: 0 auto;
   display:block;
   border-radius:12px;
   overflow:hidden;
   background: linear-gradient(135deg, rgba(41,83,155,.08), rgba(255,204,0,.08));
   box-shadow: 0 10px 26px rgba(0,0,0,.12);
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
 }
 .quote-media img{
   width:100%;
