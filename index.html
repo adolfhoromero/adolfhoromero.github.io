@@ -1651,6 +1651,32 @@ nav.main-nav a.cv-link {
 
   
 </style>
+    <style>
+      /* Custom overrides to remove extra bottom whitespace on larger screens and reposition the Calendly badge button. */
+      /*
+        The original styles define a global bottom padding on the body to make room for the mobile tab bar.  On desktop
+        screens (>820px) this left a large light‑colored band below the footer.  Here we reset the bottom padding and
+        move the Calendly floating button up so it clears the dark footer.
+      */
+      @media (min-width: 821px) {
+        body {
+          /* Remove extra space beneath the footer on desktop */
+          padding-bottom: 0 !important;
+        }
+        /* Position the Calendly badge further up the page so it finishes above the footer */
+        .calendly-badge-widget {
+          /* Shift the badge upwards so it clears the footer.  */
+          /* We cannot override the inline bottom positioning, so a translateY is used to move it up. */
+          transform: translateY(-120px) !important;
+          opacity: 0.85;
+          transition: opacity 0.3s ease;
+        }
+        /* On hover the badge becomes fully opaque */
+        .calendly-badge-widget:hover {
+          opacity: 1;
+        }
+      }
+    </style>
 <style>
 .contact-modern { max-width:1100px; margin:2rem auto; padding:0 1rem }
 .contact-grid2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px }
@@ -2191,7 +2217,36 @@ document.querySelectorAll('.copy-email').forEach(btn => {
       window.addEventListener('resize', updateProgress);
       document.addEventListener('DOMContentLoaded', updateProgress);
     })();
-  
+</script>
+<script>
+  /*
+    Fade out the Calendly badge near the bottom of the page.
+    The Calendly widget injects a floating button fixed to the bottom right.  Without
+    adjustment it can overlap the dark footer.  This listener reduces its opacity and
+    disables interaction when the user approaches the bottom of the page.
+  */
+  (function() {
+    function handleBadgeVisibility() {
+      var badge = document.querySelector('.calendly-badge-widget');
+      if (!badge) return;
+      var scrollTop = window.scrollY || document.documentElement.scrollTop;
+      var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      var distance = maxScroll - scrollTop;
+      if (distance < 200) {
+        badge.style.opacity = '0';
+        badge.style.pointerEvents = 'none';
+      } else {
+        badge.style.opacity = '';
+        badge.style.pointerEvents = '';
+      }
+    }
+    window.addEventListener('scroll', handleBadgeVisibility);
+    window.addEventListener('resize', handleBadgeVisibility);
+    document.addEventListener('DOMContentLoaded', function() {
+      // Allow time for Calendly script to inject the badge
+      setTimeout(handleBadgeVisibility, 600);
+    });
+  })();
 </script>
 </body>
 </html>
