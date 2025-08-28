@@ -207,10 +207,24 @@
       scroll-margin-top: 110px;
     }
     .cv-item{
-      background:rgba(41,83,155,.04);
-      border:1px solid rgba(41,83,155,.12);
+      position:relative;
+      overflow:hidden;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(41,83,155,.14);
       border-radius:var(--radius-lg);
-      padding:12px; margin-top:12px;
+      padding:12px;
+      margin-top:12px;
+      backdrop-filter:blur(6px) saturate(1.2);
+      box-shadow:0 4px 12px rgba(0,0,0,.06);
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+    .dark .cv-item{
+      background:rgba(255,255,255,.04);
+      border-color:rgba(59,130,246,.18);
+    }
+    .cv-item:hover{
+      transform:translateY(-3px);
+      box-shadow:0 10px 24px rgba(0,0,0,.15);
     }
 .cv-head{ display:flex; flex-direction:column; align-items:flex-start; gap:4px; }
     .cv-role{ font-weight:800; letter-spacing:.2px; }
@@ -285,6 +299,7 @@
       z-index:1000;
       transition:width .2s ease-out;
     }
+
 
     /* Floating back-to-top button */
     #back-to-top{
@@ -580,9 +595,12 @@
   <section class="section" id="full-pdf">
     <h2>Adolfho Romero Full CV (PDF)</h2>
     <article class="cv-item">
-      <p class="cv-meta">Open the embedded PDF or use the buttons below.</p>
-      <div aria-label="Embedded PDF viewer" class="pdf-shell" id="pdf-shell" role="region">
-        <embed id="pdf-embed" src="adolfhoromerocv.pdf#toolbar=1&amp;navpanes=0" style="display:block;width:100%;height:100%;" type="application/pdf" />
+      <p class="cv-meta">You can preview the CV below or open it in a dedicated view. If the preview does not load, use the buttons to open or download the PDF.</p>
+      <div aria-label="Embedded PDF preview" class="pdf-shell" id="pdf-shell" role="region" style="height:420px;">
+        <!-- Use an iframe for better cross‑browser PDF support. Fallback shows a polite message -->
+        <iframe id="pdf-frame" src="adolfhoromerocv.pdf#toolbar=0" width="100%" height="100%" style="border:0;" loading="lazy">
+          <p>Your browser does not support embedded PDFs. Please <a href="adolfhoromerocv.pdf" rel="noopener" target="_blank">download the PDF</a> to view it.</p>
+        </iframe>
       </div>
       <div class="page-actions" style="display:flex; gap:12px; justify-content:flex-start; margin-top:10px;">
         <a aria-label="Open CV PDF in a new tab" class="btn accent" href="adolfhoromerocv.pdf" rel="noopener" target="_blank">Open in new tab</a>
@@ -892,92 +910,212 @@
 </section>
 <!-- Conference Presentations -->
 <section class="section" id="conferences"><h2>Conference Presentations</h2>
-<article class="cv-item" data-cats="conferences research">
-<div class="cv-head">
-<div class="cv-role">Reimagining Power Resources Approach</div>
-<div class="cv-meta">SASE · Montreal · 2025</div>
-</div>
-</article>
-<article class="cv-item" data-cats="conferences research">
-<div class="cv-head">
-<div class="cv-role">Organizing Educators in the Sunshine State</div>
-<div class="cv-meta">Southern Historical Association · St. Petersburg, FL · 2025 (accepted)</div>
-</div>
-</article>
-<article class="cv-item" data-cats="conferences research">
-<div class="cv-head">
-<div class="cv-role">Challenging Racism at UF in the “Stop Woke” Era</div>
-<div class="cv-meta">Oral History Association · Baltimore, MD · 2023</div>
-</div>
-</article>
-<article class="cv-item" data-cats="conferences research">
-<div class="cv-head">
-<div class="cv-role">Documenting Black Resistance in the Mississippi Delta</div>
-<div class="cv-meta">ASALH · Jacksonville, FL · 2023</div>
-</div>
-</article>
-<article class="cv-item" data-cats="conferences research">
-<div class="cv-head">
-<div class="cv-role">From Fieldwork to Film</div>
-<div class="cv-meta">11th National Civil Rights Conference · Baton Rouge, LA · 2022</div>
-</div>
-</article>
-<article class="cv-item" data-cats="conferences research">
-<div class="cv-head">
-<div class="cv-role">Historical and Contemporary Challenges of Migration</div>
-<div class="cv-meta">Oral History Association · Los Angeles, CA · 2022</div>
-</div>
-</article>
-<article class="cv-item" data-cats="conferences research">
-<div class="cv-head">
-<div class="cv-role">Examining the Mestiza Consciousness</div>
-<div class="cv-meta">McNair Conference · Schaumburg, IL · 2018</div>
-</div>
-</article>
+  <article class="cv-item" data-cats="conferences research">
+    <div class="cv-head">
+      <div class="cv-role">Reimagining Power Research Approach: Worker Centers and the Quest for Working‑Class Empowerment</div>
+      <div class="cv-meta">Panelist · Society for the Advancement of Socio‑Economics (SASE) · Montreal, Canada · 2025</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="conferences research">
+    <div class="cv-head">
+      <div class="cv-role">Organizing Educators in the Sunshine State</div>
+      <div class="cv-meta">Panelist · Southern Historical Association · Trade Winds Resort, St. Petersburg, FL · 2025 (accepted)</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="conferences research">
+    <div class="cv-head">
+      <div class="cv-role">Challenging Racism at UF in the “Stop Woke” Era</div>
+      <div class="cv-meta">Panelist · Oral History Association · Hyatt Regency Baltimore, Baltimore, MD · 2023</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="conferences research">
+    <div class="cv-head">
+      <div class="cv-role">Documenting Black Resistance in the Mississippi Delta</div>
+      <div class="cv-meta">Panelist · Association for the Study of African American Life and History (ASALH) · Hyatt Regency Riverfront, Jacksonville, FL · 2023</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="conferences research">
+    <div class="cv-head">
+      <div class="cv-role">The Enduring Resonance of the Joel Buchanan Archive of African American Oral History</div>
+      <div class="cv-meta">Panelist · ASALH · Hyatt Regency Riverfront, Jacksonville, FL · 2023</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="conferences research">
+    <div class="cv-head">
+      <div class="cv-role">Challenging Racism at the University of Florida in the “Stop Woke” Era</div>
+      <div class="cv-meta">Panelist · ASALH · Hyatt Regency Riverfront, Jacksonville, FL · 2023</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="conferences research">
+    <div class="cv-head">
+      <div class="cv-role">Oscar Mack versus the Ku Klux Klan</div>
+      <div class="cv-meta">Panelist · ASALH · Hyatt Regency Riverfront, Jacksonville, FL · 2023</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="conferences research">
+    <div class="cv-head">
+      <div class="cv-role">Best Practices for Transcribing the Venus McGhee Prince Project Collection</div>
+      <div class="cv-meta">Presenter · Poarch Band of Creek Indians Community Center · Mobile, AL · 2023</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="conferences research">
+    <div class="cv-head">
+      <div class="cv-role">Transcribing and Re‑Transcribing the Doris Duke Collection</div>
+      <div class="cv-meta">Presenter · Association of Tribal Archives, Libraries &amp; Museums (ATALM) · Pechanga Resort &amp; Casino, Temecula, CA · 2023</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="conferences research">
+    <div class="cv-head">
+      <div class="cv-role">Educating, Transforming, and Building Solidarity through the Mississippi Delta</div>
+      <div class="cv-meta">Panelist · 11th National Civil Rights Conference · Hilton Baton Rouge Capitol Center, Baton Rouge, LA · 2022</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="conferences research">
+    <div class="cv-head">
+      <div class="cv-role">From Fieldwork to Film: Using Oral History to Explore Equity and Inclusion in Higher Education</div>
+      <div class="cv-meta">Panelist · Oral History Association · Millennium Biltmore Hotel, Los Angeles, CA · 2022</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="conferences research">
+    <div class="cv-head">
+      <div class="cv-role">Historical and Contemporary Challenges of Migration from Europe and Latin America</div>
+      <div class="cv-meta">Presenter · Oral History Association · Millennium Biltmore Hotel, Los Angeles, CA · 2022</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="conferences research">
+    <div class="cv-head">
+      <div class="cv-role">A Decade of Documenting Agricultural Workers’ Struggles</div>
+      <div class="cv-meta">Panelist · The Labor &amp; Working‑Class History Association (LAWCHA) · University of Illinois at Chicago, Chicago, IL · 2021</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="conferences research">
+    <div class="cv-head">
+      <div class="cv-role">Comparative Urbanism: Global Perspectives Conference</div>
+      <div class="cv-meta">Attended · Andrew Young School Urban Studies Institute, Georgia State University · Atlanta, GA · 2019</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="conferences research">
+    <div class="cv-head">
+      <div class="cv-role">Examining the Mestiza Consciousness</div>
+      <div class="cv-meta">Presenter · Ronald E. McNair Research Conference · Renaissance Convention Center, Schaumburg, IL · 2018</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="conferences research">
+    <div class="cv-head">
+      <div class="cv-role">Examining the Mestiza Consciousness: Novels of Latina Women</div>
+      <div class="cv-meta">Presenter · Summer Research Opportunity Program · Purdue University, Lafayette, IN · 2018</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="conferences research">
+    <div class="cv-head">
+      <div class="cv-role">Puerto Rican Displacement and the Effects of Gentrification in Humboldt Park and Albany Park</div>
+      <div class="cv-meta">Presenter · Northeastern Illinois University · Chicago, IL · 2018</div>
+    </div>
+  </article>
 </section>
 <!-- Guest Lectures and Workshops -->
 <section class="section" id="lectures"><h2>Guest Lectures &amp; Workshops</h2>
 <article class="cv-item" data-cats="lectures teaching">
-<div class="cv-head">
-<div class="cv-role">Oral History Interviews and Methodologies</div>
-<div class="cv-meta">UF Center for the Humanities · May 2024</div>
-</div>
+  <div class="cv-head">
+    <div class="cv-role">Oral History Interviews and Methodologies</div>
+    <div class="cv-meta">Guest Lecturer · Center for the Humanities &amp; Public Sphere · Alexander Grass Scholars Program, University of Florida · May 2024</div>
+  </div>
 </article>
 <article class="cv-item" data-cats="lectures teaching">
-<div class="cv-head">
-<div class="cv-role">Preserving Business Legacies: Archiving and Media</div>
-<div class="cv-meta">UF Inquire Capitalism · Nov 2023</div>
-</div>
+  <div class="cv-head">
+    <div class="cv-role">Elevate: Community Engagement Summit</div>
+    <div class="cv-meta">Facilitator · SPARC352 · Harn Museum of Art · Dec 2023</div>
+  </div>
 </article>
 <article class="cv-item" data-cats="lectures teaching">
-<div class="cv-head">
-<div class="cv-role">Journey of Migration Symposium</div>
-<div class="cv-meta">UF MASA · Oct 2023</div>
-</div>
+  <div class="cv-head">
+    <div class="cv-role">The Exchange: Shaping the Future by Examining the Past</div>
+    <div class="cv-meta">Facilitator · SPARC352 · Cotton Club Museum and Cultural Center · Nov 2023</div>
+  </div>
 </article>
 <article class="cv-item" data-cats="lectures teaching">
-<div class="cv-head">
-<div class="cv-role">A Pedagogical Journey into Oral History</div>
-<div class="cv-meta">UF Historic Preservation Program · Oct 2023</div>
-</div>
+  <div class="cv-head">
+    <div class="cv-role">Preserving Business Legacies: A Workshop on Oral History Methodology, Metadata, Archiving &amp; Media Equipment</div>
+    <div class="cv-meta">Presenter · Inquire Capitalism Program (Sean Adams) · University of Florida · Nov 2023</div>
+  </div>
 </article>
 <article class="cv-item" data-cats="lectures teaching">
-<div class="cv-head">
-<div class="cv-role">Black Women’s Studies: Archives Session</div>
-<div class="cv-meta">UF · Sep 2023</div>
-</div>
+  <div class="cv-head">
+    <div class="cv-role">Fall Walking Tour: History of Students Influencing Change</div>
+    <div class="cv-meta">Guide · Brown Center for Leadership &amp; Service · University of Florida · Oct 2023</div>
+  </div>
 </article>
 <article class="cv-item" data-cats="lectures teaching">
-<div class="cv-head">
-<div class="cv-role">Veterans Oral History Archives</div>
-<div class="cv-meta">Oak Hall School · Feb 2023</div>
-</div>
+  <div class="cv-head">
+    <div class="cv-role">Journey of Migration Symposium: Fostering Student Dialogue and Storytelling Space</div>
+    <div class="cv-meta">Facilitator · Mexican‑American Student Association · University of Florida · Oct 2023</div>
+  </div>
 </article>
 <article class="cv-item" data-cats="lectures teaching">
-<div class="cv-head">
-<div class="cv-role">Accessing the Latinx Diaspora Archives</div>
-<div class="cv-meta">UF · Apr 2022</div>
-</div>
+  <div class="cv-head">
+    <div class="cv-role">A Pedagogical Journey into Oral History Archives and Methodologies</div>
+    <div class="cv-meta">Presenter · Clarissa Carr’s Historic Preservation Program · University of Florida · Oct 2023</div>
+  </div>
+</article>
+<article class="cv-item" data-cats="lectures teaching">
+  <div class="cv-head">
+    <div class="cv-role">Breaking Boundaries: Black Women Shaping Academia and Communities through Oral History Archives</div>
+    <div class="cv-meta">Guest Lecturer · Introduction to Black Women’s Studies (Riché J. Daniel Barnes) · University of Florida · Sep 2023</div>
+  </div>
+</article>
+<article class="cv-item" data-cats="lectures teaching">
+  <div class="cv-head">
+    <div class="cv-role">Resonating Legacies: Unveiling Black History through Oral History Voices and Methodology</div>
+    <div class="cv-meta">Guest Speaker · Jason Brown’s class · Oak Hall School · Feb 2023</div>
+  </div>
+</article>
+<article class="cv-item" data-cats="lectures teaching">
+  <div class="cv-head">
+    <div class="cv-role">Trailblazing Women: Exploring Black History and Medicine through the Joel Buchanan Archives of African American History</div>
+    <div class="cv-meta">Guest Lecturer · The African Diaspora, Women &amp; Medicine (Alyssa Cole) · University of Florida · Feb 2023</div>
+  </div>
+</article>
+<article class="cv-item" data-cats="lectures teaching">
+  <div class="cv-head">
+    <div class="cv-role">The Veterans Oral History Archives – Honoring the Experiences of Black Veterans</div>
+    <div class="cv-meta">Guest Lecturer · Buffalos and Bloods: The Black Experience in the U.S. Military (Alyssa Cole) · University of Florida · Feb 2023</div>
+  </div>
+</article>
+<article class="cv-item" data-cats="lectures teaching">
+  <div class="cv-head">
+    <div class="cv-role">Accessing the Latinx Diaspora in the Americas Archives Collection</div>
+    <div class="cv-meta">Presenter · African American and Latina/o Histories (Paul Ortiz) · University of Florida · Apr 2022</div>
+  </div>
+</article>
+<article class="cv-item" data-cats="lectures teaching">
+  <div class="cv-head">
+    <div class="cv-role">A Pedagogical Journey into Oral History Archives and Methodologies</div>
+    <div class="cv-meta">Presenter · Video Art (Katerie H. Gladys) · University of Florida · Nov 2021</div>
+  </div>
+</article>
+<article class="cv-item" data-cats="lectures teaching">
+  <div class="cv-head">
+    <div class="cv-role">A Pedagogical Journey into Oral History Archives and Methodologies</div>
+    <div class="cv-meta">Presenter · Design &amp; Methods of Research in Latin American Studies (Rebecca Hanson) · University of Florida · Oct 2021</div>
+  </div>
+</article>
+<article class="cv-item" data-cats="lectures teaching">
+  <div class="cv-head">
+    <div class="cv-role">Exploring History's Voices: The Joel Buchanan Archives and Mississippi Freedom Oral History Collections</div>
+    <div class="cv-meta">Guest Lecturer · The Politics of Race at the University of Florida (Sharon Austin) · University of Florida · Oct 2021</div>
+  </div>
+</article>
+<article class="cv-item" data-cats="lectures teaching">
+  <div class="cv-head">
+    <div class="cv-role">Exploring History's Voices: The Joel Buchanan Archives and Mississippi Freedom Oral History Collections</div>
+    <div class="cv-meta">Guest Lecturer · The Politics of Race at the University of Florida (Roshaun Colvin) · University of Florida · Oct 2021</div>
+  </div>
+</article>
+<article class="cv-item" data-cats="lectures teaching">
+  <div class="cv-head">
+    <div class="cv-role">Developing Oral History Workshops</div>
+    <div class="cv-meta">Coordinator · Martin County Black Heritage Initiatives · Martin County, FL · May 2021</div>
+  </div>
 </article>
 </section>
 <!-- Teaching Experience -->
@@ -1205,63 +1343,123 @@
 </section>
 <!-- Honors -->
 <section class="section" id="honors"><h2>Honors, Awards, &amp; Certificates</h2>
-<article class="cv-item" data-cats="honors">
-<div class="cv-head">
-<div class="cv-role">ILR Travel Grant</div>
-<div class="cv-meta">Cornell · $2,000 · 2025</div>
-</div>
-</article>
-<article class="cv-item" data-cats="honors">
-<div class="cv-head">
-<div class="cv-role">Graduate School Conference Travel Grant</div>
-<div class="cv-meta">Cornell · $700 · 2025</div>
-</div>
-</article>
-<article class="cv-item" data-cats="honors">
-<div class="cv-head">
-<div class="cv-role">Oral History Association Presenter Scholarship</div>
-<div class="cv-meta">$500 · 2022</div>
-</div>
-</article>
-<article class="cv-item" data-cats="honors">
-<div class="cv-head">
-<div class="cv-role">Summa Cum Laude</div>
-<div class="cv-meta">Northeastern Illinois University · 2018</div>
-</div>
-</article>
+  <article class="cv-item" data-cats="honors">
+    <div class="cv-head">
+      <div class="cv-role">Industrial &amp; Labor Relations Travel Grant</div>
+      <div class="cv-meta">Cornell University · $2,000 · 2025</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="honors">
+    <div class="cv-head">
+      <div class="cv-role">Graduate School Conference Travel Grant</div>
+      <div class="cv-meta">Cornell University · $700 · 2025</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="honors">
+    <div class="cv-head">
+      <div class="cv-role">Honorary Award: Spring Community‑Engagement Working Group Conversations SPARC352</div>
+      <div class="cv-meta">Center for Arts, Migration &amp; Entrepreneurship, University of Florida · $500 · 2023</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="honors">
+    <div class="cv-head">
+      <div class="cv-role">Oral History Association Presenter Scholarship</div>
+      <div class="cv-meta">$500 · 2022</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="honors">
+    <div class="cv-head">
+      <div class="cv-role">Machen Florida Opportunity Scholars Champion Award</div>
+      <div class="cv-meta">University of Florida · 2022</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="honors">
+    <div class="cv-head">
+      <div class="cv-role">Evoking the Complexity of Black Lives in Florida – Certificate of Appreciation</div>
+      <div class="cv-meta">University of Florida · 2022</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="honors">
+    <div class="cv-head">
+      <div class="cv-role">Graduate Assistantship</div>
+      <div class="cv-meta">University of Florida · 2021</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="honors">
+    <div class="cv-head">
+      <div class="cv-role">Summa Cum Laude</div>
+      <div class="cv-meta">Northeastern Illinois University · 2018</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="honors">
+    <div class="cv-head">
+      <div class="cv-role">Dean’s List, College of Arts &amp; Sciences</div>
+      <div class="cv-meta">Northeastern Illinois University · 2017–2018</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="honors">
+    <div class="cv-head">
+      <div class="cv-role">Illinois Legislative Latino Caucus Foundation Scholarship</div>
+      <div class="cv-meta">2007</div>
+    </div>
+  </article>
 </section>
 <!-- Professional Associations & Service -->
 <section class="section" id="associations"><h2>Professional Associations &amp; Service</h2>
-<article class="cv-item" data-cats="associations service">
-<div class="cv-head">
-<div class="cv-role">Constitutional Committee Member</div>
-<div class="cv-meta">CGSU–UE · 2025</div>
-</div>
-</article>
-<article class="cv-item" data-cats="associations">
-<div class="cv-head">
-<div class="cv-role">Society for the Advancement of Socio-Economics</div>
-<div class="cv-meta">Member · 2025</div>
-</div>
-</article>
-<article class="cv-item" data-cats="associations">
-<div class="cv-head">
-<div class="cv-role">Oral History Association</div>
-<div class="cv-meta">Member · 2023</div>
-</div>
-</article>
-<article class="cv-item" data-cats="associations service">
-<div class="cv-head">
-<div class="cv-role">Treasurer</div>
-<div class="cv-meta">Alachua County Labor Coalition · 2022–2024</div>
-</div>
-</article>
-<article class="cv-item" data-cats="associations service">
-<div class="cv-head">
-<div class="cv-role">Chair</div>
-<div class="cv-meta">Alachua County Tenants Association · 2021</div>
-</div>
-</article>
+  <article class="cv-item" data-cats="associations">
+    <div class="cv-head">
+      <div class="cv-role">Ronald E. McNair Post‑Baccalaureate Achievement Program</div>
+      <div class="cv-meta">Scholar · Present–2017</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="associations service">
+    <div class="cv-head">
+      <div class="cv-role">Constitutional Committee Member</div>
+      <div class="cv-meta">Cornell Graduate Students United – United Electrical Workers (CGSU‑UE) · 2025</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="associations">
+    <div class="cv-head">
+      <div class="cv-role">Society for the Advancement of Socio‑Economics</div>
+      <div class="cv-meta">Member · 2025</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="associations">
+    <div class="cv-head">
+      <div class="cv-role">Oral History Association</div>
+      <div class="cv-meta">Member · 2023</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="associations service">
+    <div class="cv-head">
+      <div class="cv-role">Treasurer</div>
+      <div class="cv-meta">Alachua County Labor Coalition · 2022–2024</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="associations service">
+    <div class="cv-head">
+      <div class="cv-role">Chair</div>
+      <div class="cv-meta">Alachua County Tenants Association · 2021</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="associations service">
+    <div class="cv-head">
+      <div class="cv-role">Treasurer</div>
+      <div class="cv-meta">Caribbean, Latinx &amp; Latin American Exchange Organization · 2020</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="associations">
+    <div class="cv-head">
+      <div class="cv-role">Sigma Delta Pi – National Spanish Honor Society</div>
+      <div class="cv-meta">Member · 2018</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="associations">
+    <div class="cv-head">
+      <div class="cv-role">Big Ten Academic Alliance Summer Research Opportunity Program</div>
+      <div class="cv-meta">Participant · 2018</div>
+    </div>
+  </article>
 </section>
 <!-- Fieldwork & Trip Coordination -->
 <section class="section" id="fieldwork"><h2>Oral History Fieldwork &amp; Trip Coordination</h2>
@@ -1335,6 +1533,12 @@
       <div class="cv-meta">Alachua & North Florida · 2020–2022</div>
     </div>
   </article>
+  <article class="cv-item" data-cats="fieldwork service">
+    <div class="cv-head">
+      <div class="cv-role">Oral History Fieldwork Trip Coordinator: Student Team Leader</div>
+      <div class="cv-meta">2018</div>
+    </div>
+  </article>
 </section>
 <!-- Skills -->
 <section class="section" id="skills"><h2>Skills</h2>
@@ -1396,6 +1600,8 @@
         if (href && href.endsWith(path)) a.setAttribute('aria-current', 'page');
       });
     })();
+
+    // (Fullscreen PDF modal logic removed — replaced with simpler toggle implemented in DOMContentLoaded)
 
     // Filtering + search + tabs
     const tabs = [...document.querySelectorAll('.tabbar [role="tab"]')];
@@ -1595,7 +1801,8 @@
     height:clamp(480px,70vh,90vh);
   }
   /* Ensure the embedded PDF scales to its container */
-  #pdf-shell embed{
+  #pdf-shell embed,
+  #pdf-shell object{
     display:block;
     width:100%;
     height:100%;
@@ -1607,7 +1814,8 @@
       height:auto;
       min-height:0;
     }
-    #pdf-shell embed{
+    #pdf-shell embed,
+    #pdf-shell object{
       height:auto;
     }
   }
@@ -1658,9 +1866,9 @@
     const btn = document.getElementById('toggle-pdf-full');
     if(shell && btn){
       btn.addEventListener('click', function(){
+        // Toggle the PDF shell into a full-screen style on click.
         shell.classList.toggle('fullscreen');
         btn.textContent = shell.classList.contains('fullscreen') ? 'Exit full screen' : 'Full screen';
-        // Prevent background scrolling when full screen is active
         const isFull = shell.classList.contains('fullscreen');
         document.documentElement.style.overflow = isFull ? 'hidden' : '';
         document.body.style.overflow = isFull ? 'hidden' : '';
