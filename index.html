@@ -1908,6 +1908,127 @@ nav.main-nav a.cv-link {
     </blockquote>
 </section>
 <section aria-labelledby="about-title" class="section" id="about">
+
+<!-- ===== Impact Metrics (compact, bold key ideas, slick cards, toggle-driven dark) ===== -->
+<section id="impact" aria-labelledby="impact-title">
+  <style>
+    /* Light theme defaults use your site's CSS variables so colors feel native */
+    #impact {
+      --primary: var(--accent, #0B66E3);
+      --surface: var(--card-bg, #ffffff);
+      --text: var(--text-main, #0F172A);
+      --muted: color-mix(in oklab, var(--text) 60%, #94a3b8 40%);
+      --line: color-mix(in oklab, var(--primary) 10%, #e6ecf7 90%);
+      --bg-grad-start: color-mix(in oklab, var(--background-top, #F8FAFF) 85%, #ffffff 15%);
+      --bg-grad-end: color-mix(in oklab, var(--background-bottom, #F2F6FD) 85%, #ffffff 15%);
+      --radius: 18px;
+    }
+    /* Dark mode only when YOUR site toggles .dark or [data-theme="dark"] */
+    :where(.dark, [data-theme="dark"]) #impact {
+      --surface: var(--card-bg-dark, #0f172a);
+      --text: var(--heading-color, #e5e7eb);
+      --muted: #9aa3b2;
+      --line: #1f2937;
+      --bg-grad-start: color-mix(in oklab, var(--background-top-dark, #0b1020) 85%, black 15%);
+      --bg-grad-end: color-mix(in oklab, var(--background-bottom-dark, #0a0f1a) 85%, black 15%);
+    }
+
+    #impact { padding: clamp(22px, 3.2vw, 40px) 12px; background: linear-gradient(180deg, var(--bg-grad-start), var(--bg-grad-end)); }
+    #impact .wrap{ max-width: 1160px; margin: 0 auto; }
+
+    /* Typography — match Journey: use Spectral for headings/labels/values */
+    #impact h2{ text-align:center; font-family: var(--font-heading, 'Spectral', serif); font-weight:800; font-size: clamp(28px, 3.3vw, 40px); color:var(--text); margin:0; letter-spacing:.2px; }
+    #impact .underline{ width:64px; height:4px; background: var(--primary); border-radius:6px; margin:10px auto 16px; }
+    #impact .lead{ text-align:center; color:var(--muted); margin-bottom:16px; font-size:15px; font-family: var(--font-body, 'Poppins', sans-serif); }
+
+    /* Grid */
+    #impact .grid{ display:grid; grid-template-columns:repeat(12,1fr); gap:14px; }
+
+    /* Card — slick, modern */
+    #impact .card{ position:relative; overflow:hidden; grid-column:span 3; background:var(--surface); border-radius:var(--radius); padding: clamp(12px, 1.6vw, 18px); box-shadow: 0 10px 26px rgba(12, 24, 48, .08); transition: transform .25s ease, box-shadow .25s ease; }
+    #impact .card::before{ content:""; position:absolute; inset:0 0 auto 0; height:3px; background:linear-gradient(90deg, var(--primary), color-mix(in oklab, var(--primary) 60%, #fff 40%)); opacity:.9; }
+    #impact .card::after{ content:""; position:absolute; inset:0; border-radius:inherit; box-shadow: inset 0 0 0 1px var(--line); pointer-events:none; }
+    #impact .card:hover{ transform: translateY(-2px); box-shadow: 0 16px 36px rgba(12, 24, 48, .12); }
+    @media (max-width:980px){ #impact .card{ grid-column:span 6; } }
+    @media (max-width:560px){ #impact .card{ grid-column:span 12; } }
+
+    /* Metrics */
+    #impact .value{ font-size:clamp(36px, 6.5vw, 56px); font-weight:900; color:var(--primary); letter-spacing:.2px; line-height:1.05; font-family: var(--font-heading, 'Spectral', serif); }
+    #impact .label{ margin-top:4px; font-weight:900; font-size:13.5px; letter-spacing:.7px; text-transform:uppercase; color: var(--text); font-family: var(--font-heading, 'Spectral', serif); }
+    #impact .sub{ margin-top:6px; color: var(--muted); font-size:14px; line-height:1.45; font-family: var(--font-body, 'Poppins', sans-serif); }
+    #impact .sub strong{ color: var(--text); font-weight:700; }
+
+    #impact .note{ max-width:860px; margin:12px auto 0; text-align:center; color:var(--muted); font-size:12.5px; font-family: var(--font-body, 'Poppins', sans-serif); }
+  </style>
+
+  <div class="wrap">
+    <h2 id="impact-title">Research Impact & Achievements</h2>
+    <div class="underline" aria-hidden="true"></div>
+    <p class="lead">Transparent counts with conservative rounding. Updated Aug 27, 2025.</p>
+
+    <div class="grid" role="list">
+      <!-- Grants -->
+      <article class="card" role="listitem" aria-label="Funded projects contributed to">
+        <div class="value" data-target="1.5" data-format="million" data-prefix="$" data-plus="true">$1.5M+</div>
+        <div class="label"><strong>Research grants</strong> contributed to</div>
+        <div class="sub">Contributions across 8 awards including <strong>NEH</strong>, <strong>National Park Service</strong>, and <strong>Doris Duke Foundation</strong> projects.</div>
+      </article>
+
+      <!-- Interviews -->
+      <article class="card" role="listitem" aria-label="Oral history interviews conducted">
+        <div class="value" data-target="200" data-format="int" data-plus="true">200+</div>
+        <div class="label"><strong>Oral history interviews</strong> conducted</div>
+        <div class="sub"><strong>Community‑based</strong> interviews across Florida, the Mississippi Delta, and Indigenous communities nationwide.</div>
+      </article>
+
+      <!-- Students -->
+      <article class="card" role="listitem" aria-label="Students taught at Cornell">
+        <div class="value" data-target="175" data-format="int" data-plus="true">175+</div>
+        <div class="label"><strong>Students taught</strong> at Cornell</div>
+        <div class="sub"><strong>Multiple sections</strong> over two semesters.</div>
+      </article>
+
+      <!-- Volunteer Program -->
+      <article class="card" role="listitem" aria-label="Volunteer program leadership">
+        <div class="value" data-target="40" data-format="int" data-plus="true">40+</div>
+        <div class="label"><strong>Student volunteers</strong> coordinated</div>
+        <div class="sub">Over three years as <strong>Assistant Director</strong> at the <strong>Samuel Proctor Oral History Program</strong>.</div>
+      </article>
+
+      <!-- Publications -->
+      <article class="card" role="listitem" aria-label="Peer reviewed publications">
+        <div class="value" data-target="1" data-format="int">1</div>
+        <div class="label"><strong>Peer‑reviewed publication</strong></div>
+        <div class="sub">Plus several manuscripts <strong>under review</strong> and in revision.</div>
+      </article>
+    </div>
+
+    <p class="note">Grant total reflects full award amounts for projects I contributed to and does not represent personal earnings.</p>
+  </div>
+
+  <script>
+    (function(){
+      const root = document.querySelector('#impact'); if(!root) return;
+      const obs = new IntersectionObserver(([e])=>{ if(e.isIntersecting){ run(); obs.disconnect(); } },{threshold:.25});
+      obs.observe(root);
+      function run(){
+        root.querySelectorAll('.value').forEach(el=>{
+          const target = parseFloat(el.dataset.target||'0');
+          const fmt = el.dataset.format||'int';
+          const prefix = el.dataset.prefix||''; const plus = el.dataset.plus==='true';
+          const dur = 850; const start = performance.now();
+          function step(now){
+            const p = Math.min((now-start)/dur,1); const t = 1-Math.pow(1-p,3);
+            let out; if(fmt==='million'){ out = prefix + (target*t).toFixed(1) + 'M'; } else { out = prefix + Math.floor(target*t).toLocaleString(); }
+            el.textContent = out + (plus && p===1 ? '+' : '');
+            if(p<1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        });
+      }
+    })();
+  </script>
+</section>
 <h2 id="about-title">About My Journey</h2>
 <div class="about-container">
 <article class="about-text">
