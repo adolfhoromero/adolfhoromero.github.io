@@ -1028,7 +1028,13 @@ nav.main-nav a.cv-link {
       min-height: 180px;
     }
     .quote-slide {
-      display: none;
+      /* Start hidden and faded out for smooth transitions */
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
       padding: 1.2rem 2rem;
       font-size: 1.15rem;
       line-height: 1.6;
@@ -1038,12 +1044,18 @@ nav.main-nav a.cv-link {
       background: rgba(255,255,255,0.8);
       border-radius: 12px;
       box-shadow: 0 8px 24px rgba(34,48,74,0.15);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      transform: translateX(20px);
     }
     .dark .quote-slide {
       background: rgba(17,24,39,0.9);
     }
+    /* Active slide appears on top and transitions in */
     .quote-slide.active {
-      display: block;
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+      position: relative;
     }
     .carousel-controls {
       display: flex;
@@ -1055,16 +1067,24 @@ nav.main-nav a.cv-link {
       background: var(--accent);
       color: #fff;
       border: none;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      font-size: 1.25rem;
+      border-radius: 12px;
+      width: 48px;
+      height: 48px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
-      transition: background 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: background 0.3s ease, transform 0.25s ease, box-shadow 0.3s ease;
     }
-    .carousel-controls button:hover {
+    .carousel-controls button:hover,
+    .carousel-controls button:focus {
       background: var(--accent-gold);
       color: #000;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.2);
     }
 
     /* Additional styling for small logos beneath quotes */
@@ -1810,30 +1830,51 @@ nav.main-nav a.cv-link {
     grid-template-columns: minmax(220px, 340px) minmax(400px, 1fr);
   }
 }
-.quote-media{
-  position:relative;
-  max-width: 560px;
-  width: 100%;
-  margin: 0 auto;
-  display:block;
-  border-radius:12px;
-  overflow:hidden;
-  background: linear-gradient(135deg, rgba(41,83,155,.08), rgba(255,204,0,.08));
-  box-shadow: 0 10px 26px rgba(0,0,0,.12);
-  aspect-ratio: 16 / 9;
-}
-.quote-media img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-  transition: transform .35s ease;
-}
-.quote-media:hover img{ transform: scale(1.02); }
-.dark .quote-media{
-  background: rgba(17,24,39,.35);
-  box-shadow: 0 8px 20px rgba(0,0,0,.35);
-}
+  /*
+   * Media preview card styles. To prevent logos from being cropped, the image is
+   * now contained within its frame. A subtle glass effect and accent border
+   * give the module a more contemporary, futuristic feel. In dark mode the
+   * backdrop adapts to remain legible.
+   */
+  .quote-media{
+    position:relative;
+    max-width: 560px;
+    width: 100%;
+    margin: 0 auto;
+    display:block;
+    border-radius:12px;
+    overflow:hidden;
+    /* Use a translucent backdrop to create a light glass effect */
+    background: rgba(255,255,255,0.75);
+    box-shadow: 0 10px 26px rgba(0,0,0,.12);
+    /* Maintain a 16:9 ratio on large screens but allow it to shrink on smaller ones */
+    aspect-ratio: 16 / 9;
+    border: 1px solid rgba(0,0,0,0.05);
+    backdrop-filter: saturate(140%) blur(3px);
+    transition: transform .3s ease, box-shadow 0.4s ease;
+  }
+  /* Dark mode variant uses a darker translucent backdrop */
+  .dark .quote-media{
+    background: rgba(17,24,39,0.65);
+    box-shadow: 0 8px 20px rgba(0,0,0,.35);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .quote-media img{
+    width:100%;
+    height:100%;
+    /* Contain the entire logo rather than cropping it */
+    object-fit: contain;
+    object-position: center;
+    display:block;
+    transition: transform .35s ease;
+  }
+  .quote-media:hover img{ transform: scale(1.05); }
+
+  /* Lift card and intensify shadow on hover for a modern interactive feel */
+  .quote-media:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.2);
+  }
 </style>
 </head>
 <body>
