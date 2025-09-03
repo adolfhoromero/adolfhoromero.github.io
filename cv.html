@@ -505,25 +505,22 @@
       }
     </style>
     <style>
-      /* Custom overrides to remove extra bottom whitespace on larger screens and reposition the Calendly badge button. */
-      @media (min-width: 821px) {
-        body {
-          /* Remove extra space beneath the footer on desktop */
-          padding-bottom: 0 !important;
-        }
-        .calendly-badge-widget {
-          /* Shift the badge upwards so it clears the footer. */
-          transform: translateY(-120px) !important;
-          opacity: 0.85;
-          transition: opacity 0.3s ease;
-        }
-        .calendly-badge-widget:hover {
-          opacity: 1;
-        }
+      /* Scroll reveal animation for sections and CV items */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: none;
       }
     </style>
-  </head>
-<body><script>
+</head>
+<body>
+<!-- Skip link for accessibility -->
+<a class="skip-link" href="#main" style="position:absolute;left:-9999px;top:-9999px;background:#fff;padding:.6rem 1rem;border-radius:10px;z-index:10000;">Skip to content</a>
+<script>
 (function(){
   try {
     if (window.__bannerFixInit) return;
@@ -579,9 +576,9 @@
 <li><a href="index.html">Home</a></li>
 <li><a class="pubs-link" href="publications.html">Publications</a></li>
 <li><a class="teaching-link" href="teaching.html">Teaching</a></li>
-<li><a aria-current="page" href="media.html">Media &amp; Public Engagement</a></li>
+<li><a href="media.html">Media &amp; Public Engagement</a></li>
 <!-- CV links to the CV page -->
-<li><a aria-current="page" aria-label="Open CV page" class="cv-link" href="cv.html">CV</a></li>
+<li><a aria-label="Open CV page" class="cv-link" href="cv.html">CV</a></li>
 </ul>
 </nav>
 <main id="main">
@@ -1673,12 +1670,51 @@
       apply(active.dataset.filter);
     });
 
+    // Keyboard navigation: cycle through tabs using arrow keys for accessibility
+    tabs.forEach(t => {
+      t.addEventListener('keydown', e => {
+        const idx = tabs.indexOf(t);
+        if(e.key === 'ArrowRight'){
+          e.preventDefault();
+          tabs[(idx + 1) % tabs.length].focus();
+        }
+        if(e.key === 'ArrowLeft'){
+          e.preventDefault();
+          tabs[(idx - 1 + tabs.length) % tabs.length].focus();
+        }
+      });
+    });
+
     // Initialize from hash if present
     (function(){
       const want = (location.hash || '#all').replace('#','');
       const start = tabs.find(t => t.dataset.filter === want) || tabs[0];
       setActive(start);
     })();
+
+    // ===== Scroll reveal animations =====
+    // When the user has motion preference disabled (prefers‑reduced‑motion), skip animations.
+    document.addEventListener('DOMContentLoaded', function(){
+      try{
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        // Collect all sections and CV items to animate.
+        const targets = document.querySelectorAll('.section, .cv-item');
+        targets.forEach(el => {
+          // Apply the base reveal class to hide and offset the element initially.
+          el.classList.add('reveal');
+        });
+        // Use an IntersectionObserver to add the visible class when elements enter the viewport.
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if(entry.isIntersecting){
+              entry.target.classList.add('visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+        targets.forEach(el => observer.observe(el));
+      } catch(e){}
+    });
 
     // Hide nav on scroll for mobile
     let lastScrollTop = 0;
@@ -1691,6 +1727,22 @@
         lastScrollTop = st <= 0 ? 0 : st;
       } else {
         nav.classList.remove('hide-nav');
+      }
+    });
+  </script>
+
+  <!-- PDF full screen toggle logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const shell = document.getElementById('pdf-shell');
+      const btn = document.getElementById('toggle-pdf-full');
+      if(shell && btn){
+        let full = false;
+        btn.addEventListener('click', function(){
+          full = !full;
+          shell.style.height = full ? '85vh' : '420px';
+          btn.textContent = full ? 'Exit full screen' : 'Full screen';
+        });
       }
     });
   </script>
