@@ -2488,6 +2488,12 @@ nav.main-nav a.cv-link {
 .dark-toggle .icon-sun{ width:2.1rem; height:2.1rem; fill:var(--accent-gold); stroke:var(--accent); display:block; }
 </style>
 
+<!-- Interactive Map: Leaflet + MarkerCluster -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 </head>
 
 <body>
@@ -2569,6 +2575,99 @@ nav.main-nav a.cv-link {
       </div>
     </div>
   </section>
+<!-- Teaching Map styles (scoped) -->
+<style>
+  .teachmap-wrap{max-width:var(--max-width,1200px);margin:2rem auto 3rem;padding:0 1rem}
+  .teachmap-card{background:var(--card-bg,#0f1626);border:1px solid rgba(43,62,104,.5);border-radius:16px;box-shadow:0 10px 24px rgba(0,0,0,.25);padding:16px}
+  .teachmap-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .teachmap-legend{display:flex;gap:10px;flex-wrap:wrap}
+  .tm-key{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border:1px solid #243554;border-radius:999px;font-weight:600;font-size:.92rem;background:rgba(255,255,255,.02)}
+  .tm-dot{width:14px;height:14px;border-radius:50%}
+  .tm-dot.field{background:linear-gradient(180deg,#34d399,#10b981)}
+  .tm-dot.talk{background:linear-gradient(180deg,#60a5fa,#3b82f6)}
+  .tm-dot.program{background:linear-gradient(180deg,#fbbf24,#f59e0b)}
+  .tm-dot.pd{background:linear-gradient(180deg,#a78bfa,#7c3aed)}
+  #teach-map{height:520px;border-radius:14px;overflow:hidden}
+  .tm-controls{display:flex;gap:8px;flex-wrap:wrap}
+  .tm-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;border:1px solid #2a3b64;background:rgba(255,255,255,.03);font-weight:800;cursor:pointer}
+  .tm-btn[aria-pressed="true"]{background:linear-gradient(90deg,#29539b,#ffcc00);color:#0a1020;border-color:transparent}
+  @media (max-width:980px){#teach-map{height:420px}}
+</style>
+<!-- ===== Interactive Map: Fieldwork, Conferences, Programs & Professional Development ===== -->
+<section id="teaching-map" class="teachmap-wrap" aria-labelledby="teachmap-h">
+  <div class="teachmap-card">
+    <div class="teachmap-head">
+      <div>
+        <h2 id="teachmap-h" style="margin:.2rem 0">Fieldwork Map & Career Timeline</h2>
+        <div class="teachmap-legend" role="group" aria-label="Legend">
+          <span class="tm-key"><span class="tm-dot field"></span> Fieldwork</span>
+          <span class="tm-key"><span class="tm-dot talk"></span> Talks/Conferences</span>
+          <span class="tm-key"><span class="tm-dot program"></span> Programs</span>
+          <span class="tm-key"><span class="tm-dot pd"></span> Professional Development</span>
+        </div>
+      </div>
+      <div class="tm-controls" role="group" aria-label="Toggle layers">
+        <button class="tm-btn" id="tm-field" aria-pressed="true">Fieldwork</button>
+        <button class="tm-btn" id="tm-talks" aria-pressed="true">Talks</button>
+        <button class="tm-btn" id="tm-programs" aria-pressed="true">Programs</button>
+        <button class="tm-btn" id="tm-pd" aria-pressed="true">Prof. Dev.</button>
+      </div>
+    </div>
+    <div id="teach-map" aria-label="Map of fieldwork, conferences and professional development"></div>
+  </div>
+</section>
+
+  <script>
+    // Data
+    const TM_FIELD = [{"title": "Trustees on Trial — UF Board of Trustees", "place": "Gainesville, FL", "lat": 29.6516, "lon": -82.3248, "year": "2024", "type": "field"}, {"title": "Network to Freedom — Harriet Tubman Underground Railroad State Park", "place": "Church Creek, MD (approx.)", "lat": 38.444, "lon": -76.145, "year": "2023", "type": "field"}, {"title": "Virginia Tidewater Main Street Project", "place": "Chesapeake Bay, VA (approx.)", "lat": 36.7682, "lon": -76.2875, "year": "2023", "type": "field"}, {"title": "Remembering Rosewood — Centennial Oral Histories", "place": "Rosewood, FL", "lat": 29.278, "lon": -82.904, "year": "2023", "type": "field"}, {"title": "Resilience Family Festival — Oral Histories", "place": "St. Augustine, FL", "lat": 29.9012, "lon": -81.3124, "year": "2023", "type": "field"}, {"title": "Florida A&M Ceremony — Leon County Exhibit", "place": "Tallahassee, FL", "lat": 30.4383, "lon": -84.2807, "year": "2022", "type": "field"}, {"title": "Florida Naturalist Project — Key West", "place": "Key West, FL", "lat": 24.5551, "lon": -81.78, "year": "2022", "type": "field"}, {"title": "Florida Naturalist Project — Everglades", "place": "Everglades NP (Homestead area), FL", "lat": 25.3923, "lon": -80.5823, "year": "2022", "type": "field"}, {"title": "Florida Naturalist Project — St. Petersburg", "place": "St. Petersburg, FL", "lat": 27.7676, "lon": -82.6403, "year": "2022", "type": "field"}, {"title": "Chappie James Museum of Pensacola — Site Work", "place": "Pensacola, FL", "lat": 30.4213, "lon": -87.2169, "year": "2022", "type": "field"}, {"title": "Chappie James Museum Trip — Community Interviews", "place": "Mobile, AL", "lat": 30.6954, "lon": -88.0399, "year": "2022", "type": "field"}, {"title": "Machen Florida Opportunity Scholars (MFOS) Interviews", "place": "Gainesville, FL", "lat": 29.6516, "lon": -82.3248, "year": "2022", "type": "field"}, {"title": "Putnam County Interviews — Bethlehem Baptist Church", "place": "Palatka, FL", "lat": 29.6486, "lon": -81.6376, "year": "2022", "type": "field"}, {"title": "Mississippi Freedom Project — Delta Route", "place": "Clarksdale, MS", "lat": 34.2, "lon": -90.57, "year": "2021–2022", "type": "field"}, {"title": "Mississippi Freedom Project — Delta Route", "place": "Helena–West Helena, AR", "lat": 34.5299, "lon": -90.5901, "year": "2021–2022", "type": "field"}, {"title": "Palatka Central High (Central Academy) Interviews", "place": "Palatka, FL", "lat": 29.6486, "lon": -81.6376, "year": "2021", "type": "field"}, {"title": "Impacted Families National March on Washington", "place": "Washington, DC", "lat": 38.9072, "lon": -77.0369, "year": "2021", "type": "field"}, {"title": "Soil Collection Ceremony — Alachua", "place": "Alachua, FL", "lat": 29.7513, "lon": -82.4249, "year": "2020–2022", "type": "field"}, {"title": "Soil Collection Ceremony — Newberry", "place": "Newberry, FL", "lat": 29.6469, "lon": -82.6065, "year": "2020–2022", "type": "field"}, {"title": "Soil Collection Ceremony — Monteocha", "place": "Monteocha (Alachua County), FL", "lat": 29.8022, "lon": -82.284, "year": "2020–2022", "type": "field"}, {"title": "Soil Collection Ceremony — Gordon (approx.)", "place": "Gordon (Alachua County), FL", "lat": 29.73, "lon": -82.3, "year": "2020–2022", "type": "field"}, {"title": "Soil Collection Ceremony — LaCrosse", "place": "LaCrosse, FL", "lat": 29.8461, "lon": -82.4037, "year": "2020–2022", "type": "field"}, {"title": "Soil Collection Ceremony — Newnansville", "place": "Newnansville (ghost town), FL", "lat": 29.792, "lon": -82.489, "year": "2020–2022", "type": "field"}, {"title": "Back to Angola Festival — Black Seminole Descendants", "place": "Bradenton, FL", "lat": 27.4989, "lon": -82.5748, "year": "(year not specified)", "type": "field"}];
+    const TM_TALKS = [{"title": "Organizing Educators in the Sunshine State (SHA, TradeWinds Resort)", "place": "St. Petersburg, FL", "lat": 27.7676, "lon": -82.6403, "date": "2025", "type": "talk"}, {"title": "Reimagining Power Research Approach (SASE)", "place": "Montreal, Canada", "lat": 45.5017, "lon": -73.5673, "date": "2025", "type": "talk"}, {"title": "Challenging Racism at UF in the 'Stop Woke' Era (OHA)", "place": "Baltimore, MD", "lat": 39.2904, "lon": -76.6122, "date": "2023", "type": "talk"}, {"title": "Documenting Black Resistance in the Mississippi Delta (ASALH)", "place": "Jacksonville, FL", "lat": 30.3322, "lon": -81.6557, "date": "2023", "type": "talk"}, {"title": "The Enduring Resonance of the Joel Buchanan Archive (ASALH)", "place": "Jacksonville, FL", "lat": 30.3322, "lon": -81.6557, "date": "2023", "type": "talk"}, {"title": "Challenging Racism at UF in the 'Stop Woke' Era (ASALH)", "place": "Jacksonville, FL", "lat": 30.3322, "lon": -81.6557, "date": "2023", "type": "talk"}, {"title": "Oscar Mack versus the Ku Klux Klan (ASALH)", "place": "Jacksonville, FL", "lat": 30.3322, "lon": -81.6557, "date": "2023", "type": "talk"}, {"title": "Best Practices — Venus McGhee Prince Project (Poarch Band of Creek Indians)", "place": "Mobile, AL", "lat": 30.6954, "lon": -88.0399, "date": "2022", "type": "talk"}, {"title": "Transcribing/Re-Transcribing the Doris Duke Collection (ATALM)", "place": "Temecula, CA", "lat": 33.4936, "lon": -117.1484, "date": "2022", "type": "talk"}, {"title": "From Field Work to Film (OHA, Millennium Biltmore)", "place": "Los Angeles, CA", "lat": 34.0522, "lon": -118.2437, "date": "2022", "type": "talk"}, {"title": "Historical & Contemporary Challenges of Migration (OHA)", "place": "Los Angeles, CA", "lat": 34.0522, "lon": -118.2437, "date": "2022", "type": "talk"}, {"title": "Educating, Transforming & Building Solidarity (11th National Civil Rights Conference)", "place": "Baton Rouge, LA", "lat": 30.4515, "lon": -91.1871, "date": "2022", "type": "talk"}, {"title": "A Decade of Documenting Agricultural Workers’ Struggles (LAWCHA, UIC)", "place": "Chicago, IL", "lat": 41.8781, "lon": -87.6298, "date": "2021", "type": "talk"}, {"title": "Comparative Urbanism: Global Perspectives (Andrew Young School, GSU)", "place": "Atlanta, GA", "lat": 33.749, "lon": -84.388, "date": "2019", "type": "talk"}, {"title": "Examining Mestiza Consciousness — McNair Research Conference", "place": "Schaumburg, IL", "lat": 42.0334, "lon": -88.0834, "date": "2018", "type": "talk"}, {"title": "Examining Mestiza Consciousness — SROP (Purdue)", "place": "Lafayette, IN", "lat": 40.4167, "lon": -86.8753, "date": "2018", "type": "talk"}, {"title": "Puerto Rican Displacement & Gentrification — NEIU", "place": "Chicago, IL", "lat": 41.8781, "lon": -87.6298, "date": "2018", "type": "talk"}];
+    const TM_PROGRAMS = [{"title": "Town Hall – Welcoming Black Faculty", "place": "Gainesville, FL", "lat": 29.6516, "lon": -82.3248, "date": "2023", "type": "program"}, {"title": "Oscar Mack vs the KKK — Premiere", "place": "Gainesville, FL", "lat": 29.6516, "lon": -82.3248, "date": "2023", "type": "program"}, {"title": "K‑12 Classrooms — Bringing AA History", "place": "Gainesville, FL", "lat": 29.6516, "lon": -82.3248, "date": "2023", "type": "program"}];
+    const TM_PD = [{"title": "UT Austin Ethnographic Summer School", "place": "Austin, TX — Urban Ethnography Lab, UT Austin", "lat": 30.2672, "lon": -97.7431, "date": "Aug 2025", "type": "pd", "desc": "Four-day intensive on observation, in-depth interviewing, qualitative coding, ethics; workshops with UT Austin Sociology faculty; 1:1 research feedback; reflexivity & IRB protocols."}, {"title": "QMUL–Cornell Migration Spring School (Gozo)", "place": "Victoria (Rabat), Gozo — Queen Mary University of London & Cornell University", "lat": 36.0443, "lon": 14.2397, "date": "May 2025", "type": "pd", "desc": "Interdisciplinary training on migration, labor rights, and urban policy; site visits, activist discussions; cross-field seminars (Geography, Film, History, Law, Psychology, Public Health, Policy)."}, {"title": "QMUL–Cornell Migration Spring School (Malta)", "place": "Valletta, Malta — Queen Mary University of London & Cornell University", "lat": 35.8989, "lon": 14.5146, "date": "May 2025", "type": "pd", "desc": "Explored economic migration, displacement, and urban labor conditions; experiential learning across Malta with scholars and practitioners."}, {"title": "Harvard Kennedy School & MA Black and Latino Legislative Caucus Retreat", "place": "Cambridge, MA — Harvard Kennedy School", "lat": 42.3736, "lon": -71.1097, "date": "Dec 2024", "type": "pd", "desc": "Supported Dr. Paul Ortiz’s presentation; met Beacon Press editors (Gayatri Patnaik, Joanna Green) about dissertation; feedback from Prof. Vincent Brown."}, {"title": "MigLab Working Group (Cornell)", "place": "Ithaca, NY — Cornell University", "lat": 42.4439, "lon": -76.5019, "date": "Jan–May 2025", "type": "pd", "desc": "Interdisciplinary meetings on migration; peer feedback on grad presentations; co-sponsored by Cornell Population Center & Brooks School for Public Policy."}];
+
+    const map = L.map('teach-map', { zoomControl:true, scrollWheelZoom:true, attributionControl:false }).setView([34.5,-92], 4);
+    const light = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png', { maxZoom:19 });
+    const dark  = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}.png', { maxZoom:19 });
+    function isDark(){ return document.documentElement.classList.contains('dark') || document.body.classList.contains('dark') || window.matchMedia('(prefers-color-scheme: dark)').matches; }
+    function refreshTiles(){ if(isDark()){ if(map.hasLayer(light)) map.removeLayer(light); dark.addTo(map); } else { if(map.hasLayer(dark)) map.removeLayer(dark); light.addTo(map); } }
+    refreshTiles();
+    try { const m = window.matchMedia('(prefers-color-scheme: dark)'); (m.addEventListener? m.addEventListener('change', refreshTiles) : m.addListener(refreshTiles)); } catch(_){}
+
+    function icon(color){
+      return L.divIcon({
+        className:'tm-marker',
+        html:`<svg width="20" height="20" viewBox="0 0 24 24" style="filter:drop-shadow(0 0 6px rgba(0,0,0,.35))">
+          <circle cx="12" cy="12" r="9" fill="${color}" opacity=".95"/>
+          <circle cx="12" cy="12" r="5" fill="rgba(255,255,255,.12)"/>
+        </svg>`,
+        iconSize:[20,20], iconAnchor:[10,10]
+      });
+    }
+    const COL = { field:'#10b981', talk:'#3b82f6', program:'#f59e0b', pd:'#7c3aed' };
+    function clusterFrom(list, kind){
+      const g = L.markerClusterGroup({ disableClusteringAtZoom:7, maxClusterRadius:48 });
+      list.forEach(d=>{ g.addLayer(L.marker([d.lat,d.lon],{icon:icon(COL[kind])}).bindPopup(`<strong>${d.title}</strong><br><span style='opacity:.8'>${d.place}</span><br><small>${d.year||d.date||''}</small>${d.desc ? '<br><small>'+d.desc+'</small>' : ''}`)); });
+      return g;
+    }
+    const L_FIELD = clusterFrom(TM_FIELD,'field').addTo(map);
+    const L_TALKS = clusterFrom(TM_TALKS,'talk').addTo(map);
+    const L_PROGRAMS = clusterFrom(TM_PROGRAMS,'program').addTo(map);
+    const L_PD = clusterFrom(TM_PD,'pd').addTo(map);
+    const all = [...TM_FIELD, ...TM_TALKS, ...TM_PROGRAMS, ...TM_PD];
+    if(all.length) map.fitBounds(all.map(d=>[d.lat,d.lon]), {padding:[40,40]});
+    function bind(id, layer){
+      const btn = document.getElementById(id);
+      btn.addEventListener('click',()=>{
+        const on = btn.getAttribute('aria-pressed')==='true';
+        btn.setAttribute('aria-pressed', String(!on));
+        if(on) map.removeLayer(layer); else map.addLayer(layer);
+      });
+    }
+    bind('tm-field', L_FIELD);
+    bind('tm-talks', L_TALKS);
+    bind('tm-programs', L_PROGRAMS);
+    bind('tm-pd', L_PD);
+  </script>
+
 
   <!-- Teaching in Action Photo Gallery moved above courses for better engagement -->
 
