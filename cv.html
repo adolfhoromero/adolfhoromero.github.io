@@ -161,6 +161,8 @@
       box-shadow:var(--ring);
       transition:background .25s, border-color .25s, transform .06s, box-shadow .2s, color .2s;
       user-select:none;
+      /* Allow taps to trigger click immediately on touch devices */
+      touch-action: manipulation;
     }
     .dark .tabbar [role="tab"]{
       background:#1a2235;
@@ -1651,7 +1653,18 @@
       tab.setAttribute('aria-selected','true');
       const filter = tab.dataset.filter || 'all';
       apply(filter);
-      // update the URL hash to reflect the new filter
+      // After applying the filter, automatically scroll to the first visible CV item.
+      // This improves the mobile experience by immediately surfacing content relevant to the selected tab.
+      try{
+        // Delay slightly to ensure DOM updates have been applied.
+        setTimeout(() => {
+          const firstVisible = items.find(el => el.style.display !== 'none');
+          if(firstVisible){
+            firstVisible.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 30);
+      } catch(e){}
+      // Update the URL hash to reflect the new filter. This provides a deep link for accessibility but does not trigger default anchor scroll because we immediately scroll into view above.
       try{
         const newHash = filter === 'all' ? '#all' : '#' + filter;
         if(location.hash !== newHash){
@@ -1660,11 +1673,16 @@
       }catch(e){}
     }
 
-    // Override default anchor behaviour and apply filters on click
-    tabs.forEach(t => t.addEventListener('click', (e) => {
-      e.preventDefault();
-      setActive(t);
-    }));
+    // Override default anchor behaviour and apply filters on pointer interaction
+    tabs.forEach(t => {
+      // Use pointerdown to respond quickly on touch devices and avoid duplicate click events.
+      t.addEventListener('pointerdown', (e) => {
+        // Only handle primary input (ignore secondary/middle clicks)
+        if(e.pointerType === 'mouse' && e.button !== 0) return;
+        e.preventDefault();
+        setActive(t);
+      });
+    });
     q?.addEventListener('input', () => {
       const active = document.querySelector('.tabbar [aria-selected="true"]') || { dataset:{ filter:'all' } };
       apply(active.dataset.filter);
