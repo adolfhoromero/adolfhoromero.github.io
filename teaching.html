@@ -2058,6 +2058,39 @@ nav.main-nav a.cv-link {
     }
 
   
+
+  <style>
+    .tm-filters{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .tm-filters input[type="search"], .tm-filters select{
+      background:rgba(255,255,255,.04); border:1px solid #2a3b64; color:inherit;
+      padding:10px 12px; border-radius:10px; font-weight:600
+    }
+    .tm-btn .tm-dot{width:10px;height:10px;display:inline-block;border-radius:50%;box-shadow:0 0 0 2px rgba(0,0,0,.2) inset}
+  <style>
+  .teachmap-head.center{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px}
+  .tm-title{font-size:clamp(1.4rem, 1.1rem + 1.2vw, 2.1rem);margin:.3rem 0 .6rem}
+  .tm-controls{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .tm-filters{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;align-items:center;margin-top:6px}
+  .tm-filters input[type="search"], .tm-filters select{
+    background:rgba(255,255,255,.04); border:1px solid #2a3b64; color:inherit;
+    padding:10px 12px; border-radius:10px; font-weight:600
+  }
+  .tm-actions{display:flex;gap:8px}
+  .tm-btn-secondary{padding:10px 12px;border-radius:10px;border:1px solid #2a3b64;background:rgba(255,255,255,.03);font-weight:700;cursor:pointer}
+  .tm-btn .tm-dot{width:10px;height:10px;display:inline-block;border-radius:50%;box-shadow:0 0 0 2px rgba(0,0,0,.2) inset}
+  /* List drawer */
+  .tm-list{margin-top:12px;border:1px solid rgba(43,62,104,.5);border-radius:12px;background:rgba(255,255,255,.02)}
+  .tm-list > summary{cursor:pointer;padding:12px 14px;font-weight:800;list-style:none}
+  .tm-list > summary::-webkit-details-marker{display:none}
+  .tm-list-content{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;padding:10px 12px}
+  .tm-li{border:1px solid #2a3b64;border-radius:12px;padding:10px 12px;background:rgba(255,255,255,.02)}
+  .tm-li .t1{font-weight:800}
+  .tm-li .t2{opacity:.85;font-size:.95rem}
+  .tm-li .t3{opacity:.7;font-size:.85rem}
+  .tm-li .go{margin-top:6px;font-size:.85rem;border:1px solid #2a3b64;border-radius:999px;padding:6px 10px;background:rgba(255,255,255,.03);cursor:pointer}
+</style>
+</style>
+
 </style>
 
   <!-- Mobile bottom tabs + hide top nav on phones -->
@@ -2574,7 +2607,11 @@ nav.main-nav a.cv-link {
         <div><strong>Connecting Past & Present</strong></div>
       </div>
     </div>
-  </section>
+<details id="tm-list" class="tm-list" aria-label="Visible items list">
+  <summary>Visible items</summary>
+  <div class="tm-list-content"></div>
+</details>
+</section>
 <!-- Teaching Map styles (scoped) -->
 <style>
   .teachmap-wrap{max-width:var(--max-width,1200px);margin:2rem auto 3rem;padding:0 1rem}
@@ -2596,30 +2633,33 @@ nav.main-nav a.cv-link {
 <!-- ===== Interactive Map: Fieldwork, Conferences, Programs & Professional Development ===== -->
 <section id="teaching-map" class="teachmap-wrap" aria-labelledby="teachmap-h">
   <div class="teachmap-card">
-    <div class="teachmap-head">
-      <div>
-        <h2 id="teachmap-h" style="margin:.2rem 0">Fieldwork Map & Career Timeline</h2>
-        <div class="teachmap-legend" role="group" aria-label="Legend">
-          <span class="tm-key"><span class="tm-dot field"></span> Fieldwork</span>
-          <span class="tm-key"><span class="tm-dot talk"></span> Talks/Conferences</span>
-          <span class="tm-key"><span class="tm-dot program"></span> Programs</span>
-          <span class="tm-key"><span class="tm-dot pd"></span> Professional Development</span>
-        </div>
-      </div>
-      <div class="tm-controls" role="group" aria-label="Toggle layers">
-        <button class="tm-btn" id="tm-field" aria-pressed="true">Fieldwork</button>
-        <button class="tm-btn" id="tm-talks" aria-pressed="true">Talks</button>
-        <button class="tm-btn" id="tm-programs" aria-pressed="true">Programs</button>
-        <button class="tm-btn" id="tm-pd" aria-pressed="true">Prof. Dev.</button>
-      </div>
+    <div class="teachmap-head center">
+  <h2 id="teachmap-h" class="tm-title">Fieldwork Map &amp; Career Timeline</h2>
+  <div class="tm-controls" role="group" aria-label="Toggle layers">
+    <button class="tm-btn" id="tm-field" aria-pressed="true"><span class="tm-dot field"></span> Fieldwork</button>
+    <button class="tm-btn" id="tm-talks" aria-pressed="true"><span class="tm-dot talk"></span> Talks</button>
+    <button class="tm-btn" id="tm-programs" aria-pressed="true"><span class="tm-dot program"></span> Programs</button>
+    <button class="tm-btn" id="tm-pd" aria-pressed="true"><span class="tm-dot pd"></span> Prof. Dev.</button>
+  </div>
+  <div class="tm-filters" role="search" aria-label="Map filters">
+    <input id="tm-q" type="search" placeholder="Search title or place…" aria-label="Search" />
+    <select id="tm-year" aria-label="Filter by year">
+      <option value="all">All years</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025">2025</option>
+    </select>
+    <div class="tm-actions">
+      <button class="tm-btn-secondary" id="tm-reset" title="Reset view">Reset</button>
+      <button class="tm-btn-secondary" id="tm-share" title="Copy a link to this view">Share</button>
+      <button class="tm-btn-secondary" id="tm-list-btn" aria-expanded="false" aria-controls="tm-list">List</button>
     </div>
-    <div id="teach-map" aria-label="Map of fieldwork, conferences and professional development"></div>
+  </div>
+</div>
+<div id="teach-map" aria-label="Map of fieldwork, conferences and professional development"></div>
   </div>
 </section>
 
   <script>
     // Data
-    const TM_FIELD = [{"title": "Trustees on Trial — UF Board of Trustees", "place": "Gainesville, FL", "lat": 29.6516, "lon": -82.3248, "year": "2024", "type": "field"}, {"title": "Network to Freedom — Harriet Tubman Underground Railroad State Park", "place": "Church Creek, MD (approx.)", "lat": 38.444, "lon": -76.145, "year": "2023", "type": "field"}, {"title": "Virginia Tidewater Main Street Project", "place": "Chesapeake Bay, VA (approx.)", "lat": 36.7682, "lon": -76.2875, "year": "2023", "type": "field"}, {"title": "Remembering Rosewood — Centennial Oral Histories", "place": "Rosewood, FL", "lat": 29.278, "lon": -82.904, "year": "2023", "type": "field"}, {"title": "Resilience Family Festival — Oral Histories", "place": "St. Augustine, FL", "lat": 29.9012, "lon": -81.3124, "year": "2023", "type": "field"}, {"title": "Florida A&M Ceremony — Leon County Exhibit", "place": "Tallahassee, FL", "lat": 30.4383, "lon": -84.2807, "year": "2022", "type": "field"}, {"title": "Florida Naturalist Project — Key West", "place": "Key West, FL", "lat": 24.5551, "lon": -81.78, "year": "2022", "type": "field"}, {"title": "Florida Naturalist Project — Everglades", "place": "Everglades NP (Homestead area), FL", "lat": 25.3923, "lon": -80.5823, "year": "2022", "type": "field"}, {"title": "Florida Naturalist Project — St. Petersburg", "place": "St. Petersburg, FL", "lat": 27.7676, "lon": -82.6403, "year": "2022", "type": "field"}, {"title": "Chappie James Museum of Pensacola — Site Work", "place": "Pensacola, FL", "lat": 30.4213, "lon": -87.2169, "year": "2022", "type": "field"}, {"title": "Chappie James Museum Trip — Community Interviews", "place": "Mobile, AL", "lat": 30.6954, "lon": -88.0399, "year": "2022", "type": "field"}, {"title": "Machen Florida Opportunity Scholars (MFOS) Interviews", "place": "Gainesville, FL", "lat": 29.6516, "lon": -82.3248, "year": "2022", "type": "field"}, {"title": "Putnam County Interviews — Bethlehem Baptist Church", "place": "Palatka, FL", "lat": 29.6486, "lon": -81.6376, "year": "2022", "type": "field"}, {"title": "Mississippi Freedom Project — Delta Route", "place": "Clarksdale, MS", "lat": 34.2, "lon": -90.57, "year": "2021–2022", "type": "field"}, {"title": "Mississippi Freedom Project — Delta Route", "place": "Helena–West Helena, AR", "lat": 34.5299, "lon": -90.5901, "year": "2021–2022", "type": "field"}, {"title": "Palatka Central High (Central Academy) Interviews", "place": "Palatka, FL", "lat": 29.6486, "lon": -81.6376, "year": "2021", "type": "field"}, {"title": "Impacted Families National March on Washington", "place": "Washington, DC", "lat": 38.9072, "lon": -77.0369, "year": "2021", "type": "field"}, {"title": "Soil Collection Ceremony — Alachua", "place": "Alachua, FL", "lat": 29.7513, "lon": -82.4249, "year": "2020–2022", "type": "field"}, {"title": "Soil Collection Ceremony — Newberry", "place": "Newberry, FL", "lat": 29.6469, "lon": -82.6065, "year": "2020–2022", "type": "field"}, {"title": "Soil Collection Ceremony — Monteocha", "place": "Monteocha (Alachua County), FL", "lat": 29.8022, "lon": -82.284, "year": "2020–2022", "type": "field"}, {"title": "Soil Collection Ceremony — Gordon (approx.)", "place": "Gordon (Alachua County), FL", "lat": 29.73, "lon": -82.3, "year": "2020–2022", "type": "field"}, {"title": "Soil Collection Ceremony — LaCrosse", "place": "LaCrosse, FL", "lat": 29.8461, "lon": -82.4037, "year": "2020–2022", "type": "field"}, {"title": "Soil Collection Ceremony — Newnansville", "place": "Newnansville (ghost town), FL", "lat": 29.792, "lon": -82.489, "year": "2020–2022", "type": "field"}, {"title": "Back to Angola Festival — Black Seminole Descendants", "place": "Bradenton, FL", "lat": 27.4989, "lon": -82.5748, "year": "(year not specified)", "type": "field"}];
+    const TM_FIELD = [{"title": "Trustees on Trial — UF Board of Trustees", "place": "Gainesville, FL", "lat": 29.6516, "lon": -82.3248, "year": "2024", "type": "field"}, {"title": "Network to Freedom — Harriet Tubman Underground Railroad State Park", "place": "Church Creek, MD (approx.)", "lat": 38.444, "lon": -76.145, "year": "2023", "type": "field"}, {"title": "Virginia Tidewater Main Street Project", "place": "Chesapeake Bay, VA (approx.)", "lat": 36.7682, "lon": -76.2875, "year": "2023", "type": "field"}, {"title": "Remembering Rosewood — Centennial Oral Histories", "place": "Rosewood, FL", "lat": 29.278, "lon": -82.904, "year": "2023", "type": "field"}, {"title": "Resilience Family Festival — Oral Histories", "place": "St. Augustine, FL", "lat": 29.9012, "lon": -81.3124, "year": "2023", "type": "field"}, {"title": "Florida A&M Ceremony — Leon County Exhibit", "place": "Tallahassee, FL", "lat": 30.4383, "lon": -84.2807, "year": "2022", "type": "field"}, {"title": "Florida Naturalist Project — Key West", "place": "Key West, FL", "lat": 24.5551, "lon": -81.78, "year": "2022", "type": "field"}, {"title": "Florida Naturalist Project — Everglades", "place": "Everglades NP (Homestead area), FL", "lat": 25.3923, "lon": -80.5823, "year": "2022", "type": "field"}, {"title": "Florida Naturalist Project — St. Petersburg", "place": "St. Petersburg, FL", "lat": 27.7676, "lon": -82.6403, "year": "2022", "type": "field"}, {"title": "Chappie James Museum of Pensacola — Site Work", "place": "Pensacola, FL", "lat": 30.4213, "lon": -87.2169, "year": "2022", "type": "field"}, {"title": "Chappie James Museum Trip — Community Interviews", "place": "Mobile, AL", "lat": 30.6954, "lon": -88.0399, "year": "2022", "type": "field"}, {"title": "Machen Florida Opportunity Scholars (MFOS) Interviews", "place": "Gainesville, FL", "lat": 29.6516, "lon": -82.3248, "year": "2022", "type": "field"}, {"title": "Putnam County Interviews — Bethlehem Baptist Church", "place": "Palatka, FL", "lat": 29.6486, "lon": -81.6376, "year": "2022", "type": "field"}, {"title": "Mississippi Freedom Project — Delta Route", "place": "Clarksdale, MS", "lat": 34.2, "lon": -90.57, "year": "2021–2022", "type": "field"}, {"title": "Mississippi Freedom Project — Delta Route", "place": "Helena–West Helena, AR", "lat": 34.5299, "lon": -90.5901, "year": "2021–2022", "type": "field"}, {"title": "Palatka Central High (Central Academy) Interviews", "place": "Palatka, FL", "lat": 29.6486, "lon": -81.6376, "year": "2021", "type": "field"}, {"title": "Impacted Families National March on Washington", "place": "Washington, DC", "lat": 38.9072, "lon": -77.0369, "year": "2021", "type": "field"}, {"title": "Soil Collection Ceremony — Alachua", "place": "Alachua, FL", "lat": 29.7513, "lon": -82.4249, "year": "2020–2022", "type": "field"}, {"title": "Soil Collection Ceremony — Newberry", "place": "Newberry, FL", "lat": 29.6469, "lon": -82.6065, "year": "2020–2022", "type": "field"}, {"title": "Soil Collection Ceremony — Monteocha", "place": "Monteocha (Alachua County), FL", "lat": 29.8022, "lon": -82.284, "year": "2020–2022", "type": "field"}, {"title": "Soil Collection Ceremony — Gordon (approx.)", "place": "Gordon (Alachua County), FL", "lat": 29.73, "lon": -82.3, "year": "2020–2022", "type": "field"}, {"title": "Soil Collection Ceremony — LaCrosse", "place": "LaCrosse, FL", "lat": 29.8461, "lon": -82.4037, "year": "2020–2022", "type": "field"}, {"title": "Soil Collection Ceremony — Newnansville", "place": "Newnansville (ghost town), FL", "lat": 29.792, "lon": -82.489, "year": "2020–2022", "type": "field"}, {"title": "Back to Angola Festival — Black Seminole Descendants", "place": "Bradenton, FL", "lat": 27.4989, "lon": -82.5748, "year": "(year not specified)", "type": "field"}, {"title": "Mississippi Freedom Project — Interviews (Jackson)", "place": "Jackson, MS", "lat": 32.2988, "lon": -90.1848, "year": "2022", "type": "field"}, {"title": "Mississippi Freedom Project — Interviews (Holly Springs)", "place": "Holly Springs, MS", "lat": 34.767, "lon": -89.448, "year": "2022", "type": "field"}, {"title": "Mississippi Freedom Project — Interviews (Glendora)", "place": "Glendora, MS", "lat": 33.8329, "lon": -90.2873, "year": "2022", "type": "field"}, {"title": "Mississippi Freedom Project — Interviews (Elaine)", "place": "Elaine, AR", "lat": 33.6665, "lon": -91.221, "year": "2022", "type": "field"}, {"title": "Virginia Tidewater Main Street Project — Middlesex", "place": "Middlesex County (Saluda), VA", "lat": 37.605, "lon": -76.593, "year": "2023", "type": "field"}];
     const TM_TALKS = [{"title": "Organizing Educators in the Sunshine State (SHA, TradeWinds Resort)", "place": "St. Petersburg, FL", "lat": 27.7676, "lon": -82.6403, "date": "2025", "type": "talk"}, {"title": "Reimagining Power Research Approach (SASE)", "place": "Montreal, Canada", "lat": 45.5017, "lon": -73.5673, "date": "2025", "type": "talk"}, {"title": "Challenging Racism at UF in the 'Stop Woke' Era (OHA)", "place": "Baltimore, MD", "lat": 39.2904, "lon": -76.6122, "date": "2023", "type": "talk"}, {"title": "Documenting Black Resistance in the Mississippi Delta (ASALH)", "place": "Jacksonville, FL", "lat": 30.3322, "lon": -81.6557, "date": "2023", "type": "talk"}, {"title": "The Enduring Resonance of the Joel Buchanan Archive (ASALH)", "place": "Jacksonville, FL", "lat": 30.3322, "lon": -81.6557, "date": "2023", "type": "talk"}, {"title": "Challenging Racism at UF in the 'Stop Woke' Era (ASALH)", "place": "Jacksonville, FL", "lat": 30.3322, "lon": -81.6557, "date": "2023", "type": "talk"}, {"title": "Oscar Mack versus the Ku Klux Klan (ASALH)", "place": "Jacksonville, FL", "lat": 30.3322, "lon": -81.6557, "date": "2023", "type": "talk"}, {"title": "Best Practices — Venus McGhee Prince Project (Poarch Band of Creek Indians)", "place": "Mobile, AL", "lat": 30.6954, "lon": -88.0399, "date": "2022", "type": "talk"}, {"title": "Transcribing/Re-Transcribing the Doris Duke Collection (ATALM)", "place": "Temecula, CA", "lat": 33.4936, "lon": -117.1484, "date": "2022", "type": "talk"}, {"title": "From Field Work to Film (OHA, Millennium Biltmore)", "place": "Los Angeles, CA", "lat": 34.0522, "lon": -118.2437, "date": "2022", "type": "talk"}, {"title": "Historical & Contemporary Challenges of Migration (OHA)", "place": "Los Angeles, CA", "lat": 34.0522, "lon": -118.2437, "date": "2022", "type": "talk"}, {"title": "Educating, Transforming & Building Solidarity (11th National Civil Rights Conference)", "place": "Baton Rouge, LA", "lat": 30.4515, "lon": -91.1871, "date": "2022", "type": "talk"}, {"title": "A Decade of Documenting Agricultural Workers’ Struggles (LAWCHA, UIC)", "place": "Chicago, IL", "lat": 41.8781, "lon": -87.6298, "date": "2021", "type": "talk"}, {"title": "Comparative Urbanism: Global Perspectives (Andrew Young School, GSU)", "place": "Atlanta, GA", "lat": 33.749, "lon": -84.388, "date": "2019", "type": "talk"}, {"title": "Examining Mestiza Consciousness — McNair Research Conference", "place": "Schaumburg, IL", "lat": 42.0334, "lon": -88.0834, "date": "2018", "type": "talk"}, {"title": "Examining Mestiza Consciousness — SROP (Purdue)", "place": "Lafayette, IN", "lat": 40.4167, "lon": -86.8753, "date": "2018", "type": "talk"}, {"title": "Puerto Rican Displacement & Gentrification — NEIU", "place": "Chicago, IL", "lat": 41.8781, "lon": -87.6298, "date": "2018", "type": "talk"}];
     const TM_PROGRAMS = [{"title": "Town Hall – Welcoming Black Faculty", "place": "Gainesville, FL", "lat": 29.6516, "lon": -82.3248, "date": "2023", "type": "program"}, {"title": "Oscar Mack vs the KKK — Premiere", "place": "Gainesville, FL", "lat": 29.6516, "lon": -82.3248, "date": "2023", "type": "program"}, {"title": "K‑12 Classrooms — Bringing AA History", "place": "Gainesville, FL", "lat": 29.6516, "lon": -82.3248, "date": "2023", "type": "program"}];
     const TM_PD = [{"title": "UT Austin Ethnographic Summer School", "place": "Austin, TX — Urban Ethnography Lab, UT Austin", "lat": 30.2672, "lon": -97.7431, "date": "Aug 2025", "type": "pd", "desc": "Four-day intensive on observation, in-depth interviewing, qualitative coding, ethics; workshops with UT Austin Sociology faculty; 1:1 research feedback; reflexivity & IRB protocols."}, {"title": "QMUL–Cornell Migration Spring School (Gozo)", "place": "Victoria (Rabat), Gozo — Queen Mary University of London & Cornell University", "lat": 36.0443, "lon": 14.2397, "date": "May 2025", "type": "pd", "desc": "Interdisciplinary training on migration, labor rights, and urban policy; site visits, activist discussions; cross-field seminars (Geography, Film, History, Law, Psychology, Public Health, Policy)."}, {"title": "QMUL–Cornell Migration Spring School (Malta)", "place": "Valletta, Malta — Queen Mary University of London & Cornell University", "lat": 35.8989, "lon": 14.5146, "date": "May 2025", "type": "pd", "desc": "Explored economic migration, displacement, and urban labor conditions; experiential learning across Malta with scholars and practitioners."}, {"title": "Harvard Kennedy School & MA Black and Latino Legislative Caucus Retreat", "place": "Cambridge, MA — Harvard Kennedy School", "lat": 42.3736, "lon": -71.1097, "date": "Dec 2024", "type": "pd", "desc": "Supported Dr. Paul Ortiz’s presentation; met Beacon Press editors (Gayatri Patnaik, Joanna Green) about dissertation; feedback from Prof. Vincent Brown."}, {"title": "MigLab Working Group (Cornell)", "place": "Ithaca, NY — Cornell University", "lat": 42.4439, "lon": -76.5019, "date": "Jan–May 2025", "type": "pd", "desc": "Interdisciplinary meetings on migration; peer feedback on grad presentations; co-sponsored by Cornell Population Center & Brooks School for Public Policy."}];
