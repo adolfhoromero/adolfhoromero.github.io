@@ -2707,6 +2707,145 @@ nav.main-nav a.cv-link {
     bind('tm-programs', L_PROGRAMS);
     bind('tm-pd', L_PD);
   </script>
+<!-- Map actions wiring: Reset • Share • List -->
+<script>
+(() => {
+  const btnField   = document.getElementById('tm-field');
+  const btnTalks   = document.getElementById('tm-talks');
+  const btnProgs   = document.getElementById('tm-programs');
+  const btnPd      = document.getElementById('tm-pd');
+  const qInput     = document.getElementById('tm-q');
+  const yearSel    = document.getElementById('tm-year');
+  const resetBtn   = document.getElementById('tm-reset');
+  const shareBtn   = document.getElementById('tm-share');
+  const listBtn    = document.getElementById('tm-list-btn');
+  const listWrap   = document.getElementById('tm-list');
+  const listContent= document.querySelector('.tm-list-content');
+
+  if (!btnField || !btnTalks || !btnProgs || !btnPd || !qInput || !yearSel || !resetBtn || !shareBtn || !listBtn || !listWrap || !listContent) {
+    console.warn('Teaching Map controls not fully found; skipping wiring.');
+    return;
+  }
+
+  const visibleKinds = () => ({
+    field:  btnField.getAttribute('aria-pressed') === 'true',
+    talk:   btnTalks.getAttribute('aria-pressed') === 'true',
+    program:btnProgs.getAttribute('aria-pressed') === 'true',
+    pd:     btnPd.getAttribute('aria-pressed') === 'true',
+  });
+
+  const ALL = [
+    ...TM_FIELD.map(d => ({ ...d, kind: 'field', label: 'Fieldwork' })),
+    ...TM_TALKS.map(d => ({ ...d, kind: 'talk',  label: 'Talk' })),
+    ...TM_PROGRAMS.map(d => ({ ...d, kind: 'program', label: 'Program' })),
+    ...TM_PD.map(d => ({ ...d, kind: 'pd', label: 'Prof. Dev.' })),
+  ];
+
+  function matchesFilters(d) {
+    const q = (qInput.value || '').trim().toLowerCase();
+    const y = yearSel.value;
+    const inYear = y === 'all' || d.year === y || (d.date && d.date.includes(y));
+    const inQuery = !q || (d.title && d.title.toLowerCase().includes(q)) || (d.place && d.place.toLowerCase().includes(q));
+    return inYear && inQuery;
+  }
+
+  function populateList() {
+    const vis = visibleKinds();
+    const items = ALL.filter(d => vis[d.kind] && matchesFilters(d));
+    listContent.innerHTML = items.map(d => `
+      <div class="tm-li">
+        <div class="t1">${d.title || ''}</div>
+        <div class="t2">${d.place || ''}</div>
+        <div class="t3">${d.year || d.date || ''} • ${d.label}</div>
+        <button class="go" data-lat="${d.lat}" data-lon="${d.lon}">View on map</button>
+      </div>
+    `).join('') || `<div class="t2" style="padding:.5rem 0;opacity:.7">No results for this view</div>`;
+
+    listContent.querySelectorAll('.go').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lat = parseFloat(btn.getAttribute('data-lat'));
+        const lon = parseFloat(btn.getAttribute('data-lon'));
+        if (!isNaN(lat) && !isNaN(lon)) {
+          map.setView([lat, lon], Math.max(map.getZoom(), 8), { animate: true });
+        }
+      });
+    });
+  }
+
+  // Reset
+  resetBtn.addEventListener('click', () => {
+    [btnField, btnTalks, btnProgs, btnPd].forEach(b => b.setAttribute('aria-pressed', 'true'));
+    [L_FIELD, L_TALKS, L_PROGRAMS, L_PD].forEach(layer => { if (!map.hasLayer(layer)) map.addLayer(layer); });
+    qInput.value = '';
+    yearSel.value = 'all';
+    listWrap.removeAttribute('open');
+    listBtn.setAttribute('aria-expanded', 'false');
+    listBtn.classList.remove('is-active');
+    const bounds = [...TM_FIELD, ...TM_TALKS, ...TM_PROGRAMS, ...TM_PD].map(d => [d.lat, d.lon]);
+    if (bounds.length) map.fitBounds(bounds, { padding: [40, 40] });
+  });
+
+  // Share
+  shareBtn.addEventListener('click', async () => {
+    const vis = visibleKinds();
+    const center = map.getCenter();
+    const params = new URLSearchParams({
+      q: qInput.value || '',
+      year: yearSel.value,
+      f: vis.field ? '1' : '0',
+      t: vis.talk ? '1' : '0',
+      p: vis.program ? '1' : '0',
+      pd: vis.pd ? '1' : '0',
+      lat: center.lat.toFixed(5),
+      lon: center.lng.toFixed(5),
+      z: String(map.getZoom())
+    });
+    const url = `${location.origin}${location.pathname}?${params}#teaching-map`;
+    try {
+      await navigator.clipboard.writeText(url);
+      shareBtn.classList.add('is-active');
+      shareBtn.textContent = 'Copied!';
+      setTimeout(() => {
+        shareBtn.classList.remove('is-active');
+        shareBtn.textContent = 'Share';
+      }, 1600);
+    } catch {
+      prompt('Copy this link', url);
+    }
+  });
+
+  // List toggle
+  listBtn.addEventListener('click', () => {
+    const open = listWrap.hasAttribute('open');
+    if (open) {
+      listWrap.removeAttribute('open');
+      listBtn.setAttribute('aria-expanded', 'false');
+      listBtn.classList.remove('is-active');
+    } else {
+      populateList();
+      listWrap.setAttribute('open', '');
+      listBtn.setAttribute('aria-expanded', 'true');
+      listBtn.classList.add('is-active');
+      listWrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+
+  // Keep the list in sync when filters change or categories toggle
+  qInput.addEventListener('input', () => { if (listWrap.hasAttribute('open')) populateList(); });
+  yearSel.addEventListener('change', () => { if (listWrap.hasAttribute('open')) populateList(); });
+  [btnField, btnTalks, btnProgs, btnPd].forEach(btn => {
+    btn.addEventListener('click', () => { if (listWrap.hasAttribute('open')) populateList(); });
+  });
+})();
+</script>
+<style>
+  /* Visual feedback for active secondary control buttons */
+  .tm-btn-secondary.is-active {
+    outline: 2px solid var(--accent-solid);
+    filter: brightness(1.05);
+  }
+</style>
+
 
 
   <!-- Teaching in Action Photo Gallery moved above courses for better engagement -->
