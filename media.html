@@ -569,6 +569,33 @@
     }
   </style>
 
+  <!-- Style for media page search bar -->
+  <style>
+    /* Search bar for filtering media items */
+    .media-searchbar {
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+      padding: 0.5rem 0.8rem;
+      border: 1px solid rgba(41,83,155,0.25);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.5);
+      margin: 1rem auto 2rem;
+      max-width: 500px;
+    }
+    .media-searchbar input {
+      flex: 1;
+      background: transparent;
+      border: 0;
+      outline: 0;
+      color: var(--text-main);
+      font-size: 1rem;
+    }
+    .dark .media-searchbar {
+      background: rgba(0,0,0,0.15);
+    }
+  </style>
+
   <style>
     /* Unified bottom navigation design across all pages */
     :root{ --bottom-bar-h:60px; --bottom-offset:14px; }
@@ -627,8 +654,28 @@
     </style>
 </head>
 <body>
+  <!-- Skip link for screen readers and keyboard users -->
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <style>
+    /* Skip link appears when focused for accessibility */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 12px;
+      background: #ffffff;
+      color: #000000;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      z-index: 10000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      transition: left 0.2s ease;
+    }
+    .skip-link:focus {
+      left: 12px;
+      outline: none;
+    }
+  </style>
   <div id="progress-bar"></div>
-</div>
 
   <header>
     <button class="dark-toggle" role="button" tabindex="0" aria-pressed="false" aria-label="Toggle dark mode" title="Toggle dark mode">
@@ -651,8 +698,13 @@
     </ul>
   </nav>
 
-  <main>
+  <main id="main-content">
     <h2>Media & Public Engagement</h2>
+
+    <!-- Search bar to filter media items -->
+    <div class="media-searchbar" role="search">
+      <input type="text" id="media-search" placeholder="Filter articles..." aria-label="Filter media items" />
+    </div>
 
     <!-- Tabs with ARIA wiring and deep links -->
     <div class="tabs" role="tablist" aria-label="Media sections">
@@ -865,8 +917,9 @@
       } else { nav.classList.remove('hide-nav'); }
     });
 
-    // Tab logic with hash routing and ARIA updates
+    // Tab logic with hash routing, pointer support and ARIA updates
     const tabs = document.querySelectorAll('.tab-btn');
+    const tabsArray = Array.from(tabs);
     const panels = {
       coverage: document.getElementById('panel-coverage'),
       mentions: document.getElementById('panel-mentions'),
@@ -874,7 +927,7 @@
     };
 
     function activateTab(name, pushHash = true) {
-      tabs.forEach(btn => {
+      tabsArray.forEach(btn => {
         const isActive = btn.dataset.tab === name;
         btn.classList.toggle('active', isActive);
         btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
@@ -883,21 +936,82 @@
         el.classList.toggle('active', key === name);
       });
       if (pushHash) { location.hash = name; }
+      // Scroll to top of main content so users immediately see the new panel
+      const mainEl = document.getElementById('main-content');
+      if (mainEl) {
+        // Use a timeout to ensure layout has updated
+        setTimeout(() => {
+          mainEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 0);
+      }
     }
 
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => activateTab(tab.dataset.tab));
+    tabsArray.forEach((tab, index) => {
+      const name = tab.dataset.tab;
+      const activate = () => activateTab(name);
+      // Support pointerdown for immediate response on touch devices
+      tab.addEventListener('pointerdown', e => {
+        // Only respond for primary pointer types (mouse or touch)
+        if (e.pointerType === 'mouse' || e.pointerType === 'touch' || e.pointerType === '') {
+          activate();
+        }
+      });
+      // Fallback click for older browsers or keyboard activation
+      tab.addEventListener('click', activate);
+      // Keyboard navigation: Enter/Space to activate, arrow keys to move focus
       tab.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activateTab(tab.dataset.tab); }
+        const key = e.key;
+        if (key === 'Enter' || key === ' ') {
+          e.preventDefault();
+          activate();
+        }
+        if (key === 'ArrowLeft' || key === 'ArrowRight') {
+          e.preventDefault();
+          let nextIndex = index + (key === 'ArrowRight' ? 1 : -1);
+          if (nextIndex < 0) nextIndex = tabsArray.length - 1;
+          if (nextIndex >= tabsArray.length) nextIndex = 0;
+          tabsArray[nextIndex].focus();
+        }
       });
     });
 
     function initFromHash() {
-      const hash = location.hash.replace('#','');
+      const hash = location.hash.replace('#', '');
       if (hash && panels[hash]) activateTab(hash, false);
     }
     window.addEventListener('hashchange', initFromHash);
     initFromHash();
+
+    // Filter cards based on search input within the active panel
+    const searchInput = document.getElementById('media-search');
+    function filterCards() {
+      if (!searchInput) return;
+      const query = searchInput.value.toLowerCase();
+      const activePanel = document.querySelector('.content.active');
+      if (!activePanel) return;
+      const items = activePanel.querySelectorAll('.card');
+      items.forEach(item => {
+        const text = item.innerText.toLowerCase();
+        if (query && !text.includes(query)) {
+          item.style.display = 'none';
+        } else {
+          item.style.display = '';
+        }
+      });
+    }
+    if (searchInput) {
+      searchInput.addEventListener('input', filterCards);
+    }
+    // Re-filter when tabs change
+    tabsArray.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Delay to allow tab switch to complete
+        setTimeout(filterCards, 0);
+      });
+      tab.addEventListener('pointerdown', () => {
+        setTimeout(filterCards, 0);
+      });
+    });
 
     // Fade-in animation
     const cards = document.querySelectorAll('.card.animate');
