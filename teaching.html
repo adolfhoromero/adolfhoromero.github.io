@@ -2626,8 +2626,52 @@ nav.main-nav a.cv-link {
   .tm-dot.pd{background:linear-gradient(180deg,#a78bfa,#7c3aed)}
   #teach-map{height:520px;border-radius:14px;overflow:hidden}
   .tm-controls{display:flex;gap:8px;flex-wrap:wrap}
-  .tm-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;border:1px solid #2a3b64;background:rgba(255,255,255,.03);font-weight:800;cursor:pointer}
-  .tm-btn[aria-pressed="true"]{background:linear-gradient(90deg,#29539b,#ffcc00);color:#0a1020;border-color:transparent}
+  /* Style for the map category buttons: pill shape with icons */
+  .tm-btn{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    padding:10px 14px;
+    border-radius:999px;
+    border:1px solid #2a3b64;
+    background:rgba(255,255,255,.05);
+    font-weight:800;
+    cursor:pointer;
+    transition:background .3s ease, color .3s ease, box-shadow .3s ease, transform .15s ease;
+  }
+  .tm-btn[aria-pressed="true"]{
+    background:linear-gradient(90deg,#29539b,#ffcc00);
+    color:#0a1020;
+    border-color:transparent;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+  }
+  .tm-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 6px 20px rgba(0,0,0,0.25);
+  }
+  .tm-btn i{
+    font-size:1.05rem;
+    margin-right:4px;
+    opacity:1;
+    color:inherit;
+  }
+  /* Ensure icons adopt the same colour as text */
+  .tm-btn[aria-pressed="true"] i{
+    color:#0a1020;
+  }
+  .tm-btn:not([aria-pressed="true"]) i{
+    color:inherit;
+  }
+  .tm-btn span:last-child{
+    white-space:nowrap;
+  }
+
+  /* Emoji used in map category buttons */
+  .tm-emoji{
+    font-size:1.05rem;
+    line-height:1;
+    margin-right:2px;
+  }
   @media (max-width:980px){#teach-map{height:420px}}
 </style>
 <!-- ===== Interactive Map: Fieldwork, Conferences, Programs & Professional Development ===== -->
@@ -2636,10 +2680,27 @@ nav.main-nav a.cv-link {
     <div class="teachmap-head center">
   <h2 id="teachmap-h" class="tm-title">Fieldwork Map &amp; Career Timeline</h2>
   <div class="tm-controls" role="group" aria-label="Toggle layers">
-    <button class="tm-btn" id="tm-field" aria-pressed="true"><span class="tm-dot field"></span> Fieldwork</button>
-    <button class="tm-btn" id="tm-talks" aria-pressed="true"><span class="tm-dot talk"></span> Talks</button>
-    <button class="tm-btn" id="tm-programs" aria-pressed="true"><span class="tm-dot program"></span> Programs</button>
-    <button class="tm-btn" id="tm-pd" aria-pressed="true"><span class="tm-dot pd"></span> Prof. Dev.</button>
+    <!-- Updated map category buttons with icons for a more modern look -->
+    <button class="tm-btn" id="tm-field" aria-pressed="true">
+      <span class="tm-dot field"></span>
+      <span class="tm-emoji" aria-hidden="true">🌱</span>
+      <span>Fieldwork</span>
+    </button>
+    <button class="tm-btn" id="tm-talks" aria-pressed="true">
+      <span class="tm-dot talk"></span>
+      <span class="tm-emoji" aria-hidden="true">🎙️</span>
+      <span>Talks</span>
+    </button>
+    <button class="tm-btn" id="tm-programs" aria-pressed="true">
+      <span class="tm-dot program"></span>
+      <span class="tm-emoji" aria-hidden="true">📚</span>
+      <span>Programs</span>
+    </button>
+    <button class="tm-btn" id="tm-pd" aria-pressed="true">
+      <span class="tm-dot pd"></span>
+      <span class="tm-emoji" aria-hidden="true">🎓</span>
+      <span>Prof. Dev.</span>
+    </button>
   </div>
   <div class="tm-filters" role="search" aria-label="Map filters">
     <input id="tm-q" type="search" placeholder="Search title or place…" aria-label="Search" />
@@ -2649,6 +2710,10 @@ nav.main-nav a.cv-link {
     <div class="tm-actions">
       <button class="tm-btn-secondary" id="tm-reset" title="Reset view">Reset</button>
       <button class="tm-btn-secondary" id="tm-share" title="Copy a link to this view">Share</button>
+      <button class="tm-btn-secondary" id="tm-download" title="Download map data">Download</button>
+      <!-- Added a style toggle and full‑screen control for a more immersive map experience -->
+      <button class="tm-btn-secondary" id="tm-style" title="Cycle map base layer style">Style: Auto</button>
+      <button class="tm-btn-secondary" id="tm-fullscreen" title="Toggle full screen view">Expand</button>
       <button class="tm-btn-secondary" id="tm-list-btn" aria-expanded="false" aria-controls="tm-list">List</button>
     </div>
   </div>
@@ -2667,8 +2732,25 @@ nav.main-nav a.cv-link {
     const map = L.map('teach-map', { zoomControl:true, scrollWheelZoom:true, attributionControl:false }).setView([34.5,-92], 4);
     const light = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png', { maxZoom:19 });
     const dark  = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}.png', { maxZoom:19 });
-    function isDark(){ return document.documentElement.classList.contains('dark') || document.body.classList.contains('dark') || window.matchMedia('(prefers-color-scheme: dark)').matches; }
-    function refreshTiles(){ if(isDark()){ if(map.hasLayer(light)) map.removeLayer(light); dark.addTo(map); } else { if(map.hasLayer(dark)) map.removeLayer(dark); light.addTo(map); } }
+    // Determine whether dark mode should be used for the base map.  A custom
+    // state (tmStyleState) can override automatic OS detection.  Possible
+    // values for window.tmStyleState are 'auto', 'light', or 'dark'.
+    function isDark(){
+      const st = window.tmStyleState || 'auto';
+      if (st === 'light') return false;
+      if (st === 'dark') return true;
+      return document.documentElement.classList.contains('dark') || document.body.classList.contains('dark') || window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+    function refreshTiles(){
+      // Remove whichever base layer is currently active and add the new one
+      if(isDark()){
+        if(map.hasLayer(light)) map.removeLayer(light);
+        dark.addTo(map);
+      } else {
+        if(map.hasLayer(dark)) map.removeLayer(dark);
+        light.addTo(map);
+      }
+    }
     refreshTiles();
     try { const m = window.matchMedia('(prefers-color-scheme: dark)'); (m.addEventListener? m.addEventListener('change', refreshTiles) : m.addListener(refreshTiles)); } catch(_){}
 
@@ -2718,11 +2800,23 @@ nav.main-nav a.cv-link {
   const yearSel    = document.getElementById('tm-year');
   const resetBtn   = document.getElementById('tm-reset');
   const shareBtn   = document.getElementById('tm-share');
+  const downloadBtn = document.getElementById('tm-download');
+  const styleBtn   = document.getElementById('tm-style');
+  const fullscreenBtn = document.getElementById('tm-fullscreen');
   const listBtn    = document.getElementById('tm-list-btn');
   const listWrap   = document.getElementById('tm-list');
   const listContent= document.querySelector('.tm-list-content');
 
-  if (!btnField || !btnTalks || !btnProgs || !btnPd || !qInput || !yearSel || !resetBtn || !shareBtn || !listBtn || !listWrap || !listContent) {
+  // Expose a global style state for the map's base layer so that isDark()
+  // (defined above) can respect manual overrides.  Valid values: 'auto',
+  // 'light', 'dark'.  Default to 'auto', which follows the OS/theme.
+  window.tmStyleState = 'auto';
+
+  // Cache a reference to the map container for full‑screen operations
+  const mapContainer = document.getElementById('teach-map');
+
+  // Ensure all interactive controls exist before wiring up events (downloadBtn added)
+  if (!btnField || !btnTalks || !btnProgs || !btnPd || !qInput || !yearSel || !resetBtn || !shareBtn || !downloadBtn || !styleBtn || !fullscreenBtn || !listBtn || !listWrap || !listContent) {
     console.warn('Teaching Map controls not fully found; skipping wiring.');
     return;
   }
@@ -2814,6 +2908,67 @@ nav.main-nav a.cv-link {
     }
   });
 
+  // Download data
+  downloadBtn.addEventListener('click', () => {
+    // Compile all map datasets into a single JSON object
+    const data = {
+      field: TM_FIELD,
+      talks: TM_TALKS,
+      programs: TM_PROGRAMS,
+      pd: TM_PD
+    };
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'fieldwork-map-data.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    // Provide simple visual feedback on click
+    const prev = downloadBtn.textContent;
+    downloadBtn.classList.add('is-active');
+    downloadBtn.textContent = 'Saved!';
+    setTimeout(() => {
+      downloadBtn.textContent = prev;
+      downloadBtn.classList.remove('is-active');
+    }, 1600);
+  });
+
+  // Style toggle: cycle through auto, light and dark base layers.  When
+  // the style changes, update the button label and refresh the tiles.
+  styleBtn.addEventListener('click', () => {
+    const states = { 'auto': 'light', 'light': 'dark', 'dark': 'auto' };
+    window.tmStyleState = states[window.tmStyleState] || 'auto';
+    // Update button text to reflect the current mode
+    const label = window.tmStyleState.charAt(0).toUpperCase() + window.tmStyleState.slice(1);
+    styleBtn.textContent = `Style: ${label}`;
+    styleBtn.classList.add('is-active');
+    refreshTiles();
+    setTimeout(() => styleBtn.classList.remove('is-active'), 900);
+  });
+
+  // Expand/collapse toggle: enlarge the map area to fill the viewport.
+  fullscreenBtn.addEventListener('click', () => {
+    const section = document.getElementById('teaching-map');
+    const expanded = section.classList.contains('expanded');
+    if (!expanded) {
+      section.classList.add('expanded');
+      document.body.classList.add('no-scroll');
+      fullscreenBtn.textContent = 'Collapse';
+      fullscreenBtn.classList.add('is-active');
+      // Ensure the map redraws once the new layout has been applied
+      setTimeout(() => { try { map.invalidateSize(); } catch(_){} }, 300);
+    } else {
+      section.classList.remove('expanded');
+      document.body.classList.remove('no-scroll');
+      fullscreenBtn.textContent = 'Expand';
+      fullscreenBtn.classList.remove('is-active');
+      setTimeout(() => { try { map.invalidateSize(); } catch(_){} }, 300);
+    }
+  });
+
   // List toggle
   listBtn.addEventListener('click', () => {
     const open = listWrap.hasAttribute('open');
@@ -2843,6 +2998,40 @@ nav.main-nav a.cv-link {
   .tm-btn-secondary.is-active {
     outline: 2px solid var(--accent-solid);
     filter: brightness(1.05);
+  }
+
+  /* Expandable map: when the map section is expanded, fill the viewport */
+  #teaching-map.expanded {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    padding: 1.2rem;
+    background: var(--background-top);
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #teaching-map.expanded .teachmap-card {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  #teaching-map.expanded #teach-map {
+    flex-grow: 1;
+    height: auto;
+  }
+  /* Prevent background scrolling when map is expanded */
+  body.no-scroll {
+    overflow: hidden;
   }
 </style>
 
