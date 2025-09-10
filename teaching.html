@@ -2090,6 +2090,80 @@ nav.main-nav a.cv-link {
   .tm-li .go{margin-top:6px;font-size:.85rem;border:1px solid #2a3b64;border-radius:999px;padding:6px 10px;background:rgba(255,255,255,.03);cursor:pointer}
 </style>
 </style>
+<style>
+  /* Map theme variables: default light; override when `.teachmap-wrap` has `.dark` class */
+  :root {
+    --tm-card-bg: #ffffff;
+    --tm-card-border: rgba(0, 0, 0, 0.08);
+    --tm-text: #1f2937;
+    --tm-text-secondary: #4b5563;
+    --tm-btn-bg: #f3f4f6;
+    --tm-btn-border: rgba(0, 0, 0, 0.12);
+    --tm-btn-text: #0a1020;
+    --tm-map-bg: #f8fafc;
+  }
+  .teachmap-wrap.dark {
+    --tm-card-bg: #0f1626;
+    --tm-card-border: rgba(59, 130, 246, 0.18);
+    --tm-text: #ffffff;
+    --tm-text-secondary: #cbd5e1;
+    --tm-btn-bg: rgba(255, 255, 255, 0.06);
+    --tm-btn-border: rgba(148, 163, 184, 0.25);
+    --tm-btn-text: #f5f5f5;
+    --tm-map-bg: #0b132b;
+  }
+  /* Override map card and controls to use theme variables */
+  .teachmap-wrap .teachmap-card {
+    background: var(--tm-card-bg);
+    border-color: var(--tm-card-border);
+    color: var(--tm-text);
+  }
+  .teachmap-wrap .tm-title {
+    color: var(--tm-text);
+  }
+  .teachmap-wrap .tm-controls .tm-btn {
+    background: var(--tm-btn-bg);
+    color: var(--tm-btn-text);
+    border-color: var(--tm-btn-border);
+  }
+  .teachmap-wrap .tm-controls .tm-btn[aria-pressed="true"] {
+    background: linear-gradient(90deg, #29539b, #ffcc00);
+    color: #0a1020;
+    border-color: transparent;
+  }
+  #teach-map {
+    background: var(--tm-map-bg);
+  }
+  /* Legend and key text color */
+  .teachmap-wrap .tm-legend,
+  .teachmap-wrap .tm-key {
+    color: var(--tm-text);
+  }
+  /* Theme toggle button styling */
+  .tm-theme {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-left: auto;
+    padding: 10px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--tm-btn-border);
+    background: var(--tm-btn-bg);
+    color: var(--tm-btn-text);
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease;
+  }
+  .tm-theme:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  }
+  .tm-theme[aria-pressed="true"] {
+    background: linear-gradient(90deg, #29539b, #ffcc00);
+    color: #0a1020;
+    border-color: transparent;
+  }
+</style>
 
 </style>
 
@@ -2681,6 +2755,11 @@ nav.main-nav a.cv-link {
   <div class="teachmap-card">
     <div class="teachmap-head center">
   <h2 id="teachmap-h" class="tm-title">Fieldwork Map &amp; Career Timeline</h2>
+      <!-- Theme toggle for the map: defaults to light; click to toggle dark mode -->
+      <button id="tm-theme" class="tm-theme" aria-pressed="false" title="Toggle dark mode for map">
+        <span class="tm-theme-icon" aria-hidden="true">🌞</span>
+        <span class="tm-theme-text">Light</span>
+      </button>
   <div class="tm-controls" role="group" aria-label="Toggle layers">
     <!-- Updated map category buttons with icons for a more modern look -->
     <button class="tm-btn" id="tm-field" aria-pressed="true">
@@ -2811,8 +2890,10 @@ nav.main-nav a.cv-link {
 
   // Expose a global style state for the map's base layer so that isDark()
   // (defined above) can respect manual overrides.  Valid values: 'auto',
-  // 'light', 'dark'.  Default to 'auto', which follows the OS/theme.
-  window.tmStyleState = 'auto';
+  // 'light', 'dark'.  Default to 'light', so the map opens in light mode regardless of system theme.
+  window.tmStyleState = 'light';
+  // Update the Style button text to reflect the initial mode
+  if (styleBtn) styleBtn.textContent = 'Style: Light';
 
   // Cache a reference to the map container for full‑screen operations
   const mapContainer = document.getElementById('teach-map');
@@ -3747,6 +3828,40 @@ nav.main-nav a.cv-link {
         setTimeout(handleBadgeVisibility, 600);
       });
     })();
+  </script>
+
+  <!-- Map theme toggle script: toggles dark/light styling and base tile on user click -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mapWrap  = document.getElementById('teaching-map');
+      const themeBtn = document.getElementById('tm-theme');
+      const styleBtnEl = document.getElementById('tm-style');
+      if (!mapWrap || !themeBtn) return;
+      // Ensure map starts in light mode
+      mapWrap.classList.remove('dark');
+      themeBtn.setAttribute('aria-pressed', 'false');
+      const iconSpan   = themeBtn.querySelector('.tm-theme-icon');
+      const textSpan   = themeBtn.querySelector('.tm-theme-text');
+      if (iconSpan) iconSpan.textContent = '🌞';
+      if (textSpan) textSpan.textContent = 'Light';
+      // Toggle handler
+      themeBtn.addEventListener('click', function() {
+        const isDark = mapWrap.classList.toggle('dark');
+        themeBtn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+        if (iconSpan) iconSpan.textContent = isDark ? '🌙' : '🌞';
+        if (textSpan) textSpan.textContent = isDark ? 'Dark' : 'Light';
+        // Switch the base map style accordingly
+        if (isDark) {
+          window.tmStyleState = 'dark';
+          if (typeof refreshTiles === 'function') refreshTiles();
+          if (styleBtnEl) styleBtnEl.textContent = 'Style: Dark';
+        } else {
+          window.tmStyleState = 'light';
+          if (typeof refreshTiles === 'function') refreshTiles();
+          if (styleBtnEl) styleBtnEl.textContent = 'Style: Light';
+        }
+      });
+    });
   </script>
 </body>
 </html>
