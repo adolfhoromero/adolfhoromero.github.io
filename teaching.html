@@ -2090,80 +2090,6 @@ nav.main-nav a.cv-link {
   .tm-li .go{margin-top:6px;font-size:.85rem;border:1px solid #2a3b64;border-radius:999px;padding:6px 10px;background:rgba(255,255,255,.03);cursor:pointer}
 </style>
 </style>
-<style>
-  /* Map theme variables: default light; override when `.teachmap-wrap` has `.dark` class */
-  :root {
-    --tm-card-bg: #ffffff;
-    --tm-card-border: rgba(0, 0, 0, 0.08);
-    --tm-text: #1f2937;
-    --tm-text-secondary: #4b5563;
-    --tm-btn-bg: #f3f4f6;
-    --tm-btn-border: rgba(0, 0, 0, 0.12);
-    --tm-btn-text: #0a1020;
-    --tm-map-bg: #f8fafc;
-  }
-  .teachmap-wrap.dark {
-    --tm-card-bg: #0f1626;
-    --tm-card-border: rgba(59, 130, 246, 0.18);
-    --tm-text: #ffffff;
-    --tm-text-secondary: #cbd5e1;
-    --tm-btn-bg: rgba(255, 255, 255, 0.06);
-    --tm-btn-border: rgba(148, 163, 184, 0.25);
-    --tm-btn-text: #f5f5f5;
-    --tm-map-bg: #0b132b;
-  }
-  /* Override map card and controls to use theme variables */
-  .teachmap-wrap .teachmap-card {
-    background: var(--tm-card-bg);
-    border-color: var(--tm-card-border);
-    color: var(--tm-text);
-  }
-  .teachmap-wrap .tm-title {
-    color: var(--tm-text);
-  }
-  .teachmap-wrap .tm-controls .tm-btn {
-    background: var(--tm-btn-bg);
-    color: var(--tm-btn-text);
-    border-color: var(--tm-btn-border);
-  }
-  .teachmap-wrap .tm-controls .tm-btn[aria-pressed="true"] {
-    background: linear-gradient(90deg, #29539b, #ffcc00);
-    color: #0a1020;
-    border-color: transparent;
-  }
-  #teach-map {
-    background: var(--tm-map-bg);
-  }
-  /* Legend and key text color */
-  .teachmap-wrap .tm-legend,
-  .teachmap-wrap .tm-key {
-    color: var(--tm-text);
-  }
-  /* Theme toggle button styling */
-  .tm-theme {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    margin-left: auto;
-    padding: 10px 14px;
-    border-radius: 999px;
-    border: 1px solid var(--tm-btn-border);
-    background: var(--tm-btn-bg);
-    color: var(--tm-btn-text);
-    font-weight: 800;
-    cursor: pointer;
-    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease;
-  }
-  .tm-theme:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-  }
-  .tm-theme[aria-pressed="true"] {
-    background: linear-gradient(90deg, #29539b, #ffcc00);
-    color: #0a1020;
-    border-color: transparent;
-  }
-</style>
 
 </style>
 
@@ -2688,6 +2614,170 @@ nav.main-nav a.cv-link {
   <div class="tm-list-content"></div>
 </details>
 </section>
+<!-- ===== Methods & Training (centered) ===== -->
+<section id="methods-training" class="section scroll-reveal" aria-labelledby="mt-title">
+  <div class="mt-card">
+    <h2 id="mt-title" class="mt-title center">Methods &amp; Training</h2>
+    <p class="mt-note center">Selected programs that inform my research methods and pedagogy.</p>
+
+    <div class="mt-grid">
+      <figure class="mt-fig" data-mt="migrations" role="button" tabindex="0" aria-label="View Migration Spring School certificate">
+        <img src="/images/certificates/migrations.jpg"
+             alt="Migration Spring School certificate. Cornell and Queen Mary. Malta 2025."
+             loading="lazy" />
+        <figcaption>
+          <strong>Migration Spring School</strong>
+          <span>QMUL &amp; Cornell 2025</span>
+        </figcaption>
+      </figure>
+
+      <figure class="mt-fig" data-mt="decolonizing" role="button" tabindex="0" aria-label="View Decolonizing Representations certificate">
+        <img src="/images/certificates/decolonizing.jpg"
+             alt="Decolonizing Representations certificate. Florida 2022."
+             loading="lazy" />
+        <figcaption>
+          <strong>Decolonizing Representations</strong>
+          <span>Florida Humanities &amp; UF partners 2022</span>
+        </figcaption>
+      </figure>
+
+      <figure class="mt-fig" data-mt="uf" role="button" tabindex="0" aria-label="View Latinx Studies & Migration certificate">
+        <img src="/images/certificates/uf.jpg"
+             alt="UF Latinx Studies and Migration specialization certificate. 2021."
+             loading="lazy" />
+        <figcaption>
+          <strong>Latinx Studies &amp; Migration</strong>
+          <span>UF Center for Latin American Studies 2021</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="mt-links center">
+      <a href="/cv.html" class="mt-link">See full record on my CV</a>
+    </div>
+  </div>
+</section>
+
+  <!-- Modal for Methods & Training: displays certificate details in a lightbox -->
+  <div id="mt-modal" class="mt-modal" role="dialog" aria-modal="true" aria-label="Certificate viewer" hidden>
+    <div class="mt-dialog">
+      <button class="mt-close" aria-label="Close">✕</button>
+      <figure class="mt-figure">
+        <img id="mt-image" src="" alt="" />
+        <figcaption id="mt-caption" class="mt-caption"></figcaption>
+      </figure>
+      <div class="mt-actions">
+        <a id="mt-download" href="#" download>Download</a>
+      </div>
+    </div>
+  </div>
+
+<style>
+  /* ===== Methods & Training styles ===== */
+  .mt-card{
+    max-width:1100px; margin:0 auto;
+    background:var(--card-bg,#fff);
+    border:1px solid rgba(41,83,155,.12);
+    border-radius:18px;
+    box-shadow:0 6px 28px #2e3a5030;
+    padding:1.25rem;
+  }
+  .mt-title{font-family:var(--font-heading,'Spectral',serif);font-size:1.45rem;margin:0 0 .35rem;color:var(--text-main,#232d41)}
+  .mt-note{color:var(--text-secondary,#5a6c7d);margin:0 0 .9rem;font-size:.98rem}
+  .mt-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+  @media (max-width:900px){.mt-grid{grid-template-columns:1fr 1fr}}
+  @media (max-width:560px){.mt-grid{grid-template-columns:1fr}}
+  .mt-fig{margin:0;display:flex;flex-direction:column;gap:.55rem;
+          background:linear-gradient(180deg,rgba(0,0,0,.02),transparent);
+          border-radius:14px;padding:.6rem;
+          cursor:pointer}
+  .mt-fig img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:10px;
+              filter:grayscale(.08) contrast(1.02);transition:transform .2s ease, filter .2s ease}
+  .mt-fig:hover img{transform:translateY(-2px);filter:grayscale(0)}
+  .mt-fig figcaption{display:flex;flex-direction:column;gap:.1rem}
+  .mt-fig strong{font-weight:700;color:var(--text-main,#232d41)}
+  .mt-fig span{font-size:.92rem;color:var(--text-secondary,#5a6c7d)}
+  .mt-links{margin-top:.6rem}
+  .mt-link{font-weight:700;text-decoration:underline}
+  .dark .mt-card{background:var(--card-bg,#121a2a);border-color:rgba(59,130,246,.18)}
+
+  /* Modal styles for Methods & Training */
+  .mt-modal{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(2px);display:grid;place-items:center;padding:1rem;z-index:80;}
+  .mt-modal[hidden]{display:none;}
+  .mt-dialog{width:min(960px,92vw);background:var(--card-bg,#fff);border-radius:16px;padding:1rem 1rem 1.25rem;position:relative;box-shadow:0 18px 60px rgba(0,0,0,.28);}
+  .mt-close{position:absolute;top:.5rem;right:.6rem;border:0;background:transparent;font-size:1.3rem;cursor:pointer;color:var(--text-main,#232d41);}
+  .mt-dialog img{width:100%;height:auto;border-radius:12px;display:block;}
+  .mt-caption{margin-top:.5rem;font-size:.95rem;color:var(--text-secondary,#5a6c7d);}
+  .mt-actions{margin-top:.6rem;display:flex;justify-content:flex-end}
+  .mt-actions a{font-weight:700;text-decoration:underline}
+  .dark .mt-dialog{background:var(--card-bg,#121a2a);border-color:rgba(59,130,246,.18);}
+</style>
+<script>
+  (() => {
+    // Data for each credential: image source, descriptive caption and download URL
+    const MT_DATA = {
+      migrations: {
+        src: '/images/certificates/migrations.jpg',
+        caption: 'Migration Spring School – QMUL & Cornell, Gozo Malta 2025.',
+        download: '/images/certificates/migrations.jpg'
+      },
+      decolonizing: {
+        src: '/images/certificates/decolonizing.jpg',
+        caption: 'Decolonizing Representations through the Curriculum, Florida 2022.',
+        download: '/images/certificates/decolonizing.jpg'
+      },
+      uf: {
+        src: '/images/certificates/uf.jpg',
+        caption: 'Latinx Studies & Migration specialization, University of Florida 2021.',
+        download: '/images/certificates/uf.jpg'
+      }
+    };
+    const modal   = document.getElementById('mt-modal');
+    const imgEl   = document.getElementById('mt-image');
+    const capEl   = document.getElementById('mt-caption');
+    const dlEl    = document.getElementById('mt-download');
+    if (modal && imgEl && capEl && dlEl) {
+      // Attach click/keyboard handlers to each figure in the Methods & Training section
+      document.querySelectorAll('#methods-training .mt-fig').forEach(fig => {
+        fig.addEventListener('click', () => {
+          const key = fig.getAttribute('data-mt');
+          const d = MT_DATA[key];
+          if (!d) return;
+          imgEl.src = d.src;
+          imgEl.alt = capEl.textContent = d.caption;
+          dlEl.href = d.download;
+          modal.hidden = false;
+          // Focus the close button for accessibility after the modal opens
+          setTimeout(() => {
+            const closeBtn = modal.querySelector('.mt-close');
+            if (closeBtn) closeBtn.focus();
+          }, 0);
+        });
+        fig.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            fig.click();
+          }
+        });
+      });
+      // Click on backdrop closes the modal
+      modal.addEventListener('click', e => {
+        if (e.target === modal) modal.hidden = true;
+      });
+      // Close button handler
+      const closeBtn = document.querySelector('#mt-modal .mt-close');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => { modal.hidden = true; });
+      }
+      // Escape key closes the modal
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && !modal.hidden) {
+          modal.hidden = true;
+        }
+      });
+    }
+  })();
+</script>
 <!-- Teaching Map styles (scoped) -->
 <style>
   .teachmap-wrap{max-width:var(--max-width,1200px);margin:2rem auto 3rem;padding:0 1rem}
@@ -2755,11 +2845,6 @@ nav.main-nav a.cv-link {
   <div class="teachmap-card">
     <div class="teachmap-head center">
   <h2 id="teachmap-h" class="tm-title">Fieldwork Map &amp; Career Timeline</h2>
-      <!-- Theme toggle for the map: defaults to light; click to toggle dark mode -->
-      <button id="tm-theme" class="tm-theme" aria-pressed="false" title="Toggle dark mode for map">
-        <span class="tm-theme-icon" aria-hidden="true">🌞</span>
-        <span class="tm-theme-text">Light</span>
-      </button>
   <div class="tm-controls" role="group" aria-label="Toggle layers">
     <!-- Updated map category buttons with icons for a more modern look -->
     <button class="tm-btn" id="tm-field" aria-pressed="true">
@@ -2890,10 +2975,8 @@ nav.main-nav a.cv-link {
 
   // Expose a global style state for the map's base layer so that isDark()
   // (defined above) can respect manual overrides.  Valid values: 'auto',
-  // 'light', 'dark'.  Default to 'light', so the map opens in light mode regardless of system theme.
-  window.tmStyleState = 'light';
-  // Update the Style button text to reflect the initial mode
-  if (styleBtn) styleBtn.textContent = 'Style: Light';
+  // 'light', 'dark'.  Default to 'auto', which follows the OS/theme.
+  window.tmStyleState = 'auto';
 
   // Cache a reference to the map container for full‑screen operations
   const mapContainer = document.getElementById('teach-map');
@@ -3828,40 +3911,6 @@ nav.main-nav a.cv-link {
         setTimeout(handleBadgeVisibility, 600);
       });
     })();
-  </script>
-
-  <!-- Map theme toggle script: toggles dark/light styling and base tile on user click -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const mapWrap  = document.getElementById('teaching-map');
-      const themeBtn = document.getElementById('tm-theme');
-      const styleBtnEl = document.getElementById('tm-style');
-      if (!mapWrap || !themeBtn) return;
-      // Ensure map starts in light mode
-      mapWrap.classList.remove('dark');
-      themeBtn.setAttribute('aria-pressed', 'false');
-      const iconSpan   = themeBtn.querySelector('.tm-theme-icon');
-      const textSpan   = themeBtn.querySelector('.tm-theme-text');
-      if (iconSpan) iconSpan.textContent = '🌞';
-      if (textSpan) textSpan.textContent = 'Light';
-      // Toggle handler
-      themeBtn.addEventListener('click', function() {
-        const isDark = mapWrap.classList.toggle('dark');
-        themeBtn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-        if (iconSpan) iconSpan.textContent = isDark ? '🌙' : '🌞';
-        if (textSpan) textSpan.textContent = isDark ? 'Dark' : 'Light';
-        // Switch the base map style accordingly
-        if (isDark) {
-          window.tmStyleState = 'dark';
-          if (typeof refreshTiles === 'function') refreshTiles();
-          if (styleBtnEl) styleBtnEl.textContent = 'Style: Dark';
-        } else {
-          window.tmStyleState = 'light';
-          if (typeof refreshTiles === 'function') refreshTiles();
-          if (styleBtnEl) styleBtnEl.textContent = 'Style: Light';
-        }
-      });
-    });
   </script>
 </body>
 </html>
