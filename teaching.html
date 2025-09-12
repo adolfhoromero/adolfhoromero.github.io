@@ -2622,28 +2622,28 @@ nav.main-nav a.cv-link {
 
     <div class="mt-grid">
       <figure class="mt-fig" data-mt="migrations" role="button" tabindex="0" aria-label="View Migration Spring School certificate">
-        <img src="/images/certificates/migrations.jpg"
+        <img src="/images/certificates/migrations.jpeg"
              alt="Migration Spring School certificate. Cornell and Queen Mary. Malta 2025."
              loading="lazy" />
         <figcaption>
           <strong>Migration Spring School</strong>
-          <span>QMUL &amp; Cornell 2025</span>
+          <span>QMUL &amp; Cornell 2025 • Gozo, Malta</span>
         </figcaption>
       </figure>
 
-      <figure class="mt-fig" data-mt="decolonizing" role="button" tabindex="0" aria-label="View Decolonizing Representations certificate">
-        <img src="/images/certificates/decolonizing.jpg"
+      <figure class="mt-fig" data-mt="representations" role="button" tabindex="0" aria-label="View Decolonizing Representations certificate">
+        <img src="/images/certificates/representations.jpeg"
              alt="Decolonizing Representations certificate. Florida 2022."
              loading="lazy" />
         <figcaption>
           <strong>Decolonizing Representations</strong>
-          <span>Florida Humanities &amp; UF partners 2022</span>
+          <span>Florida Humanities &amp; UF Partners 2022</span>
         </figcaption>
       </figure>
 
       <figure class="mt-fig" data-mt="uf" role="button" tabindex="0" aria-label="View Latinx Studies & Migration certificate">
-        <img src="/images/certificates/uf.jpg"
-             alt="UF Latinx Studies and Migration specialization certificate. 2021."
+        <img src="/images/certificates/uf.jpeg"
+             alt="Latinx Studies and Migration specialization certificate. University of Florida 2021."
              loading="lazy" />
         <figcaption>
           <strong>Latinx Studies &amp; Migration</strong>
@@ -2701,6 +2701,18 @@ nav.main-nav a.cv-link {
   .mt-link{font-weight:700;text-decoration:underline}
   .dark .mt-card{background:var(--card-bg,#121a2a);border-color:rgba(59,130,246,.18)}
 
+  /* Responsive image handling on small screens for Methods & Training */
+  @media (max-width:560px){
+    #methods-training .mt-fig img{
+      width:100%;
+      height:auto;
+      aspect-ratio:auto;
+      object-fit:contain;
+      background:#fff;
+      border-radius:10px;
+    }
+  }
+
   /* Modal styles for Methods & Training */
   .mt-modal{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(2px);display:grid;place-items:center;padding:1rem;z-index:80;}
   .mt-modal[hidden]{display:none;}
@@ -2717,19 +2729,19 @@ nav.main-nav a.cv-link {
     // Data for each credential: image source, descriptive caption and download URL
     const MT_DATA = {
       migrations: {
-        src: '/images/certificates/migrations.jpg',
-        caption: 'Migration Spring School – QMUL & Cornell, Gozo Malta 2025.',
-        download: '/images/certificates/migrations.jpg'
+        src: '/images/certificates/migrations.jpeg',
+        caption: 'Migration Spring School – QMUL & Cornell, Gozo, Malta 2025.',
+        download: '/images/certificates/migrations.jpeg'
       },
-      decolonizing: {
-        src: '/images/certificates/decolonizing.jpg',
-        caption: 'Decolonizing Representations through the Curriculum, Florida 2022.',
-        download: '/images/certificates/decolonizing.jpg'
+      representations: {
+        src: '/images/certificates/representations.jpeg',
+        caption: 'Decolonizing Representations – Florida Humanities & UF Partners 2022.',
+        download: '/images/certificates/representations.jpeg'
       },
       uf: {
-        src: '/images/certificates/uf.jpg',
+        src: '/images/certificates/uf.jpeg',
         caption: 'Latinx Studies & Migration specialization, University of Florida 2021.',
-        download: '/images/certificates/uf.jpg'
+        download: '/images/certificates/uf.jpeg'
       }
     };
     const modal   = document.getElementById('mt-modal');
