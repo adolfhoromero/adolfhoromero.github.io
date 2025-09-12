@@ -2521,6 +2521,22 @@ nav.main-nav a.cv-link {
 .dark-toggle .icon-sun{ width:2.1rem; height:2.1rem; fill:var(--accent-gold); stroke:var(--accent); display:block; }
 </style>
 
+    <!-- Mobile UX fixes: hide bottom tab highlight, hide Calendly badge, prevent page bounce on mobile -->
+    <style id="mobile-ux-fixes">
+      /* Prevent overscroll bounce on iOS and other touch devices */
+      html, body {
+        overscroll-behavior: none;
+      }
+      /* Remove the white capsule highlight behind the active bottom tab */
+      .bottom-tabs .tab-link[aria-current="page"]::before {
+        display: none !important;
+      }
+      /* Completely hide the floating Calendly badge button */
+      .calendly-badge-widget {
+        display: none !important;
+      }
+    </style>
+
 <!-- Interactive Map: Leaflet + MarkerCluster -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
@@ -2609,11 +2625,6 @@ nav.main-nav a.cv-link {
         <div><strong>Connecting Past & Present</strong></div>
       </div>
     </div>
-<details id="tm-list" class="tm-list" aria-label="Visible items list">
-  <summary>Visible items</summary>
-  <div class="tm-list-content"></div>
-</details>
-</section>
 <!-- ===== Methods & Training (centered) ===== -->
 <section id="methods-training" class="section scroll-reveal" aria-labelledby="mt-title">
   <div class="mt-card">
@@ -2622,6 +2633,7 @@ nav.main-nav a.cv-link {
 
     <div class="mt-grid">
       <figure class="mt-fig" data-mt="migrations" role="button" tabindex="0" aria-label="View Migration Spring School certificate">
+        <!-- Use relative paths so images resolve correctly on GitHub Pages or in subfolders -->
         <img src="migrations.jpeg"
              alt="Migration Spring School certificate. Cornell and Queen Mary. Malta 2025."
              loading="lazy" />
@@ -2656,6 +2668,11 @@ nav.main-nav a.cv-link {
       <a href="/cv.html" class="mt-link">See full record on my CV</a>
     </div>
   </div>
+</section>
+<details id="tm-list" class="tm-list" aria-label="Visible items list">
+  <summary>Visible items</summary>
+  <div class="tm-list-content"></div>
+</details>
 </section>
 
   <!-- Modal for Methods & Training: displays certificate details in a lightbox -->
@@ -2700,17 +2717,6 @@ nav.main-nav a.cv-link {
   .mt-links{margin-top:.6rem}
   .mt-link{font-weight:700;text-decoration:underline}
   .dark .mt-card{background:var(--card-bg,#121a2a);border-color:rgba(59,130,246,.18)}
-  /* Responsive image handling on small screens for Methods & Training */
-  @media (max-width:560px){
-    #methods-training .mt-fig img{
-      width:100%;
-      height:auto;
-      aspect-ratio:auto;
-      object-fit:contain;
-      background:#fff;
-      border-radius:10px;
-    }
-  }
 
   /* Modal styles for Methods & Training */
   .mt-modal{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(2px);display:grid;place-items:center;padding:1rem;z-index:80;}
@@ -2728,6 +2734,7 @@ nav.main-nav a.cv-link {
     // Data for each credential: image source, descriptive caption and download URL
     const MT_DATA = {
       migrations: {
+        // Use relative paths and more descriptive captions to ensure correct loading
         src: 'migrations.jpeg',
         caption: 'Migration Spring School – QMUL & Cornell, Gozo, Malta 2025.',
         download: 'migrations.jpeg'
