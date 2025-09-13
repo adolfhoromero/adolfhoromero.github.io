@@ -1,393 +1,683 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ILRLR 1100 • Interactive Discussion Hub</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Spectral:wght@400;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#0b0e14; --fg:#e9eef6; --muted:#9fb0c6; --card:#131826; --accent:#3b82f6; --accent2:#fbbf24; --ok:#10b981; --warn:#f59e0b; --err:#ef4444;
-  }
-  *{box-sizing:border-box}
-  html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
-  a{color:var(--accent)}
-  .wrap{max-width:1150px;margin:24px auto;padding:0 16px}
-  h1{font-family:Spectral,serif;font-weight:800;letter-spacing:.2px;margin:.2rem 0 1rem;font-size:clamp(1.6rem,3.3vw,2.6rem)}
-  .bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-  .pill{background:linear-gradient(90deg,var(--accent),#6366f1);padding:6px 12px;border-radius:999px;font-weight:700;font-size:.9rem}
-  .lang{margin-left:auto;display:flex;gap:8px}
-  .lang button{background:var(--card);color:var(--fg);border:1px solid #283149;border-radius:10px;padding:6px 10px;cursor:pointer}
-  .lang button[aria-pressed="true"]{outline:2px solid var(--accent)}
-  .grid{display:grid;grid-template-columns:320px 1fr;gap:18px}
-  @media(max-width:980px){.grid{grid-template-columns:1fr}}
-
-  /* LEFT: controls */
-  .panel{background:var(--card);border:1px solid #1f2638;border-radius:16px;padding:14px;position:sticky;top:10px;height:max-content}
-  .panel h2{margin:.2rem 0 8px;font-size:1.1rem}
-  .panel label{display:block;font-size:.9rem;color:var(--muted);margin:.6rem 0 .2rem}
-  .panel input[type=range]{width:100%}
-  .panel .row{display:flex;gap:8px;flex-wrap:wrap}
-  .btn{background:#1c2436;border:1px solid #23304b;color:var(--fg);padding:8px 12px;border-radius:10px;cursor:pointer}
-  .btn.primary{background:linear-gradient(90deg,var(--accent),#6366f1);border:none}
-  .btn.gold{background:linear-gradient(90deg,var(--accent2,#fbbf24),#f59e0b);border:none;color:#111}
-  .note{color:var(--muted);font-size:.9rem}
-
-  /* RIGHT: interactive canvas */
-  .canvas{display:grid;gap:14px}
-
-  /* Week cards */
-  .weeks{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-  .week{position:relative;perspective:900px;height:360px}
-  .card{position:absolute;inset:0;border-radius:16px;background:radial-gradient(1000px 400px at 20% -10%,rgba(59,130,246,.25),transparent),radial-gradient(800px 260px at 110% 100%,rgba(251,191,36,.18),transparent),var(--card);border:1px solid #25314c;box-shadow:0 24px 70px rgba(0,0,0,.25);transform-style:preserve-3d;transition:transform .25s ease, box-shadow .25s ease}
-  .card:hover{box-shadow:0 28px 90px rgba(0,0,0,.42)}
-  .card-inner{padding:14px 14px 12px;display:flex;flex-direction:column;height:100%}
-  .title{display:flex;align-items:center;gap:10px}
-  .title b{font-size:1.05rem}
-  .chip{font-size:.75rem;background:rgba(255,255,255,.08);border:1px solid #2b3755;padding:3px 7px;border-radius:999px;color:#dfe8ff}
-  .meta{color:var(--muted);font-size:.85rem;margin:.25rem 0 .35rem}
-  .agenda, .actions{margin-top:.35rem}
-  .agenda li{margin:.3rem 0}
-  .actions{margin-top:auto;display:flex;gap:8px;flex-wrap:wrap}
-
-  /* Back face */
-  .card-back{position:absolute;inset:0;border-radius:16px;background:linear-gradient(160deg,#0f172a 0%,#1e293b 100%);border:1px solid #2b3755;transform:rotateY(180deg);backface-visibility:hidden;padding:16px;display:flex;flex-direction:column}
-  .card-front{backface-visibility:hidden}
-  .flip{transform:rotateY(180deg)}
-
-  .q{background:#111827;border:1px solid #283149;border-radius:12px;padding:10px;margin:.3rem 0}
-  .q h4{margin:0 0 .4rem}
-  .q .opt{display:block;margin:.25rem 0;padding:6px 8px;border-radius:8px;border:1px solid #24304c;background:#0b1020;cursor:pointer}
-  .q .opt.correct{border-color:var(--ok)}
-  .q .opt.wrong{border-color:var(--err)}
-  .q .feedback{font-size:.9rem;color:var(--muted);margin-top:.4rem}
-
-  /* Debate spinner */
-  .spinner{position:relative;height:220px;background:#0e1424;border:1px dashed #2b3755;border-radius:16px;display:grid;place-items:center;overflow:hidden}
-  .spin-needle{position:absolute;top:0;left:50%;transform:translateX(-50%);width:0;height:0;border-left:10px solid transparent;border-right:10px solid transparent;border-bottom:18px solid var(--accent2)}
-  .wheel{width:280px;height:280px;border-radius:50%;border:1px solid #2b3755;background:conic-gradient(#22304a 0 25%, #1a2440 0 50%, #22304a 0 75%, #1a2440 0 100%);display:grid;place-items:center;transition:transform 3.2s cubic-bezier(.17,.67,.23,1.23)}
-  .wheel .slot{position:absolute;font-size:.9rem;color:#cdd8f5}
-  .wheel .slot:nth-child(1){transform:rotate(0deg) translateY(-110px)}
-  .wheel .slot:nth-child(2){transform:rotate(90deg) translateY(-110px)}
-  .wheel .slot:nth-child(3){transform:rotate(180deg) translateY(-110px)}
-  .wheel .slot:nth-child(4){transform:rotate(270deg) translateY(-110px)}
-
-  /* Evidence board */
-  .board{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-  @media(max-width:720px){.board{grid-template-columns:1fr}}
-  .drop{min-height:90px;border:1px dashed #40507a;border-radius:12px;padding:8px;background:#0d1426}
-  .drag{display:inline-block;margin:6px 6px 0 0;background:#16203a;border:1px solid #2b3755;border-radius:10px;padding:6px 8px;cursor:grab}
-  .drag:active{cursor:grabbing}
-
-  /* Progress tracker */
-  .progress{display:flex;gap:8px;align-items:center}
-  .progress meter{width:140px}
-  .tag{display:inline-flex;align-items:center;gap:6px;font-size:.85rem;background:#0d1426;border:1px solid #2b3755;padding:4px 8px;border-radius:999px}
-
-  /* Toast */
-  .toast{position:fixed;right:16px;bottom:16px;background:#111827;border:1px solid #283149;padding:10px 12px;border-radius:10px;opacity:0;transform:translateY(10px);transition:all .3s}
-  .toast.show{opacity:1;transform:translateY(0)}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ILRLR 1100 – Teaching Discussion Hub · Modern+</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Spectral:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --background-top:#f7f8fa; --background-bottom:#e7ebf3;
+      --nav-bg:#22304a; --nav-text:#ffffff;
+      --text-main:#232d41; --heading-color:#0f1b2d;
+      --accent:#29539b; --accent-2:#3f63b7; --accent-3:#80a4ff; --accent-gold:#ffcc00;
+      --card-bg:#ffffff; --card-border:#d5ddf1; --card-shadow:0 8px 30px rgba(26, 42, 87, .14);
+      --muted:#6b7a99; --max-width:1200px;
+      --ok:#10b981; --warn:#f59e0b; --err:#ef4444;
+    }
+    .dark { --background-top:#0f172a; --background-bottom:#111827; --nav-bg:#111827; --nav-text:#e5edf6; --text-main:#e2e8f0; --heading-color:#f8fafc; --card-bg:#0b1220; --card-border:#1f2a44; --muted:#9fb1cd; --card-shadow:0 18px 50px rgba(0,0,0,.5); }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Poppins',system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu; background:linear-gradient(120deg,var(--background-top),var(--background-bottom)); color:var(--text-main); line-height:1.6; min-height:100vh; transition:color .3s ease, background .6s ease; }
+    /* HEADER */
+    header { background:var(--nav-bg); color:var(--nav-text); padding:1.05rem 1.25rem; position:sticky; top:0; z-index:50; box-shadow:0 10px 30px rgba(0,0,0,.15); }
+    .nav { max-width:var(--max-width); margin:0 auto; display:flex; align-items:center; justify-content:space-between; }
+    .site-title a { color:var(--nav-text); text-decoration:none; font-family:'Spectral',serif; font-weight:700; font-size:1.6rem; letter-spacing:.2px; }
+    .dark-toggle { background:transparent; border:0; color:var(--nav-text); cursor:pointer; padding:.5rem; border-radius:10px; }
+    .dark-toggle:hover { background:rgba(255,255,255,.08); }
+    /* LAYOUT */
+    main { max-width:var(--max-width); margin:0 auto; padding:2rem 1.25rem 4rem; display:grid; grid-template-columns:340px 1fr; gap:2rem; align-items:start; }
+    /* HERO */
+    .hero { grid-column:1/-1; position:relative; border-radius:32px; padding:2.2rem 2.2rem 1.6rem; overflow:hidden; border:1px solid rgba(41,83,155,.18); box-shadow:0 24px 70px rgba(41,83,155,.18); background:radial-gradient(900px 300px at 15% 0%, rgba(63,99,183,.22), transparent 60%), radial-gradient(700px 260px at 90% 0%, rgba(255,204,0,.15), transparent 55%), linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,.5)); }
+    .dark .hero { background:radial-gradient(900px 300px at 15% 0%, rgba(63,99,183,.35), transparent 60%), radial-gradient(700px 260px at 90% 0%, rgba(255,204,0,.2), transparent 55%), linear-gradient(180deg, rgba(19,28,48,.8), rgba(13,18,32,.6)); }
+    .hero::after { content:""; position:absolute; inset:-40%; background:conic-gradient(from 180deg, transparent 0 30%, rgba(128,164,255,.18) 35% 45%, transparent 50% 80%, rgba(255,204,0,.16) 82% 90%, transparent 95%); filter:blur(60px); animation:spin 16s linear infinite; pointer-events:none; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    .kicker { display:inline-flex; align-items:center; gap:.5rem; padding:.4rem .8rem; font-size:.78rem; font-weight:800; letter-spacing:.5px; border-radius:999px; background:linear-gradient(90deg, var(--accent), var(--accent-2)); color:white; margin-bottom:1rem; box-shadow:0 8px 20px rgba(41,83,155,.35); position:relative; z-index:1; }
+    .page-title { font-family:'Spectral',serif; font-weight:800; font-size:3rem; color:var(--heading-color); letter-spacing:.2px; position:relative; z-index:1; text-shadow:0 2px 0 rgba(255,255,255,.45); }
+    .dark .page-title { text-shadow:none; }
+    .page-subtitle { margin-top:.35rem; color:var(--muted); font-size:1.05rem; position:relative; z-index:1; }
+    .hero-rail { margin-top:1rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap; position:relative; z-index:1; }
+    .pill { display:flex; align-items:center; gap:.7rem; padding:.7rem 1rem; background:rgba(255,255,255,.6); border:1.6px solid rgba(41,83,155,.25); border-radius:999px; box-shadow:inset 0 1px 0 rgba(255,255,255,.65), 0 10px 20px rgba(17,24,39,.08); font-weight:800; color:var(--heading-color); backdrop-filter:saturate(1.2) blur(6px); }
+    .pill .num { font-weight:900; font-size:1.05rem; }
+    .dark .pill { background:rgba(11,18,32,.6); border-color:rgba(63,99,183,.35); }
+    .pill:hover { transform:translateY(-2px); transition:.2s; }
+    .seg { position:relative; display:flex; align-items:center; padding:.4rem; border-radius:14px; background:rgba(41,83,155,.08); border:1px solid rgba(41,83,155,.25); }
+    .seg .slider { position:absolute; top:4px; left:4px; height:calc(100% - 8px); width:50%; border-radius:10px; background:#fff; box-shadow:0 8px 16px rgba(41,83,155,.25); transition:transform .25s ease, width .25s ease; }
+    .dark .seg .slider { background:#0b1220; }
+    .seg button { position:relative; z-index:1; padding:.55rem .95rem; border:0; background:transparent; border-radius:10px; cursor:pointer; font-weight:800; color:var(--heading-color); }
+    .search-wrap { position:relative; flex:1 1 320px; min-width:260px; }
+    .search-icon { position:absolute; left:.85rem; top:50%; transform:translateY(-50%); opacity:.55; }
+    .hero-search { width:100%; padding:.75rem 1rem .75rem 2.35rem; border:2px solid rgba(41,83,155,.28); border-radius:12px; font-size:.95rem; background:var(--card-bg); color:var(--text-main); outline:none; box-shadow:inset 0 1px 0 rgba(255,255,255,.6); }
+    .hero-search:focus { border-color:var(--accent); box-shadow:0 0 0 4px rgba(41,83,155,.18); }
+    .kbd { font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-weight:700; padding:.2rem .45rem; border-radius:6px; border:1.4px solid rgba(41,83,155,.25); background:rgba(41,83,155,.06); color:var(--muted); margin-left:.55rem; }
+    .hero-tip { white-space:nowrap; color:var(--muted); }
+    .sidebar { background:var(--card-bg); border-radius:22px; padding:1.4rem; box-shadow:var(--card-shadow); border:1px solid var(--card-border); position:sticky; top:112px; max-height:calc(100vh - 130px); overflow:auto; }
+    .sidebar h2 { font-family:'Spectral',serif; color:var(--heading-color); font-size:1.25rem; margin-bottom:1rem; }
+    .stats-section { background:linear-gradient(135deg,var(--accent),var(--accent-2)); color:white; padding:1rem; border-radius:14px; margin-bottom:1.2rem; }
+    .stats-grid { display:grid; grid-template-columns:1fr 1fr; gap:.75rem; text-align:center; }
+    .stat-item { display:flex; flex-direction:column; align-items:center; }
+    .stat-number { font-size:1.4rem; font-weight:900; margin-bottom:.1rem; }
+    .stat-label { font-size:.8rem; opacity:.95; }
+    .search-section label { font-weight:800; display:block; margin:.25rem 0 .4rem; color:var(--heading-color); }
+    .search-input { width:100%; padding:.7rem .85rem; border:2px solid var(--card-border); border-radius:10px; font-size:.9rem; background:var(--card-bg); color:var(--text-main); }
+    .week-range { width:100%; height:8px; background:#e5e7eb; border-radius:4px; outline:none; margin:.5rem 0 .65rem; }
+    .week-range::-webkit-slider-thumb { -webkit-appearance:none; width:20px; height:20px; background:var(--accent); border-radius:50%; cursor:pointer; }
+    .range-display { background:var(--accent); color:white; padding:.45rem .75rem; border-radius:10px; font-weight:800; text-align:center; margin-bottom:.6rem; }
+    .filter-buttons { display:grid; grid-template-columns:1fr 1fr; gap:.5rem; }
+    .filter-btn { padding:.6rem .85rem; border:2px solid var(--card-border); background:transparent; color:var(--text-main); border-radius:10px; cursor:pointer; font-weight:800; font-size:.85rem; position:relative; overflow:hidden; }
+    .filter-btn::after { content:""; position:absolute; inset:0; background:linear-gradient(135deg, transparent, rgba(63,99,183,.14)); opacity:0; transition:.25s; }
+    .filter-btn:hover::after { opacity:1; }
+    .filter-btn.active { background:var(--accent); color:white; border-color:var(--accent); }
+    .content-area { display:flex; flex-direction:column; gap:1.4rem; }
+    .timeline-progress { background:var(--card-bg); padding:1.3rem 1.6rem; border-radius:20px; box-shadow:var(--card-shadow); border:1px solid var(--card-border); }
+    .progress-bar { width:100%; height:10px; background:#e5e7eb; border-radius:6px; overflow:hidden; margin:.7rem 0 0; }
+    .progress-fill { height:100%; background:linear-gradient(90deg, var(--accent), var(--accent-2)); width:100%; border-radius:6px; transition:width .6s ease; }
+    .weeks-grid { display:grid; gap:1.6rem; margin-top:.6rem; }
+    .week-card { background:var(--card-bg); border-radius:22px; padding:1.6rem; box-shadow:var(--card-shadow); border:1px solid var(--card-border); transition:transform .3s ease, box-shadow .3s ease; cursor:pointer; position:relative; overflow:hidden; transform-style:preserve-3d; }
+    .week-card:hover { transform: translateY(-8px) rotateX(0.6deg) rotateY(-0.8deg); box-shadow:0 28px 70px rgba(0,0,0,.18); }
+    .week-card::before{content:""; position:absolute; inset:0; background: radial-gradient(600px 120px at var(--mx,50%) -10%, rgba(63,99,183,.25), transparent 45%); opacity:0; transition:opacity .25s ease; pointer-events:none; }
+    .week-card:hover::before{opacity:1;}
+    .week-header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem; }
+    .week-number { background:linear-gradient(135deg, var(--accent), var(--accent-2)); color:white; padding:.45rem .8rem; border-radius:12px; font-weight:900; font-size:1rem; letter-spacing:.2px; }
+    .week-date { color:var(--muted); font-weight:800; font-size:.9rem; }
+    .week-title { font-family:'Spectral',serif; font-size:1.45rem; color:var(--heading-color); font-weight:800; line-height:1.2; margin-bottom:.5rem; }
+    .week-activities { display:flex; flex-wrap:wrap; gap:.45rem; margin:.5rem 0 .7rem; }
+    .activity-tag { background:linear-gradient(135deg, var(--accent), var(--accent-2)); color:white; padding:.28rem .7rem; border-radius:10px; font-size:.78rem; font-weight:800; }
+    .week-description { margin:.35rem 0 .6rem; }
+    .week-innovation { background:rgba(255,204,0,.09); border:1px solid var(--accent-gold); border-radius:12px; padding: .8rem; }
+    .innovation-label { color:var(--accent-gold); font-weight:900; font-size:.78rem; text-transform:uppercase; letter-spacing:.4px; margin-bottom:.35rem; display:block; }
+    .expand-indicator { position:absolute; bottom:1rem; right:1rem; background:var(--accent); color:white; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.2rem; transition:transform .25s ease; }
+    .week-card.expanded .expand-indicator{ transform:rotate(180deg) scale(1.1); }
+    .week-expandable { max-height:0; overflow:hidden; transition:max-height .45s ease; }
+    .week-card.expanded .week-expandable { max-height:900px; }
+    .expandable-content { padding-top:.8rem; border-top:1px solid #e5e7eb; margin-top:.6rem; }
+    .section-title { color:var(--heading-color); font-weight:900; margin-bottom:.6rem; font-size:1rem; display:flex; align-items:center; gap:.5rem; }
+    .concept-list,.reading-list{ list-style:none; display:grid; gap:.45rem; }
+    .concept-list li,.reading-list li { position:relative; padding-left:1.35rem; font-size:.95rem; }
+    .concept-list li::before{ content:'→'; color:var(--accent); font-weight:900; position:absolute; left:0; }
+    .reading-list li::before{ content:'📖'; position:absolute; left:0; }
+    .resources-grid{ display:grid; gap:.5rem; }
+    .resource-link{ display:flex; align-items:center; gap:.55rem; padding:.7rem; background:rgba(41,83,155,.06); border:1px solid rgba(41,83,155,.22); border-radius:10px; text-decoration:none; color:var(--accent); font-size:.9rem; font-weight:800; transition: all .25s ease; }
+    .resource-link:hover{ background:var(--accent); color:white; transform:translateY(-1px); box-shadow:0 12px 22px rgba(41,83,155,.35); }
+    .link-status{ display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:.45rem; background:var(--ok); }
+    .link-status.error{ background:var(--err); } .link-status.warning{ background:var(--warn); }
+    .timeline-wrap { display:none; background:var(--card-bg); border:1px solid var(--card-border); border-radius:20px; padding:1rem; box-shadow:var(--card-shadow); }
+    .timeline { display:flex; gap:1.1rem; overflow:auto; scroll-snap-type:x mandatory; padding-bottom:.5rem; }
+    .t-item { min-width:260px; scroll-snap-align:start; background:linear-gradient(180deg, rgba(41,83,155,.08), rgba(41,83,155,.02)); border:1px solid rgba(41,83,155,.25); border-radius:16px; padding:1rem; position:relative; }
+    .t-dot { position:absolute; top:-10px; left:18px; width:14px; height:14px; border-radius:50%; background:linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow:0 4px 16px rgba(41,83,155,.35); }
+    .t-title { font-weight:900; margin:.25rem 0 .55rem; }
+    .t-actions { display:flex; gap:.4rem; flex-wrap:wrap; }
+    .t-btn { border:0; background:var(--accent); color:#fff; padding:.4rem .6rem; border-radius:8px; cursor:pointer; font-weight:800; font-size:.8rem; }
+    .scrollTop { position:fixed; right:18px; bottom:18px; width:44px; height:44px; border-radius:50%; border:0; background:linear-gradient(135deg, var(--accent), var(--accent-2)); color:#fff; box-shadow:0 14px 28px rgba(0,0,0,.25); cursor:pointer; display:none; align-items:center; justify-content:center; font-size:1.1rem; z-index:60; }
+    @media (max-width: 860px){ main{ grid-template-columns:1fr; gap:1.2rem; } .sidebar{ position:static; max-height:none; } .hero{ padding:1.4rem; } .page-title{ font-size:2.2rem; } .pill{ padding:.6rem .85rem; } }
+  </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="bar">
-      <h1>ILRLR 1100 • Interactive Discussion Hub <span class="pill">Beta</span></h1>
-      <div class="lang" role="group" aria-label="Language">
-        <button id="enBtn" aria-pressed="true">English</button>
-        <button id="esBtn" aria-pressed="false">Español</button>
+  <header>
+    <nav class="nav">
+      <h1 class="site-title"><a href="/">Adolfho Romero</a></h1>
+      <button id="themeToggle" class="dark-toggle" aria-label="Toggle dark mode" title="Theme">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M12 3a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0V4a1 1 0 0 1 1-1Zm0 14a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm8-5a1 1 0 0 1 1 1h2a1 1 0 1 1 0 2h-2a1 1 0 1 1 0-2h2a1 1 0 1 1 0-2h-2a1 1 0 1 1 0-2h2a1 1 0 1 1 0-2h-2a1 1 0 1 1 0-2h2a1 1 0 0 1-1-1"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Course overview">
+      <span class="kicker">Interactive Teaching Portfolio</span>
+      <h1 class="page-title">US Labor History</h1>
+      <p class="page-subtitle">ILRLR 1100 with Dr. Paul Ortiz</p>
+
+      <div class="hero-rail">
+        <div class="pill">📅 <span class="num" data-count="12">0</span> Weeks</div>
+        <div class="pill">🧩 <span class="num" data-count="35">0</span> Activities</div>
+        <div class="pill">📚 <span class="num" data-count="50">0</span> Resources</div>
+        <div class="pill">🔗 <span class="num" data-count="25">0</span> Links</div>
+
+        <div class="seg" id="viewSeg">
+          <span class="slider" id="segSlider"></span>
+          <button class="active" id="modeCards">Cards</button>
+          <button id="modeTimeline">Timeline</button>
+        </div>
+
+        <div class="search-wrap">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 2a8 8 0 105.293 14.293l3.707 3.707 1.414-1.414-3.707-3.707A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/></svg>
+          <input id="topSearch" class="hero-search" type="search" placeholder="Search weeks, activities, concepts…" />
+        </div>
+        <span class="hero-tip">Tip <span class="kbd">/</span> to focus  <span class="kbd">E</span> expand  <span class="kbd">C</span> collapse</span>
       </div>
-    </div>
+    </section>
 
-    <div class="grid">
-      <!-- Controls Panel -->
-      <aside class="panel" aria-label="Controls">
-        <h2>Playground</h2>
-        <label>Filter by date</label>
-        <!-- The max attribute will be updated by script to match the number of weeks -->
-        <input type="range" id="weekRange" min="1" max="6" value="6" />
-        <div class="row"><span class="tag"><strong id="rangeLabel">All weeks</strong></span></div>
-
-        <label>Focus</label>
-        <div class="row">
-          <button class="btn" data-focus="all">All</button>
-          <button class="btn" data-focus="activities">Activities</button>
-          <button class="btn" data-focus="readings">Readings</button>
-          <button class="btn" data-focus="assessment">Assessment</button>
-        </div>
-
-        <label>Mini games</label>
-        <div class="row">
-          <button id="spinBtn" class="btn gold">Debate spinner</button>
-          <button id="resetLocal" class="btn">Reset progress</button>
-        </div>
-        <p class="note">Tip: Click a week card to flip for quizzes & prompts. Drag quotes into the evidence board. Your progress saves locally.</p>
-      </aside>
-
-      <!-- Interactive Canvas -->
-      <main class="canvas">
-        <!-- Progress Strip -->
-        <section class="progress">
-          <meter id="progressMeter" min="0" max="100" low="25" high="75" optimum="90" value="0"></meter>
-          <span id="progressText" class="tag">0% complete</span>
-        </section>
-
-        <!-- Debate Spinner -->
-        <section class="spinner" aria-live="polite" aria-label="Debate spinner">
-          <div class="spin-needle" aria-hidden="true"></div>
-          <div class="wheel" id="wheel">
-            <div class="slot">Evidence</div>
-            <div class="slot">Counter-argument</div>
-            <div class="slot">Historical link</div>
-            <div class="slot">Modern policy</div>
-          </div>
-        </section>
-
-        <!-- Weeks -->
-        <section class="weeks" id="weeks"></section>
-
-        <!-- Evidence Board -->
-        <section>
-          <h2 style="font-size:1.3rem;margin:.6rem 0">Evidence board</h2>
-          <div class="board" id="board">
-            <div class="drop" data-slot="evidence" aria-label="Evidence"></div>
-            <div class="drop" data-slot="analysis" aria-label="Analysis"></div>
-            <div class="drop" data-slot="connection" aria-label="Connection"></div>
-          </div>
-          <p class="note">Drag quote chips from week backs here to plan paragraphs.</p>
-        </section>
-      </main>
-    </div>
-  </div>
-
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-<script>
-// ===== Data (seeded from your plan; extend as needed) =====
-const data = [
-  { id:1, date:'Aug 31', title:'Introductions • Syllabus • History Timeline', tags:['activities','readings'], 
-    agenda:[
-      'Welcome & expectations, office hours, laptop policy',
-      'History Timeline group activity with Everything Poll',
-      'Groups: Lincoln on labor; Statute of Laborers (1351); Peasants’ Revolt (1381); Combination Acts (1799–1800); Qatar World Cup deaths piece'
-    ],
-    quiz:{ q:'Which source anchors a medieval labour control law?', opts:[
-      {t:'Combination Acts (1799–1800)', ok:false},
-      {t:'Statute of Laborers (1351)', ok:true},
-      {t:'Peasants\' Revolt (1381)', ok:false}
-    ]},
-    quotes:[
-      '“Wage controls and mobility limits illuminate power after plague.”',
-      '“Revolt as tradition: 1381 to modern labour claims.”'
-    ]
-  },
-  { id:2, date:'Sept 6', title:'Clotilda reflection • Rediker, The Slave Ship', tags:['activities','readings','assessment'],
-    agenda:[
-      'Play Clotilda documentary snippet as students arrive',
-      'Discuss Middle Passage phases; roles of pirates and sailors',
-      'Equiano & Newton; labour vs capital through maritime tech'
-    ],
-    quiz:{ q:'Rediker splits the Middle Passage into…', opts:[
-      {t:'Capture & Emancipation', ok:false},
-      {t:'Shore-side procurement & Atlantic crossing', ok:true},
-      {t:'Embarkation & Industrialization', ok:false}
-    ]},
-    quotes:[
-      '“The ship is a factory of unfreedom and profit.”',
-      '“Sailors’ solidarities fluctuate with discipline and pay.”'
-    ]
-  },
-  { id:3, date:'Sept 13', title:'Reading strategies • Race formation across texts', tags:['activities','assessment'],
-    agenda:[
-      'Admin updates; Synthesis essay Q&A',
-      'How to read dense texts: pacing & annotation drill',
-      'Quiz #3: race in the New World; Naturalization Act; class structures'
-    ],
-    quiz:{ q:'Which 1790 law limited citizenship to “free white persons”?', opts:[
-      {t:'Naturalization Act', ok:true},{t:'Alien and Sedition Acts', ok:false},{t:'Homestead Act', ok:false}
-    ]},
-    quotes:['“Law manufactures race, not just reflects it.”']
-  },
-  { id:4, date:'Sept 19', title:'Peer review • Evidence check • Outline clinic', tags:['assessment','activities'],
-    agenda:[
-      'Debrief guest visit; office hours reminder',
-      'Underline every “evidence unit” in a partner draft',
-      'Outline swap: thesis-thread-audit against prompt parts'
-    ],
-    quiz:{ q:'Strong evidence integration requires…', opts:[
-      {t:'Quote density over clarity', ok:false},
-      {t:'Context → Evidence → Analysis chain', ok:true},
-      {t:'Assuming readers know the source', ok:false}
-    ]},
-    quotes:['“Name the move: context → quote → why it matters.”']
-  },
-  { id:5, date:'Sept 27', title:'Lowell Mill Girls • Black Folk • CTP compare', tags:['readings','activities'],
-    agenda:[
-      'Short film: Lowell — The Continuing Revolution',
-      'Women’s first unions; dignity & agency in factories',
-      'CTP: compare early mills to Bangladesh today; why labour law and unions'
-    ],
-    quiz:{ q:'In Lowell discussions, “subtle language” mattered because…', opts:[
-      {t:'It avoided any conflict with owners forever', ok:false},
-      {t:'It coded demands within acceptable gender norms', ok:true},
-      {t:'It replaced collective action', ok:false}
-    ]},
-    quotes:[
-      '“Household skills became wage leverage and freedom.”',
-      '“Moral claims reframed productivity and care.”'
-    ]
-  },
-  { id:6, date:'Oct 4', title:'Homestead setup • John Due • Peer‑review drill', tags:['readings','activities','assessment'],
-    agenda:[
-      'Essay grades logistics; celebrate John D. Due',
-      'Dockworkers clip: unions & global leverage',
-      'Peer‑review excerpts; Debate setup: Homestead 1892'
-    ],
-    quiz:{ q:'A debate prompt should push which habit most?', opts:[
-      {t:'Trading facts without warrants', ok:false},
-      {t:'Advancing claims with sourced warrants and counter‑moves', ok:true},
-      {t:'Reading prompts aloud only', ok:false}
-    ]},
-    quotes:['“Strike politics link shop‑floor power to law and media.”']
-  }
-];
-
-// ===== Utility =====
-const $ = sel => document.querySelector(sel);
-const $$ = sel => Array.from(document.querySelectorAll(sel));
-function toast(msg){ const t=$('#toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),1800) }
-function save(k,v){ localStorage.setItem(k, JSON.stringify(v)) }
-function load(k, d){ try{ return JSON.parse(localStorage.getItem(k)) ?? d }catch{ return d } }
-
-// ===== Render Weeks =====
-const weeksEl = $('#weeks');
-function renderWeeks(maxId=Infinity){
-  weeksEl.innerHTML='';
-  data.filter(w=>w.id<=maxId).forEach(w=>{
-    const wrap=document.createElement('div'); wrap.className='week'; wrap.dataset.id=w.id;
-    wrap.innerHTML=`
-      <div class="card card-front" aria-label="Week card" tabindex="0">
-        <div class="card-inner">
-          <div class="title"><b>Week ${w.id} • ${w.date}</b> <span class="chip">${w.tags.join(' · ')}</span></div>
-          <div class="meta">${w.title}</div>
-          <ul class="agenda">${w.agenda.map(a=>`<li>${a}</li>`).join('')}</ul>
-          <div class="actions">
-            <button class="btn primary act-flip">Open activities</button>
-            <button class="btn act-done">Mark done</button>
-          </div>
+    <aside class="sidebar">
+      <h2>Course Explorer</h2>
+      <div class="stats-section">
+        <div class="stats-grid">
+          <div class="stat-item"><span class="stat-number" data-count="12">0</span><span class="stat-label">Weeks</span></div>
+          <div class="stat-item"><span class="stat-number" data-count="35">0</span><span class="stat-label">Activities</span></div>
+          <div class="stat-item"><span class="stat-number" data-count="50">0</span><span class="stat-label">Resources</span></div>
+          <div class="stat-item"><span class="stat-number" data-count="25">0</span><span class="stat-label">Links</span></div>
         </div>
       </div>
-      <div class="card card-back" aria-hidden="true">
-        <div class="title"><b>Week ${w.id} • Quiz & Prompts</b></div>
-        <div class="q">
-          <h4>${w.quiz.q}</h4>
-          ${w.quiz.opts.map((o,i)=>`<button class="opt" data-ok="${o.ok}">${String.fromCharCode(65+i)}. ${o.t}</button>`).join('')}
-          <div class="feedback"></div>
+      <div class="search-section">
+        <label for="searchInput">Search Content</label>
+        <input type="text" id="searchInput" class="search-input" placeholder="Search weeks, activities, concepts...">
+      </div>
+      <div class="filter-section">
+        <label for="weekRange">Filter by Week</label>
+        <input type="range" id="weekRange" class="week-range" min="1" max="12" value="12">
+        <div class="range-display" id="rangeDisplay">All Weeks (1-12)</div>
+      </div>
+      <div class="filter-section">
+        <label>Focus Areas</label>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="activities">Activities</button>
+          <button class="filter-btn" data-filter="readings">Readings</button>
+          <button class="filter-btn" data-filter="innovation">Innovation</button>
         </div>
-        <div>
-          <b style="display:block;margin:.6rem 0 .2rem">Drag‑to‑board quotes</b>
-          ${w.quotes.map(q=>`<span class="drag" draggable="true">${q}</span>`).join('')}
+      </div>
+      <div class="filter-section">
+        <label>Quick Actions</label>
+        <div class="filter-buttons">
+          <button class="filter-btn" id="expandAll">Expand All</button>
+          <button class="filter-btn" id="collapseAll">Collapse All</button>
         </div>
-        <div class="actions" style="margin-top:10px">
-          <button class="btn act-back">Back</button>
-          <button class="btn" onclick="window.print()">Print</button>
+      </div>
+      <div class="filter-section">
+        <label>Navigation</label>
+        <div class="filter-buttons">
+          <button class="filter-btn" id="jumpToWeek">Jump to Week</button>
+          <button class="filter-btn" id="testLinks">Test Links</button>
+        </div>
+      </div>
+    </aside>
+
+    <section class="content-area">
+      <div class="timeline-progress">
+        <p><strong>Explore the complete course journey.</strong> Click any week to open details. Toggle the timeline view for a fast overview.</p>
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      </div>
+
+      <div class="timeline-wrap" id="timelineWrap">
+        <div class="timeline" id="timeline"></div>
+      </div>
+
+      <div class="weeks-grid" id="weeksContainer"></div>
+    </section>
+  </main>
+
+  <button class="scrollTop" id="scrollTop" aria-label="Scroll to top">↑</button>
+
+  <script>
+    const courseData = [
+      {
+        "week": 1,
+        "date": "August 31",
+        "title": "Course Introduction & Historical Foundations",
+        "activities": ["Welcome & Syllabus Overview (20 min)", "History Timeline Group Activity (25 min)", "Everything Poll", "Group Reading Activities", "Closing (5 min)"],
+        "description": "Establishing course foundations through interactive timeline connecting medieval labor laws to contemporary migrant worker issues. Students work in groups analyzing historical documents from 1351 to present day Qatar.",
+        "innovation": "Everything Poll activity linking 1351 Statute of Laborers to 2021 Qatar migrant worker deaths - demonstrating historical continuity of labor exploitation across centuries",
+        "concepts": ["Labor history foundations", "Historical continuity", "Worker rights evolution", "Medieval to modern connections", "Group collaboration"],
+        "readings": ["Abraham Lincoln on labor's role in the republic", "The Statute of Laborers (1351) - Yale Law School", "English Peasants' Revolt (1381) - Jacobin", "Combination Acts (1799-1800) - Britannica", "Qatar migrant workers - The Guardian 2021"],
+        "links": [
+          { url: "https://avalon.law.yale.edu/medieval/statlab.asp", title: "Statute of Laborers (1351)", type: "external" },
+          { url: "https://jacobin.com/2023/04/english-rising-1381-peasants-townspeople-london-class", title: "English Peasants' Revolt - Jacobin", type: "external" },
+          { url: "https://www.britannica.com/money/Combination-Acts", title: "Combination Acts - Britannica", type: "external" },
+          { url: "https://www.theguardian.com/global-development/2021/feb/23/revealed-migrant-worker-deaths-qatar-fifa-world-cup-2022", title: "Qatar Migrant Workers - Guardian", type: "external" }
+        ],
+        "key_activities": [
+          "Introduce yourself and have students display name cards",
+          "Discuss syllabus, expectations and laptop policies while students share their goals for the course",
+          "Divide class into groups for the History Timeline Activity, using the 'Everything Poll' to identify key dates and themes from assigned readings",
+          "Encourage groups to connect historical events from the Statute of Laborers, Peasants' Revolt and Combination Acts to contemporary labor issues like the Qatar migrant worker crisis",
+          "Close by reviewing the syllabus, reminding students of upcoming assignments and inviting questions"
+        ]
+      },
+      {
+        "week": 2,
+        "date": "September 6",
+        "title": "Slavery and Labor - The Clotilda & Middle Passage",
+        "activities": ["Reflection (5 min)", "Full Class Discussion (40 min)", "Clotilda Documentary", "Marcus Rediker Analysis", "Closing (5 min)"],
+        "description": "Deep dive into Marcus Rediker's 'The Slave Ship' with personal connections to Africatown, Alabama, and analysis of the last slave ship to reach America in the 1860s despite the 1808 ban.",
+        "innovation": "Personal visit to Africatown, Mobile, Alabama - bringing lived experience and place-based learning to historical analysis of Clotilda survivors' community",
+        "concepts": ["Middle Passage phases", "Resistance and agency", "Labor vs capital origins", "Ship as workplace", "Sailor empathy", "African hierarchies", "Technology's role"],
+        "readings": ["Marcus Rediker's The Slave Ship", "Myers piece", "Equiano's narrative", "Newton's significance", "Study guides"],
+        "links": [
+          { url: "https://www.youtube.com/watch?v=2IMEL5Bz-AE", title: "Clotilda Documentary - National Geographic", type: "video" },
+          { url: "https://docs.google.com/document/d/1ipGj1ZpKu_6o1yolXxXDxzX01y36IUbY2MkiObrc0Uo/edit?usp=sharing", title: "Class Notes Document", type: "document" }
+        ],
+        "key_activities": [
+          "Play the Clotilda documentary as students arrive; provide an overview of the last known slave ship and the illegal continuance of the trade into the 1860s",
+          "Share personal reflections from visiting Africatown in Mobile, Alabama and discuss the community founded by Clotilda survivors",
+          "Lead a full‑class discussion on Marcus Rediker's 'The Slave Ship' using guiding questions about phases of the Middle Passage, roles of pirates and sailors, African hierarchies, the ship as a workplace, technological impacts, and resistance figures like Equiano and Newton",
+          "Encourage connections between historical understandings of labor and capital and contemporary systems",
+          "Conclude with reminders about upcoming assignments, office hours and availability of class notes"
+        ]
+      },
+      {
+        "week": 3,
+        "date": "September 13",
+        "title": "Race Development in the New World",
+        "activities": ["Admin Updates (5-10 min)", "Reading Strategies Workshop (5-10 min)", "Race Discussion (40 min)", "Contemporary Pieces"],
+        "description": "Analyzing how race developed as a concept in the New World, its impacts on social and legal separations, and the role of sailors, captains, and class structures.",
+        "innovation": "Collaborative reading strategies workshop addressing student comprehension challenges - responsive teaching based on student feedback and TA collaboration",
+        "concepts": ["Race construction", "Social separations", "Class structures", "Naturalization Act", "Sailor hierarchies", "Captain authority"],
+        "readings": ["Marcus Rediker continued", "African American and Latinx History of the United States", "Quiz #3 materials", "Reading strategies guide"],
+        "links": [
+          { url: "https://bit.ly/4e2HD7i", title: "Reading Strategies Guide", type: "document" }
+        ],
+        "key_activities": [
+          "Discuss administrative updates, including Dr. Ortiz's office hours, and answer questions about the upcoming synthesis essay",
+          "Share a reading strategies resource to help students improve comprehension and note‑taking",
+          "Facilitate a discussion on how the concept of race developed in the New World and its impact on social and legal separations, considering the Naturalization Act, class structures and roles of sailors and captains"
+        ]
+      },
+      {
+        "week": 4,
+        "date": "September 19",
+        "title": "Research Skills & Academic Writing",
+        "activities": ["Kheel Center Visit Debrief (5-10 min)", "Synthesis Essay Q&A", "Peer Review/Evidence Check (35-40 min)", "Collaborative Outline Review"],
+        "description": "Hands-on research experience at the Kheel Center followed by intensive peer review workshops focusing on textual evidence integration and thesis development.",
+        "innovation": "Evidence-focused peer review system with structured partner evaluation targeting specific weaknesses in textual integration from The Slave Ship and Equiano",
+        "concepts": ["Primary source research", "Evidence analysis", "Academic argumentation", "Thesis development", "Source integration", "Outline structure"],
+        "readings": ["Marcus Rediker's The Slave Ship", "Equiano materials", "Primary sources from Kheel Center", "Course materials for evidence"],
+        "links": [],
+        "key_activities": [
+          "Debrief on the research visit to the Kheel Center and discuss how students can use archival materials for future projects",
+          "Answer student questions about the synthesis essay, including citation format, page requirements and other logistics; remind students about Dr. Ortiz's office hours",
+          "Guide students through a peer review focusing on the integration of evidence from 'The Slave Ship' and Equiano, encouraging them to highlight and evaluate each other's use of quotes and paraphrased information",
+          "Facilitate a collaborative outline review where partners share essay outlines, provide feedback on structure, ensure all parts of the prompt are addressed and refine thesis statements"
+        ]
+      },
+      {
+        "week": 5,
+        "date": "September 27",
+        "title": "Industrial Revolution & Women's Labor",
+        "activities": ["Class Logistics (5 min)", "Lowell Documentary (10 min)", "Women's Labor Discussion (30 min)", "Black Folk Analysis", "Contemporary Connections", "Closing (5 min)"],
+        "description": "Exploring women's agency in factory work through Lowell Mill Girls and Blair Kelley's humanistic approach to Black labor history, featuring the powerful Sarah laundry work narrative demonstrating inherited knowledge and self-determination.",
+        "innovation": "Sarah's laundry work quote demonstrating inherited knowledge and self-determination: 'Her time was set by her own hand. This work became the foundation of her freedom.' - connecting enslaved labor to post-emancipation agency",
+        "concepts": ["Women's agency", "Industrial transformation", "Dignity in labor", "Skill inheritance", "Sharecropping persistence", "De facto racial barriers", "Knowledge transmission", "Self-determination"],
+        "readings": ["Lowell Mill Girls materials", "Blair Kelley's Black Folk", "Bangladesh textile article", "Erie Canal context", "Gilded Age analysis"],
+        "links": [
+          { url: "https://www.youtube.com/watch?v=HdVU85zBZXE&t=340s", title: "Lowell: The Continuing Revolution", type: "video" }
+        ],
+        "key_activities": [
+          "Address class logistics such as timing of test returns and use of Turnitin for submissions",
+          "Screen the film 'Lowell: The Continuing Revolution' and discuss the rise of mills, the Erie Canal and the migration of women to factory work in the 19th century",
+          "Lead a discussion on Lowell Mill Girls and women's labor activism during the Gilded Age, focusing on how women organized, the importance of subtle language in negotiations and concepts of dignity and morality",
+          "Analyze Blair Kelley's humanistic portrayal of Black workers, including the persistence of sharecropping, de facto racial barriers and the transmission of skills among laundry workers; highlight the quotation about inherited knowledge and self‑determination",
+          "Compare conditions in early textile mills to modern factories such as those described in the Bangladesh article to underscore the importance of labor laws and unions",
+          "Remind students to keep up with the assigned readings, particularly 'The Battle for Homestead'"
+        ]
+      },
+      {
+        "week": 6,
+        "date": "October 4",
+        "title": "Labor Conflict & Contemporary Connections",
+        "activities": ["Test Updates (2 min)", "John Due Celebration (3 min)", "Dock Workers Analysis (2 min)", "Peer Review Articles (10 min)", "Homestead Strike Debate (30 min)"],
+        "description": "Connecting historical labor conflicts to contemporary dock worker strikes while honoring civil rights lawyer John Due and preparing for comprehensive Homestead Strike debate.",
+        "innovation": "Real-time connection between 1892 Homestead Strike and contemporary International Longshoremen's Association organizing - demonstrating ongoing global labor struggle patterns",
+        "concepts": ["Labor organizing evolution", "Strike tactics", "Civil rights intersection", "Media representation", "Corporate lockouts", "Global labor impact", "Historical continuity"],
+        "readings": ["Battle for Homestead materials", "Industrial and Labor Relations Review articles", "Johns Hopkins peer review article", "John Due civil rights biography"],
+        "links": [
+          { url: "https://www.youtube.com/watch?v=3YKpMCCwy5s&list=RDNS3YKpMCCwy5s&start_radio=1", title: "Dock Workers Union News Clip", type: "video" },
+          { url: "https://muse.jhu.edu/article/888059", title: "Academic Article - Johns Hopkins", type: "external" },
+          { url: "https://docs.google.com/document/d/18ImIey-TOv-rCntaaXbUmgxNmNg7OVx7ul4cJsu2ssg/edit?usp=sharing", title: "Homestead Strike Debate Activity", type: "document" }
+        ],
+        "key_activities": [
+          "Provide updates on test and essay grades, encouraging students to remain calm and focused",
+          "Celebrate civil rights attorney John Due and discuss his contributions to the freedom movement and connections to labor history",
+          "Show a news clip about contemporary dock workers to connect historic labor conflicts with present‑day organizing",
+          "Review peer‑reviewed articles from academic journals to help students understand how to engage with scholarly sources and identify key arguments",
+          "Host a structured debate on the Homestead Strike of 1892, encouraging students to explore multiple perspectives and apply historical evidence"
+        ]
+      },
+      {
+        "week": 7,
+        "date": "October 18",
+        "title": "Marginalized Voices & Judicial Power",
+        "activities": ["Reading and Coding Chart (2-3 min)", "Krause Chapters Discussion (15-20 min)", "Judicial Oligarchy Analysis (5 min)", "Group Discussion Activity (20 min)"],
+        "description": "Examining silenced minorities in labor history while analyzing how legal systems serve property owners through Krause chapters, connecting themes across readings including Lucy Parsons and Blair Kelley's work.",
+        "innovation": "Color-coded research notes system (landscape format) with quotes integration helping students organize complex historical materials and make thematic connections across multiple challenging readings",
+        "concepts": ["Marginalized voices", "Judicial oligarchy", "Property rights", "Legal barriers", "Interethnic solidarity possibilities", "Women's roles in Homestead", "Labor republicanism fate", "Corporate media charges of treason"],
+        "readings": ["Krause Chapter 21: Silenced Minorities", "Krause Chapter 22: Winners and Losers", "Out of This Furnace", "Our Judicial Oligarchy piece", "Lucy Parsons materials", "Blair Kelley's work"],
+        "links": [
+          { url: "https://docs.google.com/document/d/1udiqvZcMat41CZk6IFGElOg6aQDxiw_OPGVPIttvu1s/edit?usp=sharing", title: "Color-Coded Research Notes Template", type: "document" },
+          { url: "https://docs.google.com/document/d/1SuxPi8o6rIH8t2exX8HscXQp5nWxyy6aUeXnWQjPrmQ/edit?usp=sharing", title: "Key Concepts Discussion Notes", type: "document" },
+          { url: "https://docs.google.com/document/d/1fONbmdwWTQ3kdeqQxFfs1uUvvsAyOv7NhWILVs-NLvg/edit?usp=sharing", title: "Discussion Questions - Battle for Homestead", type: "document" }
+        ],
+        "key_activities": [
+          "Distribute a color‑coded reading and coding chart to support students' note‑taking and analysis",
+          "Discuss Krause Chapter 21 'Silenced Minorities' and Chapter 22 'Winners and Losers', connecting themes across readings like 'The Battle for Homestead', 'Out of This Furnace', Lucy Parsons and Blair Kelley's work",
+          "Analyze the essay 'Our Judicial Oligarchy', examining how property rights and the legal system serve those with resources",
+          "Engage students in group discussions addressing roles of women in the Homestead strike, labor republican visions, interethnic solidarity and the fate of labor republicanism after 1892"
+        ]
+      },
+      {
+        "week": 8,
+        "date": "October 25",
+        "title": "Synthesis & Collaborative Learning",
+        "activities": ["PARA Resource Introduction", "Second Essay Prompt Review (5 min)", "Peer Review & Draft Revision Activity (45 min)"],
+        "description": "Intensive collaborative essay development with structured peer feedback using comprehensive grading checklists for the second synthesis essay, emphasizing argument strengthening through collaborative revision.",
+        "innovation": "Systematic peer review and draft revision activity with structured partner exchanges, comprehensive checklist-based feedback, and dedicated individual revision time - holistic collaborative learning approach",
+        "concepts": ["Synthesis writing mastery", "Peer collaboration skills", "Evidence integration techniques", "Argument structure", "Draft revision process", "Constructive feedback", "Clarity improvement"],
+        "readings": ["Second synthesis essay materials", "Peer review guidelines", "Grading checklist comprehensive resources"],
+        "links": [
+          { url: "https://docs.google.com/document/d/113f1895Vc8c1T2opzoYIDl1ZeFaE7z4kBol_ORdD0o8/edit?usp=sharing", title: "Grading Checklist for Essays", type: "document" }
+        ],
+        "key_activities": [
+          "Introduce the PARA resource to help students organize course materials and assignments",
+          "Review the second synthesis essay prompt in detail and address student questions",
+          "Conduct a structured peer review and draft revision activity: pair students, exchange outlines, use the provided checklist to give feedback, share insights and spend dedicated time revising drafts"
+        ]
+      },
+      {
+        "week": 9,
+        "date": "November 1",
+        "title": "Great Depression & Worker Organization",
+        "activities": ["Third Essay Overview (5-10 min)", "Thomas Bell Study Questions (35-40 min)", "1938 National Dollar Strike Analysis"],
+        "description": "Deep analysis of immigrant worker organization during the Great Depression through Thomas Bell's 'Out of This Furnace', examining three generations of workers and the pivotal 1938 National Dollar Strike development.",
+        "innovation": "Multi-generational character analysis from Kracha through Mike Dobrejcak to Dobie's generation, demonstrating evolution of worker consciousness and organized resistance to 'Despotism of the Lords of Steel'",
+        "concepts": ["Industrial tyranny evolution", "Worker solidarity development", "New Deal lasting achievements", "Immigrant worker organization strategies", "Great Depression labor control seizure", "Working class culture weaknesses", "Occupational skill differences", "Racism and fear barriers"],
+        "readings": ["Thomas Bell's Out of This Furnace (complete novel analysis)", "Dr. Ortiz comprehensive study questions", "1938 Dollar Strike historical documentation", "Working class ideology comparative essays"],
+        "links": [
+          { url: "https://docs.google.com/document/d/1v2Kdv-A-tVPH3voDfdRow_Y8PSRpAmgFYcfoohtRjJI/edit?usp=sharing", title: "Third Synthesis Essay Prompt", type: "document" },
+          { url: "https://canvas.cornell.edu/courses/65341/files/11543400?wrap=1", title: "Thomas Bell Study Questions", type: "external" },
+          { url: "https://docs.google.com/document/d/1TKecvq98NmXpODQAESI_WmnotHJXCthOUNgu9zUqDoo/edit?usp=sharing", title: "Notes: Thomas Bell & 1938 Dollar Strike", type: "document" }
+        ],
+        "key_activities": [
+          "Review the draft of the third synthesis essay prompt and answer any questions",
+          "Facilitate discussion based on Dr. Ortiz's study questions for Thomas Bell's 'Out of This Furnace', exploring aspirations of working‑class characters, differences in organizing during the Great Depression, achievements and unfinished agenda of the New Deal, and weaknesses in working‑class culture",
+          "Discuss how and why the 1938 National Dollar Strike began"
+        ]
+      },
+      {
+        "week": 10,
+        "date": "November 8",
+        "title": "Black Workers in Labor History",
+        "activities": ["Synthesis Essay Update (5 min)", "Historical Debate (40-45 min)", "Essay #3 Discussion"],
+        "description": "Structured comprehensive debate examining the complex and often contradictory role of Black workers in U.S. labor history, addressing solidarity challenges, struggle dynamics, and historical tensions.",
+        "innovation": "Multi-perspective debate format 'Strikes, Solidarity, and Struggles' systematically addressing historical tensions, alliances, and contradictions between Black workers and broader labor movement organizing",
+        "concepts": ["Racial solidarity complexities", "Labor struggle intersectionality", "Historical complexity acknowledgment", "Black-white worker relations", "Strike participation patterns", "Solidarity challenges"],
+        "readings": ["Comprehensive Black labor history debate materials", "Historical solidarity and tension documents", "Multi-perspective analysis resources"],
+        "links": [
+          { url: "https://docs.google.com/document/d/19GKvtZkBjAX12ZmScmKWYSqkL-wnYiy6IPLm8Wz4GE0/edit?usp=sharing", title: "Debate Materials - Black Workers in Labor History", type: "document" }
+        ],
+        "key_activities": [
+          "Provide updates on the grading of synthesis essays and invite students to office hours for help with the third essay",
+          "Organize a comprehensive debate titled 'Strikes, Solidarity, and Struggles' that explores the complex and often contradictory roles of Black workers in U.S. labor history; encourage students to examine multiple perspectives and historical tensions"
+        ]
+      },
+      {
+        "week": 11,
+        "date": "November 15",
+        "title": "Labor Movement Timeline & Analysis",
+        "activities": ["Essay Prompt Discussion (5 min)", "Timeline Overview (5-10 min)", "Essay Preparation Support (40 min)", "Individual Consultations", "Outline Template Activity"],
+        "description": "Comprehensive timeline development covering 1920-1970 labor movements with personalized essay support, individual feedback sessions, and structured outline development for final synthesis essay.",
+        "innovation": "Visual timeline tool (Canva integration) with organized chronological framework helping students systematically connect historical events to essay arguments through personalized outline development",
+        "concepts": ["Historical progression mapping", "Movement analysis skills", "Synthesis argumentation", "Chronological thinking development", "Individual consultation benefits", "Timeline methodology"],
+        "readings": ["Labor Movements Timeline Sheet 1920-1970 comprehensive", "Third synthesis essay extensive materials", "Historical chronology resources", "Individual outline examples"],
+        "links": [
+          { url: "https://docs.google.com/document/d/1th_JEbyvChP4GMzoRa_Kq0m_khPwrafrvjFe2j82FDM/edit?usp=sharing", title: "Labor Movements Timeline 1920-1970", type: "document" },
+          { url: "https://docs.google.com/document/d/1wrIUWrvNTW-D0h519J8ehj-TxXudy8L0DDsfv0pBBNQ/edit?usp=sharing", title: "Third Synthesis Essay Outline Example", type: "document" }
+        ],
+        "key_activities": [
+          "Discuss the final synthesis essay prompt, clarifying any questions and noting changes in due dates",
+          "Review an organized timeline covering labor movements from 1920–1970 (available on Canva and in the timeline sheet) and demonstrate how to incorporate chronology into essay arguments",
+          "Provide individual feedback sessions on students' outline drafts and share an example outline to help structure the third synthesis essay"
+        ]
+      },
+      {
+        "week": 12,
+        "date": "November 22",
+        "title": "Contemporary Labor & Historical Continuity",
+        "activities": ["Barbara Kingsolver Discussion (10 min)", "Group Activity (40 min)", "1930s-1970s Timeline Assignment", "Office Hours Reminder", "Discussion Board Emphasis"],
+        "description": "Examining 1983 Arizona mine strike through Barbara Kingsolver's 'Holding the Line' while connecting to broader labor movement themes through comprehensive group timeline presentations covering 1930-1980s.",
+        "innovation": "Group timeline presentations demonstrating historical continuity from 1930s-1970s to present day, with systematic material location exercises and comprehensive thematic analysis connecting past struggles to contemporary labor issues",
+        "concepts": ["Modern labor conflict analysis", "Women's leadership in contemporary strikes", "Historical continuity demonstration", "Contemporary relevance", "Arizona mining context", "Group presentation skills", "Material research techniques"],
+        "readings": ["Barbara Kingsolver's Holding the Line: Women in the Great Arizona Mine Strike of 1983", "1930-1980s comprehensive timeline materials", "Group assignment extensive resources", "Contemporary labor analysis"],
+        "links": [
+          { url: "https://www.amazon.com/Barbara-Kingsolver/e/B000APW2FQ/ref=dp_byline_cont_book_1", title: "Barbara Kingsolver - Amazon Author Page", type: "external" },
+          { url: "https://docs.google.com/document/d/1WC-7szcVMDNfdwpMfXZxeevv-7umiWecqYaXC5r1BLo/edit?usp=sharing", title: "1930-1980s History Timeline Group Assignment", type: "document" }
+        ],
+        "key_activities": [
+          "Discuss Barbara Kingsolver's 'Holding the Line', focusing on the introduction and first chapter, and explore how the 1983 Arizona mine strike differs from earlier labor struggles",
+          "Conduct a group timeline activity covering the 1930s–1980s: locate materials in class readings, create mini‑timelines of assigned events, analyze key themes and strategies, and connect findings to the synthesis essay prompt through group presentations",
+          "Remind students about office hours and the importance of completing the discussion board assignment"
+        ]
+      }
+    ];
+
+    const weekRange = document.getElementById('weekRange');
+    const rangeDisplay = document.getElementById('rangeDisplay');
+    const weeksContainer = document.getElementById('weeksContainer');
+    const progressFill = document.getElementById('progressFill');
+    const themeToggle = document.getElementById('themeToggle');
+    const searchInput = document.getElementById('searchInput');
+    const topSearch = document.getElementById('topSearch');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const expandAllBtn = document.getElementById('expandAll');
+    const collapseAllBtn = document.getElementById('collapseAll');
+    const jumpToWeekBtn = document.getElementById('jumpToWeek');
+    const testLinksBtn = document.getElementById('testLinks');
+    const modeCards = document.getElementById('modeCards');
+    const modeTimeline = document.getElementById('modeTimeline');
+    const timelineWrap = document.getElementById('timelineWrap');
+    const timeline = document.getElementById('timeline');
+    const scrollTopBtn = document.getElementById('scrollTop');
+    const segSlider = document.getElementById('segSlider');
+    const viewSeg = document.getElementById('viewSeg');
+
+    let currentFilter = 'all';
+    let maxWeeks = 12;
+    let searchTerm = '';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      hydrateFromStorage();
+      renderWeeks();
+      renderTimeline();
+      updateProgress();
+      animateCounters();
+      setupEvents();
+      positionSeg();
+    });
+
+    function setupEvents(){
+      weekRange.addEventListener('input', handleWeekRangeChange);
+      filterButtons.forEach(btn => btn.addEventListener('click', handleFilterChange));
+      expandAllBtn.addEventListener('click', () => toggleAllCards(true));
+      collapseAllBtn.addEventListener('click', () => toggleAllCards(false));
+      themeToggle.addEventListener('click', toggleTheme);
+      searchInput.addEventListener('input', handleSearch);
+      topSearch.addEventListener('input', e => { searchInput.value = e.target.value; handleSearch(e); });
+      jumpToWeekBtn.addEventListener('click', jumpToRandomWeek);
+      testLinksBtn.addEventListener('click', testAllLinks);
+      modeCards.addEventListener('click', () => setView('cards'));
+      modeTimeline.addEventListener('click', () => setView('timeline'));
+      document.addEventListener('keydown', handleShortcuts);
+      window.addEventListener('scroll', () => { scrollTopBtn.style.display = window.scrollY > 600 ? 'flex' : 'none'; });
+      scrollTopBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+      window.addEventListener('resize', positionSeg);
+    }
+
+    function renderWeeks(){
+      const visibleWeeks = courseData.slice(0, maxWeeks);
+      weeksContainer.innerHTML = visibleWeeks.map(week => cardTemplate(week)).join('');
+      applySearchFilter();
+      attachCardHover();
+    }
+
+    function cardTemplate(week){
+      const links = (week.links||[]).map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="resource-link" onclick="event.stopPropagation()"><span class="link-status"></span><span>${l.title || 'External Resource'}</span></a>`).join('');
+      const readings = (week.readings||[]).map(r => `<li>${r}</li>`).join('');
+      const concepts = (week.concepts||[]).map(c => `<li>${c}</li>`).join('');
+      const acts = (week.activities||[]).map(a => `<span class="activity-tag">${a}</span>`).join('');
+      return `
+      <div class="week-card" data-week="${week.week}" data-searchable='${JSON.stringify(week).toLowerCase()}' onclick="toggleCard(this, event)">
+        <div class="week-header">
+          <div class="week-number">Week ${week.week}</div>
+          <div class="week-date">${week.date||''}</div>
+        </div>
+        <h3 class="week-title">${week.title}</h3>
+        <div class="week-activities">${acts}</div>
+        <p class="week-description">${week.description||''}</p>
+        ${week.innovation?`<div class="week-innovation"><span class="innovation-label">🎯 Teaching Innovation</span>${week.innovation}</div>`:''}
+        <div class="expand-indicator">+</div>
+        <div class="week-expandable">
+          <div class="expandable-content">
+            ${(week.concepts&&week.concepts.length)?`<div class="key-concepts"><h4 class="section-title"><span>🧠</span>Key Concepts</h4><ul class="concept-list">${concepts}</ul></div>`:''}
+            ${(week.readings&&week.readings.length)?`<div class="readings-section"><h4 class="section-title"><span>📚</span>Readings & Materials</h4><ul class="reading-list">${readings}</ul></div>`:''}
+            ${(week.links && week.links.length) ? `<div class="resources-section"><h4 class="section-title"><span>🔗</span>Resources & Links</h4><div class="resources-grid">${links}</div></div>` : ''}
+          </div>
         </div>
       </div>`;
-    weeksEl.appendChild(wrap);
-  });
-  bindWeekEvents();
-  applyTilt();
-}
+    }
 
-function bindWeekEvents(){
-  $$('.act-flip').forEach(b=> b.onclick = e=> e.currentTarget.closest('.week').querySelector('.card-front').classList.add('flip'));
-  $$('.act-back').forEach(b=> b.onclick = e=> e.currentTarget.closest('.week').querySelector('.card-front').classList.remove('flip'));
-  $$('.act-done').forEach(b=> b.onclick = e=>{
-    const id = +e.currentTarget.closest('.week').dataset.id; completeWeek(id);
-  });
-  $$('.q .opt').forEach(o=> o.onclick = e=>{
-    const ok = e.currentTarget.dataset.ok==='true';
-    e.currentTarget.classList.add(ok?'correct':'wrong');
-    const fb = e.currentTarget.closest('.q').querySelector('.feedback');
-    fb.textContent = ok ? 'Correct — add this idea to your argument.' : 'Try again — check the agenda notes.';
-  });
+    function attachCardHover(){
+      document.querySelectorAll('.week-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+          const rect = card.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width * 100;
+          card.style.setProperty('--mx', x + '%');
+        });
+      });
+    }
 
-  // Drag & drop
-  $$('.drag').forEach(el=>{
-    el.addEventListener('dragstart', ev=>{ ev.dataTransfer.setData('text/plain', ev.target.textContent); })
-  });
-}
+    function renderTimeline(){
+      timeline.innerHTML = courseData.map(w => `
+        <div class="t-item">
+          <span class="t-dot"></span>
+          <small class="week-date">${w.date||''}</small>
+          <div class="week-number" style="display:inline-block; margin:.25rem 0 .35rem;">Week ${w.week}</div>
+          <div class="t-title">${w.title}</div>
+          <div class="t-actions">
+            <button class="t-btn" onclick="document.querySelector('[data-week=\\'${w.week}\\']').scrollIntoView({behavior:'smooth',block:'center'})">Open</button>
+            ${w.links && w.links[0] ? `<a class="t-btn" href="${w.links[0].url}" target="_blank" rel="noopener">Link</a>` : ''}
+          </div>
+        </div>`).join('');
+    }
 
-// Tilt effect
-function applyTilt(){
-  $$('.card-front').forEach(c=>{
-    c.addEventListener('pointermove', e=>{
-      const r=c.getBoundingClientRect();
-      const x=(e.clientX - r.left)/r.width, y=(e.clientY - r.top)/r.height;
-      const rx = (y-.5)*-12, ry = (x-.5)*12; c.style.transform=`rotateX(${rx}deg) rotateY(${ry}deg)`;
-    });
-    c.addEventListener('pointerleave', ()=> c.style.transform='rotateX(0) rotateY(0)');
-  });
-}
+    function setView(view){
+      if(view === 'timeline'){
+        timelineWrap.style.display = 'block';
+        weeksContainer.style.display = 'none';
+        modeTimeline.classList.add('active');
+        modeCards.classList.remove('active');
+      }else{
+        timelineWrap.style.display = 'none';
+        weeksContainer.style.display = 'grid';
+        modeCards.classList.add('active');
+        modeTimeline.classList.remove('active');
+      }
+      localStorage.setItem('portfolioView', view);
+      document.querySelectorAll('.seg button').forEach(b => b.classList.remove('active'));
+      if(view === 'timeline') modeTimeline.classList.add('active'); else modeCards.classList.add('active');
+      positionSeg();
+    }
 
-// Evidence board drop zones
-$$('.drop').forEach(zone=>{
-  zone.addEventListener('dragover', ev=> ev.preventDefault());
-  zone.addEventListener('drop', ev=>{
-    ev.preventDefault();
-    const chip = document.createElement('span'); chip.className='drag'; chip.textContent = ev.dataTransfer.getData('text/plain');
-    zone.appendChild(chip); toast('Added to '+ zone.dataset.slot);
-  });
-});
+    function positionSeg(){
+      const active = document.querySelector('.seg button.active');
+      const slider = segSlider;
+      if(!active || !slider) return;
+      const rect = active.getBoundingClientRect();
+      const wrap = viewSeg.getBoundingClientRect();
+      slider.style.width = rect.width + 'px';
+      slider.style.transform = `translateX(${rect.left - wrap.left}px)`;
+    }
 
-// Progress logic
-const done = load('ilrlr_done', []);
-function completeWeek(id){ if(!done.includes(id)){ done.push(id); save('ilrlr_done', done); updateProgress(); toast('Week '+id+' marked complete'); } }
-function updateProgress(){ const pct = Math.round(done.length / data.length * 100); $('#progressMeter').value = pct; $('#progressText').textContent = pct + '% complete'; }
+    function handleSearch(e){ searchTerm = e.target.value.toLowerCase(); applySearchFilter(); saveToStorage(); }
+    function applySearchFilter(){
+      const cards = document.querySelectorAll('.week-card');
+      cards.forEach(card => {
+        const content = card.getAttribute('data-searchable');
+        card.style.display = (!!searchTerm && !content.includes(searchTerm)) ? 'none' : '';
+      });
+    }
+    function handleFilterChange(e){
+      filterButtons.forEach(b => b.classList.remove('active'));
+      e.target.classList.add('active'); currentFilter = e.target.dataset.filter; saveToStorage();
+    }
+    function handleWeekRangeChange(e){
+      maxWeeks = parseInt(e.target.value, 10);
+      rangeDisplay.textContent = maxWeeks === 12 ? 'All Weeks (1-12)' : `Weeks 1-${maxWeeks}`;
+      renderWeeks(); updateProgress(); saveToStorage();
+    }
 
-// Range filter
-const range = $('#weekRange'); const label = $('#rangeLabel');
-range.oninput = ()=>{ const v=+range.value; label.textContent = v===data.length? 'All weeks' : 'Through week '+v; renderWeeks(v); };
+    function toggleCard(card, evt){
+      const wasClosed = !card.classList.contains('expanded');
+      card.classList.toggle('expanded');
+      const t = card.querySelector('.expand-indicator'); if(t) t.textContent = card.classList.contains('expanded') ? '−' : '+';
+      if(wasClosed) confetti(card, evt);
+    }
+    function toggleAllCards(expand){
+      document.querySelectorAll('.week-card').forEach(c => {
+        const willOpen = expand && !c.classList.contains('expanded');
+        c.classList.toggle('expanded', !!expand);
+        const t = c.querySelector('.expand-indicator'); if(t) t.textContent = expand ? '−' : '+';
+        if(willOpen) confetti(c);
+      });
+    }
 
-// Focus filter (simple highlighting)
-$$('.panel [data-focus]').forEach(btn=>{
-  btn.onclick = ()=>{
-    const f = btn.dataset.focus; $$('.week').forEach(w=>{
-      if(f==='all'){ w.style.opacity=1; return; }
-      const id=+w.dataset.id; const has = data.find(d=>d.id===id).tags.includes(f);
-      w.style.opacity = has? 1 : .35;
-    });
-  };
-});
+    function confetti(card, evt){
+      const rect = card.getBoundingClientRect();
+      const x = evt ? evt.clientX - rect.left : rect.width/2;
+      const y = evt ? evt.clientY - rect.top : 40;
+      const container = document.createElement('div');
+      container.style.position='absolute'; container.style.left = x+'px'; container.style.top = y+'px';
+      container.style.pointerEvents='none'; container.style.zIndex='5';
+      for(let i=0;i<14;i++){
+        const p = document.createElement('span');
+        p.style.position='absolute'; p.style.width='6px'; p.style.height='6px'; p.style.background = i%3? 'var(--accent)' : (i%2? 'var(--accent-2)':'var(--accent-3)');
+        p.style.borderRadius='2px'; p.style.transform='translate(0,0)';
+        p.style.opacity='1';
+        container.appendChild(p);
+        const dx = (Math.random()*140 - 70); const dy = (Math.random()*90 - 55);
+        const rot = Math.random()*720;
+        p.animate([{ transform:'translate(0,0) rotate(0deg)', opacity:1 }, { transform:`translate(${dx}px, ${dy}px) rotate(${rot}deg)`, opacity:0 }], { duration: 700 + Math.random()*300, easing: 'cubic-bezier(.15,.8,.25,1)' });
+      }
+      card.appendChild(container);
+      setTimeout(()=>container.remove(), 900);
+    }
 
-// Spinner
-const wheel = $('#wheel'); let spinning=false;
-$('#spinBtn').onclick = ()=>{
-  if(spinning) return; spinning=true;
-  const turns = 360*5 + Math.floor(Math.random()*360);
-  wheel.style.transform = `rotate(${turns}deg)`;
-  setTimeout(()=>{ spinning=false; toast('Prompt selected — build your argument!'); }, 3300);
-};
+    function jumpToRandomWeek(){
+      const idx = Math.floor(Math.random() * courseData.length);
+      const el = document.querySelector(`[data-week="${courseData[idx].week}"]`);
+      if(el){ el.scrollIntoView({behavior:'smooth', block:'center'}); el.classList.add('expanded'); }
+    }
 
-// Language toggle — for now just UX cue
-$('#enBtn').onclick = ()=>{ $('#enBtn').setAttribute('aria-pressed','true'); $('#esBtn').setAttribute('aria-pressed','false'); toast('English mode'); };
-$('#esBtn').onclick = ()=>{ $('#enBtn').setAttribute('aria-pressed','false'); $('#esBtn').setAttribute('aria-pressed','true'); toast('Español pronto — content hooks ready'); };
-
-// Reset local progress
-document.getElementById('resetLocal').onclick = () => {
-  done.splice(0, done.length);
-  save('ilrlr_done', done);
-  updateProgress();
-  toast('Progress reset');
-};
-
-// Init
-// Set the range max based on number of weeks
-range.max = data.length;
-range.value = data.length;
-renderWeeks(); updateProgress();
-</script>
+    function updateProgress(){ progressFill.style.width = ((maxWeeks/12)*100) + '%'; }
+    function toggleTheme(){ document.body.classList.toggle('dark'); localStorage.setItem('darkMode', document.body.classList.contains('dark')); }
+    if(localStorage.getItem('darkMode') === 'true'){ document.body.classList.add('dark'); }
+    function testLink(url){ return new Promise(resolve => { const img = new Image(); img.onload = () => resolve('ok'); img.onerror = () => resolve('warning'); img.src = url + '?t=' + Date.now(); setTimeout(() => resolve('warning'), 3000); }); }
+    async function testAllLinks(){ const allLinks = document.querySelectorAll('.resource-link'); testLinksBtn.textContent='Testing…'; testLinksBtn.disabled=true; for (const link of allLinks){ const status = await testLink(link.href); const dot = link.querySelector('.link-status')||document.createElement('span'); dot.className = 'link-status ' + (status==='ok'?'':'warning'); if(!link.querySelector('.link-status')) link.insertBefore(dot, link.firstChild);} testLinksBtn.textContent='Test Links'; testLinksBtn.disabled=false; }
+    function animateCounters(){
+      const counters = document.querySelectorAll('[data-count]');
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            const el = entry.target; const to = parseInt(el.getAttribute('data-count'),10); let cur = 0; const step = Math.ceil(to/40);
+            const id = setInterval(()=>{ cur += step; if(cur>=to){ cur = to; clearInterval(id); } el.textContent = cur; }, 18);
+            obs.unobserve(el);
+          }
+        });
+      }, { threshold:.4 });
+      counters.forEach(c => obs.observe(c));
+    }
+    function handleShortcuts(e){
+      if(e.key === '/'){ e.preventDefault(); (topSearch || searchInput).focus(); }
+      if(e.key.toLowerCase() === 'e'){ toggleAllCards(true); }
+      if(e.key.toLowerCase() === 'c'){ toggleAllCards(false); }
+      if(e.key.toLowerCase() === 't'){ toggleTheme(); }
+    }
+    function saveToStorage(){ localStorage.setItem('portfolioState', JSON.stringify({ maxWeeks, searchTerm, currentFilter })); }
+    function hydrateFromStorage(){
+      const saved = JSON.parse(localStorage.getItem('portfolioState')||'{}');
+      if(saved.maxWeeks){ maxWeeks = saved.maxWeeks; weekRange.value = maxWeeks; rangeDisplay.textContent = maxWeeks===12? 'All Weeks (1-12)': `Weeks 1-${maxWeeks}`; }
+      if(saved.searchTerm){ searchTerm = saved.searchTerm; searchInput.value = searchTerm; topSearch.value = searchTerm; }
+      if(saved.currentFilter){ currentFilter = saved.currentFilter; document.querySelectorAll('.filter-btn').forEach(b => { b.classList.toggle('active', b.dataset.filter===currentFilter); }); }
+      const view = localStorage.getItem('portfolioView')||'cards'; setView(view);
+    }
+  </script>
 </body>
 </html>
