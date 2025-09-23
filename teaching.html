@@ -2527,6 +2527,22 @@ nav.main-nav a.cv-link {
       html, body {
         overscroll-behavior: none;
       }
+      /* Remove the white capsule highlight behind the active bottom tab */
+      .bottom-tabs .tab-link[aria-current="page"]::before {
+        display: none !important;
+      }
+
+      /* Completely remove any ::before pseudo‑element on all tab links to
+         eliminate remaining indicators (e.g., bookmark shapes) regardless of
+         active state. */
+      .bottom-tabs .tab-link::before {
+        display: none !important;
+      }
+
+      /* Reset the active tab text/icon color so it matches the rest of the
+         tabs. This removes the color highlight on the active tab label. */
+      .bottom-tabs .tab-link[aria-current="page"] {
+        color: inherit !important;
       }
       /* Completely hide the floating Calendly badge button */
       .calendly-badge-widget {
@@ -2689,7 +2705,15 @@ nav.main-nav a.cv-link {
 <style>
   /* ===== Methods & Training styles ===== */
   .mt-card{
-    max-width:1100px; margin:0 auto;
+    max-width:1100px;
+    /* Give the card a relative width so there’s space left inside its
+       container for horizontal positioning.  On large screens the card
+       will occupy 90% of the available width (capped at 1100px).  This
+       remaining 10% allows flexbox to shift the card rightward. */
+    width: 90%;
+    /* Remove auto margins when using flexbox container.  Horizontal
+       positioning is now controlled by the parent (#methods-training). */
+    margin: 0;
     background:var(--card-bg,#fff);
     border:1px solid rgba(41,83,155,.12);
     border-radius:18px;
@@ -2725,6 +2749,35 @@ nav.main-nav a.cv-link {
   .mt-actions{margin-top:.6rem;display:flex;justify-content:flex-end}
   .mt-actions a{font-weight:700;text-decoration:underline}
   .dark .mt-dialog{background:var(--card-bg,#121a2a);border-color:rgba(59,130,246,.18);}
+
+  /*
+    Position the Methods & Training card more toward the right side of the
+    page.  Using flexbox on the section allows us to align the card to the
+    end of its container.  We set the right margin to zero to ensure the
+    card sits flush with the container’s right edge while the left side
+    absorbs the remaining space.  Adjust these values if you’d like more
+    or less offset.
+  */
+  #methods-training {
+    display: flex;
+    justify-content: flex-end;
+  }
+  #methods-training .mt-card {
+    margin-right: 0;
+  }
+
+  /*
+    Nudge the entire Methods & Training section to the right. Without
+    overriding the default section styling, we add extra left margin
+    specifically for this section so the outer container is no longer
+    flush against the page’s left margin. Adjust this value to
+    fine‑tune positioning.
+  */
+  #methods-training.section {
+    /* Increase the left margin to shift the section further to the right. */
+    margin-left: 4rem;
+    margin-right: 0;
+  }
 </style>
 <script>
   (() => {
@@ -3929,7 +3982,4 @@ nav.main-nav a.cv-link {
   </script>
 </body>
 </html>
-.tab-link[aria-current="page"]::before {
-  display: none !important;
-}
 
