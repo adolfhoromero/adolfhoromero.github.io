@@ -2,18 +2,18 @@
 
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Adolfho Romero – CV</title>
 <!-- Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect">
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;family=Spectral:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;family=Spectral:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap" rel="stylesheet"/>
   <!-- Calendly widget style -->
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
 <style>
     /* ===== Theme Variables (match your site) ===== */
-    :root{ --sat:0px; --sar:0px; --sab:0px;
+    :root{
       --background-top:  #f7f8fa;
       --background-bottom:#e4e8ef;
       --nav-bg:          #22304a;
@@ -69,7 +69,7 @@
       background:var(--nav-bg);
       color:var(--nav-text);
       text-align:center;
-      padding:1.6rem 1rem 0.6rem;
+      padding:1.6rem 1rem .6rem;
       box-shadow:0 4px 22px rgba(34,48,74,.47);
       position:relative;
       z-index:100;
@@ -84,7 +84,7 @@
     }
     .site-title a{ color:inherit; }
     .dark-toggle{
-      position:absolute; top:0.9rem; right:1rem;
+      position:absolute; top:.9rem; right:1rem;
       width:2.4rem; height:2.4rem; display:grid; place-items:center;
       background:none; border:0; cursor:pointer; z-index:200;
     }
@@ -120,7 +120,7 @@
     /* ===== Page actions ===== */
     .page-actions{
       display:flex; gap:12px; justify-content:flex-end; align-items:center;
-      padding:0.8rem 0 0;
+      padding:.8rem 0 0;
       flex-wrap:wrap;
     }
     .btn{
@@ -143,11 +143,11 @@
     /* ===== Tabs: big, colorful, sticky (high-contrast) ===== */
     .tabbar{
       position:static; top:auto; z-index:auto;
-      margin:0.8rem 0 1rem; padding:0.6rem;
+      margin:.8rem 0 1rem; padding:.6rem;
       border-radius:var(--radius-xl);
       background:linear-gradient(135deg,rgba(41,83,155,.08),rgba(255,204,0,.10));
       box-shadow:0 2px 8px rgba(41,83,155,.06);
-      display:flex; gap:0.6rem; align-items:center; flex-wrap:wrap;
+      display:flex; gap:.6rem; align-items:center; flex-wrap:wrap;
     }
     .tabbar [role="tab"]{
       --ring: 0 0 0 0 rgba(41,83,155,.0);
@@ -182,8 +182,8 @@
 
 
     .searchbar{
-      margin-left:auto; display:flex; gap:0.6rem; align-items:center;
-      padding:.35rem 0.6rem; border:1px solid rgba(41,83,155,.25); border-radius:999px;
+      margin-left:auto; display:flex; gap:.6rem; align-items:center;
+      padding:.35rem .6rem; border:1px solid rgba(41,83,155,.25); border-radius:999px;
       background:rgba(255,255,255,.5);
     }
     .dark .searchbar{ background:rgba(0,0,0,.15); }
@@ -195,7 +195,7 @@
     /* ===== Sections ===== */
     h2{
       font-family:var(--font-heading); font-weight:600; font-size:2rem; color:var(--heading-color);
-      margin:1.4rem 0 0.8rem;
+      margin:1.4rem 0 .8rem;
     }
     .section{
       background:var(--card-bg);
@@ -268,7 +268,7 @@
     .cv-sidebar .tabbar{
       display:flex;
       flex-direction:column;
-      gap:0.4rem;
+      gap:.4rem;
     }
     .cv-sidebar .tabbar [role="tab"]{
       width:100%;
@@ -329,31 +329,25 @@
     }
 
   </style>
-<style>
-@supports (padding: max(0px)) {
-  :root{ --sat: env(safe-area-inset-top); --sar: env(safe-area-inset-right); --sab: env(safe-area-inset-bottom); }
-}
-</style>
-
 <!-- Mobile bottom tabs + hide top nav on phones -->
 <style>
     :root{ --bottom-bar-h:54px; --bottom-offset:12px; }
     @media (min-width:821px){ :root{ --bottom-bar-h:0px; --bottom-offset:0px; } }
 
     /* Keep content above the bottom bar */
-    body{ padding-bottom: calc(var(--bottom-bar-h) + var(--bottom-offset) + var(--sab)); }
+    body{ padding-bottom: calc(var(--bottom-bar-h) + var(--bottom-offset) + env(safe-area-inset-bottom,0px)); }
 
     /* Hide the sticky top nav on phones */
     @media (max-width: 820px){
       nav.main-nav{ display:none !important; }
-      header{ padding-bottom: 0.4rem !important; }
+      header{ padding-bottom: .4rem !important; }
       main{ margin-top: 1rem !important; }
     }
 
     /* Bottom tabs styling */
     .bottom-tabs{
       position:fixed; left:8px; right:8px;
-      bottom: calc(var(--bottom-offset) + var(--sab));
+      bottom: calc(var(--bottom-offset) + env(safe-area-inset-bottom,0px));
       height: var(--bottom-bar-h);
       background: rgba(17,24,39,.96);
       border-top: 1px solid rgba(255,255,255,.12);
@@ -366,7 +360,7 @@
     }
     @media (min-width:821px){ .bottom-tabs{ display:none } }
     .tabs-row{ display:grid; grid-template-columns:repeat(5,1fr); height:100% }
-    .tab-link{ display:grid; place-items:center; gap:2px; color:#e5e7eb; font-size:0.7rem; font-weight:600; letter-spacing:.02em; text-decoration:none; position:relative; isolation:isolate }
+    .tab-link{ display:grid; place-items:center; gap:2px; color:#e5e7eb; font-size:.7rem; font-weight:600; letter-spacing:.02em; text-decoration:none; position:relative; isolation:isolate }
     .tab-link .ico{ width:20px; height:20px; opacity:.94 }
     .tab-link[aria-current="page"]{ color:#fbbf24 }
     .tab-link[aria-current="page"]::before{
@@ -524,54 +518,10 @@
         transform: none;
       }
     </style>
-<style>
-  /* Strong override so the viewer expands */
-  #pdf-shell{
-    border:1px solid rgba(41,83,155,.18);
-    border-radius:12px;
-    overflow:hidden;
-    background:var(--card-bg);
-    width:100%;
-    /* Use a responsive height on larger screens. The height will be at least 480px,
-       ideal at 70vh, but will not exceed 90vh. */
-    height:clamp(480px,70vh,90vh);
-  }
-  /* Ensure the embedded PDF scales to its container */
-  #pdf-shell embed,
-  #pdf-shell object{
-    display:block;
-    width:100%;
-    height:100%;
-  }
-  /* On small screens, allow the viewer to grow naturally without forcing a fixed height.
-     Let the embed determine its own height based on intrinsic ratio to avoid stretching. */
-  @media (max-width: 820px){
-    #pdf-shell{
-      height:auto;
-      min-height:0;
-    }
-    #pdf-shell embed,
-    #pdf-shell object{
-      height:auto;
-    }
-  }
-  /* Full screen mode for the PDF viewer */
-  #pdf-shell.fullscreen{
-    position: fixed; inset: 0; z-index: 9999; border-radius: 0; border: none;
-    height: 100vh; width: 100vw; margin: 0;
-    background: var(--background-top);
-  }
-  #pdf-shell.fullscreen + .page-actions{
-    position: fixed;
-    right: 16px;
-    top: 16px;
-    z-index: 10000;
-  }
-  #toggle-pdf-full{ cursor:pointer; }
-</style></head>
+</head>
 <body>
 <!-- Skip link for accessibility -->
-<a class="skip-link" href="#main" style="position:absolute;left:-9999px;top:-9999px;background:#fff;padding:0.6rem 1rem;border-radius:10px;z-index:10000;">Skip to content</a>
+<a class="skip-link" href="#main" style="position:absolute;left:-9999px;top:-9999px;background:#fff;padding:.6rem 1rem;border-radius:10px;z-index:10000;">Skip to content</a>
 <script>
 (function(){
   try {
@@ -615,7 +565,7 @@
 </script>
 <a id="top" style="position:absolute; top:0; left:0; width:1px; height:1px; overflow:hidden;"></a>
 <header>
-<button aria-label="Toggle dark mode" aria-pressed="false" class="dark-toggle" tabindex="0" title="Toggle dark mode">
+<button aria-label="Toggle dark mode" aria-pressed="false" class="dark-toggle" role="button" tabindex="0" title="Toggle dark mode">
 <svg class="icon-sun-moon" viewbox="0 0 24 24">
 <circle cx="12" cy="12" r="5.5" stroke-width="2"></circle>
 <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M17.36 17.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M17.36 6.64l1.42-1.42"></path>
@@ -637,21 +587,27 @@
 </nav>
 <main id="main">
   <!-- Progress bar for scroll tracking -->
-  <div id="progress-bar"></h3><!-- Top actions: download button and PDF embed -->
+  <div id="progress-bar"></div>
+  <!-- Top actions: download button and PDF embed -->
   <div class="page-actions">
     <a aria-label="Download the CV PDF" class="btn gold" download="" href="adolfhoromerocv.pdf" rel="noopener" target="_blank">Download CV</a>
-  </h3><!-- Embedded full PDF is now near the top for easier access -->
+  </div>
+  <!-- Embedded full PDF is now near the top for easier access -->
   <section class="section" id="full-pdf">
     <h2>Adolfho Romero Full CV (PDF)</h2>
     <article class="cv-item">
       <p class="cv-meta">You can preview the CV below or open it in a dedicated view. If the preview does not load, use the buttons to open or download the PDF.</p>
       <div aria-label="Embedded PDF preview" class="pdf-shell" id="pdf-shell" role="region" style="height:420px;">
         <!-- Use an iframe for better cross‑browser PDF support. Fallback shows a polite message -->
-        <iframe id="pdf-frame" src="adolfhoromerocv.pdf#toolbar=0" style="width:100%;border:0;height:100%;" loading="lazy"></iframe>
-      </h3><div class="page-actions" style="display:flex; gap:12px; justify-content:flex-start; margin-top:10px;">
+        <iframe id="pdf-frame" src="adolfhoromerocv.pdf#toolbar=0" width="100%" height="100%" style="border:0;" loading="lazy">
+          <p>Your browser does not support embedded PDFs. Please <a href="adolfhoromerocv.pdf" rel="noopener" target="_blank">download the PDF</a> to view it.</p>
+        </iframe>
+      </div>
+      <div class="page-actions" style="display:flex; gap:12px; justify-content:flex-start; margin-top:10px;">
         <a aria-label="Open CV PDF in a new tab" class="btn accent" href="adolfhoromerocv.pdf" rel="noopener" target="_blank">Open in new tab</a>
         <button class="btn gold" id="toggle-pdf-full" type="button">Full screen</button>
-      </h3><noscript>
+      </div>
+      <noscript>
         <p>If the PDF does not display, <a href="adolfhoromerocv.pdf" rel="noopener" target="_blank">open it in a new tab</a>.</p>
       </noscript>
     </article>
@@ -677,10 +633,11 @@
         <a data-filter="fieldwork" href="#fieldwork" role="tab">Fieldwork</a>
         <a data-filter="skills" href="#skills" role="tab">Skills</a>
         <span aria-live="polite" class="count" id="count"></span>
-      </h3><form role="search" class="searchbar">
+      </div>
+      <label aria-label="Search CV" class="searchbar" role="search">
         <svg aria-hidden="true" height="16" viewBox="0 0 24 24" width="16"><path d="M15.5 14h-.79l-.28-.27a6.471 6.471 0 0 0 1.57-4.23A6.5 6.5 0 1 0 9.5 16a6.471 6.471 0 0 0 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zM4 9.5C4 6.46 6.46 4 9.5 4S15 6.46 15 9.5 12.54 15 9.5 15 4 12.54 4 9.5z" fill="currentColor"></path></svg>
-        <input aria-label="Search CV" id="search" placeholder="Search CV..." type="search">
-      </form>
+        <input aria-label="Search CV" id="search" placeholder="Search CV..." type="search"/>
+      </label>
     </aside>
     <div class="cv-content">
 <!-- ===== CONTENT START ===== -->
@@ -689,28 +646,42 @@
 <article class="cv-item" data-cats="education research">
 <div class="cv-head">
 <div>
-<h3 class="cv-role">Ph.D., Industrial and Labor Relations</h3><div class="cv-meta">Cornell University · Ithaca, NY · Expected 2028 · GPA 4.0</h3></h3></h3><details><summary>Show more</summary>
+<div class="cv-role">Ph.D., Industrial and Labor Relations</div>
+<div class="cv-meta">Cornell University · Ithaca, NY · Expected 2028 · GPA 4.0</div>
+</div>
+</div>
+<details><summary>Show more</summary>
 <p>School of Industrial and Labor Relations. Specialization in Global Labor and Work.</p>
 </details>
 </article>
 <article class="cv-item" data-cats="education research">
 <div class="cv-head">
 <div>
-<h3 class="cv-role">M.A., Latin American Studies</h3><div class="cv-meta">University of Florida · 2021 · GPA 3.9</h3></h3></h3><details><summary>Show more</summary>
+<div class="cv-role">M.A., Latin American Studies</div>
+<div class="cv-meta">University of Florida · 2021 · GPA 3.9</div>
+</div>
+</div>
+<details><summary>Show more</summary>
 <p>Specialization in Latinx Studies, Migration and Transnational Studies. MA Essay: “¡Sí se puede! Yes, We Can! An Analysis of a Non-profit Organization and its Effectiveness. The Farmworkers Association of Florida.”</p>
 </details>
 </article>
 <article class="cv-item" data-cats="education research">
 <div class="cv-head">
 <div>
-<h3 class="cv-role">B.A., Spanish</h3><div class="cv-meta">Northeastern Illinois University · 2018 · GPA 4.0</h3></h3></h3><details><summary>Show more</summary>
+<div class="cv-role">B.A., Spanish</div>
+<div class="cv-meta">Northeastern Illinois University · 2018 · GPA 4.0</div>
+</div>
+</div>
+<details><summary>Show more</summary>
 <p>Minor in Latino and Latin American Studies. Human Resources Development. Senior Thesis on Puerto Rican displacement and gentrification.</p>
 </details>
 </article>
 <article class="cv-item" data-cats="education">
 <div class="cv-head">
 <div>
-<h3 class="cv-role">Associate of Arts with Honors</h3><div class="cv-meta">Harold Washington College · 2015</h3></div>
+<div class="cv-role">Associate of Arts with Honors</div>
+<div class="cv-meta">Harold Washington College · 2015</div>
+</div>
 </div>
 </article>
 </section>
@@ -718,14 +689,21 @@
 <section class="section" id="research"><h2>Research Interests</h2>
 <article class="cv-item" data-cats="research skills">
 <div class="cv-head">
-<h3 class="cv-role">Areas</h3><div class="cv-meta">Working-Class Studies · Industrial Labor Relations · African American Studies · Latinx Studies · Comparative Race and Ethnicity · Migration and Transnational Studies · Oral History · Memory · Ethnography</h3></h3></article>
+<div class="cv-role">Areas</div>
+<div class="cv-meta">Working-Class Studies · Industrial Labor Relations · African American Studies · Latinx Studies · Comparative Race and Ethnicity · Migration and Transnational Studies · Oral History · Memory · Ethnography</div>
+</div>
+</article>
 </section>
 <!-- Academic Research Experience -->
 <section class="section" id="research-exp"><h2>Academic Research Experience</h2>
 <article class="cv-item" data-cats="research fieldwork service">
 <div class="cv-head">
 <div>
-<h3 class="cv-role">Research Assistant to Dr. Andrew Wolf</h3><div class="cv-meta">Cornell University · Aug 2025 – Jan 2026 expected</h3></h3></h3><details><summary>Show more</summary>
+<div class="cv-role">Research Assistant to Dr. Andrew Wolf</div>
+<div class="cv-meta">Cornell University · Aug 2025 – Jan 2026 expected</div>
+</div>
+</div>
+<details><summary>Show more</summary>
 <ul>
 <li>Spanish-language interviews with members of the Fund Excluded Workers Coalition.</li>
 <li>Transcription support and analysis of coalition strategies and migrant worker exclusion.</li>
@@ -736,7 +714,11 @@
 <article class="cv-item" data-cats="research fieldwork">
 <div class="cv-head">
 <div>
-<h3 class="cv-role">Research Assistant to Dr. Paul Ortiz</h3><div class="cv-meta">University of Florida · May 2025 – Present</h3></h3></h3><details><summary>Show more</summary>
+<div class="cv-role">Research Assistant to Dr. Paul Ortiz</div>
+<div class="cv-meta">University of Florida · May 2025 – Present</div>
+</div>
+</div>
+<details><summary>Show more</summary>
 <ul>
 <li>Compiled and organized archival materials on U.S. labor and farmworker organizing.</li>
 <li>Supported research for a forthcoming book on union-led social movements during the Great Depression.</li>
@@ -746,7 +728,11 @@
 <article class="cv-item" data-cats="research publications">
 <div class="cv-head">
 <div>
-<h3 class="cv-role">ILR Research Aide IV to Dr. Shannon Gleeson</h3><div class="cv-meta">Cornell University · Jan 2025 – Present</h3></h3></h3><details><summary>Show more</summary>
+<div class="cv-role">ILR Research Aide IV to Dr. Shannon Gleeson</div>
+<div class="cv-meta">Cornell University · Jan 2025 – Present</div>
+</div>
+</div>
+<details><summary>Show more</summary>
 <ul>
 <li>Co-author on Aztlán 50th Anniversary issue on Latinx labor rights and workplace enforcement.</li>
 <li>Contributor to “Cities, Migrants, and Labor Conditions” chapter.</li>
@@ -757,7 +743,11 @@
 <article class="cv-item" data-cats="research teaching service">
 <div class="cv-head">
 <div>
-<h3 class="cv-role">Assistant Director, Samuel Proctor Oral History Program</h3><div class="cv-meta">University of Florida · 2021 – 2023</h3></h3></h3><details><summary>Show more</summary>
+<div class="cv-role">Assistant Director, Samuel Proctor Oral History Program</div>
+<div class="cv-meta">University of Florida · 2021 – 2023</div>
+</div>
+</div>
+<details><summary>Show more</summary>
 <ul>
 <li>Supervised grant-funded teams and managed fieldwork initiatives including the Mississippi Delta trip.</li>
 <li>Co-managed the Doris Duke Revitalizing Oral History project.</li>
@@ -768,7 +758,11 @@
 <article class="cv-item" data-cats="research teaching">
 <div class="cv-head">
 <div>
-<h3 class="cv-role">Graduate Assistant &amp; Project Coordinator</h3><div class="cv-meta">SPOHP · 2019 – 2021</h3></h3></h3><details><summary>Show more</summary>
+<div class="cv-role">Graduate Assistant &amp; Project Coordinator</div>
+<div class="cv-meta">SPOHP · 2019 – 2021</div>
+</div>
+</div>
+<details><summary>Show more</summary>
 <ul>
 <li>Co-taught internship courses and led oral history training workshops.</li>
 <li>Managed metadata and digital collections for archival projects.</li>
@@ -778,7 +772,11 @@
 <article class="cv-item" data-cats="research fieldwork service">
 <div class="cv-head">
 <div>
-<h3 class="cv-role">Research Coordinator</h3><div class="cv-meta">Farmworkers Association of Florida · 2021</h3></h3></h3><details><summary>Show more</summary>
+<div class="cv-role">Research Coordinator</div>
+<div class="cv-meta">Farmworkers Association of Florida · 2021</div>
+</div>
+</div>
+<details><summary>Show more</summary>
 <ul>
 <li>Led outreach to improve Medicaid enrollment and community health access.</li>
 </ul>
@@ -787,7 +785,11 @@
 <article class="cv-item" data-cats="research fieldwork service">
 <div class="cv-head">
 <div>
-<h3 class="cv-role">Graduate Intern</h3><div class="cv-meta">Farmworkers Association of Florida · 2020 – 2021</h3></h3></h3><details><summary>Show more</summary>
+<div class="cv-role">Graduate Intern</div>
+<div class="cv-meta">Farmworkers Association of Florida · 2020 – 2021</div>
+</div>
+</div>
+<details><summary>Show more</summary>
 <ul>
 <li>MA internship on nonprofit effectiveness at FWAF.</li>
 <li>Supported pandemic response efforts including PPE distribution and testing.</li>
@@ -797,7 +799,11 @@
 <article class="cv-item" data-cats="research">
 <div class="cv-head">
 <div>
-<h3 class="cv-role">Research Assistant to Dr. Victor Ortiz</h3><div class="cv-meta">Northeastern Illinois University · 2019</h3></h3></h3><details><summary>Show more</summary>
+<div class="cv-role">Research Assistant to Dr. Victor Ortiz</div>
+<div class="cv-meta">Northeastern Illinois University · 2019</div>
+</div>
+</div>
+<details><summary>Show more</summary>
 <ul>
 <li>GIS mapping and spatial analysis of Latino settlement patterns.</li>
 <li>Developed databases and community survey instruments.</li>
@@ -807,7 +813,9 @@
 <article class="cv-item" data-cats="teaching service">
 <div class="cv-head">
 <div>
-<h3 class="cv-role">Peer Tutor and Writing Fellow</h3><div class="cv-meta">Center for Academic Writing · 2017 – 2018</h3></div>
+<div class="cv-role">Peer Tutor and Writing Fellow</div>
+<div class="cv-meta">Center for Academic Writing · 2017 – 2018</div>
+</div>
 </div>
 </article>
 </section>
@@ -815,52 +823,88 @@
 <section class="section" id="grants"><h2>Research Grants</h2>
 <article class="cv-item" data-cats="grants">
 <div class="cv-head">
-<h3 class="cv-role">Network to Freedom Underground Railroad</h3><div class="cv-meta">National Park Service · Project Researcher · $425,000 · 2022–2024</h3></h3></article>
+<div class="cv-role">Network to Freedom Underground Railroad</div>
+<div class="cv-meta">National Park Service · Project Researcher · $425,000 · 2022–2024</div>
+</div>
+</article>
 <article class="cv-item" data-cats="grants">
 <div class="cv-head">
-<h3 class="cv-role">Reanimating African American Oral Histories of the Gulf South</h3><div class="cv-meta">NEH · Research Coordinator · $349,000 · 2021–2024</h3></h3></article>
+<div class="cv-role">Reanimating African American Oral Histories of the Gulf South</div>
+<div class="cv-meta">NEH · Research Coordinator · $349,000 · 2021–2024</div>
+</div>
+</article>
 <article class="cv-item" data-cats="grants">
 <div class="cv-head">
-<h3 class="cv-role">Challenging Racism at UF</h3><div class="cv-meta">UF Grant · Lead Project Coordinator · $62,699 · 2022–2023</h3></h3></article>
+<div class="cv-role">Challenging Racism at UF</div>
+<div class="cv-meta">UF Grant · Lead Project Coordinator · $62,699 · 2022–2023</div>
+</div>
+</article>
 <article class="cv-item" data-cats="grants">
 <div class="cv-head">
-<h3 class="cv-role">Recruitment and Retention of Black Faculty at UF</h3><div class="cv-meta">UF · Project Researcher · $75,000 · 2021–2023</h3></h3></article>
+<div class="cv-role">Recruitment and Retention of Black Faculty at UF</div>
+<div class="cv-meta">UF · Project Researcher · $75,000 · 2021–2023</div>
+</div>
+</article>
 <article class="cv-item" data-cats="grants">
 <div class="cv-head">
-<h3 class="cv-role">Doris Duke Native American Oral History Revitalization</h3><div class="cv-meta">Doris Duke Charitable Foundation · Research Coordinator · $200,000 · 2021–2022</h3></h3></article>
+<div class="cv-role">Doris Duke Native American Oral History Revitalization</div>
+<div class="cv-meta">Doris Duke Charitable Foundation · Research Coordinator · $200,000 · 2021–2022</div>
+</div>
+</article>
 <article class="cv-item" data-cats="grants">
 <div class="cv-head">
-<h3 class="cv-role">A Rural State of Mind</h3><div class="cv-meta">Robert Wood Johnson Foundation IRL · Research Assistant · $350,000 · 2021–2022</h3></h3></article>
+<div class="cv-role">A Rural State of Mind</div>
+<div class="cv-meta">Robert Wood Johnson Foundation IRL · Research Assistant · $350,000 · 2021–2022</div>
+</div>
+</article>
 <article class="cv-item" data-cats="grants">
 <div class="cv-head">
-<h3 class="cv-role">NIMHD NIH grant</h3><div class="cv-meta">Florida International University · Research Assistant · $25,000 · 2021</h3></h3></article>
+<div class="cv-role">NIMHD NIH grant</div>
+<div class="cv-meta">Florida International University · Research Assistant · $25,000 · 2021</div>
+</div>
+</article>
 <article class="cv-item" data-cats="grants">
 <div class="cv-head">
-<h3 class="cv-role">Suburban Latinos and Non-Latinos</h3><div class="cv-meta">National Science Foundation · Research Assistant · $149,934 · 2019</h3></h3></article>
+<div class="cv-role">Suburban Latinos and Non-Latinos</div>
+<div class="cv-meta">National Science Foundation · Research Assistant · $149,934 · 2019</div>
+</div>
+</article>
 </section>
 <!-- Professional Development -->
 <section class="section" id="development"><h2>Professional Development</h2>
 <article class="cv-item" data-cats="development">
 <div class="cv-head">
-<h3 class="cv-role">UT Austin Ethnographic Summer School</h3><div class="cv-meta">Urban Ethnography Lab · August 2025</h3></h3><details><summary>Show more</summary>
+<div class="cv-role">UT Austin Ethnographic Summer School</div>
+<div class="cv-meta">Urban Ethnography Lab · August 2025</div>
+</div>
+<details><summary>Show more</summary>
 <p>Four-day intensive on ethnographic methods, observation, interviewing, coding, and research ethics.</p>
 </details>
 </article>
 <article class="cv-item" data-cats="development">
 <div class="cv-head">
-<h3 class="cv-role">QMUL–Cornell Migration Spring School</h3><div class="cv-meta">Queen Mary University of London &amp; Cornell · May 2025</h3></h3><details><summary>Show more</summary>
+<div class="cv-role">QMUL–Cornell Migration Spring School</div>
+<div class="cv-meta">Queen Mary University of London &amp; Cornell · May 2025</div>
+</div>
+<details><summary>Show more</summary>
 <p>Interdisciplinary program on migration, labor rights, urban policy in the Mediterranean region with site visits.</p>
 </details>
 </article>
 <article class="cv-item" data-cats="development media">
 <div class="cv-head">
-<h3 class="cv-role">Harvard Kennedy School &amp; MA Black and Latino Legislative Caucus Retreat</h3><div class="cv-meta">Cambridge, MA · December 2024</h3></h3><details><summary>Show more</summary>
+<div class="cv-role">Harvard Kennedy School &amp; MA Black and Latino Legislative Caucus Retreat</div>
+<div class="cv-meta">Cambridge, MA · December 2024</div>
+</div>
+<details><summary>Show more</summary>
 <p>Supported Dr. Paul Ortiz’s presentation and met with Beacon Press editors regarding dissertation framing.</p>
 </details>
 </article>
 <article class="cv-item" data-cats="development">
 <div class="cv-head">
-<h3 class="cv-role">MigLab Working Group</h3><div class="cv-meta">Cornell University · Jan–May 2025</h3></h3><details><summary>Show more</summary>
+<div class="cv-role">MigLab Working Group</div>
+<div class="cv-meta">Cornell University · Jan–May 2025</div>
+</div>
+<details><summary>Show more</summary>
 <p>Interdisciplinary meetings on migration research and peer feedback. Co-sponsored by CPC and Brooks School.</p>
 </details>
 </article>
@@ -869,116 +913,222 @@
 <section class="section" id="conferences"><h2>Conference Presentations</h2>
   <article class="cv-item" data-cats="conferences research">
     <div class="cv-head">
-      <h3 class="cv-role">Reimagining Power Research Approach: Worker Centers and the Quest for Working‑Class Empowerment</h3><div class="cv-meta">Panelist · Society for the Advancement of Socio‑Economics (SASE) · Montreal, Canada · 2025</h3></h3></article>
+      <div class="cv-role">Reimagining Power Research Approach: Worker Centers and the Quest for Working‑Class Empowerment</div>
+      <div class="cv-meta">Panelist · Society for the Advancement of Socio‑Economics (SASE) · Montreal, Canada · 2025</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="conferences research">
     <div class="cv-head">
-      <h3 class="cv-role">Organizing Educators in the Sunshine State</h3><div class="cv-meta">Panelist · Southern Historical Association · Trade Winds Resort, St. Petersburg, FL · 2025 (accepted)</h3></h3></article>
+      <div class="cv-role">Organizing Educators in the Sunshine State</div>
+      <div class="cv-meta">Panelist · Southern Historical Association · Trade Winds Resort, St. Petersburg, FL · 2025 (accepted)</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="conferences research">
     <div class="cv-head">
-      <h3 class="cv-role">Challenging Racism at UF in the “Stop Woke” Era</h3><div class="cv-meta">Panelist · Oral History Association · Hyatt Regency Baltimore, Baltimore, MD · 2023</h3></h3></article>
+      <div class="cv-role">Challenging Racism at UF in the “Stop Woke” Era</div>
+      <div class="cv-meta">Panelist · Oral History Association · Hyatt Regency Baltimore, Baltimore, MD · 2023</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="conferences research">
     <div class="cv-head">
-      <h3 class="cv-role">Documenting Black Resistance in the Mississippi Delta</h3><div class="cv-meta">Panelist · Association for the Study of African American Life and History (ASALH) · Hyatt Regency Riverfront, Jacksonville, FL · 2023</h3></h3></article>
+      <div class="cv-role">Documenting Black Resistance in the Mississippi Delta</div>
+      <div class="cv-meta">Panelist · Association for the Study of African American Life and History (ASALH) · Hyatt Regency Riverfront, Jacksonville, FL · 2023</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="conferences research">
     <div class="cv-head">
-      <h3 class="cv-role">The Enduring Resonance of the Joel Buchanan Archive of African American Oral History</h3><div class="cv-meta">Panelist · ASALH · Hyatt Regency Riverfront, Jacksonville, FL · 2023</h3></h3></article>
+      <div class="cv-role">The Enduring Resonance of the Joel Buchanan Archive of African American Oral History</div>
+      <div class="cv-meta">Panelist · ASALH · Hyatt Regency Riverfront, Jacksonville, FL · 2023</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="conferences research">
     <div class="cv-head">
-      <h3 class="cv-role">Challenging Racism at the University of Florida in the “Stop Woke” Era</h3><div class="cv-meta">Panelist · ASALH · Hyatt Regency Riverfront, Jacksonville, FL · 2023</h3></h3></article>
+      <div class="cv-role">Challenging Racism at the University of Florida in the “Stop Woke” Era</div>
+      <div class="cv-meta">Panelist · ASALH · Hyatt Regency Riverfront, Jacksonville, FL · 2023</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="conferences research">
     <div class="cv-head">
-      <h3 class="cv-role">Oscar Mack versus the Ku Klux Klan</h3><div class="cv-meta">Panelist · ASALH · Hyatt Regency Riverfront, Jacksonville, FL · 2023</h3></h3></article>
+      <div class="cv-role">Oscar Mack versus the Ku Klux Klan</div>
+      <div class="cv-meta">Panelist · ASALH · Hyatt Regency Riverfront, Jacksonville, FL · 2023</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="conferences research">
     <div class="cv-head">
-      <h3 class="cv-role">Best Practices for Transcribing the Venus McGhee Prince Project Collection</h3><div class="cv-meta">Presenter · Poarch Band of Creek Indians Community Center · Mobile, AL · 2023</h3></h3></article>
+      <div class="cv-role">Best Practices for Transcribing the Venus McGhee Prince Project Collection</div>
+      <div class="cv-meta">Presenter · Poarch Band of Creek Indians Community Center · Mobile, AL · 2023</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="conferences research">
     <div class="cv-head">
-      <h3 class="cv-role">Transcribing and Re‑Transcribing the Doris Duke Collection</h3><div class="cv-meta">Presenter · Association of Tribal Archives, Libraries &amp; Museums (ATALM) · Pechanga Resort &amp; Casino, Temecula, CA · 2023</h3></h3></article>
+      <div class="cv-role">Transcribing and Re‑Transcribing the Doris Duke Collection</div>
+      <div class="cv-meta">Presenter · Association of Tribal Archives, Libraries &amp; Museums (ATALM) · Pechanga Resort &amp; Casino, Temecula, CA · 2023</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="conferences research">
     <div class="cv-head">
-      <h3 class="cv-role">Educating, Transforming, and Building Solidarity through the Mississippi Delta</h3><div class="cv-meta">Panelist · 11th National Civil Rights Conference · Hilton Baton Rouge Capitol Center, Baton Rouge, LA · 2022</h3></h3></article>
+      <div class="cv-role">Educating, Transforming, and Building Solidarity through the Mississippi Delta</div>
+      <div class="cv-meta">Panelist · 11th National Civil Rights Conference · Hilton Baton Rouge Capitol Center, Baton Rouge, LA · 2022</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="conferences research">
     <div class="cv-head">
-      <h3 class="cv-role">From Fieldwork to Film: Using Oral History to Explore Equity and Inclusion in Higher Education</h3><div class="cv-meta">Panelist · Oral History Association · Millennium Biltmore Hotel, Los Angeles, CA · 2022</h3></h3></article>
+      <div class="cv-role">From Fieldwork to Film: Using Oral History to Explore Equity and Inclusion in Higher Education</div>
+      <div class="cv-meta">Panelist · Oral History Association · Millennium Biltmore Hotel, Los Angeles, CA · 2022</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="conferences research">
     <div class="cv-head">
-      <h3 class="cv-role">Historical and Contemporary Challenges of Migration from Europe and Latin America</h3><div class="cv-meta">Presenter · Oral History Association · Millennium Biltmore Hotel, Los Angeles, CA · 2022</h3></h3></article>
+      <div class="cv-role">Historical and Contemporary Challenges of Migration from Europe and Latin America</div>
+      <div class="cv-meta">Presenter · Oral History Association · Millennium Biltmore Hotel, Los Angeles, CA · 2022</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="conferences research">
     <div class="cv-head">
-      <h3 class="cv-role">A Decade of Documenting Agricultural Workers’ Struggles</h3><div class="cv-meta">Panelist · The Labor &amp; Working‑Class History Association (LAWCHA) · University of Illinois at Chicago, Chicago, IL · 2021</h3></h3></article>
+      <div class="cv-role">A Decade of Documenting Agricultural Workers’ Struggles</div>
+      <div class="cv-meta">Panelist · The Labor &amp; Working‑Class History Association (LAWCHA) · University of Illinois at Chicago, Chicago, IL · 2021</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="conferences research">
     <div class="cv-head">
-      <h3 class="cv-role">Comparative Urbanism: Global Perspectives Conference</h3><div class="cv-meta">Attended · Andrew Young School Urban Studies Institute, Georgia State University · Atlanta, GA · 2019</h3></h3></article>
+      <div class="cv-role">Comparative Urbanism: Global Perspectives Conference</div>
+      <div class="cv-meta">Attended · Andrew Young School Urban Studies Institute, Georgia State University · Atlanta, GA · 2019</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="conferences research">
     <div class="cv-head">
-      <h3 class="cv-role">Examining the Mestiza Consciousness</h3><div class="cv-meta">Presenter · Ronald E. McNair Research Conference · Renaissance Convention Center, Schaumburg, IL · 2018</h3></h3></article>
+      <div class="cv-role">Examining the Mestiza Consciousness</div>
+      <div class="cv-meta">Presenter · Ronald E. McNair Research Conference · Renaissance Convention Center, Schaumburg, IL · 2018</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="conferences research">
     <div class="cv-head">
-      <h3 class="cv-role">Examining the Mestiza Consciousness: Novels of Latina Women</h3><div class="cv-meta">Presenter · Summer Research Opportunity Program · Purdue University, Lafayette, IN · 2018</h3></h3></article>
+      <div class="cv-role">Examining the Mestiza Consciousness: Novels of Latina Women</div>
+      <div class="cv-meta">Presenter · Summer Research Opportunity Program · Purdue University, Lafayette, IN · 2018</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="conferences research">
     <div class="cv-head">
-      <h3 class="cv-role">Puerto Rican Displacement and the Effects of Gentrification in Humboldt Park and Albany Park</h3><div class="cv-meta">Presenter · Northeastern Illinois University · Chicago, IL · 2018</h3></h3></article>
+      <div class="cv-role">Puerto Rican Displacement and the Effects of Gentrification in Humboldt Park and Albany Park</div>
+      <div class="cv-meta">Presenter · Northeastern Illinois University · Chicago, IL · 2018</div>
+    </div>
+  </article>
 </section>
 <!-- Guest Lectures and Workshops -->
 <section class="section" id="lectures"><h2>Guest Lectures &amp; Workshops</h2>
 <article class="cv-item" data-cats="lectures teaching">
   <div class="cv-head">
-    <h3 class="cv-role">Oral History Interviews and Methodologies</h3><div class="cv-meta">Guest Lecturer · Center for the Humanities &amp; Public Sphere · Alexander Grass Scholars Program, University of Florida · May 2024</h3></h3></article>
+    <div class="cv-role">Oral History Interviews and Methodologies</div>
+    <div class="cv-meta">Guest Lecturer · Center for the Humanities &amp; Public Sphere · Alexander Grass Scholars Program, University of Florida · May 2024</div>
+  </div>
+</article>
 <article class="cv-item" data-cats="lectures teaching">
   <div class="cv-head">
-    <h3 class="cv-role">Elevate: Community Engagement Summit</h3><div class="cv-meta">Facilitator · SPARC352 · Harn Museum of Art · Dec 2023</h3></h3></article>
+    <div class="cv-role">Elevate: Community Engagement Summit</div>
+    <div class="cv-meta">Facilitator · SPARC352 · Harn Museum of Art · Dec 2023</div>
+  </div>
+</article>
 <article class="cv-item" data-cats="lectures teaching">
   <div class="cv-head">
-    <h3 class="cv-role">The Exchange: Shaping the Future by Examining the Past</h3><div class="cv-meta">Facilitator · SPARC352 · Cotton Club Museum and Cultural Center · Nov 2023</h3></h3></article>
+    <div class="cv-role">The Exchange: Shaping the Future by Examining the Past</div>
+    <div class="cv-meta">Facilitator · SPARC352 · Cotton Club Museum and Cultural Center · Nov 2023</div>
+  </div>
+</article>
 <article class="cv-item" data-cats="lectures teaching">
   <div class="cv-head">
-    <h3 class="cv-role">Preserving Business Legacies: A Workshop on Oral History Methodology, Metadata, Archiving &amp; Media Equipment</h3><div class="cv-meta">Presenter · Inquire Capitalism Program (Sean Adams) · University of Florida · Nov 2023</h3></h3></article>
+    <div class="cv-role">Preserving Business Legacies: A Workshop on Oral History Methodology, Metadata, Archiving &amp; Media Equipment</div>
+    <div class="cv-meta">Presenter · Inquire Capitalism Program (Sean Adams) · University of Florida · Nov 2023</div>
+  </div>
+</article>
 <article class="cv-item" data-cats="lectures teaching">
   <div class="cv-head">
-    <h3 class="cv-role">Fall Walking Tour: History of Students Influencing Change</h3><div class="cv-meta">Guide · Brown Center for Leadership &amp; Service · University of Florida · Oct 2023</h3></h3></article>
+    <div class="cv-role">Fall Walking Tour: History of Students Influencing Change</div>
+    <div class="cv-meta">Guide · Brown Center for Leadership &amp; Service · University of Florida · Oct 2023</div>
+  </div>
+</article>
 <article class="cv-item" data-cats="lectures teaching">
   <div class="cv-head">
-    <h3 class="cv-role">Journey of Migration Symposium: Fostering Student Dialogue and Storytelling Space</h3><div class="cv-meta">Facilitator · Mexican‑American Student Association · University of Florida · Oct 2023</h3></h3></article>
+    <div class="cv-role">Journey of Migration Symposium: Fostering Student Dialogue and Storytelling Space</div>
+    <div class="cv-meta">Facilitator · Mexican‑American Student Association · University of Florida · Oct 2023</div>
+  </div>
+</article>
 <article class="cv-item" data-cats="lectures teaching">
   <div class="cv-head">
-    <h3 class="cv-role">A Pedagogical Journey into Oral History Archives and Methodologies</h3><div class="cv-meta">Presenter · Clarissa Carr’s Historic Preservation Program · University of Florida · Oct 2023</h3></h3></article>
+    <div class="cv-role">A Pedagogical Journey into Oral History Archives and Methodologies</div>
+    <div class="cv-meta">Presenter · Clarissa Carr’s Historic Preservation Program · University of Florida · Oct 2023</div>
+  </div>
+</article>
 <article class="cv-item" data-cats="lectures teaching">
   <div class="cv-head">
-    <h3 class="cv-role">Breaking Boundaries: Black Women Shaping Academia and Communities through Oral History Archives</h3><div class="cv-meta">Guest Lecturer · Introduction to Black Women’s Studies (Riché J. Daniel Barnes) · University of Florida · Sep 2023</h3></h3></article>
+    <div class="cv-role">Breaking Boundaries: Black Women Shaping Academia and Communities through Oral History Archives</div>
+    <div class="cv-meta">Guest Lecturer · Introduction to Black Women’s Studies (Riché J. Daniel Barnes) · University of Florida · Sep 2023</div>
+  </div>
+</article>
 <article class="cv-item" data-cats="lectures teaching">
   <div class="cv-head">
-    <h3 class="cv-role">Resonating Legacies: Unveiling Black History through Oral History Voices and Methodology</h3><div class="cv-meta">Guest Speaker · Jason Brown’s class · Oak Hall School · Feb 2023</h3></h3></article>
+    <div class="cv-role">Resonating Legacies: Unveiling Black History through Oral History Voices and Methodology</div>
+    <div class="cv-meta">Guest Speaker · Jason Brown’s class · Oak Hall School · Feb 2023</div>
+  </div>
+</article>
 <article class="cv-item" data-cats="lectures teaching">
   <div class="cv-head">
-    <h3 class="cv-role">Trailblazing Women: Exploring Black History and Medicine through the Joel Buchanan Archives of African American History</h3><div class="cv-meta">Guest Lecturer · The African Diaspora, Women &amp; Medicine (Alyssa Cole) · University of Florida · Feb 2023</h3></h3></article>
+    <div class="cv-role">Trailblazing Women: Exploring Black History and Medicine through the Joel Buchanan Archives of African American History</div>
+    <div class="cv-meta">Guest Lecturer · The African Diaspora, Women &amp; Medicine (Alyssa Cole) · University of Florida · Feb 2023</div>
+  </div>
+</article>
 <article class="cv-item" data-cats="lectures teaching">
   <div class="cv-head">
-    <h3 class="cv-role">The Veterans Oral History Archives – Honoring the Experiences of Black Veterans</h3><div class="cv-meta">Guest Lecturer · Buffalos and Bloods: The Black Experience in the U.S. Military (Alyssa Cole) · University of Florida · Feb 2023</h3></h3></article>
+    <div class="cv-role">The Veterans Oral History Archives – Honoring the Experiences of Black Veterans</div>
+    <div class="cv-meta">Guest Lecturer · Buffalos and Bloods: The Black Experience in the U.S. Military (Alyssa Cole) · University of Florida · Feb 2023</div>
+  </div>
+</article>
 <article class="cv-item" data-cats="lectures teaching">
   <div class="cv-head">
-    <h3 class="cv-role">Accessing the Latinx Diaspora in the Americas Archives Collection</h3><div class="cv-meta">Presenter · African American and Latina/o Histories (Paul Ortiz) · University of Florida · Apr 2022</h3></h3></article>
+    <div class="cv-role">Accessing the Latinx Diaspora in the Americas Archives Collection</div>
+    <div class="cv-meta">Presenter · African American and Latina/o Histories (Paul Ortiz) · University of Florida · Apr 2022</div>
+  </div>
+</article>
 <article class="cv-item" data-cats="lectures teaching">
   <div class="cv-head">
-    <h3 class="cv-role">A Pedagogical Journey into Oral History Archives and Methodologies</h3><div class="cv-meta">Presenter · Video Art (Katerie H. Gladys) · University of Florida · Nov 2021</h3></h3></article>
+    <div class="cv-role">A Pedagogical Journey into Oral History Archives and Methodologies</div>
+    <div class="cv-meta">Presenter · Video Art (Katerie H. Gladys) · University of Florida · Nov 2021</div>
+  </div>
+</article>
 <article class="cv-item" data-cats="lectures teaching">
   <div class="cv-head">
-    <h3 class="cv-role">A Pedagogical Journey into Oral History Archives and Methodologies</h3><div class="cv-meta">Presenter · Design &amp; Methods of Research in Latin American Studies (Rebecca Hanson) · University of Florida · Oct 2021</h3></h3></article>
+    <div class="cv-role">A Pedagogical Journey into Oral History Archives and Methodologies</div>
+    <div class="cv-meta">Presenter · Design &amp; Methods of Research in Latin American Studies (Rebecca Hanson) · University of Florida · Oct 2021</div>
+  </div>
+</article>
 <article class="cv-item" data-cats="lectures teaching">
   <div class="cv-head">
-    <h3 class="cv-role">Exploring History's Voices: The Joel Buchanan Archives and Mississippi Freedom Oral History Collections</h3><div class="cv-meta">Guest Lecturer · The Politics of Race at the University of Florida (Sharon Austin) · University of Florida · Oct 2021</h3></h3></article>
+    <div class="cv-role">Exploring History's Voices: The Joel Buchanan Archives and Mississippi Freedom Oral History Collections</div>
+    <div class="cv-meta">Guest Lecturer · The Politics of Race at the University of Florida (Sharon Austin) · University of Florida · Oct 2021</div>
+  </div>
+</article>
 <article class="cv-item" data-cats="lectures teaching">
   <div class="cv-head">
-    <h3 class="cv-role">Exploring History's Voices: The Joel Buchanan Archives and Mississippi Freedom Oral History Collections</h3><div class="cv-meta">Guest Lecturer · The Politics of Race at the University of Florida (Roshaun Colvin) · University of Florida · Oct 2021</h3></h3></article>
+    <div class="cv-role">Exploring History's Voices: The Joel Buchanan Archives and Mississippi Freedom Oral History Collections</div>
+    <div class="cv-meta">Guest Lecturer · The Politics of Race at the University of Florida (Roshaun Colvin) · University of Florida · Oct 2021</div>
+  </div>
+</article>
 <article class="cv-item" data-cats="lectures teaching">
   <div class="cv-head">
-    <h3 class="cv-role">Developing Oral History Workshops</h3><div class="cv-meta">Coordinator · Martin County Black Heritage Initiatives · Martin County, FL · May 2021</h3></h3></article>
+    <div class="cv-role">Developing Oral History Workshops</div>
+    <div class="cv-meta">Coordinator · Martin County Black Heritage Initiatives · Martin County, FL · May 2021</div>
+  </div>
+</article>
 </section>
 <!-- Teaching Experience -->
 <section class="section" id="teaching"><h2>Teaching Experience</h2>
 <article class="cv-item" data-cats="teaching">
 <div class="cv-head">
 <div>
-<h3 class="cv-role">Teaching Assistant, ILRGL 3805 African American and Latinx Histories</h3><div class="cv-meta">Cornell University · Spring 2025</h3></h3></h3><details><summary>Show more</summary>
+<div class="cv-role">Teaching Assistant, ILRGL 3805 African American and Latinx Histories</div>
+<div class="cv-meta">Cornell University · Spring 2025</div>
+</div>
+</div>
+<details><summary>Show more</summary>
 <ul>
 <li>Graded essays and facilitated discussions on labor movements and migration.</li>
 <li>Managed Canvas materials and held student meeting hours.</li>
@@ -988,7 +1138,11 @@
 <article class="cv-item" data-cats="teaching">
 <div class="cv-head">
 <div>
-<h3 class="cv-role">Teaching Assistant, ILRGL 1100 Introduction to U.S. Labor History</h3><div class="cv-meta">Cornell University · Fall 2024</h3></h3></h3><details><summary>Show more</summary>
+<div class="cv-role">Teaching Assistant, ILRGL 1100 Introduction to U.S. Labor History</div>
+<div class="cv-meta">Cornell University · Fall 2024</div>
+</div>
+</div>
+<details><summary>Show more</summary>
 <ul>
 <li>Facilitated classroom discussions on U.S. labor history and organizing.</li>
 <li>Provided detailed feedback on assignments.</li>
@@ -997,7 +1151,10 @@
 </article>
 <article class="cv-item" data-cats="teaching">
 <div class="cv-head">
-<h3 class="cv-role">Co-instructor, SPOHP Internship Seminar</h3><div class="cv-meta">University of Florida · Spring 2021 · Fall 2020</h3></h3><details><summary>Show more</summary>
+<div class="cv-role">Co-instructor, SPOHP Internship Seminar</div>
+<div class="cv-meta">University of Florida · Spring 2021 · Fall 2020</div>
+</div>
+<details><summary>Show more</summary>
 <ul>
 <li>Introduced community based oral history methodologies and public-facing research.</li>
 <li>Produced interviews and digital outputs with partner organizations.</li>
@@ -1009,19 +1166,31 @@
 <section class="section" id="publications"><h2>Publications and Works in Progress</h2>
 <article class="cv-item" data-cats="publications research">
 <div class="cv-head">
-<h3 class="cv-role">A meeting of two worlds—Oral history and linguistics</h3><div class="cv-meta">The Oral History Review · 2025 · Co-author</h3></h3><details><summary>Show more</summary>
+<div class="cv-role">A meeting of two worlds—Oral history and linguistics</div>
+<div class="cv-meta">The Oral History Review · 2025 · Co-author</div>
+</div>
+<details><summary>Show more</summary>
 <p>M. Simmons, A. Hamilton, A. Davis, W. Dyer, C. J. Philippe, J. Heady, P. Houck, A. Romero, R. A. Cordova, D. Hendrix, P. Ortiz, S. Moeller, &amp; K. Tang.</p>
 </details>
 </article>
 <article class="cv-item" data-cats="publications research">
 <div class="cv-head">
-<h3 class="cv-role">Latinx labor rights and workplace enforcement</h3><div class="cv-meta">Aztlán 50th Anniversary Special Issue · with Shannon Gleeson · Forthcoming 2026</h3></h3></article>
+<div class="cv-role">Latinx labor rights and workplace enforcement</div>
+<div class="cv-meta">Aztlán 50th Anniversary Special Issue · with Shannon Gleeson · Forthcoming 2026</div>
+</div>
+</article>
 <article class="cv-item" data-cats="publications research">
 <div class="cv-head">
-<h3 class="cv-role">Cities, Migrants, and Labor Conditions</h3><div class="cv-meta">Handbook on Cities and Migration · Edward Elgar · with Shannon Gleeson · Forthcoming 2026</h3></h3></article>
+<div class="cv-role">Cities, Migrants, and Labor Conditions</div>
+<div class="cv-meta">Handbook on Cities and Migration · Edward Elgar · with Shannon Gleeson · Forthcoming 2026</div>
+</div>
+</article>
 <article class="cv-item" data-cats="publications acknowledgments">
 <div class="cv-head">
-<h3 class="cv-role">Acknowledged Contributions</h3><div class="cv-meta">Labor Studies Journal 2025 · SOURCE Magazine 2023 · Ground Works Journal 2025 · JIMH 2022</h3></h3><details><summary>Show more</summary>
+<div class="cv-role">Acknowledged Contributions</div>
+<div class="cv-meta">Labor Studies Journal 2025 · SOURCE Magazine 2023 · Ground Works Journal 2025 · JIMH 2022</div>
+</div>
+<details><summary>Show more</summary>
 <ul>
 <li>Ortiz, P. (2025). <em>Labor Studies Journal</em> — research assistance.</li>
 <li>Mattson, I., Mahar, G., &amp; Durant, F. (2023). <em>SOURCE</em> — Doris Duke project team.</li>
@@ -1035,202 +1204,373 @@
 <section class="section" id="programs"><h2>Public Programs</h2>
 <article class="cv-item" data-cats="programs service">
 <div class="cv-head">
-<h3 class="cv-role">Welcoming Black Faculty to Higher Education: A Racial Justice Town Hall</h3><div class="cv-meta">Organizer · Cotton Club Museum and Cultural Center · Gainesville, FL · Oct 12, 2023</h3></h3></article>
+<div class="cv-role">Welcoming Black Faculty to Higher Education: A Racial Justice Town Hall</div>
+<div class="cv-meta">Organizer · Cotton Club Museum and Cultural Center · Gainesville, FL · Oct 12, 2023</div>
+</div>
+</article>
 <article class="cv-item" data-cats="programs service">
 <div class="cv-head">
-<h3 class="cv-role">Film Premiere: Oscar Mack versus the Ku Klux Klan</h3><div class="cv-meta">Organizer · Pugh Hall · Gainesville, FL · Apr 12, 2023</h3></h3></article>
+<div class="cv-role">Film Premiere: Oscar Mack versus the Ku Klux Klan</div>
+<div class="cv-meta">Organizer · Pugh Hall · Gainesville, FL · Apr 12, 2023</div>
+</div>
+</article>
 <article class="cv-item" data-cats="programs service">
 <div class="cv-head">
-<h3 class="cv-role">Bringing African American History to K-12 Classrooms</h3><div class="cv-meta">Organizer · Pugh Hall · Gainesville, FL · Mar 21, 2023</h3></h3></article>
+<div class="cv-role">Bringing African American History to K-12 Classrooms</div>
+<div class="cv-meta">Organizer · Pugh Hall · Gainesville, FL · Mar 21, 2023</div>
+</div>
+</article>
   <!-- Additional public programs -->
   <article class="cv-item" data-cats="programs service">
     <div class="cv-head">
-      <h3 class="cv-role">Future of Florida Springs: A Discussion on Spring Health Talk + Workshop</h3><div class="cv-meta">Organizer · Pugh Hall · Gainesville, FL · Apr 1, 2023</h3></h3></article>
+      <div class="cv-role">Future of Florida Springs: A Discussion on Spring Health Talk + Workshop</div>
+      <div class="cv-meta">Organizer · Pugh Hall · Gainesville, FL · Apr 1, 2023</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="programs service">
     <div class="cv-head">
-      <h3 class="cv-role">First of the First: Recognizing Lincoln High Alumni Triumphs</h3><div class="cv-meta">Moderator · Mount Carmel Baptist Church · Gainesville, FL · Mar 3–4, 2023</h3></h3></article>
+      <div class="cv-role">First of the First: Recognizing Lincoln High Alumni Triumphs</div>
+      <div class="cv-meta">Moderator · Mount Carmel Baptist Church · Gainesville, FL · Mar 3–4, 2023</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="programs service">
     <div class="cv-head">
-      <h3 class="cv-role">Book Signing: Stayed On Freedom: One Family's Journey</h3><div class="cv-meta">Organizer · George A. Smathers Libraries · Gainesville, FL · Feb 23, 2023</h3></h3></article>
+      <div class="cv-role">Book Signing: Stayed On Freedom: One Family's Journey</div>
+      <div class="cv-meta">Organizer · George A. Smathers Libraries · Gainesville, FL · Feb 23, 2023</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="programs service">
     <div class="cv-head">
-      <h3 class="cv-role">“Can't Ban Us” Day of Action: Black History Teach‑Ins in Florida and Beyond</h3><div class="cv-meta">Organizer · Marston Science Library · Gainesville, FL · Feb 23, 2023</h3></h3></article>
+      <div class="cv-role">“Can't Ban Us” Day of Action: Black History Teach‑Ins in Florida and Beyond</div>
+      <div class="cv-meta">Organizer · Marston Science Library · Gainesville, FL · Feb 23, 2023</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="programs service">
     <div class="cv-head">
-      <h3 class="cv-role">OverKome!: Creating Pathways for Collective, Community‑led Development</h3><div class="cv-meta">Facilitator · Cotton Club Museum and Cultural Center · Gainesville, FL · Feb 13, 2023</h3></h3></article>
+      <div class="cv-role">OverKome!: Creating Pathways for Collective, Community‑led Development</div>
+      <div class="cv-meta">Facilitator · Cotton Club Museum and Cultural Center · Gainesville, FL · Feb 13, 2023</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="programs service">
     <div class="cv-head">
-      <h3 class="cv-role">Beyond the Headlines: Exploring Race and Newspaper Coverage in the Gainesville Sun from Reconstruction to the Present</h3><div class="cv-meta">Moderator · Cotton Club Museum and Cultural Center · Gainesville, FL · Jan 14, 2023</h3></h3></article>
+      <div class="cv-role">Beyond the Headlines: Exploring Race and Newspaper Coverage in the Gainesville Sun from Reconstruction to the Present</div>
+      <div class="cv-meta">Moderator · Cotton Club Museum and Cultural Center · Gainesville, FL · Jan 14, 2023</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="programs service">
     <div class="cv-head">
-      <h3 class="cv-role">Open House</h3><div class="cv-meta">Moderator · Samuel Proctor Oral History Program, Pugh Hall · Gainesville, FL · Oct 6, 2022</h3></h3></article>
+      <div class="cv-role">Open House</div>
+      <div class="cv-meta">Moderator · Samuel Proctor Oral History Program, Pugh Hall · Gainesville, FL · Oct 6, 2022</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="programs service">
     <div class="cv-head">
-      <h3 class="cv-role">Allison Mitchell Presents “Battle for the Ballot”: The Struggle for Voting Rights in Florida</h3><div class="cv-meta">Facilitator (Webinar) · Apr 25, 2022</h3></h3></article>
+      <div class="cv-role">Allison Mitchell Presents “Battle for the Ballot”: The Struggle for Voting Rights in Florida</div>
+      <div class="cv-meta">Facilitator (Webinar) · Apr 25, 2022</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="programs service">
     <div class="cv-head">
-      <h3 class="cv-role">UCLA Looking Ahead: The Politics of Florida and the 2022 Midterm Elections</h3><div class="cv-meta">Moderator (Webinar) · Apr 19, 2022</h3></h3></article>
+      <div class="cv-role">UCLA Looking Ahead: The Politics of Florida and the 2022 Midterm Elections</div>
+      <div class="cv-meta">Moderator (Webinar) · Apr 19, 2022</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="programs service">
     <div class="cv-head">
-      <h3 class="cv-role">African American History Meets AI in the 21st Century Classroom</h3><div class="cv-meta">Moderator (Webinar) · Apr 5, 2022</h3></h3></article>
+      <div class="cv-role">African American History Meets AI in the 21st Century Classroom</div>
+      <div class="cv-meta">Moderator (Webinar) · Apr 5, 2022</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="programs service">
     <div class="cv-head">
-      <h3 class="cv-role">Annual Mississippi Freedom Project</h3><div class="cv-meta">Moderator · Pugh Hall · Gainesville, FL · Oct 12, 2021</h3></h3></article>
+      <div class="cv-role">Annual Mississippi Freedom Project</div>
+      <div class="cv-meta">Moderator · Pugh Hall · Gainesville, FL · Oct 12, 2021</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="programs service">
     <div class="cv-head">
-      <h3 class="cv-role">Gainesville Latino Film Festival: Traditions, Healing and Survival</h3><div class="cv-meta">Moderator (Webinar) · Sept 17, 2021</h3></h3></article>
+      <div class="cv-role">Gainesville Latino Film Festival: Traditions, Healing and Survival</div>
+      <div class="cv-meta">Moderator (Webinar) · Sept 17, 2021</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="programs service">
     <div class="cv-head">
-      <h3 class="cv-role">The Florida Paradox: How Diverse Communities are Transforming the Sunshine State</h3><div class="cv-meta">Coordinator (Webinar) · Feb 24, 2021</h3></h3></article>
+      <div class="cv-role">The Florida Paradox: How Diverse Communities are Transforming the Sunshine State</div>
+      <div class="cv-meta">Coordinator (Webinar) · Feb 24, 2021</div>
+    </div>
+  </article>
 </section>
 <!-- Public Writing -->
 <section class="section" id="writing"><h2>Public Writing &amp; Digital Publications</h2>
 <article class="cv-item" data-cats="writing media">
 <div class="cv-head">
-<h3 class="cv-role">UF Oral History Students Report Back from Mississippi Delta</h3><div class="cv-meta">The Gainesville Sun · April 2025 · Contributor interviewee</h3></h3></article>
+<div class="cv-role">UF Oral History Students Report Back from Mississippi Delta</div>
+<div class="cv-meta">The Gainesville Sun · April 2025 · Contributor interviewee</div>
+</div>
+</article>
 <article class="cv-item" data-cats="writing">
 <div class="cv-head">
-<h3 class="cv-role">History and the People Who Make It: Madelyn Lockhart</h3><div class="cv-meta">The Gainesville Iguana · Aug 2021</h3></h3></article>
+<div class="cv-role">History and the People Who Make It: Madelyn Lockhart</div>
+<div class="cv-meta">The Gainesville Iguana · Aug 2021</div>
+</div>
+</article>
 <article class="cv-item" data-cats="writing">
 <div class="cv-head">
-<h3 class="cv-role">Diverse Communities Are Transforming Florida</h3><div class="cv-meta">The Gainesville Sun · Feb 2021</h3></h3></article>
+<div class="cv-role">Diverse Communities Are Transforming Florida</div>
+<div class="cv-meta">The Gainesville Sun · Feb 2021</div>
+</div>
+</article>
 </section>
 <!-- Media Features -->
 <section class="section" id="media"><h2>Media Features &amp; Press Mentions</h2>
 <article class="cv-item" data-cats="media">
 <div class="cv-head">
-<h3 class="cv-role">An Oral History of a Native Son: The Elaine Massacre</h3><div class="cv-meta">The Footnote · Apr 22, 2025 · Interviewee</h3></h3></article>
+<div class="cv-role">An Oral History of a Native Son: The Elaine Massacre</div>
+<div class="cv-meta">The Footnote · Apr 22, 2025 · Interviewee</div>
+</div>
+</article>
 <article class="cv-item" data-cats="media">
 <div class="cv-head">
-<h3 class="cv-role">UF faculty discuss DeSantis policies at Black studies conference</h3><div class="cv-meta">Miami Herald · Sep 2023 · Quoted</h3></h3></article>
+<div class="cv-role">UF faculty discuss DeSantis policies at Black studies conference</div>
+<div class="cv-meta">Miami Herald · Sep 2023 · Quoted</div>
+</div>
+</article>
 <article class="cv-item" data-cats="media">
 <div class="cv-head">
-<h3 class="cv-role">UFF-UF Holds Virtual Teach-in to Discuss Academic Freedom</h3><div class="cv-meta">The Alligator · April 2024 · Quoted</h3></h3></article>
+<div class="cv-role">UFF-UF Holds Virtual Teach-in to Discuss Academic Freedom</div>
+<div class="cv-meta">The Alligator · April 2024 · Quoted</div>
+</div>
+</article>
 </section>
 <!-- Honors -->
 <section class="section" id="honors"><h2>Honors, Awards, &amp; Certificates</h2>
   <article class="cv-item" data-cats="honors">
     <div class="cv-head">
-      <h3 class="cv-role">Industrial &amp; Labor Relations Travel Grant</h3><div class="cv-meta">Cornell University · $2,000 · 2025</h3></h3></article>
+      <div class="cv-role">Industrial &amp; Labor Relations Travel Grant</div>
+      <div class="cv-meta">Cornell University · $2,000 · 2025</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="honors">
     <div class="cv-head">
-      <h3 class="cv-role">Graduate School Conference Travel Grant</h3><div class="cv-meta">Cornell University · $700 · 2025</h3></h3></article>
+      <div class="cv-role">Graduate School Conference Travel Grant</div>
+      <div class="cv-meta">Cornell University · $700 · 2025</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="honors">
     <div class="cv-head">
-      <h3 class="cv-role">Honorary Award: Spring Community‑Engagement Working Group Conversations SPARC352</h3><div class="cv-meta">Center for Arts, Migration &amp; Entrepreneurship, University of Florida · $500 · 2023</h3></h3></article>
+      <div class="cv-role">Honorary Award: Spring Community‑Engagement Working Group Conversations SPARC352</div>
+      <div class="cv-meta">Center for Arts, Migration &amp; Entrepreneurship, University of Florida · $500 · 2023</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="honors">
     <div class="cv-head">
-      <h3 class="cv-role">Oral History Association Presenter Scholarship</h3><div class="cv-meta">$500 · 2022</h3></h3></article>
+      <div class="cv-role">Oral History Association Presenter Scholarship</div>
+      <div class="cv-meta">$500 · 2022</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="honors">
     <div class="cv-head">
-      <h3 class="cv-role">Machen Florida Opportunity Scholars Champion Award</h3><div class="cv-meta">University of Florida · 2022</h3></h3></article>
+      <div class="cv-role">Machen Florida Opportunity Scholars Champion Award</div>
+      <div class="cv-meta">University of Florida · 2022</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="honors">
     <div class="cv-head">
-      <h3 class="cv-role">Evoking the Complexity of Black Lives in Florida – Certificate of Appreciation</h3><div class="cv-meta">University of Florida · 2022</h3></h3></article>
+      <div class="cv-role">Evoking the Complexity of Black Lives in Florida – Certificate of Appreciation</div>
+      <div class="cv-meta">University of Florida · 2022</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="honors">
     <div class="cv-head">
-      <h3 class="cv-role">Graduate Assistantship</h3><div class="cv-meta">University of Florida · 2021</h3></h3></article>
+      <div class="cv-role">Graduate Assistantship</div>
+      <div class="cv-meta">University of Florida · 2021</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="honors">
     <div class="cv-head">
-      <h3 class="cv-role">Summa Cum Laude</h3><div class="cv-meta">Northeastern Illinois University · 2018</h3></h3></article>
+      <div class="cv-role">Summa Cum Laude</div>
+      <div class="cv-meta">Northeastern Illinois University · 2018</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="honors">
     <div class="cv-head">
-      <h3 class="cv-role">Dean’s List, College of Arts &amp; Sciences</h3><div class="cv-meta">Northeastern Illinois University · 2017–2018</h3></h3></article>
+      <div class="cv-role">Dean’s List, College of Arts &amp; Sciences</div>
+      <div class="cv-meta">Northeastern Illinois University · 2017–2018</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="honors">
     <div class="cv-head">
-      <h3 class="cv-role">Illinois Legislative Latino Caucus Foundation Scholarship</h3><div class="cv-meta">2007</h3></h3></article>
+      <div class="cv-role">Illinois Legislative Latino Caucus Foundation Scholarship</div>
+      <div class="cv-meta">2007</div>
+    </div>
+  </article>
 </section>
 <!-- Professional Associations & Service -->
 <section class="section" id="associations"><h2>Professional Associations &amp; Service</h2>
   <article class="cv-item" data-cats="associations">
     <div class="cv-head">
-      <h3 class="cv-role">Ronald E. McNair Post‑Baccalaureate Achievement Program</h3><div class="cv-meta">Scholar · Present–2017</h3></h3></article>
+      <div class="cv-role">Ronald E. McNair Post‑Baccalaureate Achievement Program</div>
+      <div class="cv-meta">Scholar · Present–2017</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="associations service">
     <div class="cv-head">
-      <h3 class="cv-role">Constitutional Committee Member</h3><div class="cv-meta">Cornell Graduate Students United – United Electrical Workers (CGSU‑UE) · 2025</h3></h3></article>
+      <div class="cv-role">Constitutional Committee Member</div>
+      <div class="cv-meta">Cornell Graduate Students United – United Electrical Workers (CGSU‑UE) · 2025</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="associations">
     <div class="cv-head">
-      <h3 class="cv-role">Society for the Advancement of Socio‑Economics</h3><div class="cv-meta">Member · 2025</h3></h3></article>
+      <div class="cv-role">Society for the Advancement of Socio‑Economics</div>
+      <div class="cv-meta">Member · 2025</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="associations">
     <div class="cv-head">
-      <h3 class="cv-role">Oral History Association</h3><div class="cv-meta">Member · 2023</h3></h3></article>
+      <div class="cv-role">Oral History Association</div>
+      <div class="cv-meta">Member · 2023</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="associations service">
     <div class="cv-head">
-      <h3 class="cv-role">Treasurer</h3><div class="cv-meta">Alachua County Labor Coalition · 2022–2024</h3></h3></article>
+      <div class="cv-role">Treasurer</div>
+      <div class="cv-meta">Alachua County Labor Coalition · 2022–2024</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="associations service">
     <div class="cv-head">
-      <h3 class="cv-role">Chair</h3><div class="cv-meta">Alachua County Tenants Association · 2021</h3></h3></article>
+      <div class="cv-role">Chair</div>
+      <div class="cv-meta">Alachua County Tenants Association · 2021</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="associations service">
     <div class="cv-head">
-      <h3 class="cv-role">Treasurer</h3><div class="cv-meta">Caribbean, Latinx &amp; Latin American Exchange Organization · 2020</h3></h3></article>
+      <div class="cv-role">Treasurer</div>
+      <div class="cv-meta">Caribbean, Latinx &amp; Latin American Exchange Organization · 2020</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="associations">
     <div class="cv-head">
-      <h3 class="cv-role">Sigma Delta Pi – National Spanish Honor Society</h3><div class="cv-meta">Member · 2018</h3></h3></article>
+      <div class="cv-role">Sigma Delta Pi – National Spanish Honor Society</div>
+      <div class="cv-meta">Member · 2018</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="associations">
     <div class="cv-head">
-      <h3 class="cv-role">Big Ten Academic Alliance Summer Research Opportunity Program</h3><div class="cv-meta">Participant · 2018</h3></h3></article>
+      <div class="cv-role">Big Ten Academic Alliance Summer Research Opportunity Program</div>
+      <div class="cv-meta">Participant · 2018</div>
+    </div>
+  </article>
 </section>
 <!-- Fieldwork & Trip Coordination -->
 <section class="section" id="fieldwork"><h2>Oral History Fieldwork &amp; Trip Coordination</h2>
 <article class="cv-item" data-cats="fieldwork service">
 <div class="cv-head">
-<h3 class="cv-role">Trustees on Trial Protest at the Board of Trustees</h3><div class="cv-meta">University of Florida · 2024</h3></h3><details><summary>Show more</summary>
+<div class="cv-role">Trustees on Trial Protest at the Board of Trustees</div>
+<div class="cv-meta">University of Florida · 2024</div>
+</div>
+<details><summary>Show more</summary>
 <p>Interviews documenting reactions to elimination of DEI positions and SB 266 impacts.</p>
 </details>
 </article>
 <article class="cv-item" data-cats="fieldwork">
 <div class="cv-head">
-<h3 class="cv-role">Network to Freedom: Underground Railroad</h3><div class="cv-meta">Harriet Tubman Underground Railroad State Park · 2023</h3></h3></article>
+<div class="cv-role">Network to Freedom: Underground Railroad</div>
+<div class="cv-meta">Harriet Tubman Underground Railroad State Park · 2023</div>
+</div>
+</article>
 <article class="cv-item" data-cats="fieldwork">
 <div class="cv-head">
-<h3 class="cv-role">Virginia Tidewater Main Street Project</h3><div class="cv-meta">Chesapeake Bay region · 2023</h3></h3></article>
+<div class="cv-role">Virginia Tidewater Main Street Project</div>
+<div class="cv-meta">Chesapeake Bay region · 2023</div>
+</div>
+</article>
 <article class="cv-item" data-cats="fieldwork">
 <div class="cv-head">
-<h3 class="cv-role">Remembering Rosewood</h3><div class="cv-meta">Day trip · 2023</h3></h3></article>
+<div class="cv-role">Remembering Rosewood</div>
+<div class="cv-meta">Day trip · 2023</div>
+</div>
+</article>
 <article class="cv-item" data-cats="fieldwork">
 <div class="cv-head">
-<h3 class="cv-role">Florida Naturalist Project</h3><div class="cv-meta">Key West, Everglades, St. Petersburg · 2022</h3></h3></article>
+<div class="cv-role">Florida Naturalist Project</div>
+<div class="cv-meta">Key West, Everglades, St. Petersburg · 2022</div>
+</div>
+</article>
 <article class="cv-item" data-cats="fieldwork">
 <div class="cv-head">
-<h3 class="cv-role">Mississippi Freedom Project</h3><div class="cv-meta">Mississippi &amp; Arkansas Delta · 2021–2022</h3></h3></article>
+<div class="cv-role">Mississippi Freedom Project</div>
+<div class="cv-meta">Mississippi &amp; Arkansas Delta · 2021–2022</div>
+</div>
+</article>
   <!-- Additional oral history fieldwork and trip coordination items -->
   <article class="cv-item" data-cats="fieldwork">
     <div class="cv-head">
-      <h3 class="cv-role">Resilience Family Festival St. Augustine</h3><div class="cv-meta">St. Augustine, FL · 2023</h3></h3></article>
+      <div class="cv-role">Resilience Family Festival St. Augustine</div>
+      <div class="cv-meta">St. Augustine, FL · 2023</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="fieldwork">
     <div class="cv-head">
-      <h3 class="cv-role">Florida A&M Ceremony</h3><div class="cv-meta">Leon County Exhibit, Florida A&M University · Tallahassee, FL · 2022</h3></h3></article>
+      <div class="cv-role">Florida A&M Ceremony</div>
+      <div class="cv-meta">Leon County Exhibit, Florida A&M University · Tallahassee, FL · 2022</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="fieldwork">
     <div class="cv-head">
-      <h3 class="cv-role">Palatka Central High Interviews</h3><div class="cv-meta">Palatka, FL · 2021</h3></h3></article>
+      <div class="cv-role">Palatka Central High Interviews</div>
+      <div class="cv-meta">Palatka, FL · 2021</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="fieldwork">
     <div class="cv-head">
-      <h3 class="cv-role">Impacted Families National March on Washington to End Police Brutality</h3><div class="cv-meta">Washington, DC · 2021</h3></h3></article>
+      <div class="cv-role">Impacted Families National March on Washington to End Police Brutality</div>
+      <div class="cv-meta">Washington, DC · 2021</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="fieldwork">
     <div class="cv-head">
-      <h3 class="cv-role">Soil Collection Ceremonies</h3><div class="cv-meta">Alachua & North Florida · 2020–2022</h3></h3></article>
+      <div class="cv-role">Soil Collection Ceremonies</div>
+      <div class="cv-meta">Alachua & North Florida · 2020–2022</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="fieldwork service">
     <div class="cv-head">
-      <h3 class="cv-role">Oral History Fieldwork Trip Coordinator: Student Team Leader</h3><div class="cv-meta">2018</h3></h3></article>
+      <div class="cv-role">Oral History Fieldwork Trip Coordinator: Student Team Leader</div>
+      <div class="cv-meta">2018</div>
+    </div>
+  </article>
 </section>
 <!-- Skills -->
 <section class="section" id="skills"><h2>Skills</h2>
 <article class="cv-item" data-cats="skills">
 <div class="cv-head">
-<h3 class="cv-role">Languages</h3><div class="cv-meta">Spanish · English</h3></h3></article>
+<div class="cv-role">Languages</div>
+<div class="cv-meta">Spanish · English</div>
+</div>
+</article>
 <article class="cv-item" data-cats="skills">
 <div class="cv-head">
-<h3 class="cv-role">Research &amp; Data</h3><div class="cv-meta">RStudio · Atlas.ti · MAXQDA · Zotero</h3></h3></article>
+<div class="cv-role">Research &amp; Data</div>
+<div class="cv-meta">RStudio · Atlas.ti · MAXQDA · Zotero</div>
+</div>
+</article>
 <article class="cv-item" data-cats="skills">
 <div class="cv-head">
-<h3 class="cv-role">Audio &amp; Transcription</h3><div class="cv-meta">Descript · Adobe Audition · Hindenburg</h3></h3></article>
+<div class="cv-role">Audio &amp; Transcription</div>
+<div class="cv-meta">Descript · Adobe Audition · Hindenburg</div>
+</div>
+</article>
 <article class="cv-item" data-cats="skills">
 <div class="cv-head">
-<h3 class="cv-role">Financial &amp; Admin</h3><div class="cv-meta">QuickBooks</h3></h3></article>
+<div class="cv-role">Financial &amp; Admin</div>
+<div class="cv-meta">QuickBooks</div>
+</div>
+</article>
 </section>
       <!-- close content and grid wrappers -->
-    </h3><!-- .cv-content -->
-  </h3><!-- .cv-grid -->
+    </div><!-- .cv-content -->
+  </div><!-- .cv-grid -->
   <footer>© 2025 Adolfho Romero · <a href="mailto:ar2539@cornell.edu">ar2539@cornell.edu</a></footer>
 </main>
 <!-- Back to top floating button -->
@@ -1506,7 +1846,8 @@
 <svg aria-hidden="true" class="ico" viewbox="0 0 24 24"><path d="M7 2h10a2 2 0 0 1 2 2v16l-7-3-7 3V4a2 2 0 0 1 2-2zm3 6h6m-6 4h6m-6 4h6" fill="currentColor"></path></svg>
 <span>Schedule</span>
 </a>
-</h3></nav>
+</div>
+</nav>
 <!-- Bottom tabs active highlight -->
 <script>
     (function(){
@@ -1519,7 +1860,51 @@
       });
     })();
   </script>
-<!-- style moved to head -->
+<style>
+  /* Strong override so the viewer expands */
+  #pdf-shell{
+    border:1px solid rgba(41,83,155,.18);
+    border-radius:12px;
+    overflow:hidden;
+    background:var(--card-bg);
+    width:100%;
+    /* Use a responsive height on larger screens. The height will be at least 480px,
+       ideal at 70vh, but will not exceed 90vh. */
+    height:clamp(480px,70vh,90vh);
+  }
+  /* Ensure the embedded PDF scales to its container */
+  #pdf-shell embed,
+  #pdf-shell object{
+    display:block;
+    width:100%;
+    height:100%;
+  }
+  /* On small screens, allow the viewer to grow naturally without forcing a fixed height.
+     Let the embed determine its own height based on intrinsic ratio to avoid stretching. */
+  @media (max-width: 820px){
+    #pdf-shell{
+      height:auto;
+      min-height:0;
+    }
+    #pdf-shell embed,
+    #pdf-shell object{
+      height:auto;
+    }
+  }
+  /* Full screen mode for the PDF viewer */
+  #pdf-shell.fullscreen{
+    position: fixed; inset: 0; z-index: 9999; border-radius: 0; border: none;
+    height: 100vh; width: 100vw; margin: 0;
+    background: var(--background-top);
+  }
+  #pdf-shell.fullscreen + .page-actions{
+    position: fixed;
+    right: 16px;
+    top: 16px;
+    z-index: 10000;
+  }
+  #toggle-pdf-full{ cursor:pointer; }
+</style>
 <script>
 (function(){
   /**
