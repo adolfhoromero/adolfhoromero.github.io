@@ -2095,9 +2095,6 @@ nav.main-nav a.cv-link {
 }
 </style>
 
-
-</style>
-
   <!-- Mobile bottom tabs + hide top nav on phones -->
   <style>
     :root{ --bottom-bar-h:54px; --bottom-offset:12px; }
@@ -2637,6 +2634,107 @@ nav.main-nav a.cv-link {
     margin-left: 4rem;
     margin-right: 0;
   }
+</style><style>
+  .teachmap-wrap{max-width:var(--max-width,1200px);margin:2rem auto 3rem;padding:0 1rem}
+  .teachmap-card{background:var(--card-bg,#0f1626);border:1px solid rgba(43,62,104,.5);border-radius:16px;box-shadow:0 10px 24px rgba(0,0,0,.25);padding:16px}
+  .teachmap-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .teachmap-legend{display:flex;gap:10px;flex-wrap:wrap}
+  .tm-key{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border:1px solid #243554;border-radius:999px;font-weight:600;font-size:.92rem;background:rgba(255,255,255,.02)}
+  .tm-dot{width:14px;height:14px;border-radius:50%}
+  .tm-dot.field{background:linear-gradient(180deg,#34d399,#10b981)}
+  .tm-dot.talk{background:linear-gradient(180deg,#60a5fa,#3b82f6)}
+  .tm-dot.program{background:linear-gradient(180deg,#fbbf24,#f59e0b)}
+  .tm-dot.pd{background:linear-gradient(180deg,#a78bfa,#7c3aed)}
+  #teach-map{height:520px;border-radius:14px;overflow:hidden}
+  .tm-controls{display:flex;gap:8px;flex-wrap:wrap}
+  /* Style for the map category buttons: pill shape with icons */
+  .tm-btn{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    padding:10px 14px;
+    border-radius:999px;
+    border:1px solid #2a3b64;
+    background:rgba(255,255,255,.05);
+    font-weight:800;
+    cursor:pointer;
+    transition:background .3s ease, color .3s ease, box-shadow .3s ease, transform .15s ease;
+  }
+  .tm-btn[aria-pressed="true"]{
+    background:linear-gradient(90deg,#29539b,#ffcc00);
+    color:#0a1020;
+    border-color:transparent;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+  }
+  .tm-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 6px 20px rgba(0,0,0,0.25);
+  }
+  .tm-btn i{
+    font-size:1.05rem;
+    margin-right:4px;
+    opacity:1;
+    color:inherit;
+  }
+  /* Ensure icons adopt the same colour as text */
+  .tm-btn[aria-pressed="true"] i{
+    color:#0a1020;
+  }
+  .tm-btn:not([aria-pressed="true"]) i{
+    color:inherit;
+  }
+  .tm-btn span:last-child{
+    white-space:nowrap;
+  }
+
+  /* Emoji used in map category buttons */
+  .tm-emoji{
+    font-size:1.05rem;
+    line-height:1;
+    margin-right:2px;
+  }
+  @media (max-width:980px){#teach-map{height:420px}}
+</style>
+<style>
+  /* Visual feedback for active secondary control buttons */
+  .tm-btn-secondary.is-active {
+    outline: 2px solid var(--accent-solid);
+    filter: brightness(1.05);
+  }
+
+  /* Expandable map: when the map section is expanded, fill the viewport */
+  #teaching-map.expanded {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    padding: 1.2rem;
+    background: var(--background-top);
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #teaching-map.expanded .teachmap-card {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  #teaching-map.expanded #teach-map {
+    flex-grow: 1;
+    height: auto;
+  }
+  /* Prevent background scrolling when map is expanded */
+  body.no-scroll {
+    overflow: hidden;
+  }
 </style></head>
 
 <body>
@@ -2850,67 +2948,7 @@ nav.main-nav a.cv-link {
   })();
 </script>
 <!-- Teaching Map styles (scoped) -->
-<style>
-  .teachmap-wrap{max-width:var(--max-width,1200px);margin:2rem auto 3rem;padding:0 1rem}
-  .teachmap-card{background:var(--card-bg,#0f1626);border:1px solid rgba(43,62,104,.5);border-radius:16px;box-shadow:0 10px 24px rgba(0,0,0,.25);padding:16px}
-  .teachmap-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap}
-  .teachmap-legend{display:flex;gap:10px;flex-wrap:wrap}
-  .tm-key{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border:1px solid #243554;border-radius:999px;font-weight:600;font-size:.92rem;background:rgba(255,255,255,.02)}
-  .tm-dot{width:14px;height:14px;border-radius:50%}
-  .tm-dot.field{background:linear-gradient(180deg,#34d399,#10b981)}
-  .tm-dot.talk{background:linear-gradient(180deg,#60a5fa,#3b82f6)}
-  .tm-dot.program{background:linear-gradient(180deg,#fbbf24,#f59e0b)}
-  .tm-dot.pd{background:linear-gradient(180deg,#a78bfa,#7c3aed)}
-  #teach-map{height:520px;border-radius:14px;overflow:hidden}
-  .tm-controls{display:flex;gap:8px;flex-wrap:wrap}
-  /* Style for the map category buttons: pill shape with icons */
-  .tm-btn{
-    display:flex;
-    align-items:center;
-    gap:6px;
-    padding:10px 14px;
-    border-radius:999px;
-    border:1px solid #2a3b64;
-    background:rgba(255,255,255,.05);
-    font-weight:800;
-    cursor:pointer;
-    transition:background .3s ease, color .3s ease, box-shadow .3s ease, transform .15s ease;
-  }
-  .tm-btn[aria-pressed="true"]{
-    background:linear-gradient(90deg,#29539b,#ffcc00);
-    color:#0a1020;
-    border-color:transparent;
-    box-shadow:0 4px 12px rgba(0,0,0,0.15);
-  }
-  .tm-btn:hover{
-    transform:translateY(-2px);
-    box-shadow:0 6px 20px rgba(0,0,0,0.25);
-  }
-  .tm-btn i{
-    font-size:1.05rem;
-    margin-right:4px;
-    opacity:1;
-    color:inherit;
-  }
-  /* Ensure icons adopt the same colour as text */
-  .tm-btn[aria-pressed="true"] i{
-    color:#0a1020;
-  }
-  .tm-btn:not([aria-pressed="true"]) i{
-    color:inherit;
-  }
-  .tm-btn span:last-child{
-    white-space:nowrap;
-  }
-
-  /* Emoji used in map category buttons */
-  .tm-emoji{
-    font-size:1.05rem;
-    line-height:1;
-    margin-right:2px;
-  }
-  @media (max-width:980px){#teach-map{height:420px}}
-</style>
+<!-- style moved to head -->
 <!-- ===== Interactive Map: Fieldwork, Conferences, Programs & Professional Development ===== -->
 <section id="teaching-map" class="teachmap-wrap" aria-labelledby="teachmap-h">
   <div class="teachmap-card">
@@ -2955,7 +2993,7 @@ nav.main-nav a.cv-link {
     </div>
   </div>
 </div>
-<div id="teach-map" aria-label="Map of fieldwork, conferences and professional development"></div>
+<section id="teach-map" role="region" aria-labelledby="teach-map-title"><h2 id="teach-map-title" class="visually-hidden">Map of fieldwork, conferences and professional development</h2></section>
   </div>
 </section>
 
@@ -3230,47 +3268,7 @@ nav.main-nav a.cv-link {
   });
 })();
 </script>
-<style>
-  /* Visual feedback for active secondary control buttons */
-  .tm-btn-secondary.is-active {
-    outline: 2px solid var(--accent-solid);
-    filter: brightness(1.05);
-  }
-
-  /* Expandable map: when the map section is expanded, fill the viewport */
-  #teaching-map.expanded {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1000;
-    padding: 1.2rem;
-    background: var(--background-top);
-    overflow-y: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  #teaching-map.expanded .teachmap-card {
-    width: 100%;
-    height: 100%;
-    max-width: none;
-    border-radius: 0;
-    display: flex;
-    flex-direction: column;
-  }
-  #teaching-map.expanded #teach-map {
-    flex-grow: 1;
-    height: auto;
-  }
-  /* Prevent background scrolling when map is expanded */
-  body.no-scroll {
-    overflow: hidden;
-  }
-</style>
+<!-- style moved to head -->
 
 
 
