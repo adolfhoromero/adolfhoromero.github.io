@@ -15,20 +15,20 @@
 
 
 
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Adolfho Romero – Teaching</title>
   <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Spectral:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Spectral:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous" defer></script>
   <!-- Calendly badge widget styles -->
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 
   <style>
     /* ——  2025 ENHANCED COLOR & DESIGN SYSTEM  —— */
-    :root{ --overlay-top: 0.58; --overlay-bottom: 0.82; 
+    :root{ --sat:0px; --sar:0px; --sab:0px; --overlay-top: 0.58; --overlay-bottom: 0.82; 
       --background-top: linear-gradient(135deg, #f7f8fa 0%, #e8ecf3 100%);
       --background-bottom: linear-gradient(135deg, #e4e8ef 0%, #d0d7e1 100%);
       --nav-bg: linear-gradient(135deg, #1a2332 0%, #22304a 100%);
@@ -2089,7 +2089,12 @@ nav.main-nav a.cv-link {
   .tm-li .t3{opacity:.7;font-size:.85rem}
   .tm-li .go{margin-top:6px;font-size:.85rem;border:1px solid #2a3b64;border-radius:999px;padding:6px 10px;background:rgba(255,255,255,.03);cursor:pointer}
 </style>
+<style>
+@supports (padding: max(0px)) {
+  :root{ --sat: env(safe-area-inset-top); --sar: env(safe-area-inset-right); --sab: env(safe-area-inset-bottom); }
+}
 </style>
+
 
 </style>
 
@@ -2099,7 +2104,7 @@ nav.main-nav a.cv-link {
     @media (min-width:821px){ :root{ --bottom-bar-h:0px; --bottom-offset:0px; } }
 
     /* Keep page content above the bar */
-    body{ padding-bottom: calc(var(--bottom-bar-h) + var(--bottom-offset) + env(safe-area-inset-bottom,0px)); }
+    body{ padding-bottom: calc(var(--bottom-bar-h) + var(--bottom-offset) + var(--sab)); }
 
     /* Hide the sticky top nav on phones (show only bottom tabs) */
     @media (max-width: 820px){
@@ -2110,7 +2115,7 @@ nav.main-nav a.cv-link {
     /* Bottom tabs styling */
     .bottom-tabs{
       position:fixed; left:8px; right:8px;
-      bottom: calc(var(--bottom-offset) + env(safe-area-inset-bottom,0px));
+      bottom: calc(var(--bottom-offset) + var(--sab));
       height: var(--bottom-bar-h);
       background: rgba(17,24,39,.96);
       border-top: 1px solid rgba(255,255,255,.12);
@@ -2344,7 +2349,7 @@ nav.main-nav a.cv-link {
     @media (min-width:821px){ :root{ --bottom-bar-h:0px; --bottom-offset:0px; } }
 
     /* Keep content above the bottom bar */
-    body{ padding-bottom: calc(var(--bottom-bar-h) + var(--bottom-offset) + env(safe-area-inset-bottom,0px)); }
+    body{ padding-bottom: calc(var(--bottom-bar-h) + var(--bottom-offset) + var(--sab)); }
 
     /* Hide the top sticky nav on phones */
     @media (max-width: 820px){
@@ -2356,7 +2361,7 @@ nav.main-nav a.cv-link {
     /* Bottom tabs styling */
     .bottom-tabs{
       position:fixed; left:8px; right:8px;
-      bottom: calc(var(--bottom-offset) + env(safe-area-inset-bottom,0px));
+      bottom: calc(var(--bottom-offset) + var(--sab));
       height: var(--bottom-bar-h);
       background: rgba(17,24,39,.96);
       border-top: 1px solid rgba(255,255,255,.12);
@@ -2556,152 +2561,6 @@ nav.main-nav a.cv-link {
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-</head>
-
-<body>
-  <div id="progress-bar"></div>
-</div>
-
-  <header>
-    <button class="dark-toggle" role="button" tabindex="0" aria-pressed="false" aria-label="Toggle dark mode" title="Toggle dark mode">
-      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
-        <circle cx="12" cy="12" r="5.5" stroke-width="2"/>
-        <g stroke-width="2" stroke-linecap="round">
-          <path d="M12 1.5v3"/>
-          <path d="M12 19.5v3"/>
-          <path d="M4.22 4.22l2.12 2.12"/>
-          <path d="M17.66 17.66l2.12 2.12"/>
-          <path d="M1.5 12h3"/>
-          <path d="M19.5 12h3"/>
-          <path d="M4.22 19.78l2.12-2.12"/>
-          <path d="M17.66 6.34l2.12-2.12"/>
-        </g>
-      </svg>
-    </button>
-    <h1 class="site-title"><a href="index.html" aria-label="Go to Home">Adolfho Romero</a></h1>
-  </header>
-  <nav class="main-nav" aria-label="Primary">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="publications.html" class="pubs-link">Publications</a></li>
-      <li><a href="teaching.html" class="teaching-link">Teaching</a></li>
-      <!-- Added a new navigation item for the interactive discussion hub -->
-      <li><a href="teaching-discussion-hub.html">Discussion Hub</a></li>
-      <li><a href="media.html" aria-current="page">Media & Public Engagement</a></li>
-      <!-- CV links to the CV page -->
-      <li><a href="https://adolfhoromero.com/cv.html" class="cv-link" aria-label="Open CV page">CV</a></li>
-    </ul>
-  </nav>
-<main id=\"main\">
-  <!-- ENHANCED PHILOSOPHY SECTION -->
-  <section id="teaching-philosophy" class="scroll-reveal">
-    <h2>Teaching Philosophy</h2>
-
-    <div class="photo-gallery philosophy-photos">
-      <figure>
-        <img src="class.jpeg" alt="Adolfho Romero presenting at a conference">
-        <figcaption>Hands‑on workshop training session</figcaption>
-      </figure>
-      <figure>
-        <img src="class2.jpeg" alt="Adolfho Romero teaching via video conference">
-        <figcaption>Virtual classroom discussion</figcaption>
-      </figure>
-      <figure>
-        <img src="class3.jpeg" alt="Adolfho Romero facilitating a hands‑on workshop with participants">
-        <figcaption>Presenting on worker centers and working‑class empowerment</figcaption>
-      </figure>
-    </div>
-
-    <div class="philosophy-banner">
-      <p>My approach to teaching is grounded in <strong>care, dignity, and the pursuit of critical understanding</strong>. I bring to the classroom a commitment to honoring working-class lives and histories—especially those often ignored or erased. As a first-generation Mexican and Salvadorean scholar from Humboldt Park, Chicago, I know that education can either replicate systems of exclusion or serve as a space to interrogate and undo them. I choose the latter.</p>
-      <p>I see teaching as a <strong>collective process, not a performance</strong>. It begins with listening—really listening—to students' questions, uncertainties, and insights. I work to create a classroom climate where students feel safe enough to take intellectual risks and connect their experiences with broader historical processes. My goal is not to lecture at students but to build knowledge with them. That means slowing down, asking good questions, and creating space for silence, reflection, and dialogue.</p>
-      <p>At the core of my pedagogy is a desire to help students develop a <strong>historical imagination</strong>—one that recognizes struggle, contradiction, and resilience. I teach labor and social history not as a linear march of progress, but as a series of contested efforts by ordinary people to make meaning, demand dignity, and shape the world around them. This lens opens space for complexity. It invites students to think historically about the present, to see themselves as part of broader movements, and to consider how race, class, gender, and migration shape not only labor conditions but also possibilities for solidarity.</p>
-      <p>Teaching is not separate from my research or my politics. I'm drawn to classrooms where learning emerges from critical reflection and mutual respect. I view the classroom as a space where students can build the skills to name their world and change it. That means practicing analysis rooted in evidence, offering feedback that is direct and constructive, and modeling the kind of clarity and compassion I ask of students.</p>
-      <p>What matters to me most is not that students master content, but that they come away with the <strong>confidence and tools to ask deeper questions</strong>—about power, history, and their place in it. That's what I try to cultivate each time I walk into a room. Teaching, for me, is both responsibility and privilege. It is part of the work of building a more just world.</p>
-    </div>
-    
-    <div class="philosophy-points">
-      <div class="philosophy-point scroll-reveal">
-        <i class="fas fa-users"></i>
-        <div><strong>Active Engagement</strong></div>
-      </div>
-      <div class="philosophy-point scroll-reveal">
-        <i class="fas fa-landmark"></i>
-        <div><strong>Historical Inquiry</strong></div>
-      </div>
-      <div class="philosophy-point scroll-reveal">
-        <i class="fas fa-comments"></i>
-        <div><strong>Inclusive Discussion</strong></div>
-      </div>
-      <div class="philosophy-point scroll-reveal">
-        <i class="fas fa-link"></i>
-        <div><strong>Connecting Past & Present</strong></div>
-      </div>
-    </div>
-<!-- ===== Methods & Training (centered) ===== -->
-<section id="methods-training" class="section scroll-reveal" aria-labelledby="mt-title">
-  <div class="mt-card">
-    <h2 id="mt-title" class="mt-title center">Methods &amp; Training</h2>
-    <p class="mt-note center">Selected programs that inform my research methods and pedagogy.</p>
-
-    <div class="mt-grid">
-      <figure class="mt-fig" data-mt="migrations" role="button" tabindex="0" aria-label="View Migration Spring School certificate">
-        <!-- Use relative paths so images resolve correctly on GitHub Pages or in subfolders -->
-        <img src="migrations.jpeg"
-             alt="Migration Spring School certificate. Cornell and Queen Mary. Malta 2025."
-             loading="lazy" />
-        <figcaption>
-          <strong>Migration Spring School</strong>
-          <span>QMUL &amp; Cornell 2025 • Gozo, Malta</span>
-        </figcaption>
-      </figure>
-
-      <figure class="mt-fig" data-mt="representations" role="button" tabindex="0" aria-label="View Decolonizing Representations certificate">
-        <img src="representations.jpeg"
-             alt="Decolonizing Representations certificate. Florida 2022."
-             loading="lazy" />
-        <figcaption>
-          <strong>Decolonizing Representations</strong>
-          <span>Florida Humanities &amp; UF Partners 2022</span>
-        </figcaption>
-      </figure>
-
-      <figure class="mt-fig" data-mt="uf" role="button" tabindex="0" aria-label="View Latinx Studies &amp; Migration certificate">
-        <img src="uf.jpeg"
-             alt="Latinx Studies and Migration specialization certificate. University of Florida 2021."
-             loading="lazy" />
-        <figcaption>
-          <strong>Latinx Studies &amp; Migration</strong>
-          <span>UF Center for Latin American Studies 2021</span>
-        </figcaption>
-      </figure>
-    </div>
-
-    <div class="mt-links center">
-      <a href="/cv.html" class="mt-link">See full record on my CV</a>
-    </div>
-  </div>
-</section>
-<details id="tm-list" class="tm-list" aria-label="Visible items list">
-  <summary>Visible items</summary>
-  <div class="tm-list-content"></div>
-</details>
-</section>
-
-  <!-- Modal for Methods & Training: displays certificate details in a lightbox -->
-  <div id="mt-modal" class="mt-modal" role="dialog" aria-modal="true" aria-label="Certificate viewer" hidden>
-    <div class="mt-dialog">
-      <button class="mt-close" aria-label="Close">✕</button>
-      <figure class="mt-figure">
-        <img id="mt-image" src="" alt="" />
-        <figcaption id="mt-caption" class="mt-caption"></figcaption>
-      </figure>
-      <div class="mt-actions">
-        <a id="mt-download" href="#" download>Download</a>
-      </div>
-    </div>
-  </div>
-
 <style>
   /* ===== Methods & Training styles ===== */
   .mt-card{
@@ -2778,7 +2637,151 @@ nav.main-nav a.cv-link {
     margin-left: 4rem;
     margin-right: 0;
   }
-</style>
+</style></head>
+
+<body>
+  <div id="progress-bar"></div>
+<header>
+    <button class="dark-toggle" tabindex="0" aria-pressed="false" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="5.5" stroke-width="2"/>
+        <g stroke-width="2" stroke-linecap="round">
+          <path d="M12 1.5v3"/>
+          <path d="M12 19.5v3"/>
+          <path d="M4.22 4.22l2.12 2.12"/>
+          <path d="M17.66 17.66l2.12 2.12"/>
+          <path d="M1.5 12h3"/>
+          <path d="M19.5 12h3"/>
+          <path d="M4.22 19.78l2.12-2.12"/>
+          <path d="M17.66 6.34l2.12-2.12"/>
+        </g>
+      </svg>
+    </button>
+    <h1 class="site-title"><a href="index.html" aria-label="Go to Home">Adolfho Romero</a></h1>
+  </header>
+  <nav class="main-nav" aria-label="Primary">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="publications.html" class="pubs-link">Publications</a></li>
+      <li><a href="teaching.html" class="teaching-link">Teaching</a></li>
+      <!-- Added a new navigation item for the interactive discussion hub -->
+      <li><a href="teaching-discussion-hub.html">Discussion Hub</a></li>
+      <li><a href="media.html" aria-current="page">Media & Public Engagement</a></li>
+      <!-- CV links to the CV page -->
+      <li><a href="https://adolfhoromero.com/cv.html" class="cv-link" aria-label="Open CV page">CV</a></li>
+    </ul>
+  </nav>
+<main id="main">
+  <!-- ENHANCED PHILOSOPHY SECTION -->
+  <section id="teaching-philosophy" class="scroll-reveal">
+    <h2>Teaching Philosophy</h2>
+
+    <div class="photo-gallery philosophy-photos">
+      <figure>
+        <img src="class.jpeg" alt="Adolfho Romero presenting at a conference">
+        <figcaption>Hands‑on workshop training session</figcaption>
+      </figure>
+      <figure>
+        <img src="class2.jpeg" alt="Adolfho Romero teaching via video conference">
+        <figcaption>Virtual classroom discussion</figcaption>
+      </figure>
+      <figure>
+        <img src="class3.jpeg" alt="Adolfho Romero facilitating a hands‑on workshop with participants">
+        <figcaption>Presenting on worker centers and working‑class empowerment</figcaption>
+      </figure>
+    </div>
+
+    <div class="philosophy-banner">
+      <p>My approach to teaching is grounded in <strong>care, dignity, and the pursuit of critical understanding</strong>. I bring to the classroom a commitment to honoring working-class lives and histories—especially those often ignored or erased. As a first-generation Mexican and Salvadorean scholar from Humboldt Park, Chicago, I know that education can either replicate systems of exclusion or serve as a space to interrogate and undo them. I choose the latter.</p>
+      <p>I see teaching as a <strong>collective process, not a performance</strong>. It begins with listening—really listening—to students' questions, uncertainties, and insights. I work to create a classroom climate where students feel safe enough to take intellectual risks and connect their experiences with broader historical processes. My goal is not to lecture at students but to build knowledge with them. That means slowing down, asking good questions, and creating space for silence, reflection, and dialogue.</p>
+      <p>At the core of my pedagogy is a desire to help students develop a <strong>historical imagination</strong>—one that recognizes struggle, contradiction, and resilience. I teach labor and social history not as a linear march of progress, but as a series of contested efforts by ordinary people to make meaning, demand dignity, and shape the world around them. This lens opens space for complexity. It invites students to think historically about the present, to see themselves as part of broader movements, and to consider how race, class, gender, and migration shape not only labor conditions but also possibilities for solidarity.</p>
+      <p>Teaching is not separate from my research or my politics. I'm drawn to classrooms where learning emerges from critical reflection and mutual respect. I view the classroom as a space where students can build the skills to name their world and change it. That means practicing analysis rooted in evidence, offering feedback that is direct and constructive, and modeling the kind of clarity and compassion I ask of students.</p>
+      <p>What matters to me most is not that students master content, but that they come away with the <strong>confidence and tools to ask deeper questions</strong>—about power, history, and their place in it. That's what I try to cultivate each time I walk into a room. Teaching, for me, is both responsibility and privilege. It is part of the work of building a more just world.</p>
+    </div>
+    
+    <div class="philosophy-points">
+      <div class="philosophy-point scroll-reveal">
+        <i class="fas fa-users"></i>
+        <div><strong>Active Engagement</strong></div>
+      </div>
+      <div class="philosophy-point scroll-reveal">
+        <i class="fas fa-landmark"></i>
+        <div><strong>Historical Inquiry</strong></div>
+      </div>
+      <div class="philosophy-point scroll-reveal">
+        <i class="fas fa-comments"></i>
+        <div><strong>Inclusive Discussion</strong></div>
+      </div>
+      <div class="philosophy-point scroll-reveal">
+        <i class="fas fa-link"></i>
+        <div><strong>Connecting Past & Present</strong></div>
+      </div>
+    </div>
+<!-- ===== Methods & Training (centered) ===== -->
+<section id="methods-training" class="section scroll-reveal" aria-labelledby="mt-title">
+  <div class="mt-card">
+    <h2 id="mt-title" class="mt-title center">Methods &amp; Training</h2>
+    <p class="mt-note center">Selected programs that inform my research methods and pedagogy.</p>
+
+    <div class="mt-grid">
+      <figure class="mt-fig" data-mt="migrations" tabindex="0" aria-label="View Migration Spring School certificate">
+        <!-- Use relative paths so images resolve correctly on GitHub Pages or in subfolders -->
+        <img src="migrations.jpeg"
+             alt="Migration Spring School certificate. Cornell and Queen Mary. Malta 2025."
+             loading="lazy">
+        <figcaption>
+          <strong>Migration Spring School</strong>
+          <span>QMUL &amp; Cornell 2025 • Gozo, Malta</span>
+        </figcaption>
+      </figure>
+
+      <figure class="mt-fig" data-mt="representations" tabindex="0" aria-label="View Decolonizing Representations certificate">
+        <img src="representations.jpeg"
+             alt="Decolonizing Representations certificate. Florida 2022."
+             loading="lazy">
+        <figcaption>
+          <strong>Decolonizing Representations</strong>
+          <span>Florida Humanities &amp; UF Partners 2022</span>
+        </figcaption>
+      </figure>
+
+      <figure class="mt-fig" data-mt="uf" tabindex="0" aria-label="View Latinx Studies &amp; Migration certificate">
+        <img src="uf.jpeg"
+             alt="Latinx Studies and Migration specialization certificate. University of Florida 2021."
+             loading="lazy">
+        <figcaption>
+          <strong>Latinx Studies &amp; Migration</strong>
+          <span>UF Center for Latin American Studies 2021</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="mt-links center">
+      <a href="/cv.html" class="mt-link">See full record on my CV</a>
+    </div>
+  </div>
+</section>
+<details id="tm-list" class="tm-list" aria-label="Visible items list">
+  <summary>Visible items</summary>
+  <div class="tm-list-content"></div>
+</details>
+</section>
+
+  <!-- Modal for Methods & Training: displays certificate details in a lightbox -->
+  <div id="mt-modal" class="mt-modal" role="dialog" aria-modal="true" aria-label="Certificate viewer" hidden>
+    <div class="mt-dialog">
+      <button class="mt-close" aria-label="Close">✕</button>
+      <figure class="mt-figure">
+        <img id="mt-image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AAoMBg2l7sWkAAAAASUVORK5CYII=" alt="">
+        <figcaption id="mt-caption" class="mt-caption"></figcaption>
+      </figure>
+      <div class="mt-actions">
+        <a id="mt-download" href="#" download>Download</a>
+      </div>
+    </div>
+  </div>
+
+<!-- style moved to <head> for validity -->
 <script>
   (() => {
     // Data for each credential: image source, descriptive caption and download URL
@@ -2937,7 +2940,7 @@ nav.main-nav a.cv-link {
     </button>
   </div>
   <div class="tm-filters" role="search" aria-label="Map filters">
-    <input id="tm-q" type="search" placeholder="Search title or place…" aria-label="Search" />
+    <input id="tm-q" type="search" placeholder="Search title or place…" aria-label="Search">
     <select id="tm-year" aria-label="Filter by year">
       <option value="all">All years</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025">2025</option>
     </select>
@@ -3289,20 +3292,20 @@ nav.main-nav a.cv-link {
           <button class="card-toggle" aria-expanded="true" onclick="toggleCard(this)">Close <i class="fas fa-chevron-up"></i></button>
         </div>
         <!-- Collapsible body containing summary, syllabus link and detailed sections -->
-        <div class="card-body" aria-expanded="true">
+        <div class="card-body" data-expanded="true">
           <div class="card-tags">
-            <i class="fas fa-university"></i> Cornell University · Spring 2025<br/>
+            <i class="fas fa-university"></i> Cornell University · Spring 2025<br>
             <i class="fas fa-users"></i> Graduate Teaching Assistant to Prof. Paul Ortiz · 120+ students
           </div>
           <div class="card-desc">
-            Large survey seminar tracing African American and Latinx histories, labor, culture, and social change from the Revolution to today. Led lectures and workshops on synthesis writing, grading, and feedback; guided reading analysis; managed course technology; and mentored students through one-on-one and group support. Consistently received top student ratings for helping students, stimulating deeper thinking, and making the course welcoming.<br/>
+            Large survey seminar tracing African American and Latinx histories, labor, culture, and social change from the Revolution to today. Led lectures and workshops on synthesis writing, grading, and feedback; guided reading analysis; managed course technology; and mentored students through one-on-one and group support. Consistently received top student ratings for helping students, stimulating deeper thinking, and making the course welcoming.<br>
             <a href="2025spring.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Syllabus (PDF)</a>
           </div>
           <!-- Button inside the card body to show/hide extended details -->
           <button aria-controls="details-afrlatx-3805" aria-expanded="false" class="details-toggle" onclick="toggleDetails(this)">
             Details <i class="fas fa-chevron-down"></i>
           </button>
-          <div aria-expanded="false" class="card-details" id="details-afrlatx-3805">
+          <div data-expanded="false" class="card-details" id="details-afrlatx-3805">
             <b><i class="fas fa-graduation-cap"></i> Teaching, Writing, &amp; Student Support:</b>
             <ul>
               <li>Designed and led lecture on equitable grading and how to write historical synthesis essays</li>
@@ -3349,19 +3352,19 @@ nav.main-nav a.cv-link {
           <!-- Default state is expanded; update the button text and state. -->
           <button class="card-toggle" aria-expanded="true" onclick="toggleCard(this)">Close <i class="fas fa-chevron-up"></i></button>
         </div>
-        <div class="card-body" aria-expanded="true">
+        <div class="card-body" data-expanded="true">
           <div class="card-tags">
-            <i class="fas fa-university"></i> Cornell University · Fall 2024<br/>
+            <i class="fas fa-university"></i> Cornell University · Fall 2024<br>
             <i class="fas fa-user-graduate"></i> Teaching Assistant to Prof. Paul Ortiz · Fridays 10:10 am &amp; 11:15 am
           </div>
           <div class="card-desc">
-            Explores working-class cultures, labor struggles, and the quest for dignity in US history. Emphasized peer-reviewed debate, collaborative timelines, and creative assignments.<br/>
+            Explores working-class cultures, labor struggles, and the quest for dignity in US history. Emphasized peer-reviewed debate, collaborative timelines, and creative assignments.<br>
             <a href="2024syllabus.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Syllabus (PDF)</a>
           </div>
           <button aria-controls="details-labor-history" aria-expanded="false" class="details-toggle" onclick="toggleDetails(this)">
             Details <i class="fas fa-chevron-down"></i>
           </button>
-          <div aria-expanded="false" class="card-details" id="details-labor-history">
+          <div data-expanded="false" class="card-details" id="details-labor-history">
             <b><i class="fas fa-lightbulb"></i> Section Innovations:</b>
             <ul>
               <li>Peer-review &amp; feedback workshops on synthesis essays</li>
@@ -3390,20 +3393,20 @@ nav.main-nav a.cv-link {
           <span>Samuel Proctor Oral History Program Internship</span>
           <button class="card-toggle" aria-expanded="true" onclick="toggleCard(this)">Close <i class="fas fa-chevron-up"></i></button>
         </div>
-        <div class="card-body" aria-expanded="true">
+        <div class="card-body" data-expanded="true">
           <div class="card-tags">
-            <i class="fas fa-university"></i> University of Florida · Spring 2021<br/>
+            <i class="fas fa-university"></i> University of Florida · Spring 2021<br>
             <i class="fas fa-award"></i> Teaching Assistant (Instructor of Record) · SPOHP Internship
           </div>
           <div class="card-desc">
-            Flagship oral-history internship documenting the Machen Florida Opportunity Scholars (first-generation, low-income students). Students hosted national equity experts, conducted 40+ interviews, and collaborated with filmmakers—culminating in a gubernatorial visit by Jeb Bush.<br/>
+            Flagship oral-history internship documenting the Machen Florida Opportunity Scholars (first-generation, low-income students). Students hosted national equity experts, conducted 40+ interviews, and collaborated with filmmakers—culminating in a gubernatorial visit by Jeb Bush.<br>
             <a href="2021spring.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Syllabus (PDF)</a> ·
             <a href="https://youtube.com/playlist?list=PLzMFflzfI0ETOUAMp8AtPFNlaCYlc1kt4" target="_blank"><i class="fab fa-youtube"></i> Interview Playlist</a>
           </div>
           <button aria-controls="details-machen-project" aria-expanded="false" class="details-toggle" onclick="toggleDetails(this)">
             Details <i class="fas fa-chevron-down"></i>
           </button>
-          <div aria-expanded="false" class="card-details" id="details-machen-project">
+          <div data-expanded="false" class="card-details" id="details-machen-project">
             <b><i class="fas fa-microphone"></i> Distinguished Speakers &amp; Fieldwork:</b>
             <ul>
               <li>McNair Scholars, national equity leaders, &amp; UF administrators addressed the class</li>
@@ -3449,19 +3452,19 @@ nav.main-nav a.cv-link {
           <span>Samuel Proctor Oral History Program Internship</span>
           <button class="card-toggle" aria-expanded="true" onclick="toggleCard(this)">Close <i class="fas fa-chevron-up"></i></button>
         </div>
-        <div class="card-body" aria-expanded="true">
+        <div class="card-body" data-expanded="true">
           <div class="card-tags">
-            <i class="fas fa-university"></i> University of Florida · Fall 2020<br/>
+            <i class="fas fa-university"></i> University of Florida · Fall 2020<br>
             <i class="fas fa-chalkboard-teacher"></i> Teaching Assistant (acted as Instructor of Record) · Mondays 11:45 am–1:40 pm
           </div>
           <div class="card-desc">
-            Community-based oral-history class in partnership with St. Patrick Catholic Church. Led all sessions, guided student archival research, and digitized rare local records. Students produced original histories of North-Central Florida's Catholic, working-class, and activist communities.<br/>
+            Community-based oral-history class in partnership with St. Patrick Catholic Church. Led all sessions, guided student archival research, and digitized rare local records. Students produced original histories of North-Central Florida's Catholic, working-class, and activist communities.<br>
             <a href="2020syllabus.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Syllabus (PDF)</a>
           </div>
           <button aria-controls="details-spohp-internship" aria-expanded="false" class="details-toggle" onclick="toggleDetails(this)">
             Details <i class="fas fa-chevron-down"></i>
           </button>
-          <div aria-expanded="false" class="card-details" id="details-spohp-internship">
+          <div data-expanded="false" class="card-details" id="details-spohp-internship">
             <b><i class="fas fa-handshake"></i> Community Partnership &amp; Leadership:</b>
             <ul>
               <li>Direct collaboration with St. Patrick Catholic Church; students accessed, scanned, and interpreted archival records dating back decades</li>
@@ -3501,7 +3504,7 @@ nav.main-nav a.cv-link {
       <figure class="book-item">
         <!-- Updated image paths: images are stored at the repository root -->
         <img src="meanstreets.jpeg" alt="Cover of Down These Mean Streets by Piri Thomas">
-        <figcaption class="caption"><strong>Down These Mean Streets</strong><br/>
+        <figcaption class="caption"><strong>Down These Mean Streets</strong><br>
           Piri Thomas’s memoir follows his life in Spanish Harlem. It chronicles
           poverty, street gangs, racism, addiction and his struggle to define his
           identity as a dark‑complexioned Puerto Rican.
@@ -3510,7 +3513,7 @@ nav.main-nav a.cv-link {
       <!-- Harvest of Empire -->
       <figure class="book-item">
         <img src="harvest.jpeg" alt="Cover of Harvest of Empire: A History of Latinos in America by Juan Gonzalez">
-        <figcaption class="caption"><strong>Harvest of Empire</strong><br/>
+        <figcaption class="caption"><strong>Harvest of Empire</strong><br>
           Juan Gonzalez presents a non‑fiction account of how U.S. policies
           throughout the Americas led to mass Latinx migration; his updated
           narrative explains the role the United States played in shaping these
@@ -3520,7 +3523,7 @@ nav.main-nav a.cv-link {
       <!-- An African American and Latinx History of the United States -->
       <figure class="book-item">
         <img src="africanamerican.jpeg" alt="Cover of An African American and Latinx History of the United States by Paul Ortiz">
-        <figcaption class="caption"><strong>An African American and Latinx History of the United States</strong><br/>
+        <figcaption class="caption"><strong>An African American and Latinx History of the United States</strong><br>
           Paul Ortiz’s intersectional history centers Black, Latinx and Indigenous voices,
           linking civil‑rights struggles, labor organizing and imperialism from the
           18th century through the Day Without Immigrants.
@@ -3529,7 +3532,7 @@ nav.main-nav a.cv-link {
       <!-- Black Folk -->
       <figure class="book-item">
         <img src="blackfolk.jpeg" alt="Cover of Black Folk: The Roots of the Black Working Class by Blair L. M. Kelley">
-        <figcaption class="caption"><strong>Black Folk</strong><br/>
+        <figcaption class="caption"><strong>Black Folk</strong><br>
           Blair L. M. Kelley uses personal narratives to show how Black laborers built
           networks of community and resistance amid racism and segregation in the
           late 19th and early 20th centuries.
@@ -3538,7 +3541,7 @@ nav.main-nav a.cv-link {
       <!-- The Piano Lesson -->
       <figure class="book-item">
         <img src="pianolesson.jpeg" alt="Cover of The Piano Lesson by August Wilson">
-        <figcaption class="caption"><strong>The Piano Lesson</strong><br/>
+        <figcaption class="caption"><strong>The Piano Lesson</strong><br>
           August Wilson’s Pulitzer Prize–winning play is set in 1936 Pittsburgh. It
           follows the Charles family and an heirloom piano carved by an enslaved
           ancestor; siblings Boy Willie and Berniece debate selling it, exploring
@@ -3548,7 +3551,7 @@ nav.main-nav a.cv-link {
       <!-- Zapata's Disciple -->
       <figure class="book-item">
         <img src="zapatas.jpeg" alt="Cover of Zapata's Disciple by Martín Espada">
-        <figcaption class="caption"><strong>Zapata’s Disciple</strong><br/>
+        <figcaption class="caption"><strong>Zapata’s Disciple</strong><br>
           Poet Martín Espada interweaves essays and poems to challenge social
           injustice. He chronicles censorship battles, critiques corporate
           exploitation and defends the dignity of Spanish‑speaking communities.
@@ -3557,7 +3560,7 @@ nav.main-nav a.cv-link {
       <!-- The Young Lords: A Radical History -->
       <figure class="book-item">
         <img src="younglords.jpeg" alt="Cover of The Young Lords: A Radical History by Johanna Fernández">
-        <figcaption class="caption"><strong>The Young Lords: A Radical History</strong><br/>
+        <figcaption class="caption"><strong>The Young Lords: A Radical History</strong><br>
           Johanna Fernández provides a definitive account of the Young Lords. She
           shows how Puerto Rican youth redefined protest by occupying hospitals,
           blocking traffic and linking local problems to global struggles.
@@ -3566,7 +3569,7 @@ nav.main-nav a.cv-link {
       <!-- The Slave Ship: A Human History -->
       <figure class="book-item">
         <img src="slaveship.jpeg" alt="Cover of The Slave Ship: A Human History by Marcus Rediker">
-        <figcaption class="caption"><strong>The Slave Ship: A Human History</strong><br/>
+        <figcaption class="caption"><strong>The Slave Ship: A Human History</strong><br>
           Marcus Rediker explores the horrific conditions aboard slave ships between
           1700 and 1807, drawing on primary records to connect the transatlantic
           slave trade, capitalist exploitation and acts of resistance.
@@ -3576,7 +3579,7 @@ nav.main-nav a.cv-link {
       <!-- Fight in the Fields: Cesar Chavez and the Farmworkers’ Movement -->
       <figure class="book-item">
         <img src="fightinthefields.jpeg" alt="Cover of Fight in the Fields: Cesar Chavez and the Farmworkers’ Movement">
-        <figcaption class="caption"><strong>Fight in the Fields</strong><br/>
+        <figcaption class="caption"><strong>Fight in the Fields</strong><br>
           An illustrated history of Cesar Chavez and the United Farm Workers that combines archival photographs and narrative to trace the evolution of the farmworkers’ movement and its impact on labor and civil‑rights struggles.
         </figcaption>
       </figure>
@@ -3584,7 +3587,7 @@ nav.main-nav a.cv-link {
       <!-- Holding the Line: Women in the Great Arizona Mine Strike of 1983 -->
       <figure class="book-item">
         <img src="holdingtheline.jpeg" alt="Cover of Holding the Line: Women in the Great Arizona Mine Strike of 1983 by Barbara Kingsolver">
-        <figcaption class="caption"><strong>Holding the Line</strong><br/>
+        <figcaption class="caption"><strong>Holding the Line</strong><br>
           Barbara Kingsolver’s nonfiction debut recounts the 1983 Phelps Dodge copper strike in Arizona, focusing on the miners’ wives and mothers who formed picket lines, faced arrests and violence, and discovered their political power during the long standoff.
         </figcaption>
       </figure>
@@ -3592,7 +3595,7 @@ nav.main-nav a.cv-link {
       <!-- Lucy Parsons: Freedom, Equality & Solidarity: Writings & Speeches, 1878–1937 -->
       <figure class="book-item">
         <img src="lucyparsons.jpeg" alt="Cover of Lucy Parsons: Freedom, Equality & Solidarity">
-        <figcaption class="caption"><strong>Lucy Parsons: Freedom, Equality &amp; Solidarity</strong><br/>
+        <figcaption class="caption"><strong>Lucy Parsons: Freedom, Equality &amp; Solidarity</strong><br>
           A collection of speeches and essays by labor radical Lucy Parsons, whose writings championed the rights of the poor, the unemployed and political prisoners and reveal her pivotal role in anarchist and workers’ movements.
         </figcaption>
       </figure>
@@ -3600,7 +3603,7 @@ nav.main-nav a.cv-link {
       <!-- Recording Oral History: A Guide for the Humanities and Social Sciences -->
       <figure class="book-item">
         <img src="recordingoralhistory.jpeg" alt="Cover of Recording Oral History: A Guide for the Humanities and Social Sciences by Valerie Yow">
-        <figcaption class="caption"><strong>Recording Oral History</strong><br/>
+        <figcaption class="caption"><strong>Recording Oral History</strong><br>
           Valerie Yow’s practical manual explains how to plan, conduct, transcribe and interpret oral‑history interviews, addressing ethical issues and providing methodological guidance for researchers in the humanities and social sciences.
         </figcaption>
       </figure>
@@ -3608,7 +3611,7 @@ nav.main-nav a.cv-link {
       <!-- Beyond Women’s Words -->
       <figure class="book-item">
         <img src="beyondwomenswords.jpeg" alt="Cover of Beyond Women’s Words">
-        <figcaption class="caption"><strong>Beyond Women’s Words</strong><br/>
+        <figcaption class="caption"><strong>Beyond Women’s Words</strong><br>
           Edited by Katrina Srigley and colleagues, this collection explores feminist oral‑history methodologies and the ways gender, race and class shape personal narratives, drawing on examples from immigrant communities and Indigenous women’s activism.
         </figcaption>
       </figure>
@@ -3616,7 +3619,7 @@ nav.main-nav a.cv-link {
       <!-- The Oral History Reader -->
       <figure class="book-item">
         <img src="oralhistoryreader.jpeg" alt="Cover of The Oral History Reader">
-        <figcaption class="caption"><strong>The Oral History Reader</strong><br/>
+        <figcaption class="caption"><strong>The Oral History Reader</strong><br>
           Edited by Robert Perks and Alistair Thomson, this widely used reader compiles classic and contemporary essays that examine theory, ethics and practice in oral history, offering insights into interview techniques, memory and digital media.
         </figcaption>
       </figure>
@@ -3848,8 +3851,8 @@ nav.main-nav a.cv-link {
     }
   });
 </script><!-- Calendly badge widget -->
-  <script async src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
-  <script type="text/javascript">
+  <script async src="https://assets.calendly.com/assets/external/widget.js"></script>
+  <script>
     window.addEventListener('load', function() {
       Calendly.initBadgeWidget({
         url: 'https://calendly.com/ar2539-cornell/30min',
