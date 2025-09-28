@@ -9,17 +9,17 @@
     gtag('js', new Date());
     gtag('config', 'G-ED6EYFE6NT');
   </script>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Adolfho Romero – Media & Public Engagement</title>
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,600;1,400,1,600&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,600;1,400,1,600&display=swap" rel="stylesheet">
   <!-- Calendly badge widget styles -->
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <style>
-    :root {
+    :root { --sat:0px; --sar:0px; --sab:0px;
       --background-top:  #f7f8fa;
       --background-bottom: #e4e8ef;
       --nav-bg:          #22304a;
@@ -534,7 +534,7 @@
     @media (min-width:821px){ :root{ --bottom-bar-h:0px; --bottom-offset:0px; } }
 
     /* Keep content above the bottom bar */
-    body{ padding-bottom: calc(var(--bottom-bar-h) + var(--bottom-offset) + env(safe-area-inset-bottom,0px)); }
+    body{ padding-bottom: calc(var(--bottom-bar-h) + var(--bottom-offset) + var(--sab)); }
 
     /* Hide the top sticky nav on phones */
     @media (max-width: 820px){
@@ -546,7 +546,7 @@
     /* Bottom tabs styling */
     .bottom-tabs{
       position:fixed; left:8px; right:8px;
-      bottom: calc(var(--bottom-offset) + env(safe-area-inset-bottom,0px));
+      bottom: calc(var(--bottom-offset) + var(--sab));
       height: var(--bottom-bar-h);
       background: rgba(17,24,39,.96);
       border-top: 1px solid rgba(255,255,255,.12);
@@ -676,11 +676,7 @@
     }
   </style>
 
-</head>
-<body>
-  <!-- Skip link for screen readers and keyboard users -->
-  <a class="skip-link" href="#main-content">Skip to content</a>
-  <style>
+<style>
     /* Skip link appears when focused for accessibility */
     .skip-link {
       position: absolute;
@@ -699,10 +695,18 @@
       outline: none;
     }
   </style>
+<style>
+.visually-hidden{position:absolute!important;width:1px;height:1px;margin:-1px;border:0;padding:0;white-space:nowrap;clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden}
+</style>
+</head>
+<body>
+  <!-- Skip link for screen readers and keyboard users -->
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <!-- style moved to head -->
   <div id="progress-bar"></div>
 
   <header>
-    <button class="dark-toggle" role="button" tabindex="0" aria-pressed="false" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <button class="dark-toggle" tabindex="0" aria-pressed="false" aria-label="Toggle dark mode" title="Toggle dark mode">
       <svg class="icon-sun-moon" viewBox="0 0 24 24">
         <circle cx="12" cy="12" r="5.5" stroke-width="2"/>
         <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M17.36 17.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M17.36 6.64l1.42-1.42"/>
@@ -729,7 +733,7 @@
 
     <!-- Search bar to filter media items -->
     <div class="media-searchbar" role="search">
-      <input type="text" id="media-search" placeholder="Filter articles..." aria-label="Filter media items" />
+      <input type="text" id="media-search" placeholder="Filter articles..." aria-label="Filter media items">
     </div>
 
     <!-- Tabs with ARIA wiring and deep links -->
@@ -741,42 +745,44 @@
 
     <!-- NEWS COVERAGE -->
     <section id="panel-coverage" class="content active" role="tabpanel" aria-labelledby="tab-coverage">
+<h2 class="visually-hidden">News Coverage &amp; Features</h2>
       <div class="year-section">
         <div class="year-heading">2024–2023</div>
         <div class="card-grid">
           <!-- Removed Creek Corner magazine card per request -->
 
           <article class="card animate">
+<h3 class="visually-hidden">Media item</h3>
             <a href="https://www.miamiherald.com/news/local/education/article279659394.html" target="_blank" rel="noopener" aria-label="Open Miami Herald article">
               <img src="miami.jpeg" alt="Miami Herald logo" loading="lazy" decoding="async" width="220" height="120">
             </a>
             <div>
               Smalls II, C. I. (2023). <b>“‘Uncertainty and chaos’: UF faculty discuss DeSantis policies.”</b><br>
               <em>Miami Herald</em>
-            </div>
-          </article>
+</article>
 
           <article class="card animate">
+<h3 class="visually-hidden">Media item</h3>
             <a href="https://www.gainesville.com/story/news/guardian/2023/01/18/uf-panel-talks-about-gainesville-suns-jim-crow-era-coverage/69814656007/" target="_blank" rel="noopener" aria-label="Open Gainesville Sun Jim Crow coverage article">
               <img src="gainesvillesun.jpeg" alt="The Gainesville Sun logo" loading="lazy" decoding="async" width="220" height="120">
             </a>
             <div>
               (2023). <b>“UF Panel Talks About Gainesville Sun’s Jim Crow-Era Coverage.”</b><br>
               <em>The Gainesville Sun</em>
-            </div>
-          </article>
+</article>
 
           <article class="card animate">
+<h3 class="visually-hidden">Media item</h3>
             <a href="https://www.gainesville.com/story/news/guardian/2023/03/01/2-trailblazers-tied-to-former-all-black-gainesville-lincoln-high-to-be-honored/69958248007/" target="_blank" rel="noopener" aria-label="Open Gainesville Sun Lincoln High trailblazers article">
               <img src="gainesvillesun.jpeg" alt="The Gainesville Sun logo" loading="lazy" decoding="async" width="220" height="120">
             </a>
             <div>
               (2023). <b>“Lincoln High Trailblazers Honored.”</b><br>
               <em>The Gainesville Sun</em>
-            </div>
-          </article>
+</article>
 
           <article class="card animate">
+<h3 class="visually-hidden">Media item</h3>
             <a href="https://www.alligator.org/article/2024/04/uff-uf-holds-virtual-teach-in-to-discuss-academic-freedom-future-of-higher-education" target="_blank" rel="noopener" aria-label="Open Independent Florida Alligator article">
               <img src="alligator.jpeg" alt="The Independent Florida Alligator logo" loading="lazy" decoding="async" width="220" height="120">
             </a>
@@ -794,6 +800,7 @@
         <div class="year-heading">2022</div>
         <div class="card-grid">
           <article class="card animate">
+<h3 class="visually-hidden">Media item</h3>
             <a href="https://www.gainesville.com/story/news/2022/11/28/uf-oral-history-students-report-annual-trip-mississippi-delta/10788979002/" target="_blank" rel="noopener" aria-label="Open Gainesville Sun Mississippi Delta trip article">
               <img src="gainesvillesun.jpeg" alt="The Gainesville Sun logo" loading="lazy" decoding="async" width="220" height="120">
             </a>
@@ -805,6 +812,7 @@
 
           <!-- WUSF feature with quote and mentions badge -->
           <article class="card animate">
+<h3 class="visually-hidden">Media item</h3>
             <a href="https://www.wusf.org/arts-culture/2022-01-29/lynching-victims-in-alachua-county-will-be-remembered-through-a-soil-collection-ceremony" target="_blank" rel="noopener" aria-label="Open WUSF Public Media article">
               <img src="WUSF.jpg" alt="WUSF Public Media logo" loading="lazy" decoding="async" width="220" height="120">
             </a>
@@ -821,12 +829,14 @@
 
     <!-- INTERVIEWS & MENTIONS -->
     <section id="panel-mentions" class="content" role="tabpanel" aria-labelledby="tab-mentions">
+<h2 class="visually-hidden">Interviews &amp; Mentions</h2>
       <div class="year-section">
         <div class="year-heading">2025–2022</div>
         <div class="card-grid">
 
           <article class="card animate">
-            <div class="video-embed" aria-label="YouTube video player">
+<h3 class="visually-hidden">Media item</h3>
+            <div class="video-embed">
               <iframe
                 src="https://www.youtube.com/embed/Fgkum4YwNko"
                 title="An Interview with Adolfho Romero (YouTube)"
@@ -843,20 +853,20 @@
               <p class="quote">“We capture, preserve, and promote living histories of individuals from all walks of life.”<cite>SPOHP interview, May 10, 2023</cite></p>
             </div>
           </article>
-
-</div>
-          </article>
+</article>
 
           <article class="card animate">
+<h3 class="visually-hidden">Media item</h3>
             <a href="https://the-footnote.org/2025/04/22/an-oral-history-of-a-native-son-the-elaine-massacre-and-its-living-memory/" target="_blank" rel="noopener" aria-label="Open The Footnote interview">
               <img src="footnote.jpeg" alt="The Footnote logo" loading="lazy" decoding="async" width="220" height="120">
             </a>
             <div>
               Grey, P. (2025). <b>“An Oral History of a Native Son: The Elaine Massacre and Its Living Memory.”</b><br>
               <em>The Footnote</em>
-            </div>
-          </article>
+</article>
+
           <article class="card animate">
+<h3 class="visually-hidden">Media item</h3>
             <a href="https://pci-nsn.gov/wp-content/uploads/January-TM-PCI-20221216-mv.pdf" target="_blank" rel="noopener" aria-label="Open Creek Corner magazine PDF">
               <img src="creek.jpg" alt="Creek Corner cover at Poarch Band of Creek Indians History Conference" loading="lazy" decoding="async" width="220" height="120">
             </a>
@@ -870,12 +880,13 @@
 
 
           <!-- Featured pull-quote from interview -->
-          <figure class="pull-quote" role="group" aria-label="Highlighted quote from interview">
+          <figure class="pull-quote" aria-label="Highlighted quote from interview">
             <blockquote>“Oral history is not about connecting, it is about connecting.”</blockquote>
             <figcaption>— Adolfho Romero, <a href="https://the-footnote.org/2025/04/22/an-oral-history-of-a-native-son-the-elaine-massacre-and-its-living-memory/" target="_blank" rel="noopener">The Footnote</a></figcaption>
           </figure>
 
           <article class="card animate">
+<h3 class="visually-hidden">Media item</h3>
             <a href="https://open.spotify.com/episode/48PxeaSW0SnKVNc6zHhz2u?si=e49a0224cc2349a4" target="_blank" rel="noopener" aria-label="Open podcast episode on Spotify">
               <img src="podcast.jpeg" alt="Podcast art for Challenging Racism at UF" loading="lazy" decoding="async" width="220" height="120">
             </a>
@@ -891,20 +902,22 @@
 
     <!-- AUTHORED MEDIA -->
     <section id="panel-authored" class="content" role="tabpanel" aria-labelledby="tab-authored">
+<h2 class="visually-hidden">Authored Media &amp; Public Writing</h2>
       <div class="year-section">
         <div class="year-heading">2021</div>
         <div class="card-grid">
           <article class="card animate">
+<h3 class="visually-hidden">Media item</h3>
             <a href="https://gainesvilleiguana.org/2021/articles/history-and-the-people-who-make-it-madelyn-lockhart/" target="_blank" rel="noopener" aria-label="Open Gainesville Iguana Madelyn Lockhart article">
               <img src="iguana.jpeg" alt="The Gainesville Iguana logo" loading="lazy" decoding="async" width="220" height="120">
             </a>
             <div>
               Romero, A. (2021, Aug). <b>“History and the People Who Make It: Madelyn Lockhart.”</b><br>
               <em>The Gainesville Iguana</em>
-            </div>
-          </article>
+</article>
 
           <article class="card animate">
+<h3 class="visually-hidden">Media item</h3>
             <a href="https://gainesvilleiguana.org/2021/articles/the-alachua-county-tenants-association-updates/" target="_blank" rel="noopener" aria-label="Open Gainesville Iguana tenants association article">
               <img src="iguana.jpeg" alt="The Gainesville Iguana logo" loading="lazy" decoding="async" width="220" height="120">
             </a>
@@ -912,10 +925,10 @@
               Romero, A. (2021, Mar). <b>“The Alachua County Tenants Association: Updates.”</b><br>
               <em>The Gainesville Iguana</em>
               <p class="quote">“Since the early summer of 2020, the Alachua County Labor Coalition started helping tenants by developing the Alachua County Tenants Association.”<cite>Mar 2021</cite></p>
-            </div>
-          </article>
+</article>
 
           <article class="card animate">
+<h3 class="visually-hidden">Media item</h3>
             <a href="https://www.gainesville.com/story/opinion/2021/02/19/adolfho-romero-diverse-communities-transforming-florida/6781175002/" target="_blank" rel="noopener" aria-label="Open Gainesville Sun op-ed by Adolfho Romero">
               <img src="gainesvillesun.jpeg" alt="The Gainesville Sun logo" loading="lazy" decoding="async" width="220" height="120">
             </a>
@@ -1091,8 +1104,8 @@
   </script>
 
   <!-- Calendly badge widget -->
-  <script async src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
-  <script type="text/javascript">
+  <script async src="https://assets.calendly.com/assets/external/widget.js"></script>
+  <script>
     window.addEventListener('load', function() {
       Calendly.initBadgeWidget({
         url: 'https://calendly.com/ar2539-cornell/30min',
