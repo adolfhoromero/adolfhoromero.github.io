@@ -8,15 +8,15 @@
     function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-ED6EYFE6NT');
   </script>
 
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Adolfho Romero</title>
-  <meta name="description" content="Adolfho Romero, PhD student at Cornell ILR. Research on worker centers, migrant labor, oral history, and power resources." />
+  <meta name="description" content="Adolfho Romero, PhD student at Cornell ILR. Research on worker centers, migrant labor, oral history, and power resources.">
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
 
   <!-- Core styles: single canonical set -->
   <style>
@@ -27,6 +27,7 @@
       --text-main:#232d41; --heading-color:#212c3e; --muted:#6b7a99;
       --card-bg:#ffffff; --card-border:#29539b; --card-shadow:0 6px 28px #2e3a5030;
       --max-width:1100px;
+      --bottom-bar-h:60px; --bottom-offset:14px;
     }
     .dark{
       --background-top:#0f1115; --background-bottom:#161a22;
@@ -42,11 +43,11 @@
     a:hover,a:focus{color:var(--accent-gold); outline:0}
 
     /* Header and nav */
-    header{background:var(--nav-bg); color:var(--nav-text); text-align:center; padding:calc(1rem + env(safe-area-inset-top)) 1rem .4rem; box-shadow:0 4px 22px rgba(34,48,74,.47); position:relative; z-index:100; transition:background .35s,color .35s}
+    header{background:var(--nav-bg); color:var(--nav-text); text-align:center; padding:calc(1rem + env(safe-area-inset-top, 0px)) 1rem .4rem; box-shadow:0 4px 22px rgba(34,48,74,.47); position:relative; z-index:100; transition:background .35s,color .35s}
     .site-title{font-family:'Spectral',serif; font-size:2.95rem; font-weight:700; color:var(--nav-text)}
     .site-title a{color:inherit}
     .site-title a:hover,.site-title a:focus{opacity:.9}
-    .dark-toggle{position:absolute; top:calc(.8rem + env(safe-area-inset-top)); right:calc(.8rem + env(safe-area-inset-right)); width:40px; height:40px; display:grid; place-items:center; background:transparent; border:0; border-radius:9999px; cursor:pointer; z-index:200}
+    .dark-toggle{position:absolute; top:calc(.8rem + env(safe-area-inset-top, 0px)); right:calc(.8rem + env(safe-area-inset-right, 0px)); width:40px; height:40px; display:grid; place-items:center; background:transparent; border:0; border-radius:9999px; cursor:pointer; z-index:200}
     .dark-toggle:focus-visible{outline:2px solid var(--accent-gold); outline-offset:2px}
     .dark-toggle .icon-sun-moon{width:24px; height:24px; fill:var(--accent-gold); stroke:var(--accent)}
 
@@ -144,17 +145,33 @@
     #progress-bar{position:fixed; top:0; left:0; height:4px; width:0%; background:linear-gradient(90deg,var(--accent),var(--accent-gold)); z-index:1000; transition:width .2s ease-out}
 
     /* Bottom tabs */
-    :root{--bottom-bar-h:60px; --bottom-offset:14px}
-    .bottom-tabs{position:fixed; left:8px; right:8px; bottom:calc(var(--bottom-offset) + env(safe-area-inset-bottom,0px)); height:var(--bottom-bar-h); background:rgba(22,33,54,.92); border-top:1px solid rgba(255,255,255,.15); backdrop-filter:blur(12px); border-radius:16px; box-shadow:0 8px 18px rgba(0,0,0,.30); z-index:2147483647}
+    .bottom-tabs{position:fixed; left:8px; right:8px; bottom:calc(var(--bottom-offset) + env(safe-area-inset-bottom, 0px)); height:var(--bottom-bar-h); background:rgba(22,33,54,.92); border-top:1px solid rgba(255,255,255,.15); backdrop-filter:blur(12px); border-radius:16px; box-shadow:0 8px 18px rgba(0,0,0,.30); z-index:2147483647}
     .tabs-row{display:grid; grid-template-columns:repeat(6,1fr); height:100%}
     .tab-link{display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px; color:#e5e7eb; font-size:.75rem; font-weight:600; letter-spacing:.02em; text-decoration:none; position:relative}
     .tab-link .ico{width:22px; height:22px; opacity:.95}
     .tab-link[aria-current="page"]{color:var(--accent-gold)}
     .tab-link[aria-current="page"]::before{content:''; position:absolute; inset:5px 8px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,.25)}
     @media (min-width:821px){ .bottom-tabs{display:none} }
+
+    /* Impact styles moved from inline <style> */
+    #impact{--primary:var(--accent); --surface:var(--card-bg); --text:var(--text-main); --muted:color-mix(in oklab, var(--text) 60%, #94a3b8 40%); --line:color-mix(in oklab, var(--accent) 10%, #e6ecf7 90%); --bg-grad-start:color-mix(in oklab, var(--background-top) 85%, #ffffff 15%); --bg-grad-end:color-mix(in oklab, var(--background-bottom) 85%, #ffffff 15%); --radius:18px; padding:clamp(22px,3.2vw,40px) 12px; background:linear-gradient(180deg,var(--bg-grad-start),var(--bg-grad-end))}
+    :where(.dark,[data-theme="dark"]) #impact{--surface:var(--card-bg); --text:var(--heading-color); --muted:#9aa3b2; --line:#1f2937}
+    #impact .wrap{max-width:1160px; margin:0 auto}
+    #impact h2{text-align:center; font-family:'Spectral',serif; font-weight:800; font-size:clamp(28px,3.3vw,40px); color:var(--text); margin:0}
+    #impact .underline{width:64px; height:4px; background:var(--primary); border-radius:6px; margin:10px auto 16px}
+    #impact .lead{text-align:center; color:var(--muted); margin-bottom:16px; font-size:15px}
+    #impact .grid{display:grid; grid-template-columns:repeat(12,1fr); gap:14px; list-style:none; padding-left:0; margin:0}
+    #impact .card{position:relative; overflow:hidden; grid-column:span 3; background:var(--surface); border-radius:var(--radius); padding:clamp(12px,1.6vw,18px); box-shadow:0 10px 26px rgba(12,24,48,.08)}
+    #impact .card::before{content:""; position:absolute; inset:0 0 auto 0; height:3px; background:linear-gradient(90deg, var(--primary), color-mix(in oklab, var(--primary) 60%, #fff 40%))}
+    @media (max-width:980px){ #impact .card{grid-column:span 6} }
+    @media (max-width:560px){ #impact .card{grid-column:span 12} }
+    #impact .value{font-size:clamp(36px,6.5vw,56px); font-weight:900; color:var(--primary); letter-spacing:.2px; line-height:1.05; font-family:'Spectral',serif}
+    #impact .label{margin-top:4px; font-weight:900; font-size:13.5px; letter-spacing:.7px; text-transform:uppercase; color:var(--text); font-family:'Spectral',serif}
+    #impact .sub{margin-top:6px; color:var(--muted); font-size:14px}
+    #impact .note{max-width:860px; margin:12px auto 0; text-align:center; color:var(--muted); font-size:12.5px}
   </style>
 
-  <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
+  <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
 </head>
 <body>
   <a class="skip-link" href="#about" aria-label="Skip to main content">Skip to content</a>
@@ -164,7 +181,8 @@
     <button class="dark-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">
       <svg aria-hidden="true" class="icon-sun-moon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5.5" stroke-width="2"></circle><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M17.36 17.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M17.36 6.64l1.42-1.42" fill="none" stroke-width="2"></path></svg>
     </button>
-    <h1 class="site-title"><a href="index.html" aria-label="Go to Home">Adolfho Romero</a></h1>
+    <!-- Use a single top-level H1 on the page (in the hero). Keep site title as a div -->
+    <div class="site-title"><a href="index.html" aria-label="Go to Home">Adolfho Romero</a></div>
   </header>
 
   <nav id="primary-nav" class="main-nav" aria-label="Primary">
@@ -178,7 +196,7 @@
   </nav>
 
   <section class="hero" aria-label="Hero">
-    <img class="hero-photo" src="adolfhoromero.jpeg" alt="Adolfho Romero portrait" width="200" height="200" />
+    <img class="hero-photo" src="adolfhoromero.jpeg" alt="Adolfho Romero portrait" width="200" height="200">
     <h1>Adolfho Romero</h1>
     <h2 class="hero-subtitle">PhD Student • Cornell ILR</h2>
     <blockquote class="hero-quote">“I am grateful to work alongside community organizations, mentors, and workers in the ongoing struggle for dignity and justice.”</blockquote>
@@ -186,54 +204,38 @@
 
   <main>
     <section id="impact" aria-labelledby="impact-title" class="section">
-      <style>
-        #impact{--primary:var(--accent); --surface:var(--card-bg); --text:var(--text-main); --muted:color-mix(in oklab, var(--text) 60%, #94a3b8 40%); --line:color-mix(in oklab, var(--accent) 10%, #e6ecf7 90%); --bg-grad-start:color-mix(in oklab, var(--background-top) 85%, #ffffff 15%); --bg-grad-end:color-mix(in oklab, var(--background-bottom) 85%, #ffffff 15%); --radius:18px; padding:clamp(22px,3.2vw,40px) 12px; background:linear-gradient(180deg,var(--bg-grad-start),var(--bg-grad-end))}
-        :where(.dark,[data-theme="dark"]) #impact{--surface:var(--card-bg); --text:var(--heading-color); --muted:#9aa3b2; --line:#1f2937}
-        #impact .wrap{max-width:1160px; margin:0 auto}
-        #impact h2{text-align:center; font-family:'Spectral',serif; font-weight:800; font-size:clamp(28px,3.3vw,40px); color:var(--text); margin:0}
-        #impact .underline{width:64px; height:4px; background:var(--primary); border-radius:6px; margin:10px auto 16px}
-        #impact .lead{text-align:center; color:var(--muted); margin-bottom:16px; font-size:15px}
-        #impact .grid{display:grid; grid-template-columns:repeat(12,1fr); gap:14px}
-        #impact .card{position:relative; overflow:hidden; grid-column:span 3; background:var(--surface); border-radius:var(--radius); padding:clamp(12px,1.6vw,18px); box-shadow:0 10px 26px rgba(12,24,48,.08)}
-        #impact .card::before{content:""; position:absolute; inset:0 0 auto 0; height:3px; background:linear-gradient(90deg, var(--primary), color-mix(in oklab, var(--primary) 60%, #fff 40%))}
-        @media (max-width:980px){ #impact .card{grid-column:span 6} }
-        @media (max-width:560px){ #impact .card{grid-column:span 12} }
-        #impact .value{font-size:clamp(36px,6.5vw,56px); font-weight:900; color:var(--primary); letter-spacing:.2px; line-height:1.05; font-family:'Spectral',serif}
-        #impact .label{margin-top:4px; font-weight:900; font-size:13.5px; letter-spacing:.7px; text-transform:uppercase; color:var(--text); font-family:'Spectral',serif}
-        #impact .sub{margin-top:6px; color:var(--muted); font-size:14px}
-        #impact .note{max-width:860px; margin:12px auto 0; text-align:center; color:var(--muted); font-size:12.5px}
-      </style>
       <div class="wrap">
         <h2 id="impact-title">Research Impact &amp; Achievements</h2>
         <div class="underline" aria-hidden="true"></div>
         <p class="lead">Transparent counts with conservative rounding. Updated Aug 27, 2025.</p>
-        <div class="grid" role="list">
-          <article class="card" role="listitem" aria-label="Research grants contributed to">
+        <!-- Use UL/LI for proper list semantics -->
+        <ul class="grid" role="list">
+          <li class="card" aria-label="Research grants contributed to">
             <div class="value" data-target="1.5" data-format="million" data-prefix="$" data-plus="true">$1.5M+</div>
             <div class="label"><strong>Research grants</strong> contributed to</div>
             <div class="sub">Contributions across 8 awards including <strong>NEH</strong>, <strong>National Park Service</strong>, and <strong>Doris Duke Foundation</strong> projects.</div>
-          </article>
-          <article class="card" role="listitem" aria-label="Oral history interviews conducted">
+          </li>
+          <li class="card" aria-label="Oral history interviews conducted">
             <div class="value" data-target="200" data-format="int" data-plus="true">200+</div>
             <div class="label"><strong>Oral history interviews</strong> conducted</div>
             <div class="sub"><strong>Community based</strong> interviews across Florida, the Mississippi Delta, and Indigenous communities nationwide.</div>
-          </article>
-          <article class="card" role="listitem" aria-label="Students taught at Cornell">
+          </li>
+          <li class="card" aria-label="Students taught at Cornell">
             <div class="value" data-target="175" data-format="int" data-plus="true">175+</div>
             <div class="label"><strong>Students taught</strong> at Cornell</div>
             <div class="sub"><strong>Multiple sections</strong> over two semesters.</div>
-          </article>
-          <article class="card" role="listitem" aria-label="Volunteer program leadership">
+          </li>
+          <li class="card" aria-label="Volunteer program leadership">
             <div class="value" data-target="40" data-format="int" data-plus="true">40+</div>
             <div class="label"><strong>Student volunteers</strong> coordinated</div>
             <div class="sub">Over three years as <strong>Assistant Director</strong> at the <strong>Samuel Proctor Oral History Program</strong>.</div>
-          </article>
-          <article class="card" role="listitem" aria-label="Peer reviewed publications">
+          </li>
+          <li class="card" aria-label="Peer reviewed publications">
             <div class="value" data-target="1" data-format="int">1</div>
             <div class="label"><strong>Peer reviewed publication</strong></div>
             <div class="sub">Plus several manuscripts <strong>under review</strong> and in revision.</div>
-          </article>
-        </div>
+          </li>
+        </ul>
         <p class="note">Grant total reflects full award amounts for projects I contributed to and does not represent personal earnings.</p>
       </div>
     </section>
@@ -241,53 +243,54 @@
     <section id="about" class="section" aria-labelledby="about-title">
       <h2 id="about-title">About My Journey</h2>
       <div class="about-container">
-        <article class="about-text">
+        <section class="about-text">
+          <h3 class="visually-hidden">Biography</h3>
           <p>I am a PhD student in the School of Industrial and Labor Relations at Cornell University, where I study how worker centers and non profit organizations empower marginalized communities, particularly immigrant, low wage, and undocumented workers, across New York and Florida. My research draws from oral history, ethnography, and the Power Resource Approach to understand how these organizations cultivate leadership, build coalitions, and generate collective power in the absence of formal union protections. I focus on the strategies used by grassroots groups to create spaces of dignity and democratic participation within structurally unequal labor systems. This work builds on years of experience in fieldwork, archival research, and policy collaboration with organizations like the Farmworkers Association of Florida and the Samuel Proctor Oral History Program.</p>
           <p>My commitment to this work has been shaped through years of oral history fieldwork alongside communities across the United States, particularly in the Deep South. From documenting Black resistance in the Mississippi Delta to collaborating with Indigenous leaders through the Doris Duke Oral History Project, I have seen how storytelling and memory preserve dignity and challenge systems of oppression. These experiences continue to guide my approach to labor scholarship, one that is grounded in collective memory, accountable to the communities I study, and focused on amplifying the voices of those historically excluded from power.</p>
-        </article>
-        <aside class="about-image"><img src="me.jpeg" alt="Adolfho Romero field portrait" width="320" height="427" /></aside>
+        </section>
+        <aside class="about-image"><img src="me.jpeg" alt="Adolfho Romero field portrait" width="320" height="427"></aside>
       </div>
       <div class="ethical"><strong>Ethical Commitment:</strong> My work follows IRB approved protocols, oral consent, and shared agency grounded in respect and participant dignity.</div>
 
       <section class="contact-modern" aria-labelledby="contact-title" itemscope itemtype="https://schema.org/Person">
         <h3 id="contact-title" style="font-family:'Spectral',serif; margin-bottom:.5rem; color:var(--heading-color)">Contact</h3>
-        <meta itemprop="name" content="Adolfho Romero" />
-        <meta itemprop="affiliation" content="Cornell University, ILR School" />
-        <link itemprop="sameAs" href="https://orcid.org/0009-0000-2505-0192" />
-        <link itemprop="sameAs" href="https://www.linkedin.com/in/adolfho/" />
+        <meta itemprop="name" content="Adolfho Romero">
+        <meta itemprop="affiliation" content="Cornell University, ILR School">
+        <link itemprop="sameAs" href="https://orcid.org/0009-0000-2505-0192">
+        <link itemprop="sameAs" href="https://www.linkedin.com/in/adolfho/">
         <div class="contact-grid2">
           <!-- Office hours -->
-          <article class="contact-card" role="group" aria-label="Office Hours">
+          <div class="contact-card" role="group" aria-label="Office Hours">
             <div class="contact-icon-wrap" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 3v4M16 3v4M3 9h18" stroke="currentColor" stroke-width="1.8"/><rect x="6.5" y="12" width="3" height="3" fill="currentColor" opacity=".85"/><rect x="11" y="12" width="3" height="3" fill="currentColor" opacity=".65"/><rect x="15.5" y="12" width="3" height="3" fill="currentColor" opacity=".45"/></svg>
+              <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8"></rect><path d="M8 3v4M16 3v4M3 9h18" stroke="currentColor" stroke-width="1.8"></path><rect x="6.5" y="12" width="3" height="3" fill="currentColor" opacity=".85"></rect><rect x="11" y="12" width="3" height="3" fill="currentColor" opacity=".65"></rect><rect x="15.5" y="12" width="3" height="3" fill="currentColor" opacity=".45"></rect></svg>
             </div>
             <div class="contact-text"><div class="contact-label-sm">Office Hours</div><div class="contact-link-lg"><a href="https://calendly.com/ar2539-cornell/30min" target="_blank" rel="noopener">Book a 30–60 min slot</a></div></div>
-            <div class="contact-actions"><a class="btn-ghost" href="https://calendly.com/ar2539-cornell/30min" aria-label="Open booking page" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none"><path d="M8 12h8" stroke="currentColor" stroke-width="1.8"/></svg></a></div>
-          </article>
+            <div class="contact-actions"><a class="btn-ghost" href="https://calendly.com/ar2539-cornell/30min" aria-label="Open booking page" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none"><path d="M8 12h8" stroke="currentColor" stroke-width="1.8"></path></svg></a></div>
+          </div>
           <!-- Email -->
-          <article class="contact-card" role="group" aria-label="Email">
-            <div class="contact-icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M3 6h18v12H3z" opacity=".85" stroke="currentColor" stroke-width="1.8"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.8"/></svg></div>
+          <div class="contact-card" role="group" aria-label="Email">
+            <div class="contact-icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M3 6h18v12H3z" opacity=".85" stroke="currentColor" stroke-width="1.8"></path><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.8"></path></svg></div>
             <div class="contact-text"><div class="contact-label-sm">Academic Email</div><div class="contact-link-lg"><a href="mailto:ar2539@cornell.edu" itemprop="email">ar2539@cornell.edu</a></div></div>
-            <div class="contact-actions" style="position:relative"><button type="button" class="btn-ghost copy-email" data-copy="ar2539@cornell.edu" aria-label="Copy email"><svg viewBox="0 0 24 24" fill="none"><path d="M9 3h6v3H9zM7 6h10v14H7z" stroke="currentColor" stroke-width="1.8"/></svg></button><div class="copy-badge" aria-hidden="true">Copied</div></div>
-          </article>
+            <div class="contact-actions" style="position:relative"><button type="button" class="btn-ghost copy-email" data-copy="ar2539@cornell.edu" aria-label="Copy email"><svg viewBox="0 0 24 24" fill="none"><path d="M9 3h6v3H9zM7 6h10v14H7z" stroke="currentColor" stroke-width="1.8"></path></svg></button><div class="copy-badge" aria-hidden="true">Copied</div></div>
+          </div>
           <!-- CV -->
-          <article class="contact-card" role="group" aria-label="Curriculum Vitae">
-            <div class="contact-icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 2h9l3 3v17H6z" stroke="currentColor" stroke-width="1.8"/><path d="M15 2v4h4" stroke="currentColor" stroke-width="1.8"/></svg></div>
+          <div class="contact-card" role="group" aria-label="Curriculum Vitae">
+            <div class="contact-icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 2h9l3 3v17H6z" stroke="currentColor" stroke-width="1.8"></path><path d="M15 2v4h4" stroke="currentColor" stroke-width="1.8"></path></svg></div>
             <div class="contact-text"><div class="contact-label-sm">Curriculum Vitae</div><div class="contact-link-lg"><a href="adolfhoromerocv.pdf" target="_blank" rel="noopener">Download CV</a></div></div>
-            <div class="contact-actions"><a class="btn-ghost" href="adolfhoromerocv.pdf" target="_blank" rel="noopener" aria-label="Open CV"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14m-7-7h14" stroke="currentColor" stroke-width="1.8"/></svg></a></div>
-          </article>
+            <div class="contact-actions"><a class="btn-ghost" href="adolfhoromerocv.pdf" target="_blank" rel="noopener" aria-label="Open CV"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14m-7-7h14" stroke="currentColor" stroke-width="1.8"></path></svg></a></div>
+          </div>
           <!-- ORCID -->
-          <article class="contact-card" role="group" aria-label="ORCID">
-            <div class="contact-icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#a6ce39"/><text x="12" y="15" text-anchor="middle" fill="#fff" font-size="10" font-family="Arial">iD</text></svg></div>
+          <div class="contact-card" role="group" aria-label="ORCID">
+            <div class="contact-icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#a6ce39"></circle><text x="12" y="15" text-anchor="middle" fill="#fff" font-size="10" font-family="Arial">iD</text></svg></div>
             <div class="contact-text"><div class="contact-label-sm">ORCID iD</div><div class="contact-link-lg"><a href="https://orcid.org/0009-0000-2505-0192" target="_blank" rel="noopener">0009-0000-2505-0192</a></div></div>
-            <div class="contact-actions"><a class="btn-ghost" href="https://orcid.org/0009-0000-2505-0192" target="_blank" rel="noopener" aria-label="Open ORCID"><svg viewBox="0 0 24 24" fill="none"><path d="M8 12h8" stroke="currentColor" stroke-width="1.8"/></svg></a></div>
-          </article>
+            <div class="contact-actions"><a class="btn-ghost" href="https://orcid.org/0009-0000-2505-0192" target="_blank" rel="noopener" aria-label="Open ORCID"><svg viewBox="0 0 24 24" fill="none"><path d="M8 12h8" stroke="currentColor" stroke-width="1.8"></path></svg></a></div>
+          </div>
           <!-- vCard -->
-          <article class="contact-card" role="group" aria-label="vCard">
-            <div class="contact-icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M3 5h18v14H3zM7 9h10M7 13h6" stroke="currentColor" stroke-width="1.8"/></svg></div>
+          <div class="contact-card" role="group" aria-label="vCard">
+            <div class="contact-icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M3 5h18v14H3zM7 9h10M7 13h6" stroke="currentColor" stroke-width="1.8"></path></svg></div>
             <div class="contact-text"><div class="contact-label-sm">Save Contact</div><div class="contact-link-lg"><a download href="data:text/vcard;base64,QkVHSU46VkNBUkQKVkVSU0lPTjozLjAKRk46QWRvbGZobyBSb21lcm8KTjpSb21lcm87QWRvbGZobzs7OwpPUkc6Q29ybmVsbCBVbml2ZXJzaXR5O0luZHVzdHJpYWwgYW5kIExhYm9yIFJlbGF0aW9ucwpUSVRMRTpQaEQgU3R1ZGVudCwgVGVhY2hpbmcgQXNzaXN0YW50LCBSZXNlYXJjaCBBc3Npc3RhbnQKRU1BSUw7VFlQRT1IT01FLElOVEVSTkVULFBSRUY6YWRvbGZob3JvbWVyb0BnbWFpbC5jb20KRU1BSUw7VFlQRT1XT1JLLElOVEVSTkVUOmFyMjUzOUBjb3JuZWxsLmVkdQpURUw7VFlQRT1DRUxMLFZPSUNFLFBSRUY6KzEgMzEyIDY3MSAwMTY0ClVSTDtUWVBFPUhPTUU6aHR0cHM6Ly9hZG9sZmhvcm9tZXJvLmNvbQpYLVNPQ0lBTFBST0ZJTEU7VFlQRT1MaW5rZWRJbjpodHRwczovL3d3dy5saW5rZWRpbi5jb20vaW4vYWRvbGZobwpYLVNPQ0lBTFBST0ZJTEU7VFlQRT1JbnN0YWdyYW06aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9pdGhhY2FseWYKTk9URTpDb3JuZWxsIFJlc2VhcmNoZXIKRU5EOlZDQVJECg==">Download vCard</a></div></div>
-            <div class="contact-actions"><a class="btn-ghost" download href="data:text/vcard;base64,QkVHSU46VkNBUkQKVkVSU0lPTjozLjAKRk46QWRvbGZobyBSb21lcm8KTjpSb21lcm87QWRvbGZobzs7OwpPUkc6Q29ybmVsbCBVbml2ZXJzaXR5O0luZHVzdHJpYWwgYW5kIExhYm9yIFJlbGF0aW9ucwpUSVRMRTpQaEQgU3R1ZGVudCwgVGVhY2hpbmcgQXNzaXN0YW50LCBSZXNlYXJjaCBBc3Npc3RhbnQKRU1BSUw7VFlQRT1IT01FLElOVEVSTkVULFBSRUY6YWRvbGZob3JvbWVyb0BnbWFpbC5jb20KRU1BSUw7VFlQRT1XT1JLLElOVEVSTkVUOmFyMjUzOUBjb3JuZWxsLmVkdQpURUw7VFlQRT1DRUxMLFZPSUNFLFBSRUY6KzEgMzEyIDY3MSAwMTY0ClVSTDtUWVBFPUhPTUU6aHR0cHM6Ly9hZG9sZmhvcm9tZXJvLmNvbQpYLVNPQ0lBTFBST0ZJTEU7VFlQRT1MaW5rZWRJbjpodHRwczovL3d3dy5saW5rZWRpbi5jb20vaW4vYWRvbGZobwpYLVNPQ0lBTFBST0ZJTEU7VFlQRT1JbnN0YWdyYW06aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9pdGhhY2FseWYKTk9URTpDb3JuZWxsIFJlc2VhcmNoZXIKRU5EOlZDQVJECg==" aria-label="Download vCard"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v10m0 0l-3-3m3 3l3-3M5 19h14" stroke="currentColor" stroke-width="1.8"/></svg></a></div>
-          </article>
+            <div class="contact-actions"><a class="btn-ghost" download href="data:text/vcard;base64,QkVHSU46VkNBUkQKVkVSU0lPTjozLjAKRk46QWRvbGZobyBSb21lcm8KTjpSb21lcm87QWRvbGZobzs7OwpPUkc6Q29ybmVsbCBVbml2ZXJzaXR5O0luZHVzdHJpYWwgYW5kIExhYm9yIFJlbGF0aW9ucwpUSVRMRTpQaEQgU3R1ZGVudCwgVGVhY2hpbmcgQXNzaXN0YW50LCBSZXNlYXJjaCBBc3Npc3RhbnQKRU1BSUw7VFlQRT1IT01FLElOVEVSTkVULFBSRUY6YWRvbGZob3JvbWVyb0BnbWFpbC5jb20KRU1BSUw7VFlQRT1XT1JLLElOVEVSTkVUOmFyMjUzOUBjb3JuZWxsLmVkdQpURUw7VFlQRT1DRUxMLFZPSUNFLFBSRUY6KzEgMzEyIDY3MSAwMTY0ClVSTDtUWVBFPUhPTUU6aHR0cHM6Ly9hZG9sZmhvcm9tZXJvLmNvbQpYLVNPQ0lBTFBST0ZJTEU7VFlQRT1MaW5rZWRJbjpodHRwczovL3d3dy5saW5rZWRpbi5jb20vaW4vYWRvbGZobwpYLVNPQ0lBTFBST0ZJTEU7VFlQRT1JbnN0YWdyYW06aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9pdGhhY2FseWYKTk9URTpDb3JuZWxsIFJlc2VhcmNoZXIKRU5EOlZDQVJECg==" aria-label="Download vCard"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v10m0 0l-3-3m3 3l3-3M5 19h14" stroke="currentColor" stroke-width="1.8"></path></svg></a></div>
+          </div>
         </div>
       </section>
     </section>
@@ -296,14 +299,13 @@
     <section class="section quotes-section" id="highlights" aria-labelledby="highlights-title">
       <h2 id="highlights-title">Highlights from Media</h2>
       <div class="quotes-layout">
-        <a id="quote-media" class="quote-media" href="#" target="_blank" rel="noopener"><img id="quote-image" src="" alt="" loading="lazy" /></a>
+        <a id="quote-media" class="quote-media" href="#" target="_blank" rel="noopener"><img id="quote-image" src="alligator.jpeg" alt="The Independent Florida Alligator logo" loading="lazy"></a>
         <div class="quotes-carousel" aria-live="polite"></div>
       </div>
       <div class="carousel-controls">
         <button class="carousel-prev" aria-label="Previous quote">‹</button>
         <button class="carousel-next" aria-label="Next quote">›</button>
       </div>
-      <!-- removed stray closing div that cut off the section -->
     </section>
   </main>
 
@@ -358,7 +360,7 @@
       if (!carousel) return;
       quotesData.forEach((q, i) => { const slide = document.createElement('div'); slide.className = 'quote-slide' + (i === 0 ? ' active' : ''); let html = `<p>${q.text}</p><cite>— <a href="${q.link}" target="_blank" rel="noopener">${q.source}</a></cite>`; if (q.logo){ html += `<div class="quote-logo"><img src="${q.logo}" alt="${q.imgAlt || ''}"></div>`; } slide.innerHTML = html; carousel.appendChild(slide); });
       const slides = carousel.querySelectorAll('.quote-slide'); let current = 0;
-      function updateMedia(i){ const q = quotesData[i]; if (mediaA) mediaA.href = q.link || '#'; if (mediaImg){ mediaImg.src = q.img || ''; mediaImg.alt = q.imgAlt || q.source || 'Media image'; } }
+      function updateMedia(i){ const q = quotesData[i]; if (mediaA) mediaA.href = q.link || '#'; if (mediaImg){ mediaImg.src = q.img || 'alligator.jpeg'; mediaImg.alt = q.imgAlt || q.source || 'Media image'; } }
       function showSlide(idx){ slides[current].classList.remove('active'); current = (idx + slides.length) % slides.length; slides[current].classList.add('active'); updateMedia(current); }
       updateMedia(0);
       const prevBtn = document.querySelector('.carousel-prev'); const nextBtn = document.querySelector('.carousel-next');
@@ -385,12 +387,12 @@
   <!-- Bottom navigation -->
   <nav class="bottom-tabs" aria-label="Bottom navigation">
     <div class="tabs-row">
-      <a class="tab-link" href="index.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7v8a2 2 0 0 1-2 2h-4v-6H9v6H5a2 2 0 0 1-2-2z" fill="currentColor"/></svg><span>Home</span></a>
-      <a class="tab-link" href="publications.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h12v16H4zM16 6h4v14H8" fill="currentColor"/></svg><span>Pubs</span></a>
-      <a class="tab-link" href="teaching.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4-9-4zm2 6v4l7 3 7-3v-4" fill="currentColor"/></svg><span>Teach</span></a>
-      <a class="tab-link" href="media.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4zM8 6v12" fill="currentColor"/></svg><span>Media</span></a>
-      <a class="tab-link" href="cv.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l3 3v17H6z" fill="currentColor"/><path d="M15 2v4h4" fill="currentColor"/><path d="M8 10h8v1.5H8zM8 13h8v1.5H8zM8 16h6v1.5H8z" fill="currentColor"/></svg><span>CV</span></a>
-      <a class="tab-link" href="https://calendly.com/ar2539-cornell/30min" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a2 2 0 0 1 2 2v16l-7-3-7 3V4a2 2 0 0 1 2-2zm3 6h6m-6 4h6m-6 4h6" fill="currentColor"/></svg><span>Schedule</span></a>
+      <a class="tab-link" href="index.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7v8a2 2 0 0 1-2 2h-4v-6H9v6H5a2 2 0 0 1-2-2z" fill="currentColor"></path></svg><span>Home</span></a>
+      <a class="tab-link" href="publications.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h12v16H4zM16 6h4v14H8" fill="currentColor"></path></svg><span>Pubs</span></a>
+      <a class="tab-link" href="teaching.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4-9-4zm2 6v4l7 3 7-3v-4" fill="currentColor"></path></svg><span>Teach</span></a>
+      <a class="tab-link" href="media.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4zM8 6v12" fill="currentColor"></path></svg><span>Media</span></a>
+      <a class="tab-link" href="cv.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l3 3v17H6z" fill="currentColor"></path><path d="M15 2v4h4" fill="currentColor"></path><path d="M8 10h8v1.5H8zM8 13h8v1.5H8zM8 16h6v1.5H8z" fill="currentColor"></path></svg><span>CV</span></a>
+      <a class="tab-link" href="https://calendly.com/ar2539-cornell/30min" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a2 2 0 0 1 2 2v16l-7-3-7 3V4a2 2 0 0 1 2-2zm3 6h6m-6 4h6m-6 4h6" fill="currentColor"></path></svg><span>Schedule</span></a>
     </div>
   </nav>
 </body>
