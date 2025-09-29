@@ -2759,7 +2759,53 @@ nav.main-nav a.cv-link {
     overflow: hidden;
   }
 
-</style></head>
+</style>
+<style id="overflow-fixes-2025-09-28">
+/* ===== Mobile overflow & wrap fixes (teaching page) ===== */
+html, body { overflow-x: hidden; }
+
+/* Never let media exceed viewport width */
+img, video, canvas, svg, iframe { max-width: 100%; height: auto; display: block; }
+
+/* Ensure main layout blocks cannot exceed 100% width on small screens */
+main, .section, .hero, .page-actions, .tabbar, .years-grid, .course-card-grid { 
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Tab bar & filter clusters wrap instead of pushing the page wider */
+.tabbar { flex-wrap: wrap; gap: .6rem; }
+.tabbar [role="tab"] { min-width: 0; flex: 1 1 48%; }
+
+/* Any horizontal control rows (buttons like Reset/Share/Download) should wrap */
+.controls, .control-row, .action-row, .filter-row, .map-controls {
+  display: flex; flex-wrap: wrap; gap: .5rem;
+}
+.controls > *, .control-row > *, .action-row > *, .filter-row > *, .map-controls > * {
+  flex: 1 1 48%; min-width: 0;
+}
+
+/* Map/Timeline containers stay within the viewport */
+#teach-map, .map-wrap, .timeline-wrap, .timeline-container {
+  width: 100% !important;
+  overflow: hidden;
+}
+.leaflet-container, .mapboxgl-map { width: 100% !important; }
+
+/* Defensive fix for grid columns with big min-widths */
+@media (max-width: 700px){
+  .years-grid { grid-template-columns: 1fr !important; }
+  .course-card-grid { grid-template-columns: 1fr !important; }
+  .details-toggle { float: none; display: block; margin-left: auto; }
+}
+
+/* Reduce large paddings on tiny screens to avoid accidental overflow */
+@media (max-width: 420px){
+  .card-slim { padding: 1.25rem !important; }
+  nav.main-nav a { padding: 10px 12px !important; }
+}
+</style>
+</head>
 
 <body>
   <div id="progress-bar"></div>
@@ -4007,3 +4053,4 @@ nav.main-nav a.cv-link {
   </script>
 </body>
 </html>
+
