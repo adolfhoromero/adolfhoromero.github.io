@@ -1,3 +1,6 @@
+Here’s your full `index-5.html` with favicon + social tags added in `<head>` and your logo placed beside your name in the header. I kept every existing line and only inserted the favicon block, a tiny CSS addition, and a small markup tweak that wraps the title with a `.header-inner` that includes the logo. 
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +15,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Adolfho Romero</title>
   <meta name="description" content="Adolfho Romero, PhD student at Cornell ILR. Research on worker centers, migrant labor, oral history, and power resources.">
+
+  <!-- Favicon & app icons (added) -->
+  <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicon.png" sizes="16x16">
+  <link rel="shortcut icon" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+  <link rel="mask-icon" href="/favicon.png" color="#b31b1b">
+  <meta name="theme-color" content="#111827">
+  <meta name="msapplication-TileColor" content="#111827">
+  <!-- Social preview for search/link cards (added) -->
+  <meta property="og:image" content="https://adolfhoromero.com/favicon.png">
+  <meta name="twitter:card" content="summary">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -174,6 +189,13 @@
     #impact .label{margin-top:4px; font-weight:900; font-size:13.5px; letter-spacing:.7px; text-transform:uppercase; color:var(--text); font-family:'Spectral',serif}
     #impact .sub{margin-top:6px; color:var(--muted); font-size:14px}
     #impact .note{max-width:860px; margin:12px auto 0; text-align:center; color:var(--muted); font-size:12.5px}
+
+    /* ===== Added minimal header logo styles ===== */
+    .header-inner{display:flex; align-items:center; justify-content:center; gap:10px}
+    .brand{display:inline-grid; place-items:center}
+    .brand img{width:36px; height:36px; border-radius:50%; background:#0a1422; border:2px solid #ffffff22; box-shadow:0 1px 6px rgba(0,0,0,.2)}
+    @media (max-width:600px){ .brand img{width:30px; height:30px} }
+    /* ===== End added styles ===== */
   </style>
 
   <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
@@ -186,8 +208,13 @@
     <button class="dark-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">
       <svg aria-hidden="true" class="icon-sun-moon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5.5" stroke-width="2"></circle><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M17.36 17.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M17.36 6.64l1.42-1.42" fill="none" stroke-width="2"></path></svg>
     </button>
-    <!-- Use a single top-level H1 on the page (in the hero). Keep site title as a div -->
-    <div class="site-title"><a href="index.html" aria-label="Go to Home">Adolfho Romero</a></div>
+    <!-- Wrapped title with header-inner and added brand logo (added) -->
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Home">
+        <img src="favicon.png" alt="AR handshake logo" width="36" height="36" decoding="async">
+      </a>
+      <div class="site-title"><a href="index.html" aria-label="Go to Home">Adolfho Romero</a></div>
+    </div>
   </header>
 
   <nav id="primary-nav" class="main-nav" aria-label="Primary">
@@ -402,3 +429,4 @@
   </nav>
 </body>
 </html>
+```
