@@ -2595,11 +2595,7 @@ nav.main-nav a.cv-link {
       .bottom-tabs .tab-link[aria-current="page"] {
         color: inherit !important;
       }
-      /* Completely hide the floating Calendly badge button */
-      .calendly-badge-widget {
-        display: none !important;
-      }
-    
+      
 </style>
 
 <!-- Interactive Map: Leaflet + MarkerCluster -->
