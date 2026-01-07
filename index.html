@@ -381,13 +381,42 @@
     document.querySelectorAll('.copy-email').forEach(btn => { btn.addEventListener('click', async () => { const text = btn.getAttribute('data-copy'); try{ await navigator.clipboard.writeText(text); const badge = btn.parentElement.querySelector('.copy-badge'); if (badge){ badge.classList.add('show'); setTimeout(()=>badge.classList.remove('show'), 900); } }catch(e){} }); });
   </script>
 
-  <!-- Calendly badge with safe load listener -->
-  <script async src="https://assets.calendly.com/assets/external/widget.js"></script>
-  <script>
-    window.addEventListener('load', function(){ if (window.Calendly && Calendly.initBadgeWidget){ Calendly.initBadgeWidget({ url:'https://calendly.com/ar2539-cornell/30min', text:'Schedule time with me', color:'#0069ff', textColor:'#ffffff', branding:true }); } });
-    // Fade Calendly near footer
-    (function(){ function handle(){ const badge = document.querySelector('.calendly-badge-widget'); if (!badge) return; const doc = document.documentElement; const dist = (doc.scrollHeight - window.innerHeight) - (window.scrollY || doc.scrollTop); if (dist < 200){ badge.style.opacity = '0'; badge.style.pointerEvents = 'none'; } else { badge.style.opacity = ''; badge.style.pointerEvents = ''; } } window.addEventListener('scroll', handle); window.addEventListener('resize', handle); setTimeout(handle, 700); })();
-  </script>
+<!-- Calendly badge with safe load listener -->
+<script async src="https://assets.calendly.com/assets/external/widget.js"></script>
+<script>
+  window.addEventListener('load', function () {
+    if (window.Calendly && Calendly.initBadgeWidget) {
+      Calendly.initBadgeWidget({
+        url: 'https://calendly.com/ar2539-cornell',
+        text: 'Schedule time with me',
+        color: '#0069ff',
+        textColor: '#ffffff',
+        branding: true
+      });
+    }
+  });
+
+  // Fade Calendly near footer
+  (function () {
+    function handle() {
+      const badge = document.querySelector('.calendly-badge-widget');
+      if (!badge) return;
+      const doc = document.documentElement;
+      const dist = (doc.scrollHeight - window.innerHeight) - (window.scrollY || doc.scrollTop);
+      if (dist < 200) {
+        badge.style.opacity = '0';
+        badge.style.pointerEvents = 'none';
+      } else {
+        badge.style.opacity = '';
+        badge.style.pointerEvents = '';
+      }
+    }
+    window.addEventListener('scroll', handle);
+    window.addEventListener('resize', handle);
+    setTimeout(handle, 700);
+  })();
+</script>
+
 
   <!-- Bottom navigation -->
   <nav class="bottom-tabs" aria-label="Bottom navigation">
