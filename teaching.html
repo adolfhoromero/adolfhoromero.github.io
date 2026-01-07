@@ -2124,7 +2124,17 @@ nav.main-nav a.cv-link {
       touch-action: pan-y;
     }
     @media (min-width:821px){ .bottom-tabs{ display:none } }
-    .tabs-row{ display:grid; grid-template-columns:repeat(5,1fr); height:100% }
+    /*
+       Use a 7‑column layout for the bottom tab bar.  The HTML for the
+       bottom navigation includes seven links (Home, Pubs, Teaching,
+       Discussion Hub, Media, CV and Schedule).  Previously the CSS
+       declared only five columns which forced the extra links to wrap
+       onto a second line, overflowing the fixed‑height container and
+       causing layout issues on small devices.  Increasing the column
+       count ensures every tab fits on a single row and prevents the
+       content beneath from being pushed out of place.
+    */
+    .tabs-row{ display:grid; grid-template-columns:repeat(7,1fr); height:100% }
     .tab-link{ display:grid; place-items:center; gap:2px; color:#e5e7eb; font-size:.7rem; font-weight:600; letter-spacing:.02em; text-decoration:none; position:relative; isolation:isolate }
     .tab-link .ico{ width:20px; height:20px; opacity:.94 }
     .tab-link[aria-current="page"]{ color:#fbbf24 }
@@ -2374,7 +2384,15 @@ nav.main-nav a.cv-link {
       touch-action: pan-y;
     }
     @media (min-width:821px){ .bottom-tabs{ display:none } }
-    .tabs-row{ display:grid; grid-template-columns:repeat(6,1fr); height:100% }
+    /*
+       Harmonize the bottom navigation layout across breakpoints by
+       defining seven equal‑width columns.  This matches the number of
+       <a> elements in the .tabs-row and prevents overflow or wrapping on
+       smaller screens.  Without this adjustment the last one or two
+       tabs spill onto a second row, which made the page appear
+       distorted and interfered with scrolling on mobile devices.
+    */
+    .tabs-row{ display:grid; grid-template-columns:repeat(7,1fr); height:100% }
     .tab-link{ display:grid; place-items:center; gap:2px; color:#e5e7eb; font-size:.7rem; font-weight:600; letter-spacing:.02em; text-decoration:none; position:relative; isolation:isolate }
     .tab-link .ico{ width:20px; height:20px; opacity:.94 }
     .tab-link[aria-current="page"]{ color:#fbbf24 }
@@ -2460,7 +2478,14 @@ nav.main-nav a.cv-link {
       border-radius: 16px;
       box-shadow: 0 8px 18px rgba(0,0,0,.30);
     }
-    .tabs-row{ grid-template-columns: repeat(6,1fr); }
+    /*
+       Consistent seven‑column grid for the unified bottom navigation.  When
+       seven navigation links are present a six‑column template leaves
+       one link overflowing or wrapping.  Switching to seven columns
+       ensures each link has its own cell and maintains a single row on
+       small screens.
+    */
+    .tabs-row{ grid-template-columns: repeat(7,1fr); }
     .tab-link{
       display:flex;
       flex-direction:column;
@@ -2804,6 +2829,20 @@ main, .section, .hero, .page-actions, .tabbar, .years-grid, .course-card-grid {
   .card-slim { padding: 1.25rem !important; }
   nav.main-nav a { padding: 10px 12px !important; }
 }
+
+    /*
+      Responsively wrap the Teaching Map control buttons on narrow
+      screens.  Without wrapping, the sequence of secondary buttons
+      (Reset, Share, Download, Style, Expand, List) can exceed the
+      viewport width on phones, forcing the page to scroll horizontally
+      and making the layout appear broken.  Allowing the row to wrap
+      ensures all controls remain accessible without distorting the
+      page.
+    */
+    @media (max-width: 600px){
+      .tm-actions{ flex-wrap: wrap; gap: 0.5rem; }
+      .tm-actions .tm-btn-secondary{ flex: 1 1 48%; min-width: 0; }
+    }
 </style>
 </head>
 
@@ -2882,9 +2921,20 @@ main, .section, .hero, .page-actions, .tabbar, .years-grid, .course-card-grid {
       </div>
       <div class="philosophy-point scroll-reveal">
         <i class="fas fa-link"></i>
-        <div><strong>Connecting Past & Present</strong></div>
+        <div><strong>Connecting Past &amp; Present</strong></div>
       </div>
     </div>
+
+    <!-- Embed and download link for the full teaching philosophy PDF.  
+         Place your PDF file in the same directory as this HTML file (e.g., alongside teaching.html).  
+         The relative path below will correctly reference the PDF when the site is deployed. -->
+    <div class="pdf-shell">
+      <embed src="Adolfho_Romero_Teaching_Philosophy.pdf" type="application/pdf" width="100%" height="800px" />
+    </div>
+    <p>
+      <a href="Adolfho_Romero_Teaching_Philosophy.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Download my full Teaching Philosophy (PDF)</a>
+    </p>
+
 <!-- ===== Methods & Training (centered) ===== -->
 <section id="methods-training" class="section scroll-reveal" aria-labelledby="mt-title">
   <div class="mt-card">
