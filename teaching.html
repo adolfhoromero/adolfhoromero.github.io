@@ -16,7 +16,14 @@
 
 
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- Early script to ensure mobile scrolling is not blocked by passive event listeners -->
+  <script>
+    // Add passive touch and wheel listeners early to override any preventDefault() usage
+    window.addEventListener('touchmove', function(){}, { passive: true });
+    window.addEventListener('wheel', function(){}, { passive: true });
+  </script>
   <title>Adolfho Romero – Teaching</title>
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -2012,7 +2019,7 @@ nav.main-nav a.cv-link {
         flex:0 0 260px;
         position:sticky;
         top:110px;
-        max-height:calc(100vh - 130px);
+        max-height:calc(100dvh - 130px);
         overflow-y:auto;
       }
     }
@@ -2758,7 +2765,7 @@ nav.main-nav a.cv-link {
     right: 0;
     bottom: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     z-index: 1000;
     padding: 1.2rem;
     background: var(--background-top);
@@ -2842,6 +2849,67 @@ main, .section, .hero, .page-actions, .tabbar, .years-grid, .course-card-grid {
     @media (max-width: 600px){
       .tm-actions{ flex-wrap: wrap; gap: 0.5rem; }
       .tm-actions .tm-btn-secondary{ flex: 1 1 48%; min-width: 0; }
+    }
+
+    /* === Fixes for mobile usability and layout === */
+    /* Ensure image galleries and horizontal carousels do not trap vertical scroll.
+       Allow vertical panning through galleries so the page scrolls immediately without requiring
+       the user to start their swipe outside of images. Restrict horizontal galleries to only
+       capture horizontal gestures. */
+    .photo-gallery,
+    .photo-gallery figure,
+    .photo-gallery img {
+      touch-action: pan-y;
+    }
+    .book-gallery,
+    .feedback-container {
+      /* only take horizontal scroll gestures – let vertical swipes bubble to the page */
+      touch-action: pan-x pinch-zoom;
+      overscroll-behavior-x: contain;
+      overscroll-behavior-y: contain;
+      -webkit-overflow-scrolling: touch;
+    }
+    @media (pointer: coarse) {
+      /* Disable pointer events on images so they don’t capture the drag on touch devices */
+      .photo-gallery img { pointer-events: none; }
+    }
+
+    /* Center the Methods & Training card and text. Previously this section was aligned to the
+       right, causing the “Methods & Training” heading to look off‑center on small screens.
+       By centering the flex container and removing the left margin, the card sits in the
+       middle of the page. We also ensure elements with a “center” class inside this section
+       have centred text. */
+    #methods-training {
+      justify-content: center !important;
+    }
+    #methods-training.section {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+    #methods-training .center {
+      text-align: center;
+    }
+
+    /* Reduce excess vertical spacing between course cards. Tighten the grid gap and card
+       margins so that cards appear closer together on mobile and desktop. */
+    .course-card-grid {
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .card-teaching {
+      margin-bottom: 1rem;
+    }
+
+    /* Use dynamic viewport height to avoid 100vh bugs on mobile browsers.
+       These rules override earlier definitions that set min-height/height to 100vh. */
+    html, body {
+      min-height: 100dvh !important;
+      -webkit-overflow-scrolling: touch;
+      overflow-y: auto;
+    }
+    /* Ensure full-screen elements relying on 100vh also adapt to dynamic viewport height */
+    #teaching-map.expanded {
+      height: 100dvh !important;
     }
 </style>
 </head>
@@ -3377,6 +3445,20 @@ main, .section, .hero, .page-actions, .tabbar, .years-grid, .course-card-grid {
       listBtn.setAttribute('aria-expanded', 'true');
       listBtn.classList.add('is-active');
       listWrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+
+  // Populate the visible items list when the <details> element itself is toggled
+  // This ensures the "Visible items" section is never empty if a user expands it
+  // via its summary rather than the List button.
+  listWrap.addEventListener('toggle', () => {
+    if (listWrap.hasAttribute('open')) {
+      populateList();
+      listBtn.setAttribute('aria-expanded', 'true');
+      listBtn.classList.add('is-active');
+    } else {
+      listBtn.setAttribute('aria-expanded', 'false');
+      listBtn.classList.remove('is-active');
     }
   });
 
