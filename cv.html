@@ -606,16 +606,17 @@
   color: var(--accent);
 }
 .hero-card .hero-img {
-  flex: 1 1 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.hero-card .hero-img img {
-  max-width: 100%;
-  height: auto;
+  flex: 1 1 240px;
+  /* Use a CSS gradient as the decorative background instead of an external image */
+  background: linear-gradient(135deg, #2e3e92 0%, #f0c419 100%);
   border-radius: var(--radius-lg);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+  min-height: 200px;
+  display: block;
+}
+/* Hide the image element within the hero image container since the background gradient replaces it */
+.hero-card .hero-img img {
+  display: none;
 }
 </style>
 <style>
@@ -707,7 +708,7 @@
       </ul>
     </div>
     <div class="hero-img">
-      <img src="7e6ddd5f-cb1a-44c4-9d6a-044018073bc7.png" alt="Decorative background">
+      <!-- Decorative gradient is applied via CSS background, no image element needed -->
     </div>
   </section>
   <!-- Embedded full PDF is now near the top for easier access -->
