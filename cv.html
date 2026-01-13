@@ -607,16 +607,42 @@
 }
 .hero-card .hero-img {
   flex: 1 1 240px;
-  /* Use a CSS gradient as the decorative background instead of an external image */
-  background: linear-gradient(135deg, #2e3e92 0%, #f0c419 100%);
+  /* Container for the dynamic banner image */
   border-radius: var(--radius-lg);
   box-shadow: 0 4px 18px rgba(0,0,0,0.12);
-  min-height: 200px;
-  display: block;
+  min-height: 240px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dark overlay on banner image to enhance contrast with text */
+.hero-card .hero-img::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.15));
+  pointer-events: none;
 }
 /* Hide the image element within the hero image container since the background gradient replaces it */
 .hero-card .hero-img img {
-  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  animation: heroZoom 40s ease-in-out infinite alternate;
+}
+
+/* Keyframes for subtle zoom effect on the hero banner */
+@keyframes heroZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
 }
 </style>
 <style>
@@ -708,7 +734,8 @@
       </ul>
     </div>
     <div class="hero-img">
-      <!-- Decorative gradient is applied via CSS background, no image element needed -->
+      <!-- Banner image inserted here -->
+      <img src="banner.png" alt="Banner image" />
     </div>
   </section>
   <!-- Embedded full PDF is now near the top for easier access -->
