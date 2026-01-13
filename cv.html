@@ -563,6 +563,78 @@
   }
   #toggle-pdf-full{ cursor:pointer; }
 </style>
+<!-- Additional styles for the custom hero section -->
+<style>
+/* Modern hero section to introduce the CV with contact details */
+.hero{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:2rem;
+  background:linear-gradient(135deg, rgba(41,83,155,0.07), rgba(255,204,0,0.10));
+  padding:2rem 1.5rem;
+  border-radius:var(--radius-xl);
+  box-shadow:var(--card-shadow);
+  margin:2rem 0;
+}
+.hero-content{
+  flex:1 1 300px;
+}
+.hero-content h2{
+  margin:0 0 .5rem;
+  font-family:var(--font-heading);
+  font-weight:700;
+  font-size:2.5rem;
+  color:var(--heading-color);
+}
+.hero-content .tagline{
+  font-size:1.1rem;
+  color:var(--muted);
+  margin-bottom:1rem;
+}
+.hero-content .contact{
+  list-style:none;
+  padding:0;
+  margin:0 0 1.5rem;
+  display:flex;
+  flex-direction:column;
+  gap:0.4rem;
+}
+.hero-content .contact li{
+  font-size:1rem;
+  display:flex;
+  align-items:center;
+  gap:0.6rem;
+  color:var(--text-main);
+}
+.hero-content .contact li a{
+  color:inherit;
+  text-decoration:none;
+}
+.hero-content .contact li a:hover{
+  color:var(--accent-gold);
+}
+.hero-bg{
+  flex:0 0 260px;
+}
+.hero-bg img{
+  width:100%;
+  height:auto;
+  border-radius:var(--radius-lg);
+  object-fit:cover;
+  box-shadow:0 6px 24px rgba(0,0,0,.1);
+}
+@media(max-width:680px){
+  .hero{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .hero-bg{
+    width:100%;
+  }
+}
+</style>
 <style>
 .visually-hidden{position:absolute!important;width:1px;height:1px;margin:-1px;border:0;padding:0;white-space:nowrap;clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden}
 </style>
@@ -636,6 +708,24 @@
 <main id="main">
   <!-- Progress bar for scroll tracking -->
   <div id="progress-bar"></div>
+  <!-- Hero section showcasing contact details and a brief tagline -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Adolfho Romero</h2>
+      <!-- A short tagline summarizing research and academic focus -->
+      <p class="tagline">Ph.D. student in Industrial and Labor Relations specializing in labor, migration, and race.</p>
+      <!-- Contact information with icons for quick access -->
+      <ul class="contact">
+        <li>📧 <a href="mailto:Adolfhoromero@gmail.com">Adolfhoromero@gmail.com</a></li>
+        <li>📞 <a href="tel:+13126710164">312.671.0164</a></li>
+        <li>🌐 <a href="https://Adolfhoromero.com" target="_blank" rel="noopener">Adolfhoromero.com</a></li>
+      </ul>
+    </div>
+    <!-- Decorative image generated to give the page a custom hero look -->
+    <div class="hero-bg">
+      <img src="7e6ddd5f-cb1a-44c4-9d6a-044018073bc7.png" alt="Decorative background">
+    </div>
+  </section>
   <!-- Top actions: download button and PDF embed -->
   <div class="page-actions">
     <a aria-label="Download the CV PDF" class="btn gold" download="" href="adolfhoromerocv.pdf" rel="noopener" target="_blank">Download CV</a>
@@ -1313,6 +1403,14 @@
 </ul>
 </details>
 </article>
+  <!-- Book review added from the latest CV -->
+  <article class="cv-item" data-cats="publications">
+    <h3 class="visually-hidden">Item</h3>
+    <div class="cv-head">
+      <div class="cv-role">Book Review: <em>The Latino Threat: Constructing Immigrants, Citizens, and the Nation</em> (3rd ed.)</div>
+      <div class="cv-meta">Anthropology of Work Review · 2025 · Reviewer</div>
+    </div>
+  </article>
 </section>
 <!-- Public Programs -->
 <section class="section" id="programs"><h2>Public Programs</h2>
@@ -1453,6 +1551,14 @@
 <div class="cv-meta">The Gainesville Sun · Feb 2021</div>
 </div>
 </article>
+  <!-- Additional public writing from the CV -->
+  <article class="cv-item" data-cats="writing">
+    <h3 class="visually-hidden">Item</h3>
+    <div class="cv-head">
+      <div class="cv-role">The Alachua County Tenants Association: Updates</div>
+      <div class="cv-meta">The Gainesville Iguana · Mar 2021</div>
+    </div>
+  </article>
 </section>
 <!-- Media Features -->
 <section class="section" id="media"><h2>Media Features &amp; Press Mentions</h2>
@@ -1477,6 +1583,49 @@
 <div class="cv-meta">The Alligator · April 2024 · Quoted</div>
 </div>
 </article>
+  <!-- Additional media appearances and press mentions -->
+  <article class="cv-item" data-cats="media">
+    <h3 class="visually-hidden">Item</h3>
+    <div class="cv-head">
+      <div class="cv-role">Gainesville Trailblazers Celebrated for Integrating Schools in Alachua County</div>
+      <div class="cv-meta">The Gainesville Sun · Mar 6, 2023 · Featured</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="media">
+    <h3 class="visually-hidden">Item</h3>
+    <div class="cv-head">
+      <div class="cv-role">Two Trailblazers Tied to Lincoln High to Be Honored</div>
+      <div class="cv-meta">The Gainesville Sun · Mar 1, 2023 · Mention</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="media">
+    <h3 class="visually-hidden">Item</h3>
+    <div class="cv-head">
+      <div class="cv-role">Words Passed On: Voices of Our Elders – History Conference Coverage</div>
+      <div class="cv-meta">Creek Corner Magazine · Jan 2023 · Coverage</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="media">
+    <h3 class="visually-hidden">Item</h3>
+    <div class="cv-head">
+      <div class="cv-role">UF Panel Discusses Gainesville Sun’s Jim Crow‑Era Coverage</div>
+      <div class="cv-meta">The Gainesville Sun · Jan 18, 2023 · Quoted</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="media">
+    <h3 class="visually-hidden">Item</h3>
+    <div class="cv-head">
+      <div class="cv-role">Challenging Racism at UF</div>
+      <div class="cv-meta">Oral History Review Podcast · Jan 24, 2023 · Guest</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="media">
+    <h3 class="visually-hidden">Item</h3>
+    <div class="cv-head">
+      <div class="cv-role">Students in UF’s oral history program talk about annual trip to Mississippi Delta</div>
+      <div class="cv-meta">The Gainesville Sun · Nov 28, 2022 · Interview</div>
+    </div>
+  </article>
 </section>
 <!-- Honors -->
 <section class="section" id="honors"><h2>Honors, Awards, &amp; Certificates</h2>
@@ -1550,6 +1699,21 @@
       <div class="cv-meta">2007</div>
     </div>
   </article>
+  <!-- Added honors from the latest CV -->
+  <article class="cv-item" data-cats="honors">
+    <h3 class="visually-hidden">Item</h3>
+    <div class="cv-head">
+      <div class="cv-role">Graduate Migration Fellow</div>
+      <div class="cv-meta">Cornell University Migrations Initiative · 2025–2026</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="honors">
+    <h3 class="visually-hidden">Item</h3>
+    <div class="cv-head">
+      <div class="cv-role">Benjamin Miller Fellowship Award</div>
+      <div class="cv-meta">$1,250 · 2025</div>
+    </div>
+  </article>
 </section>
 <!-- Professional Associations & Service -->
 <section class="section" id="associations"><h2>Professional Associations &amp; Service</h2>
@@ -1602,6 +1766,14 @@
       <div class="cv-meta">Caribbean, Latinx &amp; Latin American Exchange Organization · 2020</div>
     </div>
   </article>
+  <!-- Professional association membership not previously captured -->
+  <article class="cv-item" data-cats="associations">
+    <h3 class="visually-hidden">Item</h3>
+    <div class="cv-head">
+      <div class="cv-role">Southern Historical Association</div>
+      <div class="cv-meta">Member · 2025</div>
+    </div>
+  </article>
   <article class="cv-item" data-cats="associations">
 <h3 class="visually-hidden">Item</h3>
     <div class="cv-head">
@@ -1614,6 +1786,21 @@
     <div class="cv-head">
       <div class="cv-role">Big Ten Academic Alliance Summer Research Opportunity Program</div>
       <div class="cv-meta">Participant · 2018</div>
+    </div>
+  </article>
+  <!-- Added service and leadership roles not previously captured -->
+  <article class="cv-item" data-cats="associations service">
+    <h3 class="visually-hidden">Item</h3>
+    <div class="cv-head">
+      <div class="cv-role">Conference Co‑organizer: Migration and Sustainability in Contentious Political Times</div>
+      <div class="cv-meta">Cornell University · 2025–2026</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="associations service">
+    <h3 class="visually-hidden">Item</h3>
+    <div class="cv-head">
+      <div class="cv-role">Steward</div>
+      <div class="cv-meta">Cornell Graduate Students United – United Electrical Workers (CGSU‑UE) · 2025</div>
     </div>
   </article>
 </section>
@@ -1707,6 +1894,35 @@
       <div class="cv-meta">2018</div>
     </div>
   </article>
+  <!-- Added fieldwork and trip coordination items not previously captured -->
+  <article class="cv-item" data-cats="fieldwork">
+    <h3 class="visually-hidden">Item</h3>
+    <div class="cv-head">
+      <div class="cv-role">North Carolina Lumbee Tribe Interviews</div>
+      <div class="cv-meta">Pembroke, NC · 2023</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="fieldwork">
+    <h3 class="visually-hidden">Item</h3>
+    <div class="cv-head">
+      <div class="cv-role">Chappie James Museum of Pensacola</div>
+      <div class="cv-meta">Mobile &amp; Pensacola, FL · 2022</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="fieldwork">
+    <h3 class="visually-hidden">Item</h3>
+    <div class="cv-head">
+      <div class="cv-role">Machen Florida Opportunity Scholars Program (MFOS)</div>
+      <div class="cv-meta">Various locations · 2022</div>
+    </div>
+  </article>
+  <article class="cv-item" data-cats="fieldwork">
+    <h3 class="visually-hidden">Item</h3>
+    <div class="cv-head">
+      <div class="cv-role">Putnam County Interviews</div>
+      <div class="cv-meta">Palatka, FL · 2022</div>
+    </div>
+  </article>
 </section>
 <!-- Skills -->
 <section class="section" id="skills"><h2>Skills</h2>
@@ -1721,7 +1937,7 @@
 <h3 class="visually-hidden">Item</h3>
 <div class="cv-head">
 <div class="cv-role">Research &amp; Data</div>
-<div class="cv-meta">RStudio · Atlas.ti · MAXQDA · Zotero</div>
+<div class="cv-meta">RStudio · Atlas.ti · MAXQDA · Zotero · Qualtrics</div>
 </div>
 </article>
 <article class="cv-item" data-cats="skills">
@@ -1742,7 +1958,8 @@
       <!-- close content and grid wrappers -->
     </div><!-- .cv-content -->
   </div><!-- .cv-grid -->
-  <footer>© 2025 Adolfho Romero · <a href="mailto:ar2539@cornell.edu">ar2539@cornell.edu</a></footer>
+  <!-- Updated copyright year to current -->
+  <footer>© 2026 Adolfho Romero · <a href="mailto:ar2539@cornell.edu">ar2539@cornell.edu</a></footer>
 </main>
 <!-- Back to top floating button -->
 <button aria-label="Back to top" id="back-to-top" type="button">↑</button>
