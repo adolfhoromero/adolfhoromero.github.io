@@ -2541,27 +2541,6 @@ nav.main-nav a.cv-link {
       }
     
 </style>
-    <style>
-
-      /* Custom overrides to remove extra bottom whitespace on larger screens and reposition the Calendly badge button. */
-      @media (min-width: 821px) {
-        body {
-          /* Remove extra space beneath the footer on desktop */
-          padding-bottom: 0 !important;
-        }
-        .calendly-badge-widget {
-          /* Shift the badge upwards so it clears the footer. */
-          transform: translateY(-120px) !important;
-          opacity: 0.85;
-          transition: opacity 0.3s ease;
-        }
-        .calendly-badge-widget:hover {
-          opacity: 1;
-        }
-      }
-    
-</style>
-
 <style>
 
 /* Force sun-only toggle and neutralize older rules */
@@ -2695,6 +2674,13 @@ nav.main-nav a.cv-link {
   .tm-dot.program{background:linear-gradient(180deg,#fbbf24,#f59e0b)}
   .tm-dot.pd{background:linear-gradient(180deg,#a78bfa,#7c3aed)}
   #teach-map{height:520px;border-radius:14px;overflow:hidden;touch-action:pan-y}
+  /* Override Leaflet's internal touch-action:none so a single finger can still scroll the page */
+  #teach-map .leaflet-container,
+  #teach-map .leaflet-pane,
+  #teach-map .leaflet-tile-pane,
+  #teach-map .leaflet-map-pane {
+    touch-action: pan-y !important;
+  }
   .tm-controls{display:flex;gap:8px;flex-wrap:wrap}
   /* Style for the map category buttons: pill shape with icons */
   .tm-btn{
@@ -2848,26 +2834,25 @@ main, .section, .hero, .page-actions, .tabbar, .years-grid, .course-card-grid {
     }
 
     /* === Fixes for mobile usability and layout === */
-    /* Ensure image galleries and horizontal carousels do not trap vertical scroll.
-       Allow vertical panning through galleries so the page scrolls immediately without requiring
-       the user to start their swipe outside of images. Restrict horizontal galleries to only
-       capture horizontal gestures. */
+    /* Photo gallery: ensure vertical swipes scroll the page on mobile.
+       !important overrides any conflicting rules. On touch devices, pointer-events:none
+       on figures/images lets touches pass through to the page scroll container. */
     .photo-gallery,
     .photo-gallery figure,
-    .photo-gallery img {
-      touch-action: pan-y;
+    .photo-gallery img,
+    .photo-gallery figcaption {
+      touch-action: pan-y !important;
+    }
+    @media (pointer: coarse) {
+      .photo-gallery figure,
+      .photo-gallery img { pointer-events: none !important; }
     }
     .book-gallery,
     .feedback-container {
-      /* only take horizontal scroll gestures – let vertical swipes bubble to the page */
       touch-action: pan-x pinch-zoom;
       overscroll-behavior-x: contain;
-      overscroll-behavior-y: contain;
+      overscroll-behavior-y: auto;
       -webkit-overflow-scrolling: touch;
-    }
-    @media (pointer: coarse) {
-      /* Disable pointer events on images so they don’t capture the drag on touch devices */
-      .photo-gallery img { pointer-events: none; }
     }
 
     /* Center the Methods & Training card and text. Previously this section was aligned to the
@@ -4199,27 +4184,3 @@ main, .section, .hero, .page-actions, .tabbar, .years-grid, .course-card-grid {
       });
     })();
   </script>
-  <script>
-    /*
-      Fade out the Calendly badge near the bottom of the page.
-      The Calendly widget injects a floating button fixed to the bottom right.  Without
-      adjustment it can overlap the dark footer.  This listener reduces its opacity and
-      disables interaction when the user approaches the bottom of the page.
-    */
-    (function() {
-      function handleBadgeVisibility() {
-        var badge = document.querySelector('.calendly-badge-widget');
-        if (!badge) return;
-        var scrollTop = window.scrollY || document.documentElement.scrollTop;
-        var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-        var distance = maxScroll - scrollTop;
-        if (distance < 200) {
-          badge.style.opacity = '0';
-          badge.style.pointerEvents = 'none';
-        } else {
-          badge.style.opacity = '';
-          badge.style.pointerEvents = '';
-        }
-      }
-      window.addEventListener('scroll', handleBadgeVisibility);
-      window.addEventListener('resize', handle
