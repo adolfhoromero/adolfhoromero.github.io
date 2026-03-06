@@ -2694,7 +2694,7 @@ nav.main-nav a.cv-link {
   .tm-dot.talk{background:linear-gradient(180deg,#60a5fa,#3b82f6)}
   .tm-dot.program{background:linear-gradient(180deg,#fbbf24,#f59e0b)}
   .tm-dot.pd{background:linear-gradient(180deg,#a78bfa,#7c3aed)}
-  #teach-map{height:520px;border-radius:14px;overflow:hidden}
+  #teach-map{height:520px;border-radius:14px;overflow:hidden;touch-action:pan-y}
   .tm-controls{display:flex;gap:8px;flex-wrap:wrap}
   /* Style for the map category buttons: pill shape with icons */
   .tm-btn{
@@ -3188,7 +3188,55 @@ main, .section, .hero, .page-actions, .tabbar, .years-grid, .course-card-grid {
     const TM_PROGRAMS = [{"title": "Town Hall – Welcoming Black Faculty", "place": "Gainesville, FL", "lat": 29.6516, "lon": -82.3248, "date": "2023", "type": "program"}, {"title": "Oscar Mack vs the KKK — Premiere", "place": "Gainesville, FL", "lat": 29.6516, "lon": -82.3248, "date": "2023", "type": "program"}, {"title": "K‑12 Classrooms — Bringing AA History", "place": "Gainesville, FL", "lat": 29.6516, "lon": -82.3248, "date": "2023", "type": "program"}];
     const TM_PD = [{"title": "UT Austin Ethnographic Summer School", "place": "Austin, TX — Urban Ethnography Lab, UT Austin", "lat": 30.2672, "lon": -97.7431, "date": "Aug 2025", "type": "pd", "desc": "Four-day intensive on observation, in-depth interviewing, qualitative coding, ethics; workshops with UT Austin Sociology faculty; 1:1 research feedback; reflexivity & IRB protocols."}, {"title": "QMUL–Cornell Migration Spring School (Gozo)", "place": "Victoria (Rabat), Gozo — Queen Mary University of London & Cornell University", "lat": 36.0443, "lon": 14.2397, "date": "May 2025", "type": "pd", "desc": "Interdisciplinary training on migration, labor rights, and urban policy; site visits, activist discussions; cross-field seminars (Geography, Film, History, Law, Psychology, Public Health, Policy)."}, {"title": "QMUL–Cornell Migration Spring School (Malta)", "place": "Valletta, Malta — Queen Mary University of London & Cornell University", "lat": 35.8989, "lon": 14.5146, "date": "May 2025", "type": "pd", "desc": "Explored economic migration, displacement, and urban labor conditions; experiential learning across Malta with scholars and practitioners."}, {"title": "Harvard Kennedy School & MA Black and Latino Legislative Caucus Retreat", "place": "Cambridge, MA — Harvard Kennedy School", "lat": 42.3736, "lon": -71.1097, "date": "Dec 2024", "type": "pd", "desc": "Supported Dr. Paul Ortiz’s presentation; met Beacon Press editors (Gayatri Patnaik, Joanna Green) about dissertation; feedback from Prof. Vincent Brown."}, {"title": "MigLab Working Group (Cornell)", "place": "Ithaca, NY — Cornell University", "lat": 42.4439, "lon": -76.5019, "date": "Jan–May 2025", "type": "pd", "desc": "Interdisciplinary meetings on migration; peer feedback on grad presentations; co-sponsored by Cornell Population Center & Brooks School for Public Policy."}];
 
-    const map = L.map('teach-map', { zoomControl:true, scrollWheelZoom:true, attributionControl:false }).setView([34.5,-92], 4);
+    const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+    const map = L.map('teach-map', {
+      zoomControl: true,
+      scrollWheelZoom: !isTouchDevice,
+      dragging: !isTouchDevice,
+      tap: false,
+      attributionControl: false
+    }).setView([34.5,-92], 4);
+    // ── Mobile scroll fix ──────────────────────────────────────────────
+    // On touch devices, single-finger touch scrolls the page (dragging is
+    // disabled by default above).  Two fingers enable map panning.
+    // A translucent hint label appears when the user single-touches the map.
+    if (isTouchDevice) {
+      const mapEl = document.getElementById('teach-map');
+      const hint = document.createElement('div');
+      hint.setAttribute('aria-hidden', 'true');
+      hint.style.cssText = [
+        'position:absolute','inset:0','z-index:800',
+        'display:flex','align-items:center','justify-content:center',
+        'background:rgba(0,0,0,0.38)','color:#fff',
+        'font-size:1rem','font-weight:700','letter-spacing:.02em',
+        'border-radius:14px','pointer-events:none',
+        'opacity:0','transition:opacity .25s','padding:1rem','text-align:center'
+      ].join(';');
+      hint.textContent = '👆 Use two fingers to move the map';
+      mapEl.style.position = 'relative';
+      mapEl.appendChild(hint);
+
+      let hintTimer;
+      mapEl.addEventListener('touchstart', function(e) {
+        clearTimeout(hintTimer);
+        if (e.touches.length >= 2) {
+          map.dragging.enable();
+          hint.style.opacity = '0';
+        } else {
+          map.dragging.disable();
+          hint.style.opacity = '1';
+          hintTimer = setTimeout(() => { hint.style.opacity = '0'; }, 1800);
+        }
+      }, { passive: true });
+
+      mapEl.addEventListener('touchend', function() {
+        clearTimeout(hintTimer);
+        map.dragging.disable();
+        hintTimer = setTimeout(() => { hint.style.opacity = '0'; }, 600);
+      }, { passive: true });
+    }
+    // ── End mobile scroll fix ──────────────────────────────────────────
+
     const light = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png', { maxZoom:19 });
     const dark  = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}.png', { maxZoom:19 });
     // Determine whether dark mode should be used for the base map.  A custom
@@ -3849,10 +3897,10 @@ main, .section, .hero, .page-actions, .tabbar, .years-grid, .course-card-grid {
 </main>
 
 <footer>
-  © 2025 Adolfho Romero · <a href="mailto:ar2539@cornell.edu">ar2539@cornell.edu</a>
+  © 2025 Adolfho Romero · <a href="/cdn-cgi/l/email-protection#ea8b98d8dfd9d3aa898598848f8686c48f8e9f"><span class="__cf_email__" data-cfemail="99f8ebabacaaa0d9faf6ebf7fcf5f5b7fcfdec">[email&#160;protected]</span></a>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Enhanced interactivity for course cards
   function toggleDetails(btn){
     const card = btn.closest('.card-teaching');
@@ -4174,12 +4222,4 @@ main, .section, .hero, .page-actions, .tabbar, .years-grid, .course-card-grid {
         }
       }
       window.addEventListener('scroll', handleBadgeVisibility);
-      window.addEventListener('resize', handleBadgeVisibility);
-      document.addEventListener('DOMContentLoaded', function() {
-        // Allow time for Calendly script to inject the badge
-        setTimeout(handleBadgeVisibility, 600);
-      });
-    })();
-  </script>
-</body>
-</html>
+      window.addEventListener('resize', handle
