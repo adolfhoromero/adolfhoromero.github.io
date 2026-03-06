@@ -973,7 +973,11 @@
     .scroll-reveal{
       opacity:0;
       transform:translateY(50px);
-      transition:all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      /* Use targeted properties instead of 'all' — 'transition:all' promotes the element
+         to a GPU compositor layer for every property, which can intercept touch events
+         on iOS during the animation window. */
+      transition:opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                 transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
     .scroll-reveal.revealed{
@@ -2833,20 +2837,49 @@ main, .section, .hero, .page-actions, .tabbar, .years-grid, .course-card-grid {
       .tm-actions .tm-btn-secondary{ flex: 1 1 48%; min-width: 0; }
     }
 
-    /* === Fixes for mobile usability and layout === */
-    /* Photo gallery: ensure vertical swipes scroll the page on mobile.
-       !important overrides any conflicting rules. On touch devices, pointer-events:none
-       on figures/images lets touches pass through to the page scroll container. */
+    /* === Mobile scroll fix — photo gallery ===
+       Root cause: overflow:hidden on <figure> causes iOS Safari to treat the element
+       as a scroll container, silently swallowing vertical swipes.
+       Fix 1 (modern): overflow:clip is visually identical but is NOT a scroll container.
+       Fix 2 (fallback): pointer-events:none passes all touches through to the page.
+       Fix 3: strip hover transforms on touch so no compositor layer is created mid-swipe. */
+
+    /* Apply to ALL devices first so the rule exists in the cascade */
     .photo-gallery,
     .photo-gallery figure,
     .photo-gallery img,
     .photo-gallery figcaption {
       touch-action: pan-y !important;
     }
+
     @media (pointer: coarse) {
+      /* Primary fix: swap overflow:hidden → overflow:clip on figures.
+         clip clips visually but never creates a scrollable box. */
+      .photo-gallery figure {
+        overflow: clip !important;
+        /* Safety: browsers that don't support clip will see 'visible',
+           which still lets touch events pass. */
+      }
+      /* Pointer-events: none on img/figcaption so touches reach the
+         gallery div which has touch-action:pan-y */
+      .photo-gallery,
       .photo-gallery figure,
-      .photo-gallery img { pointer-events: none !important; }
+      .photo-gallery img,
+      .photo-gallery figcaption {
+        pointer-events: none !important;
+      }
+      /* Disable hover transforms – on iOS a stuck :hover can create a
+         composite layer that re-captures the next swipe */
+      .photo-gallery figure:hover {
+        transform: none !important;
+        box-shadow: var(--card-shadow) !important;
+      }
+      .philosophy-banner:hover {
+        transform: none !important;
+        box-shadow: var(--card-shadow) !important;
+      }
     }
+
     .book-gallery,
     .feedback-container {
       touch-action: pan-x pinch-zoom;
@@ -4184,3 +4217,50 @@ main, .section, .hero, .page-actions, .tabbar, .years-grid, .course-card-grid {
       });
     })();
   </script>
+
+<script>
+/* ── Photo gallery scroll passthrough (iOS Safari safety net) ──────────────
+   Even with overflow:clip and pointer-events:none, some older iOS versions
+   can still swallow the first vertical swipe on the gallery.
+   This listener detects touchmove on the gallery and explicitly calls
+   window.scrollBy so the page always scrolls.
+   passive:true throughout — never blocks the browser's own scroll. */
+(function () {
+  function initGalleryScrollFix() {
+    var galleries = document.querySelectorAll('.photo-gallery');
+    galleries.forEach(function (gallery) {
+      var startY = 0;
+      var lastY  = 0;
+      var isScrolling = false;
+
+      gallery.addEventListener('touchstart', function (e) {
+        startY      = e.touches[0].clientY;
+        lastY       = startY;
+        isScrolling = false;
+      }, { passive: true });
+
+      gallery.addEventListener('touchmove', function (e) {
+        if (e.touches.length !== 1) return;
+        var y      = e.touches[0].clientY;
+        var deltaY = lastY - y;   // positive = user scrolling down
+        lastY      = y;
+
+        if (!isScrolling) {
+          if (Math.abs(startY - y) < 5) return;  // ignore micro-taps
+          isScrolling = true;
+        }
+
+        window.scrollBy({ top: deltaY, behavior: 'instant' });
+      }, { passive: true });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initGalleryScrollFix);
+  } else {
+    initGalleryScrollFix();
+  }
+})();
+</script>
+</body>
+</html>
