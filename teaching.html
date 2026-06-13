@@ -3014,6 +3014,469 @@ main, .section, .hero, .page-actions, .tabbar, .years-grid, .course-card-grid {
   }
 }
 </style>
+  <!-- ===== Premium 2026 enhancement layer (loaded last) ===== -->
+  <style id="premium-2026">
+/* ======================================================================
+   PREMIUM 2026 ENHANCEMENT LAYER  ·  Adolfho Romero — Teaching
+   ----------------------------------------------------------------------
+   A refinement pass over the existing design. Loaded last so it leads the
+   cascade. It re-tunes the shared design tokens (so every component lifts
+   together) and adds disciplined, editorial polish: deeper palette, layered
+   realistic depth, tighter type, and quieter motion.
+   No markup or behaviour removed — tokens + targeted styling only.
+   ====================================================================== */
+
+/* ----------------------------------------------------------------------
+   1 · DESIGN TOKENS — refined (light)
+   Same navy / sapphire / gold DNA, executed with more depth and restraint.
+   (NB: --max-width is deliberately NOT redefined so the 1600px layout holds.)
+   ---------------------------------------------------------------------- */
+:root{
+  /* Surfaces & atmosphere */
+  --background-top: linear-gradient(180deg,#f7f9fc 0%, #eef2f8 58%, #e8eef6 100%);
+  --background-bottom: linear-gradient(180deg,#eef2f8 0%, #e3e9f3 100%);
+  --paper:#f7f9fc;
+  --card-bg:#ffffff;
+  --surface-2:#eef2f9;
+
+  /* Brand */
+  --ink:#15243c;
+  --nav-bg: linear-gradient(135deg,#13213a 0%, #1b2d4b 55%, #1f3354 100%);
+  --nav-text:#f4f7fc;
+
+  --accent-solid:#2456d6;
+  --accent-bright:#3f72ec;
+  --accent: linear-gradient(135deg,#2f63e4 0%, #1d44ba 100%);
+  --accent-gold-solid:#d6a73e;          /* luminous antique gold — legible on dark photos */
+  --accent-gold: linear-gradient(135deg,#e2b755 0%, #c08f2f 100%);
+  --accent-solid-soft: rgba(36,86,214,.10);
+
+  /* Text */
+  --text-main:#1b2a42;
+  --text-secondary:#586a82;
+
+  /* Depth — soft, layered, realistic (the biggest "premium" tell) */
+  --card-shadow: 0 1px 1px rgba(21,36,60,.04), 0 5px 14px rgba(21,36,60,.06), 0 16px 36px rgba(21,36,60,.07);
+  --card-shadow-hover: 0 2px 4px rgba(21,36,60,.06), 0 16px 32px rgba(21,36,60,.10), 0 34px 70px rgba(21,36,60,.14);
+  --ring: 0 0 0 3px rgba(36,86,214,.30);
+
+  /* Geometry & motion */
+  --border-radius:14px;
+  --border-radius-lg:22px;
+  --hair: 1px solid rgba(21,36,60,.09);
+  --ease: cubic-bezier(.22,.61,.36,1);
+  --transition-smooth: all .45s cubic-bezier(.22,.61,.36,1);
+  --transition-bounce: all .5s cubic-bezier(.22,.61,.36,1);  /* cartoon-bounce removed */
+}
+
+.dark{
+  --background-top: radial-gradient(1200px 620px at 50% -12%, #15233e 0%, #0c1525 56%, #0a1220 100%);
+  --background-bottom: linear-gradient(180deg,#0c1525 0%, #0a1220 100%);
+  --paper:#0b1322;
+  --card-bg: linear-gradient(180deg,#16233b 0%, #111c30 100%);
+  --surface-2:#16233b;
+  --ink:#0a1322;
+  --nav-bg: linear-gradient(135deg,#0a1322 0%, #10203a 100%);
+  --nav-text:#eef3fb;
+
+  --accent-solid:#5b8af2;
+  --accent-bright:#7da4f7;
+  --accent: linear-gradient(135deg,#5b8af2 0%, #3f6fe0 100%);
+  --accent-gold-solid:#e0b75a;
+  --accent-gold: linear-gradient(135deg,#ecc56e 0%, #c79333 100%);
+  --accent-solid-soft: rgba(91,138,242,.14);
+
+  --text-main:#eef3fb;
+  --text-secondary:#a9b6ca;
+
+  --card-shadow: 0 2px 10px rgba(0,0,0,.34), 0 20px 46px rgba(0,0,0,.46);
+  --card-shadow-hover: 0 6px 20px rgba(0,0,0,.46), 0 34px 74px rgba(0,0,0,.56);
+  --hair: 1px solid rgba(120,150,200,.14);
+}
+
+/* ----------------------------------------------------------------------
+   2 · BASE — typographic feel, selection, focus, scrollbars
+   ---------------------------------------------------------------------- */
+body{
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+  letter-spacing:.003em;
+  background-attachment:fixed;
+}
+::selection{ background:rgba(36,86,214,.16); color:var(--text-main); }
+.dark ::selection{ background:rgba(91,138,242,.26); }
+
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible,
+input:focus-visible, select:focus-visible, summary:focus-visible{
+  outline:none; box-shadow:var(--ring); border-radius:8px;
+}
+
+*{ scrollbar-width:thin; scrollbar-color:rgba(36,86,214,.38) transparent; }
+::-webkit-scrollbar{ width:11px; height:11px; }
+::-webkit-scrollbar-thumb{
+  background:linear-gradient(180deg,rgba(36,86,214,.45),rgba(36,86,214,.30));
+  border-radius:99px; border:3px solid transparent; background-clip:content-box;
+}
+::-webkit-scrollbar-thumb:hover{
+  background:linear-gradient(180deg,rgba(36,86,214,.66),rgba(36,86,214,.46));
+  background-clip:content-box;
+}
+
+/* ----------------------------------------------------------------------
+   3 · MASTHEAD — refined navy header with sheen + brass hairline + kicker
+   ---------------------------------------------------------------------- */
+header{
+  padding:2.2rem 1rem 1.5rem;
+  box-shadow:0 12px 34px rgba(11,19,33,.30);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  position:relative; overflow:hidden;
+}
+header::before{
+  content:''; position:absolute; inset:0; pointer-events:none;
+  background:
+    radial-gradient(900px 260px at 50% -45%, rgba(120,160,255,.20), transparent 70%),
+    linear-gradient(180deg, rgba(255,255,255,.05), transparent 42%);
+}
+header::after{
+  content:''; position:absolute; left:0; right:0; bottom:0; height:2px;
+  background:linear-gradient(90deg, transparent, var(--accent-gold-solid), transparent);
+  opacity:.55;
+}
+.site-title{
+  font-size:clamp(2.3rem, 4.6vw, 3.15rem);
+  letter-spacing:-.015em; font-weight:700; margin:.15rem 0 0;
+  position:relative; z-index:1;
+}
+.site-title a{ color:var(--nav-text); text-decoration:none; }
+.site-kicker{
+  position:relative; z-index:1;
+  margin:.55rem 0 .1rem; color:rgba(244,247,252,.60);
+  font-family:var(--font-body); font-weight:600; font-size:.72rem;
+  letter-spacing:.34em; text-transform:uppercase;
+}
+
+/* Dark-mode toggle — single clean icon, calm hover (no 180° spin) */
+.dark-toggle{
+  top:1.6rem; right:1.4rem; width:2.7rem; height:2.7rem;
+  background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16);
+  backdrop-filter:blur(10px);
+  transition:transform .35s var(--ease), background .35s var(--ease);
+}
+.dark-toggle svg{ display:none; }      /* drop the duplicate static sun; emoji ::before remains */
+.dark-toggle:hover{ transform:scale(1.07); background:rgba(255,255,255,.18); }
+
+/* ----------------------------------------------------------------------
+   4 · NAVIGATION — quieter, more editorial; correct active state
+   ---------------------------------------------------------------------- */
+nav.main-nav{
+  box-shadow:inset 0 -1px 0 rgba(255,255,255,.06), 0 8px 22px rgba(11,19,33,.16);
+  backdrop-filter:saturate(140%) blur(14px);
+}
+nav.main-nav ul{ gap:2px; padding:7px 10px; max-width:var(--max-width); }
+nav.main-nav a{
+  font-size:.96rem; min-width:auto; padding:12px 17px;
+  font-weight:600; letter-spacing:.13em;
+  color:rgba(244,247,252,.80); text-shadow:none;
+  border-radius:10px;
+  transition:color .3s var(--ease), background .3s var(--ease);
+}
+nav.main-nav a:hover, nav.main-nav a:focus{
+  color:#fff; background:rgba(255,255,255,.07); box-shadow:none;  /* kills the neon glow */
+}
+nav.main-nav a::after{
+  left:17px; right:17px; bottom:7px; height:2px; border-radius:2px;
+  background:linear-gradient(90deg, var(--accent-bright), var(--accent-gold-solid));
+}
+nav.main-nav a[aria-current="page"], nav.main-nav a.active{
+  color:#fff; background:rgba(255,255,255,.08);
+}
+nav.main-nav a[aria-current="page"]::after, nav.main-nav a.active::after{
+  width:calc(100% - 34px); opacity:1;
+}
+nav.main-nav a.cv-link{
+  background:var(--accent); color:#fff !important; border-radius:10px;
+  letter-spacing:.10em; box-shadow:0 6px 16px rgba(36,86,214,.30); margin-right:0;
+}
+nav.main-nav a.cv-link::after{ display:none; }
+nav.main-nav a.cv-link:hover, nav.main-nav a.cv-link:focus{
+  filter:brightness(1.06); box-shadow:0 10px 24px rgba(36,86,214,.40);
+}
+
+/* ----------------------------------------------------------------------
+   5 · LAYOUT RHYTHM + SECTION HEADINGS
+   Comfortable reading measure for prose; editorial heading treatment.
+   ---------------------------------------------------------------------- */
+main{ padding:3.4rem 1.5rem 2rem; }
+main > section{ scroll-margin-top:88px; }
+
+main h2{
+  font-size:clamp(2rem, 3.4vw, 2.9rem);
+  font-weight:700; letter-spacing:-.018em; line-height:1.12;
+  color:var(--text-main); margin-bottom:2.3rem;
+}
+main h2::before{ display:none; }                 /* remove the radial glow */
+main h2::after{
+  width:62px; height:3px; margin:1.05rem auto 0; border-radius:99px;
+  background:linear-gradient(90deg, var(--accent-solid), var(--accent-gold-solid));
+}
+
+/* ----------------------------------------------------------------------
+   6 · PHILOSOPHY — banner, points, photo gallery
+   ---------------------------------------------------------------------- */
+.philosophy-banner{
+  max-width:1000px; margin:2.6rem auto;
+  padding:2.6rem 2.4rem; border:var(--hair);
+  border-radius:var(--border-radius-lg); box-shadow:var(--card-shadow);
+}
+.philosophy-banner::before{ height:3px; background:var(--accent); }
+.philosophy-banner:hover{ transform:translateY(-3px); box-shadow:var(--card-shadow-hover); }
+.philosophy-banner p{ line-height:1.85; }
+.philosophy-banner p:first-of-type{ font-size:1.16rem; }
+.philosophy-banner strong{ font-weight:700; }
+
+/* Refined "icon chip" points; calm lift on hover (no full-fill flip) */
+.philosophy-points{ max-width:1100px; margin:2.6rem auto; gap:1.4rem; }
+.philosophy-point{
+  border:var(--hair); border-radius:var(--border-radius);
+  padding:2rem 1.4rem 1.7rem;
+  transition:transform .4s var(--ease), box-shadow .4s var(--ease), border-color .4s var(--ease);
+}
+.philosophy-point::before{ display:none; }
+.philosophy-point:hover{
+  transform:translateY(-6px); box-shadow:var(--card-shadow-hover);
+  border-color:rgba(36,86,214,.22); color:var(--text-main);
+}
+.philosophy-point i{
+  display:inline-grid; place-items:center; width:56px; height:56px; margin:0 auto 1rem;
+  border-radius:50%; font-size:1.4rem; color:var(--accent-solid);
+  background:linear-gradient(135deg, rgba(36,86,214,.14), rgba(36,86,214,.05));
+}
+.philosophy-point:hover i{ color:var(--accent-solid); transform:none; }
+.philosophy-point div strong{ font-family:var(--font-heading); font-size:1.06rem; letter-spacing:-.01em; }
+
+/* Photo gallery — always-on scrim, gentle cinematic zoom, caption fade-up */
+.photo-gallery{ gap:1.4rem; margin:2.6rem 0; }
+.photo-gallery figure{ border-radius:var(--border-radius-lg); box-shadow:var(--card-shadow); }
+.photo-gallery figure:hover{ box-shadow:var(--card-shadow-hover); }
+.photo-gallery img{ position:relative; z-index:0; transition:transform .85s var(--ease); }
+.photo-gallery figure:hover img{ transform:scale(1.06); }
+.photo-gallery figure::after{
+  content:''; position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:linear-gradient(180deg, transparent 42%, rgba(10,18,32,.62) 100%);
+}
+.photo-gallery figcaption{
+  z-index:2; background:transparent; padding:.95rem 1.15rem;
+  font-weight:500; letter-spacing:.005em; opacity:0; transform:translateY(8px);
+  transition:opacity .4s var(--ease), transform .4s var(--ease);
+}
+.photo-gallery figure:hover figcaption{ opacity:1; transform:none; }
+
+/* Teaching-philosophy PDF download → a real button */
+#teaching-philosophy > p > a[href$=".pdf"]{
+  display:inline-flex; align-items:center; gap:.55rem; margin-top:1rem;
+  padding:.72rem 1.25rem; border-radius:99px; background:var(--accent);
+  color:#fff; font-weight:600; text-decoration:none;
+  box-shadow:0 6px 16px rgba(36,86,214,.28); transition:var(--transition-smooth);
+}
+#teaching-philosophy > p > a[href$=".pdf"]:hover{
+  transform:translateY(-2px); box-shadow:0 10px 24px rgba(36,86,214,.38); filter:brightness(1.04);
+}
+.pdf-shell{
+  border:var(--hair) !important; border-radius:var(--border-radius-lg) !important;
+  box-shadow:var(--card-shadow); overflow:hidden; background:var(--card-bg);
+}
+
+/* ----------------------------------------------------------------------
+   7 · METHODS & TRAINING — re-centred (was pushed awkwardly to the right)
+   ---------------------------------------------------------------------- */
+#methods-training{ justify-content:center; }
+#methods-training.section{ margin-left:auto; margin-right:auto; }
+.mt-card{
+  width:100%; max-width:1100px; margin:0 auto;
+  border:var(--hair); border-radius:var(--border-radius-lg);
+  box-shadow:var(--card-shadow); padding:2rem 2rem 1.7rem;
+}
+.mt-title{ font-size:1.7rem; letter-spacing:-.012em; }
+.mt-note{ font-size:1rem; }
+.mt-fig{
+  border-radius:16px; border:1px solid transparent; padding:.7rem;
+  transition:transform .4s var(--ease), box-shadow .4s var(--ease), border-color .4s var(--ease), background .4s var(--ease);
+}
+.mt-fig:hover{
+  transform:translateY(-4px); box-shadow:var(--card-shadow);
+  border-color:rgba(36,86,214,.18);
+  background:linear-gradient(180deg, rgba(36,86,214,.04), transparent);
+}
+.mt-fig img{ filter:grayscale(.06) contrast(1.02); }
+.mt-fig:hover img{ filter:none; transform:none; }
+.mt-fig strong{ font-family:var(--font-heading); letter-spacing:-.01em; }
+
+/* ----------------------------------------------------------------------
+   8 · FIELDWORK MAP — premium frame + cleaner controls
+   ---------------------------------------------------------------------- */
+.teachmap-card{
+  background:var(--card-bg); border:var(--hair) !important;
+  border-radius:var(--border-radius-lg) !important; box-shadow:var(--card-shadow); padding:1.4rem;
+}
+#teach-map{ border-radius:16px; box-shadow:inset 0 0 0 1px rgba(21,36,60,.07); }
+.tm-title{ font-size:1.7rem; letter-spacing:-.012em; }
+.tm-key{ border:var(--hair); background:var(--surface-2); border-radius:99px; }
+
+.tm-btn{
+  border:var(--hair); background:var(--surface-2); border-radius:99px; font-weight:700;
+  transition:transform .25s var(--ease), box-shadow .25s var(--ease), background .25s var(--ease), color .25s var(--ease);
+}
+.tm-btn[aria-pressed="true"]{
+  background:var(--accent); color:#fff; border-color:transparent;
+  box-shadow:0 6px 16px rgba(36,86,214,.28);
+}
+.tm-btn[aria-pressed="true"] i{ color:#fff; }
+.tm-btn:hover{ transform:translateY(-2px); box-shadow:var(--card-shadow); }
+
+.tm-btn-secondary{
+  border:var(--hair) !important; background:var(--surface-2) !important;
+  border-radius:99px !important; font-weight:600; color:var(--text-main);
+  transition:var(--transition-smooth);
+}
+.tm-btn-secondary:hover{ background:var(--card-bg) !important; box-shadow:var(--card-shadow); transform:translateY(-1px); }
+.tm-btn-secondary.is-active{ outline:none; box-shadow:var(--ring); }
+
+.tm-filters input[type="search"], .tm-filters select{
+  border:var(--hair) !important; border-radius:10px !important;
+  background:var(--card-bg) !important; color:var(--text-main) !important; padding:9px 12px;
+}
+
+/* Leaflet popups — rounded + soft shadow to match the rest */
+.leaflet-popup-content-wrapper{ border-radius:14px !important; box-shadow:var(--card-shadow) !important; }
+.leaflet-popup-tip{ box-shadow:var(--card-shadow) !important; }
+
+/* ----------------------------------------------------------------------
+   9 · COURSES — year labels + photographic cards (gold titles preserved)
+   ---------------------------------------------------------------------- */
+.year-section{ border-left:none; padding-left:0; position:relative; margin-bottom:2.6rem; }
+.year-heading{
+  display:flex; align-items:center; gap:.7rem;
+  font-size:1.5rem; font-weight:700; letter-spacing:.02em;
+  color:var(--text-main); margin-bottom:1.2rem;
+}
+.year-heading::before{
+  content:''; width:34px; height:3px; border-radius:99px;
+  background:var(--accent); display:inline-block; flex:0 0 auto;
+}
+
+.card-teaching{
+  border-radius:var(--border-radius-lg); border:1px solid rgba(255,255,255,.07);
+  box-shadow:var(--card-shadow);
+}
+.card-teaching:hover{ transform:translateY(-6px); box-shadow:var(--card-shadow-hover); }
+.card-teaching::before{ height:3px; background:var(--accent); }
+.card-teaching::after{
+  background:linear-gradient(165deg, rgba(11,19,33,.50) 0%, rgba(11,19,33,.68) 52%, rgba(8,14,26,.86) 100%);
+}
+.card-header{ font-size:1.5rem; letter-spacing:-.01em; align-items:flex-start; gap:1rem; }
+.card-header > span{ line-height:1.25; text-shadow:0 1px 14px rgba(0,0,0,.55); }
+
+/* Toggle buttons on the dark cards → legible glass pills */
+.card-toggle, .details-toggle{
+  flex:0 0 auto; background:rgba(255,255,255,.12); color:#fff !important;
+  border:1px solid rgba(255,255,255,.22); border-radius:99px;
+  padding:.42rem .95rem; font-weight:600; backdrop-filter:blur(6px);
+  transition:transform .25s var(--ease), background .25s var(--ease), box-shadow .25s var(--ease);
+}
+.card-toggle::before, .details-toggle::before{ display:none; }
+.card-toggle:hover, .details-toggle:hover{
+  background:rgba(255,255,255,.22); color:#fff !important; transform:translateY(-1px);
+  box-shadow:0 6px 16px rgba(0,0,0,.28);
+}
+
+/* Expanded details → a clean, readable inset panel (fixes dark-on-dark) */
+.card-details{
+  background:rgba(255,255,255,.97); color:var(--text-main);
+  border-top:1px solid rgba(21,36,60,.10);
+}
+.dark .card-details{ background:rgba(15,24,40,.97); color:var(--text-main); border-top-color:rgba(120,150,200,.16); }
+.card-details b{ color:var(--accent-solid); }
+.card-details li{ color:inherit; }
+.card-details li::marker{ color:var(--accent-solid); }
+
+/* Book gallery — refined cards + editorial caption titles */
+.book-gallery{ gap:1.4rem; padding:.5rem .25rem 1.2rem; }
+.book-item{
+  flex-basis:210px; border:var(--hair); border-radius:16px;
+  background:var(--card-bg); box-shadow:var(--card-shadow); transition:var(--transition-smooth);
+}
+.book-item:hover{ transform:translateY(-8px); box-shadow:var(--card-shadow-hover); }
+.book-item img{ border-bottom:var(--hair); }
+.book-item .caption{ padding:.9rem 1rem 1.1rem; font-size:.86rem; line-height:1.5; }
+.book-item .caption strong{
+  font-family:var(--font-heading); font-size:1.04rem; letter-spacing:-.01em; margin-bottom:.4rem;
+}
+#course-texts > p{ max-width:74ch; margin:0 auto 2rem; text-align:center; color:var(--text-secondary); font-size:1.08rem; }
+
+/* ----------------------------------------------------------------------
+   10 · TESTIMONIALS — quote glyph, refined cards + glassy nav
+   ---------------------------------------------------------------------- */
+.feedback-container{ gap:1.4rem; padding:1rem .25rem 1.5rem; }
+.feedback-item{
+  border:var(--hair); border-radius:var(--border-radius-lg);
+  box-shadow:var(--card-shadow); padding:2.4rem 1.8rem 1.8rem;
+  position:relative; font-size:1.02rem; line-height:1.62; transition:var(--transition-smooth);
+}
+.feedback-item::before{
+  content:'\201C'; position:absolute; top:.45rem; left:1.1rem;
+  font-family:var(--font-heading); font-size:3.4rem; line-height:1;
+  color:var(--accent-gold-solid); opacity:.35;
+}
+.feedback-item:hover{ transform:translateY(-6px); box-shadow:var(--card-shadow-hover); }
+.feedback-nav{
+  background:rgba(255,255,255,.92); color:var(--accent-solid); border:var(--hair);
+  width:2.8rem; height:2.8rem; box-shadow:var(--card-shadow); backdrop-filter:blur(8px);
+  transition:transform .3s var(--ease), box-shadow .3s var(--ease), color .3s var(--ease);
+}
+.dark .feedback-nav{ background:rgba(22,34,58,.92); }
+.feedback-nav.prev{ left:-1.2rem; }
+.feedback-nav.next{ right:-1.2rem; }
+.feedback-nav:hover{ transform:translateY(-50%) scale(1.07); box-shadow:var(--card-shadow-hover); color:var(--accent-bright); }
+.feedback-container::-webkit-scrollbar-thumb{ background:rgba(36,86,214,.30); }
+
+/* ----------------------------------------------------------------------
+   11 · CHROME — progress bar, footer, mobile tab bar
+   ---------------------------------------------------------------------- */
+#progress-bar{
+  height:3px; background:linear-gradient(90deg, var(--accent-solid), var(--accent-gold-solid));
+  box-shadow:0 0 12px rgba(36,86,214,.40);
+}
+footer{
+  padding:3.4rem 1.5rem; border-top:none; position:relative;
+  color:rgba(244,247,252,.74); font-size:.95rem; letter-spacing:.01em;
+}
+footer::before{
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg, transparent, var(--accent-gold-solid), transparent); opacity:.5;
+}
+footer a{ color:#cddcff; font-weight:600; }
+footer a::after{ height:1.5px; background:var(--accent-gold-solid); }
+
+.bottom-tabs{
+  background:linear-gradient(180deg, rgba(19,33,58,.92), rgba(13,22,40,.98));
+  backdrop-filter:blur(16px) saturate(140%);
+  border-top:1px solid rgba(255,255,255,.08);
+}
+.tab-link{ color:rgba(229,231,235,.7); transition:color .3s var(--ease); }
+.tab-link:hover, .tab-link.active{ color:#fff; }
+
+/* ----------------------------------------------------------------------
+   12 · ACCESSIBILITY — honour reduced-motion
+   ---------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{
+    animation-duration:.001ms !important; animation-iteration-count:1 !important;
+    transition-duration:.001ms !important; scroll-behavior:auto !important;
+  }
+}
+
+  </style>
 </head>
 
 <body>
@@ -3035,15 +3498,16 @@ main, .section, .hero, .page-actions, .tabbar, .years-grid, .course-card-grid {
       </svg>
     </button>
     <h1 class="site-title"><a href="index.html" aria-label="Go to Home">Adolfho Romero</a></h1>
+    <p class="site-kicker">Philosophy · Courses · Fieldwork</p>
   </header>
   <nav class="main-nav" aria-label="Primary">
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="publications.html" class="pubs-link">Publications</a></li>
-      <li><a href="teaching.html" class="teaching-link">Teaching</a></li>
+      <li><a href="teaching.html" class="teaching-link active" aria-current="page">Teaching</a></li>
       <!-- Added a new navigation item for the interactive discussion hub -->
       <li><a href="teaching-discussion-hub.html">Discussion Hub</a></li>
-      <li><a href="media.html" aria-current="page">Media & Public Engagement</a></li>
+      <li><a href="media.html">Media & Public Engagement</a></li>
       <!-- CV links to the CV page -->
       <li><a href="https://adolfhoromero.com/cv.html" class="cv-link" aria-label="Open CV page">CV</a></li>
     </ul>
@@ -4003,7 +4467,7 @@ main, .section, .hero, .page-actions, .tabbar, .years-grid, .course-card-grid {
 </main>
 
 <footer>
-  © 2025 Adolfho Romero · <a href="/cdn-cgi/l/email-protection#ea8b98d8dfd9d3aa898598848f8686c48f8e9f"><span class="__cf_email__" data-cfemail="99f8ebabacaaa0d9faf6ebf7fcf5f5b7fcfdec">[email&#160;protected]</span></a>
+  © 2026 Adolfho Romero · <a href="/cdn-cgi/l/email-protection#ea8b98d8dfd9d3aa898598848f8686c48f8e9f"><span class="__cf_email__" data-cfemail="99f8ebabacaaa0d9faf6ebf7fcf5f5b7fcfdec">[email&#160;protected]</span></a>
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
