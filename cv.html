@@ -8,7 +8,7 @@
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;family=Spectral:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&amp;family=Spectral:ital,wght@0,400;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet">
   <!-- Calendly widget style -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <style>
@@ -648,52 +648,11 @@
 <style>
 .visually-hidden{position:absolute!important;width:1px;height:1px;margin:-1px;border:0;padding:0;white-space:nowrap;clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden}
 </style>
-<link rel="stylesheet" href="site-header.css?v=20260718-2">
+<link rel="stylesheet" href="site-header.css?v=20260718-3">
 </head>
 <body>
 <!-- Skip link for accessibility -->
 <a class="skip-link" href="#main" style="position:absolute;left:-9999px;top:-9999px;background:#fff;padding:0.6rem 1rem;border-radius:10px;z-index:10000;">Skip to content</a>
-<script>
-(function(){
-  try {
-    if (window.__bannerFixInit) return;
-    window.__bannerFixInit = true;
-  } catch(e){}
-  
-    const darkToggle = document.querySelector('.dark-toggle');
-    function setAriaPressed() {
-      darkToggle.setAttribute('aria-pressed', document.documentElement.classList.contains('dark'));
-    }
-    function toggleDarkMode() {
-      const isDark = document.documentElement.classList.toggle('dark');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      setAriaPressed();
-    }
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
-    }
-    setAriaPressed();
-    darkToggle.addEventListener('click', toggleDarkMode);
-    darkToggle.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleDarkMode(); }
-    });
-
-    // Hide nav on scroll for mobile
-    let lastScrollTop = 0;
-    const nav = document.querySelector('.main-nav');
-    window.addEventListener('scroll', function() {
-      if (window.innerWidth <= 820) {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > lastScrollTop && scrollTop > 60) { nav.classList.add('hide-nav'); }
-        else { nav.classList.remove('hide-nav'); }
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-      } else { nav.classList.remove('hide-nav'); }
-    });
-
-    
-})();
-</script>
 <a id="top" style="position:absolute; top:0; left:0; width:1px; height:1px; overflow:hidden;"></a>
 <header class="site-header">
 <button aria-label="Toggle dark mode" aria-pressed="false" class="dark-toggle" tabindex="0" title="Toggle dark mode">
@@ -2234,6 +2193,5 @@
       });
     })();
   </script>
-  <script src="accessibility.js" defer></script>
 </body>
 </html>

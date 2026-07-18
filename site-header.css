@@ -73,6 +73,9 @@ body > header.site-header .site-title {
 }
 
 body > header.site-header .site-title a {
+  font: inherit !important;
+  letter-spacing: inherit !important;
+  text-transform: inherit !important;
   color: inherit !important;
   text-decoration: none !important;
 }
