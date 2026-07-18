@@ -21,6 +21,9 @@
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
 <!-- Core styles -->
 <style>
+    .skip-link{position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden}
+    .skip-link:focus{position:fixed; left:1rem; top:1rem; width:auto; height:auto; padding:0.5rem .75rem; background:#fff; color:#111827; border-radius:6px; z-index:9999; box-shadow:0 4px 12px rgba(0,0,0,.25)}
+
     :root {
       --background-top: #0f1624;
       --background-bottom: #1a2233;
@@ -706,6 +709,7 @@ footer a:hover, footer a:focus { color: var(--accent-gold); text-decoration: und
     </style>
   </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <div id="progress-bar"></div>
 <!-- Calendly badge widget -->
 <script async src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
@@ -878,7 +882,7 @@ footer a:hover, footer a:focus { color: var(--accent-gold); text-decoration: und
 </section>
 </main>
 <footer>
-    © 2025 Adolfho Romero · <a href="mailto:ar2539@cornell.edu">ar2539@cornell.edu</a>
+    © 2026 Adolfho Romero · <a href="mailto:ar2539@cornell.edu">ar2539@cornell.edu</a>
 </footer>
 <!-- Reveal cards on scroll -->
 <script>
@@ -1102,5 +1106,6 @@ footer a:hover, footer a:focus { color: var(--accent-gold); text-decoration: und
       });
     })();
   </script>
+  <script src="accessibility.js" defer></script>
 </body>
 </html>
