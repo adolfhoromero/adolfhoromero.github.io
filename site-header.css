@@ -15,6 +15,24 @@
   --site-safe-right: env(safe-area-inset-right, 0px);
 }
 
+body > #progress-bar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 0;
+  height: 4px !important;
+  z-index: 1000 !important;
+  pointer-events: none !important;
+  background: linear-gradient(
+    90deg,
+    var(--site-header-accent),
+    var(--site-header-gold)
+  ) !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  transition: width 0.2s ease-out !important;
+}
+
 body > header.site-header {
   box-sizing: border-box !important;
   min-height: calc(98px + var(--site-safe-top)) !important;
