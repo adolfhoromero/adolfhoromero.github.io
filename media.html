@@ -415,6 +415,7 @@ spacing:.02em; text-decoration:none; position:relative; isolation:isolate }
 .visually-hidden{position:absolute!important;width:1px;height:1px;margin:-1px;border:0;padding:0;white-
 space:nowrap;clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden}
 </style>
+  <link rel="stylesheet" href="site-header.css">
 </head>
 <body>
   <!-- Skip link for screen readers and keyboard users -->
@@ -422,7 +423,7 @@ space:nowrap;clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden}
   <!-- style moved to head -->
   <div id="progress-bar" style="width: 0%;"></div>
 
-  <header>
+  <header class="site-header">
     <button class="dark-toggle" tabindex="0" aria-pressed="false" aria-label="Toggle dark mode" title="Toggle dark 
 mode">
       <svg class="icon-sun-moon" viewBox="0 0 24 24">
@@ -431,10 +432,10 @@ mode">
 6.64l1.42-1.42"></path>
       </svg>
     </button>
-    <h1 class="site-title"><a href="index.html" aria-label="Go to Home">Adolfho Romero</a></h1>
+    <div class="site-title"><a href="index.html" aria-label="Go to Home">Adolfho Romero</a></div>
   </header>
 
-  <nav class="main-nav" aria-label="Primary">
+  <nav class="main-nav site-nav" aria-label="Primary">
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="publications.html" class="pubs-link">Publications</a></li>
@@ -443,7 +444,7 @@ mode">
       <li><a href="teaching-discussion-hub.html">Discussion Hub</a></li>
       <li><a href="media.html" aria-current="page">Media &amp; Public Engagement</a></li>
       <!-- CV links to the CV page -->
-      <li><a href="https://adolfhoromero.com/cv.html" class="cv-link" aria-label="Open CV page">CV</a></li>
+      <li><a href="cv.html" class="cv-link" aria-label="Open CV page">CV</a></li>
     </ul>
   </nav>
 

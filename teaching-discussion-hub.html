@@ -122,16 +122,28 @@
 <style>
 .visually-hidden{position:absolute!important;width:1px;height:1px;margin:-1px;border:0;padding:0;white-space:nowrap;clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden}
 </style>
+<link rel="stylesheet" href="site-header.css">
 </head>
 <body>
-  <header>
-    <nav class="nav">
-      <h1 class="site-title"><a href="/">Adolfho Romero</a></h1>
-      <button id="themeToggle" class="dark-toggle" aria-label="Toggle dark mode" title="Theme">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M12 3a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0V4a1 1 0 0 1 1-1Zm0 14a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm8-5a1 1 0 0 1 1 1h2a1 1 0 1 1 0 2h-2a1 1 0 1 1 0-2h2a1 1 0 1 1 0-2h-2a1 1 0 1 1 0-2h2a1 1 0 1 1 0-2h-2a1 1 0 1 1 0-2h2a1 1 0 0 1-1-1"/></svg>
-      </button>
-    </nav>
+  <header class="site-header">
+    <button id="themeToggle" class="dark-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">
+      <svg aria-hidden="true" class="icon-sun-moon" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="5.5" stroke-width="2"></circle>
+        <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M17.36 17.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M17.36 6.64l1.42-1.42" fill="none" stroke-width="2"></path>
+      </svg>
+    </button>
+    <div class="site-title"><a href="index.html" aria-label="Go to Home">Adolfho Romero</a></div>
   </header>
+  <nav class="main-nav site-nav" aria-label="Primary">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a class="pubs-link" href="publications.html">Publications</a></li>
+      <li><a class="teaching-link" href="teaching.html">Teaching</a></li>
+      <li><a href="teaching-discussion-hub.html" aria-current="page">Discussion Hub</a></li>
+      <li><a href="media.html">Media &amp; Public Engagement</a></li>
+      <li><a class="cv-link" href="cv.html">CV</a></li>
+    </ul>
+  </nav>
 
   <main>
     <section class="hero" aria-label="Course overview">

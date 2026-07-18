@@ -3477,11 +3477,12 @@ footer a::after{ height:1.5px; background:var(--accent-gold-solid); }
 }
 
   </style>
+  <link rel="stylesheet" href="site-header.css">
 </head>
 
 <body>
   <div id="progress-bar"></div>
-<header>
+<header class="site-header">
     <button class="dark-toggle" tabindex="0" aria-pressed="false" aria-label="Toggle dark mode" title="Toggle dark mode">
       <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
         <circle cx="12" cy="12" r="5.5" stroke-width="2"/>
@@ -3497,19 +3498,18 @@ footer a::after{ height:1.5px; background:var(--accent-gold-solid); }
         </g>
       </svg>
     </button>
-    <h1 class="site-title"><a href="index.html" aria-label="Go to Home">Adolfho Romero</a></h1>
-    <p class="site-kicker">Philosophy · Courses · Fieldwork</p>
+    <div class="site-title"><a href="index.html" aria-label="Go to Home">Adolfho Romero</a></div>
   </header>
-  <nav class="main-nav" aria-label="Primary">
+  <nav class="main-nav site-nav" aria-label="Primary">
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="publications.html" class="pubs-link">Publications</a></li>
-      <li><a href="teaching.html" class="teaching-link active" aria-current="page">Teaching</a></li>
+      <li><a href="teaching.html" class="teaching-link" aria-current="page">Teaching</a></li>
       <!-- Added a new navigation item for the interactive discussion hub -->
       <li><a href="teaching-discussion-hub.html">Discussion Hub</a></li>
       <li><a href="media.html">Media & Public Engagement</a></li>
       <!-- CV links to the CV page -->
-      <li><a href="https://adolfhoromero.com/cv.html" class="cv-link" aria-label="Open CV page">CV</a></li>
+      <li><a href="cv.html" class="cv-link" aria-label="Open CV page">CV</a></li>
     </ul>
   </nav>
 <main id="main">
