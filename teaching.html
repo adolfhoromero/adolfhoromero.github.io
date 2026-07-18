@@ -18,12 +18,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <!-- Early script to ensure mobile scrolling is not blocked by passive event listeners -->
-  <script>
-    // Add passive touch and wheel listeners early to override any preventDefault() usage
-    window.addEventListener('touchmove', function(){}, { passive: true });
-    window.addEventListener('wheel', function(){}, { passive: true });
-  </script>
   <title>Adolfho Romero – Teaching</title>
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -88,7 +82,7 @@
       color:var(--text-main);
       line-height:1.7;
       transition:var(--transition-smooth);
-      overflow-x:hidden;
+      overflow-x:clip;
     }
 
     /* ——  CONSISTENT HEADER (MATCHES HOME PAGE)  —— */
@@ -2553,10 +2547,6 @@ nav.main-nav a.cv-link {
     <!-- Mobile UX fixes: hide bottom tab highlight, hide Calendly badge, prevent page bounce on mobile -->
     <style>
 
-      /* Prevent overscroll bounce on iOS and other touch devices */
-      html, body {
-        overscroll-behavior: none;
-      }
       /* Remove the white capsule highlight behind the active bottom tab */
       .bottom-tabs .tab-link[aria-current="page"]::before {
         display: none !important;
@@ -2776,7 +2766,7 @@ nav.main-nav a.cv-link {
 </style>
 <style id="overflow-fixes-2025-09-28">
 /* ===== Mobile overflow & wrap fixes (teaching page) ===== */
-html, body { overflow-x: hidden; }
+html, body { overflow-x: clip; }
 
 /* Never let media exceed viewport width */
 img, video, canvas, svg, iframe { max-width: 100%; height: auto; display: block; }
@@ -2784,7 +2774,7 @@ img, video, canvas, svg, iframe { max-width: 100%; height: auto; display: block;
 /* Ensure main layout blocks cannot exceed 100% width on small screens */
 main, .section, .hero, .page-actions, .tabbar, .years-grid, .course-card-grid { 
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* Tab bar & filter clusters wrap instead of pushing the page wider */
@@ -2843,9 +2833,13 @@ main, .section, .hero, .page-actions, .tabbar, .years-grid, .course-card-grid {
     .photo-gallery figcaption {
       touch-action: pan-y !important;
     }
-    @media (pointer: coarse) {
-      .photo-gallery figure,
-      .photo-gallery img { pointer-events: none !important; }
+    .photo-gallery img {
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+    .photo-gallery figure {
+      overflow: clip;
     }
     .book-gallery,
     .feedback-container {
@@ -2883,10 +2877,14 @@ main, .section, .hero, .page-actions, .tabbar, .years-grid, .course-card-grid {
 
     /* Use dynamic viewport height to avoid 100vh bugs on mobile browsers.
        These rules override earlier definitions that set min-height/height to 100vh. */
-    html, body {
+    html {
       min-height: 100dvh !important;
       -webkit-overflow-scrolling: touch;
       overflow-y: auto;
+    }
+    body {
+      min-height: 100dvh !important;
+      overflow-y: visible;
     }
     /* Ensure full-screen elements relying on 100vh also adapt to dynamic viewport height */
     #teaching-map.expanded {
@@ -2954,41 +2952,6 @@ main, .section, .hero, .page-actions, .tabbar, .years-grid, .course-card-grid {
   }
 }
 </style>
-
-<!-- ══ MOBILE SCROLL JS SAFETY NET ════════════════════════════════════════
-     Belt-and-suspenders: even if a figure somehow still catches a touch,
-     this forces window.scrollBy to fire.  passive:true so it never blocks
-     the browser's own scroll chain.
-     ════════════════════════════════════════════════════════════════════ -->
-<script>
-(function () {
-  function attachGalleryScrollFix() {
-    document.querySelectorAll('.photo-gallery').forEach(function (gallery) {
-      var startY = 0, lastY = 0, moving = false;
-      gallery.addEventListener('touchstart', function (e) {
-        startY = lastY = e.touches[0].clientY;
-        moving = false;
-      }, { passive: true, capture: true });
-      gallery.addEventListener('touchmove', function (e) {
-        if (e.touches.length !== 1) return;
-        var y = e.touches[0].clientY;
-        var dy = lastY - y;
-        lastY = y;
-        if (!moving) {
-          if (Math.abs(startY - y) < 4) return;
-          moving = true;
-        }
-        window.scrollBy(0, dy);
-      }, { passive: true, capture: true });
-    });
-  }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', attachGalleryScrollFix);
-  } else {
-    attachGalleryScrollFix();
-  }
-})();
-</script>
 
 <style id="bottom-tabs-fix">
 /* Squeeze 7 tabs to fit any phone width */
