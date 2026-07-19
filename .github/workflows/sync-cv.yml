@@ -1,0 +1,42 @@
+name: Sync CV from Google Docs
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 9 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-cv-from-google-doc
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out website
+        uses: actions/checkout@v4
+
+      - name: Export current CV from Google Docs
+        env:
+          GOOGLE_DOC_ID: 1bK143TG0_YbgNQ7SCKCYTpCSLOV5KE8ftiCJRaR5Edw
+        run: |
+          curl --fail --location --retry 3 \
+            "https://docs.google.com/document/d/${GOOGLE_DOC_ID}/export?format=pdf" \
+            --output adolfhoromerocv.pdf
+          test "$(head -c 5 adolfhoromerocv.pdf)" = "%PDF-"
+
+      - name: Commit updated PDF
+        run: |
+          if git diff --quiet -- adolfhoromerocv.pdf; then
+            echo "The published CV is already current."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add adolfhoromerocv.pdf
+          git commit -m "Sync CV from Google Docs"
+          git push
