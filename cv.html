@@ -1,2239 +1,790 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1" name="viewport">
-<title>Adolfho Romero – CV</title>
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect">
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;family=Spectral:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap" rel="stylesheet">
-  <!-- Calendly widget style -->
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<style>
-    /* ===== Theme Variables (match your site) ===== */
-    :root{ --sat:0px; --sar:0px; --sab:0px;
-      --background-top:  #f7f8fa;
-      --background-bottom:#e4e8ef;
-      --nav-bg:          #22304a;
-      --nav-text:        #ffffff;
-      --card-bg:         #ffffff;
-      --card-shadow:     0 6px 28px #2e3a5030;
-      --card-border:     #29539b;
-      --text-main:       #232d41;
-      --heading-color:   #212c3e;
-      --accent:          #29539b;
-      --accent-2:       #3f63b7;
-      --accent-gold:     #ffcc00;
-      --muted:           #6b7a99;
-      --max-width:       1100px;
-      --radius-xl:       18px;
-      --radius-lg:       14px;
-      --radius-md:       10px;
-      --font-body:       'Poppins', sans-serif;
-      --font-heading:    'Spectral', serif;
-    }
-    .dark{
-      --background-top:  #0f1115;
-      --background-bottom:#161a22;
-      --nav-bg:          #0d1424;
-      --nav-text:        #e5e7eb;
-      --card-bg:         #121a2a;
-      --card-shadow:     0 6px 28px #0b122430;
-      --card-border:     #3b82f6;
-      --text-main:       #d9e0ee;
-      --heading-color:   #f9fafb;
-      --accent:          #3b82f6;
-      --accent-2:       #60a5fa;
-      --accent-gold:     #fbbf24;
-      --muted:           #9aa6c2;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Adolfho Romero's academic curriculum vitae: labor, migration, oral history, and working-class power.">
+  <title>Adolfho Romero – Curriculum Vitae</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Spectral:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --nav: #0d1728;
+      --nav-2: #162744;
+      --paper: #f5f7fb;
+      --surface: #ffffff;
+      --surface-2: #edf2f9;
+      --text: #18263d;
+      --muted: #5d6d83;
+      --blue: #2257c7;
+      --blue-2: #3c76e8;
+      --gold: #d6a63b;
+      --gold-2: #f0ca6c;
+      --line: rgba(24, 38, 61, .11);
+      --shadow: 0 16px 44px rgba(20, 37, 66, .09);
+      --shadow-lg: 0 28px 70px rgba(11, 25, 48, .16);
+      --max: 1180px;
+      --radius: 18px;
+      --font-body: "Poppins", sans-serif;
+      --font-heading: "Spectral", serif;
     }
 
-    *,*::before,*::after{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
-    body{
-      margin:0;
-      font-family:var(--font-body);
-      background:linear-gradient(135deg,var(--background-top),var(--background-bottom));
-      color:var(--text-main);
-      line-height:1.6;
-      min-height:100vh;
-      transition:background .35s,color .35s;
-    }
-    a{ color:var(--accent); text-decoration:none; transition:color .2s, box-shadow .25s, background .25s; }
-    a:hover, a:focus{ color:var(--accent-gold); outline:0; }
-
-    /* ===== Header and Nav copied to match site ===== */
-    header{
-      background:var(--nav-bg);
-      color:var(--nav-text);
-      text-align:center;
-      padding:1.6rem 1rem 0.6rem;
-      box-shadow:0 4px 22px rgba(34,48,74,.47);
-      position:relative;
-      z-index:100;
-      transition:background .35s,color .35s;
-    }
-    .site-title{
-      font-family:var(--font-heading);
-      font-size:2.8rem;
-      font-weight:700;
-      margin:0;
-      color:var(--nav-text);
-    }
-    .site-title a{ color:inherit; }
-    .dark-toggle{
-      position:absolute; top:0.9rem; right:1rem;
-      width:2.4rem; height:2.4rem; display:grid; place-items:center;
-      background:none; border:0; cursor:pointer; z-index:200;
-    }
-    .dark-toggle svg{ width:2.1rem; height:2.1rem; fill:var(--accent-gold); stroke:var(--accent); }
-
-    nav.main-nav{
-      position:sticky; top:0; z-index:40;
-      background:var(--nav-bg);
-      box-shadow:inset 0 -1px 0 #3a496f;
-      font-family:var(--font-heading);
-    }
-    nav.main-nav ul{
-      display:flex; gap:10px; list-style:none; margin:0; padding:8px 8px;
-      overflow-x:auto; -webkit-overflow-scrolling:touch; white-space:nowrap;
-    }
-    nav.main-nav a{
-      color:var(--nav-text);
-      font-weight:700; letter-spacing:.12em; text-transform:uppercase;
-      padding:14px 22px; min-width:110px; display:inline-flex; align-items:center; gap:7px;
-      position:relative;
-    }
-    nav.main-nav a::after{
-      content:''; position:absolute; left:18px; right:18px; bottom:6px; height:3.5px; border-radius:2px;
-      background:linear-gradient(90deg,var(--accent),var(--accent-gold)); width:0; opacity:0; transition:width .25s, opacity .22s;
-    }
-    nav.main-nav a:hover{ color:var(--accent-gold); background:rgba(255,255,255,.05); }
-    nav.main-nav a:hover::after{ width:calc(100% - 36px); opacity:.85; }
-    nav.main-nav a[aria-current="page"]{ color:var(--accent-gold); }
-    nav.main-nav a[aria-current="page"]::after{ width:calc(100% - 36px); opacity:.85; }
-
-    main{ max-width:var(--max-width); margin:1rem auto 3rem; padding:0 1rem; }
-
-    /* ===== Page actions ===== */
-    .page-actions{
-      display:flex; gap:12px; justify-content:flex-end; align-items:center;
-      padding:0.8rem 0 0;
-      flex-wrap:wrap;
-    }
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px; font-weight:800;
-      border-radius:14px; border:2px solid #2d3955; padding:14px 20px; font-size:1.06rem;
-      background:rgba(255,255,255,.08); color:var(--nav-text);
-      backdrop-filter:saturate(1.2) blur(2px);
-      transition:transform .06s, filter .2s, box-shadow .2s;
-      box-shadow: 0 6px 22px rgba(17,24,39,.18);
-    }
-    .btn:hover{ filter:brightness(1.08); transform:translateY(-1px); box-shadow: 0 10px 28px rgba(17,24,39,.22); }
-    .btn.gold{ background:linear-gradient(90deg,var(--accent),var(--accent-gold)); border-color:transparent; color:#fff; }
-    .btn.accent{ background:linear-gradient(90deg, var(--accent), var(--accent-2)); border-color:transparent; color:#ffffff; }
-    @media (max-width: 540px){
-      .page-actions{ justify-content:stretch; }
-      .page-actions .btn{ flex:1 1 100%; font-size:1.02rem; padding:14px 18px; }
+    .dark {
+      --paper: #0e1420;
+      --surface: #141e2e;
+      --surface-2: #19263a;
+      --text: #edf3fc;
+      --muted: #aab8cc;
+      --line: rgba(183, 205, 235, .13);
+      --shadow: 0 16px 44px rgba(0, 0, 0, .27);
+      --shadow-lg: 0 28px 70px rgba(0, 0, 0, .42);
+      --blue: #79a3ff;
+      --blue-2: #9bb9ff;
+      --gold: #e2b958;
+      --gold-2: #f1d58b;
     }
 
-    
-    /* ===== Tabs: big, colorful, sticky (high-contrast) ===== */
-    .tabbar{
-      position:static; top:auto; z-index:auto;
-      margin:0.8rem 0 1rem; padding:0.6rem;
-      border-radius:var(--radius-xl);
-      background:linear-gradient(135deg,rgba(41,83,155,.08),rgba(255,204,0,.10));
-      box-shadow:0 2px 8px rgba(41,83,155,.06);
-      display:flex; gap:0.6rem; align-items:center; flex-wrap:wrap;
-    }
-    .tabbar [role="tab"]{
-      --ring: 0 0 0 0 rgba(41,83,155,.0);
-      appearance:none;
-      border:1px solid rgba(34,48,74,.25);
-      background:#ffffff;
-      color:var(--text-main);
-      font-weight:800; letter-spacing:.03em;
-      padding:.65rem 1rem; border-radius:999px; cursor:pointer;
-      display:inline-flex; align-items:center; gap:.55rem;
-      box-shadow:var(--ring);
-      transition:background .25s, border-color .25s, transform .06s, box-shadow .2s, color .2s;
-      user-select:none;
-      /* Allow taps to trigger click immediately on touch devices */
-      touch-action: manipulation;
-    }
-    .dark .tabbar [role="tab"]{
-      background:#1a2235;
-      border-color:#334155;
-      color:#e5e7eb;
-    }
-    .tabbar [role="tab"]:hover{ transform:translateY(-1px); background:rgba(41,83,155,.18); }
-    .dark .tabbar [role="tab"]:hover{ background:rgba(59,130,246,.22); }
-    .tabbar [role="tab"][aria-selected="true"]{
-      border-color:transparent;
-      background:linear-gradient(90deg,var(--accent),var(--accent-gold));
-      color:#ffffff;
-      text-shadow:0 1px 0 rgba(0,0,0,.35);
-      box-shadow:0 0 0 6px rgba(41,83,155,.12);
-    }
-    .count{ margin-left:auto; font-weight:700; color:var(--text-main); }
-
-
-    .searchbar{
-      margin-left:auto; display:flex; gap:0.6rem; align-items:center;
-      padding:.35rem 0.6rem; border:1px solid rgba(41,83,155,.25); border-radius:999px;
-      background:rgba(255,255,255,.5);
-    }
-    .dark .searchbar{ background:rgba(0,0,0,.15); }
-    .searchbar input{
-      width:220px; background:transparent; border:0; outline:0; color:var(--text-main);
-    }
-    @media (max-width:840px){ .searchbar input{ width:160px; } }
-
-    /* ===== Sections ===== */
-    h2{
-      font-family:var(--font-heading); font-weight:600; font-size:2rem; color:var(--heading-color);
-      margin:1.4rem 0 0.8rem;
-    }
-    .section{
-      background:var(--card-bg);
-      border-left:5px solid var(--card-border);
-      border-radius:var(--radius-xl);
-      box-shadow:var(--card-shadow);
-      padding:1.1rem 1rem;
-      margin:1rem 0 1.4rem;
-      transition:transform .18s, background .35s, color .35s;
-    
-      scroll-margin-top: 110px;
-    }
-    .cv-item{
-      position:relative;
-      overflow:hidden;
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(41,83,155,.14);
-      border-radius:var(--radius-lg);
-      padding:12px;
-      margin-top:12px;
-      backdrop-filter:blur(6px) saturate(1.2);
-      box-shadow:0 4px 12px rgba(0,0,0,.06);
-      transition:transform .2s ease, box-shadow .2s ease;
-    }
-    .dark .cv-item{
-      background:rgba(255,255,255,.04);
-      border-color:rgba(59,130,246,.18);
-    }
-    .cv-item:hover{
-      transform:translateY(-3px);
-      box-shadow:0 10px 24px rgba(0,0,0,.15);
-    }
-.cv-head{ display:flex; flex-direction:column; align-items:flex-start; gap:4px; }
-    .cv-role{ font-weight:800; letter-spacing:.2px; }
-    .cv-meta{ color:var(--muted); font-size:.95rem; }
-    details{ margin-top:8px; }
-    summary{ cursor:pointer; font-weight:700; list-style:none; }
-    summary::-webkit-details-marker{ display:none; }
-
-    footer{
-      text-align:center; padding:2.2rem 1rem; color:#adadad; border-top:1px solid #2d3955;
-      margin-top:2rem; background:var(--nav-bg);
-    }
-  
-    /* ===== Small fixes ===== */
-    nav.main-nav { transition: transform .25s ease; will-change: transform; }
-    nav.main-nav.hide-nav { transform: translateY(-100%); }
-    .pdf-shell { border:1px solid rgba(41,83,155,.18); border-radius:12px; overflow:hidden; background:var(--card-bg); }
-    @media (max-width: 820px){
-      .pdf-shell embed { height: 70vh; }
-    }
-    @media (prefers-reduced-motion: reduce){
-      * { transition: none !important; animation: none !important; }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 10% 4%, rgba(34, 87, 199, .08), transparent 25rem),
+        radial-gradient(circle at 92% 12%, rgba(214, 166, 59, .09), transparent 27rem),
+        var(--paper);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.65;
+      transition: background .3s ease, color .3s ease;
     }
 
-    /* ===== Custom CV page layout ===== */
-    /* A responsive two-column grid for the CV filters and content. The sidebar becomes sticky on wider screens. */
-    .cv-grid{
-      display:flex;
-      flex-direction:column;
-      gap:2rem;
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .skip-link {
+      position: fixed;
+      top: -100px;
+      left: 1rem;
+      z-index: 1000;
+      padding: .7rem 1rem;
+      background: #fff;
+      color: #111;
+      border-radius: 8px;
     }
-    .cv-sidebar{
-      background:linear-gradient(135deg,rgba(41,83,155,.05),rgba(255,204,0,.07));
-      padding:1rem;
-      border-radius:var(--radius-xl);
-      box-shadow:0 2px 8px rgba(41,83,155,.06);
-    }
-    /* The tab list within the sidebar stacks vertically. */
-    .cv-sidebar .tabbar{
-      display:flex;
-      flex-direction:column;
-      gap:0.4rem;
-    }
-    .cv-sidebar .tabbar [role="tab"]{
-      width:100%;
-    }
-    .cv-sidebar .searchbar{
-      margin-top:1rem;
-      width:100%;
-    }
-    .cv-content{
-      flex:1 1 auto;
-    }
-    @media (min-width:950px){
-      .cv-grid{ flex-direction:row; align-items:flex-start; }
-      .cv-sidebar{
-        flex:0 0 260px;
-        position:sticky;
-        top:110px;
-        max-height:calc(100vh - 130px);
-        overflow-y:auto;
-      }
-    }
-    /* Scroll progress indicator fixed at top of viewport */
-    #progress-bar{
-      position:fixed;
-      top:0;
-      left:0;
-      height:4px;
-      width:0%;
-      background:linear-gradient(90deg,var(--accent),var(--accent-gold));
-      z-index:1000;
-      transition:width .2s ease-out;
-    }
+    .skip-link:focus { top: 1rem; }
 
-
-    /* Floating back-to-top button */
-    #back-to-top{
-      position:fixed;
-      bottom:100px;
-      right:32px;
-      width:48px;
-      height:48px;
-      border-radius:50%;
-      background:linear-gradient(90deg,var(--accent),var(--accent-gold));
-      color:#fff;
-      border:none;
-      display:none;
-      align-items:center;
-      justify-content:center;
-      font-size:1.4rem;
-      font-weight:700;
-      box-shadow:0 4px 14px rgba(0,0,0,.18);
-      cursor:pointer;
-      z-index:1000;
-    }
-    #back-to-top:hover{
-      filter:brightness(1.1);
-      transform:translateY(-2px);
-    }
-
-  </style>
-<!-- Mobile bottom tabs + hide top nav on phones -->
-<style>
-    :root{ --bottom-bar-h:54px; --bottom-offset:12px; }
-    @media (min-width:821px){ :root{ --bottom-bar-h:0px; --bottom-offset:0px; } }
-
-    /* Keep content above the bottom bar */
-    body{ padding-bottom: calc(var(--bottom-bar-h) + var(--bottom-offset) + var(--sab)); }
-
-    /* Hide the sticky top nav on phones */
-    @media (max-width: 820px){
-      nav.main-nav{ display:none !important; }
-      header{ padding-bottom: 0.4rem !important; }
-      main{ margin-top: 1rem !important; }
-    }
-
-    /* Bottom tabs styling */
-    .bottom-tabs{
-      position:fixed; left:8px; right:8px;
-      bottom: calc(var(--bottom-offset) + var(--sab));
-      height: var(--bottom-bar-h);
-      background: rgba(17,24,39,.96);
-      border-top: 1px solid rgba(255,255,255,.12);
-      backdrop-filter: blur(10px);
-      border-radius: 14px;
-      box-shadow: 0 10px 24px rgba(0,0,0,.28);
-      z-index: 2147483647;
-      pointer-events: auto;
-      touch-action: pan-y;
-    }
-    @media (min-width:821px){ .bottom-tabs{ display:none } }
-    .tabs-row{ display:grid; grid-template-columns:repeat(5,1fr); height:100% }
-    .tab-link{ display:grid; place-items:center; gap:2px; color:#e5e7eb; font-size:0.7rem; font-weight:600; letter-spacing:.02em; text-decoration:none; position:relative; isolation:isolate }
-    .tab-link .ico{ width:20px; height:20px; opacity:.94 }
-    .tab-link[aria-current="page"]{ color:#fbbf24 }
-    .tab-link[aria-current="page"]::before{
-      content:''; position:absolute; inset:6px 10px;
-      background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14);
-      border-radius:999px; z-index:-1; box-shadow:0 8px 22px rgba(0,0,0,.25);
-    }
-  </style>
-<style>/* === Banner overrides from index-banner-fix.html === */
-/* HEADER */
-    header {
-      background: var(--nav-bg);
-      color: var(--nav-text);
+    .site-header {
+      position: relative;
+      padding: 1.4rem 1rem .8rem;
+      background: linear-gradient(135deg, var(--nav), var(--nav-2));
+      color: #fff;
       text-align: center;
-      padding: 1.5rem 1rem 0;
-      box-shadow: 0 4px 22px rgba(34,48,74,0.47);
-      position: relative; z-index: 100;
-      transition: background 0.4s, color 0.4s;
-      user-select: none;
     }
     .site-title {
-      font-family: 'Spectral', serif;
-      font-size: 2.95rem;
-      font-weight: 700;
-      color: var(--nav-text);
-      transition: color 0.4s;
+      margin: 0;
+      font: 700 clamp(2.2rem, 4vw, 2.95rem)/1 var(--font-heading);
     }
     .site-title a { color: inherit; text-decoration: none; }
-    .site-title a:focus, .site-title a:hover { opacity: .9; }
-
-    .dark-toggle {
+    .theme-toggle {
       position: absolute;
-      top: 1rem; right: 1rem;
-      width: 2.3rem; height: 2.3rem;
+      top: 1.15rem;
+      right: 1.25rem;
+      display: grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 50%;
+      background: rgba(255,255,255,.08);
+      color: #fff;
+      cursor: pointer;
+      font-size: 1.15rem;
+    }
+    .theme-toggle:hover { background: rgba(255,255,255,.15); }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13, 23, 40, .96);
+      box-shadow: 0 1px 0 rgba(255,255,255,.08), 0 8px 24px rgba(0,0,0,.12);
+      backdrop-filter: blur(16px);
+    }
+    .site-nav ul {
       display: flex;
+      gap: .25rem;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: .45rem 1rem;
+      overflow-x: auto;
+      list-style: none;
+      scrollbar-width: none;
+    }
+    .site-nav ul::-webkit-scrollbar { display: none; }
+    .site-nav a {
+      display: block;
+      padding: .75rem .9rem;
+      border-radius: 9px;
+      color: #fff;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .site-nav a:hover { background: rgba(255,255,255,.07); color: var(--gold-2); }
+    .site-nav a[aria-current="page"] {
+      background: linear-gradient(100deg, #164fb8, #a77f26);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.12);
+    }
+
+    main {
+      width: min(calc(100% - 2rem), var(--max));
+      margin: 0 auto;
+      padding: 3.5rem 0 5rem;
+    }
+
+    .dossier-hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(2rem, 6vw, 4.5rem);
+      border-radius: 28px;
+      background:
+        linear-gradient(120deg, rgba(9, 21, 41, .98), rgba(19, 50, 95, .95)),
+        var(--nav);
+      color: #fff;
+      box-shadow: var(--shadow-lg);
+      isolation: isolate;
+    }
+    .dossier-hero::before {
+      content: "";
+      position: absolute;
+      width: 32rem;
+      height: 32rem;
+      top: -18rem;
+      right: -8rem;
+      border: 1px solid rgba(240, 202, 108, .32);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 4rem rgba(34, 87, 199, .08),
+        0 0 0 8rem rgba(214, 166, 59, .05);
+      z-index: -1;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      margin-bottom: 1.2rem;
+      color: var(--gold-2);
+      font-weight: 800;
+      font-size: .78rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 2rem;
+      height: 2px;
+      background: currentColor;
+    }
+    .dossier-hero h1 {
+      max-width: 800px;
+      margin: 0;
+      font: 700 clamp(3rem, 8vw, 6.2rem)/.95 var(--font-heading);
+      letter-spacing: -.035em;
+    }
+    .dossier-hero .lede {
+      max-width: 760px;
+      margin: 1.5rem 0 0;
+      color: #dbe6f6;
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+    }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .65rem 1.4rem;
+      margin: 1.8rem 0 0;
+      color: #b9c8de;
+      font-size: .9rem;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin-top: 2rem;
+    }
+    .btn {
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      background: none;
-      border: none;
+      min-height: 48px;
+      padding: .75rem 1.15rem;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 11px;
+      font: 700 .92rem/1 var(--font-body);
+      text-decoration: none;
       cursor: pointer;
-      z-index: 200;
-      outline: none;
-      transition: filter 0.3s;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
     }
-    .dark-toggle svg { width: 2.1rem; height: 2.1rem; display: block; }
-    .dark-toggle .icon-sun-moon,
-    .dark .dark-toggle .icon-sun-moon { fill: var(--accent-gold); stroke: var(--accent); }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: linear-gradient(100deg, #2863d8, #1c4da9);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(20, 72, 170, .35);
+    }
+    .btn-gold {
+      background: linear-gradient(100deg, #e4b957, #bf8e28);
+      color: #172238;
+      border-color: transparent;
+    }
+    .btn-quiet { background: rgba(255,255,255,.07); color: #fff; }
 
-    /* NAV */
-    nav.main-nav {
-      position: sticky; top: 0; width: 100%; z-index: 40;
-      background: var(--nav-bg);
-      box-shadow: inset 0 -1px 0 #3a496f;
-      font-family: 'Spectral', serif;
-      transition: background 0.4s, color 0.4s, top 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+    .section {
+      margin-top: 4.5rem;
+      scroll-margin-top: 5rem;
     }
-    .hide-nav { top: -65px; }
-    @media (min-width: 821px) { .hide-nav { top: 0 !important; } }
-    nav.main-nav ul {
-      display: flex; justify-content: flex-start; gap: 10px;
-      list-style: none; max-width: 100vw; margin: 0 auto; padding: 8px 0;
-      overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap;
+    .section-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: end;
+      gap: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--line);
     }
-    nav.main-nav a {
-      position: relative; font-size: 1.15rem; min-width: 110px; padding: 14px 22px; flex-shrink: 0;
-      font-weight: 700; text-transform: uppercase; letter-spacing: .12em;
-      color: var(--nav-text); text-shadow: 0 1px 2px rgba(0,0,0,0.4);
-      background: none; border: none; outline: none; box-shadow: none;
-      transition: color 0.4s, background 0.4s;
+    .section-kicker {
+      margin: 0 0 .25rem;
+      color: var(--blue);
+      font-weight: 800;
+      font-size: .78rem;
+      letter-spacing: .13em;
+      text-transform: uppercase;
     }
-    nav.main-nav a::after {
-      content: '';
-      position: absolute; left: 18px; right: 18px; bottom: 6px; height: 3.5px; border-radius: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-gold));
-      width: 0; opacity: 0; transition: width .26s, opacity .22s;
+    .section-heading h2 {
+      margin: 0;
+      font: 700 clamp(2rem, 4vw, 3rem)/1.05 var(--font-heading);
+      letter-spacing: -.02em;
     }
-    nav.main-nav a:hover, nav.main-nav a:focus { color: var(--accent-gold); background: rgba(255,255,255,0.04); box-shadow: 0 0 6px 1.5px var(--accent-gold, #ffcc00); }
-    nav.main-nav a:hover::after, nav.main-nav a:focus::after { width: calc(100% - 36px); opacity: .82; }
+    .section-heading p {
+      max-width: 550px;
+      margin: .6rem 0 0;
+      color: var(--muted);
+    }
+    .text-link {
+      color: var(--blue);
+      font-weight: 700;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
 
-    nav.main-nav a.cv-link {
-      background: linear-gradient(90deg, var(--accent), var(--accent-gold));
-      color: #fff !important; border-radius: 4px; padding: 14px 22px; font-weight: 700;
-      box-shadow: 0 2px 8px rgba(41,83,155,0.09);
-      transition: filter .2s, box-shadow .2s, color .2s, background .2s;
+    .now-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1rem;
+      margin-top: 1.4rem;
     }
-    nav.main-nav a.cv-link:hover, nav.main-nav a.cv-link:focus { filter: brightness(1.07) saturate(1.12); box-shadow: 0 8px 22px rgba(41,83,155,0.19); color: var(--nav-text) !important; }
-    @media (max-width: 600px) { nav.main-nav a { font-size: 1.05rem; padding: 12px 16px; min-width: 88px; } }
+    .now-card {
+      grid-column: span 6;
+      position: relative;
+      min-height: 230px;
+      padding: 1.6rem;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .now-card:first-child { grid-column: span 7; }
+    .now-card:nth-child(2) { grid-column: span 5; }
+    .now-card::after {
+      content: attr(data-index);
+      position: absolute;
+      right: 1.1rem;
+      bottom: -.5rem;
+      color: rgba(34, 87, 199, .08);
+      font: 700 6rem/1 var(--font-heading);
+    }
+    .now-card .label {
+      color: var(--gold);
+      font-weight: 800;
+      font-size: .74rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .now-card h3 {
+      position: relative;
+      z-index: 1;
+      margin: .65rem 0;
+      font: 700 1.45rem/1.2 var(--font-heading);
+    }
+    .now-card p {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      color: var(--muted);
+      font-size: .94rem;
+    }
 
-    </style>
-    <style>
-      /* Unified bottom navigation design across all pages */
-      :root{ --bottom-bar-h:60px; --bottom-offset:14px; }
-      .bottom-tabs{
-        background: rgba(22,33,54,.92);
-        border-top: 1px solid rgba(255,255,255,.15);
-        backdrop-filter: blur(12px);
+    .timeline {
+      position: relative;
+      margin-top: 1.7rem;
+      padding-left: 2rem;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: .8rem;
+      bottom: .8rem;
+      left: .45rem;
+      width: 2px;
+      background: linear-gradient(var(--blue), var(--gold));
+    }
+    .milestone {
+      position: relative;
+      display: grid;
+      grid-template-columns: 110px minmax(0, 1fr);
+      gap: 1.2rem;
+      padding: 0 0 1.7rem;
+    }
+    .milestone:last-child { padding-bottom: 0; }
+    .milestone::before {
+      content: "";
+      position: absolute;
+      top: .55rem;
+      left: -1.92rem;
+      width: 13px;
+      height: 13px;
+      border: 3px solid var(--paper);
+      border-radius: 50%;
+      background: var(--blue);
+      box-shadow: 0 0 0 1px var(--blue);
+    }
+    .milestone:last-child::before { background: var(--gold); box-shadow: 0 0 0 1px var(--gold); }
+    .milestone time {
+      color: var(--blue);
+      font-weight: 800;
+      font-size: .86rem;
+    }
+    .milestone h3 {
+      margin: 0 0 .25rem;
+      font: 700 1.18rem/1.2 var(--font-heading);
+    }
+    .milestone p { margin: 0; color: var(--muted); font-size: .92rem; }
+
+    .path-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.4rem;
+    }
+    .path-card {
+      display: flex;
+      flex-direction: column;
+      padding: 1.6rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .path-number {
+      color: var(--gold);
+      font: 700 .85rem/1 var(--font-heading);
+      letter-spacing: .1em;
+    }
+    .path-card h3 {
+      margin: .55rem 0 .8rem;
+      font: 700 1.55rem/1.15 var(--font-heading);
+    }
+    .path-card ul {
+      display: grid;
+      gap: .7rem;
+      margin: 0 0 1.4rem;
+      padding: 0;
+      list-style: none;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+    .path-card li {
+      padding-left: 1rem;
+      border-left: 2px solid rgba(34, 87, 199, .25);
+    }
+    .path-card .text-link { margin-top: auto; align-self: flex-start; }
+
+    .field-note {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(260px, .85fr);
+      min-height: 380px;
+      overflow: hidden;
+      border-radius: 24px;
+      background: #0e1b30;
+      box-shadow: var(--shadow-lg);
+    }
+    .field-note img {
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      object-fit: cover;
+      object-position: center;
+      filter: saturate(.86) contrast(1.04);
+    }
+    .field-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(1.7rem, 4vw, 3rem);
+      color: #fff;
+    }
+    .field-copy .section-kicker { color: var(--gold-2); }
+    .field-copy h2 {
+      margin: .3rem 0 .9rem;
+      font: 700 clamp(2rem, 4vw, 3rem)/1.05 var(--font-heading);
+    }
+    .field-copy p { margin: 0; color: #c6d3e5; }
+    .field-copy .caption {
+      margin-top: 1.3rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,.15);
+      color: #9fb1ca;
+      font-size: .78rem;
+    }
+
+    .pdf-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 1.4rem;
+      padding: clamp(1.5rem, 4vw, 2.2rem);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .pdf-panel h3 { margin: 0; font: 700 1.5rem/1.15 var(--font-heading); }
+    .pdf-panel p { margin: .45rem 0 0; color: var(--muted); }
+    .pdf-actions { display: flex; flex-wrap: wrap; gap: .65rem; }
+    .pdf-actions .btn-quiet {
+      border-color: var(--line);
+      background: var(--surface-2);
+      color: var(--text);
+    }
+    .pdf-preview {
+      display: none;
+      margin-top: 1rem;
+      overflow: hidden;
+      height: min(78vh, 800px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .pdf-preview.open { display: block; }
+    .pdf-preview iframe { width: 100%; height: 100%; border: 0; }
+
+    footer {
+      padding: 2.4rem 1rem 5rem;
+      background: linear-gradient(135deg, var(--nav), var(--nav-2));
+      color: #c4d1e3;
+      text-align: center;
+    }
+    footer a { color: #fff; text-underline-offset: 3px; }
+
+    .bottom-tabs { display: none; }
+
+    @media (max-width: 760px) {
+      main { width: min(calc(100% - 1.1rem), var(--max)); padding-top: 1.4rem; }
+      .site-header { padding: 1.2rem 3.7rem .8rem 1rem; }
+      .site-title { font-size: 2rem; text-align: left; }
+      .theme-toggle { top: .75rem; right: .75rem; }
+      .site-nav { display: none; }
+      .dossier-hero { padding: 2rem 1.3rem; border-radius: 20px; }
+      .dossier-hero h1 { font-size: clamp(3rem, 16vw, 4.6rem); }
+      .section { margin-top: 3.5rem; }
+      .section-heading { grid-template-columns: 1fr; }
+      .section-heading .text-link { justify-self: start; }
+      .now-grid, .path-grid { grid-template-columns: 1fr; }
+      .now-card, .now-card:first-child, .now-card:nth-child(2) { grid-column: auto; min-height: 0; }
+      .milestone { grid-template-columns: 78px minmax(0, 1fr); gap: .75rem; }
+      .field-note { grid-template-columns: 1fr; }
+      .field-note img { min-height: 260px; max-height: 330px; }
+      .pdf-panel { grid-template-columns: 1fr; }
+      .pdf-preview { height: 70vh; }
+      footer { padding-bottom: 6rem; }
+      .bottom-tabs {
+        position: fixed;
+        right: .6rem;
+        bottom: calc(.6rem + env(safe-area-inset-bottom));
+        left: .6rem;
+        z-index: 200;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        padding: .35rem;
+        border: 1px solid rgba(255,255,255,.13);
         border-radius: 16px;
-        box-shadow: 0 8px 18px rgba(0,0,0,.30);
+        background: rgba(13, 23, 40, .94);
+        box-shadow: 0 16px 44px rgba(0,0,0,.34);
+        backdrop-filter: blur(16px);
       }
-      .tabs-row{ grid-template-columns: repeat(6,1fr); }
-      .tab-link{
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        justify-content:center;
-        gap:3px;
-        color:#e5e7eb;
-        font-size:.75rem;
-        font-weight:600;
-        letter-spacing:.02em;
-        text-decoration:none;
-        position:relative;
-        isolation:isolate;
+      .bottom-tabs a {
+        padding: .6rem .15rem;
+        border-radius: 10px;
+        color: #dbe6f6;
+        font-size: .62rem;
+        font-weight: 700;
+        text-align: center;
+        text-decoration: none;
       }
-      .tab-link .ico{ width:22px; height:22px; opacity:.95; }
-      .tab-link[aria-current="page"]{ color: var(--accent-gold); }
-      .tab-link[aria-current="page"]::before{
-        content:'';
-        position:absolute;
-        inset:5px 8px;
-        background:rgba(255,255,255,.08);
-        border:1px solid rgba(255,255,255,.16);
-        border-radius:12px;
-        z-index:-1;
-        box-shadow:0 6px 18px rgba(0,0,0,.25);
-      }
-    </style>
-    <style>
-      /* Custom overrides to remove extra bottom whitespace on larger screens and reposition the Calendly badge button. */
-      @media (min-width: 821px) {
-        body {
-          /* Remove extra space beneath the footer on desktop */
-          padding-bottom: 0 !important;
-        }
-        .calendly-badge-widget {
-          /* Shift the badge upwards so it clears the footer. */
-          transform: translateY(-120px) !important;
-          opacity: 0.85;
-          transition: opacity 0.3s ease;
-        }
-        .calendly-badge-widget:hover {
-          opacity: 1;
-        }
-      }
-    </style>
-    <style>
-      /* Scroll reveal animation for sections and CV items */
-      .reveal {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-      }
-      .reveal.visible {
-        opacity: 1;
-        transform: none;
-      }
-    </style>
-<style>
-  /* Strong override so the viewer expands */
-  #pdf-shell{
-    border:1px solid rgba(41,83,155,.18);
-    border-radius:12px;
-    overflow:hidden;
-    background:var(--card-bg);
-    width:100%;
-    /* Use a responsive height on larger screens. The height will be at least 480px,
-       ideal at 70vh, but will not exceed 90vh. */
-    height:clamp(480px,70vh,90vh);
-  }
-  /* Ensure the embedded PDF scales to its container */
-  #pdf-shell embed,
-  #pdf-shell object{
-    display:block;
-    width:100%;
-    height:100%;
-  }
-  /* On small screens, allow the viewer to grow naturally without forcing a fixed height.
-     Let the embed determine its own height based on intrinsic ratio to avoid stretching. */
-  @media (max-width: 820px){
-    #pdf-shell{
-      height:auto;
-      min-height:0;
+      .bottom-tabs a[aria-current="page"] { background: linear-gradient(100deg, #164fb8, #9a7627); color: #fff; }
     }
-    #pdf-shell embed,
-    #pdf-shell object{
-      height:auto;
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
     }
-  }
-  /* Full screen mode for the PDF viewer */
-  #pdf-shell.fullscreen{
-    position: fixed; inset: 0; z-index: 9999; border-radius: 0; border: none;
-    height: 100vh; width: 100vw; margin: 0;
-    background: var(--background-top);
-  }
-  #pdf-shell.fullscreen + .page-actions{
-    position: fixed;
-    right: 16px;
-    top: 16px;
-    z-index: 10000;
-  }
-  #toggle-pdf-full{ cursor:pointer; }
-</style>
-<style>
-/* ===== Hero Section ===== */
-.hero-card {
-  margin: 2rem 0;
-  padding: 2rem;
-  background: linear-gradient(135deg, var(--background-top), var(--background-bottom));
-  border-radius: var(--radius-xl);
-  box-shadow: 0 6px 26px rgba(0, 0, 0, 0.08);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  align-items: center;
-}
-.hero-card .hero-info {
-  flex: 1 1 320px;
-}
-.hero-card .hero-info h2 {
-  margin: 0 0 .5rem;
-  font-size: 2.4rem;
-  font-family: var(--font-heading);
-  color: var(--heading-color);
-}
-.hero-card .hero-info p {
-  margin: 0 0 1rem;
-  font-size: 1.2rem;
-  color: var(--muted);
-}
-.hero-card .hero-contact {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.hero-card .hero-contact li {
-  display: flex;
-  align-items: center;
-  gap: .5rem;
-  margin-bottom: .4rem;
-  font-weight: 500;
-}
-.hero-card .hero-contact a {
-  color: var(--accent);
-}
-.hero-card .hero-img {
-  flex: 1 1 240px;
-  /* Container for the dynamic banner image */
-  border-radius: var(--radius-lg);
-  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
-  min-height: 240px;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Dark overlay on banner image to enhance contrast with text */
-.hero-card .hero-img::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.15));
-  pointer-events: none;
-}
-/* Hide the image element within the hero image container since the background gradient replaces it */
-.hero-card .hero-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: inherit;
-  animation: heroZoom 40s ease-in-out infinite alternate;
-}
-
-/* Keyframes for subtle zoom effect on the hero banner */
-@keyframes heroZoom {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.05);
-  }
-}
-</style>
-<style>
-.visually-hidden{position:absolute!important;width:1px;height:1px;margin:-1px;border:0;padding:0;white-space:nowrap;clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden}
-</style>
-<link rel="stylesheet" href="site-header.css?v=20260718-2">
+  </style>
 </head>
 <body>
-<!-- Skip link for accessibility -->
-<a class="skip-link" href="#main" style="position:absolute;left:-9999px;top:-9999px;background:#fff;padding:0.6rem 1rem;border-radius:10px;z-index:10000;">Skip to content</a>
-<script>
-(function(){
-  try {
-    if (window.__bannerFixInit) return;
-    window.__bannerFixInit = true;
-  } catch(e){}
-  
-    const darkToggle = document.querySelector('.dark-toggle');
-    function setAriaPressed() {
-      darkToggle.setAttribute('aria-pressed', document.documentElement.classList.contains('dark'));
-    }
-    function toggleDarkMode() {
-      const isDark = document.documentElement.classList.toggle('dark');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      setAriaPressed();
-    }
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
-    }
-    setAriaPressed();
-    darkToggle.addEventListener('click', toggleDarkMode);
-    darkToggle.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleDarkMode(); }
-    });
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    // Hide nav on scroll for mobile
-    let lastScrollTop = 0;
-    const nav = document.querySelector('.main-nav');
-    window.addEventListener('scroll', function() {
-      if (window.innerWidth <= 820) {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > lastScrollTop && scrollTop > 60) { nav.classList.add('hide-nav'); }
-        else { nav.classList.remove('hide-nav'); }
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-      } else { nav.classList.remove('hide-nav'); }
-    });
+  <header class="site-header">
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">☀</button>
+    <p class="site-title"><a href="index.html">Adolfho Romero</a></p>
+  </header>
 
-    
-})();
-</script>
-<a id="top" style="position:absolute; top:0; left:0; width:1px; height:1px; overflow:hidden;"></a>
-<header class="site-header">
-<button aria-label="Toggle dark mode" aria-pressed="false" class="dark-toggle" tabindex="0" title="Toggle dark mode">
-<svg class="icon-sun-moon" viewbox="0 0 24 24">
-<circle cx="12" cy="12" r="5.5" stroke-width="2"></circle>
-<path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M17.36 17.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M17.36 6.64l1.42-1.42"></path>
-</svg>
-</button>
-<div class="site-title"><a aria-label="Go to Home" href="index.html">Adolfho Romero</a></div>
-</header>
-<nav aria-label="Primary" class="main-nav site-nav">
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a class="pubs-link" href="publications.html">Publications</a></li>
-<li><a class="teaching-link" href="teaching.html">Teaching</a></li>
-<!-- Added a new navigation item for the interactive discussion hub -->
-<li><a href="teaching-discussion-hub.html">Discussion Hub</a></li>
-<li><a href="media.html">Media &amp; Public Engagement</a></li>
-<!-- CV links to the CV page -->
-<li><a aria-current="page" aria-label="Open CV page" class="cv-link" href="cv.html">CV</a></li>
-</ul>
-</nav>
-<main id="main">
-  <!-- Progress bar for scroll tracking -->
-  <div id="progress-bar"></div>
-  <!-- Top actions: download button and PDF embed -->
-  <div class="page-actions">
-    <a aria-label="Download the CV PDF" class="btn gold" download="" href="adolfhoromerocv.pdf" rel="noopener" target="_blank">Download CV</a>
-  </div>
-  <!-- Hero introduction card -->
-  <section class="hero-card">
-    <div class="hero-info">
-      <h2>Adolfho Romero</h2>
-      <p>Ph.D. student in Industrial and Labor Relations specializing in labor, migration, and race.</p>
-      <ul class="hero-contact">
-        <li>📧 <a href="mailto:Adolfhoromero@gmail.com">Adolfhoromero@gmail.com</a></li>
-        <li>📞 <a href="tel:+13126710164">312.671.0164</a></li>
-        <li>🌐 <a href="https://Adolfhoromero.com" target="_blank" rel="noopener">Adolfhoromero.com</a></li>
-      </ul>
-    </div>
-    <div class="hero-img">
-      <!-- Banner image inserted here -->
-      <img src="banner.png" alt="Banner image" />
-    </div>
-  </section>
-  <!-- Embedded full PDF is now near the top for easier access -->
-  <section class="section" id="full-pdf">
-    <h2>Adolfho Romero Full CV (PDF)</h2>
-    <article class="cv-item">
-<h3 class="visually-hidden">Item</h3>
-      <p class="cv-meta">You can preview the CV below or open it in a dedicated view. If the preview does not load, use the buttons to open or download the PDF.</p>
-      <div aria-label="Embedded PDF preview" class="pdf-shell" id="pdf-shell" role="region" style="height:420px;">
-        <!-- Use an iframe for better cross‑browser PDF support. Fallback shows a polite message -->
-        <iframe id="pdf-frame" src="adolfhoromerocv.pdf#toolbar=0" style="width:100%; height:100%; border:0;" loading="lazy" title="Embedded content"></iframe>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="teaching-discussion-hub.html">Discussion Hub</a></li>
+      <li><a href="media.html">Media &amp; Public Engagement</a></li>
+      <li><a href="cv.html" aria-current="page">CV</a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+    <section class="dossier-hero" aria-labelledby="cv-title">
+      <span class="eyebrow">Academic dossier · 2026</span>
+      <h1 id="cv-title">Curriculum Vitae</h1>
+      <p class="lede">A focused record of scholarship and public work across labor, migration, oral history, and working-class power.</p>
+      <div class="hero-meta">
+        <span>Cornell University · ILR School</span>
+        <span>Ph.D. expected 2028</span>
+        <span>Last updated July 2026</span>
       </div>
-      <div class="page-actions" style="display:flex; gap:12px; justify-content:flex-start; margin-top:10px;">
-        <a aria-label="Open CV PDF in a new tab" class="btn accent" href="adolfhoromerocv.pdf" rel="noopener" target="_blank">Open in new tab</a>
-        <button class="btn gold" id="toggle-pdf-full" type="button">Full screen</button>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="adolfhoromerocv.pdf" download>Download full CV</a>
+        <a class="btn btn-primary" href="adolfhoromerocv.pdf" target="_blank" rel="noopener">Open PDF</a>
+        <a class="btn btn-quiet" href="mailto:Adolfhoromero@gmail.com">Contact</a>
       </div>
-      <noscript>
-        <p>If the PDF does not display, <a href="adolfhoromerocv.pdf" rel="noopener" target="_blank">open it in a new tab</a>.</p>
-      </noscript>
-    </article>
-  </section>
-  <!-- Two-column layout: sidebar for filters and content area -->
-  <div class="cv-grid">
-    <aside class="cv-sidebar">
-      <div aria-label="CV filters" class="tabbar" role="tablist">
-        <a aria-selected="true" data-filter="all" href="#top" role="tab">All</a>
-        <a data-filter="education" href="#education" role="tab">Education</a>
-        <a data-filter="research" href="#research" role="tab">Research</a>
-        <a data-filter="teaching" href="#teaching" role="tab">Teaching</a>
-        <a data-filter="grants" href="#grants" role="tab">Grants</a>
-        <a data-filter="publications" href="#publications" role="tab">Publications</a>
-        <a data-filter="development" href="#development" role="tab">Professional Development</a>
-        <a data-filter="conferences" href="#conferences" role="tab">Conferences</a>
-        <a data-filter="lectures" href="#lectures" role="tab">Guest Lectures</a>
-        <a data-filter="programs" href="#programs" role="tab">Public Programs</a>
-        <a data-filter="writing" href="#writing" role="tab">Public Writing</a>
-        <a data-filter="media" href="#media" role="tab">Media</a>
-        <a data-filter="honors" href="#honors" role="tab">Honors</a>
-        <a data-filter="associations" href="#associations" role="tab">Associations</a>
-        <a data-filter="fieldwork" href="#fieldwork" role="tab">Fieldwork</a>
-        <a data-filter="skills" href="#skills" role="tab">Skills</a>
-        <span aria-live="polite" class="count" id="count"></span>
+    </section>
+
+    <section class="section" id="current-work">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">Current work</p>
+          <h2>What I am working on now</h2>
+          <p>A concise view of the projects, writing, and presentations shaping the current stage of my doctoral work.</p>
+        </div>
       </div>
-      <form role="search" class="searchbar">
-        <svg aria-hidden="true" height="16" viewBox="0 0 24 24" width="16"><path d="M15.5 14h-.79l-.28-.27a6.471 6.471 0 0 0 1.57-4.23A6.5 6.5 0 1 0 9.5 16a6.471 6.471 0 0 0 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zM4 9.5C4 6.46 6.46 4 9.5 4S15 6.46 15 9.5 12.54 15 9.5 15 4 12.54 4 9.5z" fill="currentColor"></path></svg>
-        <input aria-label="Search CV" id="search" placeholder="Search CV..." type="search">
-      </form>
-    </aside>
-    <div class="cv-content">
-<!-- ===== CONTENT START ===== -->
-<!-- Education -->
-<section class="section" id="education"><h2>Education</h2>
-<article class="cv-item" data-cats="education research">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div>
-<div class="cv-role">Ph.D., Industrial and Labor Relations</div>
-<div class="cv-meta">Cornell University · Ithaca, NY · Expected 2028 · GPA 4.0</div>
-</div>
-</div>
-<details><summary>Show more</summary>
-<p>School of Industrial and Labor Relations. Specialization in Global Labor and Work.</p>
-</details>
-</article>
-<article class="cv-item" data-cats="education research">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div>
-<div class="cv-role">M.A., Latin American Studies</div>
-<div class="cv-meta">University of Florida · 2021 · GPA 3.9</div>
-</div>
-</div>
-<details><summary>Show more</summary>
-<p>Specialization in Latinx Studies, Migration and Transnational Studies. MA Essay: “¡Sí se puede! Yes, We Can! An Analysis of a Non-profit Organization and its Effectiveness. The Farmworkers Association of Florida.”</p>
-</details>
-</article>
-<article class="cv-item" data-cats="education research">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div>
-<div class="cv-role">B.A., Spanish</div>
-<div class="cv-meta">Northeastern Illinois University · 2018 · GPA 4.0</div>
-</div>
-</div>
-<details><summary>Show more</summary>
-<p>Minor in Latino and Latin American Studies. Human Resources Development. Senior Thesis on Puerto Rican displacement and gentrification.</p>
-</details>
-</article>
-<article class="cv-item" data-cats="education">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div>
-<div class="cv-role">Associate of Arts with Honors</div>
-<div class="cv-meta">Harold Washington College · 2015</div>
-</div>
-</div>
-</article>
-</section>
-<!-- Research Interests -->
-<section class="section" id="research"><h2>Research Interests</h2>
-<article class="cv-item" data-cats="research skills">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">Areas</div>
-<div class="cv-meta">Working-Class Studies · Industrial Labor Relations · African American Studies · Latinx Studies · Comparative Race and Ethnicity · Migration and Transnational Studies · Oral History · Memory · Ethnography</div>
-</div>
-</article>
-</section>
-<!-- Academic Research Experience -->
-<section class="section" id="research-exp"><h2>Academic Research Experience</h2>
-<article class="cv-item" data-cats="research fieldwork service">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div>
-<div class="cv-role">Research Assistant to Dr. Andrew Wolf</div>
-<div class="cv-meta">Cornell University · Aug 2025 – Jan 2026 expected</div>
-</div>
-</div>
-<details><summary>Show more</summary>
-<ul>
-<li>Spanish-language interviews with members of the Fund Excluded Workers Coalition.</li>
-<li>Transcription support and analysis of coalition strategies and migrant worker exclusion.</li>
-<li>Survey outreach for a Cornell–Syracuse University study on the Unemployment Bridge Program.</li>
-</ul>
-</details>
-</article>
-<article class="cv-item" data-cats="research fieldwork">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div>
-<div class="cv-role">Research Assistant to Dr. Paul Ortiz</div>
-<div class="cv-meta">University of Florida · May 2025 – Present</div>
-</div>
-</div>
-<details><summary>Show more</summary>
-<ul>
-<li>Compiled and organized archival materials on U.S. labor and farmworker organizing.</li>
-<li>Supported research for a forthcoming book on union-led social movements during the Great Depression.</li>
-</ul>
-</details>
-</article>
-<article class="cv-item" data-cats="research publications">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div>
-<div class="cv-role">ILR Research Aide IV to Dr. Shannon Gleeson</div>
-<div class="cv-meta">Cornell University · Jan 2025 – Present</div>
-</div>
-</div>
-<details><summary>Show more</summary>
-<ul>
-<li>Co-author on Aztlán 50th Anniversary issue on Latinx labor rights and workplace enforcement.</li>
-<li>Contributor to “Cities, Migrants, and Labor Conditions” chapter.</li>
-<li>Synthesized comparative cases across the U.S., Europe, and Latin America.</li>
-</ul>
-</details>
-</article>
-<article class="cv-item" data-cats="research teaching service">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div>
-<div class="cv-role">Assistant Director, Samuel Proctor Oral History Program</div>
-<div class="cv-meta">University of Florida · 2021 – 2023</div>
-</div>
-</div>
-<details><summary>Show more</summary>
-<ul>
-<li>Supervised grant-funded teams and managed fieldwork initiatives including the Mississippi Delta trip.</li>
-<li>Co-managed the Doris Duke Revitalizing Oral History project.</li>
-<li>Co-taught seminars and organized public programs.</li>
-</ul>
-</details>
-</article>
-<article class="cv-item" data-cats="research teaching">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div>
-<div class="cv-role">Graduate Assistant &amp; Project Coordinator</div>
-<div class="cv-meta">SPOHP · 2019 – 2021</div>
-</div>
-</div>
-<details><summary>Show more</summary>
-<ul>
-<li>Co-taught internship courses and led oral history training workshops.</li>
-<li>Managed metadata and digital collections for archival projects.</li>
-</ul>
-</details>
-</article>
-<article class="cv-item" data-cats="research fieldwork service">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div>
-<div class="cv-role">Research Coordinator</div>
-<div class="cv-meta">Farmworkers Association of Florida · 2021</div>
-</div>
-</div>
-<details><summary>Show more</summary>
-<ul>
-<li>Led outreach to improve Medicaid enrollment and community health access.</li>
-</ul>
-</details>
-</article>
-<article class="cv-item" data-cats="research fieldwork service">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div>
-<div class="cv-role">Graduate Intern</div>
-<div class="cv-meta">Farmworkers Association of Florida · 2020 – 2021</div>
-</div>
-</div>
-<details><summary>Show more</summary>
-<ul>
-<li>MA internship on nonprofit effectiveness at FWAF.</li>
-<li>Supported pandemic response efforts including PPE distribution and testing.</li>
-</ul>
-</details>
-</article>
-<article class="cv-item" data-cats="research">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div>
-<div class="cv-role">Research Assistant to Dr. Victor Ortiz</div>
-<div class="cv-meta">Northeastern Illinois University · 2019</div>
-</div>
-</div>
-<details><summary>Show more</summary>
-<ul>
-<li>GIS mapping and spatial analysis of Latino settlement patterns.</li>
-<li>Developed databases and community survey instruments.</li>
-</ul>
-</details>
-</article>
-<article class="cv-item" data-cats="teaching service">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div>
-<div class="cv-role">Peer Tutor and Writing Fellow</div>
-<div class="cv-meta">Center for Academic Writing · 2017 – 2018</div>
-</div>
-</div>
-</article>
-</section>
-<!-- Grants -->
-<section class="section" id="grants"><h2>Research Grants</h2>
-<article class="cv-item" data-cats="grants">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">Network to Freedom Underground Railroad</div>
-<div class="cv-meta">National Park Service · Project Researcher · $425,000 · 2022–2024</div>
-</div>
-</article>
-<article class="cv-item" data-cats="grants">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">Reanimating African American Oral Histories of the Gulf South</div>
-<div class="cv-meta">NEH · Research Coordinator · $349,000 · 2021–2024</div>
-</div>
-</article>
-<article class="cv-item" data-cats="grants">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">Challenging Racism at UF</div>
-<div class="cv-meta">UF Grant · Lead Project Coordinator · $62,699 · 2022–2023</div>
-</div>
-</article>
-<article class="cv-item" data-cats="grants">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">Recruitment and Retention of Black Faculty at UF</div>
-<div class="cv-meta">UF · Project Researcher · $75,000 · 2021–2023</div>
-</div>
-</article>
-<article class="cv-item" data-cats="grants">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">Doris Duke Native American Oral History Revitalization</div>
-<div class="cv-meta">Doris Duke Charitable Foundation · Research Coordinator · $200,000 · 2021–2022</div>
-</div>
-</article>
-<article class="cv-item" data-cats="grants">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">A Rural State of Mind</div>
-<div class="cv-meta">Robert Wood Johnson Foundation IRL · Research Assistant · $350,000 · 2021–2022</div>
-</div>
-</article>
-<article class="cv-item" data-cats="grants">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">NIMHD NIH grant</div>
-<div class="cv-meta">Florida International University · Research Assistant · $25,000 · 2021</div>
-</div>
-</article>
-<article class="cv-item" data-cats="grants">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">Suburban Latinos and Non-Latinos</div>
-<div class="cv-meta">National Science Foundation · Research Assistant · $149,934 · 2019</div>
-</div>
-</article>
-</section>
-<!-- Professional Development -->
-<section class="section" id="development"><h2>Professional Development</h2>
-<article class="cv-item" data-cats="development">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">UT Austin Ethnographic Summer School</div>
-<div class="cv-meta">Urban Ethnography Lab · August 2025</div>
-</div>
-<details><summary>Show more</summary>
-<p>Four-day intensive on ethnographic methods, observation, interviewing, coding, and research ethics.</p>
-</details>
-</article>
-<article class="cv-item" data-cats="development">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">QMUL–Cornell Migration Spring School</div>
-<div class="cv-meta">Queen Mary University of London &amp; Cornell · May 2025</div>
-</div>
-<details><summary>Show more</summary>
-<p>Interdisciplinary program on migration, labor rights, urban policy in the Mediterranean region with site visits.</p>
-</details>
-</article>
-<article class="cv-item" data-cats="development media">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">Harvard Kennedy School &amp; MA Black and Latino Legislative Caucus Retreat</div>
-<div class="cv-meta">Cambridge, MA · December 2024</div>
-</div>
-<details><summary>Show more</summary>
-<p>Supported Dr. Paul Ortiz’s presentation and met with Beacon Press editors regarding dissertation framing.</p>
-</details>
-</article>
-<article class="cv-item" data-cats="development">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">MigLab Working Group</div>
-<div class="cv-meta">Cornell University · Jan–May 2025</div>
-</div>
-<details><summary>Show more</summary>
-<p>Interdisciplinary meetings on migration research and peer feedback. Co-sponsored by CPC and Brooks School.</p>
-</details>
-</article>
-</section>
-<!-- Conference Presentations -->
-<section class="section" id="conferences"><h2>Conference Presentations</h2>
-  <article class="cv-item" data-cats="conferences research">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Reimagining Power Research Approach: Worker Centers and the Quest for Working‑Class Empowerment</div>
-      <div class="cv-meta">Panelist · Society for the Advancement of Socio‑Economics (SASE) · Montreal, Canada · 2025</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="conferences research">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Organizing Educators in the Sunshine State</div>
-      <div class="cv-meta">Panelist · Southern Historical Association · Trade Winds Resort, St. Petersburg, FL · 2025 (accepted)</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="conferences research">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Challenging Racism at UF in the “Stop Woke” Era</div>
-      <div class="cv-meta">Panelist · Oral History Association · Hyatt Regency Baltimore, Baltimore, MD · 2023</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="conferences research">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Documenting Black Resistance in the Mississippi Delta</div>
-      <div class="cv-meta">Panelist · Association for the Study of African American Life and History (ASALH) · Hyatt Regency Riverfront, Jacksonville, FL · 2023</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="conferences research">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">The Enduring Resonance of the Joel Buchanan Archive of African American Oral History</div>
-      <div class="cv-meta">Panelist · ASALH · Hyatt Regency Riverfront, Jacksonville, FL · 2023</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="conferences research">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Challenging Racism at the University of Florida in the “Stop Woke” Era</div>
-      <div class="cv-meta">Panelist · ASALH · Hyatt Regency Riverfront, Jacksonville, FL · 2023</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="conferences research">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Oscar Mack versus the Ku Klux Klan</div>
-      <div class="cv-meta">Panelist · ASALH · Hyatt Regency Riverfront, Jacksonville, FL · 2023</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="conferences research">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Best Practices for Transcribing the Venus McGhee Prince Project Collection</div>
-      <div class="cv-meta">Presenter · Poarch Band of Creek Indians Community Center · Mobile, AL · 2023</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="conferences research">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Transcribing and Re‑Transcribing the Doris Duke Collection</div>
-      <div class="cv-meta">Presenter · Association of Tribal Archives, Libraries &amp; Museums (ATALM) · Pechanga Resort &amp; Casino, Temecula, CA · 2023</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="conferences research">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Educating, Transforming, and Building Solidarity through the Mississippi Delta</div>
-      <div class="cv-meta">Panelist · 11th National Civil Rights Conference · Hilton Baton Rouge Capitol Center, Baton Rouge, LA · 2022</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="conferences research">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">From Fieldwork to Film: Using Oral History to Explore Equity and Inclusion in Higher Education</div>
-      <div class="cv-meta">Panelist · Oral History Association · Millennium Biltmore Hotel, Los Angeles, CA · 2022</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="conferences research">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Historical and Contemporary Challenges of Migration from Europe and Latin America</div>
-      <div class="cv-meta">Presenter · Oral History Association · Millennium Biltmore Hotel, Los Angeles, CA · 2022</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="conferences research">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">A Decade of Documenting Agricultural Workers’ Struggles</div>
-      <div class="cv-meta">Panelist · The Labor &amp; Working‑Class History Association (LAWCHA) · University of Illinois at Chicago, Chicago, IL · 2021</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="conferences research">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Comparative Urbanism: Global Perspectives Conference</div>
-      <div class="cv-meta">Attended · Andrew Young School Urban Studies Institute, Georgia State University · Atlanta, GA · 2019</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="conferences research">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Examining the Mestiza Consciousness</div>
-      <div class="cv-meta">Presenter · Ronald E. McNair Research Conference · Renaissance Convention Center, Schaumburg, IL · 2018</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="conferences research">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Examining the Mestiza Consciousness: Novels of Latina Women</div>
-      <div class="cv-meta">Presenter · Summer Research Opportunity Program · Purdue University, Lafayette, IN · 2018</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="conferences research">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Puerto Rican Displacement and the Effects of Gentrification in Humboldt Park and Albany Park</div>
-      <div class="cv-meta">Presenter · Northeastern Illinois University · Chicago, IL · 2018</div>
-    </div>
-  </article>
-</section>
-<!-- Guest Lectures and Workshops -->
-<section class="section" id="lectures"><h2>Guest Lectures &amp; Workshops</h2>
-<article class="cv-item" data-cats="lectures teaching">
-<h3 class="visually-hidden">Item</h3>
-  <div class="cv-head">
-    <div class="cv-role">Oral History Interviews and Methodologies</div>
-    <div class="cv-meta">Guest Lecturer · Center for the Humanities &amp; Public Sphere · Alexander Grass Scholars Program, University of Florida · May 2024</div>
-  </div>
-</article>
-<article class="cv-item" data-cats="lectures teaching">
-<h3 class="visually-hidden">Item</h3>
-  <div class="cv-head">
-    <div class="cv-role">Elevate: Community Engagement Summit</div>
-    <div class="cv-meta">Facilitator · SPARC352 · Harn Museum of Art · Dec 2023</div>
-  </div>
-</article>
-<article class="cv-item" data-cats="lectures teaching">
-<h3 class="visually-hidden">Item</h3>
-  <div class="cv-head">
-    <div class="cv-role">The Exchange: Shaping the Future by Examining the Past</div>
-    <div class="cv-meta">Facilitator · SPARC352 · Cotton Club Museum and Cultural Center · Nov 2023</div>
-  </div>
-</article>
-<article class="cv-item" data-cats="lectures teaching">
-<h3 class="visually-hidden">Item</h3>
-  <div class="cv-head">
-    <div class="cv-role">Preserving Business Legacies: A Workshop on Oral History Methodology, Metadata, Archiving &amp; Media Equipment</div>
-    <div class="cv-meta">Presenter · Inquire Capitalism Program (Sean Adams) · University of Florida · Nov 2023</div>
-  </div>
-</article>
-<article class="cv-item" data-cats="lectures teaching">
-<h3 class="visually-hidden">Item</h3>
-  <div class="cv-head">
-    <div class="cv-role">Fall Walking Tour: History of Students Influencing Change</div>
-    <div class="cv-meta">Guide · Brown Center for Leadership &amp; Service · University of Florida · Oct 2023</div>
-  </div>
-</article>
-<article class="cv-item" data-cats="lectures teaching">
-<h3 class="visually-hidden">Item</h3>
-  <div class="cv-head">
-    <div class="cv-role">Journey of Migration Symposium: Fostering Student Dialogue and Storytelling Space</div>
-    <div class="cv-meta">Facilitator · Mexican‑American Student Association · University of Florida · Oct 2023</div>
-  </div>
-</article>
-<article class="cv-item" data-cats="lectures teaching">
-<h3 class="visually-hidden">Item</h3>
-  <div class="cv-head">
-    <div class="cv-role">A Pedagogical Journey into Oral History Archives and Methodologies</div>
-    <div class="cv-meta">Presenter · Clarissa Carr’s Historic Preservation Program · University of Florida · Oct 2023</div>
-  </div>
-</article>
-<article class="cv-item" data-cats="lectures teaching">
-<h3 class="visually-hidden">Item</h3>
-  <div class="cv-head">
-    <div class="cv-role">Breaking Boundaries: Black Women Shaping Academia and Communities through Oral History Archives</div>
-    <div class="cv-meta">Guest Lecturer · Introduction to Black Women’s Studies (Riché J. Daniel Barnes) · University of Florida · Sep 2023</div>
-  </div>
-</article>
-<article class="cv-item" data-cats="lectures teaching">
-<h3 class="visually-hidden">Item</h3>
-  <div class="cv-head">
-    <div class="cv-role">Resonating Legacies: Unveiling Black History through Oral History Voices and Methodology</div>
-    <div class="cv-meta">Guest Speaker · Jason Brown’s class · Oak Hall School · Feb 2023</div>
-  </div>
-</article>
-<article class="cv-item" data-cats="lectures teaching">
-<h3 class="visually-hidden">Item</h3>
-  <div class="cv-head">
-    <div class="cv-role">Trailblazing Women: Exploring Black History and Medicine through the Joel Buchanan Archives of African American History</div>
-    <div class="cv-meta">Guest Lecturer · The African Diaspora, Women &amp; Medicine (Alyssa Cole) · University of Florida · Feb 2023</div>
-  </div>
-</article>
-<article class="cv-item" data-cats="lectures teaching">
-<h3 class="visually-hidden">Item</h3>
-  <div class="cv-head">
-    <div class="cv-role">The Veterans Oral History Archives – Honoring the Experiences of Black Veterans</div>
-    <div class="cv-meta">Guest Lecturer · Buffalos and Bloods: The Black Experience in the U.S. Military (Alyssa Cole) · University of Florida · Feb 2023</div>
-  </div>
-</article>
-<article class="cv-item" data-cats="lectures teaching">
-<h3 class="visually-hidden">Item</h3>
-  <div class="cv-head">
-    <div class="cv-role">Accessing the Latinx Diaspora in the Americas Archives Collection</div>
-    <div class="cv-meta">Presenter · African American and Latina/o Histories (Paul Ortiz) · University of Florida · Apr 2022</div>
-  </div>
-</article>
-<article class="cv-item" data-cats="lectures teaching">
-<h3 class="visually-hidden">Item</h3>
-  <div class="cv-head">
-    <div class="cv-role">A Pedagogical Journey into Oral History Archives and Methodologies</div>
-    <div class="cv-meta">Presenter · Video Art (Katerie H. Gladys) · University of Florida · Nov 2021</div>
-  </div>
-</article>
-<article class="cv-item" data-cats="lectures teaching">
-<h3 class="visually-hidden">Item</h3>
-  <div class="cv-head">
-    <div class="cv-role">A Pedagogical Journey into Oral History Archives and Methodologies</div>
-    <div class="cv-meta">Presenter · Design &amp; Methods of Research in Latin American Studies (Rebecca Hanson) · University of Florida · Oct 2021</div>
-  </div>
-</article>
-<article class="cv-item" data-cats="lectures teaching">
-<h3 class="visually-hidden">Item</h3>
-  <div class="cv-head">
-    <div class="cv-role">Exploring History's Voices: The Joel Buchanan Archives and Mississippi Freedom Oral History Collections</div>
-    <div class="cv-meta">Guest Lecturer · The Politics of Race at the University of Florida (Sharon Austin) · University of Florida · Oct 2021</div>
-  </div>
-</article>
-<article class="cv-item" data-cats="lectures teaching">
-<h3 class="visually-hidden">Item</h3>
-  <div class="cv-head">
-    <div class="cv-role">Exploring History's Voices: The Joel Buchanan Archives and Mississippi Freedom Oral History Collections</div>
-    <div class="cv-meta">Guest Lecturer · The Politics of Race at the University of Florida (Roshaun Colvin) · University of Florida · Oct 2021</div>
-  </div>
-</article>
-<article class="cv-item" data-cats="lectures teaching">
-<h3 class="visually-hidden">Item</h3>
-  <div class="cv-head">
-    <div class="cv-role">Developing Oral History Workshops</div>
-    <div class="cv-meta">Coordinator · Martin County Black Heritage Initiatives · Martin County, FL · May 2021</div>
-  </div>
-</article>
-</section>
-<!-- Teaching Experience -->
-<section class="section" id="teaching"><h2>Teaching Experience</h2>
-<article class="cv-item" data-cats="teaching">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div>
-<div class="cv-role">Teaching Assistant, ILRGL 3805 African American and Latinx Histories</div>
-<div class="cv-meta">Cornell University · Spring 2025</div>
-</div>
-</div>
-<details><summary>Show more</summary>
-<ul>
-<li>Graded essays and facilitated discussions on labor movements and migration.</li>
-<li>Managed Canvas materials and held student meeting hours.</li>
-</ul>
-</details>
-</article>
-<article class="cv-item" data-cats="teaching">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div>
-<div class="cv-role">Teaching Assistant, ILRGL 1100 Introduction to U.S. Labor History</div>
-<div class="cv-meta">Cornell University · Fall 2024</div>
-</div>
-</div>
-<details><summary>Show more</summary>
-<ul>
-<li>Facilitated classroom discussions on U.S. labor history and organizing.</li>
-<li>Provided detailed feedback on assignments.</li>
-</ul>
-</details>
-</article>
-<article class="cv-item" data-cats="teaching">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">Co-instructor, SPOHP Internship Seminar</div>
-<div class="cv-meta">University of Florida · Spring 2021 · Fall 2020</div>
-</div>
-<details><summary>Show more</summary>
-<ul>
-<li>Introduced community based oral history methodologies and public-facing research.</li>
-<li>Produced interviews and digital outputs with partner organizations.</li>
-</ul>
-</details>
-</article>
-</section>
-<!-- Publications -->
-<section class="section" id="publications"><h2>Publications and Works in Progress</h2>
-<article class="cv-item" data-cats="publications research">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">A meeting of two worlds—Oral history and linguistics</div>
-<div class="cv-meta">The Oral History Review · 2025 · Co-author</div>
-</div>
-<details><summary>Show more</summary>
-<p>M. Simmons, A. Hamilton, A. Davis, W. Dyer, C. J. Philippe, J. Heady, P. Houck, A. Romero, R. A. Cordova, D. Hendrix, P. Ortiz, S. Moeller, &amp; K. Tang.</p>
-</details>
-</article>
-<article class="cv-item" data-cats="publications research">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">Latinx labor rights and workplace enforcement</div>
-<div class="cv-meta">Aztlán 50th Anniversary Special Issue · with Shannon Gleeson · Forthcoming 2026</div>
-</div>
-</article>
-<article class="cv-item" data-cats="publications research">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">Cities, Migrants, and Labor Conditions</div>
-<div class="cv-meta">Handbook on Cities and Migration · Edward Elgar · with Shannon Gleeson · Forthcoming 2026</div>
-</div>
-</article>
-<article class="cv-item" data-cats="publications acknowledgments">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">Acknowledged Contributions</div>
-<div class="cv-meta">Labor Studies Journal 2025 · SOURCE Magazine 2023 · Ground Works Journal 2025 · JIMH 2022</div>
-</div>
-<details><summary>Show more</summary>
-<ul>
-<li>Ortiz, P. (2025). <em>Labor Studies Journal</em> — research assistance.</li>
-<li>Mattson, I., Mahar, G., &amp; Durant, F. (2023). <em>SOURCE</em> — Doris Duke project team.</li>
-<li>Concha-Holmes, A. D., et al. (2025). <em>Ground Works Journal</em> — archival research and production support.</li>
-<li>Anastario, M., et al. (2022). <em>Journal of Immigrant and Minority Health</em> — life-history interviews.</li>
-</ul>
-</details>
-</article>
-</section>
-<!-- Public Programs -->
-<section class="section" id="programs"><h2>Public Programs</h2>
-<article class="cv-item" data-cats="programs service">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">Welcoming Black Faculty to Higher Education: A Racial Justice Town Hall</div>
-<div class="cv-meta">Organizer · Cotton Club Museum and Cultural Center · Gainesville, FL · Oct 12, 2023</div>
-</div>
-</article>
-<article class="cv-item" data-cats="programs service">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">Film Premiere: Oscar Mack versus the Ku Klux Klan</div>
-<div class="cv-meta">Organizer · Pugh Hall · Gainesville, FL · Apr 12, 2023</div>
-</div>
-</article>
-<article class="cv-item" data-cats="programs service">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">Bringing African American History to K-12 Classrooms</div>
-<div class="cv-meta">Organizer · Pugh Hall · Gainesville, FL · Mar 21, 2023</div>
-</div>
-</article>
-  <!-- Additional public programs -->
-  <article class="cv-item" data-cats="programs service">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Future of Florida Springs: A Discussion on Spring Health Talk + Workshop</div>
-      <div class="cv-meta">Organizer · Pugh Hall · Gainesville, FL · Apr 1, 2023</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="programs service">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">First of the First: Recognizing Lincoln High Alumni Triumphs</div>
-      <div class="cv-meta">Moderator · Mount Carmel Baptist Church · Gainesville, FL · Mar 3–4, 2023</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="programs service">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Book Signing: Stayed On Freedom: One Family's Journey</div>
-      <div class="cv-meta">Organizer · George A. Smathers Libraries · Gainesville, FL · Feb 23, 2023</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="programs service">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">“Can't Ban Us” Day of Action: Black History Teach‑Ins in Florida and Beyond</div>
-      <div class="cv-meta">Organizer · Marston Science Library · Gainesville, FL · Feb 23, 2023</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="programs service">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">OverKome!: Creating Pathways for Collective, Community‑led Development</div>
-      <div class="cv-meta">Facilitator · Cotton Club Museum and Cultural Center · Gainesville, FL · Feb 13, 2023</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="programs service">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Beyond the Headlines: Exploring Race and Newspaper Coverage in the Gainesville Sun from Reconstruction to the Present</div>
-      <div class="cv-meta">Moderator · Cotton Club Museum and Cultural Center · Gainesville, FL · Jan 14, 2023</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="programs service">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Open House</div>
-      <div class="cv-meta">Moderator · Samuel Proctor Oral History Program, Pugh Hall · Gainesville, FL · Oct 6, 2022</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="programs service">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Allison Mitchell Presents “Battle for the Ballot”: The Struggle for Voting Rights in Florida</div>
-      <div class="cv-meta">Facilitator (Webinar) · Apr 25, 2022</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="programs service">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">UCLA Looking Ahead: The Politics of Florida and the 2022 Midterm Elections</div>
-      <div class="cv-meta">Moderator (Webinar) · Apr 19, 2022</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="programs service">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">African American History Meets AI in the 21st Century Classroom</div>
-      <div class="cv-meta">Moderator (Webinar) · Apr 5, 2022</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="programs service">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Annual Mississippi Freedom Project</div>
-      <div class="cv-meta">Moderator · Pugh Hall · Gainesville, FL · Oct 12, 2021</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="programs service">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Gainesville Latino Film Festival: Traditions, Healing and Survival</div>
-      <div class="cv-meta">Moderator (Webinar) · Sept 17, 2021</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="programs service">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">The Florida Paradox: How Diverse Communities are Transforming the Sunshine State</div>
-      <div class="cv-meta">Coordinator (Webinar) · Feb 24, 2021</div>
-    </div>
-  </article>
-</section>
-<!-- Public Writing -->
-<section class="section" id="writing"><h2>Public Writing &amp; Digital Publications</h2>
-<article class="cv-item" data-cats="writing media">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">UF Oral History Students Report Back from Mississippi Delta</div>
-<div class="cv-meta">The Gainesville Sun · April 2025 · Contributor interviewee</div>
-</div>
-</article>
-<article class="cv-item" data-cats="writing">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">History and the People Who Make It: Madelyn Lockhart</div>
-<div class="cv-meta">The Gainesville Iguana · Aug 2021</div>
-</div>
-</article>
-<article class="cv-item" data-cats="writing">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">Diverse Communities Are Transforming Florida</div>
-<div class="cv-meta">The Gainesville Sun · Feb 2021</div>
-</div>
-</article>
-</section>
-<!-- Media Features -->
-<section class="section" id="media"><h2>Media Features &amp; Press Mentions</h2>
-<article class="cv-item" data-cats="media">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">An Oral History of a Native Son: The Elaine Massacre</div>
-<div class="cv-meta">The Footnote · Apr 22, 2025 · Interviewee</div>
-</div>
-</article>
-<article class="cv-item" data-cats="media">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">UF faculty discuss DeSantis policies at Black studies conference</div>
-<div class="cv-meta">Miami Herald · Sep 2023 · Quoted</div>
-</div>
-</article>
-<article class="cv-item" data-cats="media">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">UFF-UF Holds Virtual Teach-in to Discuss Academic Freedom</div>
-<div class="cv-meta">The Alligator · April 2024 · Quoted</div>
-</div>
-</article>
-</section>
-<!-- Honors -->
-<section class="section" id="honors"><h2>Honors, Awards, &amp; Certificates</h2>
-  <article class="cv-item" data-cats="honors">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Industrial &amp; Labor Relations Travel Grant</div>
-      <div class="cv-meta">Cornell University · $2,000 · 2025</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="honors">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Graduate School Conference Travel Grant</div>
-      <div class="cv-meta">Cornell University · $700 · 2025</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="honors">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Honorary Award: Spring Community‑Engagement Working Group Conversations SPARC352</div>
-      <div class="cv-meta">Center for Arts, Migration &amp; Entrepreneurship, University of Florida · $500 · 2023</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="honors">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Oral History Association Presenter Scholarship</div>
-      <div class="cv-meta">$500 · 2022</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="honors">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Machen Florida Opportunity Scholars Champion Award</div>
-      <div class="cv-meta">University of Florida · 2022</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="honors">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Evoking the Complexity of Black Lives in Florida – Certificate of Appreciation</div>
-      <div class="cv-meta">University of Florida · 2022</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="honors">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Graduate Assistantship</div>
-      <div class="cv-meta">University of Florida · 2021</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="honors">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Summa Cum Laude</div>
-      <div class="cv-meta">Northeastern Illinois University · 2018</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="honors">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Dean’s List, College of Arts &amp; Sciences</div>
-      <div class="cv-meta">Northeastern Illinois University · 2017–2018</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="honors">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Illinois Legislative Latino Caucus Foundation Scholarship</div>
-      <div class="cv-meta">2007</div>
-    </div>
-  </article>
-</section>
-<!-- Professional Associations & Service -->
-<section class="section" id="associations"><h2>Professional Associations &amp; Service</h2>
-  <article class="cv-item" data-cats="associations">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Ronald E. McNair Post‑Baccalaureate Achievement Program</div>
-      <div class="cv-meta">Scholar · Present–2017</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="associations service">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Constitutional Committee Member</div>
-      <div class="cv-meta">Cornell Graduate Students United – United Electrical Workers (CGSU‑UE) · 2025</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="associations">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Society for the Advancement of Socio‑Economics</div>
-      <div class="cv-meta">Member · 2025</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="associations">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Oral History Association</div>
-      <div class="cv-meta">Member · 2023</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="associations service">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Treasurer</div>
-      <div class="cv-meta">Alachua County Labor Coalition · 2022–2024</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="associations service">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Chair</div>
-      <div class="cv-meta">Alachua County Tenants Association · 2021</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="associations service">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Treasurer</div>
-      <div class="cv-meta">Caribbean, Latinx &amp; Latin American Exchange Organization · 2020</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="associations">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Sigma Delta Pi – National Spanish Honor Society</div>
-      <div class="cv-meta">Member · 2018</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="associations">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Big Ten Academic Alliance Summer Research Opportunity Program</div>
-      <div class="cv-meta">Participant · 2018</div>
-    </div>
-  </article>
-</section>
-<!-- Fieldwork & Trip Coordination -->
-<section class="section" id="fieldwork"><h2>Oral History Fieldwork &amp; Trip Coordination</h2>
-<article class="cv-item" data-cats="fieldwork service">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">Trustees on Trial Protest at the Board of Trustees</div>
-<div class="cv-meta">University of Florida · 2024</div>
-</div>
-<details><summary>Show more</summary>
-<p>Interviews documenting reactions to elimination of DEI positions and SB 266 impacts.</p>
-</details>
-</article>
-<article class="cv-item" data-cats="fieldwork">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">Network to Freedom: Underground Railroad</div>
-<div class="cv-meta">Harriet Tubman Underground Railroad State Park · 2023</div>
-</div>
-</article>
-<article class="cv-item" data-cats="fieldwork">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">Virginia Tidewater Main Street Project</div>
-<div class="cv-meta">Chesapeake Bay region · 2023</div>
-</div>
-</article>
-<article class="cv-item" data-cats="fieldwork">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">Remembering Rosewood</div>
-<div class="cv-meta">Day trip · 2023</div>
-</div>
-</article>
-<article class="cv-item" data-cats="fieldwork">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">Florida Naturalist Project</div>
-<div class="cv-meta">Key West, Everglades, St. Petersburg · 2022</div>
-</div>
-</article>
-<article class="cv-item" data-cats="fieldwork">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">Mississippi Freedom Project</div>
-<div class="cv-meta">Mississippi &amp; Arkansas Delta · 2021–2022</div>
-</div>
-</article>
-  <!-- Additional oral history fieldwork and trip coordination items -->
-  <article class="cv-item" data-cats="fieldwork">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Resilience Family Festival St. Augustine</div>
-      <div class="cv-meta">St. Augustine, FL · 2023</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="fieldwork">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Florida A&M Ceremony</div>
-      <div class="cv-meta">Leon County Exhibit, Florida A&M University · Tallahassee, FL · 2022</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="fieldwork">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Palatka Central High Interviews</div>
-      <div class="cv-meta">Palatka, FL · 2021</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="fieldwork">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Impacted Families National March on Washington to End Police Brutality</div>
-      <div class="cv-meta">Washington, DC · 2021</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="fieldwork">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Soil Collection Ceremonies</div>
-      <div class="cv-meta">Alachua & North Florida · 2020–2022</div>
-    </div>
-  </article>
-  <article class="cv-item" data-cats="fieldwork service">
-<h3 class="visually-hidden">Item</h3>
-    <div class="cv-head">
-      <div class="cv-role">Oral History Fieldwork Trip Coordinator: Student Team Leader</div>
-      <div class="cv-meta">2018</div>
-    </div>
-  </article>
-</section>
-<!-- Skills -->
-<section class="section" id="skills"><h2>Skills</h2>
-<article class="cv-item" data-cats="skills">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">Languages</div>
-<div class="cv-meta">Spanish · English</div>
-</div>
-</article>
-<article class="cv-item" data-cats="skills">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">Research &amp; Data</div>
-<div class="cv-meta">RStudio · Atlas.ti · MAXQDA · Zotero</div>
-</div>
-</article>
-<article class="cv-item" data-cats="skills">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">Audio &amp; Transcription</div>
-<div class="cv-meta">Descript · Adobe Audition · Hindenburg</div>
-</div>
-</article>
-<article class="cv-item" data-cats="skills">
-<h3 class="visually-hidden">Item</h3>
-<div class="cv-head">
-<div class="cv-role">Financial &amp; Admin</div>
-<div class="cv-meta">QuickBooks</div>
-</div>
-</article>
-</section>
-      <!-- close content and grid wrappers -->
-    </div><!-- .cv-content -->
-  </div><!-- .cv-grid -->
-  <footer>© 2026 Adolfho Romero · <a href="mailto:ar2539@cornell.edu">ar2539@cornell.edu</a></footer>
-</main>
-<!-- Back to top floating button -->
-<button aria-label="Back to top" id="back-to-top" type="button">↑</button>
-<script>
-    // Theme persistence
-    (function(){
-      const saved = localStorage.getItem('theme');
-      if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
-      }
-    })();
-    const darkToggle = document.querySelector('.dark-toggle');
-    function setAriaPressed(){ darkToggle.setAttribute('aria-pressed', document.documentElement.classList.contains('dark')); }
-    function toggleDarkMode(){
-      const isDark = document.documentElement.classList.toggle('dark');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light'); setAriaPressed();
-    }
-    setAriaPressed();
-    darkToggle.addEventListener('click', toggleDarkMode);
-    darkToggle.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggleDarkMode(); } });
+      <div class="now-grid">
+        <article class="now-card" data-index="01">
+          <span class="label">Research · Cornell ILR</span>
+          <h3>Tompkins County Minimum Wage Study</h3>
+          <p>Research Aide IV to Dr. Ian Greer, supporting stakeholder outreach and public convenings with labor organizations, community groups, employers, and public agencies.</p>
+        </article>
+        <article class="now-card" data-index="02">
+          <span class="label">Dissertation trajectory</span>
+          <h3>Worker centers and infrastructures of power</h3>
+          <p>Examining how worker centers build voice, leadership, coalition capacity, and durable power for migrant and low-wage workers.</p>
+        </article>
+        <article class="now-card" data-index="03">
+          <span class="label">Forthcoming · 2026</span>
+          <h3>Latinx labor rights and workplace enforcement</h3>
+          <p>Co-authored with Shannon Gleeson for the 50th Anniversary Special Issue on Latinx Labor Studies in <em>Aztlán</em>.</p>
+        </article>
+        <article class="now-card" data-index="04">
+          <span class="label">Conference circuit · 2026</span>
+          <h3>From crisis to care, capacity, and collective power</h3>
+          <p>Accepted presentations for the Oral History Association, American Sociological Association, SASE, and LERA meetings.</p>
+        </article>
+      </div>
+    </section>
 
-    // Active nav via aria-current
-    (function(){
-      const path = location.pathname.split('/').pop() || 'index.html';
-      document.querySelectorAll('nav.main-nav a').forEach(a => {
-        const href = a.getAttribute('href');
-        if (href && href.endsWith(path)) a.setAttribute('aria-current', 'page');
-      });
-    })();
+    <section class="section" id="trajectory">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">Trajectory</p>
+          <h2>Education and research path</h2>
+          <p>The throughline is community-grounded research: from Chicago and Florida to Cornell and current worker-center scholarship.</p>
+        </div>
+      </div>
+      <div class="timeline">
+        <article class="milestone">
+          <time>2015–2018</time>
+          <div>
+            <h3>Chicago foundations</h3>
+            <p>A.A. with honors at Harold Washington College and B.A. in Spanish at Northeastern Illinois University, with research on Puerto Rican displacement and gentrification.</p>
+          </div>
+        </article>
+        <article class="milestone">
+          <time>2019–2021</time>
+          <div>
+            <h3>Migration and community research</h3>
+            <p>M.A. in Latin American Studies at the University of Florida and field research with the Farmworker Association of Florida.</p>
+          </div>
+        </article>
+        <article class="milestone">
+          <time>2021–2024</time>
+          <div>
+            <h3>Oral history leadership</h3>
+            <p>Research coordination, public programs, teaching, and community fieldwork through the Samuel Proctor Oral History Program.</p>
+          </div>
+        </article>
+        <article class="milestone">
+          <time>2024–Present</time>
+          <div>
+            <h3>Cornell ILR doctoral work</h3>
+            <p>Ph.D. study in Global Labor and Work, connecting worker-center research with migration, race, and power-resource theory.</p>
+          </div>
+        </article>
+      </div>
+    </section>
 
-    // (Fullscreen PDF modal logic removed — replaced with simpler toggle implemented in DOMContentLoaded)
+    <section class="section" id="pathways">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">Selected record</p>
+          <h2>Four pathways through the work</h2>
+          <p>The website offers the narrative; the full PDF preserves the exhaustive professional record.</p>
+        </div>
+      </div>
+      <div class="path-grid">
+        <article class="path-card">
+          <span class="path-number">01 · SCHOLARSHIP</span>
+          <h3>Research &amp; publications</h3>
+          <ul>
+            <li>Worker centers, coalition infrastructure, and working-class power</li>
+            <li>Latinx labor rights and workplace enforcement</li>
+            <li>Oral history, language, and community partnership</li>
+          </ul>
+          <a class="text-link" href="publications.html">Explore publications</a>
+        </article>
+        <article class="path-card">
+          <span class="path-number">02 · PEDAGOGY</span>
+          <h3>Teaching</h3>
+          <ul>
+            <li>African American and Latinx histories</li>
+            <li>U.S. labor history and working-class cultures</li>
+            <li>Community-based oral-history methods</li>
+          </ul>
+          <a class="text-link" href="teaching.html">Explore teaching</a>
+        </article>
+        <article class="path-card">
+          <span class="path-number">03 · PUBLIC WORK</span>
+          <h3>Public scholarship</h3>
+          <ul>
+            <li>Community programs and accessible historical interpretation</li>
+            <li>Media interviews, public writing, and documentary work</li>
+            <li>Workshops on oral history, archives, and migration</li>
+          </ul>
+          <a class="text-link" href="media.html">Explore public engagement</a>
+        </article>
+        <article class="path-card">
+          <span class="path-number">04 · FIELD PRACTICE</span>
+          <h3>Fieldwork &amp; community research</h3>
+          <ul>
+            <li>200+ oral-history interviews across multiple regions</li>
+            <li>Mississippi and Arkansas Delta field programs</li>
+            <li>Farmworker, civil-rights, and community memory projects</li>
+          </ul>
+          <a class="text-link" href="#full-record">View the complete record</a>
+        </article>
+      </div>
+    </section>
 
-    // Filtering + search + tabs
-    const tabs = [...document.querySelectorAll('.tabbar [role="tab"]')];
-    const items = [...document.querySelectorAll('.cv-item')];
-    const count = document.getElementById('count');
-    const q = document.getElementById('search');
+    <section class="section field-note" aria-labelledby="field-title">
+      <img src="class.jpeg" alt="Adolfho Romero working with a community oral-history team and audiovisual equipment">
+      <div class="field-copy">
+        <p class="section-kicker">Method in practice</p>
+        <h2 id="field-title">Research grounded in relationship</h2>
+        <p>Across interviews, archives, classrooms, and public programs, the work begins with listening and remains accountable to the people whose histories make the research possible.</p>
+        <p class="caption">Community-centered oral-history practice brings together participants, researchers, and audiovisual production as part of the academic method.</p>
+      </div>
+    </section>
 
-    function apply(filter){
-      // Apply the selected filter and search term to all CV items
-      const term = (q?.value || '').toLowerCase();
-      let visible = 0;
-      items.forEach(el => {
-        const cats = (el.dataset.cats || '').split(/\s+/);
-        const show = (filter === 'all' || cats.includes(filter)) && (!term || el.textContent.toLowerCase().includes(term));
-        el.style.display = show ? '' : 'none';
-        if (show) visible++;
-      });
-      // Hide or show entire sections based on whether any of their .cv-item children are visible.
-      document.querySelectorAll('section.section').forEach(section => {
-        // Skip the PDF section from being hidden
-        if (section.id && section.id === 'full-pdf') return;
-        const itemsInSection = section.querySelectorAll('.cv-item');
-        // Determine if at least one item is visible (display not 'none')
-        const anyVisible = Array.from(itemsInSection).some(el => el.style.display !== 'none');
-        // Toggle the section's display accordingly
-        section.style.display = anyVisible ? '' : 'none';
-      });
-      count.textContent = 'Showing ' + visible;
-    }
+    <section class="section" id="full-record">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">Complete record</p>
+          <h2>The full curriculum vitae</h2>
+          <p>The PDF is synchronized automatically from the maintained Google Doc and includes all appointments, presentations, programs, awards, service, and fieldwork.</p>
+        </div>
+      </div>
+      <div class="pdf-panel">
+        <div>
+          <h3>Adolfho Romero · Full CV</h3>
+          <p>13 pages · Updated July 2026 · Automatically synchronized</p>
+        </div>
+        <div class="pdf-actions">
+          <button class="btn btn-quiet" id="previewToggle" type="button" aria-expanded="false" aria-controls="pdfPreview">Preview here</button>
+          <a class="btn btn-primary" href="adolfhoromerocv.pdf" target="_blank" rel="noopener">Open PDF</a>
+          <a class="btn btn-gold" href="adolfhoromerocv.pdf" download>Download</a>
+        </div>
+      </div>
+      <div class="pdf-preview" id="pdfPreview">
+        <iframe title="Adolfho Romero full curriculum vitae" data-src="adolfhoromerocv.pdf#toolbar=0"></iframe>
+      </div>
+    </section>
+  </main>
 
-    function setActive(tab){
-      // Determine if the clicked tab is already active. If so, revert to the "all" filter.
-      const alreadySelected = tab.getAttribute('aria-selected') === 'true';
-      if(alreadySelected){
-        const allTab = tabs.find(t => t.dataset.filter === 'all') || tabs[0];
-        // reset all selections
-        tabs.forEach(t => t.setAttribute('aria-selected','false'));
-        if(allTab) allTab.setAttribute('aria-selected','true');
-        apply('all');
-        // update the URL hash for accessibility / anchor reference
-        try{
-          if(location.hash !== '#all'){
-            history.replaceState(null, '', '#all');
-          }
-        }catch(e){}
-        return;
-      }
-      // Set selected state on the current tab
-      tabs.forEach(t => t.setAttribute('aria-selected','false'));
-      tab.setAttribute('aria-selected','true');
-      const filter = tab.dataset.filter || 'all';
-      apply(filter);
-      // After applying the filter, automatically scroll to the first visible CV item.
-      // This improves the mobile experience by immediately surfacing content relevant to the selected tab.
-      try{
-        // Delay slightly to ensure DOM updates have been applied.
-        setTimeout(() => {
-          const firstVisible = items.find(el => el.style.display !== 'none');
-          if(firstVisible){
-            firstVisible.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        }, 30);
-      } catch(e){}
-      // Update the URL hash to reflect the new filter. This provides a deep link for accessibility but does not trigger default anchor scroll because we immediately scroll into view above.
-      try{
-        const newHash = filter === 'all' ? '#all' : '#' + filter;
-        if(location.hash !== newHash){
-          history.replaceState(null, '', newHash);
-        }
-      }catch(e){}
-    }
+  <footer>
+    <p>© 2026 Adolfho Romero · <a href="mailto:ar2539@cornell.edu">ar2539@cornell.edu</a></p>
+  </footer>
 
-    // Override default anchor behaviour and apply filters on pointer interaction
-    tabs.forEach(t => {
-      // Use pointerdown to respond quickly on touch devices and avoid duplicate click events.
-      t.addEventListener('pointerdown', (e) => {
-        // Only handle primary input (ignore secondary/middle clicks)
-        if(e.pointerType === 'mouse' && e.button !== 0) return;
-        e.preventDefault();
-        setActive(t);
-      });
-    });
-    q?.addEventListener('input', () => {
-      const active = document.querySelector('.tabbar [aria-selected="true"]') || { dataset:{ filter:'all' } };
-      apply(active.dataset.filter);
-    });
+  <nav class="bottom-tabs" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="publications.html">Pubs</a>
+    <a href="teaching.html">Teach</a>
+    <a href="teaching-discussion-hub.html">Hub</a>
+    <a href="media.html">Media</a>
+    <a href="cv.html" aria-current="page">CV</a>
+  </nav>
 
-    // Keyboard navigation: cycle through tabs using arrow keys for accessibility
-    tabs.forEach(t => {
-      t.addEventListener('keydown', e => {
-        const idx = tabs.indexOf(t);
-        if(e.key === 'ArrowRight'){
-          e.preventDefault();
-          tabs[(idx + 1) % tabs.length].focus();
-        }
-        if(e.key === 'ArrowLeft'){
-          e.preventDefault();
-          tabs[(idx - 1 + tabs.length) % tabs.length].focus();
-        }
-      });
-    });
-
-    // Initialize from hash if present
-    (function(){
-      const want = (location.hash || '#all').replace('#','');
-      const start = tabs.find(t => t.dataset.filter === want) || tabs[0];
-      setActive(start);
-    })();
-
-    // ===== Scroll reveal animations =====
-    // When the user has motion preference disabled (prefers‑reduced‑motion), skip animations.
-    document.addEventListener('DOMContentLoaded', function(){
-      try{
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-        // Collect all sections and CV items to animate.
-        const targets = document.querySelectorAll('.section, .cv-item');
-        targets.forEach(el => {
-          // Apply the base reveal class to hide and offset the element initially.
-          el.classList.add('reveal');
-        });
-        // Use an IntersectionObserver to add the visible class when elements enter the viewport.
-        const observer = new IntersectionObserver((entries, obs) => {
-          entries.forEach(entry => {
-            if(entry.isIntersecting){
-              entry.target.classList.add('visible');
-              obs.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.15 });
-        targets.forEach(el => observer.observe(el));
-      } catch(e){}
-    });
-
-    // Hide nav on scroll for mobile
-    let lastScrollTop = 0;
-    const nav = document.querySelector('.main-nav');
-    window.addEventListener('scroll', function() {
-      if (window.innerWidth <= 820) {
-        let st = window.pageYOffset || document.documentElement.scrollTop;
-        if (st > lastScrollTop && st > 60) nav.classList.add('hide-nav');
-        else nav.classList.remove('hide-nav');
-        lastScrollTop = st <= 0 ? 0 : st;
-      } else {
-        nav.classList.remove('hide-nav');
-      }
-    });
-  </script>
-
-  <!-- PDF full screen toggle logic -->
   <script>
-    document.addEventListener('DOMContentLoaded', function(){
-      const shell = document.getElementById('pdf-shell');
-      const btn = document.getElementById('toggle-pdf-full');
-      if(shell && btn){
-        let full = false;
-        btn.addEventListener('click', function(){
-          full = !full;
-          shell.style.height = full ? '85vh' : '420px';
-          btn.textContent = full ? 'Exit full screen' : 'Full screen';
-        });
-      }
-    });
-  </script>
-<!-- Calendly badge widget -->
-<script async src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
-<script type="text/javascript">
-  window.addEventListener('load', function() {
-    Calendly.initBadgeWidget({
-      url: 'https://calendly.com/ar2539-cornell',
-      text: 'Schedule time with me',
-      color: '#0069ff',
-      textColor: '#ffffff',
-      branding: true
-    });
-  });
-</script>
+    (function () {
+      const root = document.documentElement;
+      const themeToggle = document.getElementById("themeToggle");
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-  <!-- Scroll progress bar logic -->
-  <script>
-    (function(){
-      function updateProgress(){
-        var bar = document.getElementById('progress-bar');
-        if(!bar) return;
-        var doc = document.documentElement;
-        var scrollTop = window.scrollY || doc.scrollTop;
-        var height = doc.scrollHeight - window.innerHeight;
-        var percent = 0;
-        if (height > 0) percent = (scrollTop / height) * 100;
-        bar.style.width = percent + '%';
+      function applyTheme(isDark) {
+        root.classList.toggle("dark", isDark);
+        themeToggle.textContent = isDark ? "☾" : "☀";
+        themeToggle.setAttribute("aria-label", isDark ? "Use light mode" : "Use dark mode");
       }
-      window.addEventListener('scroll', updateProgress);
-      window.addEventListener('resize', updateProgress);
-      document.addEventListener('DOMContentLoaded', updateProgress);
-    })();
-  </script>
 
-  <!-- Back to top button logic -->
-  <script>
-    (function(){
-      var btn = document.getElementById('back-to-top');
-      if(!btn) return;
-      function checkBtn(){
-        var scrollTop = window.scrollY || document.documentElement.scrollTop;
-        if(scrollTop > 400){
-          btn.style.display = 'flex';
-        } else {
-          btn.style.display = 'none';
-        }
-      }
-      btn.addEventListener('click', function(){
-        window.scrollTo({ top:0, behavior:'smooth' });
+      applyTheme(savedTheme ? savedTheme === "dark" : prefersDark);
+      themeToggle.addEventListener("click", function () {
+        const isDark = !root.classList.contains("dark");
+        applyTheme(isDark);
+        localStorage.setItem("theme", isDark ? "dark" : "light");
       });
-      window.addEventListener('scroll', checkBtn);
-      document.addEventListener('DOMContentLoaded', checkBtn);
-    })();
+
+      const previewToggle = document.getElementById("previewToggle");
+      const preview = document.getElementById("pdfPreview");
+      const frame = preview.querySelector("iframe");
+
+      previewToggle.addEventListener("click", function () {
+        const willOpen = !preview.classList.contains("open");
+        preview.classList.toggle("open", willOpen);
+        previewToggle.setAttribute("aria-expanded", String(willOpen));
+        previewToggle.textContent = willOpen ? "Close preview" : "Preview here";
+        if (willOpen && !frame.src) frame.src = frame.dataset.src;
+        if (willOpen) preview.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      });
+    }());
   </script>
-<!-- Bottom tabs HTML -->
-<nav aria-label="Bottom navigation" class="bottom-tabs">
-<div class="tabs-row">
-<a aria-label="Home" class="tab-link" href="index.html">
-<svg aria-hidden="true" class="ico" viewbox="0 0 24 24"><path d="M3 11l9-7 9 7v8a2 2 0 0 1-2 2h-4v-6H9v6H5a2 2 0 0 1-2-2z" fill="currentColor"></path></svg>
-<span>Home</span>
-</a>
-<a aria-label="Publications" class="tab-link" href="publications.html">
-<svg aria-hidden="true" class="ico" viewbox="0 0 24 24"><path d="M4 4h12v16H4zM16 6h4v14H8" fill="currentColor"></path></svg>
-<span>Pubs</span>
-</a>
-<a aria-label="Teaching" class="tab-link" href="teaching.html">
-<svg aria-hidden="true" class="ico" viewbox="0 0 24 24"><path d="M3 7l9-4 9 4-9 4-9-4zm2 6v4l7 3 7-3v-4" fill="currentColor"></path></svg>
-<span>Teach</span>
-</a>
-<a aria-label="Media" class="tab-link" href="media.html">
-<svg aria-hidden="true" class="ico" viewbox="0 0 24 24"><path d="M4 6h16v12H4zM8 6v12" fill="currentColor"></path></svg>
-<span>Media</span>
-</a>
-  <a aria-label="CV" class="tab-link" href="cv.html">
-<svg aria-hidden="true" class="ico" viewbox="0 0 24 24"><path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1v5h5" fill="currentColor"></path></svg>
-<span>CV</span>
-  </a>
-<a aria-label="Schedule" class="tab-link" href="https://calendly.com/ar2539-cornell" rel="noopener" target="_blank">
-<svg aria-hidden="true" class="ico" viewbox="0 0 24 24"><path d="M7 2h10a2 2 0 0 1 2 2v16l-7-3-7 3V4a2 2 0 0 1 2-2zm3 6h6m-6 4h6m-6 4h6" fill="currentColor"></path></svg>
-<span>Schedule</span>
-</a>
-</div>
-</nav>
-<!-- Bottom tabs active highlight -->
-<script>
-    (function(){
-      var path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-      document.querySelectorAll('.bottom-tabs .tab-link').forEach(function(a){
-        var href = (a.getAttribute('href')||'').toLowerCase();
-        if(!href.startsWith('http') && ((path === '' && href === 'index.html') || path === href)){
-          a.setAttribute('aria-current','page');
-        }
-      });
-    })();
-  </script>
-<!-- style moved to head -->
-<script>
-(function(){
-  /**
-   * Dynamically adjust the height of the PDF viewer on larger screens.
-   * On small screens (≤820px), no explicit height is applied so that
-   * the embed can size naturally and avoid stretching the viewport.
-   */
-  function setPDFHeight(){
-    try{
-      const shell = document.getElementById('pdf-shell');
-      if(!shell) return;
-      // If the screen is small, let CSS handle sizing and reset any inline height.
-      if(window.innerWidth <= 820){
-        shell.style.height = '';
-        return;
-      }
-      // Determine an appropriate height based on available viewport space.
-      const rect = shell.getBoundingClientRect();
-      const viewport = window.innerHeight;
-      // Subtract the top offset of the shell and leave a bit of space below (24px).
-      let desired = viewport - rect.top - 24;
-      // Ensure a minimum height of 480px for comfortable viewing.
-      if(desired < 480) desired = 480;
-      shell.style.height = desired + 'px';
-    }catch(e){}
-  }
-  document.addEventListener('DOMContentLoaded', function(){
-    setPDFHeight();
-    window.addEventListener('resize', setPDFHeight);
-    const shell = document.getElementById('pdf-shell');
-    const btn = document.getElementById('toggle-pdf-full');
-    if(shell && btn){
-      btn.addEventListener('click', function(){
-        // Toggle the PDF shell into a full-screen style on click.
-        shell.classList.toggle('fullscreen');
-        btn.textContent = shell.classList.contains('fullscreen') ? 'Exit full screen' : 'Full screen';
-        const isFull = shell.classList.contains('fullscreen');
-        document.documentElement.style.overflow = isFull ? 'hidden' : '';
-        document.body.style.overflow = isFull ? 'hidden' : '';
-      });
-    }
-  });
-})();
-</script>
-  <script>
-    /*
-      Fade out the Calendly badge near the bottom of the page.
-      The Calendly widget injects a floating button fixed to the bottom right.  Without
-      adjustment it can overlap the dark footer.  This listener reduces its opacity and
-      disables interaction when the user approaches the bottom of the page.
-    */
-    (function() {
-      function handleBadgeVisibility() {
-        var badge = document.querySelector('.calendly-badge-widget');
-        if (!badge) return;
-        var scrollTop = window.scrollY || document.documentElement.scrollTop;
-        var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-        var distance = maxScroll - scrollTop;
-        if (distance < 200) {
-          badge.style.opacity = '0';
-          badge.style.pointerEvents = 'none';
-        } else {
-          badge.style.opacity = '';
-          badge.style.pointerEvents = '';
-        }
-      }
-      window.addEventListener('scroll', handleBadgeVisibility);
-      window.addEventListener('resize', handleBadgeVisibility);
-      document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(handleBadgeVisibility, 600);
-      });
-    })();
-  </script>
-  <script>
-    /*
-      Fade out the Calendly badge near the bottom of the page.
-      The Calendly widget injects a floating button fixed to the bottom right.  Without
-      adjustment it can overlap the dark footer.  This listener reduces its opacity and
-      disables interaction when the user approaches the bottom of the page.
-    */
-    (function() {
-      function handleBadgeVisibility() {
-        var badge = document.querySelector('.calendly-badge-widget');
-        if (!badge) return;
-        var scrollTop = window.scrollY || document.documentElement.scrollTop;
-        var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-        var distance = maxScroll - scrollTop;
-        if (distance < 200) {
-          badge.style.opacity = '0';
-          badge.style.pointerEvents = 'none';
-        } else {
-          badge.style.opacity = '';
-          badge.style.pointerEvents = '';
-        }
-      }
-      window.addEventListener('scroll', handleBadgeVisibility);
-      window.addEventListener('resize', handleBadgeVisibility);
-      document.addEventListener('DOMContentLoaded', function() {
-        // Allow time for Calendly script to inject the badge
-        setTimeout(handleBadgeVisibility, 600);
-      });
-    })();
-  </script>
-  <script src="accessibility.js" defer></script>
 </body>
 </html>
