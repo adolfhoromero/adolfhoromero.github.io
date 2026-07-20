@@ -3477,6 +3477,71 @@ footer a::after{ height:1.5px; background:var(--accent-gold-solid); }
 }
 
   </style>
+  <style id="teaching-scroll-and-contrast-fix-2026-07-19">
+    /*
+      Keep the document as the only vertical scroll container.
+      Using overflow-x:hidden on these blocks made overflow-y compute to auto,
+      creating several tiny inner scroll ranges that captured wheel/touch input.
+    */
+    html,
+    body {
+      overflow-x: clip !important;
+      overflow-y: visible !important;
+      overscroll-behavior-y: auto !important;
+    }
+
+    main,
+    .section,
+    .hero,
+    .page-actions,
+    .years-grid,
+    .course-card-grid {
+      overflow-x: clip !important;
+      overflow-y: visible !important;
+    }
+
+    /* Horizontal tab rows may scroll sideways, but never vertically. */
+    .tabbar {
+      overflow-x: auto !important;
+      overflow-y: hidden !important;
+      overscroll-behavior-y: auto !important;
+    }
+
+    /* Restore strong light/dark contrast for the first heading. */
+    #teaching-philosophy > h2 {
+      color: #1b2a42 !important;
+      opacity: 1 !important;
+      text-shadow: none !important;
+    }
+    .dark #teaching-philosophy > h2 {
+      color: #eef3fb !important;
+    }
+
+    /* Bring the opening content into view sooner. */
+    main {
+      padding-top: 2rem !important;
+    }
+    #teaching-philosophy > h2 {
+      margin-bottom: 1.5rem !important;
+    }
+    .photo-gallery.philosophy-photos {
+      margin-top: .5rem !important;
+    }
+
+    /* Keep the desktop scheduling control useful without dominating content. */
+    @media (min-width: 821px) {
+      .calendly-badge-widget {
+        transform: translateY(-40px) scale(.88) !important;
+        transform-origin: right bottom !important;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .calendly-badge-widget {
+        display: none !important;
+      }
+    }
+  </style>
   <link rel="stylesheet" href="site-header.css?v=20260718-2">
 </head>
 
