@@ -229,10 +229,67 @@
       .field-card,.field-card img,.field-filter{transition:none}
       .field-card.is-entering{animation:none}
     }
+
+    /* Research paths: compact links with a real destination */
+    .research-jump{max-width:1160px; margin:-14px auto 20px; padding:0 14px; display:flex; flex-wrap:wrap; justify-content:center; gap:8px}
+    .research-jump a{display:inline-flex; align-items:center; gap:7px; padding:8px 13px; color:var(--text-main); font-size:.82rem; font-weight:700; text-decoration:none; background:color-mix(in srgb,var(--card-bg) 90%,transparent); border:1px solid color-mix(in srgb,var(--accent) 18%,transparent); border-radius:999px; box-shadow:0 7px 20px rgba(17,31,54,.06); transition:transform .2s ease,border-color .2s ease,background .2s ease}
+    .research-jump a::after{content:"↘"; color:var(--accent)}
+    .research-jump a:hover,.research-jump a:focus-visible{transform:translateY(-2px); border-color:var(--accent); background:color-mix(in srgb,var(--accent) 7%,var(--card-bg)); outline:none}
+
+    /* Current notes */
+    .current-notes{position:relative; overflow:hidden; padding:clamp(28px,4.5vw,54px) !important}
+    .current-notes::before{content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 7%,transparent),transparent 48%,color-mix(in srgb,var(--accent-gold) 8%,transparent))}
+    .section-intro{max-width:760px; margin:-8px auto 24px; color:var(--muted); text-align:center; line-height:1.7}
+    .current-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px}
+    .update-card{display:grid; grid-template-rows:auto 1fr; overflow:hidden; min-height:100%; background:var(--card-bg); border:1px solid color-mix(in srgb,var(--accent) 13%,transparent); border-radius:22px; box-shadow:0 16px 42px rgba(17,31,54,.12); transition:transform .3s ease,box-shadow .3s ease}
+    .update-card:hover{transform:translateY(-4px); box-shadow:0 22px 48px rgba(17,31,54,.17)}
+    .update-card figure{margin:0; position:relative; overflow:hidden; background:#102039}
+    .update-card img{display:block; width:100%; aspect-ratio:16/9; object-fit:cover; transition:transform .5s ease}
+    .update-card--jhu img{object-position:center 46%}
+    .update-card:hover img{transform:scale(1.02)}
+    .update-card figcaption{position:absolute; right:12px; bottom:10px; padding:5px 8px; color:#f8fafc; font-size:.68rem; background:rgba(8,20,38,.78); border-radius:999px; backdrop-filter:blur(8px)}
+    .update-copy{padding:22px 22px 25px}
+    .update-meta{margin:0 0 7px; color:var(--accent); font-size:.73rem; font-weight:800; letter-spacing:.11em; text-transform:uppercase}
+    .update-card h3{margin:0 0 10px; color:var(--heading-color); font-family:'Spectral',serif; font-size:clamp(1.55rem,2.8vw,2.2rem); line-height:1.05}
+    .update-card p:not(.update-meta){color:var(--muted); line-height:1.68}
+    .update-link{display:inline-flex; margin-top:14px; color:var(--accent); font-size:.86rem; font-weight:750; text-decoration:none}
+    .update-link::after{content:" →"; margin-left:4px}
+
+    /* Dissertation archive */
+    .thesis-showcase{padding:clamp(30px,5vw,58px) !important; border-left:0}
+    .archive-header{display:grid; grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr); gap:28px; align-items:end; margin-bottom:26px}
+    .archive-kicker{display:block; margin-bottom:8px; color:var(--accent); font-size:.74rem; font-weight:800; letter-spacing:.15em; text-transform:uppercase}
+    .archive-header h2{margin:0; text-align:left; font-size:clamp(2.1rem,4.5vw,3.75rem); line-height:1; letter-spacing:-.03em}
+    .archive-header p{color:var(--muted); line-height:1.75}
+    .archive-grid{display:grid; grid-template-columns:1.2fr .8fr .8fr; gap:16px}
+    .archive-card{position:relative; overflow:hidden; min-height:430px; margin:0; border-radius:20px; background:#0d1728; box-shadow:0 18px 46px rgba(10,23,41,.2)}
+    .archive-card img{width:100%; height:100%; object-fit:cover; display:block; filter:saturate(.88) contrast(1.03); transition:transform .55s ease}
+    .archive-card--lead img{object-position:center 42%}
+    .archive-card:hover img{transform:scale(1.025)}
+    .archive-card::after{content:""; position:absolute; inset:44% 0 0; background:linear-gradient(transparent,rgba(6,13,24,.94)); pointer-events:none}
+    .archive-card figcaption{position:absolute; z-index:1; left:0; right:0; bottom:0; padding:22px; color:#edf3fb}
+    .archive-card figcaption strong{display:block; margin-bottom:5px; font-family:'Spectral',serif; font-size:1.25rem}
+    .archive-card figcaption span{display:block; color:#c9d5e5; font-size:.78rem; line-height:1.5}
+    .archive-question{margin:20px 0 0; padding:17px 19px; color:var(--text-main); line-height:1.65; background:color-mix(in srgb,var(--accent) 7%,var(--card-bg)); border-left:3px solid var(--accent); border-radius:0 14px 14px 0}
+    .archive-question strong{color:var(--accent)}
+
+    .site-credits{max-width:1160px; margin:0 auto 34px; padding:0 14px}
+    .site-credits details{padding:14px 17px; color:var(--muted); font-size:.78rem; line-height:1.65; background:color-mix(in srgb,var(--card-bg) 92%,transparent); border:1px solid color-mix(in srgb,var(--accent) 12%,transparent); border-radius:14px}
+    .site-credits summary{color:var(--heading-color); font-weight:750; cursor:pointer}
+    .site-credits p{margin:10px 0 0}
+
+    @media (max-width:820px){
+      .current-grid,.archive-header{grid-template-columns:1fr}
+      .archive-header h2{text-align:center}
+      .archive-header{text-align:center}
+      .archive-grid{grid-template-columns:1fr}
+      .archive-card{min-height:390px}
+      .research-jump{margin-top:4px}
+    }
   </style>
 
   <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
-  <link rel="stylesheet" href="site-header.css?v=20260718-2">
+  <link rel="stylesheet" href="site-header.css?v=20260720-5">
 </head>
 <body>
   <a class="skip-link" href="#about" aria-label="Skip to main content">Skip to content</a>
@@ -264,6 +321,14 @@
     <blockquote class="hero-quote">“I am grateful to work alongside community organizations, mentors, and workers in the ongoing struggle for dignity and justice.”</blockquote>
   </section>
 
+  <nav class="research-jump" aria-label="Explore research themes">
+    <a href="#thesis-work">Worker power</a>
+    <a href="#fieldwork">Oral history</a>
+    <a href="#fieldwork">Migration</a>
+    <a href="#latest-updates">Racial politics</a>
+    <a href="teaching.html#teaching-philosophy">Teaching practice</a>
+  </nav>
+
   <main>
     <section id="impact" aria-labelledby="impact-title" class="section">
       <div class="wrap">
@@ -282,10 +347,10 @@
             <div class="label"><strong>Oral history interviews</strong> conducted</div>
             <div class="sub"><strong>Community based</strong> interviews across Florida, the Mississippi Delta, and Indigenous communities nationwide.</div>
           </li>
-          <li class="card" aria-label="Students taught at Cornell">
-            <div class="value" data-target="175" data-format="int" data-plus="true">175+</div>
-            <div class="label"><strong>Students taught</strong> at Cornell</div>
-            <div class="sub"><strong>Multiple sections</strong> over two semesters.</div>
+          <li class="card" aria-label="Graduate teaching assistant work at Cornell">
+            <div class="value">TA</div>
+            <div class="label"><strong>Course support</strong> at Cornell</div>
+            <div class="sub">Grading, detailed written feedback, Canvas organization, and student meetings—not independently led sections.</div>
           </li>
           <li class="card" aria-label="Volunteer program leadership">
             <div class="value" data-target="40" data-format="int" data-plus="true">40+</div>
@@ -299,6 +364,37 @@
           </li>
         </ul>
         <p class="note">Grant total reflects full award amounts for projects I contributed to and does not represent personal earnings.</p>
+      </div>
+    </section>
+
+    <section id="latest-updates" class="section current-notes" aria-labelledby="latest-title">
+      <h2 id="latest-title">Latest Updates</h2>
+      <p class="section-intro">A few recent places where my doctoral research has been tested, sharpened, and placed in conversation with other scholars.</p>
+      <div class="current-grid">
+        <article class="update-card">
+          <figure>
+            <img src="assets/updates/lera-2026.webp" alt="Adolfho Romero presenting Is Ithaca Still a Union Town at the 2026 LERA Annual Meeting" width="1600" height="1200" loading="lazy" decoding="async">
+            <figcaption>Personal archive · 2026</figcaption>
+          </figure>
+          <div class="update-copy">
+            <p class="update-meta">June 2026 · Minneapolis</p>
+            <h3>LERA 79th Annual Meeting</h3>
+            <p>I presented “Is Ithaca Still a Union Town?”—research on worker power, local labor repertoires, and uneven regeneration in Tompkins County from 1984 to 2026.</p>
+            <a class="update-link" href="cv.html#current-work">See current academic work</a>
+          </div>
+        </article>
+        <article class="update-card update-card--jhu">
+          <figure>
+            <img src="assets/updates/jhu-racial-politics-2026.webp" alt="Johns Hopkins Racial Politics Summer Institute 2026 welcome packet cover" width="754" height="820" loading="lazy" decoding="async">
+            <figcaption>Institute welcome packet · 2026</figcaption>
+          </figure>
+          <div class="update-copy">
+            <p class="update-meta">June 2026 · Baltimore</p>
+            <h3>Johns Hopkins Racial Politics Summer Institute</h3>
+            <p>Selected for an intensive graduate institute on racial politics, democratic backsliding, authoritarianism, and institutional power—with scholarship support for participation.</p>
+            <a class="update-link" href="cv.html#trajectory">Follow the research trajectory</a>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -380,6 +476,40 @@
       <p class="field-ethic"><strong>A note on these photographs:</strong> I share them as records of work done in relationship with others. The captions explain my role while honoring that the labor, histories, and experiences pictured belong to the communities themselves.</p>
     </section>
 
+    <section id="thesis-work" class="section thesis-showcase" aria-labelledby="thesis-title">
+      <div class="archive-header">
+        <div>
+          <span class="archive-kicker">Inside the dissertation archive</span>
+          <h2 id="thesis-title">Reading worker power through its own press.</h2>
+        </div>
+        <p>My dissertation research follows how workers and community organizations in Tompkins County built collective capacity beyond the traditional union hall. <em>The Working Press</em> and <em>The Workers’ Edge</em> show how those groups explained workplace struggles, connected campaigns, and created a public language of solidarity.</p>
+      </div>
+      <div class="archive-grid">
+        <figure class="archive-card archive-card--lead">
+          <img src="assets/research/working-press-union-town.webp" alt="November 1987 cover of The Working Press with the headline Ithaca Is a Union Town" width="1290" height="2293" loading="lazy" decoding="async">
+          <figcaption>
+            <strong>“Ithaca Is a Union Town”</strong>
+            <span><em>The Working Press</em>, November 1987 · Archival documentation by Adolfho Romero</span>
+          </figcaption>
+        </figure>
+        <figure class="archive-card">
+          <img src="assets/research/working-press-organizing.webp" alt="Working Press article about organizing Rubbermaid workers in Cortland" width="1300" height="1733" loading="lazy" decoding="async">
+          <figcaption>
+            <strong>Organizing beyond one workplace</strong>
+            <span><em>The Working Press</em> · Rubbermaid workers in Cortland</span>
+          </figcaption>
+        </figure>
+        <figure class="archive-card">
+          <img src="assets/research/workers-edge-2019.webp" alt="Summer 2019 cover of The Workers' Edge from the Tompkins County Workers' Center" width="1020" height="1320" loading="lazy" decoding="async">
+          <figcaption>
+            <strong>“We’re Stronger Together”</strong>
+            <span><em>The Workers’ Edge</em>, Summer 2019 · Tompkins County Workers’ Center</span>
+          </figcaption>
+        </figure>
+      </div>
+      <p class="archive-question"><strong>The question guiding this work:</strong> What kinds of power become possible when workers build their own institutions, media, relationships, and memory?</p>
+    </section>
+
     <section id="about" class="section" aria-labelledby="about-title">
       <h2 id="about-title">About My Journey</h2>
       <div class="about-container">
@@ -435,9 +565,9 @@
       </section>
     </section>
 
-    <!-- Highlights from Media -->
+    <!-- Selected media -->
     <section class="section quotes-section" id="highlights" aria-labelledby="highlights-title">
-      <h2 id="highlights-title">Highlights from Media</h2>
+      <h2 id="highlights-title">Selected Media</h2>
       <div class="quotes-layout">
         <a id="quote-media" class="quote-media" href="#" target="_blank" rel="noopener"><img id="quote-image" src="alligator.jpeg" alt="The Independent Florida Alligator logo" loading="lazy"></a>
         <div class="quotes-carousel" aria-live="polite"></div>
@@ -448,6 +578,13 @@
       </div>
     </section>
   </main>
+
+  <aside class="site-credits" aria-label="Image and archive credits">
+    <details>
+      <summary>Image &amp; archive credits</summary>
+      <p>Site text and curation are by Adolfho Romero. Personal, fieldwork, and event photographs come from Romero’s working archive unless a caption identifies another source. Newspaper images are reproduced for scholarly commentary from <em>The Working Press</em> and <em>The Workers’ Edge</em>; publication ownership remains with their respective publishers and communities.</p>
+    </details>
+  </aside>
 
   <footer>© 2026 Adolfho Romero · <a href="mailto:ar2539@cornell.edu">ar2539@cornell.edu</a></footer>
 
