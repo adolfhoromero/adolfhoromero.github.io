@@ -171,6 +171,24 @@
         0 0 0 8rem rgba(214, 166, 59, .05);
       z-index: -1;
     }
+    .dossier-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0 0 0 auto;
+      width: 48%;
+      background:
+        linear-gradient(90deg, #0b1a31 0%, rgba(11, 26, 49, .58) 26%, rgba(11, 26, 49, .08) 70%),
+        linear-gradient(0deg, rgba(7, 18, 35, .34), transparent 58%),
+        url("assets/page-stories/cornell-ilr-v2.webp") center / cover no-repeat;
+      opacity: .84;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .dossier-hero > * {
+      position: relative;
+      z-index: 1;
+      max-width: 58%;
+    }
     .eyebrow {
       display: inline-flex;
       align-items: center;
@@ -500,6 +518,15 @@
       .site-nav { display: none; }
       .dossier-hero { padding: 2rem 1.3rem; border-radius: 20px; }
       .dossier-hero h1 { font-size: clamp(3rem, 16vw, 4.6rem); }
+      .dossier-hero::after {
+        width: 100%;
+        background:
+          linear-gradient(90deg, rgba(9, 21, 41, .92), rgba(9, 21, 41, .7)),
+          linear-gradient(0deg, rgba(9, 21, 41, .8), transparent),
+          url("assets/page-stories/cornell-ilr-v2.webp") center / cover no-repeat;
+        opacity: .45;
+      }
+      .dossier-hero > * { max-width: none; }
       .section { margin-top: 3.5rem; }
       .section-heading { grid-template-columns: 1fr; }
       .section-heading .text-link { justify-self: start; }
