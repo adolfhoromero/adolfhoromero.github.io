@@ -2604,7 +2604,7 @@ nav.main-nav a.cv-link {
   }
   .mt-title{font-family:var(--font-heading,'Spectral',serif);font-size:1.45rem;margin:0 0 .35rem;color:var(--text-main,#232d41)}
   .mt-note{color:var(--text-secondary,#5a6c7d);margin:0 0 .9rem;font-size:.98rem}
-  .mt-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+  .mt-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
   @media (max-width:900px){.mt-grid{grid-template-columns:1fr 1fr}}
   @media (max-width:560px){.mt-grid{grid-template-columns:1fr}}
   .mt-fig{margin:0;display:flex;flex-direction:column;gap:.55rem;
@@ -2614,6 +2614,8 @@ nav.main-nav a.cv-link {
   .mt-fig img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:10px;
               filter:grayscale(.08) contrast(1.02);transition:transform .2s ease, filter .2s ease}
   .mt-fig:hover img{transform:translateY(-2px);filter:grayscale(0)}
+  .mt-fig--static{cursor:default}
+  .mt-fig--static:hover img{transform:none}
   .mt-fig figcaption{display:flex;flex-direction:column;gap:.1rem}
   .mt-fig strong{font-weight:700;color:var(--text-main,#232d41)}
   .mt-fig span{font-size:.92rem;color:var(--text-secondary,#5a6c7d)}
@@ -3573,6 +3575,7 @@ footer a::after{ height:1.5px; background:var(--accent-gold-solid); }
       <!-- Added a new navigation item for the interactive discussion hub -->
       <li><a href="teaching-discussion-hub.html">Discussion Hub</a></li>
       <li><a href="media.html">Media & Public Engagement</a></li>
+      <li><a href="updates.html">Updates</a></li>
       <!-- CV links to the CV page -->
       <li><a href="cv.html" class="cv-link" aria-label="Open CV page">CV</a></li>
     </ul>
@@ -3656,6 +3659,16 @@ footer a::after{ height:1.5px; background:var(--accent-gold-solid); }
     <p class="mt-note center">Selected programs that inform my research methods and pedagogy.</p>
 
     <div class="mt-grid">
+      <figure class="mt-fig mt-fig--static">
+        <img src="assets/training/ut-austin-ethnography-detail.webp"
+             alt="Participants in a workshop at the UT Austin Urban Ethnography Lab"
+             width="768" height="1024" loading="lazy" decoding="async">
+        <figcaption>
+          <strong>Ethnography Summer School</strong>
+          <span>UT Austin Urban Ethnography Lab · August 2025</span>
+        </figcaption>
+      </figure>
+
       <figure class="mt-fig" data-mt="migrations" tabindex="0" aria-label="View Migration Spring School certificate">
         <!-- Use relative paths so images resolve correctly on GitHub Pages or in subfolders -->
         <img src="migrations.jpeg"

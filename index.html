@@ -230,6 +230,27 @@
       .field-card.is-entering{animation:none}
     }
 
+    /* Recent activity: a selective professional record, not a social feed */
+    .activity-section{padding:clamp(34px,5vw,64px) !important}
+    .activity-heading{display:flex; align-items:end; justify-content:space-between; gap:24px; margin-bottom:24px}
+    .activity-heading h2{margin:4px 0 0; text-align:left; font-size:clamp(2rem,4vw,3.25rem); line-height:1}
+    .activity-heading p{max-width:580px; color:var(--muted); line-height:1.7}
+    .activity-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px}
+    .activity-card{overflow:hidden; border:1px solid color-mix(in srgb,var(--accent) 14%,transparent); border-radius:16px; background:var(--card-bg); box-shadow:0 12px 30px rgba(17,31,54,.09); transition:transform .25s ease,box-shadow .25s ease}
+    .activity-card:hover{transform:translateY(-4px); box-shadow:0 18px 40px rgba(17,31,54,.15)}
+    .activity-card img{display:block; width:100%; aspect-ratio:16/9; object-fit:cover}
+    .activity-card-copy{padding:19px 19px 22px}
+    .activity-role{display:inline-block; margin-bottom:9px; color:var(--accent); font-size:.73rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase}
+    .activity-card time{display:block; color:var(--muted); font-size:.8rem; font-weight:650}
+    .activity-card h3{margin:6px 0 9px; font-family:'Spectral',serif; font-size:1.35rem; line-height:1.15; color:var(--heading-color)}
+    .activity-card p{color:var(--muted); font-size:.91rem; line-height:1.62}
+    .activity-more{display:inline-flex; align-items:center; gap:8px; margin-top:22px; color:var(--accent); font-weight:800; text-decoration:none}
+    .activity-more::after{content:"→"; transition:transform .2s ease}
+    .activity-more:hover::after{transform:translateX(4px)}
+    @media (max-width:900px){.activity-grid{grid-template-columns:1fr 1fr}.activity-card:last-child{grid-column:1/-1}.activity-heading{align-items:start; flex-direction:column}}
+    @media (max-width:620px){.activity-grid{grid-template-columns:1fr}.activity-card:last-child{grid-column:auto}}
+    @media (prefers-reduced-motion:reduce){.activity-card,.activity-more::after{transition:none}}
+
     /* Research paths: compact links with a real destination */
     .research-jump{max-width:1160px; margin:-14px auto 20px; padding:0 14px; display:flex; flex-wrap:wrap; justify-content:center; gap:8px}
     .research-jump a{display:inline-flex; align-items:center; gap:7px; padding:8px 13px; color:var(--text-main); font-size:.82rem; font-weight:700; text-decoration:none; background:color-mix(in srgb,var(--card-bg) 90%,transparent); border:1px solid color-mix(in srgb,var(--accent) 18%,transparent); border-radius:999px; box-shadow:0 7px 20px rgba(17,31,54,.06); transition:transform .2s ease,border-color .2s ease,background .2s ease}
@@ -322,6 +343,7 @@
       <li><a class="teaching-link" href="teaching.html">Teaching</a></li>
       <li><a href="teaching-discussion-hub.html">Discussion Hub</a></li>
       <li><a href="media.html">Media &amp; Public Engagement</a></li>
+      <li><a href="updates.html">Updates</a></li>
       <li><a class="cv-link" href="cv.html">CV</a></li>
     </ul>
   </nav>
@@ -484,6 +506,15 @@
             <p>Labor history lives through people and the relationships they build. Working alongside community organizers has taught me that research matters most when it remains accountable to the people whose experiences give it meaning.</p>
           </div>
         </article>
+
+        <article class="field-card" data-category="training">
+          <img src="assets/training/ut-austin-ethnography-wide.webp" alt="A research workshop at the UT Austin Urban Ethnography Lab" width="1024" height="768" loading="lazy" decoding="async">
+          <div class="field-card-copy">
+            <span class="field-meta">Methods · Austin, Texas · 2025</span>
+            <h3>Ethnography as an accountable practice</h3>
+            <p>At UT Austin’s Urban Ethnography Lab, I sharpened how I observe interaction, conduct in-depth interviews, analyze qualitative data, and document ethical decisions. The experience now informs my comparative research with worker centers in New York and Florida.</p>
+          </div>
+        </article>
       </div>
 
       <p class="field-ethic"><strong>A note on these photographs:</strong> I share them as records of work done in relationship with others. The captions explain my role while honoring that the labor, histories, and experiences pictured belong to the communities themselves.</p>
@@ -576,6 +607,49 @@
           </div>
         </div>
       </section>
+    </section>
+
+    <section id="activity" class="section activity-section" aria-labelledby="activity-title">
+      <div class="activity-heading">
+        <div>
+          <span class="field-kicker">What I’m doing</span>
+          <h2 id="activity-title">Recent work in public.</h2>
+        </div>
+        <p>A selective record of research presentations, methods training, and community-engaged work—organized from newest to oldest and grounded in the role I held.</p>
+      </div>
+
+      <div class="activity-grid">
+        <article class="activity-card">
+          <img src="assets/updates/2026-05-07-ilr-symposium.jpg" alt="Adolfho Romero presenting research at the Cornell ILR Graduate Student Symposium" width="1600" height="900" loading="lazy" decoding="async">
+          <div class="activity-card-copy">
+            <span class="activity-role">Role · Presenter</span>
+            <time datetime="2026-05-07">May 7, 2026 · Ithaca, New York</time>
+            <h3>Graduate Student Symposium at Cornell ILR</h3>
+            <p>I presented “Field Generated Power Resources in Decentralized Labor Ecosystems,” connecting worker-center strategy to broader debates about labor power.</p>
+          </div>
+        </article>
+
+        <article class="activity-card">
+          <img src="assets/updates/2026-01-30-safety-patrol.jpg" alt="Community members gathered in Ithaca for an immigrant-rights action and safety patrol" width="1600" height="900" loading="lazy" decoding="async">
+          <div class="activity-card-copy">
+            <span class="activity-role">Role · Safety-patrol participant</span>
+            <time datetime="2026-01-30">January 30, 2026 · Ithaca, New York</time>
+            <h3>Community safety and immigrant rights</h3>
+            <p>I supported an immigrant-rights safety patrol alongside Indivisible, No Más Lágrimas, Ana Ortiz, and other local partners working to protect immigrant neighbors.</p>
+          </div>
+        </article>
+
+        <article class="activity-card">
+          <img src="assets/updates/2025-08-18-ut-austin-ethnography.jpg" alt="Participants at the Urban Ethnography Lab Summer School at the University of Texas at Austin" width="1600" height="900" loading="lazy" decoding="async">
+          <div class="activity-card-copy">
+            <span class="activity-role">Role · Doctoral researcher</span>
+            <time datetime="2025-08-18">August 18–21, 2025 · Austin, Texas</time>
+            <h3>Urban Ethnography Lab Summer School</h3>
+            <p>I strengthened my practice of interviewing, interaction analysis, qualitative memoing, evidentiary reasoning, and non-extractive fieldwork.</p>
+          </div>
+        </article>
+      </div>
+      <a class="activity-more" href="updates.html">Explore all updates</a>
     </section>
 
     <!-- Selected media -->

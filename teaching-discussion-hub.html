@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ILRLR 1100 – Teaching Discussion Hub · Modern+</title>
+  <title>US Labor History Teaching Plan | Adolfho Romero</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Spectral:wght@400;600;700&display=swap" rel="stylesheet">
@@ -143,6 +143,7 @@
       <li><a class="teaching-link" href="teaching.html">Teaching</a></li>
       <li><a href="teaching-discussion-hub.html" aria-current="page">Discussion Hub</a></li>
       <li><a href="media.html">Media &amp; Public Engagement</a></li>
+      <li><a href="updates.html">Updates</a></li>
       <li><a class="cv-link" href="cv.html">CV</a></li>
     </ul>
   </nav>
@@ -184,16 +185,16 @@
         </div>
       </div>
       <div class="search-section">
-        <label for="searchInput">Search Content</form>
+        <label for="searchInput">Search Content</label>
         <input type="text" id="searchInput" class="search-input" placeholder="Search weeks, activities, concepts...">
       </div>
       <div class="filter-section">
-        <label for="weekRange">Filter by Week</form>
+        <label for="weekRange">Filter by Week</label>
         <input type="range" id="weekRange" class="week-range" min="1" max="12" value="12">
         <div class="range-display" id="rangeDisplay">All Weeks (1-12)</div>
       </div>
       <div class="filter-section">
-        <label>Focus Areas</form>
+        <label>Focus Areas</label>
         <div class="filter-buttons">
           <button class="filter-btn active" data-filter="all">All</button>
           <button class="filter-btn" data-filter="activities">Activities</button>
@@ -202,14 +203,14 @@
         </div>
       </div>
       <div class="filter-section">
-        <label>Quick Actions</form>
+        <label>Quick Actions</label>
         <div class="filter-buttons">
           <button class="filter-btn" id="expandAll">Expand All</button>
           <button class="filter-btn" id="collapseAll">Collapse All</button>
         </div>
       </div>
       <div class="filter-section">
-        <label>Navigation</form>
+        <label>Navigation</label>
         <div class="filter-buttons">
           <button class="filter-btn" id="jumpToWeek">Jump to Week</button>
           <button class="filter-btn" id="testLinks">Test Links</button>
@@ -689,6 +690,7 @@
       counters.forEach(c => obs.observe(c));
     }
     function handleShortcuts(e){
+      if(e.target.matches('input, textarea, select, [contenteditable="true"]')) return;
       if(e.key === '/'){ e.preventDefault(); (topSearch || searchInput).focus(); }
       if(e.key.toLowerCase() === 'e'){ toggleAllCards(true); }
       if(e.key.toLowerCase() === 'c'){ toggleAllCards(false); }
