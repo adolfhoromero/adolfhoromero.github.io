@@ -36,6 +36,10 @@
     .update-gallery{display:grid;grid-template-columns:1.35fr .65fr;gap:10px;background:transparent;box-shadow:none}
     .update-gallery img{height:clamp(300px,34vw,430px);border-radius:14px;box-shadow:0 16px 38px rgba(17,31,54,.12)}
     .update-gallery img:last-child{object-position:center}
+    .update-packet{background:radial-gradient(circle at 50% 38%,#294670 0,#13243d 58%,#0c1728 100%)}
+    .update-packet img{padding:18px;object-fit:contain}
+    .photo-place{padding:10px 14px;color:#dce6f4;background:#102039;font-size:.76rem;font-weight:650;letter-spacing:.02em}
+    .update-gallery .photo-place{grid-column:1/-1}
     .role{display:inline-flex;padding:7px 11px;border:1px solid color-mix(in srgb,var(--accent) 28%,transparent);border-radius:999px;color:var(--accent);font-size:.72rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
     time{display:block;margin-top:14px;color:var(--muted);font-size:.84rem;font-weight:650}
     .update h2{margin:8px 0 14px;font-size:clamp(1.9rem,3.4vw,3rem);line-height:1.02;letter-spacing:-.025em}
@@ -78,9 +82,39 @@
     </header>
 
     <div class="updates-list">
-      <article class="update">
+      <article class="update" id="jhu-racial-politics">
+        <figure class="update-media update-packet">
+          <img src="assets/updates/jhu-racial-politics-2026.webp?v=20260720-2" alt="Johns Hopkins Racial Politics Summer Institute 2026 welcome packet cover" width="683" height="802">
+          <figcaption class="photo-place">Program material · Johns Hopkins University · Baltimore, Maryland</figcaption>
+        </figure>
+        <div>
+          <span class="role">Role · Institute participant</span>
+          <time datetime="2026-06-01">June 1–5, 2026 · Baltimore, Maryland</time>
+          <h2>Johns Hopkins Racial Politics Summer Institute</h2>
+          <p>Selected with scholarship support for an intensive graduate institute on racial politics, democratic backsliding, authoritarianism, and institutional power.</p>
+          <p class="takeaway">The institute helped me connect racial formation and migration politics to the institutions that organize labor, citizenship, and democratic participation.</p>
+        </div>
+      </article>
+
+      <article class="update" id="lera-2026">
+        <figure class="update-media update-gallery">
+          <img src="assets/updates/lera-colleagues-2026.webp" alt="Adolfho Romero with fellow labor scholars at the 2026 LERA Annual Meeting" width="1290" height="1118" loading="lazy">
+          <img src="assets/updates/lera-2026.webp" alt="Adolfho Romero presenting Is Ithaca Still a Union Town at LERA 2026" width="1600" height="1200" loading="lazy">
+          <figcaption class="photo-place">Royal Sonesta · Minneapolis, Minnesota</figcaption>
+        </figure>
+        <div>
+          <span class="role">Role · Presenter</span>
+          <time datetime="2026-05-28">May 28–31, 2026 · Minneapolis, Minnesota</time>
+          <h2>LERA 78th Annual Meeting</h2>
+          <p>I presented “Is Ithaca Still a Union Town?” at the Labor and Employment Relations Association Annual Meeting.</p>
+          <p class="takeaway">The research examines worker power, local labor repertoires, and uneven regeneration in Tompkins County from 1984 to 2026.</p>
+        </div>
+      </article>
+
+      <article class="update" id="cornell-ilr-symposium">
         <figure class="update-media">
           <img src="assets/updates/2026-05-07-ilr-symposium.jpg" alt="Adolfho Romero presenting at the Cornell ILR Graduate Student Symposium" width="1600" height="900">
+          <figcaption class="photo-place">Cornell ILR School · Ithaca, New York</figcaption>
         </figure>
         <div>
           <span class="role">Role · Presenter</span>
@@ -91,10 +125,11 @@
         </div>
       </article>
 
-      <article class="update">
+      <article class="update" id="immigrant-rights-safety-patrol">
         <figure class="update-media update-gallery">
           <img src="assets/updates/2026-01-30-safety-patrol.jpg" alt="Community members gathered for an immigrant-rights action and safety patrol" width="1600" height="900" loading="lazy">
           <img src="assets/updates/2026-01-30-ana-ortiz-speaking.jpg" alt="Ana Ortiz speaking to community members at the immigrant-rights gathering" width="1600" height="1200" loading="lazy">
+          <figcaption class="photo-place">Downtown Ithaca · Ithaca, New York</figcaption>
         </figure>
         <div>
           <span class="role">Role · Safety-patrol participant</span>
@@ -105,9 +140,10 @@
         </div>
       </article>
 
-      <article class="update">
+      <article class="update" id="ut-austin-ethnography">
         <figure class="update-media">
           <img src="assets/updates/2025-08-18-ut-austin-ethnography.jpg" alt="Participants at the Urban Ethnography Lab Summer School at UT Austin" width="1600" height="900" loading="lazy">
+          <figcaption class="photo-place">Urban Ethnography Lab · The University of Texas at Austin</figcaption>
         </figure>
         <div>
           <span class="role">Role · Participant and doctoral researcher</span>
@@ -118,10 +154,11 @@
         </div>
       </article>
 
-      <article class="update">
+      <article class="update" id="malta-migration-spring-school">
         <figure class="update-media update-gallery">
           <img src="assets/updates/2025-05-05-malta-program.jpg" alt="Queen Mary–Cornell Global Migration Spring School program screen in Malta" width="1600" height="900" loading="lazy">
           <img src="assets/updates/2025-05-05-malta-cohort.jpg" alt="Participants in the Queen Mary–Cornell Global Migration Spring School at the Malta campus" width="1600" height="900" loading="lazy">
+          <figcaption class="photo-place">Queen Mary University of London Malta Campus · Gozo, Malta</figcaption>
         </figure>
         <div>
           <span class="role">Role · Participant and Cornell graduate researcher</span>
