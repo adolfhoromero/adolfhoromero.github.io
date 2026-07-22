@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A selective record of Adolfho Romero's research presentations, methods training, and community-engaged work.">
+  <title>Updates | Adolfho Romero</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Spectral:wght@600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site-header.css?v=20260722-1">
+  <style>
+    :root{--nav-bg:#111827;--nav-text:#fff;--accent:#29539b;--accent-gold:#d6a625;--background-top:#f7f9fc;--background-bottom:#eef3f9;--card-bg:#fff;--text-main:#25324a;--heading-color:#101b31;--muted:#65728a;--line:#dde5f0}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:linear-gradient(180deg,var(--background-top),var(--background-bottom));color:var(--text-main);font-family:'Poppins',sans-serif}
+    html.dark{--background-top:#0c1424;--background-bottom:#101a2e;--card-bg:#152238;--text-main:#dce5f3;--heading-color:#f5f7fb;--muted:#a9b5c8;--line:#2b3b55}
+    a{color:inherit}
+    .skip-link{position:absolute;left:-999px;top:8px;z-index:99;background:#fff;color:#111;padding:10px 14px}.skip-link:focus{left:8px}
+    nav.main-nav{position:sticky;top:0;z-index:40;background:var(--nav-bg);box-shadow:inset 0 -1px 0 #3a496f;font-family:'Spectral',serif}
+    nav.main-nav ul{display:flex;justify-content:flex-start;gap:10px;list-style:none;margin:0;padding:8px 0;overflow-x:auto;white-space:nowrap}
+    nav.main-nav a{position:relative;display:block;min-width:110px;padding:14px 22px;flex-shrink:0;color:var(--nav-text);font-size:1.08rem;font-weight:700;letter-spacing:.1em;text-decoration:none;text-transform:uppercase}
+    nav.main-nav a:hover,nav.main-nav a:focus,nav.main-nav a[aria-current="page"]{color:var(--accent-gold);background:rgba(255,255,255,.04)}
+    nav.main-nav a.cv-link{border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--accent-gold));color:#fff}
+    main{max-width:1180px;margin:0 auto;padding:0 22px 74px}
+    .updates-hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(260px,.85fr);align-items:end;gap:34px;padding:clamp(58px,9vw,108px) 0 42px;border-bottom:1px solid var(--line)}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--accent);font-size:.76rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}.eyebrow::before{content:"";width:30px;height:2px;background:var(--accent-gold)}
+    h1,h2,h3{font-family:'Spectral',serif;color:var(--heading-color)}
+    h1{max-width:760px;margin:12px 0 0;font-size:clamp(3rem,7vw,6.4rem);line-height:.9;letter-spacing:-.045em}
+    .updates-hero p{margin:0;color:var(--muted);font-size:1.03rem;line-height:1.8}
+    .updates-list{padding-top:18px}
+    .update{display:grid;grid-template-columns:minmax(0,.92fr) minmax(320px,1.08fr);gap:clamp(26px,5vw,64px);align-items:center;padding:56px 0;border-bottom:1px solid var(--line)}
+    .update:nth-child(even) .update-media{order:2}
+    .update-media{overflow:hidden;border-radius:16px;background:#dfe6ef;box-shadow:0 18px 42px rgba(17,31,54,.14)}
+    .update-media img{display:block;width:100%;height:clamp(280px,34vw,430px);object-fit:cover}
+    .update-gallery{display:grid;grid-template-columns:1.35fr .65fr;gap:10px;background:transparent;box-shadow:none}
+    .update-gallery img{height:clamp(300px,34vw,430px);border-radius:14px;box-shadow:0 16px 38px rgba(17,31,54,.12)}
+    .update-gallery img:last-child{object-position:center}
+    .role{display:inline-flex;padding:7px 11px;border:1px solid color-mix(in srgb,var(--accent) 28%,transparent);border-radius:999px;color:var(--accent);font-size:.72rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
+    time{display:block;margin-top:14px;color:var(--muted);font-size:.84rem;font-weight:650}
+    .update h2{margin:8px 0 14px;font-size:clamp(1.9rem,3.4vw,3rem);line-height:1.02;letter-spacing:-.025em}
+    .update p{margin:0 0 12px;color:var(--muted);line-height:1.75}
+    .update .takeaway{padding-left:16px;border-left:3px solid var(--accent-gold);color:var(--text-main)}
+    .mobile-tabs{display:none}
+    footer{padding:28px 20px;background:#111827;color:#dbe3ef;text-align:center;font-size:.9rem}footer a{color:#fff}
+    @media(max-width:820px){body{padding-bottom:68px}.updates-hero,.update{grid-template-columns:1fr}.update:nth-child(even) .update-media{order:0}.update-gallery{grid-template-columns:1fr}.update-media img,.update-gallery img{height:auto;aspect-ratio:16/9}.updates-hero{align-items:start}.site-nav{display:none}.mobile-tabs{position:fixed;display:grid;grid-template-columns:repeat(4,1fr);inset:auto 0 0;z-index:60;padding:8px max(8px,env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left));background:rgba(17,24,39,.97);box-shadow:0 -8px 24px rgba(8,16,30,.18)}.mobile-tabs a{padding:7px 3px;color:#dfe7f3;font-size:.74rem;font-weight:700;text-align:center;text-decoration:none}.mobile-tabs a[aria-current="page"]{color:#f5c84c}}
+    @media(max-width:600px){main{padding-inline:15px}.update{padding:38px 0}.update-media{border-radius:11px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#updates">Skip to updates</a>
+  <header class="site-header">
+    <button class="dark-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">
+      <svg aria-hidden="true" class="icon-sun-moon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5.5" stroke-width="2"></circle><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M17.36 17.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M17.36 6.64l1.42-1.42" fill="none" stroke-width="2"></path></svg>
+    </button>
+    <div class="site-title"><a href="index.html" aria-label="Go to Home">Adolfho Romero</a></div>
+  </header>
+  <nav class="main-nav site-nav" aria-label="Primary">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="teaching-discussion-hub.html">Discussion Hub</a></li>
+      <li><a href="media.html">Media &amp; Public Engagement</a></li>
+      <li><a href="updates.html" aria-current="page">Updates</a></li>
+      <li><a class="cv-link" href="cv.html">CV</a></li>
+    </ul>
+  </nav>
+
+  <main id="updates">
+    <header class="updates-hero">
+      <div>
+        <span class="eyebrow">Field notes &amp; public work</span>
+        <h1>Updates</h1>
+      </div>
+      <p>A selective professional record—not a social-media feed. These entries document research, training, and community-engaged work, with the date and my role made explicit.</p>
+    </header>
+
+    <div class="updates-list">
+      <article class="update">
+        <figure class="update-media">
+          <img src="assets/updates/2026-05-07-ilr-symposium.jpg" alt="Adolfho Romero presenting at the Cornell ILR Graduate Student Symposium" width="1600" height="900">
+        </figure>
+        <div>
+          <span class="role">Role · Presenter</span>
+          <time datetime="2026-05-07">May 7, 2026 · Ithaca, New York</time>
+          <h2>Cornell ILR Graduate Student Symposium</h2>
+          <p>I presented “Field Generated Power Resources in Decentralized Labor Ecosystems” at the Global Labor and Work Department’s Graduate Student Symposium.</p>
+          <p class="takeaway">The presentation examined how worker centers and community organizations generate power through relationships, leadership development, and locally rooted institutions beyond the conventional union workplace.</p>
+        </div>
+      </article>
+
+      <article class="update">
+        <figure class="update-media update-gallery">
+          <img src="assets/updates/2026-01-30-safety-patrol.jpg" alt="Community members gathered for an immigrant-rights action and safety patrol" width="1600" height="900" loading="lazy">
+          <img src="assets/updates/2026-01-30-ana-ortiz-speaking.jpg" alt="Ana Ortiz speaking to community members at the immigrant-rights gathering" width="1600" height="1200" loading="lazy">
+        </figure>
+        <div>
+          <span class="role">Role · Safety-patrol participant</span>
+          <time datetime="2026-01-30">January 30, 2026 · Ithaca, New York</time>
+          <h2>Community safety and immigrant rights</h2>
+          <p>I participated in a community safety patrol supporting immigrant neighbors, working alongside Indivisible, No Más Lágrimas, Ana Ortiz, and other local partners.</p>
+          <p class="takeaway">My role was supportive: helping maintain a safer public space while community leaders and families made their own demands visible.</p>
+        </div>
+      </article>
+
+      <article class="update">
+        <figure class="update-media">
+          <img src="assets/updates/2025-08-18-ut-austin-ethnography.jpg" alt="Participants at the Urban Ethnography Lab Summer School at UT Austin" width="1600" height="900" loading="lazy">
+        </figure>
+        <div>
+          <span class="role">Role · Participant and doctoral researcher</span>
+          <time datetime="2025-08-18">August 18–21, 2025 · Austin, Texas</time>
+          <h2>Urban Ethnography Lab Summer School</h2>
+          <p>Hosted by the Urban Ethnography Lab at the University of Texas at Austin, the summer school treated ethnography as the disciplined construction of evidence rather than neutral data collection.</p>
+          <p class="takeaway">We worked through in-depth interviewing, interaction and conversation analysis, qualitative data analysis, memoing, evidentiary warrants, deviant cases, epistemological vigilance, and non-extractive ethics—including how researchers return knowledge to the communities that make the work possible.</p>
+        </div>
+      </article>
+
+      <article class="update">
+        <figure class="update-media update-gallery">
+          <img src="assets/updates/2025-05-05-malta-program.jpg" alt="Queen Mary–Cornell Global Migration Spring School program screen in Malta" width="1600" height="900" loading="lazy">
+          <img src="assets/updates/2025-05-05-malta-cohort.jpg" alt="Participants in the Queen Mary–Cornell Global Migration Spring School at the Malta campus" width="1600" height="900" loading="lazy">
+        </figure>
+        <div>
+          <span class="role">Role · Participant and Cornell graduate researcher</span>
+          <time datetime="2025-05-05">May 5–9, 2025 · Gozo, Malta</time>
+          <h2>Queen Mary–Cornell Global Migration Spring School</h2>
+          <p>At Queen Mary University of London’s Malta campus, I joined a cross-disciplinary cohort examining migration through geography, history, law, public health, and policy.</p>
+          <p class="takeaway">The program sharpened how I connect migrant labor pathways and displacement to urban governance, borders, and the institutional production of exclusion.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>© 2026 Adolfho Romero · <a href="mailto:ar2539@cornell.edu">ar2539@cornell.edu</a></footer>
+  <nav class="mobile-tabs" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="publications.html">Research</a>
+    <a href="updates.html" aria-current="page">Updates</a>
+    <a href="cv.html">CV</a>
+  </nav>
+  <script>
+    const toggle=document.querySelector('.dark-toggle');
+    const saved=localStorage.getItem('theme');
+    if(saved==='dark'||(!saved&&matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.classList.add('dark');
+    function sync(){toggle.setAttribute('aria-pressed',document.documentElement.classList.contains('dark'))}sync();
+    toggle.addEventListener('click',()=>{document.documentElement.classList.toggle('dark');localStorage.setItem('theme',document.documentElement.classList.contains('dark')?'dark':'light');sync()});
+  </script>
+</body>
+</html>
