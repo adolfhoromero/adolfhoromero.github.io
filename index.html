@@ -86,7 +86,7 @@
     .dark .hero-quote{background:#233158; color:#fbbf24}
 
     /* Sections */
-    main{max-width:var(--max-width); margin:1rem auto 3rem; padding:0 1rem}
+    main{max-width:var(--max-width); margin:.35rem auto 3rem; padding:0 1rem}
     .section{background:var(--card-bg); border-left:5px solid var(--card-border); border-radius:18px; box-shadow:var(--card-shadow); padding:1.1rem 1rem; margin:1rem auto 1.4rem; scroll-margin-top:110px}
     .section h2{font-family:'Spectral',serif; font-size:2.18rem; text-align:center; margin-bottom:1.2rem; color:var(--heading-color)}
 
@@ -236,53 +236,34 @@
     .activity-heading h2{margin:4px 0 0; text-align:left; font-size:clamp(2rem,4vw,3.25rem); line-height:1}
     .activity-heading p{max-width:580px; color:var(--muted); line-height:1.7}
     .activity-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px}
-    .activity-card{overflow:hidden; border:1px solid color-mix(in srgb,var(--accent) 14%,transparent); border-radius:16px; background:var(--card-bg); box-shadow:0 12px 30px rgba(17,31,54,.09); transition:transform .25s ease,box-shadow .25s ease}
+    .activity-card{display:flex; flex-direction:column; overflow:hidden; border:1px solid color-mix(in srgb,var(--accent) 14%,transparent); border-radius:18px; background:var(--card-bg); box-shadow:0 12px 30px rgba(17,31,54,.09); transition:transform .25s ease,box-shadow .25s ease}
     .activity-card:hover{transform:translateY(-4px); box-shadow:0 18px 40px rgba(17,31,54,.15)}
-    .activity-card img{display:block; width:100%; aspect-ratio:16/9; object-fit:cover}
-    .activity-card-copy{padding:19px 19px 22px}
-    .activity-role{display:inline-block; margin-bottom:9px; color:var(--accent); font-size:.73rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase}
-    .activity-card time{display:block; color:var(--muted); font-size:.8rem; font-weight:650}
+    .activity-media{margin:0; background:#102039}
+    .activity-card img{display:block; width:100%; height:180px; object-fit:cover}
+    .activity-card--packet img{padding:12px; object-fit:contain; background:radial-gradient(circle at 50% 38%,#294670 0,#13243d 58%,#0c1728 100%)}
+    .activity-media figcaption{padding:9px 14px; color:#dce6f4; background:#102039; font-size:.72rem; font-weight:650; letter-spacing:.02em}
+    .activity-card-copy{display:flex; flex:1; flex-direction:column; align-items:flex-start; padding:18px 19px 21px}
+    .activity-facts{display:flex; flex-wrap:wrap; gap:7px; margin-bottom:9px}
+    .activity-role,.activity-date{display:inline-flex; align-items:center; min-height:26px; padding:5px 9px; border-radius:999px; font-size:.68rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase}
+    .activity-role{color:var(--accent); border:1px solid color-mix(in srgb,var(--accent) 28%,transparent); background:color-mix(in srgb,var(--accent) 6%,var(--card-bg))}
+    .activity-date{color:var(--text-main); background:color-mix(in srgb,var(--accent-gold) 18%,var(--card-bg))}
     .activity-card h3{margin:6px 0 9px; font-family:'Spectral',serif; font-size:1.35rem; line-height:1.15; color:var(--heading-color)}
     .activity-card p{color:var(--muted); font-size:.91rem; line-height:1.62}
+    .activity-card-link{display:inline-flex; align-items:center; gap:7px; margin-top:auto; padding-top:16px; color:var(--accent); font-size:.82rem; font-weight:800; text-decoration:none}
+    .activity-card-link::after{content:"→"; transition:transform .2s ease}
+    .activity-card-link:hover::after{transform:translateX(4px)}
     .activity-more{display:inline-flex; align-items:center; gap:8px; margin-top:22px; color:var(--accent); font-weight:800; text-decoration:none}
     .activity-more::after{content:"→"; transition:transform .2s ease}
     .activity-more:hover::after{transform:translateX(4px)}
-    @media (max-width:900px){.activity-grid{grid-template-columns:1fr 1fr}.activity-card:last-child{grid-column:1/-1}.activity-heading{align-items:start; flex-direction:column}}
-    @media (max-width:620px){.activity-grid{grid-template-columns:1fr}.activity-card:last-child{grid-column:auto}}
+    @media (max-width:900px){.activity-grid{grid-template-columns:1fr 1fr}.activity-card:last-child{grid-column:1/-1}.activity-card img{height:220px}.activity-heading{align-items:start; flex-direction:column}}
+    @media (max-width:620px){.activity-grid{grid-template-columns:1fr}.activity-card:last-child{grid-column:auto}.activity-card img{height:190px}}
     @media (prefers-reduced-motion:reduce){.activity-card,.activity-more::after{transition:none}}
 
     /* Research paths: compact links with a real destination */
-    .research-jump{max-width:1160px; margin:-14px auto 20px; padding:0 14px; display:flex; flex-wrap:wrap; justify-content:center; gap:8px}
+    .research-jump{max-width:1160px; margin:-14px auto 8px; padding:0 14px; display:flex; flex-wrap:wrap; justify-content:center; gap:8px}
     .research-jump a{display:inline-flex; align-items:center; gap:7px; padding:8px 13px; color:var(--text-main); font-size:.82rem; font-weight:700; text-decoration:none; background:color-mix(in srgb,var(--card-bg) 90%,transparent); border:1px solid color-mix(in srgb,var(--accent) 18%,transparent); border-radius:999px; box-shadow:0 7px 20px rgba(17,31,54,.06); transition:transform .2s ease,border-color .2s ease,background .2s ease}
     .research-jump a::after{content:"↘"; color:var(--accent)}
     .research-jump a:hover,.research-jump a:focus-visible{transform:translateY(-2px); border-color:var(--accent); background:color-mix(in srgb,var(--accent) 7%,var(--card-bg)); outline:none}
-
-    /* Current notes */
-    .current-notes{position:relative; overflow:hidden; padding:clamp(28px,4.5vw,54px) !important}
-    .current-notes::before{content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 7%,transparent),transparent 48%,color-mix(in srgb,var(--accent-gold) 8%,transparent))}
-    .section-intro{max-width:760px; margin:-8px auto 24px; color:var(--muted); text-align:center; line-height:1.7}
-    .current-grid{display:grid; grid-template-columns:minmax(0,1.16fr) minmax(340px,.84fr); gap:18px}
-    .update-card{display:grid; grid-template-rows:auto 1fr; overflow:hidden; min-height:100%; background:var(--card-bg); border:1px solid color-mix(in srgb,var(--accent) 13%,transparent); border-radius:22px; box-shadow:0 16px 42px rgba(17,31,54,.12); transition:transform .3s ease,box-shadow .3s ease}
-    .update-card:hover{transform:translateY(-4px); box-shadow:0 22px 48px rgba(17,31,54,.17)}
-    .update-card figure{margin:0; position:relative; overflow:hidden; min-height:390px; background:#102039}
-    .update-card img{display:block; transition:transform .5s ease}
-    .update-card--lera figure{display:grid; grid-template-rows:68% 32%; height:390px}
-    .update-card--lera .update-primary,
-    .update-card--lera .update-action{width:100%; height:100%; min-height:0; object-fit:cover}
-    .update-card--lera .update-primary{object-position:center top}
-    .update-card--lera .update-action{object-position:center 43%; border-top:3px solid color-mix(in srgb,var(--accent-gold) 72%,#fff)}
-    .update-card--lera:hover .update-primary,
-    .update-card--lera:hover .update-action{transform:scale(1.012)}
-    .update-card--jhu figure{display:grid; place-items:center; min-height:390px; padding:18px; background:radial-gradient(circle at 50% 35%,#294670 0,#13243d 55%,#0c1728 100%)}
-    .update-card--jhu img{width:auto; max-width:100%; height:355px; aspect-ratio:auto; object-fit:contain; border-radius:12px; box-shadow:0 16px 36px rgba(0,0,0,.34)}
-    .update-card--jhu:hover img{transform:translateY(-3px) rotate(.25deg)}
-    .update-card figcaption{position:absolute; left:12px; top:12px; padding:5px 8px; color:#f8fafc; font-size:.68rem; background:rgba(8,20,38,.78); border-radius:999px; backdrop-filter:blur(8px)}
-    .update-copy{padding:22px 22px 25px}
-    .update-meta{margin:0 0 7px; color:var(--accent); font-size:.73rem; font-weight:800; letter-spacing:.11em; text-transform:uppercase}
-    .update-card h3{margin:0 0 10px; color:var(--heading-color); font-family:'Spectral',serif; font-size:clamp(1.55rem,2.8vw,2.2rem); line-height:1.05}
-    .update-card p:not(.update-meta){color:var(--muted); line-height:1.68}
-    .update-link{display:inline-flex; margin-top:14px; color:var(--accent); font-size:.86rem; font-weight:750; text-decoration:none}
-    .update-link::after{content:" →"; margin-left:4px}
 
     /* Dissertation archive */
     .thesis-showcase{padding:clamp(30px,5vw,58px) !important; border-left:0}
@@ -308,11 +289,7 @@
     .site-credits p{margin:10px 0 0}
 
     @media (max-width:820px){
-      .current-grid,.archive-header{grid-template-columns:1fr}
-      .update-card figure{min-height:330px}
-      .update-card--lera figure{grid-template-rows:66% 34%; height:330px}
-      .update-card--jhu figure{min-height:420px}
-      .update-card--jhu img{height:385px}
+      .archive-header{grid-template-columns:1fr}
       .archive-header h2{text-align:center}
       .archive-header{text-align:center}
       .archive-grid{grid-template-columns:1fr}
@@ -359,7 +336,7 @@
     <a href="#thesis-work">Worker power</a>
     <a href="#fieldwork">Oral history</a>
     <a href="#fieldwork">Migration</a>
-    <a href="#latest-updates">Racial politics</a>
+    <a href="updates.html#jhu-racial-politics">Racial politics</a>
     <a href="teaching.html#teaching-philosophy">Teaching practice</a>
   </nav>
 
@@ -398,38 +375,6 @@
           </li>
         </ul>
         <p class="note">Grant total reflects full award amounts for projects I contributed to and does not represent personal earnings.</p>
-      </div>
-    </section>
-
-    <section id="latest-updates" class="section current-notes" aria-labelledby="latest-title">
-      <h2 id="latest-title">Latest Updates</h2>
-      <p class="section-intro">A few recent places where my doctoral research has been tested, sharpened, and placed in conversation with other scholars.</p>
-      <div class="current-grid">
-        <article class="update-card update-card--lera">
-          <figure>
-            <img class="update-primary" src="assets/updates/lera-colleagues-2026.webp" alt="Adolfho Romero with fellow labor scholars at the 2026 LERA Annual Meeting" width="1290" height="1118" loading="lazy" decoding="async">
-            <img class="update-action" src="assets/updates/lera-2026.webp" alt="Adolfho Romero presenting Is Ithaca Still a Union Town at LERA 2026" width="1600" height="1200" loading="lazy" decoding="async">
-            <figcaption>Personal archive · 2026</figcaption>
-          </figure>
-          <div class="update-copy">
-            <p class="update-meta">June 2026 · Minneapolis</p>
-            <h3>LERA 79th Annual Meeting</h3>
-            <p>I presented “Is Ithaca Still a Union Town?”—research on worker power, local labor repertoires, and uneven regeneration in Tompkins County from 1984 to 2026.</p>
-            <a class="update-link" href="cv.html#current-work">See current academic work</a>
-          </div>
-        </article>
-        <article class="update-card update-card--jhu">
-          <figure>
-            <img src="assets/updates/jhu-racial-politics-2026.webp?v=20260720-2" alt="Johns Hopkins Racial Politics Summer Institute 2026 welcome packet cover" width="683" height="802" loading="lazy" decoding="async">
-            <figcaption>Institute welcome packet · 2026</figcaption>
-          </figure>
-          <div class="update-copy">
-            <p class="update-meta">June 2026 · Baltimore</p>
-            <h3>Johns Hopkins Racial Politics Summer Institute</h3>
-            <p>Selected for an intensive graduate institute on racial politics, democratic backsliding, authoritarianism, and institutional power—with scholarship support for participation.</p>
-            <a class="update-link" href="cv.html#trajectory">Follow the research trajectory</a>
-          </div>
-        </article>
       </div>
     </section>
 
@@ -619,33 +564,51 @@
       </div>
 
       <div class="activity-grid">
-        <article class="activity-card">
-          <img src="assets/updates/2026-05-07-ilr-symposium.jpg" alt="Adolfho Romero presenting research at the Cornell ILR Graduate Student Symposium" width="1600" height="900" loading="lazy" decoding="async">
+        <article class="activity-card activity-card--packet">
+          <figure class="activity-media">
+            <img src="assets/updates/jhu-racial-politics-2026.webp?v=20260720-2" alt="Johns Hopkins Racial Politics Summer Institute 2026 welcome packet cover" width="683" height="802" loading="lazy" decoding="async">
+            <figcaption>Program material · Baltimore, Maryland</figcaption>
+          </figure>
           <div class="activity-card-copy">
-            <span class="activity-role">Role · Presenter</span>
-            <time datetime="2026-05-07">May 7, 2026 · Ithaca, New York</time>
-            <h3>Graduate Student Symposium at Cornell ILR</h3>
-            <p>I presented “Field Generated Power Resources in Decentralized Labor Ecosystems,” connecting worker-center strategy to broader debates about labor power.</p>
+            <div class="activity-facts">
+              <time class="activity-date" datetime="2026-06-01">June 1–5, 2026</time>
+              <span class="activity-role">Role · Institute participant</span>
+            </div>
+            <h3>Johns Hopkins Racial Politics Summer Institute</h3>
+            <p>An intensive graduate institute on racial politics, democratic backsliding, authoritarianism, and institutional power.</p>
+            <a class="activity-card-link" href="updates.html#jhu-racial-politics">Read the full update</a>
           </div>
         </article>
 
         <article class="activity-card">
-          <img src="assets/updates/2026-01-30-safety-patrol.jpg" alt="Community members gathered in Ithaca for an immigrant-rights action and safety patrol" width="1600" height="900" loading="lazy" decoding="async">
+          <figure class="activity-media">
+            <img src="assets/updates/lera-colleagues-2026.webp" alt="Adolfho Romero with fellow labor scholars at the 2026 LERA Annual Meeting" width="1290" height="1118" loading="lazy" decoding="async">
+            <figcaption>Royal Sonesta · Minneapolis, Minnesota</figcaption>
+          </figure>
           <div class="activity-card-copy">
-            <span class="activity-role">Role · Safety-patrol participant</span>
-            <time datetime="2026-01-30">January 30, 2026 · Ithaca, New York</time>
-            <h3>Community safety and immigrant rights</h3>
-            <p>I supported an immigrant-rights safety patrol alongside Indivisible, No Más Lágrimas, Ana Ortiz, and other local partners working to protect immigrant neighbors.</p>
+            <div class="activity-facts">
+              <time class="activity-date" datetime="2026-05-28">May 28–31, 2026</time>
+              <span class="activity-role">Role · Presenter</span>
+            </div>
+            <h3>LERA 78th Annual Meeting</h3>
+            <p>I presented “Is Ithaca Still a Union Town?”—research on worker power, labor repertoires, and uneven regeneration in Tompkins County.</p>
+            <a class="activity-card-link" href="updates.html#lera-2026">Read the full update</a>
           </div>
         </article>
 
         <article class="activity-card">
-          <img src="assets/updates/2025-08-18-ut-austin-ethnography.jpg" alt="Participants at the Urban Ethnography Lab Summer School at the University of Texas at Austin" width="1600" height="900" loading="lazy" decoding="async">
+          <figure class="activity-media">
+            <img src="assets/updates/2026-05-07-ilr-symposium.jpg" alt="Adolfho Romero presenting research at the Cornell ILR Graduate Student Symposium" width="1600" height="900" loading="lazy" decoding="async">
+            <figcaption>Cornell ILR School · Ithaca, New York</figcaption>
+          </figure>
           <div class="activity-card-copy">
-            <span class="activity-role">Role · Doctoral researcher</span>
-            <time datetime="2025-08-18">August 18–21, 2025 · Austin, Texas</time>
-            <h3>Urban Ethnography Lab Summer School</h3>
-            <p>I strengthened my practice of interviewing, interaction analysis, qualitative memoing, evidentiary reasoning, and non-extractive fieldwork.</p>
+            <div class="activity-facts">
+              <time class="activity-date" datetime="2026-05-07">May 7, 2026</time>
+              <span class="activity-role">Role · Presenter</span>
+            </div>
+            <h3>Cornell ILR Graduate Student Symposium</h3>
+            <p>I presented “Field Generated Power Resources in Decentralized Labor Ecosystems,” connecting worker-center strategy to debates about labor power.</p>
+            <a class="activity-card-link" href="updates.html#cornell-ilr-symposium">Read the full update</a>
           </div>
         </article>
       </div>
