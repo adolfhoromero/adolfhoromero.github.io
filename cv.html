@@ -4,7 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="Adolfho Romero's academic curriculum vitae: labor, migration, oral history, and working-class power.">
-  <title>Adolfho Romero – Curriculum Vitae</title>
+  <title>Curriculum Vitae | Adolfho Romero</title>
+  <link rel="canonical" href="https://adolfhoromero.com/cv.html">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Curriculum Vitae | Adolfho Romero">
+  <meta property="og:description" content="Academic CV for Adolfho Romero: labor, migration, oral history, teaching, awards, service, and working-class power.">
+  <meta property="og:url" content="https://adolfhoromero.com/cv.html">
+  <meta property="og:image" content="https://adolfhoromero.com/adolfhoromero.jpeg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Spectral:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
@@ -343,6 +349,35 @@
       font-size: .94rem;
     }
 
+    .award-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .8rem;
+      margin-top: 1.4rem;
+    }
+    .award-item {
+      display: grid;
+      grid-template-columns: 105px minmax(0, 1fr);
+      gap: 1rem;
+      align-items: start;
+      padding: 1.15rem 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+      box-shadow: 0 8px 24px rgba(20, 37, 66, .06);
+    }
+    .award-item time {
+      color: var(--blue);
+      font-weight: 800;
+      font-size: .82rem;
+    }
+    .award-item h3 {
+      margin: 0 0 .2rem;
+      font: 700 1.08rem/1.2 var(--font-heading);
+    }
+    .award-item p { margin: 0; color: var(--muted); font-size: .85rem; }
+    .award-note { margin: 1rem 0 0; color: var(--muted); font-size: .82rem; }
+
     .timeline {
       position: relative;
       margin-top: 1.7rem;
@@ -530,7 +565,8 @@
       .section { margin-top: 3.5rem; }
       .section-heading { grid-template-columns: 1fr; }
       .section-heading .text-link { justify-self: start; }
-      .now-grid, .path-grid { grid-template-columns: 1fr; }
+      .now-grid, .path-grid, .award-grid { grid-template-columns: 1fr; }
+      .award-item { grid-template-columns: 88px minmax(0, 1fr); }
       .now-card, .now-card:first-child, .now-card:nth-child(2) { grid-column: auto; min-height: 0; }
       .milestone { grid-template-columns: 78px minmax(0, 1fr); gap: .75rem; }
       .field-note { grid-template-columns: 1fr; }
@@ -638,6 +674,28 @@
           <p>Accepted presentations for the Oral History Association, American Sociological Association, SASE, and LERA meetings.</p>
         </article>
       </div>
+    </section>
+
+    <section class="section" id="honors-support">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">Recognition</p>
+          <h2>Honors &amp; research support</h2>
+          <p>Selected awards and fellowships that have supported research, conference participation, and graduate training.</p>
+        </div>
+        <a class="text-link" href="adolfhoromerocv.pdf" target="_blank" rel="noopener">Full awards record</a>
+      </div>
+      <div class="award-grid">
+        <article class="award-item"><time>2026</time><div><h3>Industrial and Labor Research Award</h3><p>Cornell ILR · $750</p></div></article>
+        <article class="award-item"><time>2026</time><div><h3>Industrial and Labor Relations Travel Grant</h3><p>Cornell ILR · $2,000</p></div></article>
+        <article class="award-item"><time>2025–2026</time><div><h3>Graduate Migration Fellow</h3><p>Cornell University Migrations Initiative · $500</p></div></article>
+        <article class="award-item"><time>2025</time><div><h3>Benjamin Miller Fellowship Award</h3><p>$1,250</p></div></article>
+        <article class="award-item"><time>2025</time><div><h3>Conference Travel Grant</h3><p>Cornell Graduate School · $700</p></div></article>
+        <article class="award-item"><time>2022</time><div><h3>Oral History Association Presenter Scholarship</h3><p>$500</p></div></article>
+        <article class="award-item"><time>2022</time><div><h3>Machen Florida Opportunity Scholars Champion Award</h3><p>University of Florida</p></div></article>
+        <article class="award-item"><time>2017–Present</time><div><h3>Ronald E. McNair Scholar</h3><p>Postbaccalaureate Achievement Program</p></div></article>
+      </div>
+      <p class="award-note">This is a selected web summary. The downloadable CV remains the authoritative and complete record.</p>
     </section>
 
     <section class="section" id="trajectory">

@@ -3,8 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="A selective record of Adolfho Romero's research presentations, methods training, and community-engaged work.">
-  <title>Updates | Adolfho Romero</title>
+  <meta name="description" content="Dated updates on Adolfho Romero's research presentations, methods training, academic leadership, and community-engaged work.">
+  <title>Research Updates &amp; Presentations | Adolfho Romero</title>
+  <link rel="canonical" href="https://adolfhoromero.com/updates.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Research Updates &amp; Presentations | Adolfho Romero">
+  <meta property="og:description" content="A dated record of current presentations, academic leadership, methods training, and community-engaged work.">
+  <meta property="og:url" content="https://adolfhoromero.com/updates.html">
+  <meta property="og:image" content="https://adolfhoromero.com/assets/updates/lera-colleagues-2026.webp">
+  <meta property="og:image:alt" content="Adolfho Romero with labor scholars at the 2026 LERA Annual Meeting">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Spectral:wght@600;700;800&amp;display=swap" rel="stylesheet">
@@ -28,6 +36,25 @@
     h1,h2,h3{font-family:'Spectral',serif;color:var(--heading-color)}
     h1{max-width:760px;margin:12px 0 0;font-size:clamp(3rem,7vw,6.4rem);line-height:.9;letter-spacing:-.045em}
     .updates-hero p{margin:0;color:var(--muted);font-size:1.03rem;line-height:1.8}
+    .calendar{padding:46px 0 50px;border-bottom:1px solid var(--line)}
+    .calendar-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.8fr);align-items:end;gap:30px;margin-bottom:24px}
+    .calendar-heading h2,.archive-heading h2{margin:7px 0 0;font-size:clamp(2.2rem,5vw,4rem);line-height:.95;letter-spacing:-.035em}
+    .calendar-heading p{margin:0;color:var(--muted);line-height:1.7}
+    .calendar-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .calendar-card{display:flex;min-height:280px;flex-direction:column;padding:22px;border:1px solid var(--line);border-radius:16px;background:var(--card-bg);box-shadow:0 12px 32px rgba(17,31,54,.08)}
+    .calendar-status{align-self:flex-start;padding:6px 9px;border-radius:999px;background:color-mix(in srgb,var(--accent) 10%,var(--card-bg));color:var(--accent);font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+    .calendar-card.is-past .calendar-status{background:color-mix(in srgb,var(--muted) 10%,var(--card-bg));color:var(--muted)}
+    .calendar-card time{margin-top:24px}
+    .calendar-card h3{margin:8px 0 10px;font-size:1.5rem;line-height:1.08}
+    .calendar-card p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.6}
+    .calendar-link{margin-top:auto;padding-top:18px;color:var(--accent);font-size:.8rem;font-weight:800;text-decoration:none}
+    .leadership{display:grid;grid-template-columns:minmax(180px,.34fr) 1fr;gap:24px;align-items:center;margin-top:16px;padding:24px;border-radius:16px;background:linear-gradient(120deg,#10213a,#172e4e);color:#fff}
+    .leadership .role{border-color:rgba(255,255,255,.25);color:#f4cd66}
+    .leadership time{color:#bfccdf}
+    .leadership h3{margin:4px 0 7px;color:#fff;font-size:1.55rem;line-height:1.1}
+    .leadership p{margin:0;color:#d3deed;line-height:1.65}
+    .archive-heading{padding:50px 0 0}
+    .archive-heading p{max-width:650px;margin:10px 0 0;color:var(--muted);line-height:1.7}
     .updates-list{padding-top:18px}
     .update{display:grid;grid-template-columns:minmax(0,.92fr) minmax(320px,1.08fr);gap:clamp(26px,5vw,64px);align-items:center;padding:56px 0;border-bottom:1px solid var(--line)}
     .update:nth-child(even) .update-media{order:2}
@@ -47,7 +74,7 @@
     .update .takeaway{padding-left:16px;border-left:3px solid var(--accent-gold);color:var(--text-main)}
     .mobile-tabs{display:none}
     footer{padding:28px 20px;background:#111827;color:#dbe3ef;text-align:center;font-size:.9rem}footer a{color:#fff}
-    @media(max-width:820px){body{padding-bottom:68px}.updates-hero,.update{grid-template-columns:1fr}.update:nth-child(even) .update-media{order:0}.update-gallery{grid-template-columns:1fr}.update-media img,.update-gallery img{height:auto;aspect-ratio:16/9}.updates-hero{align-items:start}.site-nav{display:none}.mobile-tabs{position:fixed;display:grid;grid-template-columns:repeat(4,1fr);inset:auto 0 0;z-index:60;padding:8px max(8px,env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left));background:rgba(17,24,39,.97);box-shadow:0 -8px 24px rgba(8,16,30,.18)}.mobile-tabs a{padding:7px 3px;color:#dfe7f3;font-size:.74rem;font-weight:700;text-align:center;text-decoration:none}.mobile-tabs a[aria-current="page"]{color:#f5c84c}}
+    @media(max-width:820px){body{padding-bottom:68px}.updates-hero,.calendar-heading,.update{grid-template-columns:1fr}.calendar-grid{grid-template-columns:1fr}.calendar-card{min-height:230px}.leadership{grid-template-columns:1fr}.update:nth-child(even) .update-media{order:0}.update-gallery{grid-template-columns:1fr}.update-media img,.update-gallery img{height:auto;aspect-ratio:16/9}.updates-hero{align-items:start}.site-nav{display:none}.mobile-tabs{position:fixed;display:grid;grid-template-columns:repeat(4,1fr);inset:auto 0 0;z-index:60;padding:8px max(8px,env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left));background:rgba(17,24,39,.97);box-shadow:0 -8px 24px rgba(8,16,30,.18)}.mobile-tabs a{padding:7px 3px;color:#dfe7f3;font-size:.74rem;font-weight:700;text-align:center;text-decoration:none}.mobile-tabs a[aria-current="page"]{color:#f5c84c}}
     @media(max-width:600px){main{padding-inline:15px}.update{padding:38px 0}.update-media{border-radius:11px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
@@ -78,8 +105,57 @@
         <span class="eyebrow">Field notes &amp; public work</span>
         <h1>Updates</h1>
       </div>
-      <p>A selective professional record—not a social-media feed. These entries document research, training, and community-engaged work, with the date and my role made explicit.</p>
+      <p>A selective professional record—not a social-media feed. These entries document upcoming presentations, research, training, leadership, and community-engaged work, with the date and my role made explicit.</p>
     </header>
+
+    <section class="calendar" aria-labelledby="calendar-title">
+      <div class="calendar-heading">
+        <div>
+          <span class="eyebrow">2026 presentation calendar</span>
+          <h2 id="calendar-title">Accepted &amp; upcoming.</h2>
+        </div>
+        <p>A clear distinction between accepted work and completed appearances keeps the record current without implying that a future event has already happened.</p>
+      </div>
+      <div class="calendar-grid">
+        <article class="calendar-card is-past">
+          <span class="calendar-status">Accepted program</span>
+          <time datetime="2026-07-01">July 1–4, 2026 · Bordeaux, France</time>
+          <h3>SASE 38th Annual Conference</h3>
+          <p>“From Crisis to Capacity: Worker Centers and Infrastructures of Worker Power in Pandemic and Post-Pandemic New York.”</p>
+          <a class="calendar-link" href="https://sase.org/events/2026-bordeaux/" target="_blank" rel="noopener">Conference details →</a>
+        </article>
+        <article class="calendar-card">
+          <span class="calendar-status">Upcoming · Accepted panelist</span>
+          <time datetime="2026-08-07">August 7–11, 2026 · New York City</time>
+          <h3>American Sociological Association</h3>
+          <p>“Making the Impossible, Possible”: Coalitional Movement Infrastructures and the Fight for the NY Excluded Worker Fund.</p>
+          <a class="calendar-link" href="https://my.asanet.org/cv5/cgi-bin/eventsdll.dll/EventInfo?sessionaltcd=26am" target="_blank" rel="noopener">121st Annual Meeting →</a>
+        </article>
+        <article class="calendar-card">
+          <span class="calendar-status">Upcoming · Accepted presenter</span>
+          <time datetime="2026-10-14">October 14–17, 2026 · Portland, Oregon</time>
+          <h3>Oral History Association</h3>
+          <p>“From Crisis to Care: Community Interviews on Worker Centers and Collective Power.”</p>
+          <a class="calendar-link" href="https://oralhistory.org/annual-meeting/" target="_blank" rel="noopener">2026 Annual Meeting →</a>
+        </article>
+      </div>
+      <article class="leadership" id="migration-sustainability-conference">
+        <div>
+          <span class="role">Role · Conference co-organizer</span>
+          <time datetime="2025">2025–2026 · Cornell University</time>
+        </div>
+        <div>
+          <h3>Migration and Sustainability in Contentious Political Times</h3>
+          <p>Serving as a conference co-organizer for a Cornell program focused on migration and sustainability in contentious political times.</p>
+        </div>
+      </article>
+    </section>
+
+    <div class="archive-heading">
+      <span class="eyebrow">Completed work</span>
+      <h2>Recent field notes.</h2>
+      <p>Presentations, institutes, and community-engaged work arranged from newest to oldest.</p>
+    </div>
 
     <div class="updates-list">
       <article class="update" id="jhu-racial-politics">
