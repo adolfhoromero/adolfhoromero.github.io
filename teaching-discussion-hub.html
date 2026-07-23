@@ -111,6 +111,78 @@
     .t-btn { border:0; background:var(--accent); color:#fff; padding:0.4rem 0.6rem; border-radius:8px; cursor:pointer; font-weight:800; font-size:0.8rem; }
     .scrollTop { position:fixed; right:18px; bottom:18px; width:44px; height:44px; border-radius:50%; border:0; background:linear-gradient(135deg, var(--accent), var(--accent-2)); color:#fff; box-shadow:0 14px 28px rgba(0,0,0,.25); cursor:pointer; display:none; align-items:center; justify-content:center; font-size:1.1rem; z-index:60; }
     @media (max-width: 860px){ main{ grid-template-columns:1fr; gap:1.2rem; } .sidebar{ position:static; max-height:none; } .hero{ padding:1.4rem; } .page-title{ font-size:2.2rem; } .pill{ padding:0.6rem .85rem; } }
+
+    /* Compact portfolio presentation */
+    main { display:block; padding-top:1.25rem; }
+    .hero {
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      align-items:center;
+      gap:1.25rem 2rem;
+      padding:1.35rem 1.6rem;
+      border-radius:18px;
+      background:var(--nav-bg);
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:0 12px 30px rgba(15,27,45,.16);
+      color:var(--nav-text);
+    }
+    .hero::after { display:none; }
+    .hero-copy { min-width:0; }
+    .kicker {
+      padding:0;
+      margin:0 0 .25rem;
+      border-radius:0;
+      background:none;
+      box-shadow:none;
+      color:var(--accent-gold);
+      text-transform:uppercase;
+      letter-spacing:.12em;
+    }
+    .page-title { color:var(--nav-text); font-size:2.15rem; line-height:1.08; text-shadow:none; }
+    .page-subtitle { margin-top:.25rem; color:rgba(255,255,255,.76); font-size:.95rem; }
+    .hero-summary { margin-top:.6rem; color:rgba(255,255,255,.9); font-size:.92rem; }
+    .hero-summary strong { color:#fff; }
+    .hero-rail { margin:0; justify-content:flex-end; }
+    .hero-rail .pill,
+    .hero-rail .search-wrap,
+    .hero-tip { display:none; }
+    .seg { background:rgba(255,255,255,.1); border-color:rgba(255,255,255,.2); }
+    .seg button { color:#fff; }
+    .seg .slider { background:rgba(255,255,255,.16); box-shadow:none; }
+    .sidebar { display:none; }
+    .content-area { margin-top:1rem; gap:1rem; }
+    .timeline-progress {
+      padding:1rem 1.25rem;
+      border-radius:16px;
+      box-shadow:none;
+    }
+    .timeline-progress p { max-width:78ch; }
+    .progress-bar { display:none; }
+    .weeks-grid { gap:.9rem; margin-top:0; }
+    .week-card { padding:1.15rem 1.25rem; border-radius:16px; box-shadow:0 5px 18px rgba(26,42,87,.09); }
+    .week-card:hover { transform:translateY(-2px); box-shadow:0 10px 26px rgba(26,42,87,.13); }
+    .week-header { align-items:center; margin-bottom:.55rem; }
+    .week-number { padding:.3rem .65rem; border-radius:8px; font-size:.83rem; }
+    .week-title { font-size:1.28rem; margin-bottom:.4rem; }
+    .week-activities { margin:.35rem 2.8rem .15rem 0; gap:.35rem; }
+    .activity-tag { padding:.2rem .55rem; border-radius:999px; font-size:.72rem; }
+    .more-activities { color:var(--muted); background:transparent; border:1px solid var(--card-border); }
+    .expand-indicator { width:auto; height:auto; min-width:32px; padding:.3rem .65rem; border-radius:999px; font-size:.74rem; font-weight:800; }
+    .week-card.expanded .expand-indicator { transform:none; }
+    .week-card.expanded .week-expandable { max-height:1400px; }
+    .plan-overview { margin-bottom:.8rem; }
+    .week-innovation { margin-bottom:1rem; padding:.7rem .8rem; }
+    .innovation-label { color:#a06b00; }
+    .dark .innovation-label { color:var(--accent-gold); }
+    .key-concepts,.readings-section,.resources-section { margin-top:1rem; }
+    @media (max-width: 700px){
+      main { padding-top:.8rem; }
+      .hero { grid-template-columns:1fr; padding:1.1rem 1.15rem; gap:.8rem; }
+      .page-title { font-size:1.75rem; }
+      .hero-rail { justify-content:flex-start; }
+      .week-card { padding:1rem; }
+      .week-date { font-size:.78rem; }
+    }
   </style>
 <style>
 @supports (padding: max(0px)) {
@@ -151,9 +223,12 @@
 
   <main>
     <section class="hero" aria-label="Course overview">
-      <span class="kicker">Interactive Teaching Portfolio</span>
-      <h1 class="page-title">US Labor History</h1>
-      <p class="page-subtitle">ILRLR 1100 with Dr. Paul Ortiz</p>
+      <div class="hero-copy">
+        <span class="kicker">Teaching Plan</span>
+        <h1 class="page-title">US Labor History</h1>
+        <p class="page-subtitle">ILRLR 1100 with Dr. Paul Ortiz</p>
+        <p class="hero-summary"><strong>12 weeks · 35 activities</strong> · Primary sources, collaborative analysis, and contemporary labor connections</p>
+      </div>
 
       <div class="hero-rail">
         <div class="pill">📅 <span class="num" data-count="12">0</span> Weeks</div>
@@ -221,7 +296,7 @@
 
     <section class="content-area">
       <div class="timeline-progress">
-        <p><strong>Explore the complete course journey.</strong> Click any week to open details. Toggle the timeline view for a fast overview.</p>
+        <p><strong>A complete discussion plan, built for active learning.</strong> Each week pairs a historical problem with structured discussion, collaborative work, and evidence-based reflection. Open a week to see the full teaching plan.</p>
         <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
       </div>
 
@@ -538,7 +613,9 @@
       const links = (week.links||[]).map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="resource-link" onclick="event.stopPropagation()"><span class="link-status"></span><span>${l.title || 'External Resource'}</span></a>`).join('');
       const readings = (week.readings||[]).map(r => `<li>${r}</li>`).join('');
       const concepts = (week.concepts||[]).map(c => `<li>${c}</li>`).join('');
-      const acts = (week.activities||[]).map(a => `<span class="activity-tag">${a}</span>`).join('');
+      const visibleActs = (week.activities||[]).slice(0, 3).map(a => `<span class="activity-tag">${a}</span>`).join('');
+      const remainingActs = Math.max((week.activities||[]).length - 3, 0);
+      const acts = visibleActs + (remainingActs ? `<span class="activity-tag more-activities">+${remainingActs} more</span>` : '');
       return `
       <div class="week-card" data-week="${week.week}" data-searchable='${JSON.stringify(week).toLowerCase()}' onclick="toggleCard(this, event)">
         <div class="week-header">
@@ -547,11 +624,11 @@
         </div>
         <h3 class="week-title">${week.title}</h3>
         <div class="week-activities">${acts}</div>
-        <p class="week-description">${week.description||''}</p>
-        ${week.innovation?`<div class="week-innovation"><span class="innovation-label">🎯 Teaching Innovation</span>${week.innovation}</div>`:''}
-        <div class="expand-indicator">+</div>
+        <div class="expand-indicator">View plan</div>
         <div class="week-expandable">
           <div class="expandable-content">
+            ${week.description?`<p class="plan-overview">${week.description}</p>`:''}
+            ${week.innovation?`<div class="week-innovation"><span class="innovation-label">Teaching move</span>${week.innovation}</div>`:''}
             ${(week.concepts&&week.concepts.length)?`<div class="key-concepts"><h4 class="section-title"><span>🧠</span>Key Concepts</h4><ul class="concept-list">${concepts}</ul></div>`:''}
             ${(week.readings&&week.readings.length)?`<div class="readings-section"><h4 class="section-title"><span>📚</span>Readings & Materials</h4><ul class="reading-list">${readings}</ul></div>`:''}
             ${(week.links && week.links.length) ? `<div class="resources-section"><h4 class="section-title"><span>🔗</span>Resources & Links</h4><div class="resources-grid">${links}</div></div>` : ''}
@@ -633,14 +710,14 @@
     function toggleCard(card, evt){
       const wasClosed = !card.classList.contains('expanded');
       card.classList.toggle('expanded');
-      const t = card.querySelector('.expand-indicator'); if(t) t.textContent = card.classList.contains('expanded') ? '−' : '+';
+      const t = card.querySelector('.expand-indicator'); if(t) t.textContent = card.classList.contains('expanded') ? 'Close plan' : 'View plan';
       if(wasClosed) confetti(card, evt);
     }
     function toggleAllCards(expand){
       document.querySelectorAll('.week-card').forEach(c => {
         const willOpen = expand && !c.classList.contains('expanded');
         c.classList.toggle('expanded', !!expand);
-        const t = c.querySelector('.expand-indicator'); if(t) t.textContent = expand ? '−' : '+';
+        const t = c.querySelector('.expand-indicator'); if(t) t.textContent = expand ? 'Close plan' : 'View plan';
         if(willOpen) confetti(c);
       });
     }
