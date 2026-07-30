@@ -255,6 +255,48 @@ body > nav.site-nav a.cv-link:focus {
   box-shadow: 0 8px 22px rgba(41, 83, 155, 0.19) !important;
 }
 
+/*
+ * Keep the full desktop navigation centered and visible. The previous fixed
+ * minimum widths made the row wider than common laptop and tablet viewports,
+ * leaving Home or CV clipped whenever the nav retained a horizontal scroll
+ * position.
+ */
+@media (min-width: 1200px) {
+  body > nav.site-nav > ul {
+    justify-content: center !important;
+    gap: clamp(2px, 0.55vw, 10px) !important;
+    padding-inline: clamp(10px, 2vw, 32px) !important;
+    overflow-x: hidden !important;
+  }
+
+  body > nav.site-nav a,
+  body > nav.site-nav a.cv-link,
+  body > nav.site-nav a.cv-link[aria-current="page"] {
+    min-width: 0 !important;
+    padding-inline: clamp(8px, 1vw, 18px) !important;
+    font-size: clamp(0.78rem, 0.95vw, 1.08rem) !important;
+    letter-spacing: clamp(0.04em, 0.08vw, 0.1em) !important;
+  }
+}
+
+@media (min-width: 821px) and (max-width: 1199px) {
+  body > nav.site-nav > ul {
+    padding-inline: 10px !important;
+    gap: 8px !important;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(229, 231, 235, 0.35) transparent;
+  }
+
+  body > nav.site-nav a,
+  body > nav.site-nav a.cv-link,
+  body > nav.site-nav a.cv-link[aria-current="page"] {
+    min-width: 0 !important;
+    padding-inline: 10px !important;
+    font-size: 0.82rem !important;
+    letter-spacing: 0.055em !important;
+  }
+}
+
 @media (max-width: 820px) {
   body > header.site-header {
     min-height: calc(72px + var(--site-safe-top)) !important;
