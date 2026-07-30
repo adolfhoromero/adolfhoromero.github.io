@@ -313,10 +313,14 @@
     @media (prefers-reduced-motion:reduce){.activity-card,.activity-more::after{transition:none}}
 
     /* Research paths: compact links with a real destination */
-    .research-jump{max-width:1160px; margin:-14px auto 8px; padding:0 14px; display:flex; flex-wrap:wrap; justify-content:center; gap:8px}
-    .research-jump a{display:inline-flex; align-items:center; gap:7px; padding:8px 13px; color:var(--text-main); font-size:.82rem; font-weight:700; text-decoration:none; background:color-mix(in srgb,var(--card-bg) 90%,transparent); border:1px solid color-mix(in srgb,var(--accent) 18%,transparent); border-radius:999px; box-shadow:0 7px 20px rgba(17,31,54,.06); transition:transform .2s ease,border-color .2s ease,background .2s ease}
+    .research-jump{max-width:1160px; margin:12px auto 10px; padding:0 14px; display:flex; flex-wrap:wrap; justify-content:center; gap:8px}
+    .research-jump a{display:inline-flex; align-items:center; justify-content:center; gap:7px; padding:8px 13px; color:var(--text-main); font-size:.82rem; font-weight:700; line-height:1.25; text-align:center; text-decoration:none; background:color-mix(in srgb,var(--card-bg) 90%,transparent); border:1px solid color-mix(in srgb,var(--accent) 18%,transparent); border-radius:999px; box-shadow:0 7px 20px rgba(17,31,54,.06); transition:transform .2s ease,border-color .2s ease,background .2s ease,box-shadow .2s ease}
     .research-jump a::after{content:"↘"; color:var(--accent)}
-    .research-jump a:hover,.research-jump a:focus-visible{transform:translateY(-2px); border-color:var(--accent); background:color-mix(in srgb,var(--accent) 7%,var(--card-bg)); outline:none}
+    .research-jump a:hover,.research-jump a:focus-visible{transform:translateY(-2px); border-color:var(--accent); background:color-mix(in srgb,var(--accent) 7%,var(--card-bg)); box-shadow:0 10px 24px rgba(17,31,54,.11); outline:none}
+    @media (min-width:821px){
+      .research-jump{width:min(calc(100% - 32px),1100px); margin:20px auto 18px; padding:12px; display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:10px; background:color-mix(in srgb,var(--card-bg) 82%,transparent); border:1px solid color-mix(in srgb,var(--accent) 14%,transparent); border-radius:20px; box-shadow:0 14px 36px rgba(17,31,54,.08)}
+      .research-jump a{min-height:44px; padding:9px 10px; background:color-mix(in srgb,var(--card-bg) 96%,transparent)}
+    }
 
     /* Dissertation archive */
     .thesis-showcase{padding:clamp(30px,5vw,58px) !important; border-left:0}
@@ -352,7 +356,7 @@
   </style>
 
   <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
-  <link rel="stylesheet" href="site-header.css?v=20260720-5">
+  <link rel="stylesheet" href="site-header.css?v=20260730-1">
 </head>
 <body>
   <a class="skip-link" href="#about" aria-label="Skip to main content">Skip to content</a>
