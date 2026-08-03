@@ -707,6 +707,19 @@ footer a:hover, footer a:focus { color: var(--accent-gold); text-decoration: und
         }
       }
     </style>
+    <style>
+      /* Publications opener: compact enough to introduce the record without hiding it. */
+      .publications-story{grid-template-columns:minmax(300px,.92fr) minmax(0,1.08fr);margin-block:clamp(1.5rem,3vw,2.6rem)}
+      .publications-story .page-story__media,.publications-story .page-story__media img{min-height:0;height:520px}
+      .publications-story .page-story__copy{padding:clamp(1.6rem,3vw,2.5rem)}
+      .publications-story h1{max-width:none;font-size:clamp(2.25rem,3.5vw,3.2rem);line-height:1.02}
+      .publications-story .page-story__copy>p:not(.page-story__eyebrow){margin-top:1rem;font-size:.96rem;line-height:1.62}
+      .publication-snapshot{width:min(calc(100% - 2rem),1180px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.65rem;margin:-1.6rem auto 2.6rem;padding:0;list-style:none}
+      .publication-snapshot li{padding:.8rem 1rem;border:1px solid rgba(113,158,230,.24);border-radius:14px;background:linear-gradient(135deg,#10284b,#0c1d35);box-shadow:0 12px 28px rgba(5,17,34,.16)}
+      .publication-snapshot strong{display:block;color:#f5c84c;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase}
+      .publication-snapshot span{display:block;margin-top:.22rem;color:#eaf2ff;font-size:.72rem;line-height:1.38}
+      @media (max-width:820px){.publications-story{grid-template-columns:1fr}.publications-story .page-story__media,.publications-story .page-story__media img{min-height:260px;height:260px}.publication-snapshot{width:min(calc(100% - 1.2rem),680px);grid-template-columns:1fr;margin-top:-1rem}}
+    </style>
 <link rel="stylesheet" href="site-header.css?v=20260720-5">
 </head>
 <body>
@@ -748,7 +761,7 @@ footer a:hover, footer a:focus { color: var(--accent-gold); text-decoration: und
 <li><a aria-label="Open CV page" class="cv-link" href="cv.html">CV</a></li>
 </ul>
 </nav>
-<section class="page-story" aria-labelledby="publications-story-title">
+<section class="page-story publications-story" aria-labelledby="publications-story-title">
 <figure class="page-story__media" style="--story-position: center 55%">
 <img src="assets/page-stories/publications-reading-room-v2.webp" alt="An independent bookshop lined with shelves and tables of books" width="1440" height="1920" decoding="async">
 </figure>
@@ -756,13 +769,13 @@ footer a:hover, footer a:focus { color: var(--accent-gold); text-decoration: und
 <p class="page-story__eyebrow">Scholarship in motion</p>
 <h1 id="publications-story-title">Writing toward working-class power.</h1>
 <p>My writing asks how workers and communities build power when formal protections fall short. Across labor, migration, and oral history, I am interested in scholarship that is rigorous enough for the academy and useful beyond it.</p>
-<ul class="page-story__tags" aria-label="Research areas">
-<li><a href="#manuscripts">Labor</a></li>
-<li><a href="#manuscripts">Migration</a></li>
-<li><a href="#articles">Oral history</a></li>
-</ul>
 </div>
 </section>
+<ul class="publication-snapshot" aria-label="Publication status snapshot">
+<li><strong>Forthcoming</strong><span><i>Aztlán</i> and the Edward Elgar handbook</span></li>
+<li><strong>In preparation</strong><span><i>Southern Cultures</i> and the SAGE encyclopedia</span></li>
+<li><strong>Published</strong><span><i>Oral History Review</i> and a 2025 book review</span></li>
+</ul>
 <main id="main">
 <section id="manuscripts">
 <h2>Manuscripts in Preparation</h2>
