@@ -283,34 +283,53 @@
       .field-card.is-entering{animation:none}
     }
 
-    /* Recent activity: a selective professional record, not a social feed */
-    .activity-section{padding:clamp(34px,5vw,64px) !important}
-    .activity-heading{display:flex; align-items:end; justify-content:space-between; gap:24px; margin-bottom:24px}
-    .activity-heading h2{margin:4px 0 0; text-align:left; font-size:clamp(2rem,4vw,3.25rem); line-height:1}
-    .activity-heading p{max-width:580px; color:var(--muted); line-height:1.7}
-    .activity-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px}
-    .activity-card{display:flex; flex-direction:column; overflow:hidden; border:1px solid color-mix(in srgb,var(--accent) 14%,transparent); border-radius:18px; background:var(--card-bg); box-shadow:0 12px 30px rgba(17,31,54,.09); transition:transform .25s ease,box-shadow .25s ease}
-    .activity-card:hover{transform:translateY(-4px); box-shadow:0 18px 40px rgba(17,31,54,.15)}
+    /* Newsroom: one organized home for the calendar and completed public work */
+    .activity-section{padding:clamp(34px,5vw,64px) 0 !important; overflow:hidden}
+    .activity-heading{display:grid; grid-template-columns:minmax(0,1fr) minmax(280px,.8fr); align-items:end; gap:28px; padding:0 clamp(24px,5vw,64px); margin-bottom:34px}
+    .activity-heading h2{margin:5px 0 0; text-align:left; font-size:clamp(2.35rem,5vw,4.1rem); line-height:.95; letter-spacing:-.035em}
+    .activity-heading p{max-width:590px; color:var(--muted); line-height:1.75}
+    .news-rail{margin-top:30px}
+    .news-rail-head{display:flex; align-items:end; justify-content:space-between; gap:20px; padding:0 clamp(24px,5vw,64px); margin-bottom:15px}
+    .news-rail-title{display:flex; align-items:center; gap:12px}
+    .news-index{display:grid; place-items:center; width:34px; height:34px; border-radius:50%; background:var(--accent); color:#fff; font-size:.72rem; font-weight:850; letter-spacing:.08em}
+    .news-rail h3{margin:0; color:var(--heading-color); font-family:'Spectral',serif; font-size:clamp(1.45rem,2.6vw,2rem)}
+    .news-rail-subtitle{margin:3px 0 0; color:var(--muted); font-size:.82rem}
+    .news-controls{display:flex; gap:8px}
+    .news-control{display:grid; place-items:center; width:42px; height:42px; border:1px solid color-mix(in srgb,var(--accent) 25%,transparent); border-radius:50%; background:var(--card-bg); color:var(--accent); font:700 1.35rem/1 sans-serif; cursor:pointer; box-shadow:0 8px 22px rgba(17,31,54,.08); transition:transform .2s ease,background .2s ease,color .2s ease}
+    .news-control:hover,.news-control:focus-visible{transform:translateY(-2px); background:var(--accent); color:#fff; outline:none}
+    .news-track{display:grid; grid-auto-flow:column; grid-auto-columns:minmax(310px,36%); gap:17px; overflow-x:auto; overscroll-behavior-inline:contain; scroll-snap-type:inline mandatory; scrollbar-width:thin; scrollbar-color:var(--accent) transparent; padding:4px clamp(24px,5vw,64px) 24px; scroll-padding-inline:clamp(24px,5vw,64px)}
+    .news-track::-webkit-scrollbar{height:7px}.news-track::-webkit-scrollbar-thumb{background:var(--accent); border-radius:999px}.news-track::-webkit-scrollbar-track{background:transparent}
+    .activity-card{position:relative; display:flex; min-height:480px; flex-direction:column; overflow:hidden; scroll-snap-align:start; border:1px solid color-mix(in srgb,var(--accent) 14%,transparent); border-radius:22px; background:var(--card-bg); box-shadow:0 14px 34px rgba(17,31,54,.1); transition:transform .25s ease,box-shadow .25s ease}
+    .activity-card:hover{transform:translateY(-4px); box-shadow:0 20px 46px rgba(17,31,54,.16)}
+    .activity-card--calendar{min-height:420px; background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 8%,var(--card-bg)),var(--card-bg) 48%)}
+    .calendar-art{position:relative; min-height:145px; padding:22px; overflow:hidden; color:#fff; background:linear-gradient(125deg,#0e2039,#264a75)}
+    .calendar-art::after{content:""; position:absolute; width:190px; height:190px; right:-48px; top:-75px; border:1px solid rgba(255,255,255,.24); border-radius:50%; box-shadow:0 0 0 34px rgba(255,255,255,.045),0 0 0 68px rgba(255,255,255,.035)}
+    .calendar-month{display:block; color:#f3cf68; font-size:.72rem; font-weight:850; letter-spacing:.16em; text-transform:uppercase}
+    .calendar-day{display:block; margin-top:8px; font-family:'Spectral',serif; font-size:3.4rem; font-weight:700; line-height:.9}
+    .calendar-place{position:absolute; left:22px; bottom:18px; font-size:.75rem; color:#d6e1ef}
     .activity-media{margin:0; background:#102039}
-    .activity-card img{display:block; width:100%; height:180px; object-fit:cover}
+    .activity-card img{display:block; width:100%; height:205px; object-fit:cover}
     .activity-card--packet img{padding:12px; object-fit:contain; background:radial-gradient(circle at 50% 38%,#294670 0,#13243d 58%,#0c1728 100%)}
     .activity-media figcaption{padding:9px 14px; color:#dce6f4; background:#102039; font-size:.72rem; font-weight:650; letter-spacing:.02em}
-    .activity-card-copy{display:flex; flex:1; flex-direction:column; align-items:flex-start; padding:18px 19px 21px}
+    .activity-card-copy{display:flex; flex:1; flex-direction:column; align-items:flex-start; padding:19px 20px 22px}
     .activity-facts{display:flex; flex-wrap:wrap; gap:7px; margin-bottom:9px}
-    .activity-role,.activity-date{display:inline-flex; align-items:center; min-height:26px; padding:5px 9px; border-radius:999px; font-size:.68rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase}
+    .activity-role,.activity-date,.activity-status{display:inline-flex; align-items:center; min-height:26px; padding:5px 9px; border-radius:999px; font-size:.67rem; font-weight:850; letter-spacing:.075em; text-transform:uppercase}
     .activity-role{color:var(--accent); border:1px solid color-mix(in srgb,var(--accent) 28%,transparent); background:color-mix(in srgb,var(--accent) 6%,var(--card-bg))}
     .activity-date{color:var(--text-main); background:color-mix(in srgb,var(--accent-gold) 18%,var(--card-bg))}
-    .activity-card h3{margin:6px 0 9px; font-family:'Spectral',serif; font-size:1.35rem; line-height:1.15; color:var(--heading-color)}
-    .activity-card p{color:var(--muted); font-size:.91rem; line-height:1.62}
-    .activity-card-link{display:inline-flex; align-items:center; gap:7px; margin-top:auto; padding-top:16px; color:var(--accent); font-size:.82rem; font-weight:800; text-decoration:none}
-    .activity-card-link::after{content:"→"; transition:transform .2s ease}
-    .activity-card-link:hover::after{transform:translateX(4px)}
+    .activity-status{color:#fff; background:#237a57}
+    .activity-status.is-complete{background:color-mix(in srgb,var(--muted) 78%,#26364d)}
+    .activity-card h4{margin:6px 0 9px; font-family:'Spectral',serif; font-size:1.42rem; line-height:1.12; color:var(--heading-color)}
+    .activity-card p{margin:0 0 10px; color:var(--muted); font-size:.9rem; line-height:1.62}
+    .activity-card .takeaway{margin-top:auto; padding:12px 0 0 13px; border-left:3px solid var(--accent-gold); color:var(--text-main); font-size:.82rem}
+    .activity-card a{margin-top:auto; color:var(--accent); font-size:.82rem; font-weight:800; text-decoration:none}
+    .activity-card a:hover{text-decoration:underline}
+    .news-hint{display:flex; align-items:center; gap:9px; padding:3px clamp(24px,5vw,64px) 0; color:var(--muted); font-size:.75rem}
+    .news-hint::before{content:"↔"; color:var(--accent); font-weight:900}
     .activity-more{display:inline-flex; align-items:center; gap:8px; margin-top:22px; color:var(--accent); font-weight:800; text-decoration:none}
-    .activity-more::after{content:"→"; transition:transform .2s ease}
-    .activity-more:hover::after{transform:translateX(4px)}
-    @media (max-width:900px){.activity-grid{grid-template-columns:1fr 1fr}.activity-card:last-child{grid-column:1/-1}.activity-card img{height:220px}.activity-heading{align-items:start; flex-direction:column}}
-    @media (max-width:620px){.activity-grid{grid-template-columns:1fr}.activity-card:last-child{grid-column:auto}.activity-card img{height:190px}}
-    @media (prefers-reduced-motion:reduce){.activity-card,.activity-more::after{transition:none}}
+    .activity-more::after{content:"→"; transition:transform .2s ease}.activity-more:hover::after{transform:translateX(4px)}
+    @media (max-width:900px){.activity-heading{grid-template-columns:1fr}.news-track{grid-auto-columns:minmax(290px,72%)}.activity-heading{align-items:start}}
+    @media (max-width:620px){.activity-heading,.news-rail-head{padding-inline:18px}.news-track{grid-auto-columns:86%; padding-inline:18px; scroll-padding-inline:18px}.news-controls{display:none}.activity-card{min-height:465px}.activity-card--calendar{min-height:420px}.news-hint{padding-inline:18px}}
+    @media (prefers-reduced-motion:reduce){.activity-card,.activity-more::after,.news-control{transition:none}.news-track{scroll-behavior:auto}}
 
     /* Research paths: compact links with a real destination */
     .research-jump{max-width:1160px; margin:12px auto 10px; padding:0 14px; display:flex; flex-wrap:wrap; justify-content:center; gap:8px}
@@ -378,7 +397,6 @@
       <li><a class="teaching-link" href="teaching.html">Teaching</a></li>
       <li><a href="teaching-discussion-hub.html">Discussion Hub</a></li>
       <li><a href="media.html">Media &amp; Public Engagement</a></li>
-      <li><a href="updates.html">Updates</a></li>
       <li><a class="cv-link" href="cv.html">CV</a></li>
     </ul>
   </nav>
@@ -394,7 +412,7 @@
     <a href="#thesis-work">Worker power</a>
     <a href="research.html#fieldwork-stories">Oral history</a>
     <a href="research.html#migration">Migration</a>
-    <a href="updates.html#jhu-racial-politics">Racial politics</a>
+    <a href="#activity">Racial politics</a>
     <a href="teaching.html#teaching-philosophy">Teaching practice</a>
   </nav>
 
@@ -497,62 +515,76 @@
     <section id="activity" class="section activity-section" aria-labelledby="activity-title">
       <div class="activity-heading">
         <div>
-          <span class="field-kicker">What I’m doing</span>
-          <h2 id="activity-title">Recent work in public.</h2>
+          <span class="field-kicker">News &amp; public work</span>
+          <h2 id="activity-title">Where the work is moving.</h2>
         </div>
-        <p>A selective record of research presentations, methods training, and community-engaged work—organized from newest to oldest and grounded in the role I held.</p>
+        <p>One organized record of upcoming presentations, research training, and community-engaged work. Scroll each rail horizontally; every item keeps the date, place, status, and role explicit.</p>
       </div>
 
-      <div class="activity-grid">
-        <article class="activity-card activity-card--packet">
+      <div class="news-rail" data-news-rail>
+        <div class="news-rail-head">
+          <div class="news-rail-title"><span class="news-index">01</span><div><h3>On the calendar</h3><p class="news-rail-subtitle">Accepted appearances and current leadership</p></div></div>
+          <div class="news-controls" aria-label="Calendar navigation"><button class="news-control" type="button" data-scroll="prev" aria-label="Scroll calendar left">‹</button><button class="news-control" type="button" data-scroll="next" aria-label="Scroll calendar right">›</button></div>
+        </div>
+        <div class="news-track" tabindex="0" aria-label="Upcoming and accepted work">
+          <article class="activity-card activity-card--calendar">
+            <div class="calendar-art"><span class="calendar-month">July 2026</span><strong class="calendar-day">01–04</strong><span class="calendar-place">Bordeaux, France</span></div>
+            <div class="activity-card-copy"><div class="activity-facts"><span class="activity-status is-complete">Accepted program · Completed</span><span class="activity-role">Presenter</span></div><h4>SASE 38th Annual Conference</h4><p>“From Crisis to Capacity: Worker Centers and Infrastructures of Worker Power in Pandemic and Post-Pandemic New York.”</p><a href="https://sase.org/events/2026-bordeaux/" target="_blank" rel="noopener">Conference details →</a></div>
+          </article>
+          <article class="activity-card activity-card--calendar">
+            <div class="calendar-art"><span class="calendar-month">August 2026</span><strong class="calendar-day">07–11</strong><span class="calendar-place">New York City</span></div>
+            <div class="activity-card-copy"><div class="activity-facts"><span class="activity-status">Upcoming · Accepted</span><span class="activity-role">Panelist</span></div><h4>American Sociological Association</h4><p>“Making the Impossible, Possible”: Coalitional Movement Infrastructures and the Fight for the NY Excluded Worker Fund.</p><a href="https://my.asanet.org/cv5/cgi-bin/eventsdll.dll/EventInfo?sessionaltcd=26am" target="_blank" rel="noopener">121st Annual Meeting →</a></div>
+          </article>
+          <article class="activity-card activity-card--calendar">
+            <div class="calendar-art"><span class="calendar-month">October 2026</span><strong class="calendar-day">14–17</strong><span class="calendar-place">Portland, Oregon</span></div>
+            <div class="activity-card-copy"><div class="activity-facts"><span class="activity-status">Upcoming · Accepted</span><span class="activity-role">Presenter</span></div><h4>Oral History Association</h4><p>“From Crisis to Care: Community Interviews on Worker Centers and Collective Power.”</p><a href="https://oralhistory.org/annual-meeting/" target="_blank" rel="noopener">2026 Annual Meeting →</a></div>
+          </article>
+          <article class="activity-card activity-card--calendar">
+            <div class="calendar-art"><span class="calendar-month">2025–2026</span><strong class="calendar-day">ILR</strong><span class="calendar-place">Cornell University</span></div>
+            <div class="activity-card-copy"><div class="activity-facts"><span class="activity-status">Current leadership</span><span class="activity-role">Conference co-organizer</span></div><h4>Migration and Sustainability in Contentious Political Times</h4><p>Co-organizing a Cornell program focused on migration and sustainability in contentious political times.</p></div>
+          </article>
+        </div>
+        <p class="news-hint">Drag, swipe, use Shift + mouse wheel, or choose the arrows.</p>
+      </div>
+
+      <div class="news-rail" data-news-rail>
+        <div class="news-rail-head">
+          <div class="news-rail-title"><span class="news-index">02</span><div><h3>Recent field notes</h3><p class="news-rail-subtitle">Completed work, newest to oldest</p></div></div>
+          <div class="news-controls" aria-label="Field-note navigation"><button class="news-control" type="button" data-scroll="prev" aria-label="Scroll field notes left">‹</button><button class="news-control" type="button" data-scroll="next" aria-label="Scroll field notes right">›</button></div>
+        </div>
+        <div class="news-track" tabindex="0" aria-label="Completed public work">
+        <article class="activity-card activity-card--packet" id="jhu-racial-politics">
           <figure class="activity-media">
             <img src="assets/updates/jhu-racial-politics-2026.webp?v=20260720-2" alt="Johns Hopkins Racial Politics Summer Institute 2026 welcome packet cover" width="683" height="802" loading="lazy" decoding="async">
-            <figcaption>Program material · Baltimore, Maryland</figcaption>
+            <figcaption>Program material · Johns Hopkins University · Baltimore, Maryland</figcaption>
           </figure>
           <div class="activity-card-copy">
-            <div class="activity-facts">
-              <time class="activity-date" datetime="2026-06-01">June 1–5, 2026</time>
-              <span class="activity-role">Role · Institute participant</span>
-            </div>
-            <h3>Johns Hopkins Racial Politics Summer Institute</h3>
-            <p>An intensive graduate institute on racial politics, democratic backsliding, authoritarianism, and institutional power.</p>
-            <a class="activity-card-link" href="updates.html#jhu-racial-politics">Read the full update</a>
+            <div class="activity-facts"><time class="activity-date" datetime="2026-06-01">June 1–5, 2026</time><span class="activity-role">Institute participant</span></div>
+            <h4>Johns Hopkins Racial Politics Summer Institute</h4>
+            <p>Selected with scholarship support for an intensive graduate institute on racial politics, democratic backsliding, authoritarianism, and institutional power.</p>
+            <p class="takeaway">Connected racial formation and migration politics to institutions organizing labor, citizenship, and democratic participation.</p>
           </div>
         </article>
-
-        <article class="activity-card">
+        <article class="activity-card" id="lera-2026">
           <figure class="activity-media">
             <img src="assets/updates/lera-colleagues-2026.webp" alt="Adolfho Romero with fellow labor scholars at the 2026 LERA Annual Meeting" width="1290" height="1118" loading="lazy" decoding="async">
             <figcaption>Royal Sonesta · Minneapolis, Minnesota</figcaption>
           </figure>
-          <div class="activity-card-copy">
-            <div class="activity-facts">
-              <time class="activity-date" datetime="2026-05-28">May 28–31, 2026</time>
-              <span class="activity-role">Role · Presenter</span>
-            </div>
-            <h3>LERA 78th Annual Meeting</h3>
-            <p>I presented “Is Ithaca Still a Union Town?”—research on worker power, labor repertoires, and uneven regeneration in Tompkins County.</p>
-            <a class="activity-card-link" href="updates.html#lera-2026">Read the full update</a>
-          </div>
+          <div class="activity-card-copy"><div class="activity-facts"><time class="activity-date" datetime="2026-05-28">May 28–31, 2026</time><span class="activity-role">Presenter</span></div><h4>LERA 78th Annual Meeting</h4><p>I presented “Is Ithaca Still a Union Town?” at the Labor and Employment Relations Association Annual Meeting.</p><p class="takeaway">The research examines worker power, local labor repertoires, and uneven regeneration in Tompkins County from 1984 to 2026.</p></div>
         </article>
-
-        <article class="activity-card">
+        <article class="activity-card" id="cornell-ilr-symposium">
           <figure class="activity-media">
             <img src="assets/updates/2026-05-07-ilr-symposium.jpg" alt="Adolfho Romero presenting research at the Cornell ILR Graduate Student Symposium" width="1600" height="900" loading="lazy" decoding="async">
             <figcaption>Cornell ILR School · Ithaca, New York</figcaption>
           </figure>
-          <div class="activity-card-copy">
-            <div class="activity-facts">
-              <time class="activity-date" datetime="2026-05-07">May 7, 2026</time>
-              <span class="activity-role">Role · Presenter</span>
-            </div>
-            <h3>Cornell ILR Graduate Student Symposium</h3>
-            <p>I presented “Field Generated Power Resources in Decentralized Labor Ecosystems,” connecting worker-center strategy to debates about labor power.</p>
-            <a class="activity-card-link" href="updates.html#cornell-ilr-symposium">Read the full update</a>
-          </div>
+          <div class="activity-card-copy"><div class="activity-facts"><time class="activity-date" datetime="2026-05-07">May 7, 2026</time><span class="activity-role">Presenter</span></div><h4>Cornell ILR Graduate Student Symposium</h4><p>I presented “Field Generated Power Resources in Decentralized Labor Ecosystems” at the Global Labor and Work Department’s Graduate Student Symposium.</p><p class="takeaway">The presentation examined how worker centers and community organizations generate power beyond the conventional union workplace.</p></div>
         </article>
+        <article class="activity-card" id="immigrant-rights-safety-patrol"><figure class="activity-media"><img src="assets/updates/2026-01-30-safety-patrol.jpg" alt="Community members gathered for an immigrant-rights action and safety patrol" width="1600" height="900" loading="lazy" decoding="async"><figcaption>Downtown Ithaca · Ithaca, New York</figcaption></figure><div class="activity-card-copy"><div class="activity-facts"><time class="activity-date" datetime="2026-01-30">January 30, 2026</time><span class="activity-role">Safety-patrol participant</span></div><h4>Community safety and immigrant rights</h4><p>I participated in a community safety patrol supporting immigrant neighbors alongside Indivisible, No Más Lágrimas, Ana Ortiz, and local partners.</p><p class="takeaway">My role was supportive: helping maintain a safer public space while community leaders and families made their own demands visible.</p></div></article>
+        <article class="activity-card" id="ut-austin-ethnography"><figure class="activity-media"><img src="assets/updates/2025-08-18-ut-austin-ethnography.jpg" alt="Participants at the Urban Ethnography Lab Summer School at UT Austin" width="1600" height="900" loading="lazy" decoding="async"><figcaption>Urban Ethnography Lab · The University of Texas at Austin</figcaption></figure><div class="activity-card-copy"><div class="activity-facts"><time class="activity-date" datetime="2025-08-18">August 18–21, 2025</time><span class="activity-role">Participant · Doctoral researcher</span></div><h4>Urban Ethnography Lab Summer School</h4><p>The summer school treated ethnography as the disciplined construction of evidence rather than neutral data collection.</p><p class="takeaway">We worked through interviewing, interaction analysis, memoing, evidentiary warrants, deviant cases, epistemological vigilance, and non-extractive ethics.</p></div></article>
+        <article class="activity-card" id="malta-migration-spring-school"><figure class="activity-media"><img src="assets/updates/2025-05-05-malta-cohort.jpg" alt="Participants in the Queen Mary–Cornell Global Migration Spring School at the Malta campus" width="1600" height="900" loading="lazy" decoding="async"><figcaption>Queen Mary University of London Malta Campus · Gozo, Malta</figcaption></figure><div class="activity-card-copy"><div class="activity-facts"><time class="activity-date" datetime="2025-05-05">May 5–9, 2025</time><span class="activity-role">Participant · Cornell researcher</span></div><h4>Queen Mary–Cornell Global Migration Spring School</h4><p>I joined a cross-disciplinary cohort examining migration through geography, history, law, public health, and policy.</p><p class="takeaway">The program sharpened how I connect migrant labor and displacement to urban governance, borders, and institutional exclusion.</p></div></article>
+        </div>
+        <p class="news-hint">Swipe or scroll horizontally to move through the complete record.</p>
       </div>
-      <a class="activity-more" href="updates.html">Explore all updates</a>
     </section>
 
     <section id="thesis-work" class="section thesis-showcase" aria-labelledby="thesis-title">
@@ -700,6 +732,23 @@
         });
       });
     })();
+
+    // Accessible horizontal newsroom controls
+    document.querySelectorAll('[data-news-rail]').forEach(rail => {
+      const track = rail.querySelector('.news-track');
+      if (!track) return;
+      rail.querySelectorAll('[data-scroll]').forEach(button => {
+        button.addEventListener('click', () => {
+          const direction = button.dataset.scroll === 'next' ? 1 : -1;
+          track.scrollBy({ left: direction * Math.max(300, track.clientWidth * .82), behavior: 'smooth' });
+        });
+      });
+      track.addEventListener('wheel', event => {
+        if (!event.shiftKey || Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
+        event.preventDefault();
+        track.scrollLeft += event.deltaY;
+      }, { passive:false });
+    });
   </script>
 
   <!-- Quotes carousel -->
