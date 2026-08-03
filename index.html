@@ -299,17 +299,20 @@
     .news-control:hover,.news-control:focus-visible{transform:translateY(-2px); background:var(--accent); color:#fff; outline:none}
     .news-track{display:grid; grid-auto-flow:column; grid-auto-columns:minmax(310px,36%); gap:17px; overflow-x:auto; overscroll-behavior-inline:contain; scroll-snap-type:inline mandatory; scrollbar-width:thin; scrollbar-color:var(--accent) transparent; padding:4px clamp(24px,5vw,64px) 24px; scroll-padding-inline:clamp(24px,5vw,64px)}
     .news-track::-webkit-scrollbar{height:7px}.news-track::-webkit-scrollbar-thumb{background:var(--accent); border-radius:999px}.news-track::-webkit-scrollbar-track{background:transparent}
-    .activity-card{position:relative; display:flex; min-height:480px; flex-direction:column; overflow:hidden; scroll-snap-align:start; border:1px solid color-mix(in srgb,var(--accent) 14%,transparent); border-radius:22px; background:var(--card-bg); box-shadow:0 14px 34px rgba(17,31,54,.1); transition:transform .25s ease,box-shadow .25s ease}
+    .activity-card{position:relative; display:flex; min-height:450px; flex-direction:column; overflow:hidden; scroll-snap-align:start; border:1px solid color-mix(in srgb,var(--accent) 14%,transparent); border-radius:22px; background:var(--card-bg); box-shadow:0 14px 34px rgba(17,31,54,.1); transition:transform .25s ease,box-shadow .25s ease}
     .activity-card:hover{transform:translateY(-4px); box-shadow:0 20px 46px rgba(17,31,54,.16)}
-    .activity-card--calendar{min-height:420px; background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 8%,var(--card-bg)),var(--card-bg) 48%)}
+    .activity-card--calendar{min-height:450px; background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 8%,var(--card-bg)),var(--card-bg) 48%)}
+    .activity-card--featured{border-color:color-mix(in srgb,var(--accent-gold) 62%,var(--accent)); box-shadow:0 18px 44px rgba(17,31,54,.17)}
+    .activity-card--featured::before{content:"Latest update"; position:absolute; z-index:2; top:14px; left:14px; padding:6px 10px; border-radius:999px; color:#102039; background:#f3cf68; font-size:.65rem; font-weight:900; letter-spacing:.09em; text-transform:uppercase; box-shadow:0 5px 18px rgba(0,0,0,.18)}
     .calendar-art{position:relative; min-height:145px; padding:22px; overflow:hidden; color:#fff; background:linear-gradient(125deg,#0e2039,#264a75)}
     .calendar-art::after{content:""; position:absolute; width:190px; height:190px; right:-48px; top:-75px; border:1px solid rgba(255,255,255,.24); border-radius:50%; box-shadow:0 0 0 34px rgba(255,255,255,.045),0 0 0 68px rgba(255,255,255,.035)}
     .calendar-month{display:block; color:#f3cf68; font-size:.72rem; font-weight:850; letter-spacing:.16em; text-transform:uppercase}
     .calendar-day{display:block; margin-top:8px; font-family:'Spectral',serif; font-size:3.4rem; font-weight:700; line-height:.9}
     .calendar-place{position:absolute; left:22px; bottom:18px; font-size:.75rem; color:#d6e1ef}
     .activity-media{margin:0; background:#102039}
-    .activity-card img{display:block; width:100%; height:205px; object-fit:cover}
+    .activity-card img{display:block; width:100%; aspect-ratio:16/9; height:auto; object-fit:cover; object-position:center}
     .activity-card--packet img{padding:12px; object-fit:contain; background:radial-gradient(circle at 50% 38%,#294670 0,#13243d 58%,#0c1728 100%)}
+    .event-media img{object-position:center 48%}
     .activity-media figcaption{padding:9px 14px; color:#dce6f4; background:#102039; font-size:.72rem; font-weight:650; letter-spacing:.02em}
     .activity-card-copy{display:flex; flex:1; flex-direction:column; align-items:flex-start; padding:19px 20px 22px}
     .activity-facts{display:flex; flex-wrap:wrap; gap:7px; margin-bottom:9px}
@@ -323,12 +326,16 @@
     .activity-card .takeaway{margin-top:auto; padding:12px 0 0 13px; border-left:3px solid var(--accent-gold); color:var(--text-main); font-size:.82rem}
     .activity-card a{margin-top:auto; color:var(--accent); font-size:.82rem; font-weight:800; text-decoration:none}
     .activity-card a:hover{text-decoration:underline}
+    .activity-actions{display:flex; flex-wrap:wrap; align-items:center; gap:9px; margin-top:auto; padding-top:8px}
+    .activity-actions a{margin-top:0}
+    .activity-actions .activity-cta{display:inline-flex; align-items:center; min-height:38px; padding:8px 12px; border-radius:999px; color:#fff; background:var(--accent); box-shadow:0 8px 20px color-mix(in srgb,var(--accent) 23%,transparent)}
+    .activity-actions .activity-cta:hover{color:#fff; text-decoration:none; transform:translateY(-1px)}
     .news-hint{display:flex; align-items:center; gap:9px; padding:3px clamp(24px,5vw,64px) 0; color:var(--muted); font-size:.75rem}
     .news-hint::before{content:"↔"; color:var(--accent); font-weight:900}
     .activity-more{display:inline-flex; align-items:center; gap:8px; margin-top:22px; color:var(--accent); font-weight:800; text-decoration:none}
     .activity-more::after{content:"→"; transition:transform .2s ease}.activity-more:hover::after{transform:translateX(4px)}
     @media (max-width:900px){.activity-heading{grid-template-columns:1fr}.news-track{grid-auto-columns:minmax(290px,72%)}.activity-heading{align-items:start}}
-    @media (max-width:620px){.activity-heading,.news-rail-head{padding-inline:18px}.news-track{grid-auto-columns:86%; padding-inline:18px; scroll-padding-inline:18px}.news-controls{display:none}.activity-card{min-height:465px}.activity-card--calendar{min-height:420px}.news-hint{padding-inline:18px}}
+    @media (max-width:620px){.activity-heading,.news-rail-head{padding-inline:18px}.news-track{grid-auto-columns:86%; padding-inline:18px; scroll-padding-inline:18px}.news-controls{display:none}.activity-card,.activity-card--calendar{min-height:440px}.news-hint{padding-inline:18px}}
     @media (prefers-reduced-motion:reduce){.activity-card,.activity-more::after,.news-control{transition:none}.news-track{scroll-behavior:auto}}
 
     /* Research paths: compact links with a real destination */
@@ -341,7 +348,7 @@
       .research-jump a{min-height:44px; padding:9px 10px; background:color-mix(in srgb,var(--card-bg) 96%,transparent)}
     }
 
-    /* Dissertation archive */
+    /* Thesis archive */
     .thesis-showcase{padding:clamp(30px,5vw,58px) !important; border-left:0}
     .archive-header{display:grid; grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr); gap:28px; align-items:end; margin-bottom:26px}
     .archive-kicker{display:block; margin-bottom:8px; color:var(--accent); font-size:.74rem; font-weight:800; letter-spacing:.15em; text-transform:uppercase}
@@ -527,21 +534,29 @@
           <div class="news-controls" aria-label="Calendar navigation"><button class="news-control" type="button" data-scroll="prev" aria-label="Scroll calendar left">‹</button><button class="news-control" type="button" data-scroll="next" aria-label="Scroll calendar right">›</button></div>
         </div>
         <div class="news-track" tabindex="0" aria-label="Upcoming and accepted work">
-          <article class="activity-card activity-card--calendar">
-            <div class="calendar-art"><span class="calendar-month">July 2026</span><strong class="calendar-day">01–04</strong><span class="calendar-place">Bordeaux, France</span></div>
-            <div class="activity-card-copy"><div class="activity-facts"><span class="activity-status is-complete">Accepted program · Completed</span><span class="activity-role">Presenter</span></div><h4>SASE 38th Annual Conference</h4><p>“From Crisis to Capacity: Worker Centers and Infrastructures of Worker Power in Pandemic and Post-Pandemic New York.”</p><a href="https://sase.org/events/2026-bordeaux/" target="_blank" rel="noopener">Conference details →</a></div>
+          <article class="activity-card activity-card--calendar activity-card--featured">
+            <figure class="activity-media event-media">
+              <img src="assets/events/migration-contentious-times-2026.jpg" alt="Families walking through a harvested field, the official image for Cornell's Migration in Contentious Political Times conference" width="750" height="497" loading="eager" decoding="async">
+              <figcaption>Migrations Program · Mario Einaudi Center · Cornell University</figcaption>
+            </figure>
+            <div class="activity-card-copy">
+              <div class="activity-facts"><time class="activity-date" datetime="2026-09-18">September 18, 2026</time><span class="activity-status">Abstracts open through Sept. 4</span><span class="activity-role">Conference co-organizer</span></div>
+              <h4>Migration in Contentious Political Times</h4>
+              <p>I’m co-organizing this Cornell Migrations Program conference with Vicente Celestino Mata Jr. We invite abstracts from Cornell students, faculty, and members of the local community on migration, borders, labor, inequality, and changing environments.</p>
+              <p class="takeaway">Atkinson Hall · 350 Tower Road · Ithaca, New York</p>
+              <div class="activity-actions"><a class="activity-cta" href="https://cornell.ca1.qualtrics.com/jfe/form/SV_73Qt7omt17Drr2S" target="_blank" rel="noopener">Submit an abstract →</a><a href="https://events.cornell.edu/event/migration-in-contentious-political-times-conference" target="_blank" rel="noopener">Conference details</a></div>
+            </div>
           </article>
           <article class="activity-card activity-card--calendar">
             <div class="calendar-art"><span class="calendar-month">August 2026</span><strong class="calendar-day">07–11</strong><span class="calendar-place">New York City</span></div>
             <div class="activity-card-copy"><div class="activity-facts"><span class="activity-status">Upcoming · Accepted</span><span class="activity-role">Panelist</span></div><h4>American Sociological Association</h4><p>“Making the Impossible, Possible”: Coalitional Movement Infrastructures and the Fight for the NY Excluded Worker Fund.</p><a href="https://my.asanet.org/cv5/cgi-bin/eventsdll.dll/EventInfo?sessionaltcd=26am" target="_blank" rel="noopener">121st Annual Meeting →</a></div>
           </article>
           <article class="activity-card activity-card--calendar">
-            <div class="calendar-art"><span class="calendar-month">October 2026</span><strong class="calendar-day">14–17</strong><span class="calendar-place">Portland, Oregon</span></div>
-            <div class="activity-card-copy"><div class="activity-facts"><span class="activity-status">Upcoming · Accepted</span><span class="activity-role">Presenter</span></div><h4>Oral History Association</h4><p>“From Crisis to Care: Community Interviews on Worker Centers and Collective Power.”</p><a href="https://oralhistory.org/annual-meeting/" target="_blank" rel="noopener">2026 Annual Meeting →</a></div>
-          </article>
-          <article class="activity-card activity-card--calendar">
-            <div class="calendar-art"><span class="calendar-month">2025–2026</span><strong class="calendar-day">ILR</strong><span class="calendar-place">Cornell University</span></div>
-            <div class="activity-card-copy"><div class="activity-facts"><span class="activity-status">Current leadership</span><span class="activity-role">Conference co-organizer</span></div><h4>Migration and Sustainability in Contentious Political Times</h4><p>Co-organizing a Cornell program focused on migration and sustainability in contentious political times.</p></div>
+            <figure class="activity-media event-media">
+              <img src="assets/events/oha-landscapes-memory-2026.png" alt="Landscapes of Memory, the official artwork for the 2026 Oral History Association Annual Meeting" width="2048" height="1024" loading="lazy" decoding="async">
+              <figcaption>Landscapes of Memory · Hilton Portland Downtown · Portland, Oregon</figcaption>
+            </figure>
+            <div class="activity-card-copy"><div class="activity-facts"><time class="activity-date" datetime="2026-10-14">October 14–17, 2026</time><span class="activity-status">Upcoming · Accepted</span><span class="activity-role">Presenter</span></div><h4>Oral History Association Annual Meeting</h4><p>“From Crisis to Care: Community Interviews on Worker Centers and Collective Power.”</p><a href="https://oralhistory.org/annual-meeting/" target="_blank" rel="noopener">2026 Annual Meeting →</a></div>
           </article>
         </div>
         <p class="news-hint">Drag, swipe, use Shift + mouse wheel, or choose the arrows.</p>
@@ -590,10 +605,10 @@
     <section id="thesis-work" class="section thesis-showcase" aria-labelledby="thesis-title">
       <div class="archive-header">
         <div>
-          <span class="archive-kicker">Inside the dissertation archive</span>
+          <span class="archive-kicker">Inside the thesis archive</span>
           <h2 id="thesis-title">Reading worker power through its own press.</h2>
         </div>
-        <p>My dissertation research follows how workers and community organizations in Tompkins County built collective capacity beyond the traditional union hall. <em>The Working Press</em> and <em>The Workers’ Edge</em> show how those groups explained workplace struggles, connected campaigns, and created a public language of solidarity.</p>
+        <p>My thesis research follows how workers and community organizations in Tompkins County built collective capacity beyond the traditional union hall. <em>The Working Press</em> and <em>The Workers’ Edge</em> show how those groups explained workplace struggles, connected campaigns, and created a public language of solidarity.</p>
       </div>
       <div class="archive-grid">
         <figure class="archive-card archive-card--lead">
@@ -640,7 +655,7 @@
         <article class="recognition-card">
           <time datetime="2025">2025–2026</time>
           <h3>Graduate Migration Fellow</h3>
-          <p>Cornell University Migrations Initiative.</p>
+          <p>Migrations Program · Mario Einaudi Center for International Studies.</p>
         </article>
         <article class="recognition-card">
           <time datetime="2025">2025</time>
