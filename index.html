@@ -380,6 +380,38 @@
       .archive-card{min-height:390px}
       .research-jump{margin-top:4px}
     }
+  
+    /* Conference feature: Migration in Contentious Political Times */
+    .convening{margin:0 clamp(24px,5vw,64px) 10px; padding:clamp(20px,3.4vw,38px); border:1px solid color-mix(in srgb,var(--accent-gold) 55%,var(--accent)); border-radius:24px; background:linear-gradient(150deg,color-mix(in srgb,var(--accent) 7%,var(--card-bg)),var(--card-bg) 55%); box-shadow:0 18px 44px rgba(17,31,54,.13); scroll-margin-top:110px}
+    .convening-head h3{margin:2px 0 12px; font-family:'Spectral',serif; font-size:clamp(1.9rem,4vw,3rem); line-height:1.02; letter-spacing:-.025em; color:var(--heading-color)}
+    .convening-lead{display:grid; grid-template-columns:1fr 1fr; gap:22px; margin:8px 0 24px}
+    .convening-lead p{margin:0; color:var(--text-main); font-size:.95rem; line-height:1.75}
+    .convening-gallery{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); grid-auto-rows:clamp(150px,17vw,215px); gap:10px; margin-bottom:26px}
+    .convening-gallery figure{position:relative; margin:0; overflow:hidden; border-radius:16px; background:#13243d}
+    .convening-gallery .cg-wide{grid-column:span 2}
+    .convening-gallery .cg-tall{grid-row:span 2}
+    .convening-gallery .cg-full{grid-column:1/-1}
+    .convening-gallery{grid-auto-flow:dense}
+    .convening-gallery .cg-full img{object-position:center 78%}
+    .convening-gallery img{display:block; width:100%; height:100%; object-fit:cover; transition:transform .5s ease}
+    .convening-gallery figure:hover img{transform:scale(1.03)}
+    .convening-gallery figcaption{position:absolute; left:0; right:0; bottom:0; padding:22px 12px 9px; color:#fff; font-size:.72rem; font-weight:600; line-height:1.35; background:linear-gradient(transparent,rgba(8,16,30,.82))}
+    .convening-program{display:grid; grid-template-columns:1.15fr 1fr 1fr; gap:14px; margin-bottom:22px}
+    .convening-program section{padding:18px; border-radius:18px; background:var(--card-bg); border:1px solid color-mix(in srgb,var(--accent) 14%,transparent)}
+    .cp-keynote{border-top:4px solid var(--accent-gold) !important}
+    .cp-label{display:block; margin:0 0 6px; color:var(--accent); font-size:.66rem; font-weight:850; letter-spacing:.14em; text-transform:uppercase}
+    .cp-label:not(:first-child){margin-top:14px}
+    .convening-program h4{margin:0 0 10px; font-family:'Spectral',serif; font-size:1.2rem; line-height:1.2; color:var(--heading-color)}
+    .convening-program h5{margin:10px 0 4px; font-family:'Spectral',serif; font-size:1.02rem; line-height:1.25; color:var(--heading-color)}
+    .convening-program p{margin:0; color:var(--muted); font-size:.85rem; line-height:1.62}
+    .convening-program strong{color:var(--text-main)}
+    .convening-actions{display:flex; flex-wrap:wrap; align-items:center; gap:16px}
+    .convening-actions a{color:var(--accent); font-size:.85rem; font-weight:800; text-decoration:none}
+    @media (max-width:900px){.convening-program{grid-template-columns:1fr}.convening-lead{grid-template-columns:1fr}}
+    @media (max-width:620px){.convening{margin-inline:14px; padding:18px}.convening-gallery{grid-template-columns:1fr 1fr; grid-auto-rows:140px}.convening-gallery .cg-wide{grid-column:span 2}.convening-gallery .cg-tall{grid-row:span 2}
+    .convening-gallery .cg-full{grid-column:1/-1}
+    .convening-gallery{grid-auto-flow:dense}}
+    @media (prefers-reduced-motion:reduce){.convening-gallery img{transition:none}}
   </style>
 
   <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
@@ -529,25 +561,57 @@
         <p>One organized record of upcoming presentations, research training, and community-engaged work. Scroll each rail horizontally; every item keeps the date, place, status, and role explicit.</p>
       </div>
 
+      <article class="convening" id="migration-conference-2026" aria-labelledby="convening-title">
+        <div class="convening-head">
+          <span class="field-kicker">Conference · September 18, 2026</span>
+          <h3 id="convening-title">Migration in Contentious Political Times</h3>
+          <div class="activity-facts"><span class="activity-role">Co-organizer &amp; panel moderator</span><span class="activity-date">Atkinson Hall · Cornell University</span></div>
+        </div>
+        <div class="convening-lead">
+          <p>With support from the Migrations Program at Cornell’s Einaudi Center for International Studies, Vicente Celestino Mata, Jr. and I organized a full-day conference that brought together scholars, students, practitioners, and community members. We talked through migration, labor, displacement, borders, belonging, law, inequality, and the political forces shaping the lives of migrants and workers today.</p>
+          <p>People came from history, anthropology, law, public policy, global development, literature, economics, and labor relations. I’m grateful to everyone who presented, moderated, brought posters, and stayed for the conversation, and especially to Vicente, Katie Fiorella, and Kathy Peck, whose coordination made the day possible.</p>
+        </div>
+
+        <div class="convening-gallery">
+          <figure class="cg-wide"><img src="assets/events/819212215_2326418154801343_5028411209663432544_n.jpg" alt="Henry Lyu Cheng presents “Imagining Foreignness and Making Dissent Deportable” as fellow presenters sit at the panel table" width="2012" height="1504" loading="lazy" decoding="async"><figcaption>Session 2 · Henry Lyu Cheng on racialized alienage and political agency</figcaption></figure>
+          <figure class="cg-tall"><img src="assets/events/819212206_2326419701467855_6705135047311911238_n.jpg" alt="Migrations Program banner from the Einaudi Center for International Studies in the Atkinson Hall lobby" width="1152" height="2048" loading="lazy" decoding="async"><figcaption>Migrations Program · Einaudi Center</figcaption></figure>
+          <figure><img src="assets/events/820536620_2326423641467461_3909989518412997095_n.jpg" alt="A presenter at the podium beside a slide titled From Departure to Return: Reconfiguring Community Across Migration" width="2048" height="1536" loading="lazy" decoding="async"><figcaption>Session 3 · Labor migration and communal life in Usibamba, Peru</figcaption></figure>
+          <figure><img src="assets/events/819291721_2326418184801340_6403650973796875798_n.jpg" alt="A speaker presents a timeline slide titled Mobilizing Immigrant Worker Rights, from the 2006 May Day marches to 2024" width="1982" height="1486" loading="lazy" decoding="async"><figcaption>Mobilizing immigrant worker rights, 2006–2024</figcaption></figure>
+          <figure class="cg-full"><img src="assets/events/819212209_2326423968134095_5097015460754742194_n.jpg" alt="Conference attendees seated in Atkinson Hall during a session" width="2024" height="1150" loading="lazy" decoding="async"><figcaption>A full room in Atkinson Hall</figcaption></figure>
+        </div>
+
+        <div class="convening-program">
+          <section class="cp-keynote" aria-label="Keynote">
+            <span class="cp-label">Keynote</span>
+            <h4>“Seeing the Americas Whole”: Richard Rodriguez’s Thesis on Migrants and Migration in the Era of American Carnage</h4>
+            <p><strong>Paul Ortiz</strong>, Professor of Labor History, Cornell ILR. Drawing on testimonios and novelists including Carlos Fuentes, Edwige Danticat, and Julissa Arce, the keynote took up assimilation, today’s anti-immigrant politics, and the future of the labor movement.</p>
+          </section>
+          <section class="cp-panels" aria-label="Faculty panels">
+            <span class="cp-label">Faculty panels</span>
+            <h5>Borders, Polarization, and Belonging</h5>
+            <p>Shannon Gleeson (ILR &amp; Brooks School) · Jaclyn Kelley-Widmer (Cornell Law School) · moderated by Vicente Mata, Jr.</p>
+            <h5>A Way Forward: Methodological and Theoretical Perspectives for Studying Migration</h5>
+            <p>Patricia Campos-Medina (ILR Worker Institute) · Bryan L. Sykes (Public Policy &amp; Sociology) · moderated by Adolfho Romero</p>
+          </section>
+          <section class="cp-people" aria-label="Presenters">
+            <span class="cp-label">Research presentations</span>
+            <p>Kyunghee Kang · Sudeep Sarkar · Min Htut · Henry Lyu Cheng · Saida Hodžić with Sophia Spillane and Darius Tyler · Josefina Rodriguez Pletikosic · Yinka Adetu · Miranda Castro</p>
+            <span class="cp-label">Posters</span>
+            <p>Sophia Spillane · Darius Tyler · Lorenzo Morales-DuBois · Shaoshao Tang</p>
+            <span class="cp-label">Moderators &amp; welcome</span>
+            <p>Katie Fiorella, Faculty Director, Migrations Program · Adwoa Tiwaa Ofori Atakorah · Zhixia Carrie Mo</p>
+          </section>
+        </div>
+
+        <div class="activity-actions convening-actions"><a class="activity-cta" href="assets/events/Migrations%20Conference%20Program%20Schedule.pdf" target="_blank" rel="noopener">View the program booklet (PDF) →</a><a href="https://events.cornell.edu/event/migration-in-contentious-political-times-conference" target="_blank" rel="noopener">Cornell event listing</a></div>
+      </article>
+
       <div class="news-rail" data-news-rail>
         <div class="news-rail-head">
           <div class="news-rail-title"><span class="news-index">01</span><div><h3>On the calendar</h3><p class="news-rail-subtitle">Accepted appearances and current leadership</p></div></div>
           <div class="news-controls" aria-label="Calendar navigation"><button class="news-control" type="button" data-scroll="prev" aria-label="Scroll calendar left">‹</button><button class="news-control" type="button" data-scroll="next" aria-label="Scroll calendar right">›</button></div>
         </div>
         <div class="news-track" tabindex="0" aria-label="Upcoming and accepted work">
-          <article class="activity-card activity-card--calendar activity-card--featured">
-            <figure class="activity-media event-media">
-              <img src="assets/events/migration-contentious-times-2026.jpg" alt="Families walking through a harvested field, the official image for Cornell's Migration in Contentious Political Times conference" width="750" height="497" loading="eager" decoding="async">
-              <figcaption>Migrations Program · Mario Einaudi Center · Cornell University</figcaption>
-            </figure>
-            <div class="activity-card-copy">
-              <div class="activity-facts"><time class="activity-date" datetime="2026-09-18">September 18, 2026</time><span class="activity-status">Abstracts open through Sept. 4</span><span class="activity-role">Conference co-organizer</span></div>
-              <h4>Migration in Contentious Political Times</h4>
-              <p>I’m co-organizing this Cornell Migrations Program conference with Vicente Celestino Mata Jr. We invite abstracts from Cornell students, faculty, and members of the local community on migration, borders, labor, inequality, and changing environments.</p>
-              <p class="takeaway">Atkinson Hall · 350 Tower Road · Ithaca, New York</p>
-              <div class="activity-actions"><a class="activity-cta" href="https://cornell.ca1.qualtrics.com/jfe/form/SV_73Qt7omt17Drr2S" target="_blank" rel="noopener">Submit an abstract →</a><a href="https://events.cornell.edu/event/migration-in-contentious-political-times-conference" target="_blank" rel="noopener">Conference details</a></div>
-            </div>
-          </article>
           <article class="activity-card activity-card--calendar">
             <div class="calendar-art"><span class="calendar-month">August 2026</span><strong class="calendar-day">07–11</strong><span class="calendar-place">New York City</span></div>
             <div class="activity-card-copy"><div class="activity-facts"><span class="activity-status">Upcoming · Accepted</span><span class="activity-role">Panelist</span></div><h4>American Sociological Association</h4><p>“Making the Impossible, Possible”: Coalitional Movement Infrastructures and the Fight for the NY Excluded Worker Fund.</p><a href="https://my.asanet.org/cv5/cgi-bin/eventsdll.dll/EventInfo?sessionaltcd=26am" target="_blank" rel="noopener">121st Annual Meeting →</a></div>
