@@ -5,7 +5,7 @@ Item tclc-0112  https://adolfhoromero.com/archive/tclc/items/tclc-0112/
 Machine-generated text (OCR) from photographs of the original pages. Not corrected; it contains errors.
 The page images are the authoritative record.
 
-===== Page 1 (sequence page 363) =====
+===== Page 1 (Box 1 sequence page 363) =====
 page 4
 
 Our study and evaluation made for the limited purposes set forth in the first paragraph
@@ -55,7 +55,7 @@ number of instruments for telephone expense) as opposed to an arbitrary or
 
 undocumented division of joint costs.
 
-===== Page 2 (sequence page 362) =====
+===== Page 2 (Box 1 sequence page 362) =====
 The examination of the equipment inventory disclosed that the computer
 equipment purchased did not have NYSDOL inventory tags. The auditor
 determined that the proper paperwork was not filed at the NYSDOL. Therefore,
