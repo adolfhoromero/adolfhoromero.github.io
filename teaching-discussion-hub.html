@@ -123,6 +123,18 @@
 .visually-hidden{position:absolute!important;width:1px;height:1px;margin:-1px;border:0;padding:0;white-space:nowrap;clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden}
 </style>
 <link rel="stylesheet" href="site-header.css?v=20260718-2">
+<style id="a11y-fixes">
+  /* Visible keyboard focus (WCAG 2.4.7). Blue on light surfaces, light blue in dark mode,
+     gold on the dark header, nav, footer and bottom tabs. Hover styles are unchanged. */
+  :root{ --a11y-focus:#29539b; }
+  .dark{ --a11y-focus:#60a5fa; }
+  header.site-header, nav.site-nav, nav.main-nav, footer, .bottom-tabs{ --a11y-focus:#fbbf24; }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible,
+  textarea:focus-visible, summary:focus-visible, [tabindex]:not([tabindex="-1"]):focus-visible{
+    outline:2px solid var(--a11y-focus) !important;
+    outline-offset:2px !important;
+  }
+</style>
 </head>
 <body>
   <div id="progress-bar" aria-hidden="true"></div>

@@ -238,7 +238,7 @@ footer a:hover, footer a:focus { color: var(--accent-gold); text-decoration: und
       transition:background .35s,color .35s;
     }
     a{ color:var(--accent); text-decoration:none; transition:color .2s, box-shadow .25s, background .25s; }
-    a:hover, a:focus{ color:var(--accent-gold); outline:0; }
+    a:hover, a:focus{ color:var(--accent-gold); }
 
     /* ===== Header and Nav copied to match site ===== */
     header{
@@ -722,6 +722,32 @@ footer a:hover, footer a:focus { color: var(--accent-gold); text-decoration: und
       @media (max-width:820px){.publications-story{grid-template-columns:1fr}.publications-story .page-story__media,.publications-story .page-story__media img{min-height:260px;height:260px}.publication-snapshot{width:min(calc(100% - 1.2rem),680px);grid-template-columns:1fr;margin-top:-1rem}}
     </style>
 <link rel="stylesheet" href="site-header.css?v=20260720-5">
+<style id="a11y-fixes">
+  /* Visible keyboard focus (WCAG 2.4.7). Blue on light surfaces, light blue in dark mode,
+     gold on the dark header, nav, footer and bottom tabs. Hover styles are unchanged. */
+  :root{ --a11y-focus:#29539b; }
+  .dark{ --a11y-focus:#60a5fa; }
+  header.site-header, nav.site-nav, nav.main-nav, footer, .bottom-tabs{ --a11y-focus:#fbbf24; }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible,
+  textarea:focus-visible, summary:focus-visible, [tabindex]:not([tabindex="-1"]):focus-visible{
+    outline:2px solid var(--a11y-focus) !important;
+    outline-offset:2px !important;
+  }
+  /* Footer email link: readable on the navy footer and underlined so it is not
+     distinguished by color alone (WCAG 1.4.3, 1.4.1) */
+  footer a[href]{ color:#a9c4f5 !important; text-decoration:underline; text-underline-offset:2px; }
+  footer a[href]:hover, footer a[href]:focus{ color:var(--accent-gold) !important; }
+  /* Publication date/status lines: muted but at least 4.5:1 on the card (WCAG 1.4.3) */
+  .pub-status{ color:#66728a; }
+  .dark .pub-status{ color:#8e99af; }
+  /* Phones: the long DOI links set the grid track's min-content width and pushed the
+     cards ~29px past the viewport. Let the track shrink and let links wrap. */
+  @media (max-width: 900px){ .card-grid{ grid-template-columns:minmax(0,1fr); } }
+  @media (max-width: 820px){
+    .card > div{ min-width:0; }
+    .card a{ overflow-wrap:anywhere; }
+  }
+</style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -790,7 +816,7 @@ footer a:hover, footer a:focus { color: var(--accent-gold); text-decoration: und
 <div>
 <b>Romero, A.</b> <b>"Hispanic and Latinx Groups."</b><br/>
               Encyclopedia entry submitted for review for the <i>Encyclopedia of Interest Groups and Lobbying</i> (SAGE Publications; Adam J. Newmark, editor).
-              <span style="color:#8e99af;opacity:.70;">(Projected publication: April 2028)</span>
+              <span class="pub-status">(Projected publication: April 2028)</span>
 </div>
 </div>
 </div>
@@ -805,7 +831,7 @@ footer a:hover, footer a:focus { color: var(--accent-gold); text-decoration: und
 <div>
 <b>Romero, A.</b>, Taylor, J., &amp; Clune, K. <b>Work in progress on migrant farm labor on Virginia's Eastern Shore.</b><br/>
               Piece submitted to the <i>Farm Labor</i> special issue of <i>Southern Cultures</i> (UNC Press).
-              <span style="color:#8e99af;opacity:.70;">(Submitted September 2026; special issue planned for Summer 2027)</span>
+              <span class="pub-status">(Submitted September 2026; special issue planned for Summer 2027)</span>
 </div>
 </div>
 <div class="card animate-on-scroll">
@@ -813,7 +839,7 @@ footer a:hover, footer a:focus { color: var(--accent-gold); text-decoration: und
 <div>
 <b>Romero, A.</b> &amp; Gleeson, S. <b>"Cities, Migrants, and Labor Conditions."</b><br/>
               Chapter in the <i><a href="https://www.e-elgar.com/shop/usd/handbook-on-migration-and-cities-9781789907346.html" target="_blank" rel="noopener">Handbook on Migration and Cities</a></i> (Edward Elgar Publishing), edited by Jan Rath and Els de Graauw.
-              <span style="color:#8e99af;opacity:.70;">(In production; forthcoming January 2027, open access)</span>
+              <span class="pub-status">(In production; forthcoming January 2027, open access)</span>
 </div>
 </div>
 </div>
@@ -833,7 +859,7 @@ footer a:hover, footer a:focus { color: var(--accent-gold); text-decoration: und
               <i>Aztlán: A Journal of Chicano Studies</i> 51(2): 121–132. Contribution to the 50th Anniversary Special Issue on Latinx Labor Studies.
               <a href="https://doi.org/10.1525/azt.2026.51.2.121" rel="noopener noreferrer" target="_blank">Read it at University of California Press<span class="visually-hidden"> (opens in a new tab)</span></a>
               <a href="romero-gleeson-2026-aztlan.pdf" type="application/pdf">Download the PDF<span class="visually-hidden"> of “Latinx Labor Rights and Workplace Enforcement”</span> (550 KB)</a>
-              <span style="color:#8e99af;opacity:.70;">(Published Fall 2026. PDF © University of California Regents.)</span>
+              <span class="pub-status">(Published Fall 2026. PDF © University of California Regents.)</span>
 </div>
 </div>
 <div class="card animate-on-scroll">
@@ -843,7 +869,7 @@ footer a:hover, footer a:focus { color: var(--accent-gold); text-decoration: und
 <div>
 Greer, I., Bateman, D., <b>Romero, A.</b>, Thian, W. L., &amp; Vidal, M. (2026). <b>"Tompkins County Minimum Wage Study, Final Report."</b><br/>
               Policy report prepared for the Tompkins County Legislature. <a href="https://www.ilr.cornell.edu/ithaca-co-lab/about-ithaca-co-lab" rel="noopener noreferrer" target="_blank">ILR Ithaca Co-Lab</a>, Cornell University. Covered by <a href="https://ithacavoice.org/2026/08/tompkins-county-minimum-wage-study/" rel="noopener noreferrer" target="_blank"><i>The Ithaca Voice</i></a>.
-              <span style="color:#8e99af;opacity:.70;">(Released September 4, 2026)</span>
+              <span class="pub-status">(Released September 4, 2026)</span>
 </div>
 </div>
 </div>
