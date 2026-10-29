@@ -5,7 +5,7 @@ Item tclc-0009  https://adolfhoromero.com/archive/tclc/items/tclc-0009/
 Machine-generated text (OCR) from photographs of the original pages. Not corrected; it contains errors.
 The page images are the authoritative record.
 
-===== Page 1 (sequence page 40) =====
+===== Page 1 (Box 1 sequence page 40) =====
 48 East 21st Street - 12th Floor 100 South Swan Street
 
 New York, New York 10010 Albany, New York 12210-1939 IN
@@ -48,7 +48,7 @@ Secretary-Treasurer
 PFC/car »f
 opeiu-153
 
-===== Copy 2 (sequence page 42) =====
+===== Copy 2 (Box 1 sequence page 42) =====
 ai) East 21st Street « 12th Floor 100 South Swan Street
 
 Naw York, New York 10010 Albany, New York 12210-1030
@@ -95,7 +95,7 @@ Secretary-Treasurer
 PFC/car
 opeiu-153
 
-===== Copy 3 (sequence page 43) =====
+===== Copy 3 (Box 1 sequence page 43) =====
 4i} East 21st Street - 12th Floor 100 South Swan Street
 
 Nw York, New York 10010 Albany, New York 12210-1939
