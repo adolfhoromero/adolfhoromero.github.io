@@ -8,8 +8,8 @@
   "place": "Ithaca, Cortland, and surrounding counties, New York",
   "repository": "Kheel Center for Labor-Management Documentation and Archives, Cornell University Library",
   "repository_collection": "Tompkins-Cortland Labor Coalition records, collection 6185",
-  "batch": "TCLC Box 1 (PDF BATCH); TCLC Box 3-6 (Library Scans)",
-  "batch_note": "“TCLC Box 1” and “TCLC Box 3-6” are names of the digitization folders these photographs came from. They are project labels and do not describe where a document sits in the Kheel Center's boxes.",
+  "batch": "TCLC Box 1 (PDF BATCH); TCLC Box 3-6 (Library Scans); TCLC Box 5 (Scans)",
+  "batch_note": "“TCLC Box 1,” “TCLC Box 3-6,” and “TCLC Box 5” are names of the digitization folders these photographs came from. They are project labels and do not describe where a document sits in the Kheel Center's boxes.",
   "base_url": "https://adolfhoromero.com/archive/tclc/",
   "rights": "Copyright not evaluated. Copyright in these documents may belong to the organizations and people who created them. They are shared here for study, teaching, and organizing education.",
   "rights_uri": "http://rightsstatements.org/vocab/CNE/1.0/",
@@ -72,12 +72,12 @@
   ],
   "generated": "2026-10-29",
   "counts": {
-   "published_items": 183,
-   "published_page_images": 372,
-   "items_held_for_review": 44,
+   "published_items": 213,
+   "published_page_images": 503,
+   "items_held_for_review": 56,
    "box1_sequence_pages": 406,
    "box36_scan_pages": 281,
-   "box36_duplicate_pages_not_added": 19
+   "box36_duplicate_pages_not_added": 38
   }
  },
  "items": [
@@ -2298,10 +2298,10 @@
     "bytes": 8290
    },
    "related": [
+    "tclc-0252",
     "tclc-0023",
     "tclc-0028",
-    "tclc-0029",
-    "tclc-0030"
+    "tclc-0029"
    ],
    "citation": "Central New York Labor Federation, AFL-CIO, for Midstate Central Labor Council, AFL-CIO. “Union City News, Midstate Central Labor Council, April 2003.” April 2003. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0027, https://adolfhoromero.com/archive/tclc/items/tclc-0027/."
   },
@@ -3069,6 +3069,7 @@
     "bytes": 2978
    },
    "related": [
+    "tclc-0262",
     "tclc-0088"
    ],
    "citation": "Ken Deutsch, New York Public Interest Research Group (NYPIRG). “NYPIRG letter on toxic-torts legislation.” April 15, 1986. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0040, https://adolfhoromero.com/archive/tclc/items/tclc-0040/."
@@ -5015,8 +5016,8 @@
    "related": [
     "tclc-0112",
     "tclc-0115",
-    "tclc-0102",
-    "tclc-0027"
+    "tclc-0238",
+    "tclc-0243"
    ],
    "citation": "Midstate Central Labor Council, AFL-CIO. “Press release: ‘Local Labor Council Wins OSHA Grant’.” October 20, 1998. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0072, https://adolfhoromero.com/archive/tclc/items/tclc-0072/."
   },
@@ -5155,7 +5156,9 @@
    },
    "related": [
     "tclc-0111",
-    "tclc-0112"
+    "tclc-0112",
+    "tclc-0238",
+    "tclc-0237"
    ],
    "citation": "Midstate Central Labor Council, AFL-CIO. “Press release: ‘Workplace Ergonomic Evaluations Offered’.” September 17, 1998. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0074, https://adolfhoromero.com/archive/tclc/items/tclc-0074/."
   },
@@ -5229,7 +5232,9 @@
     "path": "media/text/tclc-0075.txt",
     "bytes": 4365
    },
-   "related": [],
+   "related": [
+    "tclc-0265"
+   ],
    "citation": "[Labor Council staff]. “Presentation on child labor and trade to the Dryden Sertoma Club.” September 3, 1998. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0075, https://adolfhoromero.com/archive/tclc/items/tclc-0075/."
   },
   {
@@ -5801,7 +5806,10 @@
     "path": "media/text/tclc-0083.txt",
     "bytes": 2660
    },
-   "related": [],
+   "related": [
+    "tclc-0230",
+    "tclc-0232"
+   ],
    "citation": "Midstate Central Labor Council, AFL-CIO. “Report on office costs shared by MCLC with UAW Local 2300.” December 21, 1998. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0083, https://adolfhoromero.com/archive/tclc/items/tclc-0083/."
   },
   {
@@ -6613,7 +6621,8 @@
    },
    "related": [
     "tclc-0092",
-    "tclc-0093"
+    "tclc-0093",
+    "tclc-0228"
    ],
    "citation": "Midstate Central Labor Council, AFL-CIO. “Press release: Kate Bronfenbrenner to speak on ‘What the Labor Movement Needs to Do to Survive and Grow’.” February 7, 1997. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0094, https://adolfhoromero.com/archive/tclc/items/tclc-0094/."
   },
@@ -6993,10 +7002,10 @@
     "bytes": 13972
    },
    "related": [
+    "tclc-0238",
     "tclc-0084",
     "tclc-0069",
-    "tclc-0072",
-    "tclc-0112"
+    "tclc-0072"
    ],
    "citation": "Midstate Central Labor Council, AFL-CIO (Chuck Wynns, coordinator). “‘A Comprehensive Organizing Program for South-Central New York’: grant proposal.” May 1996. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0102, https://adolfhoromero.com/archive/tclc/items/tclc-0102/."
   },
@@ -7322,7 +7331,10 @@
     "bytes": 1474
    },
    "related": [
-    "tclc-0074"
+    "tclc-0074",
+    "tclc-0238",
+    "tclc-0237",
+    "tclc-0258"
    ],
    "citation": "Midstate Central Labor Council, AFL-CIO, Steuben Central Labor Council, and AFGWU Local 1013. “‘Repetitive Strain Injury: A Free Clinic’ flyer, Bath, New York.” Friday, October 16, [1998]. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0111, https://adolfhoromero.com/archive/tclc/items/tclc-0111/."
   },
@@ -7398,10 +7410,10 @@
     "bytes": 3192
    },
    "related": [
-    "tclc-0072",
-    "tclc-0115",
-    "tclc-0074",
-    "tclc-0114"
+    "tclc-0243",
+    "tclc-0238",
+    "tclc-0263",
+    "tclc-0256"
    ],
    "citation": "[New York State Department of Labor auditors]. “New York State Department of Labor audit findings (pages 4–5).” [1998–1999]. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0112, https://adolfhoromero.com/archive/tclc/items/tclc-0112/."
   },
@@ -7477,6 +7489,7 @@
    "related": [
     "tclc-0112",
     "tclc-0084",
+    "tclc-0238",
     "tclc-0105"
    ],
    "citation": "Midstate Central Labor Council, AFL-CIO. “MCLC fourth-quarter 1997 income and expenses.” Fourth quarter 1997 (printed December 19, 1998). Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0114, https://adolfhoromero.com/archive/tclc/items/tclc-0114/."
@@ -7571,8 +7584,8 @@
    "related": [
     "tclc-0072",
     "tclc-0112",
-    "tclc-0102",
-    "tclc-0105"
+    "tclc-0238",
+    "tclc-0243"
    ],
    "citation": "Tompkins-Cortland Labor Coalition. “Labor Coalition Health & Safety Fund: profit and loss and balance sheet, 1998 (drafts).” January–October 1998. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0115, https://adolfhoromero.com/archive/tclc/items/tclc-0115/."
   },
@@ -7819,7 +7832,8 @@
     "bytes": 1336
    },
    "related": [
-    "tclc-0076"
+    "tclc-0076",
+    "tclc-0253"
    ],
    "citation": "[Tom Stephens], Midstate Central Labor Council, AFL-CIO. “AFM Local 132-314 announcement, with note to the newsletter editor.” [1998]. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0120, https://adolfhoromero.com/archive/tclc/items/tclc-0120/."
   },
@@ -8929,6 +8943,7 @@
    },
    "related": [
     "tclc-0140",
+    "tclc-0267",
     "tclc-0032"
    ],
    "citation": "Tompkins-Cortland Labor Coalition and NYS School of Industrial and Labor Relations Extension. “‘Political Action and Education in 1984’: workshop program.” April 14, 1984. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0142, https://adolfhoromero.com/archive/tclc/items/tclc-0142/."
@@ -12681,9 +12696,9 @@
    },
    "related": [
     "tclc-0226",
+    "tclc-0265",
     "tclc-0217",
-    "tclc-0218",
-    "tclc-0214"
+    "tclc-0218"
    ],
    "citation": "Submitted by the Tompkins-Cortland Labor Coalition. “Resolution of the Board of Supervisors of the City of Cortland on Smith Corona.” [1992]. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0201, https://adolfhoromero.com/archive/tclc/items/tclc-0201/."
   },
@@ -14302,8 +14317,8 @@
    "related": [
     "tclc-0201",
     "tclc-0217",
-    "tclc-0218",
-    "tclc-0214"
+    "tclc-0265",
+    "tclc-0218"
    ],
    "citation": "[Cortland County Legislature]. “Resolution of the Cortland County Legislators on Smith Corona.” [1992]. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0226, https://adolfhoromero.com/archive/tclc/items/tclc-0226/."
   },
@@ -14419,6 +14434,3605 @@
     "tclc-0202"
    ],
    "citation": "Tompkins-Cortland Labor Coalition. “The Working Press, Volume 5, Number 2, May 1990: Smith Corona layoffs.” May 1990. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0227, https://adolfhoromero.com/archive/tclc/items/tclc-0227/."
+  },
+  {
+   "id": "tclc-0228",
+   "url": "https://adolfhoromero.com/archive/tclc/items/tclc-0228/",
+   "title": "1990 Negotiations Notebook, Tompkins-Seneca-Tioga BOCES Employees' Association",
+   "description": "A training notebook the Coalition and Cornell's ILR School prepared for the BOCES Employees' Association before its 1990 contract talks. These pages hold the cover, the agenda for an evening negotiations training on February 21, 1990 (preparing for bargaining, the legal side, the mechanics of bargaining, and a mock negotiation), a model request to the employer for wage, benefit, and personnel information, and typed notes on bargaining under New York's Taylor Law: the duty to bargain in good faith, mandatory and non-mandatory subjects, impasse procedures for school districts, strike penalties, and improper practices.",
+   "notes": "The notebook also reproduces pages of a union's published bargaining manual; those pages are withheld for copyright. A second photograph of the cover is not shown.",
+   "creator": "Tompkins-Cortland Labor Coalition and New York State School of Industrial and Labor Relations, Cornell University",
+   "date": "1990-02-21",
+   "date_display": "February 21, 1990",
+   "date_quality": "exact",
+   "type": "Report",
+   "topics": [
+    "organizing"
+   ],
+   "subjects": [
+    "BOCES Employees Association",
+    "collective bargaining",
+    "Taylor Law",
+    "Cornell ILR",
+    "training"
+   ],
+   "places": [
+    "Tompkins and Cortland counties, New York"
+   ],
+   "language": "en",
+   "rights": "Copyright not evaluated. Copyright in these documents may belong to the organizations and people who created them. They are shared here for study, teaching, and organizing education.",
+   "rights_uri": "http://rightsstatements.org/vocab/CNE/1.0/",
+   "source": "Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library",
+   "pages": [
+    {
+     "label": "Page 1",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 1,
+     "image": "media/zoom/b5-001.webp",
+     "reading_image": "media/read/b5-001.webp",
+     "thumbnail": "media/thumb/b5-001.webp",
+     "alt": "Photograph of a report: 1990 Negotiations Notebook, Tompkins-Seneca-Tioga BOCES Employees' Association, page 1.",
+     "source_file": "Box5.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "poor",
+     "ocr_mean_confidence": 23.5
+    },
+    {
+     "label": "Page 2",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 3,
+     "image": "media/zoom/b5-003.webp",
+     "reading_image": "media/read/b5-003.webp",
+     "thumbnail": "media/thumb/b5-003.webp",
+     "alt": "Photograph of a report: 1990 Negotiations Notebook, Tompkins-Seneca-Tioga BOCES Employees' Association, page 2.",
+     "source_file": "IMG_5691.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "fair",
+     "ocr_mean_confidence": 84.3
+    },
+    {
+     "label": "Page 3",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 5,
+     "image": "media/zoom/b5-005.webp",
+     "reading_image": "media/read/b5-005.webp",
+     "thumbnail": "media/thumb/b5-005.webp",
+     "alt": "Photograph of a report: 1990 Negotiations Notebook, Tompkins-Seneca-Tioga BOCES Employees' Association, page 3.",
+     "source_file": "IMG_5693.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 93.1
+    },
+    {
+     "label": "Page 4",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 6,
+     "image": "media/zoom/b5-006.webp",
+     "reading_image": "media/read/b5-006.webp",
+     "thumbnail": "media/thumb/b5-006.webp",
+     "alt": "Photograph of a report: 1990 Negotiations Notebook, Tompkins-Seneca-Tioga BOCES Employees' Association, page 4.",
+     "source_file": "IMG_5694.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 89.3
+    },
+    {
+     "label": "Page 5",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 8,
+     "image": "media/zoom/b5-008.webp",
+     "reading_image": "media/read/b5-008.webp",
+     "thumbnail": "media/thumb/b5-008.webp",
+     "alt": "Photograph of a report: 1990 Negotiations Notebook, Tompkins-Seneca-Tioga BOCES Employees' Association, page 5.",
+     "source_file": "IMG_5696.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 95.2
+    },
+    {
+     "label": "Page 6",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 9,
+     "image": "media/zoom/b5-009.webp",
+     "reading_image": "media/read/b5-009.webp",
+     "thumbnail": "media/thumb/b5-009.webp",
+     "alt": "Photograph of a report: 1990 Negotiations Notebook, Tompkins-Seneca-Tioga BOCES Employees' Association, page 6.",
+     "source_file": "IMG_5697.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 93.1
+    },
+    {
+     "label": "Page 7",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 10,
+     "image": "media/zoom/b5-010.webp",
+     "reading_image": "media/read/b5-010.webp",
+     "thumbnail": "media/thumb/b5-010.webp",
+     "alt": "Photograph of a report: 1990 Negotiations Notebook, Tompkins-Seneca-Tioga BOCES Employees' Association, page 7.",
+     "source_file": "IMG_5698.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 92.0
+    }
+   ],
+   "pdf": {
+    "path": "media/pdf/tclc-0228.pdf",
+    "bytes": 872586
+   },
+   "text": {
+    "path": "media/text/tclc-0228.txt",
+    "bytes": 7704
+   },
+   "related": [
+    "tclc-0094"
+   ],
+   "citation": "Tompkins-Cortland Labor Coalition and New York State School of Industrial and Labor Relations, Cornell University. “1990 Negotiations Notebook, Tompkins-Seneca-Tioga BOCES Employees' Association.” February 21, 1990. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0228, https://adolfhoromero.com/archive/tclc/items/tclc-0228/."
+  },
+  {
+   "id": "tclc-0230",
+   "url": "https://adolfhoromero.com/archive/tclc/items/tclc-0230/",
+   "title": "State health and safety training contract, July 1989 – June 1990",
+   "description": "The second-year contract with the Department of Labor's Occupational Safety and Health Training and Education Program, for $43,024.98. The narrative plans two conferences on the hazards of video display terminals and cleaning chemicals, health and safety committees with UAW Locals 1326 (Pall Trinity) and 802 (Monarch Machine Tool), and surveys of UAW Local 2300 dining workers at Cornell and Teamsters Local 65 cement workers. The file includes the signature sheet, notarized acknowledgment, basic agreement, budget summary and justification for three part-time staff, the state's general terms and conditions, and Appendix A, the standard clauses for state contracts.",
+   "notes": "A second photograph of one page of the terms and conditions is not shown. The detailed budget page listing each position's pay rate is withheld.",
+   "creator": "Tompkins-Cortland Labor Coalition and New York State Department of Labor",
+   "date": "1989-07-01/1990-06-30",
+   "date_display": "July 1, 1989 – June 30, 1990",
+   "date_quality": "exact",
+   "type": "Agreement",
+   "topics": [
+    "health-safety",
+    "finances"
+   ],
+   "subjects": [
+    "NYS Department of Labor",
+    "OSH Training and Education Program",
+    "grants",
+    "video display terminals",
+    "UAW Local 1326",
+    "UAW Local 802",
+    "UAW Local 2300",
+    "Teamsters Local 65"
+   ],
+   "places": [
+    "Tompkins and Cortland counties, New York"
+   ],
+   "language": "en",
+   "rights": "Copyright not evaluated. Copyright in these documents may belong to the organizations and people who created them. They are shared here for study, teaching, and organizing education.",
+   "rights_uri": "http://rightsstatements.org/vocab/CNE/1.0/",
+   "source": "Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library",
+   "pages": [
+    {
+     "label": "Page 1",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 41,
+     "image": "media/zoom/b5-041.webp",
+     "reading_image": "media/read/b5-041.webp",
+     "thumbnail": "media/thumb/b5-041.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1989 – June 1990, page 1.",
+     "source_file": "IMG_5730.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "fair",
+     "ocr_mean_confidence": 76.2
+    },
+    {
+     "label": "Page 2",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 42,
+     "image": "media/zoom/b5-042.webp",
+     "reading_image": "media/read/b5-042.webp",
+     "thumbnail": "media/thumb/b5-042.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1989 – June 1990, page 2.",
+     "source_file": "IMG_5731.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 89.1
+    },
+    {
+     "label": "Page 3",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 43,
+     "image": "media/zoom/b5-043.webp",
+     "reading_image": "media/read/b5-043.webp",
+     "thumbnail": "media/thumb/b5-043.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1989 – June 1990, page 3.",
+     "source_file": "IMG_5732.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 91.8
+    },
+    {
+     "label": "Page 4",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 44,
+     "image": "media/zoom/b5-044.webp",
+     "reading_image": "media/read/b5-044.webp",
+     "thumbnail": "media/thumb/b5-044.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1989 – June 1990, page 4.",
+     "source_file": "IMG_5733.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 91.3
+    },
+    {
+     "label": "Page 5",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 45,
+     "image": "media/zoom/b5-045.webp",
+     "reading_image": "media/read/b5-045.webp",
+     "thumbnail": "media/thumb/b5-045.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1989 – June 1990, page 5.",
+     "source_file": "IMG_5734.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 93.7
+    },
+    {
+     "label": "Page 6",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 46,
+     "image": "media/zoom/b5-046.webp",
+     "reading_image": "media/read/b5-046.webp",
+     "thumbnail": "media/thumb/b5-046.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1989 – June 1990, page 6.",
+     "source_file": "IMG_5735.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 92.5
+    },
+    {
+     "label": "Page 7",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 47,
+     "image": "media/zoom/b5-047.webp",
+     "reading_image": "media/read/b5-047.webp",
+     "thumbnail": "media/thumb/b5-047.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1989 – June 1990, page 7.",
+     "source_file": "IMG_5736.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 92.2
+    },
+    {
+     "label": "Page 8",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 48,
+     "image": "media/zoom/b5-048.webp",
+     "reading_image": "media/read/b5-048.webp",
+     "thumbnail": "media/thumb/b5-048.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1989 – June 1990, page 8.",
+     "source_file": "IMG_5737.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "fair",
+     "ocr_mean_confidence": 72.7
+    },
+    {
+     "label": "Page 9",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 49,
+     "image": "media/zoom/b5-049.webp",
+     "reading_image": "media/read/b5-049.webp",
+     "thumbnail": "media/thumb/b5-049.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1989 – June 1990, page 9.",
+     "source_file": "IMG_5738.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 95.7
+    },
+    {
+     "label": "Page 10",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 50,
+     "image": "media/zoom/b5-050.webp",
+     "reading_image": "media/read/b5-050.webp",
+     "thumbnail": "media/thumb/b5-050.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1989 – June 1990, page 10.",
+     "source_file": "IMG_5739.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 94.3
+    },
+    {
+     "label": "Page 11",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 51,
+     "image": "media/zoom/b5-051.webp",
+     "reading_image": "media/read/b5-051.webp",
+     "thumbnail": "media/thumb/b5-051.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1989 – June 1990, page 11.",
+     "source_file": "IMG_5740.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 85.7
+    },
+    {
+     "label": "Page 12",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 52,
+     "image": "media/zoom/b5-052.webp",
+     "reading_image": "media/read/b5-052.webp",
+     "thumbnail": "media/thumb/b5-052.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1989 – June 1990, page 12.",
+     "source_file": "IMG_5741.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 94.4
+    },
+    {
+     "label": "Page 13",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 54,
+     "image": "media/zoom/b5-054.webp",
+     "reading_image": "media/read/b5-054.webp",
+     "thumbnail": "media/thumb/b5-054.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1989 – June 1990, page 13.",
+     "source_file": "IMG_5743.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 91.5
+    },
+    {
+     "label": "Page 14",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 55,
+     "image": "media/zoom/b5-055.webp",
+     "reading_image": "media/read/b5-055.webp",
+     "thumbnail": "media/thumb/b5-055.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1989 – June 1990, page 14.",
+     "source_file": "IMG_5744.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 93.9
+    },
+    {
+     "label": "Page 15",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 56,
+     "image": "media/zoom/b5-056.webp",
+     "reading_image": "media/read/b5-056.webp",
+     "thumbnail": "media/thumb/b5-056.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1989 – June 1990, page 15.",
+     "source_file": "IMG_5745.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 91.2
+    },
+    {
+     "label": "Page 16",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 57,
+     "image": "media/zoom/b5-057.webp",
+     "reading_image": "media/read/b5-057.webp",
+     "thumbnail": "media/thumb/b5-057.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1989 – June 1990, page 16.",
+     "source_file": "IMG_5746.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 92.3
+    },
+    {
+     "label": "Page 17",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 58,
+     "image": "media/zoom/b5-058.webp",
+     "reading_image": "media/read/b5-058.webp",
+     "thumbnail": "media/thumb/b5-058.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1989 – June 1990, page 17.",
+     "source_file": "IMG_5747.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 95.6
+    },
+    {
+     "label": "Page 18",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 59,
+     "image": "media/zoom/b5-059.webp",
+     "reading_image": "media/read/b5-059.webp",
+     "thumbnail": "media/thumb/b5-059.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1989 – June 1990, page 18.",
+     "source_file": "IMG_5748.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 93.1
+    },
+    {
+     "label": "Page 19",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 60,
+     "image": "media/zoom/b5-060.webp",
+     "reading_image": "media/read/b5-060.webp",
+     "thumbnail": "media/thumb/b5-060.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1989 – June 1990, page 19.",
+     "source_file": "IMG_5749.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 92.0
+    },
+    {
+     "label": "Page 20",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 61,
+     "image": "media/zoom/b5-061.webp",
+     "reading_image": "media/read/b5-061.webp",
+     "thumbnail": "media/thumb/b5-061.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1989 – June 1990, page 20.",
+     "source_file": "IMG_5750.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 95.8
+    },
+    {
+     "label": "Page 21",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 62,
+     "image": "media/zoom/b5-062.webp",
+     "reading_image": "media/read/b5-062.webp",
+     "thumbnail": "media/thumb/b5-062.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1989 – June 1990, page 21.",
+     "source_file": "IMG_5751.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 93.2
+    },
+    {
+     "label": "Page 22",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 63,
+     "image": "media/zoom/b5-063.webp",
+     "reading_image": "media/read/b5-063.webp",
+     "thumbnail": "media/thumb/b5-063.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1989 – June 1990, page 22.",
+     "source_file": "IMG_5752.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "poor",
+     "ocr_mean_confidence": 65.4
+    },
+    {
+     "label": "Page 23",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 65,
+     "image": "media/zoom/b5-065.webp",
+     "reading_image": "media/read/b5-065.webp",
+     "thumbnail": "media/thumb/b5-065.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1989 – June 1990, page 23.",
+     "source_file": "IMG_5754.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 89.5
+    },
+    {
+     "label": "Page 24",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 66,
+     "image": "media/zoom/b5-066.webp",
+     "reading_image": "media/read/b5-066.webp",
+     "thumbnail": "media/thumb/b5-066.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1989 – June 1990, page 24.",
+     "source_file": "IMG_5755.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "fair",
+     "ocr_mean_confidence": 84.7
+    },
+    {
+     "label": "Page 25",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 67,
+     "image": "media/zoom/b5-067.webp",
+     "reading_image": "media/read/b5-067.webp",
+     "thumbnail": "media/thumb/b5-067.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1989 – June 1990, page 25.",
+     "source_file": "IMG_5756.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 87.1
+    }
+   ],
+   "pdf": {
+    "path": "media/pdf/tclc-0230.pdf",
+    "bytes": 4820252
+   },
+   "text": {
+    "path": "media/text/tclc-0230.txt",
+    "bytes": 50166
+   },
+   "related": [
+    "tclc-0232",
+    "tclc-0234",
+    "tclc-0256",
+    "tclc-0263"
+   ],
+   "citation": "Tompkins-Cortland Labor Coalition and New York State Department of Labor. “State health and safety training contract, July 1989 – June 1990.” July 1, 1989 – June 30, 1990. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0230, https://adolfhoromero.com/archive/tclc/items/tclc-0230/."
+  },
+  {
+   "id": "tclc-0232",
+   "url": "https://adolfhoromero.com/archive/tclc/items/tclc-0232/",
+   "title": "State health and safety training contract, July 1988 – June 1989",
+   "description": "The Coalition's contract with the New York State Department of Labor's Occupational Safety and Health Training and Education Program for 1988–89, for up to $27,999.94; later papers call it the first of these grants. The project narrative targets asbestos and the hazardous substances used in custodial work, with UAW Local 2300 at Cornell and Teamsters Local 65 dairy workers, through workshops, group interviews, surveys, and a brochure. The budget pays two part-time positions, a Coordinator of Training and a Training Assistant, and the file includes the signed signature sheet, the notarized acknowledgment, the basic agreement, budget schedules, and a project timetable.",
+   "notes": "The folder holds an unsigned and a signed copy of this contract. The signed signature sheet and the acknowledgment with the Comptroller's approval stamp are shown; the matching pages of the other copy are not. The detailed budget page listing the two positions' pay rates is withheld.",
+   "creator": "Tompkins-Cortland Labor Coalition and New York State Department of Labor",
+   "date": "1988-07-01/1989-06-30",
+   "date_display": "July 1, 1988 – June 30, 1989",
+   "date_quality": "exact",
+   "type": "Agreement",
+   "topics": [
+    "health-safety",
+    "finances"
+   ],
+   "subjects": [
+    "NYS Department of Labor",
+    "OSH Training and Education Program",
+    "grants",
+    "asbestos",
+    "custodians",
+    "UAW Local 2300",
+    "Teamsters Local 65",
+    "Cornell University"
+   ],
+   "places": [
+    "Tompkins and Cortland counties, New York"
+   ],
+   "language": "en",
+   "rights": "Copyright not evaluated. Copyright in these documents may belong to the organizations and people who created them. They are shared here for study, teaching, and organizing education.",
+   "rights_uri": "http://rightsstatements.org/vocab/CNE/1.0/",
+   "source": "Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library",
+   "pages": [
+    {
+     "label": "Page 1",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 141,
+     "image": "media/zoom/b5-141.webp",
+     "reading_image": "media/read/b5-141.webp",
+     "thumbnail": "media/thumb/b5-141.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1988 – June 1989, page 1.",
+     "source_file": "IMG_5831.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "fair",
+     "ocr_mean_confidence": 78.6
+    },
+    {
+     "label": "Page 2",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 142,
+     "image": "media/zoom/b5-142.webp",
+     "reading_image": "media/read/b5-142.webp",
+     "thumbnail": "media/thumb/b5-142.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1988 – June 1989, page 2.",
+     "source_file": "IMG_5832.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 91.4
+    },
+    {
+     "label": "Page 3",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 70,
+     "image": "media/zoom/b5-070.webp",
+     "reading_image": "media/read/b5-070.webp",
+     "thumbnail": "media/thumb/b5-070.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1988 – June 1989, page 3.",
+     "source_file": "IMG_5759.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 93.8
+    },
+    {
+     "label": "Page 4",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 71,
+     "image": "media/zoom/b5-071.webp",
+     "reading_image": "media/read/b5-071.webp",
+     "thumbnail": "media/thumb/b5-071.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1988 – June 1989, page 4.",
+     "source_file": "IMG_5760.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 94.4
+    },
+    {
+     "label": "Page 5",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 73,
+     "image": "media/zoom/b5-073.webp",
+     "reading_image": "media/read/b5-073.webp",
+     "thumbnail": "media/thumb/b5-073.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1988 – June 1989, page 5.",
+     "source_file": "IMG_5762.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 95.2
+    },
+    {
+     "label": "Page 6",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 74,
+     "image": "media/zoom/b5-074.webp",
+     "reading_image": "media/read/b5-074.webp",
+     "thumbnail": "media/thumb/b5-074.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1988 – June 1989, page 6.",
+     "source_file": "IMG_5763.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 94.7
+    },
+    {
+     "label": "Page 7",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 75,
+     "image": "media/zoom/b5-075.webp",
+     "reading_image": "media/read/b5-075.webp",
+     "thumbnail": "media/thumb/b5-075.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1988 – June 1989, page 7.",
+     "source_file": "IMG_5764.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 85.1
+    },
+    {
+     "label": "Page 8",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 76,
+     "image": "media/zoom/b5-076.webp",
+     "reading_image": "media/read/b5-076.webp",
+     "thumbnail": "media/thumb/b5-076.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1988 – June 1989, page 8.",
+     "source_file": "IMG_5765.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 89.2
+    },
+    {
+     "label": "Page 9",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 77,
+     "image": "media/zoom/b5-077.webp",
+     "reading_image": "media/read/b5-077.webp",
+     "thumbnail": "media/thumb/b5-077.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1988 – June 1989, page 9.",
+     "source_file": "IMG_5766.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "poor",
+     "ocr_mean_confidence": 63.7
+    },
+    {
+     "label": "Page 10",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 79,
+     "image": "media/zoom/b5-079.webp",
+     "reading_image": "media/read/b5-079.webp",
+     "thumbnail": "media/thumb/b5-079.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1988 – June 1989, page 10.",
+     "source_file": "IMG_5768.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 90.9
+    },
+    {
+     "label": "Page 11",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 80,
+     "image": "media/zoom/b5-080.webp",
+     "reading_image": "media/read/b5-080.webp",
+     "thumbnail": "media/thumb/b5-080.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1988 – June 1989, page 11.",
+     "source_file": "IMG_5769.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 88.7
+    },
+    {
+     "label": "Page 12",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 81,
+     "image": "media/zoom/b5-081.webp",
+     "reading_image": "media/read/b5-081.webp",
+     "thumbnail": "media/thumb/b5-081.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1988 – June 1989, page 12.",
+     "source_file": "IMG_5770.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 86.2
+    },
+    {
+     "label": "Page 13",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 82,
+     "image": "media/zoom/b5-082.webp",
+     "reading_image": "media/read/b5-082.webp",
+     "thumbnail": "media/thumb/b5-082.webp",
+     "alt": "Photograph of a project timetable form, held sideways in a hand, with planned activities marked by month.",
+     "source_file": "IMG_5771.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 90,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 86.5
+    }
+   ],
+   "pdf": {
+    "path": "media/pdf/tclc-0232.pdf",
+    "bytes": 2148787
+   },
+   "text": {
+    "path": "media/text/tclc-0232.txt",
+    "bytes": 20015
+   },
+   "related": [
+    "tclc-0230",
+    "tclc-0234",
+    "tclc-0256",
+    "tclc-0263"
+   ],
+   "citation": "Tompkins-Cortland Labor Coalition and New York State Department of Labor. “State health and safety training contract, July 1988 – June 1989.” July 1, 1988 – June 30, 1989. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0232, https://adolfhoromero.com/archive/tclc/items/tclc-0232/."
+  },
+  {
+   "id": "tclc-0234",
+   "url": "https://adolfhoromero.com/archive/tclc/items/tclc-0234/",
+   "title": "Correspondence with the Department of Labor on the 1988–89 contract budget",
+   "description": "A handwritten Department of Labor memo from Ed Gynn (July 26, 1988) forwarding Albany's questions about the contract, and Coert Bonthius's reply of July 28, 1988: the cover page will be corrected from $28,000.00 to $27,999.94, and the consultants' fees will be described as paid on a random rather than a daily basis.",
+   "notes": "",
+   "creator": "Ed Gynn, New York State Department of Labor; Coert Bonthius, Tompkins-Cortland Labor Coalition",
+   "date": "1988-07-26/1988-07-28",
+   "date_display": "July 26–28, 1988",
+   "date_quality": "exact",
+   "type": "Letter",
+   "topics": [
+    "health-safety",
+    "finances"
+   ],
+   "subjects": [
+    "NYS Department of Labor",
+    "OSH Training and Education Program",
+    "grants"
+   ],
+   "places": [
+    "Tompkins and Cortland counties, New York"
+   ],
+   "language": "en",
+   "rights": "Copyright not evaluated. Copyright in these documents may belong to the organizations and people who created them. They are shared here for study, teaching, and organizing education.",
+   "rights_uri": "http://rightsstatements.org/vocab/CNE/1.0/",
+   "source": "Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library",
+   "pages": [
+    {
+     "label": "Page 1",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 84,
+     "image": "media/zoom/b5-084.webp",
+     "reading_image": "media/read/b5-084.webp",
+     "thumbnail": "media/thumb/b5-084.webp",
+     "alt": "Photograph of a letter: Correspondence with the Department of Labor on the 1988–89 contract budget, page 1.",
+     "source_file": "IMG_5773.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "handwritten",
+     "ocr_mean_confidence": 46.3
+    },
+    {
+     "label": "Page 2",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 83,
+     "image": "media/zoom/b5-083.webp",
+     "reading_image": "media/read/b5-083.webp",
+     "thumbnail": "media/thumb/b5-083.webp",
+     "alt": "Photograph of a letter: Correspondence with the Department of Labor on the 1988–89 contract budget, page 2.",
+     "source_file": "IMG_5772.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "fair",
+     "ocr_mean_confidence": 78.6
+    }
+   ],
+   "pdf": {
+    "path": "media/pdf/tclc-0234.pdf",
+    "bytes": 164273
+   },
+   "text": {
+    "path": "media/text/tclc-0234.txt",
+    "bytes": 1458
+   },
+   "related": [
+    "tclc-0232",
+    "tclc-0230",
+    "tclc-0256",
+    "tclc-0263"
+   ],
+   "citation": "Ed Gynn, New York State Department of Labor; Coert Bonthius, Tompkins-Cortland Labor Coalition. “Correspondence with the Department of Labor on the 1988–89 contract budget.” July 26–28, 1988. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0234, https://adolfhoromero.com/archive/tclc/items/tclc-0234/."
+  },
+  {
+   "id": "tclc-0237",
+   "url": "https://adolfhoromero.com/archive/tclc/items/tclc-0237/",
+   "title": "Health and safety program activities and beneficiaries, 1995",
+   "description": "A month-by-month list of the year's courses, workshops, and publications, with handwritten counts, and the “Program Beneficiaries, 1995” sheet for Tompkins County: the FYI newsletters for office workers and school employees, an RSI handbook for Cornell dining workers, newsletters for UAW Local 2300 and construction workers, and workshops, for a county total of 7,808.",
+   "notes": "A second photograph of the beneficiaries sheet is not shown.",
+   "creator": "Midstate Central Labor Council, AFL-CIO",
+   "date": "1995",
+   "date_display": "1995",
+   "date_quality": "inferred",
+   "type": "Report",
+   "topics": [
+    "health-safety"
+   ],
+   "subjects": [
+    "NYS Department of Labor",
+    "OSH Training and Education Program",
+    "grants",
+    "FYI newsletter",
+    "repetitive strain injury",
+    "UAW Local 2300"
+   ],
+   "places": [
+    "Tompkins and Cortland counties, New York"
+   ],
+   "language": "en",
+   "rights": "Copyright not evaluated. Copyright in these documents may belong to the organizations and people who created them. They are shared here for study, teaching, and organizing education.",
+   "rights_uri": "http://rightsstatements.org/vocab/CNE/1.0/",
+   "source": "Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library",
+   "pages": [
+    {
+     "label": "Page 1",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 87,
+     "image": "media/zoom/b5-087.webp",
+     "reading_image": "media/read/b5-087.webp",
+     "thumbnail": "media/thumb/b5-087.webp",
+     "alt": "Photograph of a report: Health and safety program activities and beneficiaries, 1995, page 1.",
+     "source_file": "IMG_5776.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "fair",
+     "ocr_mean_confidence": 74.3
+    },
+    {
+     "label": "Page 2",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 88,
+     "image": "media/zoom/b5-088.webp",
+     "reading_image": "media/read/b5-088.webp",
+     "thumbnail": "media/thumb/b5-088.webp",
+     "alt": "Photograph of a report: Health and safety program activities and beneficiaries, 1995, page 2.",
+     "source_file": "IMG_5777.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "fair",
+     "ocr_mean_confidence": 83.9
+    }
+   ],
+   "pdf": {
+    "path": "media/pdf/tclc-0237.pdf",
+    "bytes": 356185
+   },
+   "text": {
+    "path": "media/text/tclc-0237.txt",
+    "bytes": 4417
+   },
+   "related": [
+    "tclc-0238",
+    "tclc-0257",
+    "tclc-0255",
+    "tclc-0263"
+   ],
+   "citation": "Midstate Central Labor Council, AFL-CIO. “Health and safety program activities and beneficiaries, 1995.” 1995. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0237, https://adolfhoromero.com/archive/tclc/items/tclc-0237/."
+  },
+  {
+   "id": "tclc-0238",
+   "url": "https://adolfhoromero.com/archive/tclc/items/tclc-0238/",
+   "title": "State health and safety training contract, 1996 (Midstate Central Labor Council)",
+   "description": "The $100,000 contract for January–December 1996, with Chuck Wynns as liaison, and its budget narrative. The program aims to reduce work-related injury and illness among the 15,000 union members of the council's 45 locals and 75,000 nonunion workers in Tompkins, Cortland, Schuyler, and Seneca counties, with workshops, newsletters, and technical help for manufacturing, nursing home, child care, office, school, and service workers, people at risk of repetitive strain and back injuries, and the general workforce. The budget pages cover materials, office equipment, rent, and travel.",
+   "notes": "A second photograph of one narrative page is not shown. The budget narrative page naming the bookkeeper and her hourly rate is withheld.",
+   "creator": "Midstate Central Labor Council, AFL-CIO and New York State Department of Labor",
+   "date": "1996-01-01/1996-12-31",
+   "date_display": "January 1 – December 31, 1996",
+   "date_quality": "exact",
+   "type": "Agreement",
+   "topics": [
+    "health-safety",
+    "finances"
+   ],
+   "subjects": [
+    "NYS Department of Labor",
+    "OSH Training and Education Program",
+    "grants",
+    "Lakeside Nursing Home",
+    "repetitive strain injury",
+    "FYI newsletter",
+    "SUNY Cortland"
+   ],
+   "places": [
+    "Tompkins and Cortland counties, New York"
+   ],
+   "language": "en",
+   "rights": "Copyright not evaluated. Copyright in these documents may belong to the organizations and people who created them. They are shared here for study, teaching, and organizing education.",
+   "rights_uri": "http://rightsstatements.org/vocab/CNE/1.0/",
+   "source": "Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library",
+   "pages": [
+    {
+     "label": "Page 1",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 90,
+     "image": "media/zoom/b5-090.webp",
+     "reading_image": "media/read/b5-090.webp",
+     "thumbnail": "media/thumb/b5-090.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, 1996 (Midstate Central Labor Council), page 1.",
+     "source_file": "IMG_5779.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "fair",
+     "ocr_mean_confidence": 83.7
+    },
+    {
+     "label": "Page 2",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 91,
+     "image": "media/zoom/b5-091.webp",
+     "reading_image": "media/read/b5-091.webp",
+     "thumbnail": "media/thumb/b5-091.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, 1996 (Midstate Central Labor Council), page 2.",
+     "source_file": "IMG_5780.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "fair",
+     "ocr_mean_confidence": 83.7
+    },
+    {
+     "label": "Page 3",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 92,
+     "image": "media/zoom/b5-092.webp",
+     "reading_image": "media/read/b5-092.webp",
+     "thumbnail": "media/thumb/b5-092.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, 1996 (Midstate Central Labor Council), page 3.",
+     "source_file": "IMG_5781.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 85.6
+    },
+    {
+     "label": "Page 4",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 93,
+     "image": "media/zoom/b5-093.webp",
+     "reading_image": "media/read/b5-093.webp",
+     "thumbnail": "media/thumb/b5-093.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, 1996 (Midstate Central Labor Council), page 4.",
+     "source_file": "IMG_5782.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 94.4
+    },
+    {
+     "label": "Page 5",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 94,
+     "image": "media/zoom/b5-094.webp",
+     "reading_image": "media/read/b5-094.webp",
+     "thumbnail": "media/thumb/b5-094.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, 1996 (Midstate Central Labor Council), page 5.",
+     "source_file": "IMG_5783.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 91.9
+    },
+    {
+     "label": "Page 6",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 96,
+     "image": "media/zoom/b5-096.webp",
+     "reading_image": "media/read/b5-096.webp",
+     "thumbnail": "media/thumb/b5-096.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, 1996 (Midstate Central Labor Council), page 6.",
+     "source_file": "IMG_5785.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 90.4
+    },
+    {
+     "label": "Page 7",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 97,
+     "image": "media/zoom/b5-097.webp",
+     "reading_image": "media/read/b5-097.webp",
+     "thumbnail": "media/thumb/b5-097.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, 1996 (Midstate Central Labor Council), page 7.",
+     "source_file": "IMG_5786.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 95.3
+    },
+    {
+     "label": "Page 8",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 98,
+     "image": "media/zoom/b5-098.webp",
+     "reading_image": "media/read/b5-098.webp",
+     "thumbnail": "media/thumb/b5-098.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, 1996 (Midstate Central Labor Council), page 8.",
+     "source_file": "IMG_5787.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 94.0
+    },
+    {
+     "label": "Page 9",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 99,
+     "image": "media/zoom/b5-099.webp",
+     "reading_image": "media/read/b5-099.webp",
+     "thumbnail": "media/thumb/b5-099.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, 1996 (Midstate Central Labor Council), page 9.",
+     "source_file": "IMG_5788.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 94.6
+    },
+    {
+     "label": "Page 10",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 100,
+     "image": "media/zoom/b5-100.webp",
+     "reading_image": "media/read/b5-100.webp",
+     "thumbnail": "media/thumb/b5-100.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, 1996 (Midstate Central Labor Council), page 10.",
+     "source_file": "IMG_5789.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 94.1
+    },
+    {
+     "label": "Page 11",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 101,
+     "image": "media/zoom/b5-101.webp",
+     "reading_image": "media/read/b5-101.webp",
+     "thumbnail": "media/thumb/b5-101.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, 1996 (Midstate Central Labor Council), page 11.",
+     "source_file": "IMG_5790.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 94.6
+    },
+    {
+     "label": "Page 12",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 102,
+     "image": "media/zoom/b5-102.webp",
+     "reading_image": "media/read/b5-102.webp",
+     "thumbnail": "media/thumb/b5-102.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, 1996 (Midstate Central Labor Council), page 12.",
+     "source_file": "IMG_5791.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 94.7
+    },
+    {
+     "label": "Page 13",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 103,
+     "image": "media/zoom/b5-103.webp",
+     "reading_image": "media/read/b5-103.webp",
+     "thumbnail": "media/thumb/b5-103.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, 1996 (Midstate Central Labor Council), page 13.",
+     "source_file": "IMG_5792.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 93.0
+    },
+    {
+     "label": "Page 14",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 104,
+     "image": "media/zoom/b5-104.webp",
+     "reading_image": "media/read/b5-104.webp",
+     "thumbnail": "media/thumb/b5-104.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, 1996 (Midstate Central Labor Council), page 14.",
+     "source_file": "IMG_5793.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 91.3
+    },
+    {
+     "label": "Page 15",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 105,
+     "image": "media/zoom/b5-105.webp",
+     "reading_image": "media/read/b5-105.webp",
+     "thumbnail": "media/thumb/b5-105.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, 1996 (Midstate Central Labor Council), page 15.",
+     "source_file": "IMG_5794.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 91.8
+    },
+    {
+     "label": "Page 16",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 106,
+     "image": "media/zoom/b5-106.webp",
+     "reading_image": "media/read/b5-106.webp",
+     "thumbnail": "media/thumb/b5-106.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, 1996 (Midstate Central Labor Council), page 16.",
+     "source_file": "IMG_5795.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 94.6
+    },
+    {
+     "label": "Page 17",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 107,
+     "image": "media/zoom/b5-107.webp",
+     "reading_image": "media/read/b5-107.webp",
+     "thumbnail": "media/thumb/b5-107.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, 1996 (Midstate Central Labor Council), page 17.",
+     "source_file": "IMG_5796.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "fair",
+     "ocr_mean_confidence": 77.7
+    },
+    {
+     "label": "Page 18",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 108,
+     "image": "media/zoom/b5-108.webp",
+     "reading_image": "media/read/b5-108.webp",
+     "thumbnail": "media/thumb/b5-108.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, 1996 (Midstate Central Labor Council), page 18.",
+     "source_file": "IMG_5797.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 89.4
+    },
+    {
+     "label": "Page 19",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 110,
+     "image": "media/zoom/b5-110.webp",
+     "reading_image": "media/read/b5-110.webp",
+     "thumbnail": "media/thumb/b5-110.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, 1996 (Midstate Central Labor Council), page 19.",
+     "source_file": "IMG_5799.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 88.7
+    },
+    {
+     "label": "Page 20",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 111,
+     "image": "media/zoom/b5-111.webp",
+     "reading_image": "media/read/b5-111.webp",
+     "thumbnail": "media/thumb/b5-111.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, 1996 (Midstate Central Labor Council), page 20.",
+     "source_file": "IMG_5800.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 88.6
+    }
+   ],
+   "pdf": {
+    "path": "media/pdf/tclc-0238.pdf",
+    "bytes": 3885591
+   },
+   "text": {
+    "path": "media/text/tclc-0238.txt",
+    "bytes": 36741
+   },
+   "related": [
+    "tclc-0237",
+    "tclc-0263",
+    "tclc-0243",
+    "tclc-0257"
+   ],
+   "citation": "Midstate Central Labor Council, AFL-CIO and New York State Department of Labor. “State health and safety training contract, 1996 (Midstate Central Labor Council).” January 1 – December 31, 1996. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0238, https://adolfhoromero.com/archive/tclc/items/tclc-0238/."
+  },
+  {
+   "id": "tclc-0241",
+   "url": "https://adolfhoromero.com/archive/tclc/items/tclc-0241/",
+   "title": "Article 20 of the New York State Employment Relations Act (printed text)",
+   "description": "The table of sections and Section 700, the findings and policy of New York's State Employment Relations Act, printed on a page of a state petition form.",
+   "notes": "",
+   "creator": "[New York State]",
+   "date": "",
+   "date_display": "Undated",
+   "date_quality": "undated",
+   "type": "Form",
+   "topics": [
+    "politics",
+    "organizing"
+   ],
+   "subjects": [
+    "labor law",
+    "New York State"
+   ],
+   "places": [
+    "Tompkins and Cortland counties, New York"
+   ],
+   "language": "en",
+   "rights": "Copyright not evaluated. Copyright in these documents may belong to the organizations and people who created them. They are shared here for study, teaching, and organizing education.",
+   "rights_uri": "http://rightsstatements.org/vocab/CNE/1.0/",
+   "source": "Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library",
+   "pages": [
+    {
+     "label": "Page 1",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 115,
+     "image": "media/zoom/b5-115.webp",
+     "reading_image": "media/read/b5-115.webp",
+     "thumbnail": "media/thumb/b5-115.webp",
+     "alt": "Photograph of a form: Article 20 of the New York State Employment Relations Act (printed text), page 1.",
+     "source_file": "IMG_5804.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 91.2
+    }
+   ],
+   "pdf": {
+    "path": "media/pdf/tclc-0241.pdf",
+    "bytes": 215740
+   },
+   "text": {
+    "path": "media/text/tclc-0241.txt",
+    "bytes": 3049
+   },
+   "related": [],
+   "citation": "[New York State]. “Article 20 of the New York State Employment Relations Act (printed text).” Undated. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0241, https://adolfhoromero.com/archive/tclc/items/tclc-0241/."
+  },
+  {
+   "id": "tclc-0242",
+   "url": "https://adolfhoromero.com/archive/tclc/items/tclc-0242/",
+   "title": "“Cement Drivers Bring Home More Than a Paycheck”",
+   "description": "A Health and Safety page article on a survey with Teamsters Local 65 of drivers for two Cortland-area cement companies, describing cement dermatitis, dust, and other hazards they face.",
+   "notes": "Clipped from a labor newspaper page; the Coalition's annual reports say The Working Press carried a regular Health and Safety page.",
+   "creator": "Carl Feuer and Robin Whittlesey, Tompkins-Cortland Labor Coalition",
+   "date": "1990/1991",
+   "date_display": "[c. 1990–1991]",
+   "date_quality": "approximate",
+   "type": "Newsletter",
+   "topics": [
+    "health-safety",
+    "newsletters"
+   ],
+   "subjects": [
+    "Health and Safety page",
+    "Teamsters Local 65",
+    "cement"
+   ],
+   "places": [
+    "Tompkins and Cortland counties, New York"
+   ],
+   "language": "en",
+   "rights": "Copyright not evaluated. Copyright in these documents may belong to the organizations and people who created them. They are shared here for study, teaching, and organizing education.",
+   "rights_uri": "http://rightsstatements.org/vocab/CNE/1.0/",
+   "source": "Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library",
+   "pages": [
+    {
+     "label": "Page 1",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 116,
+     "image": "media/zoom/b5-116.webp",
+     "reading_image": "media/read/b5-116.webp",
+     "thumbnail": "media/thumb/b5-116.webp",
+     "alt": "Photograph of a newsletter: “Cement Drivers Bring Home More Than a Paycheck”, page 1.",
+     "source_file": "IMG_5805.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 87.9
+    }
+   ],
+   "pdf": {
+    "path": "media/pdf/tclc-0242.pdf",
+    "bytes": 265142
+   },
+   "text": {
+    "path": "media/text/tclc-0242.txt",
+    "bytes": 3599
+   },
+   "related": [
+    "tclc-0247",
+    "tclc-0248",
+    "tclc-0249",
+    "tclc-0251"
+   ],
+   "citation": "Carl Feuer and Robin Whittlesey, Tompkins-Cortland Labor Coalition. “‘Cement Drivers Bring Home More Than a Paycheck’.” [c. 1990–1991]. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0242, https://adolfhoromero.com/archive/tclc/items/tclc-0242/."
+  },
+  {
+   "id": "tclc-0243",
+   "url": "https://adolfhoromero.com/archive/tclc/items/tclc-0243/",
+   "title": "Department of Labor financial and compliance audit (draft), contracts 1988–1990",
+   "description": "The Department of Labor's Independent Audit Bureau sends Coordinator Brett Mair a draft audit of the Coalition's first two health and safety contracts (July 1988 – June 1990). Auditors found the program in general compliance but questioned $4,505.77: costs shared among programs without a documented allocation plan, fringe benefits reported incorrectly, three months of rent misallocated, and no clear audit trail from the books to the vouchers. The report gives the scope, background, opinion, internal controls, findings and recommendations, and the cash and expenditure schedules for each contract.",
+   "notes": "The page reading “-5-” is nearly blank. A second photograph of Auditor's Exhibit I-C is not shown. Exhibits I-A and I-B, which itemize two staff members' wages and benefits, are withheld.",
+   "creator": "New York State Department of Labor, Division of Audit and Compliance",
+   "date": "1992-03-23",
+   "date_display": "March 23, 1992",
+   "date_quality": "exact",
+   "type": "Report",
+   "topics": [
+    "finances",
+    "health-safety"
+   ],
+   "subjects": [
+    "NYS Department of Labor",
+    "OSH Training and Education Program",
+    "grants",
+    "audit"
+   ],
+   "places": [
+    "Tompkins and Cortland counties, New York"
+   ],
+   "language": "en",
+   "rights": "Copyright not evaluated. Copyright in these documents may belong to the organizations and people who created them. They are shared here for study, teaching, and organizing education.",
+   "rights_uri": "http://rightsstatements.org/vocab/CNE/1.0/",
+   "source": "Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library",
+   "pages": [
+    {
+     "label": "Page 1",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 118,
+     "image": "media/zoom/b5-118.webp",
+     "reading_image": "media/read/b5-118.webp",
+     "thumbnail": "media/thumb/b5-118.webp",
+     "alt": "Photograph of a report: Department of Labor financial and compliance audit (draft), contracts 1988–1990, page 1.",
+     "source_file": "IMG_5807.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 92.5
+    },
+    {
+     "label": "Page 2",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 119,
+     "image": "media/zoom/b5-119.webp",
+     "reading_image": "media/read/b5-119.webp",
+     "thumbnail": "media/thumb/b5-119.webp",
+     "alt": "Photograph of a report: Department of Labor financial and compliance audit (draft), contracts 1988–1990, page 2.",
+     "source_file": "IMG_5808.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 95.5
+    },
+    {
+     "label": "Page 3",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 120,
+     "image": "media/zoom/b5-120.webp",
+     "reading_image": "media/read/b5-120.webp",
+     "thumbnail": "media/thumb/b5-120.webp",
+     "alt": "Photograph of a report: Department of Labor financial and compliance audit (draft), contracts 1988–1990, page 3.",
+     "source_file": "IMG_5809.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 94.1
+    },
+    {
+     "label": "Page 4",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 121,
+     "image": "media/zoom/b5-121.webp",
+     "reading_image": "media/read/b5-121.webp",
+     "thumbnail": "media/thumb/b5-121.webp",
+     "alt": "Photograph of a report: Department of Labor financial and compliance audit (draft), contracts 1988–1990, page 4.",
+     "source_file": "IMG_5810.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "fair",
+     "ocr_mean_confidence": 80.5
+    },
+    {
+     "label": "Page 5",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 122,
+     "image": "media/zoom/b5-122.webp",
+     "reading_image": "media/read/b5-122.webp",
+     "thumbnail": "media/thumb/b5-122.webp",
+     "alt": "Photograph of a report: Department of Labor financial and compliance audit (draft), contracts 1988–1990, page 5.",
+     "source_file": "IMG_5811.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 95.4
+    },
+    {
+     "label": "Page 6",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 123,
+     "image": "media/zoom/b5-123.webp",
+     "reading_image": "media/read/b5-123.webp",
+     "thumbnail": "media/thumb/b5-123.webp",
+     "alt": "Photograph of a report: Department of Labor financial and compliance audit (draft), contracts 1988–1990, page 6.",
+     "source_file": "IMG_5812.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 95.2
+    },
+    {
+     "label": "Page 7",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 124,
+     "image": "media/zoom/b5-124.webp",
+     "reading_image": "media/read/b5-124.webp",
+     "thumbnail": "media/thumb/b5-124.webp",
+     "alt": "Photograph of a report: Department of Labor financial and compliance audit (draft), contracts 1988–1990, page 7.",
+     "source_file": "IMG_5813.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 92.9
+    },
+    {
+     "label": "Page 8",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 125,
+     "image": "media/zoom/b5-125.webp",
+     "reading_image": "media/read/b5-125.webp",
+     "thumbnail": "media/thumb/b5-125.webp",
+     "alt": "Photograph of a report: Department of Labor financial and compliance audit (draft), contracts 1988–1990, page 8.",
+     "source_file": "IMG_5814.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 91.9
+    },
+    {
+     "label": "Page 9",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 126,
+     "image": "media/zoom/b5-126.webp",
+     "reading_image": "media/read/b5-126.webp",
+     "thumbnail": "media/thumb/b5-126.webp",
+     "alt": "Photograph of a report: Department of Labor financial and compliance audit (draft), contracts 1988–1990, page 9.",
+     "source_file": "IMG_5815.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 92.8
+    },
+    {
+     "label": "Page 10",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 127,
+     "image": "media/zoom/b5-127.webp",
+     "reading_image": "media/read/b5-127.webp",
+     "thumbnail": "media/thumb/b5-127.webp",
+     "alt": "Photograph of a report: Department of Labor financial and compliance audit (draft), contracts 1988–1990, page 10.",
+     "source_file": "IMG_5816.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "fair",
+     "ocr_mean_confidence": 81.2
+    },
+    {
+     "label": "Page 11",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 128,
+     "image": "media/zoom/b5-128.webp",
+     "reading_image": "media/read/b5-128.webp",
+     "thumbnail": "media/thumb/b5-128.webp",
+     "alt": "Photograph of a report: Department of Labor financial and compliance audit (draft), contracts 1988–1990, page 11.",
+     "source_file": "IMG_5817.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 87.4
+    },
+    {
+     "label": "Page 12",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 129,
+     "image": "media/zoom/b5-129.webp",
+     "reading_image": "media/read/b5-129.webp",
+     "thumbnail": "media/thumb/b5-129.webp",
+     "alt": "Photograph of a report: Department of Labor financial and compliance audit (draft), contracts 1988–1990, page 12.",
+     "source_file": "IMG_5818.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 92.7
+    },
+    {
+     "label": "Page 13",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 130,
+     "image": "media/zoom/b5-130.webp",
+     "reading_image": "media/read/b5-130.webp",
+     "thumbnail": "media/thumb/b5-130.webp",
+     "alt": "Photograph of a report: Department of Labor financial and compliance audit (draft), contracts 1988–1990, page 13.",
+     "source_file": "IMG_5819.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 92.6
+    },
+    {
+     "label": "Page 14",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 131,
+     "image": "media/zoom/b5-131.webp",
+     "reading_image": "media/read/b5-131.webp",
+     "thumbnail": "media/thumb/b5-131.webp",
+     "alt": "Photograph of a report: Department of Labor financial and compliance audit (draft), contracts 1988–1990, page 14.",
+     "source_file": "IMG_5820.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "fair",
+     "ocr_mean_confidence": 78.9
+    },
+    {
+     "label": "Page 15",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 134,
+     "image": "media/zoom/b5-134.webp",
+     "reading_image": "media/read/b5-134.webp",
+     "thumbnail": "media/thumb/b5-134.webp",
+     "alt": "Photograph of a report: Department of Labor financial and compliance audit (draft), contracts 1988–1990, page 15.",
+     "source_file": "IMG_5823.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 91.6
+    }
+   ],
+   "pdf": {
+    "path": "media/pdf/tclc-0243.pdf",
+    "bytes": 2074083
+   },
+   "text": {
+    "path": "media/text/tclc-0243.txt",
+    "bytes": 17981
+   },
+   "related": [
+    "tclc-0263",
+    "tclc-0256",
+    "tclc-0230",
+    "tclc-0232"
+   ],
+   "citation": "New York State Department of Labor, Division of Audit and Compliance. “Department of Labor financial and compliance audit (draft), contracts 1988–1990.” March 23, 1992. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0243, https://adolfhoromero.com/archive/tclc/items/tclc-0243/."
+  },
+  {
+   "id": "tclc-0246",
+   "url": "https://adolfhoromero.com/archive/tclc/items/tclc-0246/",
+   "title": "Summary of health and safety training workshops, June 1990",
+   "description": "Carl Feuer and Robin Whittlesey report on two June workshops for union health and safety committee members, stewards, and officers: “Workplace Hazards: Physical, Chemical and Biological,” led by Jim Platner of Cornell's Chemical Hazard Information Program, and “Getting Action to Improve Worker Health and Safety.” Twenty-eight people from seven unions and one nonunion workplace took part.",
+   "notes": "",
+   "creator": "Carl Feuer and Robin Whittlesey, Tompkins-Cortland Labor Coalition",
+   "date": "1990-07-20",
+   "date_display": "July 20, 1990",
+   "date_quality": "exact",
+   "type": "Report",
+   "topics": [
+    "health-safety"
+   ],
+   "subjects": [
+    "NYS Department of Labor",
+    "OSH Training and Education Program",
+    "grants",
+    "training",
+    "Chemical Hazard Information Program"
+   ],
+   "places": [
+    "Tompkins and Cortland counties, New York"
+   ],
+   "language": "en",
+   "rights": "Copyright not evaluated. Copyright in these documents may belong to the organizations and people who created them. They are shared here for study, teaching, and organizing education.",
+   "rights_uri": "http://rightsstatements.org/vocab/CNE/1.0/",
+   "source": "Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library",
+   "pages": [
+    {
+     "label": "Page 1",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 140,
+     "image": "media/zoom/b5-140.webp",
+     "reading_image": "media/read/b5-140.webp",
+     "thumbnail": "media/thumb/b5-140.webp",
+     "alt": "Photograph of a report: Summary of health and safety training workshops, June 1990, page 1.",
+     "source_file": "IMG_5830.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 94.6
+    }
+   ],
+   "pdf": {
+    "path": "media/pdf/tclc-0246.pdf",
+    "bytes": 194886
+   },
+   "text": {
+    "path": "media/text/tclc-0246.txt",
+    "bytes": 2713
+   },
+   "related": [
+    "tclc-0260",
+    "tclc-0256",
+    "tclc-0230",
+    "tclc-0254"
+   ],
+   "citation": "Carl Feuer and Robin Whittlesey, Tompkins-Cortland Labor Coalition. “Summary of health and safety training workshops, June 1990.” July 20, 1990. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0246, https://adolfhoromero.com/archive/tclc/items/tclc-0246/."
+  },
+  {
+   "id": "tclc-0247",
+   "url": "https://adolfhoromero.com/archive/tclc/items/tclc-0247/",
+   "title": "“Formaldehyde Hazard at Pall Trinity?”",
+   "description": "A Health and Safety page article asking whether formaldehyde is a hazard for UAW Local 1326 members at Pall Trinity in Cortland, noting that the tests performed there did not meet OSHA specifications. A box explains formaldehyde's health effects.",
+   "notes": "A second photograph of this page is not shown.",
+   "creator": "Carl Feuer and Robin Whittlesey, Tompkins-Cortland Labor Coalition",
+   "date": "1990/1991",
+   "date_display": "[c. 1990–1991]",
+   "date_quality": "approximate",
+   "type": "Newsletter",
+   "topics": [
+    "health-safety",
+    "newsletters"
+   ],
+   "subjects": [
+    "Health and Safety page",
+    "UAW Local 1326",
+    "Pall Trinity",
+    "formaldehyde"
+   ],
+   "places": [
+    "Tompkins and Cortland counties, New York"
+   ],
+   "language": "en",
+   "rights": "Copyright not evaluated. Copyright in these documents may belong to the organizations and people who created them. They are shared here for study, teaching, and organizing education.",
+   "rights_uri": "http://rightsstatements.org/vocab/CNE/1.0/",
+   "source": "Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library",
+   "pages": [
+    {
+     "label": "Page 1",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 147,
+     "image": "media/zoom/b5-147.webp",
+     "reading_image": "media/read/b5-147.webp",
+     "thumbnail": "media/thumb/b5-147.webp",
+     "alt": "Photograph of a newsletter: “Formaldehyde Hazard at Pall Trinity?”, page 1.",
+     "source_file": "IMG_5837.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 93.7
+    }
+   ],
+   "pdf": {
+    "path": "media/pdf/tclc-0247.pdf",
+    "bytes": 283535
+   },
+   "text": {
+    "path": "media/text/tclc-0247.txt",
+    "bytes": 4498
+   },
+   "related": [
+    "tclc-0242",
+    "tclc-0248",
+    "tclc-0249",
+    "tclc-0251"
+   ],
+   "citation": "Carl Feuer and Robin Whittlesey, Tompkins-Cortland Labor Coalition. “‘Formaldehyde Hazard at Pall Trinity?’.” [c. 1990–1991]. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0247, https://adolfhoromero.com/archive/tclc/items/tclc-0247/."
+  },
+  {
+   "id": "tclc-0248",
+   "url": "https://adolfhoromero.com/archive/tclc/items/tclc-0248/",
+   "title": "“The Sweet Smell of Success: Air Quality Improvements Won at Cornell”",
+   "description": "UAW Local 2300 members in Cornell University's print shop knew the solvents they worked with were making them sick, even though air tests stayed under OSHA limits. Through their health and safety committee they won a $3,000 portable air filtration unit and other changes. Written by three Local 2300 members with the Coalition's trainers.",
+   "notes": "A second photograph of this page is not shown.",
+   "creator": "Lew Relyea, Bob Sawchuk, and Tim Cook, UAW Local 2300; Carl Feuer and Robin Whittlesey, Tompkins-Cortland Labor Coalition",
+   "date": "1990/1991",
+   "date_display": "[c. 1990–1991]",
+   "date_quality": "approximate",
+   "type": "Newsletter",
+   "topics": [
+    "health-safety",
+    "newsletters"
+   ],
+   "subjects": [
+    "Health and Safety page",
+    "UAW Local 2300",
+    "Cornell University",
+    "solvents"
+   ],
+   "places": [
+    "Tompkins and Cortland counties, New York"
+   ],
+   "language": "en",
+   "rights": "Copyright not evaluated. Copyright in these documents may belong to the organizations and people who created them. They are shared here for study, teaching, and organizing education.",
+   "rights_uri": "http://rightsstatements.org/vocab/CNE/1.0/",
+   "source": "Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library",
+   "pages": [
+    {
+     "label": "Page 1",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 149,
+     "image": "media/zoom/b5-149.webp",
+     "reading_image": "media/read/b5-149.webp",
+     "thumbnail": "media/thumb/b5-149.webp",
+     "alt": "Photograph of a newsletter: “The Sweet Smell of Success: Air Quality Improvements Won at Cornell”, page 1.",
+     "source_file": "IMG_5839.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 94.5
+    }
+   ],
+   "pdf": {
+    "path": "media/pdf/tclc-0248.pdf",
+    "bytes": 299280
+   },
+   "text": {
+    "path": "media/text/tclc-0248.txt",
+    "bytes": 5083
+   },
+   "related": [
+    "tclc-0249",
+    "tclc-0242",
+    "tclc-0247",
+    "tclc-0251"
+   ],
+   "citation": "Lew Relyea, Bob Sawchuk, and Tim Cook, UAW Local 2300; Carl Feuer and Robin Whittlesey, Tompkins-Cortland Labor Coalition. “‘The Sweet Smell of Success: Air Quality Improvements Won at Cornell’.” [c. 1990–1991]. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0248, https://adolfhoromero.com/archive/tclc/items/tclc-0248/."
+  },
+  {
+   "id": "tclc-0249",
+   "url": "https://adolfhoromero.com/archive/tclc/items/tclc-0249/",
+   "title": "“Trike Is No Treat: Health Problems at Monarch”",
+   "description": "A survey by UAW Local 802's new health and safety committee at Monarch Machine Tool in Cortland found many workers reporting symptoms linked to trichloroethane (“Trike”), a degreasing solvent. The article explains its hazards and the committee's next steps.",
+   "notes": "",
+   "creator": "Carl Feuer and Robin Whittlesey, Tompkins-Cortland Labor Coalition",
+   "date": "1990/1991",
+   "date_display": "[c. 1990–1991]",
+   "date_quality": "approximate",
+   "type": "Newsletter",
+   "topics": [
+    "health-safety",
+    "newsletters"
+   ],
+   "subjects": [
+    "Health and Safety page",
+    "UAW Local 802",
+    "Monarch Machine Tool",
+    "solvents"
+   ],
+   "places": [
+    "Tompkins and Cortland counties, New York"
+   ],
+   "language": "en",
+   "rights": "Copyright not evaluated. Copyright in these documents may belong to the organizations and people who created them. They are shared here for study, teaching, and organizing education.",
+   "rights_uri": "http://rightsstatements.org/vocab/CNE/1.0/",
+   "source": "Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library",
+   "pages": [
+    {
+     "label": "Page 1",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 150,
+     "image": "media/zoom/b5-150.webp",
+     "reading_image": "media/read/b5-150.webp",
+     "thumbnail": "media/thumb/b5-150.webp",
+     "alt": "Photograph of a newsletter: “Trike Is No Treat: Health Problems at Monarch”, page 1.",
+     "source_file": "IMG_5840.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 94.8
+    }
+   ],
+   "pdf": {
+    "path": "media/pdf/tclc-0249.pdf",
+    "bytes": 296017
+   },
+   "text": {
+    "path": "media/text/tclc-0249.txt",
+    "bytes": 3733
+   },
+   "related": [
+    "tclc-0248",
+    "tclc-0242",
+    "tclc-0247",
+    "tclc-0251"
+   ],
+   "citation": "Carl Feuer and Robin Whittlesey, Tompkins-Cortland Labor Coalition. “‘Trike Is No Treat: Health Problems at Monarch’.” [c. 1990–1991]. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0249, https://adolfhoromero.com/archive/tclc/items/tclc-0249/."
+  },
+  {
+   "id": "tclc-0250",
+   "url": "https://adolfhoromero.com/archive/tclc/items/tclc-0250/",
+   "title": "“The Picket Line”: news from workers and their unions",
+   "description": "A news column: a study of poverty in Tompkins County, a victory for locked-out BASF workers of the Oil, Chemical and Atomic Workers in Louisiana, and West Coast longshore workers honoring a boycott of Salvadoran coffee.",
+   "notes": "",
+   "creator": "[Labor newspaper]",
+   "date": "1990",
+   "date_display": "[c. 1990]",
+   "date_quality": "approximate",
+   "type": "Newsletter",
+   "topics": [
+    "newsletters",
+    "campaigns"
+   ],
+   "subjects": [
+    "BASF lockout",
+    "El Salvador",
+    "poverty"
+   ],
+   "places": [
+    "Tompkins and Cortland counties, New York"
+   ],
+   "language": "en",
+   "rights": "Copyright not evaluated. Copyright in these documents may belong to the organizations and people who created them. They are shared here for study, teaching, and organizing education.",
+   "rights_uri": "http://rightsstatements.org/vocab/CNE/1.0/",
+   "source": "Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library",
+   "pages": [
+    {
+     "label": "Page 1",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 151,
+     "image": "media/zoom/b5-151.webp",
+     "reading_image": "media/read/b5-151.webp",
+     "thumbnail": "media/thumb/b5-151.webp",
+     "alt": "Photograph of a newsletter: “The Picket Line”: news from workers and their unions, page 1.",
+     "source_file": "IMG_5841.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "fair",
+     "ocr_mean_confidence": 84.9
+    }
+   ],
+   "pdf": {
+    "path": "media/pdf/tclc-0250.pdf",
+    "bytes": 264015
+   },
+   "text": {
+    "path": "media/text/tclc-0250.txt",
+    "bytes": 2763
+   },
+   "related": [
+    "tclc-0071",
+    "tclc-0025",
+    "tclc-0021",
+    "tclc-0022"
+   ],
+   "citation": "[Labor newspaper]. “‘The Picket Line’: news from workers and their unions.” [c. 1990]. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0250, https://adolfhoromero.com/archive/tclc/items/tclc-0250/."
+  },
+  {
+   "id": "tclc-0251",
+   "url": "https://adolfhoromero.com/archive/tclc/items/tclc-0251/",
+   "title": "“Office Work Is Dangerous to Our Health”",
+   "description": "A Health and Safety page article on office hazards, from stress and computer work to indoor air, and the Coalition's fall health and safety conference for office workers.",
+   "notes": "",
+   "creator": "Carl Feuer, UUP, and Robin Whittlesey",
+   "date": "1990/1991",
+   "date_display": "[c. 1990–1991]",
+   "date_quality": "approximate",
+   "type": "Newsletter",
+   "topics": [
+    "health-safety",
+    "newsletters"
+   ],
+   "subjects": [
+    "Health and Safety page",
+    "office workers",
+    "video display terminals"
+   ],
+   "places": [
+    "Tompkins and Cortland counties, New York"
+   ],
+   "language": "en",
+   "rights": "Copyright not evaluated. Copyright in these documents may belong to the organizations and people who created them. They are shared here for study, teaching, and organizing education.",
+   "rights_uri": "http://rightsstatements.org/vocab/CNE/1.0/",
+   "source": "Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library",
+   "pages": [
+    {
+     "label": "Page 1",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 152,
+     "image": "media/zoom/b5-152.webp",
+     "reading_image": "media/read/b5-152.webp",
+     "thumbnail": "media/thumb/b5-152.webp",
+     "alt": "Photograph of a newsletter: “Office Work Is Dangerous to Our Health”, page 1.",
+     "source_file": "IMG_5842.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 93.3
+    }
+   ],
+   "pdf": {
+    "path": "media/pdf/tclc-0251.pdf",
+    "bytes": 184022
+   },
+   "text": {
+    "path": "media/text/tclc-0251.txt",
+    "bytes": 1838
+   },
+   "related": [
+    "tclc-0242",
+    "tclc-0247",
+    "tclc-0248",
+    "tclc-0249"
+   ],
+   "citation": "Carl Feuer, UUP, and Robin Whittlesey. “‘Office Work Is Dangerous to Our Health’.” [c. 1990–1991]. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0251, https://adolfhoromero.com/archive/tclc/items/tclc-0251/."
+  },
+  {
+   "id": "tclc-0252",
+   "url": "https://adolfhoromero.com/archive/tclc/items/tclc-0252/",
+   "title": "“OSHA Standards May Be Hazardous to Your Health”",
+   "description": "A Health and Safety page article arguing that many OSHA exposure limits are outdated and too high, comparing them with NIOSH and EPA guidance, with a table comparing OSHA limits and EPA guidelines for common industrial chemicals.",
+   "notes": "The date is handwritten on the page.",
+   "creator": "Carl Feuer and Robin Whittlesey, Tompkins-Cortland Labor Coalition",
+   "date": "1991-07",
+   "date_display": "[July 1991]",
+   "date_quality": "inferred",
+   "type": "Newsletter",
+   "topics": [
+    "health-safety",
+    "newsletters"
+   ],
+   "subjects": [
+    "Health and Safety page",
+    "OSHA",
+    "exposure limits"
+   ],
+   "places": [
+    "Tompkins and Cortland counties, New York"
+   ],
+   "language": "en",
+   "rights": "Copyright not evaluated. Copyright in these documents may belong to the organizations and people who created them. They are shared here for study, teaching, and organizing education.",
+   "rights_uri": "http://rightsstatements.org/vocab/CNE/1.0/",
+   "source": "Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library",
+   "pages": [
+    {
+     "label": "Page 1",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 153,
+     "image": "media/zoom/b5-153.webp",
+     "reading_image": "media/read/b5-153.webp",
+     "thumbnail": "media/thumb/b5-153.webp",
+     "alt": "Photograph of a newsletter: “OSHA Standards May Be Hazardous to Your Health”, page 1.",
+     "source_file": "IMG_5843.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 92.2
+    },
+    {
+     "label": "Page 2",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 154,
+     "image": "media/zoom/b5-154.webp",
+     "reading_image": "media/read/b5-154.webp",
+     "thumbnail": "media/thumb/b5-154.webp",
+     "alt": "Photograph of a newsletter: “OSHA Standards May Be Hazardous to Your Health”, page 2.",
+     "source_file": "IMG_5844.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 90,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 91.5
+    }
+   ],
+   "pdf": {
+    "path": "media/pdf/tclc-0252.pdf",
+    "bytes": 574339
+   },
+   "text": {
+    "path": "media/text/tclc-0252.txt",
+    "bytes": 6311
+   },
+   "related": [
+    "tclc-0242",
+    "tclc-0247",
+    "tclc-0248",
+    "tclc-0249"
+   ],
+   "citation": "Carl Feuer and Robin Whittlesey, Tompkins-Cortland Labor Coalition. “‘OSHA Standards May Be Hazardous to Your Health’.” [July 1991]. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0252, https://adolfhoromero.com/archive/tclc/items/tclc-0252/."
+  },
+  {
+   "id": "tclc-0253",
+   "url": "https://adolfhoromero.com/archive/tclc/items/tclc-0253/",
+   "title": "“Union Tools” and “Historic Pico Trial in Binghamton Court”",
+   "description": "A labor newspaper spread: “Union Tools” describes how union leaders at Lakeside Nursing Home recruited members to a Contract Action Team; C. Kates of UAW Local 2300 reports on Korean workers' suit in federal court in Binghamton against Pico Products for failing to honor their 1989 union contract; a box announces the fall 1991 “Safety and Health in the Workplace” course at Tompkins Cortland Community College.",
+   "notes": "Two photographs show different parts of the same spread. A third photograph is not shown.",
+   "creator": "[Labor newspaper]; C. Kates, UAW Local 2300",
+   "date": "1991",
+   "date_display": "[1991]",
+   "date_quality": "inferred",
+   "type": "Newsletter",
+   "topics": [
+    "newsletters",
+    "organizing",
+    "plant-closings"
+   ],
+   "subjects": [
+    "Lakeside Nursing Home",
+    "Pico Products",
+    "TC3"
+   ],
+   "places": [
+    "Tompkins and Cortland counties, New York"
+   ],
+   "language": "en",
+   "rights": "Copyright not evaluated. Copyright in these documents may belong to the organizations and people who created them. They are shared here for study, teaching, and organizing education.",
+   "rights_uri": "http://rightsstatements.org/vocab/CNE/1.0/",
+   "source": "Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library",
+   "pages": [
+    {
+     "label": "Page 1",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 155,
+     "image": "media/zoom/b5-155.webp",
+     "reading_image": "media/read/b5-155.webp",
+     "thumbnail": "media/thumb/b5-155.webp",
+     "alt": "Photograph of a newsletter: “Union Tools” and “Historic Pico Trial in Binghamton Court”, page 1.",
+     "source_file": "IMG_5845.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 90,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 90.5
+    },
+    {
+     "label": "Page 2",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 157,
+     "image": "media/zoom/b5-157.webp",
+     "reading_image": "media/read/b5-157.webp",
+     "thumbnail": "media/thumb/b5-157.webp",
+     "alt": "Photograph of a newsletter: “Union Tools” and “Historic Pico Trial in Binghamton Court”, page 2.",
+     "source_file": "IMG_5847.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 90,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 89.8
+    }
+   ],
+   "pdf": {
+    "path": "media/pdf/tclc-0253.pdf",
+    "bytes": 585743
+   },
+   "text": {
+    "path": "media/text/tclc-0253.txt",
+    "bytes": 7588
+   },
+   "related": [
+    "tclc-0227",
+    "tclc-0182",
+    "tclc-0187",
+    "tclc-0076"
+   ],
+   "citation": "[Labor newspaper]; C. Kates, UAW Local 2300. “‘Union Tools’ and ‘Historic Pico Trial in Binghamton Court’.” [1991]. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0253, https://adolfhoromero.com/archive/tclc/items/tclc-0253/."
+  },
+  {
+   "id": "tclc-0254",
+   "url": "https://adolfhoromero.com/archive/tclc/items/tclc-0254/",
+   "title": "Letter to the Hazard Abatement Board enclosing the 1990–91 report",
+   "description": "Health and safety trainers Robin Whittlesey and Carl Feuer send Laura Job of the Department of Labor's Hazard Abatement Board a narrative report of the year's training, which they say would not have been possible without the OSHTEP grant.",
+   "notes": "A second photograph of this letter is not shown.",
+   "creator": "Carl Feuer and Robin Whittlesey, Tompkins-Cortland Labor Coalition",
+   "date": "1991-12-30",
+   "date_display": "December 30, 1991",
+   "date_quality": "exact",
+   "type": "Letter",
+   "topics": [
+    "health-safety"
+   ],
+   "subjects": [
+    "NYS Department of Labor",
+    "OSH Training and Education Program",
+    "grants",
+    "Hazard Abatement Board"
+   ],
+   "places": [
+    "Tompkins and Cortland counties, New York"
+   ],
+   "language": "en",
+   "rights": "Copyright not evaluated. Copyright in these documents may belong to the organizations and people who created them. They are shared here for study, teaching, and organizing education.",
+   "rights_uri": "http://rightsstatements.org/vocab/CNE/1.0/",
+   "source": "Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library",
+   "pages": [
+    {
+     "label": "Page 1",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 158,
+     "image": "media/zoom/b5-158.webp",
+     "reading_image": "media/read/b5-158.webp",
+     "thumbnail": "media/thumb/b5-158.webp",
+     "alt": "Photograph of a letter: Letter to the Hazard Abatement Board enclosing the 1990–91 report, page 1.",
+     "source_file": "IMG_5848.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 89.3
+    }
+   ],
+   "pdf": {
+    "path": "media/pdf/tclc-0254.pdf",
+    "bytes": 121615
+   },
+   "text": {
+    "path": "media/text/tclc-0254.txt",
+    "bytes": 2288
+   },
+   "related": [
+    "tclc-0255",
+    "tclc-0260",
+    "tclc-0263",
+    "tclc-0243"
+   ],
+   "citation": "Carl Feuer and Robin Whittlesey, Tompkins-Cortland Labor Coalition. “Letter to the Hazard Abatement Board enclosing the 1990–91 report.” December 30, 1991. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0254, https://adolfhoromero.com/archive/tclc/items/tclc-0254/."
+  },
+  {
+   "id": "tclc-0255",
+   "url": "https://adolfhoromero.com/archive/tclc/items/tclc-0255/",
+   "title": "Health and Safety Program annual report, 1990–1991",
+   "description": "The program's year: back injury prevention clinics with CSEA Local 605, the Ithaca school district employees, APWU Local 1151, and UAW Local 2300; work with union health and safety committees at Monarch Machine Tool, Pall Trinity, and Brewer-Titchener; workshops and conferences; the FYI newsletter for office workers; information and referral; the first Workers Memorial Day events after Charlie Streeter's death on the job; and help for Ithaca College office workers made ill at work.",
+   "notes": "",
+   "creator": "Tompkins-Cortland Labor Coalition",
+   "date": "1991",
+   "date_display": "[1991]",
+   "date_quality": "inferred",
+   "type": "Report",
+   "topics": [
+    "health-safety"
+   ],
+   "subjects": [
+    "NYS Department of Labor",
+    "OSH Training and Education Program",
+    "grants",
+    "annual report",
+    "back injuries",
+    "Workers Memorial Day",
+    "FYI newsletter",
+    "Ithaca College"
+   ],
+   "places": [
+    "Tompkins and Cortland counties, New York"
+   ],
+   "language": "en",
+   "rights": "Copyright not evaluated. Copyright in these documents may belong to the organizations and people who created them. They are shared here for study, teaching, and organizing education.",
+   "rights_uri": "http://rightsstatements.org/vocab/CNE/1.0/",
+   "source": "Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library",
+   "pages": [
+    {
+     "label": "Page 1",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 160,
+     "image": "media/zoom/b5-160.webp",
+     "reading_image": "media/read/b5-160.webp",
+     "thumbnail": "media/thumb/b5-160.webp",
+     "alt": "Photograph of a report: Health and Safety Program annual report, 1990–1991, page 1.",
+     "source_file": "IMG_5850.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 94.4
+    },
+    {
+     "label": "Page 2",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 161,
+     "image": "media/zoom/b5-161.webp",
+     "reading_image": "media/read/b5-161.webp",
+     "thumbnail": "media/thumb/b5-161.webp",
+     "alt": "Photograph of a report: Health and Safety Program annual report, 1990–1991, page 2.",
+     "source_file": "IMG_5851.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 90.5
+    },
+    {
+     "label": "Page 3",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 162,
+     "image": "media/zoom/b5-162.webp",
+     "reading_image": "media/read/b5-162.webp",
+     "thumbnail": "media/thumb/b5-162.webp",
+     "alt": "Photograph of a report: Health and Safety Program annual report, 1990–1991, page 3.",
+     "source_file": "IMG_5852.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 92.8
+    },
+    {
+     "label": "Page 4",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 163,
+     "image": "media/zoom/b5-163.webp",
+     "reading_image": "media/read/b5-163.webp",
+     "thumbnail": "media/thumb/b5-163.webp",
+     "alt": "Photograph of a report: Health and Safety Program annual report, 1990–1991, page 4.",
+     "source_file": "IMG_5853.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 90.5
+    },
+    {
+     "label": "Page 5",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 164,
+     "image": "media/zoom/b5-164.webp",
+     "reading_image": "media/read/b5-164.webp",
+     "thumbnail": "media/thumb/b5-164.webp",
+     "alt": "Photograph of a report: Health and Safety Program annual report, 1990–1991, page 5.",
+     "source_file": "IMG_5854.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 91.1
+    },
+    {
+     "label": "Page 6",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 165,
+     "image": "media/zoom/b5-165.webp",
+     "reading_image": "media/read/b5-165.webp",
+     "thumbnail": "media/thumb/b5-165.webp",
+     "alt": "Photograph of a report: Health and Safety Program annual report, 1990–1991, page 6.",
+     "source_file": "IMG_5855.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 92.9
+    }
+   ],
+   "pdf": {
+    "path": "media/pdf/tclc-0255.pdf",
+    "bytes": 1033413
+   },
+   "text": {
+    "path": "media/text/tclc-0255.txt",
+    "bytes": 12769
+   },
+   "related": [
+    "tclc-0257",
+    "tclc-0263",
+    "tclc-0237",
+    "tclc-0238"
+   ],
+   "citation": "Tompkins-Cortland Labor Coalition. “Health and Safety Program annual report, 1990–1991.” [1991]. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0255, https://adolfhoromero.com/archive/tclc/items/tclc-0255/."
+  },
+  {
+   "id": "tclc-0256",
+   "url": "https://adolfhoromero.com/archive/tclc/items/tclc-0256/",
+   "title": "Contract signature sheet, July 1990 – June 1991",
+   "description": "The signature sheet for the third year of the state health and safety training contract, for $43,000, signed by Al Davidoff for the Coalition and by the Department of Labor, with the Attorney General's approval stamp.",
+   "notes": "",
+   "creator": "Tompkins-Cortland Labor Coalition and New York State Department of Labor",
+   "date": "1990-07-01/1991-06-30",
+   "date_display": "July 1, 1990 – June 30, 1991",
+   "date_quality": "exact",
+   "type": "Form",
+   "topics": [
+    "health-safety",
+    "finances"
+   ],
+   "subjects": [
+    "NYS Department of Labor",
+    "OSH Training and Education Program",
+    "grants"
+   ],
+   "places": [
+    "Tompkins and Cortland counties, New York"
+   ],
+   "language": "en",
+   "rights": "Copyright not evaluated. Copyright in these documents may belong to the organizations and people who created them. They are shared here for study, teaching, and organizing education.",
+   "rights_uri": "http://rightsstatements.org/vocab/CNE/1.0/",
+   "source": "Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library",
+   "pages": [
+    {
+     "label": "Page 1",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 166,
+     "image": "media/zoom/b5-166.webp",
+     "reading_image": "media/read/b5-166.webp",
+     "thumbnail": "media/thumb/b5-166.webp",
+     "alt": "Photograph of a form: Contract signature sheet, July 1990 – June 1991, page 1.",
+     "source_file": "IMG_5856.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "fair",
+     "ocr_mean_confidence": 74.9
+    }
+   ],
+   "pdf": {
+    "path": "media/pdf/tclc-0256.pdf",
+    "bytes": 189573
+   },
+   "text": {
+    "path": "media/text/tclc-0256.txt",
+    "bytes": 1904
+   },
+   "related": [
+    "tclc-0230",
+    "tclc-0263",
+    "tclc-0232",
+    "tclc-0234"
+   ],
+   "citation": "Tompkins-Cortland Labor Coalition and New York State Department of Labor. “Contract signature sheet, July 1990 – June 1991.” July 1, 1990 – June 30, 1991. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0256, https://adolfhoromero.com/archive/tclc/items/tclc-0256/."
+  },
+  {
+   "id": "tclc-0257",
+   "url": "https://adolfhoromero.com/archive/tclc/items/tclc-0257/",
+   "title": "Health and Safety Program annual report, 1991–92",
+   "description": "Over 2,000 workers benefited directly from the program in 1991–92, the report says. It covers back injury clinics, the FYI newsletter (1,450 copies by June 1992), training workshops and conferences, Workers Memorial Day, help for union health and safety committees, 132 requests for information, and the health and safety articles that appeared in most issues of The Working Press.",
+   "notes": "",
+   "creator": "Tompkins-Cortland Labor Coalition",
+   "date": "1992",
+   "date_display": "[1992]",
+   "date_quality": "inferred",
+   "type": "Report",
+   "topics": [
+    "health-safety"
+   ],
+   "subjects": [
+    "NYS Department of Labor",
+    "OSH Training and Education Program",
+    "grants",
+    "annual report",
+    "FYI newsletter",
+    "Workers Memorial Day"
+   ],
+   "places": [
+    "Tompkins and Cortland counties, New York"
+   ],
+   "language": "en",
+   "rights": "Copyright not evaluated. Copyright in these documents may belong to the organizations and people who created them. They are shared here for study, teaching, and organizing education.",
+   "rights_uri": "http://rightsstatements.org/vocab/CNE/1.0/",
+   "source": "Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library",
+   "pages": [
+    {
+     "label": "Page 1",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 167,
+     "image": "media/zoom/b5-167.webp",
+     "reading_image": "media/read/b5-167.webp",
+     "thumbnail": "media/thumb/b5-167.webp",
+     "alt": "Photograph of a report: Health and Safety Program annual report, 1991–92, page 1.",
+     "source_file": "IMG_5857.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 95.3
+    },
+    {
+     "label": "Page 2",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 168,
+     "image": "media/zoom/b5-168.webp",
+     "reading_image": "media/read/b5-168.webp",
+     "thumbnail": "media/thumb/b5-168.webp",
+     "alt": "Photograph of a report: Health and Safety Program annual report, 1991–92, page 2.",
+     "source_file": "IMG_5858.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 89.6
+    },
+    {
+     "label": "Page 3",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 169,
+     "image": "media/zoom/b5-169.webp",
+     "reading_image": "media/read/b5-169.webp",
+     "thumbnail": "media/thumb/b5-169.webp",
+     "alt": "Photograph of a report: Health and Safety Program annual report, 1991–92, page 3.",
+     "source_file": "IMG_5859.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 95.0
+    },
+    {
+     "label": "Page 4",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 170,
+     "image": "media/zoom/b5-170.webp",
+     "reading_image": "media/read/b5-170.webp",
+     "thumbnail": "media/thumb/b5-170.webp",
+     "alt": "Photograph of a report: Health and Safety Program annual report, 1991–92, page 4.",
+     "source_file": "IMG_5860.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 94.4
+    }
+   ],
+   "pdf": {
+    "path": "media/pdf/tclc-0257.pdf",
+    "bytes": 701203
+   },
+   "text": {
+    "path": "media/text/tclc-0257.txt",
+    "bytes": 9468
+   },
+   "related": [
+    "tclc-0255",
+    "tclc-0263",
+    "tclc-0237",
+    "tclc-0238"
+   ],
+   "citation": "Tompkins-Cortland Labor Coalition. “Health and Safety Program annual report, 1991–92.” [1992]. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0257, https://adolfhoromero.com/archive/tclc/items/tclc-0257/."
+  },
+  {
+   "id": "tclc-0258",
+   "url": "https://adolfhoromero.com/archive/tclc/items/tclc-0258/",
+   "title": "FYI: A Health and Safety Newsletter for Office Workers, September 1991",
+   "description": "The Coalition's newsletter for office workers. This issue reports an RSI epidemic at SUNY Cortland: in a CSEA Local 605 survey of clerical and secretarial staff, almost two-thirds of those who responded had at least one warning symptom of repetitive strain injury.",
+   "notes": "",
+   "creator": "Tompkins-Cortland Labor Coalition",
+   "date": "1991-09",
+   "date_display": "September 1991",
+   "date_quality": "exact",
+   "type": "Newsletter",
+   "topics": [
+    "health-safety",
+    "newsletters"
+   ],
+   "subjects": [
+    "FYI newsletter",
+    "repetitive strain injury",
+    "SUNY Cortland",
+    "CSEA Local 605"
+   ],
+   "places": [
+    "Tompkins and Cortland counties, New York"
+   ],
+   "language": "en",
+   "rights": "Copyright not evaluated. Copyright in these documents may belong to the organizations and people who created them. They are shared here for study, teaching, and organizing education.",
+   "rights_uri": "http://rightsstatements.org/vocab/CNE/1.0/",
+   "source": "Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library",
+   "pages": [
+    {
+     "label": "Page 1",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 171,
+     "image": "media/zoom/b5-171.webp",
+     "reading_image": "media/read/b5-171.webp",
+     "thumbnail": "media/thumb/b5-171.webp",
+     "alt": "Photograph of a newsletter: FYI: A Health and Safety Newsletter for Office Workers, September 1991, page 1.",
+     "source_file": "IMG_5861.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 92.7
+    }
+   ],
+   "pdf": {
+    "path": "media/pdf/tclc-0258.pdf",
+    "bytes": 219102
+   },
+   "text": {
+    "path": "media/text/tclc-0258.txt",
+    "bytes": 2256
+   },
+   "related": [
+    "tclc-0238",
+    "tclc-0237",
+    "tclc-0252",
+    "tclc-0255"
+   ],
+   "citation": "Tompkins-Cortland Labor Coalition. “FYI: A Health and Safety Newsletter for Office Workers, September 1991.” September 1991. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0258, https://adolfhoromero.com/archive/tclc/items/tclc-0258/."
+  },
+  {
+   "id": "tclc-0259",
+   "url": "https://adolfhoromero.com/archive/tclc/items/tclc-0259/",
+   "title": "Craig B. Little, SUNY Cortland, thanks Carl Feuer for occupational health videos",
+   "description": "The chair of SUNY Cortland's sociology and anthropology department thanks Feuer for lending two videos on occupational health for a sociology of medicine class, and says he will expand that part of the course.",
+   "notes": "",
+   "creator": "Craig B. Little, State University College at Cortland",
+   "date": "1991-10-22",
+   "date_display": "October 22, 1991",
+   "date_quality": "exact",
+   "type": "Letter",
+   "topics": [
+    "health-safety"
+   ],
+   "subjects": [
+    "SUNY Cortland",
+    "education"
+   ],
+   "places": [
+    "Tompkins and Cortland counties, New York"
+   ],
+   "language": "en",
+   "rights": "Copyright not evaluated. Copyright in these documents may belong to the organizations and people who created them. They are shared here for study, teaching, and organizing education.",
+   "rights_uri": "http://rightsstatements.org/vocab/CNE/1.0/",
+   "source": "Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library",
+   "pages": [
+    {
+     "label": "Page 1",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 172,
+     "image": "media/zoom/b5-172.webp",
+     "reading_image": "media/read/b5-172.webp",
+     "thumbnail": "media/thumb/b5-172.webp",
+     "alt": "Photograph of a letter: Craig B. Little, SUNY Cortland, thanks Carl Feuer for occupational health videos, page 1.",
+     "source_file": "IMG_5862.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 93.5
+    }
+   ],
+   "pdf": {
+    "path": "media/pdf/tclc-0259.pdf",
+    "bytes": 141676
+   },
+   "text": {
+    "path": "media/text/tclc-0259.txt",
+    "bytes": 1511
+   },
+   "related": [
+    "tclc-0258",
+    "tclc-0238"
+   ],
+   "citation": "Craig B. Little, State University College at Cortland. “Craig B. Little, SUNY Cortland, thanks Carl Feuer for occupational health videos.” October 22, 1991. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0259, https://adolfhoromero.com/archive/tclc/items/tclc-0259/."
+  },
+  {
+   "id": "tclc-0260",
+   "url": "https://adolfhoromero.com/archive/tclc/items/tclc-0260/",
+   "title": "Summary of conference and training activities, first quarter 1991–92",
+   "description": "The state's quarterly reporting form, listing six training sessions held from August 1 to September 23, 1991, on a clean-room chemical hazard, health and safety committees for UAW Locals 1774 and 1326, and health and safety surveys for CSEA Local 812, with the number of participants planned and attending.",
+   "notes": "",
+   "creator": "Tompkins-Cortland Labor Coalition",
+   "date": "1991-08/1991-09",
+   "date_display": "August–September 1991",
+   "date_quality": "exact",
+   "type": "Form",
+   "topics": [
+    "health-safety"
+   ],
+   "subjects": [
+    "NYS Department of Labor",
+    "OSH Training and Education Program",
+    "grants",
+    "training"
+   ],
+   "places": [
+    "Tompkins and Cortland counties, New York"
+   ],
+   "language": "en",
+   "rights": "Copyright not evaluated. Copyright in these documents may belong to the organizations and people who created them. They are shared here for study, teaching, and organizing education.",
+   "rights_uri": "http://rightsstatements.org/vocab/CNE/1.0/",
+   "source": "Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library",
+   "pages": [
+    {
+     "label": "Page 1",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 173,
+     "image": "media/zoom/b5-173.webp",
+     "reading_image": "media/read/b5-173.webp",
+     "thumbnail": "media/thumb/b5-173.webp",
+     "alt": "Photograph of a form: Summary of conference and training activities, first quarter 1991–92, page 1.",
+     "source_file": "IMG_5863.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "poor",
+     "ocr_mean_confidence": 65.7
+    }
+   ],
+   "pdf": {
+    "path": "media/pdf/tclc-0260.pdf",
+    "bytes": 160562
+   },
+   "text": {
+    "path": "media/text/tclc-0260.txt",
+    "bytes": 2404
+   },
+   "related": [
+    "tclc-0246",
+    "tclc-0254",
+    "tclc-0255",
+    "tclc-0263"
+   ],
+   "citation": "Tompkins-Cortland Labor Coalition. “Summary of conference and training activities, first quarter 1991–92.” August–September 1991. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0260, https://adolfhoromero.com/archive/tclc/items/tclc-0260/."
+  },
+  {
+   "id": "tclc-0261",
+   "url": "https://adolfhoromero.com/archive/tclc/items/tclc-0261/",
+   "title": "Workshop reports: women workers, workers' compensation, and school hazards, 1992",
+   "description": "Reports on three workshops: a health and safety session at the Women's Trade Union Leadership Conference, a workers' compensation workshop led by attorney Tony Gaenslen for 39 people from 18 unions, and “Health Hazards in Our Schools” for teachers, support staff, and parents, which followed indoor air complaints at Boynton Middle School. Each report sums up participants' evaluations and suggested follow-up.",
+   "notes": "The dates come from the 1991–92 annual report. The last page is the end of a report, which one is unclear. A second photograph of the school hazards report is not shown.",
+   "creator": "Tompkins-Cortland Labor Coalition",
+   "date": "1992-05/1992-06",
+   "date_display": "[May–June 1992]",
+   "date_quality": "inferred",
+   "type": "Report",
+   "topics": [
+    "health-safety"
+   ],
+   "subjects": [
+    "NYS Department of Labor",
+    "OSH Training and Education Program",
+    "grants",
+    "women workers",
+    "workers' compensation",
+    "schools",
+    "indoor air quality"
+   ],
+   "places": [
+    "Tompkins and Cortland counties, New York"
+   ],
+   "language": "en",
+   "rights": "Copyright not evaluated. Copyright in these documents may belong to the organizations and people who created them. They are shared here for study, teaching, and organizing education.",
+   "rights_uri": "http://rightsstatements.org/vocab/CNE/1.0/",
+   "source": "Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library",
+   "pages": [
+    {
+     "label": "Page 1",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 174,
+     "image": "media/zoom/b5-174.webp",
+     "reading_image": "media/read/b5-174.webp",
+     "thumbnail": "media/thumb/b5-174.webp",
+     "alt": "Photograph of a report: Workshop reports: women workers, workers' compensation, and school hazards, 1992, page 1.",
+     "source_file": "IMG_5864.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "fair",
+     "ocr_mean_confidence": 84.2
+    },
+    {
+     "label": "Page 2",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 175,
+     "image": "media/zoom/b5-175.webp",
+     "reading_image": "media/read/b5-175.webp",
+     "thumbnail": "media/thumb/b5-175.webp",
+     "alt": "Photograph of a report: Workshop reports: women workers, workers' compensation, and school hazards, 1992, page 2.",
+     "source_file": "IMG_5865.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "fair",
+     "ocr_mean_confidence": 84.2
+    },
+    {
+     "label": "Page 3",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 176,
+     "image": "media/zoom/b5-176.webp",
+     "reading_image": "media/read/b5-176.webp",
+     "thumbnail": "media/thumb/b5-176.webp",
+     "alt": "Photograph of a report: Workshop reports: women workers, workers' compensation, and school hazards, 1992, page 3.",
+     "source_file": "IMG_5866.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "fair",
+     "ocr_mean_confidence": 82.2
+    },
+    {
+     "label": "Page 4",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 178,
+     "image": "media/zoom/b5-178.webp",
+     "reading_image": "media/read/b5-178.webp",
+     "thumbnail": "media/thumb/b5-178.webp",
+     "alt": "Photograph of a report: Workshop reports: women workers, workers' compensation, and school hazards, 1992, page 4.",
+     "source_file": "IMG_5868.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 89.1
+    }
+   ],
+   "pdf": {
+    "path": "media/pdf/tclc-0261.pdf",
+    "bytes": 518876
+   },
+   "text": {
+    "path": "media/text/tclc-0261.txt",
+    "bytes": 6086
+   },
+   "related": [
+    "tclc-0263",
+    "tclc-0243",
+    "tclc-0257",
+    "tclc-0254"
+   ],
+   "citation": "Tompkins-Cortland Labor Coalition. “Workshop reports: women workers, workers' compensation, and school hazards, 1992.” [May–June 1992]. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0261, https://adolfhoromero.com/archive/tclc/items/tclc-0261/."
+  },
+  {
+   "id": "tclc-0262",
+   "url": "https://adolfhoromero.com/archive/tclc/items/tclc-0262/",
+   "title": "Workers Memorial Day events report, April 1992",
+   "description": "A memorial service and OSHA reform rally in Ithaca on April 25 attended by 75 people and dedicated to the 25 victims of the Hamlet, North Carolina, poultry plant fire; a moment of silence at 2 p.m. on April 28, signaled by the City of Ithaca's fire horns and the Cornell chimes; meetings with the district attorneys of Tompkins, Cortland, and Schuyler counties about prosecuting workplace safety crimes; and Workers Memorial Day proclamations by four local governments.",
+   "notes": "The year is inferred from the 1991–92 annual report and the Hamlet fire of September 1991.",
+   "creator": "Tompkins-Cortland Labor Coalition",
+   "date": "1992-04",
+   "date_display": "April 1992",
+   "date_quality": "inferred",
+   "type": "Report",
+   "topics": [
+    "health-safety",
+    "politics"
+   ],
+   "subjects": [
+    "Workers Memorial Day",
+    "OSHA reform",
+    "district attorneys"
+   ],
+   "places": [
+    "Tompkins and Cortland counties, New York"
+   ],
+   "language": "en",
+   "rights": "Copyright not evaluated. Copyright in these documents may belong to the organizations and people who created them. They are shared here for study, teaching, and organizing education.",
+   "rights_uri": "http://rightsstatements.org/vocab/CNE/1.0/",
+   "source": "Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library",
+   "pages": [
+    {
+     "label": "Page 1",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 179,
+     "image": "media/zoom/b5-179.webp",
+     "reading_image": "media/read/b5-179.webp",
+     "thumbnail": "media/thumb/b5-179.webp",
+     "alt": "Photograph of a report: Workers Memorial Day events report, April 1992, page 1.",
+     "source_file": "IMG_5869.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "fair",
+     "ocr_mean_confidence": 82.0
+    },
+    {
+     "label": "Page 2",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 180,
+     "image": "media/zoom/b5-180.webp",
+     "reading_image": "media/read/b5-180.webp",
+     "thumbnail": "media/thumb/b5-180.webp",
+     "alt": "Photograph of a report: Workers Memorial Day events report, April 1992, page 2.",
+     "source_file": "IMG_5870.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 92.6
+    }
+   ],
+   "pdf": {
+    "path": "media/pdf/tclc-0262.pdf",
+    "bytes": 403604
+   },
+   "text": {
+    "path": "media/text/tclc-0262.txt",
+    "bytes": 4054
+   },
+   "related": [
+    "tclc-0257",
+    "tclc-0255",
+    "tclc-0040",
+    "tclc-0027"
+   ],
+   "citation": "Tompkins-Cortland Labor Coalition. “Workers Memorial Day events report, April 1992.” April 1992. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0262, https://adolfhoromero.com/archive/tclc/items/tclc-0262/."
+  },
+  {
+   "id": "tclc-0263",
+   "url": "https://adolfhoromero.com/archive/tclc/items/tclc-0263/",
+   "title": "State health and safety training contract, July 1991 – June 1992",
+   "description": "A modification adding a second year of $43,000 (a total of $86,000) to the Coalition's health and safety training contract, with Carl Feuer and Robin Whittlesey as liaisons, and the program narrative: training office and clerical workers on video display terminals, stress, and indoor air through the FYI newsletter; a school conference with the area teachers' and BOCES unions; a resource center and newspaper articles; help for union health and safety committees, including a forge local; a health and safety rep course; and worksite training on back injuries.",
+   "notes": "",
+   "creator": "Tompkins-Cortland Labor Coalition and New York State Department of Labor",
+   "date": "1991-07-01/1992-06-30",
+   "date_display": "July 1, 1991 – June 30, 1992",
+   "date_quality": "exact",
+   "type": "Agreement",
+   "topics": [
+    "health-safety",
+    "finances"
+   ],
+   "subjects": [
+    "NYS Department of Labor",
+    "OSH Training and Education Program",
+    "grants",
+    "FYI newsletter",
+    "schools",
+    "back injuries"
+   ],
+   "places": [
+    "Tompkins and Cortland counties, New York"
+   ],
+   "language": "en",
+   "rights": "Copyright not evaluated. Copyright in these documents may belong to the organizations and people who created them. They are shared here for study, teaching, and organizing education.",
+   "rights_uri": "http://rightsstatements.org/vocab/CNE/1.0/",
+   "source": "Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library",
+   "pages": [
+    {
+     "label": "Page 1",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 181,
+     "image": "media/zoom/b5-181.webp",
+     "reading_image": "media/read/b5-181.webp",
+     "thumbnail": "media/thumb/b5-181.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1991 – June 1992, page 1.",
+     "source_file": "IMG_5871.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "fair",
+     "ocr_mean_confidence": 81.0
+    },
+    {
+     "label": "Page 2",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 182,
+     "image": "media/zoom/b5-182.webp",
+     "reading_image": "media/read/b5-182.webp",
+     "thumbnail": "media/thumb/b5-182.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1991 – June 1992, page 2.",
+     "source_file": "IMG_5872.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 91.1
+    },
+    {
+     "label": "Page 3",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 183,
+     "image": "media/zoom/b5-183.webp",
+     "reading_image": "media/read/b5-183.webp",
+     "thumbnail": "media/thumb/b5-183.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1991 – June 1992, page 3.",
+     "source_file": "IMG_5873.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 94.6
+    },
+    {
+     "label": "Page 4",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 184,
+     "image": "media/zoom/b5-184.webp",
+     "reading_image": "media/read/b5-184.webp",
+     "thumbnail": "media/thumb/b5-184.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1991 – June 1992, page 4.",
+     "source_file": "IMG_5874.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 95.1
+    },
+    {
+     "label": "Page 5",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 185,
+     "image": "media/zoom/b5-185.webp",
+     "reading_image": "media/read/b5-185.webp",
+     "thumbnail": "media/thumb/b5-185.webp",
+     "alt": "Photograph of a draft agreement: State health and safety training contract, July 1991 – June 1992, page 5.",
+     "source_file": "IMG_5875.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 96.2
+    }
+   ],
+   "pdf": {
+    "path": "media/pdf/tclc-0263.pdf",
+    "bytes": 843809
+   },
+   "text": {
+    "path": "media/text/tclc-0263.txt",
+    "bytes": 7490
+   },
+   "related": [
+    "tclc-0255",
+    "tclc-0238",
+    "tclc-0243",
+    "tclc-0256"
+   ],
+   "citation": "Tompkins-Cortland Labor Coalition and New York State Department of Labor. “State health and safety training contract, July 1991 – June 1992.” July 1, 1991 – June 30, 1992. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0263, https://adolfhoromero.com/archive/tclc/items/tclc-0263/."
+  },
+  {
+   "id": "tclc-0264",
+   "url": "https://adolfhoromero.com/archive/tclc/items/tclc-0264/",
+   "title": "NAFTA alert to member unions, with legislators list and phone-bank script",
+   "description": "Coordinator Coert Bonthius urges member unions to write their representatives before the November 17 House vote on NAFTA: Amory Houghton supported it, Maurice Hinchey opposed it, and Jim Walsh opposed it but needed pressure. Enclosed are a list of the three representatives' offices and an “Anti-NAFTA Phoners Rap Sheet” and tips for calling union members in the Cortland area.",
+   "notes": "A second photograph of the rap sheet is not shown.",
+   "creator": "Tompkins-Cortland Labor Coalition",
+   "date": "1993-10/1993-11",
+   "date_display": "[October–November 1993]",
+   "date_quality": "inferred",
+   "type": "Letter",
+   "topics": [
+    "politics"
+   ],
+   "subjects": [
+    "NAFTA",
+    "phone bank",
+    "Jim Walsh",
+    "Maurice Hinchey",
+    "Amory Houghton"
+   ],
+   "places": [
+    "Tompkins and Cortland counties, New York"
+   ],
+   "language": "en",
+   "rights": "Copyright not evaluated. Copyright in these documents may belong to the organizations and people who created them. They are shared here for study, teaching, and organizing education.",
+   "rights_uri": "http://rightsstatements.org/vocab/CNE/1.0/",
+   "source": "Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library",
+   "pages": [
+    {
+     "label": "Page 1",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 186,
+     "image": "media/zoom/b5-186.webp",
+     "reading_image": "media/read/b5-186.webp",
+     "thumbnail": "media/thumb/b5-186.webp",
+     "alt": "Photograph of a letter: NAFTA alert to member unions, with legislators list and phone-bank script, page 1.",
+     "source_file": "IMG_5876.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 93.8
+    },
+    {
+     "label": "Page 2",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 187,
+     "image": "media/zoom/b5-187.webp",
+     "reading_image": "media/read/b5-187.webp",
+     "thumbnail": "media/thumb/b5-187.webp",
+     "alt": "Photograph of a letter: NAFTA alert to member unions, with legislators list and phone-bank script, page 2.",
+     "source_file": "IMG_5877.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 92.4
+    },
+    {
+     "label": "Page 3",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 188,
+     "image": "media/zoom/b5-188.webp",
+     "reading_image": "media/read/b5-188.webp",
+     "thumbnail": "media/thumb/b5-188.webp",
+     "alt": "Photograph of a letter: NAFTA alert to member unions, with legislators list and phone-bank script, page 3.",
+     "source_file": "IMG_5878.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 92.5
+    },
+    {
+     "label": "Page 4",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 190,
+     "image": "media/zoom/b5-190.webp",
+     "reading_image": "media/read/b5-190.webp",
+     "thumbnail": "media/thumb/b5-190.webp",
+     "alt": "Photograph of a letter: NAFTA alert to member unions, with legislators list and phone-bank script, page 4.",
+     "source_file": "IMG_5880.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 89.0
+    }
+   ],
+   "pdf": {
+    "path": "media/pdf/tclc-0264.pdf",
+    "bytes": 422904
+   },
+   "text": {
+    "path": "media/text/tclc-0264.txt",
+    "bytes": 5572
+   },
+   "related": [
+    "tclc-0265",
+    "tclc-0267",
+    "tclc-0201"
+   ],
+   "citation": "Tompkins-Cortland Labor Coalition. “NAFTA alert to member unions, with legislators list and phone-bank script.” [October–November 1993]. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0264, https://adolfhoromero.com/archive/tclc/items/tclc-0264/."
+  },
+  {
+   "id": "tclc-0265",
+   "url": "https://adolfhoromero.com/archive/tclc/items/tclc-0265/",
+   "title": "Press release: citizen groups respond to the NAFTA side agreements",
+   "description": "The Coalition and other labor, environmental, religious, and community groups announce a press conference in Cortland on Tuesday, August 17, to answer the Clinton administration's labor and environmental side agreements to NAFTA, which they say lack timelines and enforcement and will hasten plant closings like Smith Corona's.",
+   "notes": "The year is inferred from the NAFTA side agreements, announced in August 1993; August 17 fell on a Tuesday in 1993.",
+   "creator": "Tompkins-Cortland Labor Coalition",
+   "date": "1993-08-17",
+   "date_display": "August 17, [1993]",
+   "date_quality": "inferred",
+   "type": "Press release",
+   "topics": [
+    "politics",
+    "plant-closings"
+   ],
+   "subjects": [
+    "NAFTA",
+    "Smith Corona",
+    "trade"
+   ],
+   "places": [
+    "Tompkins and Cortland counties, New York"
+   ],
+   "language": "en",
+   "rights": "Copyright not evaluated. Copyright in these documents may belong to the organizations and people who created them. They are shared here for study, teaching, and organizing education.",
+   "rights_uri": "http://rightsstatements.org/vocab/CNE/1.0/",
+   "source": "Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library",
+   "pages": [
+    {
+     "label": "Page 1",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 191,
+     "image": "media/zoom/b5-191.webp",
+     "reading_image": "media/read/b5-191.webp",
+     "thumbnail": "media/thumb/b5-191.webp",
+     "alt": "Photograph of a press release: Press release: citizen groups respond to the NAFTA side agreements, page 1.",
+     "source_file": "IMG_5881.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 92.5
+    }
+   ],
+   "pdf": {
+    "path": "media/pdf/tclc-0265.pdf",
+    "bytes": 283739
+   },
+   "text": {
+    "path": "media/text/tclc-0265.txt",
+    "bytes": 3079
+   },
+   "related": [
+    "tclc-0201",
+    "tclc-0226",
+    "tclc-0217",
+    "tclc-0218"
+   ],
+   "citation": "Tompkins-Cortland Labor Coalition. “Press release: citizen groups respond to the NAFTA side agreements.” August 17, [1993]. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0265, https://adolfhoromero.com/archive/tclc/items/tclc-0265/."
+  },
+  {
+   "id": "tclc-0267",
+   "url": "https://adolfhoromero.com/archive/tclc/items/tclc-0267/",
+   "title": "NAFTA side agreements seminar in Syracuse, September 29, 1993",
+   "description": "Cornell ILR Extension's memo to co-sponsors moving the press conference to 4:00 p.m. for television coverage, its press release, and the flyer for “Will the Side Agreements Make NAFTA Fair to Working People?” at the Operating Engineers hall in Syracuse, with Nancy Riche of the Canadian Labour Congress and Lee Adler of the ILR School. The Labor Coalition is listed among 21 co-sponsoring labor bodies.",
+   "notes": "",
+   "creator": "New York State School of Industrial and Labor Relations, Cornell University, Extension Division",
+   "date": "1993-09-29",
+   "date_display": "September 29, 1993",
+   "date_quality": "exact",
+   "type": "Press release",
+   "topics": [
+    "politics"
+   ],
+   "subjects": [
+    "NAFTA",
+    "Cornell ILR",
+    "Canadian Labour Congress"
+   ],
+   "places": [
+    "Tompkins and Cortland counties, New York"
+   ],
+   "language": "en",
+   "rights": "Copyright not evaluated. Copyright in these documents may belong to the organizations and people who created them. They are shared here for study, teaching, and organizing education.",
+   "rights_uri": "http://rightsstatements.org/vocab/CNE/1.0/",
+   "source": "Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library",
+   "pages": [
+    {
+     "label": "Page 1",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 195,
+     "image": "media/zoom/b5-195.webp",
+     "reading_image": "media/read/b5-195.webp",
+     "thumbnail": "media/thumb/b5-195.webp",
+     "alt": "Photograph of a press release: NAFTA side agreements seminar in Syracuse, September 29, 1993, page 1.",
+     "source_file": "IMG_5885.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 91.6
+    },
+    {
+     "label": "Page 2",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 196,
+     "image": "media/zoom/b5-196.webp",
+     "reading_image": "media/read/b5-196.webp",
+     "thumbnail": "media/thumb/b5-196.webp",
+     "alt": "Photograph of a press release: NAFTA side agreements seminar in Syracuse, September 29, 1993, page 2.",
+     "source_file": "IMG_5886.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 90.5
+    },
+    {
+     "label": "Page 3",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 197,
+     "image": "media/zoom/b5-197.webp",
+     "reading_image": "media/read/b5-197.webp",
+     "thumbnail": "media/thumb/b5-197.webp",
+     "alt": "Photograph of a press release: NAFTA side agreements seminar in Syracuse, September 29, 1993, page 3.",
+     "source_file": "IMG_5887.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 91.0
+    },
+    {
+     "label": "Page 4",
+     "copy": 0,
+     "batch": "TCLC Box 5 (Scans)",
+     "batch_page": 198,
+     "image": "media/zoom/b5-198.webp",
+     "reading_image": "media/read/b5-198.webp",
+     "thumbnail": "media/thumb/b5-198.webp",
+     "alt": "Photograph of a press release: NAFTA side agreements seminar in Syracuse, September 29, 1993, page 4.",
+     "source_file": "IMG_5888.jpeg",
+     "source_page": 1,
+     "also_in": [],
+     "rotated_degrees": 0,
+     "redacted": false,
+     "ocr_quality": "good",
+     "ocr_mean_confidence": 91.8
+    }
+   ],
+   "pdf": {
+    "path": "media/pdf/tclc-0267.pdf",
+    "bytes": 616348
+   },
+   "text": {
+    "path": "media/text/tclc-0267.txt",
+    "bytes": 5694
+   },
+   "related": [
+    "tclc-0264",
+    "tclc-0265",
+    "tclc-0201",
+    "tclc-0142"
+   ],
+   "citation": "New York State School of Industrial and Labor Relations, Cornell University, Extension Division. “NAFTA side agreements seminar in Syracuse, September 29, 1993.” September 29, 1993. Tompkins-Cortland Labor Coalition records, collection 6185, Kheel Center for Labor-Management Documentation and Archives, Cornell University Library. Digital copy, Labor Archive, adolfhoromero.com, item tclc-0267, https://adolfhoromero.com/archive/tclc/items/tclc-0267/."
   }
  ]
 }
