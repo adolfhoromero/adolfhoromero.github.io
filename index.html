@@ -64,7 +64,7 @@
       --background-top:#f7f8fa; --background-bottom:#e4e8ef;
       --nav-bg:#22304a; --nav-text:#ffffff;
       --accent:#29539b; --accent-2:#3f63b7; --accent-gold:#ffcc00;
-      --text-main:#232d41; --heading-color:#212c3e; --muted:#6b7a99;
+      --text-main:#232d41; --heading-color:#212c3e; --muted:#66748f;
       --card-bg:#ffffff; --card-border:#29539b; --card-shadow:0 6px 28px #2e3a5030;
       --max-width:1100px;
       --bottom-bar-h:60px; --bottom-offset:14px;
@@ -83,7 +83,7 @@
     html{scroll-behavior:smooth}
     body{font-family:'Poppins',sans-serif; background:linear-gradient(135deg,var(--background-top),var(--background-bottom)); color:var(--text-main); line-height:1.6; min-height:100vh; transition:background .35s,color .35s; padding-bottom:0}
     a{color:var(--accent); text-decoration:none; transition:color .2s, background .25s, box-shadow .25s}
-    a:hover,a:focus{color:var(--accent-gold); outline:0}
+    a:hover,a:focus{color:var(--accent-gold)}
 
     /* Header and nav */
     header{background:var(--nav-bg); color:var(--nav-text); text-align:center; padding: calc(1rem + var(--sat)) 1rem 0.4rem; box-shadow:0 4px 22px rgba(34,48,74,.47); position:relative; z-index:100; transition:background .35s,color .35s}
@@ -128,18 +128,18 @@
     .section h2{font-family:'Spectral',serif; font-size:2.18rem; text-align:center; margin-bottom:1.2rem; color:var(--heading-color)}
 
     .about-container{display:flex; flex-wrap:wrap; gap:46px; justify-content:center; align-items:flex-start}
-    .about-text{flex:2; min-width:300px; max-width:670px; font-size:1.16rem; line-height:1.73}
+    .about-text{flex:2; min-width:min(300px,100%); max-width:670px; font-size:1.16rem; line-height:1.73}
     .about-text p{margin-bottom:1.2rem}
     .about-image{flex:1; min-width:220px; max-width:360px; display:flex; justify-content:center}
     .about-image img{width:320px; max-width:100%; height:auto; border-radius:12px; object-fit:cover; box-shadow:0 7px 32px rgba(41,83,155,.13)}
 
     /* Contact modern */
     .contact-modern{max-width:1100px; margin:2rem auto; padding:0 1rem}
-    .contact-grid2{display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:14px}
-    .contact-card{display:grid; grid-template-columns:54px 1fr auto; align-items:center; gap:12px; background:var(--card-bg); border:1px solid rgba(0,0,0,.06); border-radius:16px; padding:14px; box-shadow:0 10px 26px rgba(0,0,0,.08)}
+    .contact-grid2{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(270px,100%),1fr)); gap:14px}
+    .contact-card{display:grid; grid-template-columns:54px minmax(0,1fr) auto; align-items:center; gap:12px; background:var(--card-bg); border:1px solid rgba(0,0,0,.06); border-radius:16px; padding:14px; box-shadow:0 10px 26px rgba(0,0,0,.08)}
     .contact-icon-wrap{width:48px; height:48px; border-radius:14px; display:grid; place-items:center; background:conic-gradient(from 160deg, var(--accent), var(--accent-gold)); box-shadow:0 6px 18px rgba(0,0,0,.15); color:#fff}
     .contact-icon-wrap svg{width:26px; height:26px; color:#fff}
-    .contact-text{line-height:1.2}
+    .contact-text{line-height:1.2; min-width:0; overflow-wrap:anywhere}
     .contact-label-sm{font-size:.78rem; opacity:.75}
     .contact-link-lg a{font-weight:700; color:var(--heading-color)}
     .dark .contact-link-lg a{color:var(--nav-text)}
@@ -197,7 +197,7 @@
     @media (min-width:821px){ .bottom-tabs{display:none} }
 
     /* Impact styles moved from inline <style> */
-    #impact{--primary:var(--accent); --surface:var(--card-bg); --text:var(--text-main); --muted:#7d8aa6; --line:#e6ecf7; --bg-grad-start:var(--background-top); --bg-grad-end:var(--background-bottom); --radius:18px; padding:clamp(22px,3.2vw,40px) 12px; background:linear-gradient(180deg,var(--bg-grad-start),var(--bg-grad-end))}
+    #impact{--primary:var(--accent); --surface:var(--card-bg); --text:var(--text-main); --muted:#66728a; --line:#e6ecf7; --bg-grad-start:var(--background-top); --bg-grad-end:var(--background-bottom); --radius:18px; padding:clamp(22px,3.2vw,40px) 12px; background:linear-gradient(180deg,var(--bg-grad-start),var(--bg-grad-end))}
     :where(.dark,[data-theme="dark"]) #impact{--surface:var(--card-bg); --text:var(--heading-color); --muted:#9aa3b2; --line:#1f2937}
     #impact .wrap{max-width:1160px; margin:0 auto}
     #impact h2{text-align:center; font-family:'Spectral',serif; font-weight:800; font-size:clamp(28px,3.3vw,40px); color:var(--text); margin:0}
@@ -416,6 +416,22 @@
 
   <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
   <link rel="stylesheet" href="site-header.css?v=20260730-1">
+<style id="a11y-fixes">
+  /* Visible keyboard focus (WCAG 2.4.7). Blue on light surfaces, light blue in dark mode,
+     gold on the dark header, nav, footer and bottom tabs. Hover styles are unchanged. */
+  :root{ --a11y-focus:#29539b; }
+  .dark{ --a11y-focus:#60a5fa; }
+  header.site-header, nav.site-nav, nav.main-nav, footer, .bottom-tabs{ --a11y-focus:#fbbf24; }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible,
+  textarea:focus-visible, summary:focus-visible, [tabindex]:not([tabindex="-1"]):focus-visible{
+    outline:2px solid var(--a11y-focus) !important;
+    outline-offset:2px !important;
+  }
+  /* Footer email link: readable on the navy footer and underlined so it is not
+     distinguished by color alone (WCAG 1.4.3, 1.4.1) */
+  footer a[href]{ color:#a9c4f5 !important; text-decoration:underline; text-underline-offset:2px; }
+  footer a[href]:hover, footer a[href]:focus{ color:var(--accent-gold) !important; }
+</style>
 </head>
 <body>
   <a class="skip-link" href="#about" aria-label="Skip to main content">Skip to content</a>

@@ -66,7 +66,7 @@
       min-height: 100vh;
     }
     a { color: var(--accent); text-decoration: none; transition: color .2s, background .25s, box-shadow .25s; }
-    a:hover, a:focus { color: var(--accent-gold); outline: none; }
+    a:hover, a:focus { color: var(--accent-gold); }
 
     /* HEADER */
     header {
@@ -418,6 +418,30 @@ spacing:.02em; text-decoration:none; position:relative; isolation:isolate }
 space:nowrap;clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden}
 </style>
   <link rel="stylesheet" href="site-header.css?v=20260720-5">
+<style id="a11y-fixes">
+  /* Visible keyboard focus (WCAG 2.4.7). Blue on light surfaces, light blue in dark mode,
+     gold on the dark header, nav, footer and bottom tabs. Hover styles are unchanged. */
+  :root{ --a11y-focus:#29539b; }
+  .dark{ --a11y-focus:#60a5fa; }
+  header.site-header, nav.site-nav, nav.main-nav, footer, .bottom-tabs{ --a11y-focus:#fbbf24; }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible,
+  textarea:focus-visible, summary:focus-visible, [tabindex]:not([tabindex="-1"]):focus-visible{
+    outline:2px solid var(--a11y-focus) !important;
+    outline-offset:2px !important;
+  }
+  /* Footer email link: readable on the navy footer and underlined so it is not
+     distinguished by color alone (WCAG 1.4.3, 1.4.1) */
+  footer a[href]{ color:#a9c4f5 !important; text-decoration:underline; text-underline-offset:2px; }
+  footer a[href]:hover, footer a[href]:focus{ color:var(--accent-gold) !important; }
+  /* Phones: the fixed 220px logo plus the text column made each card wider than the
+     viewport. Let the grid track shrink and stack the card under 600px, like publications. */
+  @media (max-width: 900px){ .card-grid{ grid-template-columns:minmax(0,1fr); } }
+  @media (max-width: 600px){
+    .card{ flex-direction:column; align-items:stretch; }
+    .card img{ width:100%; max-width:220px; }
+    .card > div{ min-width:0; overflow-wrap:anywhere; }
+  }
+</style>
 </head>
 <body>
   <!-- Skip link for screen readers and keyboard users -->
