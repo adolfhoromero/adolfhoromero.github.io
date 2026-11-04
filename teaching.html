@@ -2677,6 +2677,9 @@ nav.main-nav a.cv-link {
   .tm-dot.pd{background:linear-gradient(180deg,#a78bfa,#7c3aed)}
   #teach-map{height:520px;border-radius:14px;overflow:hidden;touch-action:pan-y}
   /* Override Leaflet's internal touch-action:none so a single finger can still scroll the page */
+  #teach-map .tm-dark-tiles{filter:invert(1) hue-rotate(180deg) brightness(.95) contrast(.9) saturate(.6)}
+  #teach-map .leaflet-control-attribution{font-size:10px; background:rgba(255,255,255,.75)}
+  #teach-map .leaflet-control-attribution a{color:#2a4b7c}
   #teach-map .leaflet-container,
   #teach-map .leaflet-pane,
   #teach-map .leaflet-tile-pane,
@@ -3859,7 +3862,7 @@ footer a::after{ height:1.5px; background:var(--accent-gold-solid); }
       scrollWheelZoom: !isTouchDevice,
       dragging: !isTouchDevice,
       tap: false,
-      attributionControl: false
+      attributionControl: true
     }).setView([34.5,-92], 4);
     // ── Mobile scroll fix ──────────────────────────────────────────────
     // On touch devices, single-finger touch scrolls the page (dragging is
@@ -3902,8 +3905,8 @@ footer a::after{ height:1.5px; background:var(--accent-gold-solid); }
     }
     // ── End mobile scroll fix ──────────────────────────────────────────
 
-    const light = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png', { maxZoom:19 });
-    const dark  = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}.png', { maxZoom:19 });
+    const light = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom:19, attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors' });
+    const dark  = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom:19, className:'tm-dark-tiles', attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors' });
     // Determine whether dark mode should be used for the base map.  A custom
     // state (tmStyleState) can override automatic OS detection.  Possible
     // values for window.tmStyleState are 'auto', 'light', or 'dark'.
