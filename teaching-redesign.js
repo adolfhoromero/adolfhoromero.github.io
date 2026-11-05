@@ -8,6 +8,10 @@
 
   root.classList.add('js-tv3');
   root.classList.remove('dark'); // this page is always light
+  try {
+    new MutationObserver(function () { if (root.classList.contains('dark')) root.classList.remove('dark'); })
+      .observe(root, { attributes: true, attributeFilter: ['class'] });
+  } catch (e) {}
 
   /* Merge the header and the nav into one sticky bar */
   var header = document.querySelector('body > header.site-header');
@@ -70,14 +74,17 @@
   var hero = document.querySelector('.page-story');
   if (hero) {
     var h1 = hero.querySelector('h1');
-    if (h1 && h1.textContent.indexOf('imagine changing it.') > -1) {
-      h1.innerHTML = h1.innerHTML.replace('imagine changing it.', '<span class="tv3-shim">imagine changing it.</span>');
+    var shim = hero.getAttribute('data-shim') || 'imagine changing it.';
+    if (h1 && h1.textContent.indexOf(shim) > -1) {
+      h1.innerHTML = h1.innerHTML.replace(shim, '<span class="tv3-shim">' + shim + '</span>');
     }
     var sweep = document.createElement('div'); sweep.className = 'sweep'; sweep.setAttribute('aria-hidden', 'true');
     var sparks = document.createElement('div'); sparks.className = 'sparks'; sparks.setAttribute('aria-hidden', 'true');
     hero.insertBefore(sparks, hero.firstChild);
     hero.insertBefore(sweep, hero.firstChild);
     var words = ['Care', 'Dignity', 'Historical imagination', 'Critical dialogue', 'Oral history', 'Labor history', 'Community-based learning'];
+    var custom = hero.getAttribute('data-marquee');
+    if (custom) words = custom.split('|');
     var marq = document.createElement('div');
     marq.className = 'tv3-marq'; marq.setAttribute('aria-hidden', 'true');
     var track = '<div class="track">';

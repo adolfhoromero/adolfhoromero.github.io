@@ -748,8 +748,13 @@ footer a:hover, footer a:focus { color: var(--accent-gold); text-decoration: und
     .card a{ overflow-wrap:anywhere; }
   }
 </style>
+  <!-- 2026 redesign (scoped to body.teach-v3) -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta name="color-scheme" content="light only">
+  <link rel="stylesheet" href="teaching-redesign.css?v=20261105c">
+  <link rel="stylesheet" href="publications-redesign.css?v=20261105">
 </head>
-<body>
+<body class="teach-v3">
   <a class="skip-link" href="#main">Skip to content</a>
   <div id="progress-bar"></div>
 <!-- Calendly badge widget -->
@@ -788,7 +793,7 @@ footer a:hover, footer a:focus { color: var(--accent-gold); text-decoration: und
 <li><a aria-label="Open CV page" class="cv-link" href="cv.html">CV</a></li>
 </ul>
 </nav>
-<section class="page-story publications-story" aria-labelledby="publications-story-title">
+<section class="page-story publications-story" aria-labelledby="publications-story-title" data-shim="working-class power." data-marquee="Worker power|Labor studies|Migration|Oral history|Minimum wage|Farm labor|Workplace enforcement">
 <figure class="page-story__media" style="--story-position: center 55%">
 <img src="assets/page-stories/publications-reading-room-v2.webp" alt="An independent bookshop lined with shelves and tables of books" width="1440" height="1920" decoding="async">
 </figure>
@@ -982,8 +987,37 @@ Greer, I., Bateman, D., <b>Romero, A.</b>, Thian, W. L., &amp; Vidal, M. (2026).
 </div>
 </section>
 </main>
-<footer>
-    © 2026 Adolfho Romero · <a href="mailto:ar2539@cornell.edu">ar2539@cornell.edu</a>
+<footer class="tv3-foot">
+  <div class="fglow" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="fbig nm" id="tv3-fbig" aria-label="Adolfho Romero"><span>Adolfho</span> <span class="r">Romero</span></p>
+    <p class="ftag">PhD student, Cornell ILR · Global Labor and Work · worker power, migration, oral history, and teaching.</p>
+    <div class="fgrid">
+      <nav class="flinks" aria-label="Footer">
+        <a href="index.html"><i>01</i><span>Home</span></a>
+        <a href="research.html"><i>02</i><span>Research</span></a>
+        <a href="publications.html"><i>03</i><span>Publications</span></a>
+        <a href="teaching.html"><i>04</i><span>Teaching</span></a>
+        <a href="teaching-discussion-hub.html"><i>05</i><span>Discussion Hub</span></a>
+        <a href="media.html"><i>06</i><span>Media &amp; Public Engagement</span></a>
+      </nav>
+      <aside class="fside">
+        <a class="fcv" href="cv.html">View my CV <b aria-hidden="true">→</b></a>
+        <div class="fcard">
+          <small>Get in touch</small>
+          <a href="mailto:ar2539@cornell.edu">ar2539@cornell.edu</a>
+        </div>
+        <button class="totop" type="button" id="tv3-totop" aria-label="Back to top">
+          <svg viewBox="0 0 120 120" aria-hidden="true"><defs><path id="tv3ring" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><text><textPath href="#tv3ring" textLength="281" lengthAdjust="spacing">BACK TO TOP ✦ BACK TO TOP ✦ BACK</textPath></text></svg>
+          <span class="tarr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></span>
+        </button>
+      </aside>
+    </div>
+    <div class="fmeta">
+      <p>© 2026 Adolfho Romero</p>
+      <p>Personal academic website. It is not an official page of Cornell University or the ILR School.</p>
+    </div>
+  </div>
 </footer>
 <!-- Reveal cards on scroll -->
 <script>
@@ -1207,5 +1241,6 @@ Greer, I., Bateman, D., <b>Romero, A.</b>, Thian, W. L., &amp; Vidal, M. (2026).
       });
     })();
   </script>
+<script src="teaching-redesign.js?v=20261105c" defer></script>
 </body>
 </html>
