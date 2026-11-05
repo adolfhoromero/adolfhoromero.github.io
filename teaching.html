@@ -1013,10 +1013,10 @@
        classes assign the appropriate generated illustration as the card's
        background image. The images live alongside the HTML file in the
        repository and are loaded relative to this document. */
-    .card-afrlatx{ background-image:url('afrlatx-bg.png'); }
-    .card-laborhistory{ background-image:url('laborhistory-bg.png'); }
-    .card-machen{ background-image:url('machen-bg.png'); }
-    .card-spohp{ background-image:url('spohp-bg.png'); }
+    .card-afrlatx{ background-image:url('assets/teaching/afrlatx-bg.webp'); }
+    .card-laborhistory{ background-image:url('assets/teaching/laborhistory-bg.webp'); }
+    .card-machen{ background-image:url('assets/teaching/machen-bg.webp'); }
+    .card-spohp{ background-image:url('assets/teaching/spohp-bg.webp'); }
 
     /* When cards use photographic backgrounds, override some text colours
        to ensure sufficient contrast. Highlight course titles using the
@@ -3560,9 +3560,12 @@ footer a::after{ height:1.5px; background:var(--accent-gold-solid); }
     outline-offset:2px !important;
   }
 </style>
+  <!-- 2026 redesign (scoped to body.teach-v3) -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="teaching-redesign.css?v=20261105b">
 </head>
 
-<body>
+<body class="teach-v3">
   <div id="progress-bar"></div>
 <header class="site-header">
     <button class="dark-toggle" tabindex="0" aria-pressed="false" aria-label="Toggle dark mode" title="Toggle dark mode">
@@ -3611,13 +3614,28 @@ footer a::after{ height:1.5px; background:var(--accent-gold-solid); }
     </div>
   </section>
 <main id="main">
+  <!-- In the classroom and the field (2026 redesign) -->
+  <section id="teaching-in-practice" class="tv3-gallery scroll-reveal" aria-labelledby="tv3-gal-title">
+    <h2 id="tv3-gal-title">In the classroom and the field</h2>
+    <p class="mt-note">Workshops, field programs, and community work that shape how I teach.</p>
+    <div class="tv3-grid">
+      <figure class="g1"><img src="assets/fieldwork/mississippi-leadership-professional.webp" alt="Adolfho Romero briefing participants during a week-long field program" width="1400" height="875" loading="lazy" decoding="async"><figcaption>Briefing participants during a week-long field program</figcaption></figure>
+      <figure class="g2"><img src="assets/fieldwork/emmett-till-fieldwork.webp" alt="Field program participants gathered at an Emmett Till memorial site in the Mississippi Delta" width="900" height="720" loading="lazy" decoding="async"><figcaption>Emmett Till memorial site, Mississippi Delta</figcaption></figure>
+      <figure class="g3"><img src="assets/fieldwork/malta-migration-school.webp" alt="Participants in the Cornell and Queen Mary Global Migration Spring School in Gozo, Malta" width="900" height="720" loading="lazy" decoding="async"><figcaption>Global Migration Spring School, Gozo, Malta</figcaption></figure>
+      <figure class="g4"><img src="assets/training/ut-austin-ethnography-wide.webp" alt="A research workshop at the UT Austin Urban Ethnography Lab" width="1024" height="768" loading="lazy" decoding="async"><figcaption>Urban Ethnography Lab workshop, UT Austin</figcaption></figure>
+      <figure class="g5"><img src="assets/fieldwork/labor-community.webp" alt="Adolfho Romero with a community member during a food giveaway in Ithaca, New York" width="900" height="720" loading="lazy" decoding="async"><figcaption>Community food giveaway, Ithaca</figcaption></figure>
+      <figure class="g6"><img src="assets/updates/minwage-team-2026.jpg" alt="Adolfho Romero with members of the ILR Co-Lab minimum wage research team at the Tompkins County Public Library" width="665" height="520" loading="lazy" decoding="async"><figcaption>ILR Co-Lab minimum wage research team</figcaption></figure>
+    </div>
+  </section>
+
+
   <!-- ENHANCED PHILOSOPHY SECTION -->
   <section id="teaching-philosophy" class="scroll-reveal">
     <h2>Teaching Philosophy</h2>
 
     <div class="photo-gallery philosophy-photos">
       <figure>
-        <img src="class.jpeg" alt="Adolfho Romero presenting at a conference">
+        <img src="assets/teaching/class-workshop.webp" alt="Adolfho Romero presenting at a conference" loading="lazy" decoding="async">
         <figcaption>Hands‑on workshop training session</figcaption>
       </figure>
       <figure>
@@ -3676,7 +3694,7 @@ footer a::after{ height:1.5px; background:var(--accent-gold-solid); }
     <div class="mt-grid">
       <figure class="mt-fig" data-mt="migrations" tabindex="0" aria-label="View Migration Spring School certificate">
         <!-- Use relative paths so images resolve correctly on GitHub Pages or in subfolders -->
-        <img src="migrations.jpeg"
+        <img src="assets/teaching/migrations-certificate.webp"
              alt="Migration Spring School certificate. Cornell and Queen Mary. Malta 2025."
              loading="lazy">
         <figcaption>
@@ -3738,7 +3756,7 @@ footer a::after{ height:1.5px; background:var(--accent-gold-solid); }
     const MT_DATA = {
       migrations: {
         // Use relative paths and more descriptive captions to ensure correct loading
-        src: 'migrations.jpeg',
+        src: 'assets/teaching/migrations-certificate.webp',
         caption: 'Migration Spring School – QMUL & Cornell, Gozo, Malta 2025.',
         download: 'migrations.jpeg'
       },
@@ -4533,8 +4551,37 @@ footer a::after{ height:1.5px; background:var(--accent-gold-solid); }
 
 </main>
 
-<footer>
-  © 2026 Adolfho Romero · <a href="mailto:ar2539@cornell.edu">ar2539@cornell.edu</a>
+<footer class="tv3-foot">
+  <div class="fglow" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="fbig nm" id="tv3-fbig" aria-label="Adolfho Romero"><span>Adolfho</span> <span class="r">Romero</span></p>
+    <p class="ftag">PhD student, Cornell ILR · Global Labor and Work · worker power, migration, oral history, and teaching.</p>
+    <div class="fgrid">
+      <nav class="flinks" aria-label="Footer">
+        <a href="index.html"><i>01</i><span>Home</span></a>
+        <a href="research.html"><i>02</i><span>Research</span></a>
+        <a href="publications.html"><i>03</i><span>Publications</span></a>
+        <a href="teaching.html"><i>04</i><span>Teaching</span></a>
+        <a href="teaching-discussion-hub.html"><i>05</i><span>Discussion Hub</span></a>
+        <a href="media.html"><i>06</i><span>Media &amp; Public Engagement</span></a>
+      </nav>
+      <aside class="fside">
+        <a class="fcv" href="cv.html">View my CV <b aria-hidden="true">→</b></a>
+        <div class="fcard">
+          <small>Get in touch</small>
+          <a href="mailto:ar2539@cornell.edu">ar2539@cornell.edu</a>
+        </div>
+        <button class="totop" type="button" id="tv3-totop" aria-label="Back to top">
+          <svg viewBox="0 0 120 120" aria-hidden="true"><defs><path id="tv3ring" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><text><textPath href="#tv3ring" textLength="281" lengthAdjust="spacing">BACK TO TOP ✦ BACK TO TOP ✦ BACK</textPath></text></svg>
+          <span class="tarr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></span>
+        </button>
+      </aside>
+    </div>
+    <div class="fmeta">
+      <p>© 2026 Adolfho Romero</p>
+      <p>Personal academic website. It is not an official page of Cornell University or the ILR School.</p>
+    </div>
+  </div>
 </footer>
 
 <script>
@@ -4836,5 +4883,6 @@ footer a::after{ height:1.5px; background:var(--accent-gold-solid); }
       });
     })();
   </script>
+  <script src="teaching-redesign.js?v=20261105" defer></script>
 </body>
 </html>
