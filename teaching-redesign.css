@@ -823,3 +823,18 @@ body.teach-v3 .tv3-grid .g6 { grid-column: 9 / 13; grid-row: 3; }
   .tv3-foot .flinks a { font-size: 1.25rem; }
 }
 body.teach-v3 .tv3-foot .fcard, body.teach-v3 .tv3-foot .fcv { border-radius: 14px !important; }
+
+/* Hero: more compact */
+body.teach-v3 .page-story { min-height: min(62svh, 560px); }
+body.teach-v3 .page-story__copy { padding-top: clamp(40px, 7vh, 72px) !important; padding-bottom: clamp(32px, 5vh, 52px) !important; }
+body.teach-v3 .page-story h1 { font-size: clamp(1.9rem, 4vw, 3.4rem) !important; margin-bottom: 18px !important; }
+body.teach-v3 .page-story__copy p:not(.page-story__eyebrow) { font-size: clamp(1rem, 1.35vw, 1.18rem) !important; }
+body.teach-v3 .page-story__copy > * { max-width: 42rem; }
+
+/* Marquee: Cornell Carnelian band, tinted words, white stars */
+body.teach-v3 .tv3-marq { background: var(--carnelian) !important; color: #fff !important; border-block: 0 !important; padding: 15px 0 !important; }
+body.teach-v3 .tv3-marq span { color: #fff; }
+body.teach-v3 .tv3-marq span:nth-child(3n+2) { color: #ffd6d6; }
+body.teach-v3 .tv3-marq span:nth-child(3n) { color: #fff; text-shadow: 0 0 0 #fff; }
+body.teach-v3 .tv3-marq span::after { color: #fff !important; opacity: .75; }
+body.teach-v3 .tv3-marq span:nth-child(3n+2)::after { color: #ffd6d6 !important; }
