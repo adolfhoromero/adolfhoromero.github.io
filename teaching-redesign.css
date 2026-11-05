@@ -1,27 +1,34 @@
 /*
- * Teaching page redesign (2026)
- * -----------------------------
+ * Teaching page redesign (2026), aligned with the Cornell ILR visual style
+ * ------------------------------------------------------------------------
  * Loaded last on teaching.html and scoped to body.teach-v3, so no other page
- * is affected. Palette: white / ink #222 / Carnelian #b31b1b with an ember to
- * gold shimmer. Display type: Open Sans ExtraBold caps (stand-in for ILR
- * Replica). Body copy keeps the page's existing Poppins.
+ * is affected.
+ *  - Palette: white, ink #222, Carnelian #b31b1b. No gradients, no blue or gold.
+ *  - Type: Open Sans ExtraBold caps for display (stand-in for ILR Replica) and
+ *    Roboto for text (stand-in for Futura). No shadows on type.
+ *  - Square corners, thin rules, no large color fields.
+ *  - Motion is limited to parallax, letter lift, reveal and a slow marquee, and
+ *    all of it stops under prefers-reduced-motion.
+ *  - The ILR logo and open frame are not used.
  */
 body.teach-v3 {
   --ink: #222222;
   --muted: #55524d;
   --line: #e3ded6;
   --carnelian: #b31b1b;
-  --ember: #e2432d;
-  --gold: #f2a63b;
-  --shimmer: linear-gradient(100deg, #b31b1b 0%, #e2432d 28%, #f2a63b 50%, #e2432d 72%, #b31b1b 100%);
-  --shimmer-light: linear-gradient(100deg, #ffb23f 0%, #ffe08a 25%, #ff7a4d 50%, #ffe08a 75%, #ffb23f 100%);
+  --ember: #b31b1b;
+  --gold: #ffffff;
+  --shimmer: linear-gradient(#b31b1b, #b31b1b);
+  --shimmer-light: linear-gradient(#ffffff, #ffffff);
   --display: 'Open Sans', 'Arial Black', Arial, sans-serif;
-  --accent: linear-gradient(135deg, #b31b1b 0%, #e2432d 100%);
+  --font-body: 'Roboto', Arial, sans-serif;
+  --font-heading: 'Open Sans', 'Arial Black', Arial, sans-serif;
+  --accent: #b31b1b;
   --accent-solid: #b31b1b;
   --card-border: #b31b1b;
-  --accent-bright: #e2432d;
-  --accent-gold: linear-gradient(135deg, #f2a63b 0%, #e2432d 100%);
-  --accent-gold-solid: #f2a63b;
+  --accent-bright: #b31b1b;
+  --accent-gold: #b31b1b;
+  --accent-gold-solid: #b31b1b;
   --text-main: #222222;
   --text-secondary: #55524d;
   background: #ffffff !important;
@@ -46,7 +53,7 @@ body.teach-v3 .dark-toggle { display: none !important; }
 
 /* ───────────── Progress bar ───────────── */
 body.teach-v3 > #progress-bar {
-  background: linear-gradient(90deg, #b31b1b, #e2432d, #f2a63b) !important;
+  background: #b31b1b !important;
 }
 
 /* ───────────── Top bar (header + nav merged by JS) ───────────── */
@@ -600,3 +607,119 @@ body.teach-v3 summary, body.teach-v3 .visible-items, body.teach-v3 [class*="visi
 body.teach-v3 .section, body.teach-v3 #methods-training { border-left-color: var(--carnelian) !important; }
 body.teach-v3 #teach-map-title { font-size: clamp(1.2rem, 2.4vw, 1.7rem) !important; }
 body.teach-v3 #teach-map-title::after { width: 64px !important; height: 5px !important; }
+
+
+/* ───────────── ILR alignment pass ───────────── */
+/* Roboto for text; headings keep Open Sans ExtraBold caps */
+body.teach-v3 { font-family: 'Roboto', Arial, sans-serif !important; }
+body.teach-v3 :where(p, li, a, button, input, select, textarea, label, figcaption, summary, td, th, blockquote, small, strong, em, dd, dt) {
+  font-family: 'Roboto', Arial, sans-serif;
+}
+body.teach-v3 :where(h1, h2, h3, h4, h5, h6, .card-header, .card-header span, .year-heading, .mt-title, .tm-title) {
+  font-family: var(--display) !important;
+}
+body.teach-v3 :where(h3, h4, h5, h6) { font-weight: 800; text-transform: uppercase; letter-spacing: .01em; }
+
+/* Flat marks instead of shimmer */
+body.teach-v3 *,
+body.teach-v3 *::before,
+body.teach-v3 *::after { text-shadow: none !important; }
+body.teach-v3 main h2::after,
+body.teach-v3 .mt-title::after,
+body.teach-v3 .tm-title::after,
+body.teach-v3 #teach-map-title::after { height: 4px !important; background: var(--carnelian) !important; animation: none !important; }
+body.teach-v3 .year-heading::before { height: 4px !important; background: var(--carnelian) !important; animation: none !important; }
+body.teach-v3 .tv3-top > nav.main-nav a::after { height: 3px !important; background: var(--carnelian) !important; animation: none !important; }
+body.teach-v3 .tv3-top > nav.main-nav a:hover::after,
+body.teach-v3 .tv3-top > nav.main-nav a[aria-current="page"]::after { animation: none !important; }
+body.teach-v3 .tv3-top > nav.main-nav a.cv-link,
+body.teach-v3 .tv3-top > nav.main-nav a.cv-link[aria-current="page"] {
+  background: var(--carnelian) !important; animation: none !important; border-radius: 0 !important;
+}
+body.teach-v3 .tv3-top > nav.main-nav a.cv-link:hover { background: #8f1414 !important; transform: translateY(-2px); }
+body.teach-v3 .tv3-top .site-title .tv3-last .ch,
+body.teach-v3 .tv3-top .site-title:hover .tv3-last .ch { color: var(--carnelian); }
+
+/* Hero: photo with a plain dark scrim, white type, one flat accent */
+body.teach-v3 .page-story .sweep,
+body.teach-v3 .page-story .sparks { display: none !important; }
+body.teach-v3 .page-story::before {
+  background: linear-gradient(90deg, rgba(20, 16, 16, .78) 0%, rgba(20, 16, 16, .48) 55%, rgba(20, 16, 16, .18) 100%);
+}
+body.teach-v3 .page-story__eyebrow::before { color: #fff; }
+body.teach-v3 .page-story h1 .tv3-shim {
+  background: none; animation: none;
+  -webkit-text-fill-color: #fff; color: #fff;
+  text-decoration: underline; text-decoration-color: var(--carnelian);
+  text-decoration-thickness: .09em; text-underline-offset: .1em; text-decoration-skip-ink: none;
+}
+body.teach-v3 .page-story__tags a {
+  border-radius: 0 !important;
+  background: transparent !important;
+  border: 2px solid #fff !important;
+  -webkit-backdrop-filter: none; backdrop-filter: none;
+}
+body.teach-v3 .page-story__tags a:hover { background: #fff !important; color: var(--carnelian) !important; }
+
+/* Marquee: thin typographic band on white, not a color field */
+body.teach-v3 .tv3-marq {
+  background: #fff; color: var(--ink);
+  border-block: 2px solid var(--ink);
+  padding: 12px 0;
+}
+body.teach-v3 .tv3-marq span::after { color: var(--carnelian); }
+
+/* Square corners, thin rules, no drop shadows */
+body.teach-v3 .card-toggle,
+body.teach-v3 .card-teaching button,
+body.teach-v3 .feedback-nav,
+body.teach-v3 .teachmap-wrap [class*="chip"],
+body.teach-v3 .teachmap-wrap button,
+body.teach-v3 .teachmap-wrap input,
+body.teach-v3 .teachmap-wrap select,
+body.teach-v3 .tv3-foot .totop,
+body.teach-v3 .philosophy-point > i,
+body.teach-v3 .philosophy-point i[class*="fa"],
+body.teach-v3 .bottom-tabs,
+body.teach-v3 .section,
+body.teach-v3 .mt-card,
+body.teach-v3 [class*="card"] { border-radius: 0 !important; }
+body.teach-v3 .philosophy-banner,
+body.teach-v3 .philosophy-point,
+body.teach-v3 .feedback-item,
+body.teach-v3 .mt-card,
+body.teach-v3 .teachmap-wrap,
+body.teach-v3 .section,
+body.teach-v3 .bottom-tabs { box-shadow: none !important; }
+body.teach-v3 .philosophy-point:hover { box-shadow: none !important; border-color: var(--carnelian) !important; }
+body.teach-v3 .philosophy-point > i,
+body.teach-v3 .philosophy-point i[class*="fa"] { background: #f6eceb !important; }
+body.teach-v3 .photo-gallery figure { box-shadow: none !important; }
+body.teach-v3 .feedback-nav:hover { background: var(--carnelian) !important; border-color: var(--carnelian) !important; }
+
+/* Course cards: white type on the artwork, flat underlined links */
+body.teach-v3 .card-teaching .card-header,
+body.teach-v3 .card-teaching .card-header span,
+body.teach-v3 .card-teaching h3,
+body.teach-v3 .card-teaching h4 { color: #fff !important; }
+body.teach-v3 .card-teaching a { color: #fff !important; text-decoration: underline !important; text-underline-offset: 3px; }
+body.teach-v3 .card-teaching { border: 1px solid var(--ink) !important; box-shadow: none !important; }
+body.teach-v3 .card-toggle, body.teach-v3 .card-teaching button { background: rgba(0, 0, 0, .35) !important; border: 1.5px solid #fff !important; color: #fff !important; }
+
+/* Footer: flat fill on hover, square back-to-top */
+.tv3-foot .fglow { display: none; }
+.tv3-foot .fbig .ch:hover { background: none; -webkit-text-fill-color: var(--carnelian); color: var(--carnelian); }
+.tv3-foot .flinks a { background: linear-gradient(var(--carnelian), var(--carnelian)) left bottom / 0 3px no-repeat; }
+.tv3-foot .flinks a:hover { background-size: 100% 3px; }
+body.teach-v3 .tv3-foot .fbig { font-family: var(--display) !important; }
+body.teach-v3 .tv3-foot .totop { border-radius: 0 !important; }
+body.teach-v3 .tv3-top .site-title,
+body.teach-v3 .tv3-marq span { font-family: var(--display) !important; }
+body.teach-v3 .tv3-top > nav.main-nav a { font-family: 'Roboto', Arial, sans-serif !important; }
+
+/* Square everything inside the page body (map internals keep their own shapes) */
+body.teach-v3 main *:not([class*="leaflet"]):not([class*="marker"]) { border-radius: 0 !important; }
+body.teach-v3 main [class*="card"],
+body.teach-v3 main figure,
+body.teach-v3 main details { box-shadow: none !important; }
+body.teach-v3 #teach-map-title { margin: 0 0 1rem !important; }

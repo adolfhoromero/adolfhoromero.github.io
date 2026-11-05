@@ -66,7 +66,7 @@
     reveal(title, 150);
   }
 
-  /* Hero: shimmer phrase, sweep, sparkles, parallax, marquee */
+  /* Hero: emphasized phrase, parallax, marquee */
   var hero = document.querySelector('.page-story');
   if (hero) {
     var h1 = hero.querySelector('h1');
@@ -77,18 +77,6 @@
     var sparks = document.createElement('div'); sparks.className = 'sparks'; sparks.setAttribute('aria-hidden', 'true');
     hero.insertBefore(sparks, hero.firstChild);
     hero.insertBefore(sweep, hero.firstChild);
-    if (!reduce) {
-      for (var q = 0; q < 14; q++) {
-        var f = document.createElement('span');
-        f.className = 'fl'; f.textContent = '✦';
-        f.style.left = (Math.random() * 100).toFixed(1) + '%';
-        f.style.fontSize = (10 + Math.random() * 18).toFixed(0) + 'px';
-        f.style.animationDuration = (9 + Math.random() * 10).toFixed(1) + 's';
-        f.style.animationDelay = (-Math.random() * 16).toFixed(1) + 's';
-        f.style.setProperty('--dx', ((Math.random() - .5) * 120).toFixed(0) + 'px');
-        sparks.appendChild(f);
-      }
-    }
     var words = ['Care', 'Dignity', 'Historical imagination', 'Critical dialogue', 'Oral history', 'Labor history', 'Community-based learning'];
     var marq = document.createElement('div');
     marq.className = 'tv3-marq'; marq.setAttribute('aria-hidden', 'true');
