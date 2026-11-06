@@ -930,3 +930,16 @@ html.soft body.teach-v3 img, html.soft body.teach-v3 video { filter: saturate(1.
 
 /* Safety net: tab-bar icons can never blow up, whatever else is or isn't loaded */
 .bottom-tabs svg, .bottom-tabs .ico { width: 22px !important; height: 22px !important; max-width: 28px; max-height: 28px; }
+
+/* Photo parallax. Uses the individual translate/scale properties so hover transforms still work. */
+img.par-img { translate: 0 var(--pp, 0px); scale: 1.14; will-change: translate; }
+@media (prefers-reduced-motion: reduce) { img.par-img { translate: none; scale: 1; } }
+
+/* Soft mode: lighter dim, and brighter, crisper text on photos and the red marquee */
+html.soft body.teach-v3::after { background: rgba(92, 62, 36, .12); }
+html.soft body.teach-v3 .page-story__copy, html.soft body.teach-v3 .page-story__copy h1, html.soft body.teach-v3 .page-story__copy p, html.soft body.teach-v3 .page-story__eyebrow, html.soft body.teach-v3 .page-story__tags a { color: #fff !important; text-shadow: 0 2px 18px rgba(0,0,0,.7), 0 1px 3px rgba(0,0,0,.6); }
+html.soft body.teach-v3 .page-story__copy p:not(.page-story__eyebrow) { font-weight: 500; }
+html.soft body.teach-v3 .tv3-marq, html.soft body.teach-v3 .tv3-marq * { color: #fff !important; }
+html.soft body.teach-v3 .page-story::before { background: linear-gradient(90deg, rgba(10,6,4,.78) 0%, rgba(10,6,4,.5) 45%, rgba(10,6,4,0) 78%) !important; }
+.par-wrap { display: block; overflow: hidden; border-radius: inherit; }
+.par-wrap > img { max-width: none; width: 100%; }

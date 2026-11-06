@@ -149,6 +149,30 @@
   window.addEventListener('scroll', function () { if (!ft) { ft = true; requestAnimationFrame(fabFrame); } }, { passive: true });
   fabFrame();
 
+  /* Photo parallax: images drift gently inside their frames as you scroll */
+  var pimgs = [].slice.call(document.querySelectorAll('main :is(.v4-trio, .v4-art, .convening-gallery, .activity-media, .archive-card, .about-image, .mt-fig, .v4-cert, .quote-media) img'));
+  pimgs.forEach(function (im) {
+    var w = document.createElement('span'); w.className = 'par-wrap';
+    im.parentNode.insertBefore(w, im); w.appendChild(im); im.classList.add('par-img');
+  });
+  var pt = false;
+  function parFrame() {
+    pt = false;
+    if (reduce) return;
+    var vh = window.innerHeight;
+    pimgs.forEach(function (im) {
+      var r = im.getBoundingClientRect();
+      if (r.bottom < -80 || r.top > vh + 80) return;
+      var d = ((r.top + r.height / 2) - vh / 2) / vh;
+      im.style.setProperty('--pp', Math.max(-1, Math.min(1, d)) * -22 + 'px');
+    });
+  }
+  if (pimgs.length && !reduce) {
+    window.addEventListener('scroll', function () { if (!pt) { pt = true; requestAnimationFrame(parFrame); } }, { passive: true });
+    window.addEventListener('resize', parFrame);
+    parFrame();
+  }
+
   /* Parallax for the hero photo */
   var media = hero && hero.querySelector('.page-story__media');
   var ticking = false;
