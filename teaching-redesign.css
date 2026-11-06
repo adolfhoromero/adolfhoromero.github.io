@@ -927,3 +927,6 @@ html.soft body.teach-v3 img, html.soft body.teach-v3 video { filter: saturate(1.
 .tv3-mode:hover .tv3-mode__tip, .tv3-mode:focus-visible .tv3-mode__tip { opacity: 1; transform: none; }
 .tv3-fab { bottom: calc(max(22px, env(safe-area-inset-bottom, 0px)) + 62px); }
 @media (max-width: 900px) { .tv3-mode { bottom: calc(86px + env(safe-area-inset-bottom, 0px)); } .tv3-fab { bottom: calc(148px + env(safe-area-inset-bottom, 0px)); } }
+
+/* Safety net: tab-bar icons can never blow up, whatever else is or isn't loaded */
+.bottom-tabs svg, .bottom-tabs .ico { width: 22px !important; height: 22px !important; max-width: 28px; max-height: 28px; }
