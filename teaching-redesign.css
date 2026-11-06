@@ -889,3 +889,30 @@ body.teach-v3 .mt-fig figcaption { padding: 14px 18px 16px; }
 body.teach-v3 .mt-fig strong { font-family: var(--display); font-weight: 800; letter-spacing: .01em; color: var(--ink); }
 body.teach-v3 .pdf-shell { background: #fff !important; box-shadow: none !important; border: 1.5px solid var(--line) !important; border-radius: 16px !important; }
 body.teach-v3 .pdf-shell + a, body.teach-v3 .pdf-shell ~ .btn, body.teach-v3 a[href$=".pdf"].btn { box-shadow: none !important; }
+
+/* Back to top v2: no spinning ring. A quiet footer link plus a floating button whose ring fills as you scroll. */
+.tv3-foot .totop { width: auto !important; height: auto !important; padding: 14px 22px; display: inline-flex !important; align-items: center; gap: 10px; border-radius: 14px !important; border-width: 1.5px; }
+.tv3-foot .totop > svg { display: none !important; animation: none !important; }
+.tv3-foot .totop::before { content: "Back to top"; font: 800 .9rem var(--display, 'Open Sans', Arial, sans-serif); letter-spacing: .08em; text-transform: uppercase; }
+.tv3-foot .tarr { display: inline-grid; order: 2; }
+.tv3-foot .tarr svg { width: 18px; height: 18px; }
+.tv3-foot .totop:hover { transform: translateY(-3px); }
+.tv3-fab { position: fixed; right: max(18px, env(safe-area-inset-right, 0px)); bottom: max(22px, env(safe-area-inset-bottom, 0px)); z-index: 60; width: 56px; height: 56px; padding: 0; border: 0; background: #fff; color: #222; border-radius: 50% !important; box-shadow: 0 6px 22px rgba(0,0,0,.18); cursor: pointer; display: grid; place-items: center; opacity: 0; transform: translateY(14px) scale(.9); pointer-events: none; transition: opacity .3s, transform .35s cubic-bezier(.2,.7,.2,1), background .25s, color .25s; }
+.tv3-fab.show { opacity: 1; transform: none; pointer-events: auto; }
+.tv3-fab:hover { background: #b31b1b; color: #fff; }
+.tv3-fab svg { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); }
+.tv3-fab circle { fill: none; stroke-width: 3; }
+.tv3-fab .bg { stroke: #e3e0da; }
+.tv3-fab .fg { stroke: #b31b1b; stroke-linecap: round; stroke-dasharray: 150.8; stroke-dashoffset: 150.8; }
+.tv3-fab:hover .bg { stroke: rgba(255,255,255,.35); } .tv3-fab:hover .fg { stroke: #fff; }
+.tv3-fab .arr { position: relative; width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; transform: none; inset: auto; }
+@media (max-width: 900px) { .tv3-fab { bottom: calc(86px + env(safe-area-inset-bottom, 0px)); } }
+
+/* Bottom tabs base layout (phones only). Pages that dropped their old inline styles rely on this. */
+body.teach-v3 .bottom-tabs { display: none; }
+@media (max-width: 820px) {
+  body.teach-v3 .bottom-tabs { display: block; position: fixed; left: 8px; right: 8px; bottom: calc(8px + env(safe-area-inset-bottom, 0px)); height: 64px; z-index: 2147483000; }
+  body.teach-v3 .tabs-row { display: grid; grid-template-columns: repeat(7, 1fr); height: 100%; }
+  body.teach-v3 .tab-link { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; font: 700 .66rem 'Roboto', Arial, sans-serif; text-decoration: none; min-width: 0; }
+  body.teach-v3 .tab-link .ico { width: 21px; height: 21px; }
+}

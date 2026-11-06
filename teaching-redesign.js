@@ -107,6 +107,24 @@
   var top = document.getElementById('tv3-totop');
   if (top) top.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); });
 
+  /* Floating back-to-top with a scroll-progress ring */
+  var fab = document.createElement('button');
+  fab.type = 'button'; fab.className = 'tv3-fab'; fab.setAttribute('aria-label', 'Back to top');
+  fab.innerHTML = '<svg viewBox="0 0 56 56" aria-hidden="true"><circle class="bg" cx="28" cy="28" r="24"/><circle class="fg" cx="28" cy="28" r="24"/></svg><svg class="arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>';
+  document.body.appendChild(fab);
+  var fg = fab.querySelector('.fg');
+  fab.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); });
+  var ft = false;
+  function fabFrame() {
+    ft = false;
+    var h = Math.max(1, root.scrollHeight - window.innerHeight), y = window.pageYOffset || root.scrollTop;
+    var fo = document.querySelector('.tv3-foot'), inFoot = fo && fo.getBoundingClientRect().top < window.innerHeight - 80;
+    fab.classList.toggle('show', y > 700 && !inFoot);
+    fg.style.strokeDashoffset = (150.8 * (1 - Math.min(1, y / h))).toFixed(1);
+  }
+  window.addEventListener('scroll', function () { if (!ft) { ft = true; requestAnimationFrame(fabFrame); } }, { passive: true });
+  fabFrame();
+
   /* Parallax for the hero photo */
   var media = hero && hero.querySelector('.page-story__media');
   var ticking = false;
