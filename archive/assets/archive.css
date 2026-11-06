@@ -1,8 +1,8 @@
 /* Labor Archive — shared styles for /archive/ pages.
    Builds on the site tokens (Spectral + Poppins, blue/gold) used across adolfhoromero.com. */
 :root{
-  --bg:#fff; --surface:#fff; --sunk:#f6f3f1; --ink:#222; --text:#2d2d2d; --muted:#5f5a57;
-  --line:#e4dfdc; --accent:#b31b1b; --accent-ink:#fff; --gold:#b31b1b; --focus:#b31b1b;
+  --bg:#fff; --surface:#fff; --sunk:#f6f3f1; --ink:#222; --text:#2d2d2d; --muted:#5c5c5c;
+  --line:#e6e6e6; --accent:#b31b1b; --accent-ink:#fff; --gold:#b31b1b; --focus:#b31b1b;
   --mark:#fbd9d0; --warn-bg:#fdf2ef; --warn-line:#e9b3a8;
   --read:'Roboto',Arial,sans-serif; --ui:'Roboto',Arial,sans-serif; --disp:'Open Sans',Arial,sans-serif;
   --radius:14px; --wrap:1220px;

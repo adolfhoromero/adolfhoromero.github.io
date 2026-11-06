@@ -918,7 +918,7 @@ body.teach-v3 .bottom-tabs { display: none; }
 }
 
 /* Soft mode: for people on dark settings. A warm, low-glare dim over the bright design. Colors stay visible; nothing goes black. */
-html.soft body.teach-v3::after { content: ""; position: fixed; inset: 0; z-index: 2147483000; pointer-events: none; background: rgba(92, 62, 36, .17); mix-blend-mode: multiply; }
+html.soft body.teach-v3::after { content: ""; position: fixed; inset: 0; z-index: 2147483000; pointer-events: none; background: transparent;  }
 html.soft body.teach-v3 img, html.soft body.teach-v3 video { filter: saturate(1.08) contrast(1.02); }
 .tv3-mode { position: fixed; right: max(18px, env(safe-area-inset-right, 0px)); bottom: max(22px, env(safe-area-inset-bottom, 0px)); z-index: 61; width: 48px; height: 48px; padding: 0; display: grid; place-items: center; border: 1.5px solid #222; border-radius: 50% !important; background: #fff; color: #222; cursor: pointer; box-shadow: 0 6px 18px rgba(0,0,0,.14); transition: background .25s, color .25s, border-color .25s; }
 .tv3-mode:hover, .tv3-mode[aria-pressed="true"] { background: #222; color: #fff; }
@@ -936,7 +936,7 @@ img.par-img { translate: 0 var(--pp, 0px); scale: 1.14; will-change: translate; 
 @media (prefers-reduced-motion: reduce) { img.par-img { translate: none; scale: 1; } }
 
 /* Soft mode: lighter dim, and brighter, crisper text on photos and the red marquee */
-html.soft body.teach-v3::after { background: rgba(92, 62, 36, .12); }
+html.soft body.teach-v3::after { background: transparent; }
 html.soft body.teach-v3 .page-story__copy, html.soft body.teach-v3 .page-story__copy h1, html.soft body.teach-v3 .page-story__copy p, html.soft body.teach-v3 .page-story__eyebrow, html.soft body.teach-v3 .page-story__tags a { color: #fff !important; text-shadow: 0 2px 18px rgba(0,0,0,.7), 0 1px 3px rgba(0,0,0,.6); }
 html.soft body.teach-v3 .page-story__copy p:not(.page-story__eyebrow) { font-weight: 500; }
 html.soft body.teach-v3 .tv3-marq, html.soft body.teach-v3 .tv3-marq * { color: #fff !important; }

@@ -1,5 +1,5 @@
 /* The Working Press in the Cornell ILR system */
-:root{--c:#b31b1b;--ink:#222;--ink-2:#3b3b3b;--ink-3:#5f5a57;--rule:#e4dfdc;--tint:#f7f3f1}
+:root{--c:#b31b1b;--ink:#222;--ink-2:#3b3b3b;--ink-3:#5c5c5c;--rule:#e6e6e6;--tint:#f6f6f6}
 body.wpress{background:#fff!important;color:#222;font-family:'Roboto',Arial,sans-serif;margin:0;line-height:1.6}
 body.wpress .wrap{max-width:1240px;margin:0 auto;padding:0 clamp(16px,3.4vw,40px)}
 body.wpress :is(h1,h2,h3){font-family:'Open Sans',Arial,sans-serif;font-weight:800;color:#222}
@@ -30,7 +30,7 @@ body.wpress .tl-track::before{display:none}
 body.wpress .tl-item{flex:0 0 210px;scroll-snap-align:start;display:flex;flex-direction:column;padding:0 0 14px;background:#fff;border:1.5px solid var(--rule);border-radius:18px;overflow:hidden;cursor:pointer;text-align:left;font-family:'Roboto',Arial,sans-serif;transition:transform .25s,box-shadow .25s,border-color .25s}
 body.wpress .tl-item:hover{transform:translateY(-5px);box-shadow:0 18px 34px rgba(34,34,34,.13)}
 body.wpress .tl-item.on{border-color:var(--c);box-shadow:0 0 0 3px rgba(179,27,27,.16)}
-body.wpress .tl-cover{position:static;transform:none;width:100%;height:150px;object-fit:cover;object-position:top;opacity:1;border:0;border-bottom:1px solid var(--rule);margin:0;background:#f1ece9}
+body.wpress .tl-cover{position:static;transform:none;width:100%;height:150px;object-fit:cover;object-position:top;opacity:1;border:0;border-bottom:1px solid var(--rule);margin:0;background:#f0f0f0}
 body.wpress .tl-item:hover .tl-cover,body.wpress .tl-item.on .tl-cover{transform:none}
 body.wpress .tl-dot{display:none}
 body.wpress .tl-vol{margin:12px 14px 0;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--c)}
@@ -54,7 +54,7 @@ body.wpress .fgo{align-self:flex-start;padding:8px 14px;border-radius:999px;back
 body.wpress .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:18px}
 body.wpress .pcard{position:relative;padding:8px 8px 12px;background:#fff;border:1.5px solid var(--rule);border-radius:16px;overflow:hidden;cursor:pointer;text-align:center;font-family:'Roboto',Arial,sans-serif;color:#222;transition:transform .25s,box-shadow .25s,border-color .25s}
 body.wpress .pcard:hover{transform:translateY(-5px);box-shadow:0 16px 30px rgba(34,34,34,.14);border-color:var(--c)}
-body.wpress .pcard img{width:100%;display:block;aspect-ratio:.78;object-fit:cover;object-position:top;border-radius:10px;background:#f1ece9;transition:transform .5s}
+body.wpress .pcard img{width:100%;display:block;aspect-ratio:.78;object-fit:cover;object-position:top;border-radius:10px;background:#f0f0f0;transition:transform .5s}
 body.wpress .pcard:hover img{transform:scale(1.04)}
 body.wpress .pcard .cap{margin-top:8px;font-size:.78rem;color:var(--ink-3)}
 body.wpress .pcard .folio{position:absolute;top:14px;left:14px;z-index:2;padding:3px 9px;border-radius:999px;background:var(--c);color:#fff;font-size:.68rem;font-weight:700}
@@ -64,7 +64,7 @@ body.wpress .res:hover{transform:translateX(4px);box-shadow:0 12px 26px rgba(34,
 body.wpress .rmeta{font-size:.74rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--c)}
 body.wpress .rsnip{margin-top:6px;font-size:1rem;line-height:1.55;color:#333}
 body.wpress mark{background:#fbd9d0;color:#222;padding:0 3px;border-radius:3px;font-weight:700}
-body.wpress .empty{padding:22px;border:1.5px dashed #d9d2ce;border-radius:14px;color:var(--ink-3)}
+body.wpress .empty{padding:22px;border:1.5px dashed #d9d9d9;border-radius:14px;color:var(--ink-3)}
 /* rights note */
 body.wpress .wp-note{padding:clamp(40px,5vw,64px) 0 0}
 body.wpress .wp-note .box{padding:22px 26px;border:1.5px solid var(--rule);border-left:5px solid var(--c);border-radius:0 18px 18px 0;background:var(--tint);font-size:.95rem;color:#3b3b3b;line-height:1.65}
@@ -107,7 +107,7 @@ body.wpress .wp-stat{margin:14px 0 18px!important;font-size:.82rem!important;fon
   body.wpress .rfoot span:first-child{display:none}
 }
 /* ---- split hero: image beside the words, never under them ---- */
-body.wpress .wp-hero{background:linear-gradient(180deg,#fff,#f7f3f1);padding:clamp(36px,6vw,80px) 0 clamp(44px,6vw,84px);overflow:hidden}
+body.wpress .wp-hero{background:linear-gradient(180deg,#fff,#f6f6f6);padding:clamp(36px,6vw,80px) 0 clamp(44px,6vw,84px);overflow:hidden}
 body.wpress .wp-hero__in{max-width:1240px;margin:0 auto;padding:0 clamp(16px,3.4vw,40px);display:grid;grid-template-columns:minmax(0,1.05fr) minmax(280px,.85fr);gap:clamp(32px,6vw,84px);align-items:center}
 body.wpress .wp-eyebrow{margin:0 0 16px;font:700 .8rem/1.3 'Roboto',Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--c)}
 body.wpress .wp-hero h1{margin:0 0 20px;font-size:clamp(2.8rem,6.4vw,5.4rem);line-height:.95;text-transform:uppercase;letter-spacing:-.02em}
@@ -172,7 +172,7 @@ body.wpress main.wrap{padding-bottom:0!important}
 /* story cards: picture on top, words below, nothing overlaps */
 body.wpress .fcard{min-height:0;background:#fff;border:1.5px solid var(--rule);color:#222}
 body.wpress .fcard:hover{box-shadow:0 18px 34px rgba(34,34,34,.14)}
-body.wpress .fmedia{position:relative;inset:auto;display:block;height:210px;overflow:hidden;background:#f1ece9;border-bottom:1px solid var(--rule)}
+body.wpress .fmedia{position:relative;inset:auto;display:block;height:210px;overflow:hidden;background:#f0f0f0;border-bottom:1px solid var(--rule)}
 body.wpress .fmedia::after{display:none}
 body.wpress .fmedia img{width:100%;height:100%;object-fit:cover;object-position:top}
 body.wpress .fcontent{position:static;flex:1;justify-content:flex-start;padding:16px 18px 18px;color:#222}
