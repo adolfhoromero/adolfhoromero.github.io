@@ -975,3 +975,15 @@ body.teach-v3 .tv3-foot .fside { align-content: start !important; grid-auto-rows
 body.teach-v3 .tv3-foot .fside > * { align-self: start !important; height: auto !important; min-height: 0 !important; max-height: 90px; }
 body.teach-v3 .tv3-foot .fside .totop { width: 100% !important; }
 body.teach-v3 .tv3-foot .wrap { min-height: 0 !important; }
+
+/* Header in Cornell Carnelian (#B31B1B) with white type */
+body.teach-v3 .tv3-top { background: #b31b1b !important; -webkit-backdrop-filter: none; backdrop-filter: none; border-bottom: 0 !important; box-shadow: 0 2px 14px rgba(0,0,0,.12); }
+body.teach-v3 .tv3-top .site-title, body.teach-v3 .tv3-top .site-title a, body.teach-v3 .tv3-top .site-title .ch,
+body.teach-v3 .tv3-top .site-title .tv3-last, body.teach-v3 .tv3-top .site-title .tv3-last .ch,
+body.teach-v3 .tv3-top .site-title:hover .ch, body.teach-v3 .tv3-top .site-title:hover .tv3-last .ch { color: #fff !important; }
+body.teach-v3 .tv3-top > nav.main-nav a, body.teach-v3 .tv3-top > nav.main-nav a[aria-current="page"] { color: #fff !important; }
+body.teach-v3 .tv3-top > nav.main-nav a:hover { color: #fff !important; }
+body.teach-v3 .tv3-top > nav.main-nav a::after { background: #fff !important; }
+body.teach-v3 .tv3-top > nav.main-nav a.cv-link, body.teach-v3 .tv3-top > nav.main-nav a.cv-link[aria-current="page"] { background: #fff !important; color: #b31b1b !important; }
+body.teach-v3 .tv3-top > nav.main-nav a.cv-link:hover { background: #f6f6f6 !important; color: #8f1414 !important; }
+body.teach-v3 .tv3-top .dark-toggle, body.teach-v3 .tv3-top button { color: #fff; }
