@@ -13,17 +13,17 @@
 <link rel="icon" href="../favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Spectral:ital,wght@0,400;0,600;0,700;0,800;1,400&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../site-header.css?v=20260722-2">
-<link rel="stylesheet" href="../archive/assets/archive.css?v=20261028-1">
-<script>try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.classList.add('dark')}catch(e){}</script>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&amp;family=Roboto:ital,wght@0,400;0,500;0,700;1,400&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site-header.css?v=20260720-5">
+<link rel="stylesheet" href="../teaching-redesign.css?v=20261106i">
+<link rel="stylesheet" href="../archive/assets/archive.css?v=20261106i">
+<link rel="stylesheet" href="../archive/assets/archive-v4.css?v=20261106i">
+<script>try{var m=localStorage.getItem("tv3-mode");if(m?m==="soft":matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.classList.add("soft")}catch(e){}</script>
+<meta name="color-scheme" content="light only">
 </head>
-<body>
+<body class="teach-v3 arc arc-home">
 <a class="skip-link" href="#main">Skip to main content</a>
 <header class="site-header">
-  <button class="dark-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">
-    <svg aria-hidden="true" class="icon-sun-moon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5.5" stroke-width="2"></circle><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M17.36 17.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M17.36 6.64l1.42-1.42" fill="none" stroke-width="2"></path></svg>
-  </button>
   <div class="site-title"><a href="../index.html" aria-label="Go to Home">Adolfho Romero</a></div>
 </header>
 <nav class="main-nav site-nav" aria-label="Primary">
@@ -37,51 +37,128 @@
     <li><a class="cv-link" href="../cv.html">CV</a></li>
   </ul>
 </nav>
-<main id="main" class="wrap">
-<nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="../research.html#archive">Research</a></li><li><span aria-current="page">Labor Archive</span></li></ol></nav>
-<header class="hub-hero">
-<div>
-<h1>Labor Archive</h1>
-<p class="lede">Papers, newspapers, and photographs made by working people organizing in Tompkins and Cortland counties, New York. They show how local unions backed each other's strikes, argued over strategy, and kept their members informed.</p>
-<p class="lede">Everything here can be read online, searched, downloaded, and cited, for a class, a training, a campaign, or a dissertation.</p>
-</div>
-<div class="hero-docs" aria-hidden="true">
-<figure class="d1"><img src="tclc/media/read/b1-138.webp" alt="" width="825" height="1100"><figcaption>Rally flyer, 1986</figcaption></figure>
-<figure class="d2"><img src="../working-press/thumb/p0004a.jpg" alt=""><figcaption>The Working Press, May 1986</figcaption></figure>
-</div>
-</header>
-<section aria-labelledby="col-h"><h2 id="col-h" style="margin:0 0 16px;font-size:clamp(1.7rem,3.2vw,2.4rem)">Collections</h2>
-<div class="collections">
-<article class="collection"><img src="tclc/media/thumb/b1-142.webp" alt="Front page of a 1986 strike-support pamphlet titled A little conquest in Lansing">
-<div><h3><a href="tclc/">Labor Coalition records</a></h3>
-<p class="facts">1973–2003 (mostly 1984–2003), 213 items, 503 page images</p>
-<p>The working papers of the Tompkins-Cortland Labor Coalition, later the Midstate Central Labor Council, AFL-CIO. They run from the Coalition's first meetings in 1984 through the 1986 Cargill salt mine strike, the campaign for an Ithaca plant-closing law, the investigation of Smith Corona's layoffs, and the council's move into the AFL-CIO, with minutes, newsletters, organizing proposals, and financial reports along the way.</p>
-<a class="btn" href="tclc/">Browse the records</a></div></article>
-<article class="collection"><img src="../working-press/thumb/p0004a.jpg" alt="Front page of The Working Press, May 1986">
-<div><h3><a href="../working-press/">The Working Press</a></h3>
-<p class="facts">1986–1987, 6 issues, 61 newspaper pages</p>
+<section class="page-story" aria-labelledby="arc-title" data-shim="Labor" data-marquee="Letters|Minutes|Flyers|Newsletters|Photographs|Strike files|Pamphlets|Press releases">
+  <figure class="page-story__media" style="--story-position: center 40%">
+    <img src="../assets/research/working-press-union-town.webp" alt="" width="1600" height="1067" decoding="async">
+  </figure>
+  <div class="page-story__copy">
+    <p class="page-story__eyebrow">Tompkins and Cortland counties, New York · 1973–2003</p>
+    <h1 id="arc-title">Labor Archive</h1>
+    <p>Papers, newspapers, and photographs made by working people organizing in their own towns. Read them, search them, download them, and cite them.</p>
+    <ul class="page-story__tags" aria-label="Jump to">
+      <li><a href="#find">Search the records</a></li>
+      <li><a href="#collections">Collections</a></li>
+      <li><a href="#using">How to use it</a></li>
+    </ul>
+  </div>
+</section>
+<main id="main" class="arc-main">
+<section class="arc-stats" aria-label="The archive in numbers"><ul class="arc-w">
+<li><b data-n="213">0</b><span>Documents</span></li>
+<li><b data-n="503">0</b><span>Page images</span></li>
+<li><b data-n="61">0</b><span>Newspaper pages</span></li>
+<li><b data-n="30" data-suf=" yrs">0</b><span>Of local labor history</span></li>
+</ul></section>
+
+<section class="arc-s" id="find"><div class="arc-w">
+<p class="arc-kick">Start here</p>
+<h2>Search the Coalition records</h2>
+<p class="arc-lede">Type a name, a company, or a phrase. The search reads the full text of every document, and you can narrow it by topic once you are inside.</p>
+<form class="arc-search" action="tclc/" method="get" role="search">
+<label class="visually-hidden" for="arcq">Search the records</label>
+<input id="arcq" name="q" type="search" placeholder="Try “Cargill” or “plant closing law”" autocomplete="off">
+<button class="arc-go" type="submit">Search <span aria-hidden="true">→</span></button>
+</form>
+<div class="arc-sugs" aria-label="Suggested searches"><span>Popular:</span><button type="button" class="arc-sug" data-q="Cargill">Cargill</button><button type="button" class="arc-sug" data-q="Smith Corona">Smith Corona</button><button type="button" class="arc-sug" data-q="plant closing">plant closing</button><button type="button" class="arc-sug" data-q="AFL-CIO">AFL-CIO</button><button type="button" class="arc-sug" data-q="picket line">picket line</button><button type="button" class="arc-sug" data-q="solidarity">solidarity</button></div>
+<div class="arc-chips" aria-label="Browse by topic"><span>Or browse by topic:</span><a class="arc-chip" href="tclc/?topic=cargill">Cargill strike<b>19</b></a><a class="arc-chip" href="tclc/?topic=plant-closings">Plant closings<b>47</b></a><a class="arc-chip" href="tclc/?topic=governance">Governance<b>46</b></a><a class="arc-chip" href="tclc/?topic=politics">Politics<b>38</b></a><a class="arc-chip" href="tclc/?topic=newsletters">Newsletters<b>37</b></a><a class="arc-chip" href="tclc/?topic=health-safety">Health &amp; safety<b>34</b></a><a class="arc-chip" href="tclc/?topic=campaigns">Campaigns<b>28</b></a><a class="arc-chip" href="tclc/?topic=organizing">Organizing<b>19</b></a><a class="arc-chip" href="tclc/?topic=founding">Founding<b>22</b></a><a class="arc-chip" href="tclc/?topic=finances">Finances<b>23</b></a></div>
+</div></section>
+
+<section class="arc-s arc-tint" id="featured"><div class="arc-w">
+<p class="arc-kick">A first look</p>
+<h2>Documents worth opening first</h2>
+<p class="arc-lede">A rally flyer, a sheriff's letter, a congressman's message to a picket-line rally. Open any one and zoom in on the page.</p>
+<div class="fd-rail" tabindex="0" aria-label="Featured documents"><a class="fd" href="tclc/items/tclc-0049/"><span class="fd-img"><img src="tclc/media/thumb/b1-138.webp" alt="" loading="lazy" decoding="async"></span><span class="fd-b"><small>Flyer · 1986</small><strong>“Support the Cargill Workers” rally flyer, July 26</strong></span></a><a class="fd" href="tclc/items/tclc-0051/"><span class="fd-img"><img src="tclc/media/thumb/b1-142.webp" alt="" loading="lazy" decoding="async"></span><span class="fd-b"><small>Pamphlet · 1986</small><strong>“A little conquest in Lansing”: Cargill Strikers&#x27; Solidarity Committee pamphlet</strong></span></a><a class="fd" href="tclc/items/tclc-0056/"><span class="fd-img"><img src="tclc/media/thumb/b1-148.webp" alt="" loading="lazy" decoding="async"></span><span class="fd-b"><small>Letter · 1986</small><strong>Congressman Matthew McHugh to the rally: “I am very concerned about the situation at Cargill”</strong></span></a><a class="fd" href="tclc/items/tclc-0058/"><span class="fd-img"><img src="tclc/media/thumb/b1-153.webp" alt="" loading="lazy" decoding="async"></span><span class="fd-b"><small>Ephemera · 1986</small><strong>“Cargill UNIONBUSTER” card</strong></span></a><a class="fd" href="tclc/items/tclc-0071/"><span class="fd-img"><img src="tclc/media/thumb/b1-273.webp" alt="" loading="lazy" decoding="async"></span><span class="fd-b"><small>Newsletter · 1998</small><strong>The Working Press, Volume 1, Issue 7, November 1998</strong></span></a><a class="fd" href="tclc/items/tclc-0216/"><span class="fd-img"><img src="tclc/media/thumb/b36-219.webp" alt="" loading="lazy" decoding="async"></span><span class="fd-b"><small>Report · 1990</small><strong>“Profile on Smith Corona Layoffs: Possible Violation of the Federal Plant Closing Law (WARN)”</strong></span></a><a class="fd" href="tclc/items/tclc-0161/"><span class="fd-img"><img src="tclc/media/thumb/b36-071.webp" alt="" loading="lazy" decoding="async"></span><span class="fd-b"><small>Flyer · 1985</small><strong>Labor Movie of the Month flyer: “Amandla!”</strong></span></a><a class="fd" href="tclc/items/tclc-0176/"><span class="fd-img"><img src="tclc/media/thumb/b36-105.webp" alt="" loading="lazy" decoding="async"></span><span class="fd-b"><small>Flyer · 1985</small><strong>Labor Day Celebration and Rally flyer, Monday, September 2</strong></span></a></div>
+<div class="fd-ctl"><button type="button" class="fd-prev" aria-label="Scroll left">←</button><button type="button" class="fd-next" aria-label="Scroll right">→</button></div>
+</div></section>
+
+<section class="arc-s" id="collections"><div class="arc-w">
+<p class="arc-kick">Collections</p>
+<h2>Two collections, one story</h2>
+<div class="arc-cols">
+<article class="arc-col"><a class="arc-col-img" href="tclc/" tabindex="-1" aria-hidden="true"><img src="tclc/media/thumb/b1-142.webp" alt="" loading="lazy"></a>
+<div><small>1973–2003 · 213 items · 503 page images</small><h3><a href="tclc/">Labor Coalition records</a></h3>
+<p>The working papers of the Tompkins-Cortland Labor Coalition, later the Midstate Central Labor Council, AFL-CIO. They run from the first meetings in 1984 through the 1986 Cargill salt mine strike, the campaign for an Ithaca plant-closing law, the investigation of Smith Corona's layoffs, and the council's move into the AFL-CIO.</p>
+<a class="arc-btn" href="tclc/">Browse the records</a></div></article>
+<article class="arc-col"><a class="arc-col-img" href="../working-press/" tabindex="-1" aria-hidden="true"><img src="../working-press/thumb/p0004a.jpg" alt="" loading="lazy"></a>
+<div><small>1986–1987 · 6 issues · 61 newspaper pages</small><h3><a href="../working-press/">The Working Press</a></h3>
 <p>The Coalition's own newspaper, digitized from microfilm and searchable page by page. Its first issue led with the Cargill strike, and the same story runs through both collections.</p>
-<a class="btn" href="../working-press/">Read the newspaper</a></div></article>
+<a class="arc-btn" href="../working-press/">Read the newspaper</a></div></article>
 </div>
-<p class="coming" style="margin-top:16px">More is being prepared: further batches of Labor Coalition records and more issues of The Working Press. Each new batch will be added to these collections or appear here as its own collection.</p>
-</section>
-<section class="section two-col" aria-label="Using the archive">
-<div class="prose"><h2>Using these materials</h2>
-<ul><li><strong>Find:</strong> search words that appear anywhere in the documents, or browse by topic, kind of document, and year.</li>
-<li><strong>Read:</strong> every item opens to its pages in reading order. Zoom in on any page to inspect handwriting, stamps, and signatures.</li>
-<li><strong>Download:</strong> each item comes as a PDF with searchable text and as a plain-text file.</li>
-<li><strong>Cite:</strong> each item has a permanent link and a ready-made citation you can copy.</li></ul>
-<p>The page text is machine-read and contains errors. Always check quotations against the page image.</p></div>
-<div class="prose"><h2>What this archive leaves out</h2>
+<p class="arc-soon">More is being prepared: further batches of Labor Coalition records and more issues of The Working Press.</p>
+</div></section>
+
+<section class="arc-s arc-tint" id="using"><div class="arc-w">
+<p class="arc-kick">How it works</p>
+<h2>Find, read, download, cite</h2>
+<ol class="arc-steps">
+<li><b>Find</b><span>Search words that appear anywhere in the documents, or browse by topic, kind of document, and year.</span></li>
+<li><b>Read</b><span>Every item opens to its pages in reading order. Zoom in to inspect handwriting, stamps, and signatures.</span></li>
+<li><b>Download</b><span>Each item comes as a PDF with searchable text and as a plain-text file.</span></li>
+<li><b>Cite</b><span>Each item has a permanent link and a ready-made citation you can copy.</span></li>
+</ol>
+<p class="arc-note">The page text is machine-read and contains errors. Always check quotations against the page image.</p>
+</div></section>
+
+<section class="arc-s" id="limits"><div class="arc-w">
+<p class="arc-kick">Care</p>
+<h2>What this archive leaves out</h2>
+<div class="arc-two">
 <p>This archive publishes historical records, not research data. It never includes interview recordings or excerpts, private fieldnotes, internal documents shared by present-day partners, personal contact information, or unpublished maps of relationships between people and organizations.</p>
-<p>Within the historical records, pages with home addresses, individual pay, or personnel disputes are held back, and so are newspaper articles still under copyright. If you see something that should not be public, write to <a href="mailto:ar2539@cornell.edu">ar2539@cornell.edu</a>.</p></div>
-</section>
+<p>Within the historical records, pages with home addresses, individual pay, or personnel disputes are held back, and so are newspaper articles still under copyright. If you see something that should not be public, write to <a href="mailto:ar2539@cornell.edu">ar2539@cornell.edu</a>.</p>
+</div></div></section>
 </main>
-<footer class="site-foot">© 2026 Adolfho Romero · <a href="mailto:ar2539@cornell.edu">ar2539@cornell.edu</a></footer>
-<nav class="mobile-tabs" aria-label="Mobile navigation"><a href="../index.html">Home</a><a href="../research.html" aria-current="page">Research</a><a href="../publications.html">Publications</a><a href="../cv.html">CV</a></nav>
+<footer class="tv3-foot">
+  <div class="fglow" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="fbig nm" id="tv3-fbig" aria-label="Adolfho Romero"><span>Adolfho</span> <span class="r">Romero</span></p>
+    <p class="ftag">PhD student, Cornell ILR · Global Labor and Work · worker power, migration, oral history, and teaching.</p>
+    <div class="fgrid">
+      <nav class="flinks" aria-label="Footer">
+        <a href="../index.html"><i>01</i><span>Home</span></a>
+        <a href="../research.html"><i>02</i><span>Research</span></a>
+        <a href="../publications.html"><i>03</i><span>Publications</span></a>
+        <a href="../teaching.html"><i>04</i><span>Teaching</span></a>
+        <a href="../teaching-discussion-hub.html"><i>05</i><span>Discussion Hub</span></a>
+        <a href="../media.html"><i>06</i><span>Media &amp; Public Engagement</span></a>
+      </nav>
+      <aside class="fside">
+        <a class="fcv" href="../cv.html">View my CV <b aria-hidden="true">→</b></a>
+        <div class="fcard"><small>Get in touch</small><a href="mailto:ar2539@cornell.edu">ar2539@cornell.edu</a></div>
+        <button class="totop" type="button" id="tv3-totop" aria-label="Back to top">
+          <svg viewBox="0 0 120 120" aria-hidden="true"><defs><path id="tv3ring" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><text><textPath href="#tv3ring" textLength="281" lengthAdjust="spacing">BACK TO TOP ✦ BACK TO TOP ✦ BACK</textPath></text></svg>
+          <span class="tarr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></span>
+        </button>
+      </aside>
+    </div>
+    <div class="fmeta"><p>© 2026 Adolfho Romero</p><p>Personal academic website. It is not an official page of Cornell University or the ILR School.</p></div>
+  </div>
+</footer>
+<nav class="bottom-tabs" aria-label="Bottom navigation"><div class="tabs-row"><a class="tab-link" href="../index.html" aria-label="Home"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7v8a2 2 0 0 1-2 2h-4v-6H9v6H5a2 2 0 0 1-2-2z" fill="currentColor"/></svg><span>Home</span></a><a class="tab-link" href="../research.html" aria-current="page" aria-label="Research"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h12v16H4zM16 6h4v14H8" fill="currentColor"/></svg><span>Research</span></a><a class="tab-link" href="../publications.html" aria-label="Pubs"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h12v16H4zM16 6h4v14H8" fill="currentColor"/></svg><span>Pubs</span></a><a class="tab-link" href="../teaching.html" aria-label="Teach"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4-9-4zm2 6v4l7 3 7-3v-4" fill="currentColor"/></svg><span>Teach</span></a><a class="tab-link" href="../teaching-discussion-hub.html" aria-label="Hub"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4-9-4zm2 6v4l7 3 7-3v-4" fill="currentColor"/></svg><span>Hub</span></a><a class="tab-link" href="../media.html" aria-label="Media"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4zM8 6v12" fill="currentColor"/></svg><span>Media</span></a><a class="tab-link" href="../cv.html" aria-label="CV"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l3 3v17H6z" fill="currentColor"/><path d="M8 10h8v1.5H8zM8 13h8v1.5H8z" fill="currentColor"/></svg><span>CV</span></a></div></nav>
 <script>
-(function(){var b=document.querySelector('.dark-toggle');if(!b)return;function s(){b.setAttribute('aria-pressed',document.documentElement.classList.contains('dark'))}s();
-b.addEventListener('click',function(){document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',document.documentElement.classList.contains('dark')?'dark':'light')}catch(e){}s()})})();
+(function(){
+var f=document.querySelector('.arc-search'),q=document.getElementById('arcq');
+document.querySelectorAll('.arc-sug').forEach(function(b){b.addEventListener('click',function(){q.value=b.dataset.q;f.submit()})});
+var io=('IntersectionObserver' in window)&&!matchMedia('(prefers-reduced-motion: reduce)').matches;
+function run(el){var t=+el.dataset.n,s=el.dataset.suf||'',t0=null;function st(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/1100);el.textContent=Math.round(t*(1-Math.pow(1-k,3)))+s;if(k<1)requestAnimationFrame(st)}requestAnimationFrame(st)}
+var ns=document.querySelectorAll('[data-n]');
+if(io){var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){run(e.target);o.unobserve(e.target)}})},{threshold:.5});ns.forEach(function(n){o.observe(n)})}else ns.forEach(function(n){n.textContent=n.dataset.n+(n.dataset.suf||'')});
+var r=document.querySelector('.fd-rail');
+function by(d){r.scrollBy({left:d*Math.min(r.clientWidth*.8,520),behavior:'smooth'})}
+document.querySelector('.fd-prev').addEventListener('click',function(){by(-1)});
+document.querySelector('.fd-next').addEventListener('click',function(){by(1)});
+})();
 </script>
+<script src="../teaching-v4.js?v=20261106" defer></script>
+<script src="../teaching-redesign.js?v=20261106i" defer></script>
 </body>
 </html>
