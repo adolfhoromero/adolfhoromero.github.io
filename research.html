@@ -55,6 +55,19 @@
     @media(max-width:560px){main{padding-inline:15px}.archive-visual{grid-template-columns:1fr}.archive-visual figure,.archive-visual figure:last-child{min-height:430px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
+<style>
+/* Archive gallery: each piece shown whole, hung on one line, with a label beneath */
+.archive-lead{grid-template-columns:1fr!important;gap:22px!important}
+.archive-visual.gallery{display:flex!important;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:clamp(18px,3vw,40px);padding:clamp(24px,4vw,48px) clamp(18px,3vw,40px) clamp(20px,3vw,32px);border-radius:22px;background:radial-gradient(120% 90% at 50% 0%,#1b3558,#0e1b30)}
+.archive-visual.gallery figure{position:static;display:flex;flex-direction:column;gap:14px;min-height:0!important;margin:0;overflow:visible;border-radius:0;background:none;box-shadow:none;flex:0 1 auto;max-width:100%}
+.archive-visual.gallery figure::after{display:none}
+.archive-visual.gallery .mat{padding:clamp(8px,1vw,12px);background:#f6f1e7;border-radius:4px;box-shadow:0 2px 0 rgba(255,255,255,.2) inset,0 22px 40px rgba(0,0,0,.45),0 4px 10px rgba(0,0,0,.35)}
+.archive-visual.gallery img{display:block;width:auto;height:clamp(260px,27vw,390px);max-width:100%;object-fit:contain}
+.archive-visual.gallery figcaption{position:static;padding:0 4px;color:#e9f0fa;max-width:min(100%,300px)}
+.archive-visual.gallery strong{font-size:1.05rem;line-height:1.2;color:#fff}
+.archive-visual.gallery small{display:block;margin-top:4px;font-size:.8rem;line-height:1.45;color:#b9c8dd}
+@media(max-width:620px){.archive-visual.gallery img{height:auto;width:min(78vw,340px)}.archive-visual.gallery figure{align-items:center}.archive-visual.gallery figcaption{text-align:center}}
+</style>
 </head>
 <body>
   <a class="skip-link" href="#research">Skip to research</a>
@@ -113,9 +126,10 @@
         <p><em>The Working Press</em> and <em>The Workers’ Edge</em> show how workers and community organizations explained workplace struggles, connected campaigns, and created a public language of solidarity.</p>
       </div>
       <div class="archive-lead">
-        <div class="archive-visual">
-          <figure><img src="assets/research/working-press-union-town.webp" alt="November 1987 cover of The Working Press with the headline Ithaca Is a Union Town" width="1290" height="2293" loading="lazy"><figcaption><strong>“Ithaca Is a Union Town”</strong><small><em>The Working Press</em>, November 1987</small></figcaption></figure>
-          <figure><img src="assets/research/workers-edge-2019.webp" alt="Summer 2019 cover of The Workers' Edge from the Tompkins County Workers' Center" width="1020" height="1320" loading="lazy"><figcaption><strong>“We’re Stronger Together”</strong><small><em>The Workers’ Edge</em>, Summer 2019</small></figcaption></figure>
+        <div class="archive-visual gallery" role="list">
+          <figure role="listitem"><div class="mat"><img src="assets/research/working-press-union-town.webp" alt="November 1987 cover of The Working Press with the headline Ithaca Is a Union Town" width="1290" height="2293" loading="lazy"></div><figcaption><strong>“Ithaca Is a Union Town”</strong><small><em>The Working Press</em><br>November 1987</small></figcaption></figure>
+          <figure role="listitem"><div class="mat"><img src="assets/research/working-press-organizing.webp" alt="Working Press article about organizing Rubbermaid workers in Cortland" width="1300" height="1733" loading="lazy"></div><figcaption><strong>Organizing beyond one workplace</strong><small><em>The Working Press</em><br>Rubbermaid workers in Cortland</small></figcaption></figure>
+          <figure role="listitem"><div class="mat"><img src="assets/research/workers-edge-2019.webp" alt="Summer 2019 cover of The Workers' Edge from the Tompkins County Workers' Center" width="1020" height="1320" loading="lazy"></div><figcaption><strong>“We’re Stronger Together”</strong><small><em>The Workers’ Edge</em><br>Summer 2019 · Tompkins County Workers’ Center</small></figcaption></figure>
         </div>
         <aside class="exhibit">
           <span class="status">Public scholarship · Archive beta</span>
