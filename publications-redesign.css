@@ -79,3 +79,15 @@ body.teach-v3 .teaching-cta svg { fill: #fff; stroke: none; }
   body.teach-v3 .card:only-child img { height: 300px; min-height: 0; }
   body.teach-v3 .card:only-child > div { flex: 1; align-self: center; padding: 28px 34px; }
 }
+
+/* Covers: sit on white inside the card's own border (no tinted box, no divider) */
+body.teach-v3 .card > a:first-child { background: #fff; border-bottom: 0; }
+body.teach-v3 .card img { background: #fff; padding: 18px 18px 0; height: 250px; border-bottom: 0; }
+@media (min-width: 901px) {
+  body.teach-v3 .card:only-child > a:first-child, body.teach-v3 .card:only-child > img { border-right: 0; }
+}
+body.teach-v3 .card img { box-sizing: border-box; width: 100% !important; height: 240px !important; padding: 20px !important; object-fit: contain; }
+@media (min-width: 901px) {
+  body.teach-v3 .card:only-child img { height: 300px !important; padding: 24px !important; }
+  body.teach-v3 .card:only-child > a:first-child, body.teach-v3 .card:only-child > img { align-self: center; }
+}

@@ -62,3 +62,10 @@ body.teach-v3 .card .video-embed iframe { width: 100%; height: 100%; border: 0; 
   body.teach-v3 .tab-btn { flex: 1 1 100%; text-align: center; }
 }
 body.teach-v3 .media-searchbar { border: 0 !important; box-shadow: none !important; background: transparent !important; border-radius: 0 !important; padding: 0 !important; }
+
+/* Logos and thumbnails: sit directly on the card, no extra frame */
+body.teach-v3 .card img { display: block; margin: 0 0 16px !important; padding: 0 !important; background: none !important; width: auto; max-width: 100%; height: 44px; object-fit: contain; object-position: left center; border: 0 !important; }
+body.teach-v3 .card img[src*="spotlight"], body.teach-v3 .card img[src*="creek"], body.teach-v3 .card img[src*="working"], body.teach-v3 .card img[src*="podcast"] {
+  width: 100%; height: 190px; object-fit: cover; object-position: center top; border-radius: 12px !important;
+}
+body.teach-v3 .card .video-embed { margin-bottom: 4px; }

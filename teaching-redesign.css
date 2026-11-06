@@ -874,3 +874,18 @@ body.teach-v3 .tv3-expect li b { color: var(--ink); font-weight: 700; }
 @media (max-width: 700px) { body.teach-v3 .tv3-expect ol { grid-template-columns: minmax(0, 1fr); } }
 body.teach-v3 .tv3-foot .ftag { margin-top: -14px !important; }
 body.teach-v3 .tv3-expect, body.teach-v3 .tv3-expect * { border-radius: 0 !important; }
+
+/* Flatten: one frame per object, no nested boxes, shadows or gradients */
+body.teach-v3 main .section { background: transparent !important; box-shadow: none !important; border: 0 !important; padding-left: 0 !important; padding-right: 0 !important; }
+body.teach-v3 .mt-grid { gap: 20px; }
+body.teach-v3 .mt-fig {
+  gap: 0 !important; padding: 0 !important; background: #fff !important; box-shadow: none !important;
+  border: 1.5px solid var(--line) !important; border-radius: 16px !important; overflow: hidden;
+  transition: border-color .25s, transform .3s cubic-bezier(.2, .7, .2, 1);
+}
+body.teach-v3 .mt-fig:hover, body.teach-v3 .mt-fig:focus-visible { transform: translateY(-4px); border-color: var(--carnelian) !important; background: #fff !important; box-shadow: none !important; outline: none; }
+body.teach-v3 .mt-fig img { aspect-ratio: 3 / 2; object-fit: contain !important; background: #fff; padding: 0; filter: none !important; border-radius: 0 !important; border-bottom: 1.5px solid var(--line); transform: none !important; }
+body.teach-v3 .mt-fig figcaption { padding: 14px 18px 16px; }
+body.teach-v3 .mt-fig strong { font-family: var(--display); font-weight: 800; letter-spacing: .01em; color: var(--ink); }
+body.teach-v3 .pdf-shell { background: #fff !important; box-shadow: none !important; border: 1.5px solid var(--line) !important; border-radius: 16px !important; }
+body.teach-v3 .pdf-shell + a, body.teach-v3 .pdf-shell ~ .btn, body.teach-v3 a[href$=".pdf"].btn { box-shadow: none !important; }
