@@ -148,3 +148,24 @@ body.wpress .text-panel .ocr-note{margin:0 0 16px;padding-bottom:12px;border-bot
 body.wpress .text-panel pre{margin:0;white-space:pre-wrap}
 body.wpress .rfoot{display:flex;gap:16px;align-items:center;flex-wrap:wrap;padding:8px 16px;font-size:.78rem}
 @media (max-width:600px){body.wpress .text-panel{position:absolute;inset:0;width:100%;z-index:3}}
+/* tighter rhythm */
+body.wpress .wp-hero{padding:clamp(24px,3.6vw,48px) 0 clamp(28px,4vw,52px)}
+body.wpress .wp-hero__in{gap:clamp(24px,4vw,56px);grid-template-columns:minmax(0,1.15fr) minmax(240px,.7fr)}
+body.wpress .wp-hero h1{font-size:clamp(2.4rem,5vw,4.2rem);margin-bottom:14px}
+body.wpress .wp-hero h1::after{margin-top:14px}
+body.wpress .wp-hero__fig{width:min(100%,360px)}
+body.wpress .wp-lede{margin-bottom:10px}
+body.wpress .wp-hero .wp-stat{margin-bottom:18px!important}
+body.wpress .wp-band{padding:10px 0}
+body.wpress .wp-band__t span{font-size:.9rem}
+body.wpress section{padding:clamp(28px,3.6vw,48px) 0}
+body.wpress h2.sec{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:8px}
+body.wpress h2.sec::after{margin-top:10px}
+body.wpress .seclede{margin-bottom:16px}
+body.wpress .timeline{padding-bottom:10px}
+body.wpress #feat-sec{border-radius:24px}
+body.wpress .fcard{min-height:340px}
+body.wpress .wp-note{padding:clamp(24px,3vw,36px) 0 0}
+body.wpress .wp-note .box{padding:16px 20px;font-size:.9rem}
+body.wpress .searchbar{padding:8px 0}
+body.wpress main.wrap{padding-bottom:0!important}

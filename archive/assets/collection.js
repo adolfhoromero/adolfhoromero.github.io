@@ -47,7 +47,7 @@
         index = {};
         d.items.forEach(function (it) { index[it.id] = { text: it.text, lc: norm(it.text) }; });
         indexState = 'ready';
-        searchNote.textContent = 'Searching titles, descriptions, and machine-read page text. Page text contains errors, so try different spellings.';
+        searchNote.textContent = 'Searching titles, descriptions, and page text read from the scans. Page text contains errors, so try different spellings.';
         apply();
       })
       .catch(function () {

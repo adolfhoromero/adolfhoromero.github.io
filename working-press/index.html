@@ -84,7 +84,7 @@
 
 </main>
 
-<section class="wp-note"><div class="wrap"><div class="box"><b>The Working Press</b> was published by the Tompkins-Cortland Labor Coalition, 109 West State Street, Ithaca, New York. Pages were scanned at 1200 dpi and transcribed automatically; the text layer is machine-generated and will contain errors. The page images remain the authoritative record.<br><br><b>Rights &amp; corrections.</b> This archive is offered for research and education. If you hold rights in this material, or you can help identify a person, local, or event on any page, <a href="mailto:ar2539@cornell.edu?subject=Working%20Press%20archive%20correction">please get in touch</a>. Corrections and additions are welcome.</div></div></section>
+<section class="wp-note"><div class="wrap"><div class="box"><b>The Working Press</b> was published by the Tompkins-Cortland Labor Coalition, 109 West State Street, Ithaca, New York. Pages were scanned at 1200 dpi. The page text is read from the scans (OCR) and can contain errors; the page images remain the authoritative record.<br><br><b>Rights &amp; corrections.</b> This archive is offered for research and education. If you hold rights in this material, or you can help identify a person, local, or event on any page, <a href="mailto:ar2539@cornell.edu?subject=Working%20Press%20archive%20correction">please get in touch</a>. Corrections and additions are welcome.</div></div></section>
 <footer class="tv3-foot">
   <div class="fglow" aria-hidden="true"></div>
   <div class="wrap">
@@ -130,7 +130,7 @@
   <div class="reader-main">
     <div id="osd"></div>
     <aside class="text-panel" id="text-panel" aria-label="Machine-generated page transcription" hidden>
-      <h2>Machine-generated transcription</h2>
+      <h2>Page text (OCR)</h2>
       <p class="ocr-note">OCR may contain errors. The scanned newspaper image is the authoritative record.</p>
       <pre id="page-text"></pre>
     </aside>
@@ -258,7 +258,7 @@ function doSearch(){
     return `<button class="res" type="button" data-p="${r.p.id}">
       <div class="rmeta">${esc(iss.label)} · Vol ${iss.vol} No ${iss.num}${r.p.folio?' · page '+r.p.folio:''} · ${r.n} match${r.n>1?'es':''}</div>
       <div class="rsnip">${r.html}</div></button>`;
-  }).join(''):`<div class="empty">Nothing found for “${esc(q)}”. The text layer is machine-generated, so try a shorter or differently-spelled term.</div>`;
+  }).join(''):`<div class="empty">Nothing found for “${esc(q)}”. The text layer is OCR, so try a shorter or differently-spelled term.</div>`;
   $('#results').querySelectorAll('.res').forEach(c=>c.onclick=()=>{
     const p=DB.byId[c.dataset.p]; openIssue(p.issue,true); openPage(c.dataset.p);
   });
