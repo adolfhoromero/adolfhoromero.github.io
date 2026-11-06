@@ -968,3 +968,10 @@ body.teach-v3 .tv3-foot .fmeta { padding-top: 10px !important; gap: 4px 28px !im
   body.teach-v3 .tv3-foot .fside { grid-template-columns: 1fr; }
   body.teach-v3 .tv3-foot .wrap { padding-bottom: 96px !important; }
 }
+
+/* Footer: never let the right column stretch */
+body.teach-v3 .tv3-foot .fgrid { align-items: start !important; align-content: start !important; }
+body.teach-v3 .tv3-foot .fside { align-content: start !important; grid-auto-rows: min-content !important; height: auto !important; min-height: 0 !important; }
+body.teach-v3 .tv3-foot .fside > * { align-self: start !important; height: auto !important; min-height: 0 !important; max-height: 90px; }
+body.teach-v3 .tv3-foot .fside .totop { width: 100% !important; }
+body.teach-v3 .tv3-foot .wrap { min-height: 0 !important; }
