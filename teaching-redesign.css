@@ -916,3 +916,14 @@ body.teach-v3 .bottom-tabs { display: none; }
   body.teach-v3 .tab-link { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; font: 700 .66rem 'Roboto', Arial, sans-serif; text-decoration: none; min-width: 0; }
   body.teach-v3 .tab-link .ico { width: 21px; height: 21px; }
 }
+
+/* Soft mode: for people on dark settings. A warm, low-glare dim over the bright design. Colors stay visible; nothing goes black. */
+html.soft body.teach-v3::after { content: ""; position: fixed; inset: 0; z-index: 2147483000; pointer-events: none; background: rgba(92, 62, 36, .17); mix-blend-mode: multiply; }
+html.soft body.teach-v3 img, html.soft body.teach-v3 video { filter: saturate(1.08) contrast(1.02); }
+.tv3-mode { position: fixed; right: max(18px, env(safe-area-inset-right, 0px)); bottom: max(22px, env(safe-area-inset-bottom, 0px)); z-index: 61; width: 48px; height: 48px; padding: 0; display: grid; place-items: center; border: 1.5px solid #222; border-radius: 50% !important; background: #fff; color: #222; cursor: pointer; box-shadow: 0 6px 18px rgba(0,0,0,.14); transition: background .25s, color .25s, border-color .25s; }
+.tv3-mode:hover, .tv3-mode[aria-pressed="true"] { background: #222; color: #fff; }
+.tv3-mode svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 2; fill: none; }
+.tv3-mode__tip { position: absolute; right: 56px; padding: 6px 12px; border-radius: 10px !important; background: #222; color: #fff; font: 700 .8rem 'Roboto', Arial, sans-serif; white-space: nowrap; opacity: 0; transform: translateX(6px); pointer-events: none; transition: opacity .2s, transform .2s; }
+.tv3-mode:hover .tv3-mode__tip, .tv3-mode:focus-visible .tv3-mode__tip { opacity: 1; transform: none; }
+.tv3-fab { bottom: calc(max(22px, env(safe-area-inset-bottom, 0px)) + 62px); }
+@media (max-width: 900px) { .tv3-mode { bottom: calc(86px + env(safe-area-inset-bottom, 0px)); } .tv3-fab { bottom: calc(148px + env(safe-area-inset-bottom, 0px)); } }

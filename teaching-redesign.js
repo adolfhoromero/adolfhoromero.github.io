@@ -7,11 +7,35 @@
   try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
 
   root.classList.add('js-tv3');
-  root.classList.remove('dark'); // this page is always light
+  root.classList.remove('dark'); // the old dark theme is retired; "soft" mode replaces it
   try {
     new MutationObserver(function () { if (root.classList.contains('dark')) root.classList.remove('dark'); })
       .observe(root, { attributes: true, attributeFilter: ['class'] });
   } catch (e) {}
+
+  /* Soft mode: a gentle, low-glare version of the light design for dark-mode devices. Never black. */
+  var mq = null; try { mq = window.matchMedia('(prefers-color-scheme: dark)'); } catch (e) {}
+  function stored() { try { return localStorage.getItem('tv3-mode'); } catch (e) { return null; } }
+  function wantSoft() { var s = stored(); return s ? s === 'soft' : !!(mq && mq.matches); }
+  function applyMode() { root.classList.toggle('soft', wantSoft()); }
+  applyMode();
+  if (mq && mq.addEventListener) mq.addEventListener('change', applyMode);
+  var mode = document.createElement('button');
+  mode.type = 'button'; mode.className = 'tv3-mode';
+  mode.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg><span class="tv3-mode__tip"></span>';
+  function syncMode() {
+    var soft = root.classList.contains('soft');
+    mode.setAttribute('aria-pressed', String(soft));
+    mode.setAttribute('aria-label', soft ? 'Soft colors are on. Switch to bright colors' : 'Bright colors are on. Switch to soft, low-glare colors');
+    mode.querySelector('.tv3-mode__tip').textContent = soft ? 'Soft colors' : 'Bright colors';
+  }
+  mode.addEventListener('click', function () {
+    var next = root.classList.contains('soft') ? 'light' : 'soft';
+    try { localStorage.setItem('tv3-mode', next); } catch (e) {}
+    applyMode(); syncMode();
+  });
+  document.body.appendChild(mode); syncMode();
+  if (mq && mq.addEventListener) mq.addEventListener('change', syncMode);
 
   /* Merge the header and the nav into one sticky bar */
   var header = document.querySelector('body > header.site-header');
