@@ -943,3 +943,28 @@ html.soft body.teach-v3 .tv3-marq, html.soft body.teach-v3 .tv3-marq * { color: 
 html.soft body.teach-v3 .page-story::before { background: linear-gradient(90deg, rgba(10,6,4,.78) 0%, rgba(10,6,4,.5) 45%, rgba(10,6,4,0) 78%) !important; }
 .par-wrap { display: block; overflow: hidden; border-radius: inherit; }
 .par-wrap > img { max-width: none; width: 100%; }
+
+/* Footer, compact: same pieces, much less air */
+body.teach-v3 .tv3-foot .wrap { padding-top: clamp(22px, 3vw, 34px) !important; padding-bottom: 14px !important; gap: 14px !important; }
+body.teach-v3 .tv3-foot .fbig { font-size: clamp(1.2rem, 1.6vw, 1.45rem) !important; margin: 0 !important; }
+body.teach-v3 .tv3-foot .ftag { margin: -8px 0 0 !important; font-size: .95rem !important; line-height: 1.4 !important; max-width: 64ch !important; }
+body.teach-v3 .tv3-foot .fgrid { grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr) !important; gap: clamp(18px, 3vw, 36px) !important; align-items: start; }
+body.teach-v3 .tv3-foot .flinks { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 0 clamp(14px, 2vw, 28px) !important; border-top-width: 3px !important; }
+body.teach-v3 .tv3-foot .flinks a { padding: 9px 0 !important; gap: 8px !important; font-size: clamp(.82rem, 1.05vw, .98rem) !important; }
+body.teach-v3 .tv3-foot .flinks a i { font-size: .68rem !important; }
+body.teach-v3 .tv3-foot .fside { gap: 8px !important; display: grid !important; grid-template-columns: 1fr 1fr; }
+body.teach-v3 .tv3-foot .fcv { grid-column: 1 / -1; padding: 12px 18px !important; font-size: .95rem !important; }
+body.teach-v3 .tv3-foot .fcard { padding: 10px 14px !important; gap: 2px !important; }
+body.teach-v3 .tv3-foot .fcard small { font-size: .68rem !important; }
+body.teach-v3 .tv3-foot .fcard a { font-size: .92rem !important; }
+body.teach-v3 .tv3-foot .totop { align-self: stretch !important; justify-content: center; padding: 8px 14px !important; }
+body.teach-v3 .tv3-foot .totop::before { font-size: .78rem !important; }
+body.teach-v3 .tv3-foot .fmeta { padding-top: 10px !important; gap: 4px 28px !important; font-size: .8rem !important; }
+@media (max-width: 900px) {
+  body.teach-v3 .tv3-foot .fgrid { grid-template-columns: 1fr !important; }
+  body.teach-v3 .tv3-foot .flinks { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+@media (max-width: 560px) {
+  body.teach-v3 .tv3-foot .fside { grid-template-columns: 1fr; }
+  body.teach-v3 .tv3-foot .wrap { padding-bottom: 96px !important; }
+}
