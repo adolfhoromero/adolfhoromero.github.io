@@ -995,3 +995,13 @@ body.teach-v3 .tv3-top .site-title .tv3-last, body.teach-v3 .tv3-top .site-title
 body.teach-v3 .tv3-top .site-title:hover .tv3-last .ch { color: #fff !important; font-weight: 800; }
 body.teach-v3 .tv3-top .site-title:hover .ch { color: #fff !important; }
 @media (min-width: 821px) { body.teach-v3 .tv3-top { padding-top: 12px !important; padding-bottom: 4px !important; } }
+
+/* Name as a white plaque on the carnelian band: dark first name, red last name */
+body.teach-v3 .tv3-top .site-title a { display: inline-block; padding: 7px 18px 6px !important; background: #fff; border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,.18); transition: transform .25s, box-shadow .25s; }
+body.teach-v3 .tv3-top .site-title a:hover { transform: translateY(-2px) rotate(-.6deg); box-shadow: 0 8px 20px rgba(0,0,0,.26); }
+body.teach-v3 .tv3-top .site-title .ch, body.teach-v3 .tv3-top .site-title a .ch { color: #222 !important; font-weight: 800; }
+body.teach-v3 .tv3-top .site-title .tv3-last, body.teach-v3 .tv3-top .site-title .tv3-last .ch,
+body.teach-v3 .tv3-top .site-title:hover .tv3-last .ch { color: #b31b1b !important; }
+body.teach-v3 .tv3-top .site-title:hover .ch { color: #222 !important; }
+body.teach-v3 .tv3-top .site-title:hover .tv3-last .ch { color: #b31b1b !important; }
+@media (min-width: 821px) { body.teach-v3 .tv3-top { padding-top: 10px !important; } }
