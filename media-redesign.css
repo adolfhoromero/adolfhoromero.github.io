@@ -1,0 +1,64 @@
+/* Media & Public Engagement (2026): page layer on top of teaching-redesign.css (body.teach-v3) */
+body.teach-v3 { font-family: 'Roboto', Arial, sans-serif; }
+body.teach-v3 main { max-width: 1240px; margin: clamp(32px, 5vw, 64px) auto 0; padding: 0 max(16px, env(safe-area-inset-left, 0px)); }
+body.teach-v3 .media-story-fix { display: none; }
+
+/* Filter box */
+body.teach-v3 .media-searchbar { max-width: none; margin: 8px 0 22px; padding: 0; background: none !important; }
+body.teach-v3 .media-searchbar input {
+  width: 100%; max-width: 520px; padding: 14px 18px; font: 500 1.05rem 'Roboto', Arial, sans-serif; color: var(--ink) !important;
+  background: #fff !important; border: 1.5px solid var(--ink) !important; border-radius: 14px !important; box-shadow: none !important;
+}
+body.teach-v3 .media-searchbar input:focus { outline: 3px solid rgba(179, 27, 27, .35); outline-offset: 2px; }
+
+/* Tabs */
+body.teach-v3 .tabs { justify-content: flex-start; gap: 10px; margin: 0 0 30px; }
+body.teach-v3 .tab-btn {
+  flex: 0 1 auto; max-width: none; padding: 14px 24px; background: #fff !important; color: var(--ink) !important;
+  border: 1.5px solid var(--ink) !important; border-radius: 14px !important; box-shadow: none !important; transform: none !important;
+  font: 800 .98rem var(--display); letter-spacing: .05em; text-transform: uppercase; transition: background .25s, color .25s;
+}
+body.teach-v3 .tab-btn:hover { border-color: var(--carnelian) !important; color: var(--carnelian) !important; }
+body.teach-v3 .tab-btn.active, body.teach-v3 .tab-btn[aria-selected="true"] { background: var(--carnelian) !important; border-color: var(--carnelian) !important; color: #fff !important; }
+body.teach-v3 .tab-btn:focus-visible { outline: 3px solid rgba(179, 27, 27, .45); outline-offset: 3px; }
+
+/* Year groups */
+body.teach-v3 .year-section { margin: 0 0 40px; }
+body.teach-v3 .year-heading {
+  display: flex; align-items: center; gap: 18px; margin: 0 0 18px !important;
+  font: 800 clamp(1.4rem, 2.4vw, 1.9rem) var(--display) !important; letter-spacing: .04em !important; color: var(--carnelian) !important;
+}
+body.teach-v3 .year-heading::after { content: ""; flex: 1; height: 1px; background: var(--ink); opacity: .25; }
+
+/* Cards */
+body.teach-v3 .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+body.teach-v3 .card {
+  display: block; min-width: 0; padding: 24px 26px 26px !important; background: #fff !important; color: var(--ink) !important;
+  border: 1.5px solid var(--line) !important; border-top: 5px solid var(--carnelian) !important; border-radius: 18px !important; box-shadow: none !important;
+  transition: transform .35s cubic-bezier(.2, .7, .2, 1), border-color .25s, opacity .4s;
+}
+body.teach-v3 .card:hover { transform: translateY(-5px); border-color: var(--carnelian) !important; }
+body.teach-v3 .card > div { font-size: clamp(1.02rem, 1.25vw, 1.12rem); line-height: 1.6; color: var(--ink) !important; }
+body.teach-v3 .card b { font-weight: 700; }
+body.teach-v3 .card em { color: #444; }
+body.teach-v3 .card p { margin: 10px 0 0; color: #333 !important; }
+body.teach-v3 .card a { color: var(--carnelian) !important; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; overflow-wrap: anywhere; }
+body.teach-v3 .card img { max-width: 100%; height: auto; border-radius: 12px !important; box-shadow: none !important; }
+body.teach-v3 .badge {
+  display: inline-block; margin-left: 6px; padding: 2px 11px; background: #fff !important; color: var(--carnelian) !important;
+  border: 1.5px solid var(--carnelian); border-radius: 999px !important; font: 700 .8rem 'Roboto', Arial, sans-serif; letter-spacing: .04em; text-transform: uppercase; vertical-align: 2px;
+}
+body.teach-v3 .card .quote { margin-top: 12px; padding: 4px 34px 4px 14px; border-left: 3px solid var(--carnelian) !important; color: #333; font-size: 1rem; }
+body.teach-v3 .copy-btn { color: var(--carnelian) !important; }
+body.teach-v3 .pull-quote {
+  background: #fff !important; border: 1.5px solid var(--ink) !important; border-left: 8px solid var(--carnelian) !important;
+  border-radius: 18px !important; box-shadow: none !important; color: var(--ink) !important;
+}
+body.teach-v3 .card .video-embed { width: 100%; aspect-ratio: 16 / 9; border-radius: 14px !important; overflow: hidden; }
+body.teach-v3 .card .video-embed iframe { width: 100%; height: 100%; border: 0; border-radius: 14px !important; }
+
+@media (max-width: 900px) {
+  body.teach-v3 .card-grid { grid-template-columns: minmax(0, 1fr); }
+  body.teach-v3 .tab-btn { flex: 1 1 100%; text-align: center; }
+}
+body.teach-v3 .media-searchbar { border: 0 !important; box-shadow: none !important; background: transparent !important; border-radius: 0 !important; padding: 0 !important; }
