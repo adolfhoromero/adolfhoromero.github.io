@@ -854,3 +854,23 @@ body.teach-v3 .page-story__eyebrow { margin-bottom: 14px !important; }
 body.teach-v3 .page-story__copy p:not(.page-story__eyebrow) { max-width: 34rem; }
 body.teach-v3 .page-story__tags { margin-top: 22px !important; }
 body.teach-v3 .page-story__tags a { background: rgba(255, 255, 255, .08) !important; }
+
+/* Footer name: normal size, sentence case */
+body.teach-v3 .tv3-foot .fbig {
+  font: 800 clamp(1.4rem, 2vw, 1.8rem) var(--display) !important; text-transform: none !important; letter-spacing: 0 !important;
+  margin: 0 0 6px !important; line-height: 1.2 !important;
+}
+body.teach-v3 .tv3-foot .ftag { margin: 0 0 8px !important; }
+body.teach-v3 .tv3-foot .fbig .ch { transform: none !important; }
+
+/* "In my sections": a short personal list instead of four icon cards */
+body.teach-v3 .philosophy-points { display: none !important; }
+body.teach-v3 .tv3-expect { margin: clamp(28px, 4vw, 44px) 0; padding: 22px 0 0; border-top: 4px solid var(--carnelian); }
+body.teach-v3 .tv3-expect h3 { margin: 0 0 14px; font: 800 1.05rem var(--display); letter-spacing: .1em; text-transform: uppercase; color: var(--carnelian); }
+body.teach-v3 .tv3-expect ol { margin: 0; padding: 0; list-style: none; counter-reset: ex; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 40px; }
+body.teach-v3 .tv3-expect li { counter-increment: ex; position: relative; padding-left: 34px; font-size: clamp(1rem, 1.25vw, 1.1rem); line-height: 1.55; color: #2c2a28; }
+body.teach-v3 .tv3-expect li::before { content: counter(ex, decimal-leading-zero); position: absolute; left: 0; top: .1em; font: 700 .8rem 'Roboto', Arial, sans-serif; letter-spacing: .08em; color: var(--carnelian); }
+body.teach-v3 .tv3-expect li b { color: var(--ink); font-weight: 700; }
+@media (max-width: 700px) { body.teach-v3 .tv3-expect ol { grid-template-columns: minmax(0, 1fr); } }
+body.teach-v3 .tv3-foot .ftag { margin-top: -14px !important; }
+body.teach-v3 .tv3-expect, body.teach-v3 .tv3-expect * { border-radius: 0 !important; }
