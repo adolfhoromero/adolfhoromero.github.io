@@ -148,3 +148,6 @@ body.arc .arc-mast{display:flex;align-items:flex-start;background:#f0e1c6}
 body.arc .arc-mast img{width:100%;height:auto;object-fit:contain;object-position:top}
 body.arc .arc-first .arc-mast{aspect-ratio:16/8}
 body.arc .arc-mast img{-webkit-mask-image:linear-gradient(#000 82%,transparent);mask-image:linear-gradient(#000 82%,transparent)}
+
+/* timeline promo on the archive home */
+@media (max-width:760px){body.arc .arc-tlpromo .arc-w{grid-template-columns:minmax(0,1fr)!important}}
