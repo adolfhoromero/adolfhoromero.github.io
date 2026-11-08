@@ -158,7 +158,17 @@ fetch(DATA_URL).then(r=>r.json()).then(d=>{
   DB.issueBy={}; DB.issues.forEach(i=>DB.issueBy[i.key]=i);
   $('#statline').textContent=`${DB.issues.length} issues · ${DB.pages.length} pages · full-text searchable`;
   renderTimeline(); renderFeatured(); openIssue(DB.issues[0].key,true);
+  openFromHash();
+  window.addEventListener('hashchange',openFromHash);
 }).catch(e=>{$('#statline').textContent='could not load archive data';console.error(e)});
+
+/* ---------------- deep links: #issue=v1n2 or #page=p0015b ---------------- */
+function openFromHash(){
+  const h=new URLSearchParams(location.hash.replace(/^#/,''));
+  const pid=h.get('page'), key=h.get('issue');
+  if(pid&&DB.byId[pid]){ openIssue(DB.byId[pid].issue,true); openPage(pid); }
+  else if(key&&DB.issueBy[key]){ openIssue(key); }
+}
 
 /* ---------------- timeline ---------------- */
 function renderTimeline(){

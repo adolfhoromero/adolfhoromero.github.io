@@ -89,7 +89,7 @@
   if (title) {
     title.classList.add('nm');
     var a = title.querySelector('a');
-    if (a) a.setAttribute('aria-label', 'Go to Home');
+    if (a) a.setAttribute('aria-label', 'Adolfho Romero, home');
     split(title);
     reveal(title, 150);
   }
