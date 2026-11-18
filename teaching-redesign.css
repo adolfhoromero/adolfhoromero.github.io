@@ -1215,3 +1215,10 @@ body.home .quote-media img.par-img {
   object-fit: contain !important; scale: 1 !important; translate: none !important;
   border-radius: 12px !important;
 }
+
+/* ═════════════ All-white pages: tinted bands become white with a hairline (Nov 2026) ═════════════ */
+body.teach-v3 :is(.v4-tint, .arc-tint, .tlx-explore, .tlx-about) {
+  background: #fff !important;
+  background-image: none !important;
+  border-top: 1px solid #ece9e4 !important;
+}
