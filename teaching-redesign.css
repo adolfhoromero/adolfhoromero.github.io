@@ -1191,3 +1191,27 @@ body.teach-v3 .tv3-top .site-title:hover .tv3-last .ch { color: #ffd8c4 !importa
 body.teach-v3 .tv3-top .site-title a { gap: 0 !important; }
 body.teach-v3 .tv3-top .site-title { font-size: clamp(1.2rem, 1.5vw, 1.42rem) !important; }
 body.teach-v3 .tv3-top .site-title .tv3-last { margin-left: .3em; }
+
+/* ═════════════ Light by default, live hero photo, full media images (Nov 2026) ═════════════ */
+/* Ask browsers not to auto-darken the site (Chrome "auto dark", dark-mode extensions) */
+:root, html { color-scheme: only light !important; }
+
+/* Hero photo: deeper scroll parallax plus a slow "living photo" drift */
+body.teach-v3 .page-story__media { top: -22% !important; bottom: -22% !important; }
+@keyframes tv3live {
+  0%   { scale: 1.06; translate: -1.5% 0; }
+  50%  { scale: 1.13; translate: 1.5% -1%; }
+  100% { scale: 1.08; translate: 0 1%; }
+}
+body.teach-v3 .page-story__media img { animation: tv3live 26s ease-in-out infinite alternate; transform-origin: 60% 40%; }
+@media (prefers-reduced-motion: reduce) { body.teach-v3 .page-story__media img { animation: none; } }
+
+/* Selected media: show the whole image, never cropped */
+body.home .quote-media { aspect-ratio: auto !important; height: auto !important; display: flex !important; align-items: center; justify-content: center; padding: 12px; }
+body.home .quote-media .par-wrap { height: auto !important; width: 100%; }
+body.home .quote-media img,
+body.home .quote-media img.par-img {
+  width: 100% !important; height: auto !important; max-height: 420px;
+  object-fit: contain !important; scale: 1 !important; translate: none !important;
+  border-radius: 12px !important;
+}

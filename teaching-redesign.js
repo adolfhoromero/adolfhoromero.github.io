@@ -16,7 +16,7 @@
   /* Soft mode: a gentle, low-glare version of the light design for dark-mode devices. Never black. */
   var mq = null; try { mq = window.matchMedia('(prefers-color-scheme: dark)'); } catch (e) {}
   function stored() { try { return localStorage.getItem('tv3-mode'); } catch (e) { return null; } }
-  function wantSoft() { var s = stored(); return s ? s === 'soft' : !!(mq && mq.matches); }
+  function wantSoft() { return stored() === 'soft'; } // bright/white by default; soft only when chosen
   function applyMode() { root.classList.toggle('soft', wantSoft()); }
   applyMode();
   if (mq && mq.addEventListener) mq.addEventListener('change', applyMode);
@@ -150,7 +150,7 @@
   fabFrame();
 
   /* Photo parallax: images drift gently inside their frames as you scroll */
-  var pimgs = [].slice.call(document.querySelectorAll('main :is(.v4-trio, .v4-art, .convening-gallery, .activity-media, .archive-card, .about-image, .mt-fig, .v4-cert, .quote-media) img'));
+  var pimgs = [].slice.call(document.querySelectorAll('main :is(.v4-trio, .v4-art, .convening-gallery, .activity-media, .archive-card, .about-image, .mt-fig, .v4-cert) img'));
   pimgs.forEach(function (im) {
     var w = document.createElement('span'); w.className = 'par-wrap';
     im.parentNode.insertBefore(w, im); w.appendChild(im); im.classList.add('par-img');
@@ -180,7 +180,7 @@
     ticking = false;
     if (reduce || !media) return;
     var y = window.pageYOffset || root.scrollTop;
-    if (y < window.innerHeight * 1.6) media.style.setProperty('--py', (y * .28).toFixed(1) + 'px');
+    if (y < window.innerHeight * 1.6) media.style.setProperty('--py', (y * .45).toFixed(1) + 'px');
   }
   window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }, { passive: true });
   frame();
