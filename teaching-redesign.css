@@ -1072,3 +1072,19 @@ body.teach-v3 :is(.v4-tint, .arc-tint, .tlx-explore, .tlx-about) {
   background-image: none !important;
   border-top: 1px solid #ece9e4 !important;
 }
+
+/* ═════════════ Hero buttons: slimmer and lighter (Nov 2026) ═════════════ */
+body.teach-v3 .page-story__tags { gap: 10px !important; margin-top: 24px !important; }
+body.teach-v3 .page-story__tags a {
+  padding: 9px 20px !important;
+  font-size: .98rem !important; font-weight: 600 !important; letter-spacing: .005em;
+  color: #fff !important;
+  background: rgba(0, 0, 0, .22) !important;
+  border: 1px solid rgba(255, 255, 255, .6) !important;
+  border-radius: 999px !important;
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+}
+body.teach-v3 .page-story__tags a:hover { background: #fff !important; color: #b31b1b !important; border-color: #fff !important; transform: translateY(-2px); }
+/* Home: the first button (About me) is the main one */
+body.home .page-story__tags li:first-child a { background: #fff !important; color: #b31b1b !important; border-color: #fff !important; }
+body.home .page-story__tags li:first-child a:hover { background: #f4e8e7 !important; }
