@@ -1006,6 +1006,42 @@ body.teach-v3 .tv3-top .site-title:hover .ch { color: #222 !important; }
 body.teach-v3 .tv3-top .site-title:hover .tv3-last .ch { color: #b31b1b !important; }
 @media (min-width: 821px) { body.teach-v3 .tv3-top { padding-top: 10px !important; } }
 
+/* ═════════════ Name inline before Home, plain tabs kept (Nov 2026) ═════════════ */
+/* Name: no box; white first name, peach last name; sits left of Home on one row */
+body.teach-v3 .tv3-top .site-title {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Arial, sans-serif !important;
+  text-transform: none !important;
+  font-size: clamp(1.2rem, 1.5vw, 1.42rem) !important;
+  letter-spacing: -.015em !important;
+}
+body.teach-v3 .tv3-top .site-title a {
+  display: inline-flex !important; align-items: center; gap: 0 !important;
+  padding: 0 !important; background: none !important; border-radius: 0 !important; box-shadow: none !important;
+}
+body.teach-v3 .tv3-top .site-title a:hover { transform: none; box-shadow: none !important; }
+body.teach-v3 .tv3-top .site-title .ch,
+body.teach-v3 .tv3-top .site-title a .ch,
+body.teach-v3 .tv3-top .site-title:hover .ch { color: #fff !important; font-weight: 700 !important; }
+body.teach-v3 .tv3-top .site-title .tv3-last,
+body.teach-v3 .tv3-top .site-title .tv3-last .ch,
+body.teach-v3 .tv3-top .site-title:hover .tv3-last .ch { color: #ffd8c4 !important; font-weight: 700 !important; }
+body.teach-v3 .tv3-top .site-title .tv3-last { margin-left: .3em; }
+@media (min-width: 1100px) {
+  body.teach-v3 .tv3-top {
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0 20px !important;
+    min-height: 68px !important;
+    padding-top: 10px !important; padding-bottom: 10px !important;
+  }
+  body.teach-v3 .tv3-top > header.site-header { margin: 0 !important; }
+  body.teach-v3 .tv3-top .site-title { padding-right: 20px !important; border-right: 1px solid rgba(255, 255, 255, .32); }
+}
+@media (min-width: 1100px) and (max-width: 1380px) {
+  body.teach-v3 .tv3-top > nav.main-nav a { padding-left: 10px !important; padding-right: 10px !important; font-size: .9rem !important; }
+}
+
 /* ═════════════ Light by default, live hero photo, full media images (Nov 2026) ═════════════ */
 /* Ask browsers not to auto-darken the site (Chrome "auto dark", dark-mode extensions) */
 :root, html { color-scheme: only light !important; }
