@@ -728,7 +728,8 @@
   var pos = [], secs = [], ticking = false, curId = null;
   function setHdr() {
     var top = document.querySelector('.tv3-top');
-    var h = top && getComputedStyle(top).position === 'sticky' ? top.offsetHeight : 0;
+    var cs = top && getComputedStyle(top);
+    var h = cs && cs.position === 'sticky' ? parseFloat(cs.getPropertyValue('--stick')) || top.offsetHeight : 0;
     rootEl.style.setProperty('--hdr', h + 'px');
     rootEl.style.setProperty('--ctl', (window.innerWidth > 820 ? $('#tl-ctl').offsetHeight : 0) + 'px');
   }

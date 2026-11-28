@@ -46,6 +46,47 @@
     header.parentNode.insertBefore(bar, header);
     bar.appendChild(header);
     bar.appendChild(nav);
+    floatingBar(bar, nav);
+  }
+
+  /* Floating ribbon bar: sit over the hero photo, slim down on scroll, glide the ribbon */
+  function floatingBar(bar, nav) {
+    var next = bar.nextElementSibling;
+    if (next && next.classList.contains('page-story')) bar.classList.add('over-hero');
+
+    var waiting = false;
+    function compact() {
+      waiting = false;
+      var y = window.pageYOffset || root.scrollTop;
+      if (y > 60) bar.classList.add('compact');
+      else if (y < 20) bar.classList.remove('compact');
+    }
+    window.addEventListener('scroll', function () { if (!waiting) { waiting = true; requestAnimationFrame(compact); } }, { passive: true });
+    compact();
+
+    /* The ribbon starts on the tab you came from and slides to the page you are on */
+    var tabs = [].slice.call(nav.querySelectorAll('a:not(.cv-link)'));
+    var now = -1;
+    tabs.forEach(function (a, i) { if (a.getAttribute('aria-current') === 'page') now = i; });
+    var last = -1;
+    try {
+      var saved = sessionStorage.getItem('nav-tab');
+      if (saved !== null) last = Number(saved);
+      sessionStorage.setItem('nav-tab', String(now));
+    } catch (e) {}
+    var from = tabs[last], to = tabs[now];
+    if (reduce || !from || !to || from === to || !to.offsetWidth) return;
+    to.style.setProperty('--gl', (from.offsetLeft - to.offsetLeft) + 'px');
+    to.style.setProperty('--gr', (to.offsetLeft + to.offsetWidth - from.offsetLeft - from.offsetWidth) + 'px');
+    to.classList.add(last < now ? 'glide-right' : 'glide-left');
+    void to.offsetWidth;
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        to.classList.add('gliding');
+        to.style.setProperty('--gl', '0px');
+        to.style.setProperty('--gr', '0px');
+      });
+    });
   }
 
   /* Split text into animated letters */
@@ -85,13 +126,11 @@
       setTimeout(function () { el.classList.add('done'); }, n * 55 + 1000);
     }, delay);
   }
-  var title = document.querySelector('.site-title');
-  if (title) {
-    title.classList.add('nm');
-    var a = title.querySelector('a');
-    if (a) a.setAttribute('aria-label', 'Adolfho Romero, home');
-    split(title);
-    reveal(title, 150);
+  /* Header name: first name white, last name peach, no animation */
+  var brand = document.querySelector('.site-title a');
+  if (brand) {
+    brand.setAttribute('aria-label', 'Adolfho Romero, home');
+    brand.innerHTML = 'Adolfho <span class="nav-last">Romero</span>';
   }
 
   /* Hero: emphasized phrase, parallax, marquee */

@@ -17,7 +17,7 @@ body.upd .upd-intro--story h1{font-size:clamp(1.9rem,4vw,3rem);line-height:1.04;
 .upd-facts span{font-size:1rem;color:#222}
 /* feed layout */
 .upd-layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start;padding-top:clamp(10px,2vw,24px)}
-.upd-side{position:sticky;top:96px;display:flex;flex-direction:column;gap:16px;padding:20px;border:1px solid #e6e6e6;border-radius:18px;background:#fff}
+.upd-side{position:sticky;top:104px;display:flex;flex-direction:column;gap:16px;padding:20px;border:1px solid #e6e6e6;border-radius:18px;background:#fff}
 .upd-me{display:flex;align-items:center;gap:12px}
 .upd-me img{width:56px;height:56px;border-radius:50%;object-fit:cover;object-position:top}
 .upd-me b{display:block;font:800 1rem 'Open Sans',Arial,sans-serif;text-transform:uppercase}
