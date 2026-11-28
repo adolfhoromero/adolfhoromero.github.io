@@ -6,7 +6,7 @@ body.wpress :is(h1,h2,h3){font-family:'Open Sans',Arial,sans-serif;font-weight:8
 body.wpress a{color:var(--c)}
 /* sticky search sits under the site bar */
 body.wpress .searchbar{position:sticky;top:86px;z-index:200;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--rule);padding:12px 0}
-@media (max-width:820px){body.wpress .searchbar{top:68px}}
+@media (max-width:743px){body.wpress .searchbar{top:68px}}
 body.wpress .searchrow{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 body.wpress #q{flex:1;min-width:220px;min-height:50px;padding:0 20px;border:2px solid var(--rule);border-radius:999px;background:#fff;font:400 1rem 'Roboto',Arial,sans-serif;color:#222}
 body.wpress #q:focus{outline:0;border-color:var(--c);box-shadow:0 0 0 4px rgba(179,27,27,.14)}
